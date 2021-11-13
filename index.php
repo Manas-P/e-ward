@@ -1,4 +1,8 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -24,10 +28,25 @@
                     tasks are transformed to digital, allowing paper tasks to 
                     be reduced to online tasks.
                 </div>
+
                 <div class="connection">
                     <img src="./assets/images/connections.png" alt="Connections">
                 </div>
             </div>
+            <?php
+    if (isset($_SESSION['loginMessage'])) {
+      echo " <div class='alertt alert-visible'>
+                    <div class='content'>
+                        <img src='./assets/images/warning.svg' alt='warning'>
+                        <div class='text'>
+                            Login Failed
+                        </div>
+                    </div>
+                    <img src='./assets/images/close.svg' alt='close' class='alert-close'>
+                </div>";
+      unset($_SESSION['loginMessage']);
+    }?>
+
             <div class="form">
                 <div class="box">
                     <div class="login-text">
@@ -38,19 +57,19 @@
                             A web-based application for managing your ward.
                         </div>
                     </div>
-                    <form action="#">
+                    <form action="./assets/auth/auth.php" method="post">
                         <div class="inputs">
                             <div class="input">
                                 <div class="label">
                                     Username
                                 </div>
-                                <input type="text" name="" id="" placeholder="House no./committe no." autocomplete="off">
+                                <input type="text" name="userName" id="" placeholder="House no./committe no." autocomplete="off" >
                             </div>
                             <div class="input">
                                 <div class="label">
                                     Password
                                 </div>
-                                <input type="text" name="" id="" placeholder="Password" autocomplete="off">
+                                <input type="text" name="password" id="" placeholder="Password" autocomplete="off">
                             </div>
                         </div>
                         <div class="sub">
@@ -61,7 +80,7 @@
                                 <a href="#" class="forgot">Forgot password?</a>
                         </div>
                         <div class="buttons">
-                            <input type="submit" value="Login" class="primary-button">
+                            <input type="submit" value="Login" name="submitButton" class="primary-button">
                             <div class="or">
                                 <div class="line"></div>
                                 <span>Or</span>
@@ -123,7 +142,7 @@
                                     <div class="label">
                                         House number
                                     </div>
-                                    <input type="text" name="houno" id="house-number" placeholder="153" autocomplete="off" onblur="validateHouseNo()">
+                                    <input type="text" name="houno" id="house-number" placeholder="153" autocomplete="off" onblur="validateHouseNo(this.value)">
                                     <div class="error error-hidden">
                                     </div>
                                 </div>
@@ -150,26 +169,36 @@
     </section>
 
     
-    <div id="warrning-box"></div>
+    <div id="warrning-box" >
+        <div class="alertt alert-hidden">
+                    <div class="content">
+                        <img src="./assets/images/warning.svg" alt="warning">
+                        <div class="text">
+                            House already registered
+                        </div>
+                    </div>
+                    <img src="./assets/images/close.svg" alt="close" class="alert-close">
+                </div>
+    </div>
 
     <script src="./assets/js/app.js"></script>
     <script>
-        function validateHouseNo()
-        {
-            const houseNo=document.querySelector("#house-number");
-            $.ajax({
-            url:"./auth/auth.php",
-            type:"POST",
-            data:{
-                houseNo:houseNo
-            },
-            success:function(data,status)
-            {
-                //success function
-                $('#warrning-box').html(data);
-            }
-        })
-        }
+        function validateHouseNo(house)
+        {  
+             $.ajax({
+                            url: "./assets/auth/auth.php",
+                            type: "POST",
+                            data: {
+                                houseNo:house
+                            },
+                            success: function(data, status) {
+                               const alertt=document.querySelector(".alertt");
+                               alertt.classList.remove("alert-hidden");
+                               alertt.classList.add("alert-visible");
+
+                            }
+                        });
+         }
         
     </script>
 
