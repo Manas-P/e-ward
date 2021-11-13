@@ -595,7 +595,7 @@
           align-items: center;
 }
 
-.alertt .content {
+.alertt .econtent {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -606,12 +606,12 @@
           align-items: center;
 }
 
-.alertt .content img {
+.alertt .econtent img {
   width: 22px;
   height: auto;
 }
 
-.alertt .content .text {
+.alertt .econtent .text {
   font-family: "Gilroy_M";
   font-size: 18px;
 }

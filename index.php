@@ -36,7 +36,7 @@ session_start();
             <?php
     if (isset($_SESSION['loginMessage'])) {
       echo " <div class='alertt alert-visible'>
-                    <div class='content'>
+                    <div class='econtent'>
                         <img src='./assets/images/warning.svg' alt='warning'>
                         <div class='text'>
                             Login Failed
@@ -156,7 +156,7 @@ session_start();
                                 </div>
                             </div>
                             <div class="button cursor-disable">
-                                <input type="button" value="Register" name="regbtn" id="reg-btn" class="primary-button disabled">
+                                <input type="submit" value="Register" name="regbtn" id="reg-btn" class="primary-button disabled">
                             </div>
                             <div class="message">
                                 *The login details will be sent to you via email or SMS.
@@ -170,15 +170,7 @@ session_start();
 
     
     <div id="warrning-box" >
-        <div class="alertt alert-hidden">
-                    <div class="content">
-                        <img src="./assets/images/warning.svg" alt="warning">
-                        <div class="text">
-                            House already registered
-                        </div>
-                    </div>
-                    <img src="./assets/images/close.svg" alt="close" class="alert-close">
-                </div>
+        <!-- Inject Error Toast -->
     </div>
 
     <script src="./assets/js/app.js"></script>
@@ -186,23 +178,22 @@ session_start();
         function validateHouseNo(house)
         {  
              $.ajax({
-                            url: "./assets/auth/auth.php",
-                            type: "POST",
-                            data: {
-                                houseNo:house
-                            },
-                            success: function(data, status) {
-                               const alertt=document.querySelector(".alertt");
-                               alertt.classList.remove("alert-hidden");
-                               alertt.classList.add("alert-visible");
-
-                            }
-                        });
+                url: "./assets/auth/auth.php",
+                type: "POST",
+                data: {
+                    houseNo:house
+                },
+                success: function(data, status) {
+                    $('#warrning-box').html(data);
+                    hosnoSubmit=false;
+                    const alertt=document.querySelector(".alertt");
+                    alertt.classList.remove("alert-hidden");
+                    alertt.classList.add("alert-visible");
+                }
+            });
          }
-        
     </script>
 
-    <!-- Registration form Insertion -->
     
 </body>
 </html>

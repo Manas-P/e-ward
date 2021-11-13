@@ -11,7 +11,7 @@
             {
                  // Toast should appear
                  echo '<div class="alertt alert-visible">
-                 <div class="content">
+                 <div class="econtent">
                      <img src="./assets/images/warning.svg" alt="warning">
                      <div class="text">
                          House already registered
@@ -35,7 +35,7 @@
                 // Toast should appear
                 echo "Hi";
               }else{
-                $ins="INSERT INTO `registration`(`fname`, `email`, `phno`, `wardno`, `houseno`, `rationno`, `status`) VALUES ('$name','$email',' $phno','$wardno',' $houseno',' $rationno','0')";
+                $ins="INSERT INTO `registration`(`fname`, `email`, `phno`, `wardno`, `houseno`, `rationno`) VALUES ('$name','$email','$phno','$wardno','$houseno','$rationno')";
                 mysqli_query($conn,$ins);
               }
         }
