@@ -102,7 +102,7 @@ session_start();
                             Already have an account?<a>Login</a> 
                         </div>
                     </div>
-                    <form id="reg-form" method="post" enctype="multipart/form-data">
+                    <form id="reg-form" action="./assets/auth/auth.php" method="post" enctype="multipart/form-data">
                         <div class="inputs">
                             <div class="input fullname">
                                 <div class="label">
@@ -186,9 +186,6 @@ session_start();
                 success: function(data, status) {
                     $('#warrning-box').html(data);
                     hosnoSubmit=false;
-                    const alertt=document.querySelector(".alertt");
-                    alertt.classList.remove("alert-hidden");
-                    alertt.classList.add("alert-visible");
                 }
             });
          }
