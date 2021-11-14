@@ -57,7 +57,7 @@ session_start();
                             A web-based application for managing your ward.
                         </div>
                     </div>
-                    <form action="./assets/auth/auth.php" method="post">
+                    <form action="./assets/php/auth.php" method="post">
                         <div class="inputs">
                             <div class="input">
                                 <div class="label">
@@ -102,7 +102,7 @@ session_start();
                             Already have an account?<a>Login</a> 
                         </div>
                     </div>
-                    <form id="reg-form" action="./assets/auth/auth.php" method="post" enctype="multipart/form-data">
+                    <form id="reg-form" action="./assets/php/auth.php" method="post" enctype="multipart/form-data">
                         <div class="inputs">
                             <div class="input fullname">
                                 <div class="label">
@@ -178,7 +178,7 @@ session_start();
         function validateHouseNo(house)
         {  
              $.ajax({
-                url: "./assets/auth/auth.php",
+                url: "./assets/php/auth.php",
                 type: "POST",
                 data: {
                     houseNo:house

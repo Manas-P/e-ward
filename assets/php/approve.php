@@ -1,5 +1,6 @@
+
 <?php
-    include './assets/include/dbcon.php';
+    include '../include/dbcon.php';
     $id=$_GET['apprId'];
     // $query="SELECT * FROM `tbl_registration` WHERE `rid`='$id'";
     // $result=mysqli_query($conn,$query);
@@ -35,6 +36,7 @@
         //Update User Status and Password
         $updateQuery="UPDATE `tbl_registration` SET `password`='$generatedPassword',`status`=1 WHERE `rid`='$id'";
         $updateResult=mysqli_query($conn,$updateQuery);
+        header("Location: ../../admin.php");
     }else{
         echo "Mail not Send";
     }

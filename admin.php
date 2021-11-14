@@ -40,14 +40,14 @@ else
                 <td><?php echo $row["wardno"]; ?></td>
                 <td><?php echo $row["houseno"]; ?></td>
                 <td><?php echo $row["rationno"]; ?></td>
-                <td><a href="./approve.php?apprId=<?php echo $row["rid"]; ?>">Approve</a></td>
-                <td><a href="./reject.php?rejId=<?php echo $row["rid"]; ?>">Reject</a></td>
+                <td><a href="./assets/php/approve.php?apprId=<?php echo $row["rid"]; ?>">Approve</a></td>
+                <td><a href="./assets/php/reject.php?rejId=<?php echo $row["rid"]; ?>">Reject</a></td>
             </tr>
             <?php
                 }
             ?>
         </table>
-        <a href="./logout.php">Logout</body>
+        <a href="./assets/php/logout.php">Logout</body>
     </body>
     </html>
 	<?php
