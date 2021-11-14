@@ -1,8 +1,5 @@
 <?php
     include './assets/include/dbcon.php';
-    
-    extract($_POST);
-
     $id=$_GET['apprId'];
     // $query="SELECT * FROM `tbl_registration` WHERE `rid`='$id'";
     // $result=mysqli_query($conn,$query);
@@ -13,9 +10,13 @@
     
     //Generate Random Password
     $length=8;
-    $generatedResult='';
+    $generatedPassword='';
     $validChar='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     while(0<$length--){
-        $generatedResult.=$validChar[random_int(0,strlen($validChar)-1)];
+        $generatedPassword.=$validChar[random_int(0,strlen($validChar)-1)];
     }
+
+    //Update User Status
+    $updateQuery="UPDATE `tbl_registration` SET `password`='$generatedPassword',`status`=1 WHERE `rid`='$id'";
+    $updateResult=mysqli_query($conn,$updateQuery);
 ?>
