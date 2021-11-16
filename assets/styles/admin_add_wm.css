@@ -77,7 +77,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 38px 0px;
+  padding: 32px 0px;
 }
 
 .main .sidebar .brand img {
@@ -112,7 +112,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  height: 80%;
+  height: 82%;
   margin: 48px 0 42px 0;
 }
 
@@ -146,20 +146,20 @@ body {
 
 .main .sidebar .links .menus .menu:hover {
   background: #5744e3;
-  -webkit-transition: .5s ease-in-out;
-  transition: .5s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 .main .sidebar .links .menus .menu:hover .text {
   color: #fff;
-  -webkit-transition: .2s ease-in-out;
-  transition: .2s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 .main .sidebar .links .menus .menu:hover svg .str {
   stroke: #fff;
-  -webkit-transition: .2s ease-in-out;
-  transition: .2s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 .main .sidebar .links .menus .menu svg {
@@ -179,5 +179,54 @@ body {
 
 .main .sidebar .links .menus .menu .text.active {
   color: #fff;
+}
+
+.main .sidebar .logout a {
+  text-decoration: none;
+  cursor: pointer;
+  padding: 14px 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+  border-radius: 10px;
+  background: #EEECFC;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main .sidebar .logout a:hover {
+  background: #5744e3;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+.main .sidebar .logout a:hover .text {
+  color: #fff;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.main .sidebar .logout a:hover svg .str {
+  stroke: #fff;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.main .sidebar .logout a svg {
+  height: 24px;
+  width: 24px;
+}
+
+.main .sidebar .logout a .text {
+  font-family: "Gilroy_SB";
+  font-size: 20px;
+  color: #1e1e1e;
 }
 /*# sourceMappingURL=admin_add_wm.css.map */

@@ -18,7 +18,7 @@ body {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 38px 0px;
+      padding: 32px 0px;
       img {
         width: 151px;
         height: auto;
@@ -42,12 +42,12 @@ body {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      height: 80%;
+      height: 82%;
       margin: 48px 0 42px 0;
       .menus {
-          display: flex;
-          flex-direction: column;
-          row-gap: 20px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
         .menu {
           text-decoration: none;
           cursor: pointer;
@@ -56,36 +56,71 @@ body {
           display: flex;
           column-gap: 10px;
           border-radius: 10px;
-          &.active{
-              background: $primary;
-          }
-          &:hover{
+          &.active {
             background: $primary;
-            transition: .5s ease-in-out;
           }
-          &:hover .text{
+          &:hover {
+            background: $primary;
+            transition: 0.5s ease-in-out;
+          }
+          &:hover .text {
             color: $white;
-            transition: .2s ease-in-out;
+            transition: 0.2s ease-in-out;
           }
-          &:hover svg .str{
-            stroke:$white;
-            transition: .2s ease-in-out;
+          &:hover svg .str {
+            stroke: $white;
+            transition: 0.2s ease-in-out;
           }
           svg {
             height: 24px;
             width: 24px;
-            .active{
-                stroke:$white;
+            .active {
+              stroke: $white;
             }
           }
           .text {
             font-family: "Gilroy_SB";
             font-size: 20px;
             color: $text;
-            &.active{
-                color:$white;
+            &.active {
+              color: $white;
             }
           }
+        }
+      }
+    }
+    .logout {
+      a {
+        text-decoration: none;
+        cursor: pointer;
+        padding: 14px 0;
+        width: 100%;
+        display: flex;
+        column-gap: 10px;
+        border-radius: 10px;
+        background: $primaryFade;
+        align-items: center;
+        justify-content: center;
+        &:hover {
+          background: $primary;
+          transition: 0.5s ease-in-out;
+        }
+        &:hover .text {
+          color: $white;
+          transition: 0.2s ease-in-out;
+        }
+        &:hover svg .str {
+          stroke: $white;
+          transition: 0.2s ease-in-out;
+        }
+        svg {
+          height: 24px;
+          width: 24px;
+        }
+        .text {
+          font-family: "Gilroy_SB";
+          font-size: 20px;
+          color: $text;
         }
       }
     }
