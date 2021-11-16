@@ -2,7 +2,7 @@
 session_start();
 $fname=$_SESSION['fname'];
 if (isset($_SESSION["e-wardId"]) != session_id()) {
-    header("Location: ./index.php");
+    header("Location: ../pages/login.php");
     die();
 }
 else
@@ -11,7 +11,7 @@ else
 	<html>
 	<body>
 	hi <?php echo $fname ?>
-		<a href="./assets/php/logout.php">Logout</body>
+		<a href="../php/logout.php">Logout</body>
 	</html>
 	<?php
 }

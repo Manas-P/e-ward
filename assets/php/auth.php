@@ -13,12 +13,12 @@
                  // Toast should appear
                  echo  '<div class="alertt alert-visible">
                             <div class="econtent">
-                                <img src="./assets/images/warning.svg" alt="warning">
+                                <img src="../images/warning.svg" alt="warning">
                                 <div class="text">
                                     House already registered
                                 </div>
                             </div>
-                            <img src="./assets/images/close.svg" alt="close" class="alert-close">
+                            <img src="../images/close.svg" alt="close" class="alert-close">
                         </div>';
             }
         }
@@ -28,7 +28,7 @@
             $ins="INSERT INTO `tbl_registration`(`fname`, `email`, `phno`, `wardno`, `houseno`, `rationno`) VALUES ('$fname','$email','$phno','$wrdno','$houno','$rano')";
             $ins_res=mysqli_query($conn,$ins);
             if($ins_res){
-                header("Location: ../../index.php");
+                header("Location: ../pages/login.php");
             }else{
                 echo '<script language="javascript" type="text/javascript">';
 				echo 'alert("Error")';
@@ -56,19 +56,19 @@
                 $_SESSION['e-wardId'] = session_id();
                 $_SESSION['fname'] = $userData['fname'];
                 $_SESSION['rid'] = $userData['rid'];
-                header("Location: ../../dashboard.php");
+                header("Location: ../pages/dashboard.php");
                 die();
             }
             elseif($adminCheckCount==1){
                 $_SESSION['adminId'] = session_id();
                 $_SESSION['aid']=$userData['aid'];
-                header("Location: ../../admin.php");
+                header("Location: ../pages/admin.php");
                 die();
             }
             else
             {
                 $_SESSION['loginMessage'] = "User Login Failed";
-                header("Location: ../../index.php");
+                header("Location: ../pages/login.php");
                 die();
             }
         }

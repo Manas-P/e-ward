@@ -1,4 +1,3 @@
-
 <?php
     include '../include/dbcon.php';
     $id=$_GET['apprId'];
@@ -36,7 +35,7 @@
         //Update User Status and Password
         $updateQuery="UPDATE `tbl_registration` SET `password`='$generatedPassword',`status`=1 WHERE `rid`='$id'";
         $updateResult=mysqli_query($conn,$updateQuery);
-        header("Location: ../../admin.php");
+        header("Location: ../pages/admin.php");
     }else{
         echo "Mail not Send";
     }
