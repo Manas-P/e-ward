@@ -47,7 +47,7 @@
 }
 
 body {
-  background: #F9F9F9;
+  background: #f9f9f9;
 }
 
 .main {
@@ -90,7 +90,7 @@ body {
   font-size: 14px;
   color: #5744e3;
   padding: 2px 12px 2px 12px;
-  background: #EEECFC;
+  background: #eeecfc;
   border-radius: 10px;
 }
 
@@ -98,7 +98,7 @@ body {
   height: 2px;
   width: 100%;
   border-radius: 2px;
-  background: #EEECFC;
+  background: #eeecfc;
 }
 
 .main .sidebar .links {
@@ -192,7 +192,7 @@ body {
   -webkit-column-gap: 10px;
           column-gap: 10px;
   border-radius: 10px;
-  background: #EEECFC;
+  background: #eeecfc;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -228,5 +228,54 @@ body {
   font-family: "Gilroy_SB";
   font-size: 20px;
   color: #1e1e1e;
+}
+
+.main .container {
+  margin: 46px 63px;
+  width: 100%;
+  height: 100%;
+}
+
+.main .container .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main .container .header .title {
+  font-family: Gilroy_SB;
+  font-size: 38px;
+}
+
+.main .container .header .search svg {
+  position: relative;
+  left: 38px;
+  height: 20px;
+  width: 20px;
+  top: 3px;
+}
+
+.main .container .header .search input {
+  width: 408px;
+  font-size: 18px;
+  font-family: "Gilroy_M";
+  padding: 16px 0px 16px 42px;
+  border-radius: 10px;
+  border: 1px solid #c1c1c1;
+  color: #1e1e1e;
+  outline: none;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.main .container .header .search input:focus {
+  border: 1px solid #1e1e1e;
+}
+
+.main .container .header .search input:focus svg .str {
+  stroke: #1e1e1e;
 }
 /*# sourceMappingURL=admin_add_wm.css.map */
