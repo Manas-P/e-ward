@@ -1,0 +1,102 @@
+@font-face {
+  font-family: "Gilroy_R";
+  src: url(../fonts/Gilroy-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Gilroy_M";
+  src: url(../fonts/Gilroy-Medium.ttf);
+}
+
+@font-face {
+  font-family: "Gilroy_B";
+  src: url(../fonts/Gilroy-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Gilroy_SB";
+  src: url(../fonts/Gilroy-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: "Gilroy_Italics_M";
+  src: url(../fonts/Gilroy-MediumItalic.ttf);
+}
+
+::-webkit-input-placeholder {
+  color: #b1b1b1;
+}
+
+:-ms-input-placeholder {
+  color: #b1b1b1;
+}
+
+::-ms-input-placeholder {
+  color: #b1b1b1;
+}
+
+::placeholder {
+  color: #b1b1b1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: #F9F9F9;
+}
+
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main .sidebar {
+  width: 350px;
+  height: 100vh;
+  overflow-y: hidden;
+  background: #fff;
+  -webkit-box-shadow: 5px 0px 20px rgba(0, 0, 0, 0.01);
+          box-shadow: 5px 0px 20px rgba(0, 0, 0, 0.01);
+  border-radius: 0px 30px 30px 0px;
+  padding: 0px 36px;
+}
+
+.main .sidebar .brand {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 38px 0px;
+}
+
+.main .sidebar .brand img {
+  width: 151px;
+  height: auto;
+}
+
+.main .sidebar .brand .user {
+  font-family: "Gilroy_SB";
+  color: #5744e3;
+  padding: 2px 12px 2px 12px;
+  background: #EEECFC;
+  border-radius: 10px;
+}
+
+.main .sidebar .division {
+  height: 2px;
+  width: 100%;
+  border-radius: 2px;
+  background: #EEECFC;
+}
+/*# sourceMappingURL=admin_add_wm.css.map */
