@@ -64,7 +64,7 @@ body {
   -webkit-box-shadow: 5px 0px 20px rgba(0, 0, 0, 0.01);
           box-shadow: 5px 0px 20px rgba(0, 0, 0, 0.01);
   border-radius: 0px 30px 30px 0px;
-  padding: 0px 36px;
+  padding: 0px 36px 42px 36px;
 }
 
 .main .sidebar .brand {
@@ -87,6 +87,7 @@ body {
 
 .main .sidebar .brand .user {
   font-family: "Gilroy_SB";
+  font-size: 14px;
   color: #5744e3;
   padding: 2px 12px 2px 12px;
   background: #EEECFC;
@@ -98,5 +99,85 @@ body {
   width: 100%;
   border-radius: 2px;
   background: #EEECFC;
+}
+
+.main .sidebar .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 80%;
+  margin: 48px 0 42px 0;
+}
+
+.main .sidebar .links .menus {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 20px;
+}
+
+.main .sidebar .links .menus .menu {
+  text-decoration: none;
+  cursor: pointer;
+  padding: 12px 0 12px 12px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+  border-radius: 10px;
+}
+
+.main .sidebar .links .menus .menu.active {
+  background: #5744e3;
+}
+
+.main .sidebar .links .menus .menu:hover {
+  background: #5744e3;
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+}
+
+.main .sidebar .links .menus .menu:hover .text {
+  color: #fff;
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
+}
+
+.main .sidebar .links .menus .menu:hover svg .str {
+  stroke: #fff;
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
+}
+
+.main .sidebar .links .menus .menu svg {
+  height: 24px;
+  width: 24px;
+}
+
+.main .sidebar .links .menus .menu svg .active {
+  stroke: #fff;
+}
+
+.main .sidebar .links .menus .menu .text {
+  font-family: "Gilroy_SB";
+  font-size: 20px;
+  color: #1e1e1e;
+}
+
+.main .sidebar .links .menus .menu .text.active {
+  color: #fff;
 }
 /*# sourceMappingURL=admin_add_wm.css.map */
