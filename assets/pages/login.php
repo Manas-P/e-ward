@@ -39,7 +39,7 @@ session_start();
                     <div class='econtent'>
                         <img src='../images/warning.svg' alt='warning'>
                         <div class='text'>
-                            Login Failed
+                            Invalid username or password
                         </div>
                     </div>
                     <img src='../images/close.svg' alt='close' class='alert-close'>
@@ -142,7 +142,7 @@ session_start();
                                     <div class="label">
                                         House number
                                     </div>
-                                    <input type="text" name="houno" id="house-number" placeholder="153" autocomplete="off" onblur="validateHouseNo(this.value)">
+                                    <input type="text" name="houno" id="house-number" placeholder="153" autocomplete="off" oninput="validateHouseNo(this.value)">
                                     <div class="error error-hidden">
                                     </div>
                                 </div>
