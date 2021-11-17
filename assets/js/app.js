@@ -65,7 +65,7 @@ fullName.addEventListener("input",()=>{
 });
 
 //Email Validation
-var emailChk=/^([a-z A-Z 0-9_\-\.])+\@([a-z A-Z 0-9_\-])+\.([a-z A-Z]{2,4}).$/;
+var emailChk=/^(([A-Za-z0-9]+_+)|([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\.+)|([A-Za-z0-9]+\++))*[A-Za-z0-9]+@((\w+\-+)|(\w+\.))*\w{1,63}\.[a-zA-Z]{2,6}$/;
 email.addEventListener("input",()=>{
     if(email.value.match(emailChk)){
         emailError.classList.add("error-hidden");
