@@ -45,7 +45,7 @@ var hosnoSubmit=false;
 var ranoSubmit=false;
 
 //Fullname Validation
-var nameChk=/^[a-zA-Z]+$/;
+var nameChk=/^[a-z A-Z]+$/;
 fullName.addEventListener("input",()=>{
     if(fullName.value.match(nameChk)){
         fullNameError.classList.add("error-hidden");
@@ -167,6 +167,7 @@ rationNo.addEventListener("input",()=>{
 //Submit Button Visibility
 const buttonCursor=document.querySelector(".button");//To avoid poniterevent and cursor problem
 regForm.addEventListener("keyup",()=>{
+    console.log(fullNameSubmit);
     if(fullNameSubmit==true && emailSubmit==true && phnoSubmit==true && wrdnoSubmit==true && hosnoSubmit==true && ranoSubmit==true){
         regSubBtn.classList.remove("disabled");
         buttonCursor.classList.remove("cursor-disabled");
