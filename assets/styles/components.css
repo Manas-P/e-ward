@@ -23,6 +23,10 @@
   src: url(../fonts/Gilroy-MediumItalic.ttf);
 }
 
+a {
+  text-decoration: none;
+}
+
 ::-webkit-input-placeholder {
   color: #b1b1b1;
 }

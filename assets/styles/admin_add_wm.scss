@@ -1,5 +1,18 @@
 @import "./components.scss";
 
+@mixin card() {
+  text-decoration: none;
+  display: flex;
+  column-gap: 12px;
+  align-items: center;
+  padding: 12px;
+  width: 260px;
+  background: $white;
+  box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
+  border-radius: 10px;
+  transition: 0.2s ease-in-out;
+}
+
 body {
   background: $bg;
 }
@@ -54,16 +67,7 @@ body {
       flex-wrap: wrap;
       row-gap: 36px;
       .add-member {
-        text-decoration: none;
-        display: flex;
-        column-gap: 12px;
-        align-items: center;
-        padding: 12px;
-        width: 260px;
-        background: $white;
-        box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
-        border-radius: 10px;
-        transition: 0.2s ease-in-out;
+        @include card();
         .icon {
           padding: 18px;
           background: $primaryFade;
@@ -85,16 +89,7 @@ body {
         }
       }
       .member {
-        text-decoration: none;
-        display: flex;
-        column-gap: 12px;
-        align-items: center;
-        padding: 12px;
-        width: 260px;
-        background: $white;
-        box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
-        border-radius: 10px;
-        transition: 0.2s ease-in-out;
+        @include card();
         .photo {
           width: 66px;
           height: 66px;

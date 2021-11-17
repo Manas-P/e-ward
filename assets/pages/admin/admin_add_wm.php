@@ -138,16 +138,6 @@
                         <div class="tag">Ward: 1</div>
                     </div>
                 </a>
-                <!-- Members -->
-                <a href="" class="member">
-                    <div class="photo">
-                        <img src="../../images/uploads/member1.png" alt="member photo">
-                    </div>
-                    <div class="about">
-                        <div class="name">Wade Warren</div>
-                        <div class="tag">Ward: 1</div>
-                    </div>
-                </a>
             </div>
         </div>
     </section>
