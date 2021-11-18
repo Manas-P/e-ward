@@ -172,7 +172,7 @@ session_start();
     <div id="warrning-box" >
         <!-- Inject Error Toast -->
     </div>
-    <script src="../js/app.js"></script>
+    <script src="../js/login.js"></script>
     <script>
         function validateHouseNo(house)
         {  
