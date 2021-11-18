@@ -180,7 +180,7 @@ regForm.addEventListener("keyup",()=>{
 //========================End============================
 
 
-
+//===================Alert Box Close====================
 const alertt=document.querySelector(".alertt");
 const alertClose=document.querySelector(".alert-close");
 console.log(alertClose);
@@ -196,3 +196,4 @@ alertClose.addEventListener("click",()=>{
     alertt.classList.remove("alert-visible");
     alertt.classList.add("alert-hidden");
 });
+

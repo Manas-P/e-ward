@@ -2,6 +2,7 @@
 
 @mixin card() {
   text-decoration: none;
+  cursor: pointer;
   display: flex;
   column-gap: 12px;
   align-items: center;
@@ -119,4 +120,64 @@ body {
       }
     }
   }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.box {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  @include box_model();
+  .title {
+    font-family: "Gilroy_B";
+    font-size: 36px;
+  }
+  .modal-close-btn{
+    position:absolute;
+    top:24px;
+    right:24px;
+    cursor: pointer;
+    img{
+      height:24px;
+    }
+  }
+  .inputs {
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+    margin-top: 40px;
+    @include input_fields(460px);
+    .half-input {
+      display: flex;
+      justify-content: space-between;
+      @include input_fields(216px);
+    }
+  }
+  .button {
+    .primary-button {
+      @include primary_button(100%);
+    }
+  }
+}
+
+::-webkit-calendar-picker-indicator{
+  cursor: pointer;
+  color:$placeholder;
+  padding-right: 16px;
+}
+
+.modal-hidden{
+  display: none;
+  pointer-events: none;
 }

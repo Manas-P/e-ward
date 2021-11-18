@@ -41,6 +41,17 @@ a{
 
 //=============Mixins=================
 
+//=============Box=================
+@mixin box_model() {
+  width: 556px;
+  padding: 62px 48px 70px 48px;
+  background: $white;
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.04),
+    20px 40px 80px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  transition: 1s ease-in-out;
+}
+
 //==========input Fields=============
 @mixin input_fields($width) {
   .input {
@@ -52,7 +63,7 @@ a{
       font-size: 16px;
       font-family: "Gilroy_M";
     }
-    input[type="text"] {
+    input[type="text"],input[type="date"] {
       width: 100%;
       font-size: 18px;
       font-family: "Gilroy_M";
@@ -156,6 +167,23 @@ a{
       user-select: none;
     }
   }
+}
+
+//Disabled Button Style
+.disabled {
+  opacity: 40%;
+  pointer-events: none;
+}
+.cursor-disable {
+  cursor: not-allowed;
+}
+
+//Error Visibility
+.error-visible {
+  visibility: visible;
+}
+.error-hidden {
+  visibility: hidden;
 }
 
 //============Placeholder============

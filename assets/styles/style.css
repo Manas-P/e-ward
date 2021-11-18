@@ -23,6 +23,27 @@
   src: url(../fonts/Gilroy-MediumItalic.ttf);
 }
 
+a {
+  text-decoration: none;
+}
+
+.disabled {
+  opacity: 40%;
+  pointer-events: none;
+}
+
+.cursor-disable {
+  cursor: not-allowed;
+}
+
+.error-visible {
+  visibility: visible;
+}
+
+.error-hidden {
+  visibility: hidden;
+}
+
 ::-webkit-input-placeholder {
   color: #b1b1b1;
 }
@@ -157,7 +178,7 @@
   font-family: "Gilroy_M";
 }
 
-.main .sections .form .box .inputs .input input[type="text"] {
+.main .sections .form .box .inputs .input input[type="text"], .main .sections .form .box .inputs .input input[type="date"] {
   width: 100%;
   font-size: 18px;
   font-family: "Gilroy_M";
@@ -170,7 +191,7 @@
   transition: 0.2s ease-in-out;
 }
 
-.main .sections .form .box .inputs .input input[type="text"]:focus {
+.main .sections .form .box .inputs .input input[type="text"]:focus, .main .sections .form .box .inputs .input input[type="date"]:focus {
   border: 1px solid #1e1e1e;
 }
 
@@ -423,7 +444,7 @@
   font-family: "Gilroy_M";
 }
 
-.box2 .inputs .input input[type="text"] {
+.box2 .inputs .input input[type="text"], .box2 .inputs .input input[type="date"] {
   width: 100%;
   font-size: 18px;
   font-family: "Gilroy_M";
@@ -436,7 +457,7 @@
   transition: 0.2s ease-in-out;
 }
 
-.box2 .inputs .input input[type="text"]:focus {
+.box2 .inputs .input input[type="text"]:focus, .box2 .inputs .input input[type="date"]:focus {
   border: 1px solid #1e1e1e;
 }
 
@@ -474,7 +495,7 @@
   font-family: "Gilroy_M";
 }
 
-.box2 .inputs .half-input .input input[type="text"] {
+.box2 .inputs .half-input .input input[type="text"], .box2 .inputs .half-input .input input[type="date"] {
   width: 100%;
   font-size: 18px;
   font-family: "Gilroy_M";
@@ -487,7 +508,7 @@
   transition: 0.2s ease-in-out;
 }
 
-.box2 .inputs .half-input .input input[type="text"]:focus {
+.box2 .inputs .half-input .input input[type="text"]:focus, .box2 .inputs .half-input .input input[type="date"]:focus {
   border: 1px solid #1e1e1e;
 }
 
@@ -556,23 +577,6 @@
           transform: 0.5;
   pointer-events: none;
   display: none;
-}
-
-.disabled {
-  opacity: 40%;
-  pointer-events: none;
-}
-
-.cursor-disable {
-  cursor: not-allowed;
-}
-
-.error-visible {
-  visibility: visible;
-}
-
-.error-hidden {
-  visibility: hidden;
 }
 
 .alertt {

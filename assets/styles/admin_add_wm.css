@@ -23,6 +23,27 @@
   src: url(../fonts/Gilroy-MediumItalic.ttf);
 }
 
+a {
+  text-decoration: none;
+}
+
+.disabled {
+  opacity: 40%;
+  pointer-events: none;
+}
+
+.cursor-disable {
+  cursor: not-allowed;
+}
+
+.error-visible {
+  visibility: visible;
+}
+
+.error-hidden {
+  visibility: hidden;
+}
+
 ::-webkit-input-placeholder {
   color: #b1b1b1;
 }
@@ -296,6 +317,7 @@ body {
 
 .main .container .contents .add-member {
   text-decoration: none;
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -341,6 +363,7 @@ body {
 
 .main .container .contents .member {
   text-decoration: none;
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -396,5 +419,186 @@ body {
 .main .container .contents .member:hover {
   -webkit-box-shadow: 0px 14px 28px rgba(191, 191, 191, 0.25);
           box-shadow: 0px 14px 28px rgba(191, 191, 191, 0.25);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+
+.box {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 556px;
+  padding: 62px 48px 70px 48px;
+  background: #fff;
+  -webkit-box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.04), 20px 40px 80px rgba(0, 0, 0, 0.1);
+          box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.04), 20px 40px 80px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+}
+
+.box .title {
+  font-family: "Gilroy_B";
+  font-size: 36px;
+}
+
+.box .modal-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  cursor: pointer;
+}
+
+.box .modal-close-btn img {
+  height: 24px;
+}
+
+.box .inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 32px;
+  margin-top: 40px;
+}
+
+.box .inputs .input {
+  width: 460px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 8px;
+}
+
+.box .inputs .input .label {
+  font-size: 16px;
+  font-family: "Gilroy_M";
+}
+
+.box .inputs .input input[type="text"], .box .inputs .input input[type="date"] {
+  width: 100%;
+  font-size: 18px;
+  font-family: "Gilroy_M";
+  padding: 16px 0px 16px 16px;
+  border-radius: 10px;
+  border: 1px solid #c1c1c1;
+  color: #1e1e1e;
+  outline: none;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.box .inputs .input input[type="text"]:focus, .box .inputs .input input[type="date"]:focus {
+  border: 1px solid #1e1e1e;
+}
+
+.box .inputs .input .error {
+  position: absolute;
+  margin-top: 84px;
+  color: #ec0000;
+  font-family: "Gilroy_M";
+  font-size: 14px;
+}
+
+.box .inputs .half-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.box .inputs .half-input .input {
+  width: 216px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 8px;
+}
+
+.box .inputs .half-input .input .label {
+  font-size: 16px;
+  font-family: "Gilroy_M";
+}
+
+.box .inputs .half-input .input input[type="text"], .box .inputs .half-input .input input[type="date"] {
+  width: 100%;
+  font-size: 18px;
+  font-family: "Gilroy_M";
+  padding: 16px 0px 16px 16px;
+  border-radius: 10px;
+  border: 1px solid #c1c1c1;
+  color: #1e1e1e;
+  outline: none;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.box .inputs .half-input .input input[type="text"]:focus, .box .inputs .half-input .input input[type="date"]:focus {
+  border: 1px solid #1e1e1e;
+}
+
+.box .inputs .half-input .input .error {
+  position: absolute;
+  margin-top: 84px;
+  color: #ec0000;
+  font-family: "Gilroy_M";
+  font-size: 14px;
+}
+
+.box .button .primary-button {
+  background: #5744e3;
+  color: #fff;
+  font-family: "Gilroy_B";
+  font-size: 18px;
+  padding: 16px 0;
+  border: none;
+  outline: none;
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+}
+
+.box .button .primary-button:active {
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
+  background: #6756eb;
+}
+
+::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  color: #b1b1b1;
+  padding-right: 16px;
+}
+
+.modal-hidden {
+  display: none;
+  pointer-events: none;
 }
 /*# sourceMappingURL=admin_add_wm.css.map */

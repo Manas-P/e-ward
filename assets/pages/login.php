@@ -184,7 +184,7 @@ session_start();
                 },
                 success: function(data, status) {
                     $('#warrning-box').html(data);
-                    hosnoSubmit=false;
+                    // hosnoSubmit=false;
                 }
             });
          }

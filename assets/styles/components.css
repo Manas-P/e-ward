@@ -27,6 +27,23 @@ a {
   text-decoration: none;
 }
 
+.disabled {
+  opacity: 40%;
+  pointer-events: none;
+}
+
+.cursor-disable {
+  cursor: not-allowed;
+}
+
+.error-visible {
+  visibility: visible;
+}
+
+.error-hidden {
+  visibility: hidden;
+}
+
 ::-webkit-input-placeholder {
   color: #b1b1b1;
 }
