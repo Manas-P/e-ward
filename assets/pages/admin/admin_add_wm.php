@@ -195,6 +195,14 @@
                             </div>
                         </div>
                     </div>
+                    <div class="input fileup">
+                        <div class="label">
+                            Upload photo
+                        </div>
+                        <input type="file" name="phno" id="wm-photo" autocomplete="off">
+                        <div class="error error-hidden">
+                        </div>
+                    </div>
                     <div class="button">
                         <input type="submit" value="Add member" name="regbtn" id="reg-btn" class="primary-button">
                     </div>

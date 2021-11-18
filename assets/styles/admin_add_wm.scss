@@ -171,12 +171,6 @@ body {
   }
 }
 
-::-webkit-calendar-picker-indicator{
-  cursor: pointer;
-  color:$placeholder;
-  padding-right: 16px;
-}
-
 .modal-hidden{
   display: none;
   pointer-events: none;

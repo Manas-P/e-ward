@@ -27,6 +27,20 @@ a {
   text-decoration: none;
 }
 
+::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  color: #b1b1b1;
+  padding-right: 16px;
+}
+
+::-webkit-file-upload-button {
+  background: #eeecfc;
+  border-radius: 6px;
+  border: 1px solid #5744e3;
+  margin-right: 20px;
+  outline: none;
+}
+
 .disabled {
   opacity: 40%;
   pointer-events: none;
@@ -494,7 +508,7 @@ body {
   font-family: "Gilroy_M";
 }
 
-.box .inputs .input input[type="text"], .box .inputs .input input[type="date"] {
+.box .inputs .input input[type="text"], .box .inputs .input input[type="date"], .box .inputs .input input[type="file"] {
   width: 100%;
   font-size: 18px;
   font-family: "Gilroy_M";
@@ -507,7 +521,7 @@ body {
   transition: 0.2s ease-in-out;
 }
 
-.box .inputs .input input[type="text"]:focus, .box .inputs .input input[type="date"]:focus {
+.box .inputs .input input[type="text"]:focus, .box .inputs .input input[type="date"]:focus, .box .inputs .input input[type="file"]:focus {
   border: 1px solid #1e1e1e;
 }
 
@@ -545,7 +559,7 @@ body {
   font-family: "Gilroy_M";
 }
 
-.box .inputs .half-input .input input[type="text"], .box .inputs .half-input .input input[type="date"] {
+.box .inputs .half-input .input input[type="text"], .box .inputs .half-input .input input[type="date"], .box .inputs .half-input .input input[type="file"] {
   width: 100%;
   font-size: 18px;
   font-family: "Gilroy_M";
@@ -558,7 +572,7 @@ body {
   transition: 0.2s ease-in-out;
 }
 
-.box .inputs .half-input .input input[type="text"]:focus, .box .inputs .half-input .input input[type="date"]:focus {
+.box .inputs .half-input .input input[type="text"]:focus, .box .inputs .half-input .input input[type="date"]:focus, .box .inputs .half-input .input input[type="file"]:focus {
   border: 1px solid #1e1e1e;
 }
 
@@ -589,12 +603,6 @@ body {
   -webkit-transform: scale(0.99);
           transform: scale(0.99);
   background: #6756eb;
-}
-
-::-webkit-calendar-picker-indicator {
-  cursor: pointer;
-  color: #b1b1b1;
-  padding-right: 16px;
 }
 
 .modal-hidden {

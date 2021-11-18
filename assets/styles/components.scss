@@ -35,7 +35,7 @@ $error: #ec0000;
 $bg: #f9f9f9;
 $primaryFade: #eeecfc;
 
-a{
+a {
   text-decoration: none;
 }
 
@@ -63,7 +63,9 @@ a{
       font-size: 16px;
       font-family: "Gilroy_M";
     }
-    input[type="text"],input[type="date"] {
+    input[type="text"],
+    input[type="date"],
+    input[type="file"] {
       width: 100%;
       font-size: 18px;
       font-family: "Gilroy_M";
@@ -85,6 +87,20 @@ a{
       font-size: 14px;
     }
   }
+}
+
+::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  color: $placeholder;
+  padding-right: 16px;
+}
+
+::-webkit-file-upload-button {
+  background: $primaryFade;
+  border-radius: 6px;
+  border: none;
+  margin-right: 20px;
+  outline: none;
 }
 
 //===========Primary Button===========
