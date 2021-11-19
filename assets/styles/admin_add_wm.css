@@ -36,7 +36,7 @@ a {
 ::-webkit-file-upload-button {
   background: #eeecfc;
   border-radius: 6px;
-  border: 1px solid #5744e3;
+  border: none;
   margin-right: 20px;
   outline: none;
 }
@@ -313,8 +313,73 @@ body {
   stroke: #1e1e1e;
 }
 
-.main .container .contents {
+.main .container .president {
   margin-top: 60px;
+}
+
+.main .container .president .heading {
+  font-family: "Gilroy_SB";
+  font-size: 24px;
+}
+
+.main .container .president .add-president {
+  margin-top: 24px;
+  text-decoration: none;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 12px;
+          column-gap: 12px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 12px;
+  width: 260px;
+  background: #fff;
+  -webkit-box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
+          box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
+  border-radius: 10px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.main .container .president .add-president .icon {
+  padding: 18px;
+  background: #eeecfc;
+}
+
+.main .container .president .add-president .icon svg {
+  height: 30px;
+  width: 30px;
+}
+
+.main .container .president .add-president .icon .str {
+  stroke: #5744e3;
+}
+
+.main .container .president .add-president .text {
+  font-family: "Gilroy_SB";
+  font-size: 18px;
+  color: #8b8b8b;
+}
+
+.main .container .president .add-president:hover {
+  -webkit-box-shadow: 0px 14px 28px rgba(191, 191, 191, 0.25);
+          box-shadow: 0px 14px 28px rgba(191, 191, 191, 0.25);
+}
+
+.main .container .members-list {
+  margin-top: 60px;
+}
+
+.main .container .members-list .heading {
+  font-family: "Gilroy_SB";
+  font-size: 24px;
+}
+
+.main .container .members-list .members {
+  margin-top: 24px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -329,7 +394,7 @@ body {
   row-gap: 36px;
 }
 
-.main .container .contents .add-member {
+.main .container .members-list .members .add-member {
   text-decoration: none;
   cursor: pointer;
   display: -webkit-box;
@@ -350,32 +415,32 @@ body {
   transition: 0.2s ease-in-out;
 }
 
-.main .container .contents .add-member .icon {
+.main .container .members-list .members .add-member .icon {
   padding: 18px;
   background: #eeecfc;
 }
 
-.main .container .contents .add-member .icon svg {
+.main .container .members-list .members .add-member .icon svg {
   height: 30px;
   width: 30px;
 }
 
-.main .container .contents .add-member .icon .str {
+.main .container .members-list .members .add-member .icon .str {
   stroke: #5744e3;
 }
 
-.main .container .contents .add-member .text {
+.main .container .members-list .members .add-member .text {
   font-family: "Gilroy_SB";
   font-size: 18px;
   color: #8b8b8b;
 }
 
-.main .container .contents .add-member:hover {
+.main .container .members-list .members .add-member:hover {
   -webkit-box-shadow: 0px 14px 28px rgba(191, 191, 191, 0.25);
           box-shadow: 0px 14px 28px rgba(191, 191, 191, 0.25);
 }
 
-.main .container .contents .member {
+.main .container .members-list .members .member {
   text-decoration: none;
   cursor: pointer;
   display: -webkit-box;
@@ -396,12 +461,12 @@ body {
   transition: 0.2s ease-in-out;
 }
 
-.main .container .contents .member .photo {
+.main .container .members-list .members .member .photo {
   width: 66px;
   height: 66px;
 }
 
-.main .container .contents .member .about {
+.main .container .members-list .members .member .about {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -415,13 +480,13 @@ body {
           align-items: flex-start;
 }
 
-.main .container .contents .member .about .name {
+.main .container .members-list .members .member .about .name {
   font-family: "Gilroy_SB";
   font-size: 18px;
   color: #1e1e1e;
 }
 
-.main .container .contents .member .about .tag {
+.main .container .members-list .members .member .about .tag {
   font-family: "Gilroy_SB";
   font-size: 14px;
   color: #5744e3;
@@ -430,7 +495,7 @@ body {
   border-radius: 10px;
 }
 
-.main .container .contents .member:hover {
+.main .container .members-list .members .member:hover {
   -webkit-box-shadow: 0px 14px 28px rgba(191, 191, 191, 0.25);
           box-shadow: 0px 14px 28px rgba(191, 191, 191, 0.25);
 }
@@ -508,7 +573,9 @@ body {
   font-family: "Gilroy_M";
 }
 
-.box .inputs .input input[type="text"], .box .inputs .input input[type="date"], .box .inputs .input input[type="file"] {
+.box .inputs .input input[type="text"],
+.box .inputs .input input[type="date"],
+.box .inputs .input input[type="file"] {
   width: 100%;
   font-size: 18px;
   font-family: "Gilroy_M";
@@ -521,7 +588,9 @@ body {
   transition: 0.2s ease-in-out;
 }
 
-.box .inputs .input input[type="text"]:focus, .box .inputs .input input[type="date"]:focus, .box .inputs .input input[type="file"]:focus {
+.box .inputs .input input[type="text"]:focus,
+.box .inputs .input input[type="date"]:focus,
+.box .inputs .input input[type="file"]:focus {
   border: 1px solid #1e1e1e;
 }
 
@@ -559,7 +628,9 @@ body {
   font-family: "Gilroy_M";
 }
 
-.box .inputs .half-input .input input[type="text"], .box .inputs .half-input .input input[type="date"], .box .inputs .half-input .input input[type="file"] {
+.box .inputs .half-input .input input[type="text"],
+.box .inputs .half-input .input input[type="date"],
+.box .inputs .half-input .input input[type="file"] {
   width: 100%;
   font-size: 18px;
   font-family: "Gilroy_M";
@@ -572,7 +643,9 @@ body {
   transition: 0.2s ease-in-out;
 }
 
-.box .inputs .half-input .input input[type="text"]:focus, .box .inputs .half-input .input input[type="date"]:focus, .box .inputs .half-input .input input[type="file"]:focus {
+.box .inputs .half-input .input input[type="text"]:focus,
+.box .inputs .half-input .input input[type="date"]:focus,
+.box .inputs .half-input .input input[type="file"]:focus {
   border: 1px solid #1e1e1e;
 }
 

@@ -69,81 +69,103 @@
                         <input type="text" name="" placeholder="Search..." id="">
                     </div>
                 </div>
-                <div class="contents">
-                    <a class="add-member">
+                <!-- President -->
+                <div class="president">
+                    <div class="heading">
+                        President
+                    </div>
+                    <a class="add-president">
                         <div class="icon">
                             <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path class="str" d="M15 6.25V23.75" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path class="str" d="M6.25 15H23.75" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
-                        <div class="text">Add ward member</div>
+                        <div class="text">Add president</div>
                     </a>
-                    <!-- Members -->
-                    <a href="" class="member">
-                        <div class="photo">
-                            <img src="../../images/uploads/member1.png" alt="member photo">
-                        </div>
-                        <div class="about">
-                            <div class="name">Wade Warren</div>
-                            <div class="tag">Ward: 1</div>
-                        </div>
-                    </a>
-                    <!-- Members -->
-                    <a href="" class="member">
-                        <div class="photo">
-                            <img src="../../images/uploads/member1.png" alt="member photo">
-                        </div>
-                        <div class="about">
-                            <div class="name">Wade Warren</div>
-                            <div class="tag">Ward: 1</div>
-                        </div>
-                    </a>
-                    <!-- Members -->
-                    <a href="" class="member">
-                        <div class="photo">
-                            <img src="../../images/uploads/member1.png" alt="member photo">
-                        </div>
-                        <div class="about">
-                            <div class="name">Wade Warren</div>
-                            <div class="tag">Ward: 1</div>
-                        </div>
-                    </a>
-                    <!-- Members -->
-                    <a href="" class="member">
-                        <div class="photo">
-                            <img src="../../images/uploads/member1.png" alt="member photo">
-                        </div>
-                        <div class="about">
-                            <div class="name">Wade Warren</div>
-                            <div class="tag">Ward: 1</div>
-                        </div>
-                    </a>
-                    <!-- Members -->
-                    <a href="" class="member">
-                        <div class="photo">
-                            <img src="../../images/uploads/member1.png" alt="member photo">
-                        </div>
-                        <div class="about">
-                            <div class="name">Wade Warren</div>
-                            <div class="tag">Ward: 1</div>
-                        </div>
-                    </a>
-                    <!-- Members -->
-                    <a href="" class="member">
-                        <div class="photo">
-                            <img src="../../images/uploads/member1.png" alt="member photo">
-                        </div>
-                        <div class="about">
-                            <div class="name">Wade Warren</div>
-                            <div class="tag">Ward: 1</div>
-                        </div>
-                    </a>
+                </div>
+                <!-- Ward Members -->
+                <div class="members-list">
+                    <div class="heading">
+                        Ward Members
+                    </div>
+                    <div class="members">
+                        <a class="add-member">
+                            <div class="icon">
+                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="str" d="M15 6.25V23.75" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path class="str" d="M6.25 15H23.75" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="text">Add ward member</div>
+                        </a>
+                        <!-- Members -->
+                        <a href="" class="member">
+                            <div class="photo">
+                                <img src="../../images/uploads/member1.png" alt="member photo">
+                            </div>
+                            <div class="about">
+                                <div class="name">Wade Warren</div>
+                                <div class="tag">Ward: 1</div>
+                            </div>
+                        </a>
+                        <!-- Members -->
+                        <a href="" class="member">
+                            <div class="photo">
+                                <img src="../../images/uploads/member1.png" alt="member photo">
+                            </div>
+                            <div class="about">
+                                <div class="name">Wade Warren</div>
+                                <div class="tag">Ward: 1</div>
+                            </div>
+                        </a>
+                        <!-- Members -->
+                        <a href="" class="member">
+                            <div class="photo">
+                                <img src="../../images/uploads/member1.png" alt="member photo">
+                            </div>
+                            <div class="about">
+                                <div class="name">Wade Warren</div>
+                                <div class="tag">Ward: 1</div>
+                            </div>
+                        </a>
+                        <!-- Members -->
+                        <a href="" class="member">
+                            <div class="photo">
+                                <img src="../../images/uploads/member1.png" alt="member photo">
+                            </div>
+                            <div class="about">
+                                <div class="name">Wade Warren</div>
+                                <div class="tag">Ward: 1</div>
+                            </div>
+                        </a>
+                        <!-- Members -->
+                        <a href="" class="member">
+                            <div class="photo">
+                                <img src="../../images/uploads/member1.png" alt="member photo">
+                            </div>
+                            <div class="about">
+                                <div class="name">Wade Warren</div>
+                                <div class="tag">Ward: 1</div>
+                            </div>
+                        </a>
+                        <!-- Members -->
+                        <a href="" class="member">
+                            <div class="photo">
+                                <img src="../../images/uploads/member1.png" alt="member photo">
+                            </div>
+                            <div class="about">
+                                <div class="name">Wade Warren</div>
+                                <div class="tag">Ward: 1</div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
         <!--=========== Modal ============-->
         <div class="overlay modal-hidden"></div>
+        <!-- form to add members-->
         <div class="box modal-box modal-hidden">
             <div class="title">
                 Add ward member
@@ -205,6 +227,72 @@
                     </div>
                     <div class="button">
                         <input type="submit" value="Add member" name="regbtn" id="reg-btn" class="primary-button">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- Form to add President -->
+        <div class="box modal-box2 modal-hidden">
+            <div class="title">
+                Add president
+            </div>
+            <div class="modal-close-btn pre-cls-btn">
+                <img src="../../images/close.svg" alt="close button">
+            </div>
+            <form action="" method="post">
+                <div class="inputs">
+                    <div class="input fullname">
+                        <div class="label">
+                            Full name
+                        </div>
+                        <input type="text" name="fname" id="full-name" placeholder="John Doe" autocomplete="off">
+                        <div class="error error-hidden">
+                        </div>
+                    </div>
+                    <div class="input email">
+                        <div class="label">
+                            Email ID
+                        </div>
+                        <input type="text" name="email" id="email-id" placeholder="example@gmail.com" autocomplete="off">
+                        <div class="error error-hidden">
+                        </div>
+                    </div>
+                    <div class="input phno">
+                        <div class="label">
+                            Phone number
+                        </div>
+                        <input type="text" name="phno" id="phn-number" placeholder="9568547512" autocomplete="off">
+                        <div class="error error-hidden">
+                        </div>
+                    </div>
+                    <div class="half-input">
+                        <div class="input wrdno">
+                            <div class="label">
+                                Ward number
+                            </div>
+                            <input type="text" name="wrdno" id="ward-number" placeholder="25" autocomplete="off">
+                            <div class="error error-hidden">
+                            </div>
+                        </div>
+                        <div class="input houseno">
+                            <div class="label">
+                                Valid upto
+                            </div>
+                            <input type="date" name="houno" id="house-number" autocomplete="off">
+                            <div class="error error-hidden">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input fileup">
+                        <div class="label">
+                            Upload photo
+                        </div>
+                        <input type="file" name="phno" id="wm-photo" autocomplete="off">
+                        <div class="error error-hidden">
+                        </div>
+                    </div>
+                    <div class="button">
+                        <input type="submit" value="Add president" name="regbtn" id="reg-btn" class="primary-button">
                     </div>
                 </div>
             </form>

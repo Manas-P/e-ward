@@ -27,6 +27,20 @@ a {
   text-decoration: none;
 }
 
+::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  color: #b1b1b1;
+  padding-right: 16px;
+}
+
+::-webkit-file-upload-button {
+  background: #eeecfc;
+  border-radius: 6px;
+  border: none;
+  margin-right: 20px;
+  outline: none;
+}
+
 .disabled {
   opacity: 40%;
   pointer-events: none;
@@ -178,7 +192,9 @@ a {
   font-family: "Gilroy_M";
 }
 
-.main .sections .form .box .inputs .input input[type="text"], .main .sections .form .box .inputs .input input[type="date"] {
+.main .sections .form .box .inputs .input input[type="text"],
+.main .sections .form .box .inputs .input input[type="date"],
+.main .sections .form .box .inputs .input input[type="file"] {
   width: 100%;
   font-size: 18px;
   font-family: "Gilroy_M";
@@ -191,7 +207,9 @@ a {
   transition: 0.2s ease-in-out;
 }
 
-.main .sections .form .box .inputs .input input[type="text"]:focus, .main .sections .form .box .inputs .input input[type="date"]:focus {
+.main .sections .form .box .inputs .input input[type="text"]:focus,
+.main .sections .form .box .inputs .input input[type="date"]:focus,
+.main .sections .form .box .inputs .input input[type="file"]:focus {
   border: 1px solid #1e1e1e;
 }
 
@@ -444,7 +462,9 @@ a {
   font-family: "Gilroy_M";
 }
 
-.box2 .inputs .input input[type="text"], .box2 .inputs .input input[type="date"] {
+.box2 .inputs .input input[type="text"],
+.box2 .inputs .input input[type="date"],
+.box2 .inputs .input input[type="file"] {
   width: 100%;
   font-size: 18px;
   font-family: "Gilroy_M";
@@ -457,7 +477,9 @@ a {
   transition: 0.2s ease-in-out;
 }
 
-.box2 .inputs .input input[type="text"]:focus, .box2 .inputs .input input[type="date"]:focus {
+.box2 .inputs .input input[type="text"]:focus,
+.box2 .inputs .input input[type="date"]:focus,
+.box2 .inputs .input input[type="file"]:focus {
   border: 1px solid #1e1e1e;
 }
 
@@ -495,7 +517,9 @@ a {
   font-family: "Gilroy_M";
 }
 
-.box2 .inputs .half-input .input input[type="text"], .box2 .inputs .half-input .input input[type="date"] {
+.box2 .inputs .half-input .input input[type="text"],
+.box2 .inputs .half-input .input input[type="date"],
+.box2 .inputs .half-input .input input[type="file"] {
   width: 100%;
   font-size: 18px;
   font-family: "Gilroy_M";
@@ -508,7 +532,9 @@ a {
   transition: 0.2s ease-in-out;
 }
 
-.box2 .inputs .half-input .input input[type="text"]:focus, .box2 .inputs .half-input .input input[type="date"]:focus {
+.box2 .inputs .half-input .input input[type="text"]:focus,
+.box2 .inputs .half-input .input input[type="date"]:focus,
+.box2 .inputs .half-input .input input[type="file"]:focus {
   border: 1px solid #1e1e1e;
 }
 
