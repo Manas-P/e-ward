@@ -167,7 +167,6 @@ session_start();
             </div>
         </div>
     </section>
-
     
     <div id="warrning-box" >
         <!-- Inject Error Toast -->
