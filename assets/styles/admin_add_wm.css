@@ -418,6 +418,7 @@ body {
 .main .container .members-list .members .add-member .icon {
   padding: 18px;
   background: #eeecfc;
+  border-radius: 4px;
 }
 
 .main .container .members-list .members .add-member .icon svg {
@@ -464,11 +465,13 @@ body {
 .main .container .members-list .members .member .photo {
   width: 66px;
   height: 66px;
+  border-radius: 4px;
 }
 
 .main .container .members-list .members .member .photo img {
   width: 66px;
   height: 66px;
+  border-radius: 4px;
 }
 
 .main .container .members-list .members .member .about {

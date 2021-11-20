@@ -108,6 +108,7 @@ body {
           .icon {
             padding: 18px;
             background: $primaryFade;
+            border-radius:4px;
             svg {
               height: 30px;
               width: 30px;
@@ -130,9 +131,11 @@ body {
           .photo {
             width: 66px;
             height: 66px;
+            border-radius: 4px;
             img {
               width: 66px;
               height: 66px;
+              border-radius:4px;
             }
           }
           .about {

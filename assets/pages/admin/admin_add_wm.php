@@ -76,15 +76,27 @@
                     <div class="heading">
                         President
                     </div>
-                    <a class="add-president">
-                        <div class="icon">
-                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path class="str" d="M15 6.25V23.75" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path class="str" d="M6.25 15H23.75" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <div class="text">Add president</div>
-                    </a>
+
+                    <?php
+                        include '../../include/dbcon.php';
+                        $memberFetch="SELECT * FROM `tbl_ward_member` WHERE `president`=1";
+                        $memberResult=mysqli_query($conn,$memberFetch);
+                        if(mysqli_num_rows($memberResult)==0){
+                    ?>
+                            <a class="add-president">
+                                <div class="icon">
+                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path class="str" d="M15 6.25V23.75" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path class="str" d="M6.25 15H23.75" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="text">Add president</div>
+                            </a>
+                    <?php 
+                        }else{
+
+                        }
+                    ?>
                 </div>
                 <!-- Ward Members -->
                 <div class="members-list">
