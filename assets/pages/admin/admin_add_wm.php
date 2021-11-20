@@ -94,7 +94,19 @@
                             </a>
                     <?php 
                         }else{
-
+                            while($mrow = mysqli_fetch_assoc($memberResult)){
+                    ?>
+                            <a href="" class="president">
+                                <div class="photo">
+                                    <img src="../<?php echo $mrow["photo"]; ?>" alt="member photo">
+                                </div>
+                                <div class="about">
+                                    <div class="name"><?php echo $mrow["fullname"]; ?></div>
+                                    <div class="tag">Ward: <?php echo $mrow["wardno"]; ?></div>
+                                </div>
+                            </a>
+                    <?php
+                            }
                         }
                     ?>
                 </div>
