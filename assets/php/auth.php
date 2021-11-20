@@ -100,15 +100,36 @@
             $filepath = $upload_dir . time().".".$file_ext;
             //Check File Upload
             if(move_uploaded_file($file_tmpname, $filepath)){
-                $insMember="INSERT INTO `tbl_ward_member`(`fullname`, `email`, `phno`, `wardno`, `validupto`, `photo`) VALUES ('$wfname','$wemail','$wphno','$wwrdno','$wvalidity',' $filepath')";
-                $insMemberRes=mysqli_query($conn,$insMember);
-                if($insMemberRes){
-                    header("Location: ../pages/admin/admin_add_wm.php");
-                }else{
-                echo '<script language="javascript" type="text/javascript">';
-				echo 'alert("Error")';
-				echo '</script>';
+                
+                // Generate Random Password
+                $length=8;
+                $generatedPassword='';
+                $validChar='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+                while(0<$length--){
+                    $generatedPassword.=$validChar[random_int(0,strlen($validChar)-1)];
                 }
+
+                $subject="E-Ward Approved";
+                $body="Dear $wfname, you have been added as Ward member. You can login to E-Ward using Id = $wwrdno and Password = $generatedPassword";
+                $headers="From: ewardmember@gmail.com";
+
+                if(mail($wemail,$subject,$body,$headers)){
+
+                    $insMember="INSERT INTO `tbl_ward_member`(`fullname`, `email`, `phno`, `wardno`, `validupto`, `photo`, `password`) VALUES ('$wfname','$wemail','$wphno','$wwrdno','$wvalidity','$filepath','$generatedPassword')";
+                    $insMemberRes=mysqli_query($conn,$insMember);
+                    if($insMemberRes){
+                        header("Location: ../pages/admin/admin_add_wm.php");
+                    }else{
+                    echo '<script language="javascript" type="text/javascript">';
+                    echo 'alert("Error")';
+                    echo '</script>';
+                    }
+
+                }else{
+                    echo "Mail not Send";
+                }
+
+                
             }else{
                 $_SESSION['loginMessage'] = "File upload error";
                 header("Location: ../pages/admin/admin_add_wm.php");
