@@ -239,60 +239,60 @@
             <div class="modal-close-btn pre-cls-btn">
                 <img src="../../images/close.svg" alt="close button">
             </div>
-            <form action="" method="post">
+            <form action="" method="post" id="add-president">
                 <div class="inputs">
-                    <div class="input fullname">
+                    <div class="input p-fullname">
                         <div class="label">
                             Full name
                         </div>
-                        <input type="text" name="fname" id="full-name" placeholder="John Doe" autocomplete="off">
+                        <input type="text" name="fname" id="p-full-name" placeholder="John Doe" autocomplete="off">
                         <div class="error error-hidden">
                         </div>
                     </div>
-                    <div class="input email">
+                    <div class="input p-email">
                         <div class="label">
                             Email ID
                         </div>
-                        <input type="text" name="email" id="email-id" placeholder="example@gmail.com" autocomplete="off">
+                        <input type="text" name="email" id="p-email-id" placeholder="example@gmail.com" autocomplete="off">
                         <div class="error error-hidden">
                         </div>
                     </div>
-                    <div class="input phno">
+                    <div class="input p-phno">
                         <div class="label">
                             Phone number
                         </div>
-                        <input type="text" name="phno" id="phn-number" placeholder="9568547512" autocomplete="off">
+                        <input type="text" name="phno" id="p-phn-number" placeholder="9568547512" autocomplete="off">
                         <div class="error error-hidden">
                         </div>
                     </div>
                     <div class="half-input">
-                        <div class="input wrdno">
+                        <div class="input p-wrdno">
                             <div class="label">
                                 Ward number
                             </div>
-                            <input type="text" name="wrdno" id="ward-number" placeholder="25" autocomplete="off">
+                            <input type="text" name="wrdno" id="p-ward-number" placeholder="25" autocomplete="off">
                             <div class="error error-hidden">
                             </div>
                         </div>
-                        <div class="input houseno">
+                        <div class="input p-date">
                             <div class="label">
                                 Valid upto
                             </div>
-                            <input type="date" name="houno" id="house-number" autocomplete="off">
+                            <input type="date" name="houno" id="p-date" autocomplete="off">
                             <div class="error error-hidden">
                             </div>
                         </div>
                     </div>
-                    <div class="input fileup">
+                    <div class="input p-photo">
                         <div class="label">
                             Upload photo
                         </div>
-                        <input type="file" name="phno" id="wm-photo" autocomplete="off">
+                        <input type="file" name="phno" id="p-photo" accept="image/png,image/jpeg">
                         <div class="error error-hidden">
                         </div>
                     </div>
-                    <div class="button">
-                        <input type="submit" value="Add president" name="regbtn" id="reg-btn" class="primary-button">
+                    <div class="button pBtn cursor-disable">
+                        <input type="submit" value="Add member" name="regbtn" id="add-p" class="primary-button disabled">
                     </div>
                 </div>
             </form>
