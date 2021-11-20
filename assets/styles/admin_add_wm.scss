@@ -60,8 +60,8 @@ body {
         }
       }
     }
-    .president{
-      margin-top:60px;
+    .president {
+      margin-top: 60px;
       .heading {
         font-family: "Gilroy_SB";
         font-size: 24px;
@@ -91,7 +91,7 @@ body {
       }
     }
     .members-list {
-      margin-top:60px;
+      margin-top: 60px;
       .heading {
         font-family: "Gilroy_SB";
         font-size: 24px;
@@ -212,3 +212,5 @@ body {
   display: none;
   pointer-events: none;
 }
+
+@include error-alert();

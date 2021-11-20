@@ -7,6 +7,8 @@
         <title>Admin | Add Ward Memeber</title>
         <link rel="shortcut icon" href="../../images/fav.svg" type="image/x-icon">
         <link rel="stylesheet" href="../../styles/admin_add_wm.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     </head>
     <body>
         <section class="main">
@@ -102,7 +104,7 @@
                         <!-- Members -->
                         <a href="" class="member">
                             <div class="photo">
-                                <img src="../../images/uploads/member1.png" alt="member photo">
+                                <img src="../../images/uploads/photos/member1.png" alt="member photo">
                             </div>
                             <div class="about">
                                 <div class="name">Wade Warren</div>
@@ -112,7 +114,7 @@
                         <!-- Members -->
                         <a href="" class="member">
                             <div class="photo">
-                                <img src="../../images/uploads/member1.png" alt="member photo">
+                                <img src="../../images/uploads/photos/member1.png" alt="member photo">
                             </div>
                             <div class="about">
                                 <div class="name">Wade Warren</div>
@@ -122,7 +124,7 @@
                         <!-- Members -->
                         <a href="" class="member">
                             <div class="photo">
-                                <img src="../../images/uploads/member1.png" alt="member photo">
+                                <img src="../../images/uploads/photos/member1.png" alt="member photo">
                             </div>
                             <div class="about">
                                 <div class="name">Wade Warren</div>
@@ -132,7 +134,7 @@
                         <!-- Members -->
                         <a href="" class="member">
                             <div class="photo">
-                                <img src="../../images/uploads/member1.png" alt="member photo">
+                                <img src="../../images/uploads/photos/member1.png" alt="member photo">
                             </div>
                             <div class="about">
                                 <div class="name">Wade Warren</div>
@@ -142,7 +144,7 @@
                         <!-- Members -->
                         <a href="" class="member">
                             <div class="photo">
-                                <img src="../../images/uploads/member1.png" alt="member photo">
+                                <img src="../../images/uploads/photos/member1.png" alt="member photo">
                             </div>
                             <div class="about">
                                 <div class="name">Wade Warren</div>
@@ -152,7 +154,7 @@
                         <!-- Members -->
                         <a href="" class="member">
                             <div class="photo">
-                                <img src="../../images/uploads/member1.png" alt="member photo">
+                                <img src="../../images/uploads/photos/member1.png" alt="member photo">
                             </div>
                             <div class="about">
                                 <div class="name">Wade Warren</div>
@@ -173,13 +175,14 @@
             <div class="modal-close-btn">
                 <img src="../../images/close.svg" alt="close button">
             </div>
-            <form action="" method="post" id="add-ward-member">
+            <!-- Add Ward Memeber -->
+            <form action="../../php/auth.php" method="post" id="add-ward-member" enctype="multipart/form-data">
                 <div class="inputs">
                     <div class="input w-fullname">
                         <div class="label">
                             Full name
                         </div>
-                        <input type="text" name="fname" id="w-full-name" placeholder="John Doe" autocomplete="off">
+                        <input type="text" name="wfname" id="w-full-name" placeholder="John Doe" autocomplete="off">
                         <div class="error error-hidden">
                         </div>
                     </div>
@@ -187,7 +190,7 @@
                         <div class="label">
                             Email ID
                         </div>
-                        <input type="text" name="email" id="w-email-id" placeholder="example@gmail.com" autocomplete="off">
+                        <input type="text" name="wemail" id="w-email-id" placeholder="example@gmail.com" autocomplete="off">
                         <div class="error error-hidden">
                         </div>
                     </div>
@@ -195,7 +198,7 @@
                         <div class="label">
                             Phone number
                         </div>
-                        <input type="text" name="phno" id="w-phn-number" placeholder="9568547512" autocomplete="off">
+                        <input type="text" name="wphno" id="w-phn-number" placeholder="9568547512" autocomplete="off">
                         <div class="error error-hidden">
                         </div>
                     </div>
@@ -204,7 +207,7 @@
                             <div class="label">
                                 Ward number
                             </div>
-                            <input type="text" name="wrdno" id="w-ward-number" placeholder="25" autocomplete="off">
+                            <input type="text" name="wwrdno" id="w-ward-number" placeholder="25" autocomplete="off" oninput="validateWardNo(this.value)">
                             <div class="error error-hidden">
                             </div>
                         </div>
@@ -212,7 +215,7 @@
                             <div class="label">
                                 Valid upto
                             </div>
-                            <input type="date" name="houno" id="w-date" autocomplete="off">
+                            <input type="date" name="wvalidity" id="w-date" autocomplete="off">
                             <div class="error error-hidden">
                             </div>
                         </div>
@@ -221,12 +224,12 @@
                         <div class="label">
                             Upload photo
                         </div>
-                        <input type="file" name="phno" id="w-photo" accept="image/png,image/jpeg">
+                        <input type="file" name="wphoto" id="w-photo" accept="image/png,image/jpeg">
                         <div class="error error-hidden">
                         </div>
                     </div>
                     <div class="button wBtn cursor-disable">
-                        <input type="submit" value="Add member" name="regbtn" id="add-wm" class="primary-button disabled">
+                        <input type="submit" value="Add member" name="add-wm" id="add-wm" class="primary-button disabled">
                     </div>
                 </div>
             </form>
@@ -297,6 +300,39 @@
                 </div>
             </form>
         </div>
+        <div id="warrning-box" >
+            <!-- Inject Error Toast -->
+        </div>
+        <?php
+        if (isset($_SESSION['loginMessage'])) {
+            $msg=$_SESSION['loginMessage'];
+          echo " <div class='alertt alert-visible'>
+                        <div class='econtent'>
+                            <img src='../../images/warning.svg' alt='warning'>
+                            <div class='text'>
+                                $msg
+                            </div>
+                        </div>
+                        <img src='../../images/close.svg' alt='close' class='alert-close'>
+                    </div>";
+          unset($_SESSION['loginMessage']);
+        }?>
         <script src="../../js/admin_add_wm.js"></script>
+        <script>
+            function validateWardNo(ward)
+            {  
+                 $.ajax({
+                    url: "../../php/auth.php",
+                    type: "POST",
+                    data: {
+                        wardNo:ward
+                    },
+                    success: function(data, status) {
+                        $('#warrning-box').html(data);
+                        // hosnoSubmit=false;
+                    }
+                });
+             }
+        </script>
     </body>
 </html>

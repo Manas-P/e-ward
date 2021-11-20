@@ -35,11 +35,12 @@ session_start();
             </div>
             <?php
     if (isset($_SESSION['loginMessage'])) {
+        $msg=$_SESSION['loginMessage'];
       echo " <div class='alertt alert-visible'>
                     <div class='econtent'>
                         <img src='../images/warning.svg' alt='warning'>
                         <div class='text'>
-                            Invalid username or password
+                            $msg
                         </div>
                     </div>
                     <img src='../images/close.svg' alt='close' class='alert-close'>

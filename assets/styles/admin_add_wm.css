@@ -682,4 +682,59 @@ body {
   display: none;
   pointer-events: none;
 }
+
+.alertt {
+  background: #fff;
+  padding: 18px 18px 18px 24px;
+  -webkit-box-shadow: 0px 7px 16px rgba(0, 0, 0, 0.16);
+          box-shadow: 0px 7px 16px rgba(0, 0, 0, 0.16);
+  border-radius: 6px;
+  border-left: 10px solid #ec0000;
+  position: absolute;
+  bottom: 5%;
+  right: 4%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 32px;
+          column-gap: 32px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.alertt .econtent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.alertt .econtent img {
+  width: 22px;
+  height: auto;
+}
+
+.alertt .econtent .text {
+  font-family: "Gilroy_M";
+  font-size: 18px;
+}
+
+.alertt .alert-close {
+  width: 16px;
+  height: auto;
+  cursor: pointer;
+}
+
+.alert-hidden {
+  visibility: hidden;
+}
+
+.alert-visible {
+  visibility: visible;
+}
 /*# sourceMappingURL=admin_add_wm.css.map */

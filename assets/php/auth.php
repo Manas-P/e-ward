@@ -18,11 +18,10 @@
                                     House already registered
                                 </div>
                             </div>
-                            <img src="../images/close.svg" alt="close" class="alert-close">
                         </div>';
             }
         }
-        
+        //Registration
         if(isset($_POST['regbtn'])){
             //While using extract, no need to define variable use $nameAttribute from the form
             $ins="INSERT INTO `tbl_registration`(`fname`, `email`, `phno`, `wardno`, `houseno`, `rationno`) VALUES ('$fname','$email','$phno','$wrdno','$houno','$rano')";
@@ -67,9 +66,52 @@
             }
             else
             {
-                $_SESSION['loginMessage'] = "User Login Failed";
+                $_SESSION['loginMessage'] = "Invalid Username or Password";
                 header("Location: ../pages/login.php");
                 die();
+            }
+        }
+
+        //check wardno exisit
+        if(isset($_POST['wardNo']))
+        {
+            $chkWard = "SELECT * FROM `tbl_ward_member` WHERE wardno='$wardNo'";
+            $resChk = mysqli_query($conn, $chkWard);
+            if(mysqli_num_rows($resChk)>0)
+            {
+                 // Toast should appear
+                 echo  '<div class="alertt alert-visible">
+                            <div class="econtent">
+                                <img src="../../images/warning.svg" alt="warning">
+                                <div class="text">
+                                    Ward member already registered
+                                </div>
+                            </div>
+                        </div>';
+            }
+        }
+
+        //Add Ward Member
+        if(isset($_POST['add-wm'])){
+            $upload_dir = '../images/uploads/photos/';
+            $file_tmpname = $_FILES['wphoto']['tmp_name'];
+            $file_name = $_FILES['wphoto']['name'];
+            $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
+            $filepath = $upload_dir . time().".".$file_ext;
+            //Check File Upload
+            if(move_uploaded_file($file_tmpname, $filepath)){
+                $insMember="INSERT INTO `tbl_ward_member`(`fullname`, `email`, `phno`, `wardno`, `validupto`, `photo`) VALUES ('$wfname','$wemail','$wphno','$wwrdno','$wvalidity',' $filepath')";
+                $insMemberRes=mysqli_query($conn,$insMember);
+                if($insMemberRes){
+                    header("Location: ../pages/admin/admin_add_wm.php");
+                }else{
+                echo '<script language="javascript" type="text/javascript">';
+				echo 'alert("Error")';
+				echo '</script>';
+                }
+            }else{
+                $_SESSION['loginMessage'] = "File upload error";
+                header("Location: ../pages/admin/admin_add_wm.php");
             }
         }
     ?>
