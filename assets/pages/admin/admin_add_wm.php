@@ -101,66 +101,30 @@
                             </div>
                             <div class="text">Add ward member</div>
                         </a>
-                        <!-- Members -->
-                        <a href="" class="member">
-                            <div class="photo">
-                                <img src="../../images/uploads/photos/member1.png" alt="member photo">
-                            </div>
-                            <div class="about">
-                                <div class="name">Wade Warren</div>
-                                <div class="tag">Ward: 1</div>
-                            </div>
-                        </a>
-                        <!-- Members -->
-                        <a href="" class="member">
-                            <div class="photo">
-                                <img src="../../images/uploads/photos/member1.png" alt="member photo">
-                            </div>
-                            <div class="about">
-                                <div class="name">Wade Warren</div>
-                                <div class="tag">Ward: 1</div>
-                            </div>
-                        </a>
-                        <!-- Members -->
-                        <a href="" class="member">
-                            <div class="photo">
-                                <img src="../../images/uploads/photos/member1.png" alt="member photo">
-                            </div>
-                            <div class="about">
-                                <div class="name">Wade Warren</div>
-                                <div class="tag">Ward: 1</div>
-                            </div>
-                        </a>
-                        <!-- Members -->
-                        <a href="" class="member">
-                            <div class="photo">
-                                <img src="../../images/uploads/photos/member1.png" alt="member photo">
-                            </div>
-                            <div class="about">
-                                <div class="name">Wade Warren</div>
-                                <div class="tag">Ward: 1</div>
-                            </div>
-                        </a>
-                        <!-- Members -->
-                        <a href="" class="member">
-                            <div class="photo">
-                                <img src="../../images/uploads/photos/member1.png" alt="member photo">
-                            </div>
-                            <div class="about">
-                                <div class="name">Wade Warren</div>
-                                <div class="tag">Ward: 1</div>
-                            </div>
-                        </a>
-                        <!-- Members -->
-                        <a href="" class="member">
-                            <div class="photo">
-                                <img src="../../images/uploads/photos/member1.png" alt="member photo">
-                            </div>
-                            <div class="about">
-                                <div class="name">Wade Warren</div>
-                                <div class="tag">Ward: 1</div>
-                            </div>
-                        </a>
+                        <!-- Fetch Ward Members -->
+                        <?php
+                            include '../../include/dbcon.php';
+                            $fetchQuery="SELECT * FROM `tbl_ward_member` WHERE `status`=1";
+                            $fetchResult=mysqli_query($conn,$fetchQuery);
+                            if(mysqli_num_rows($fetchResult)>0){
+                                while($row = mysqli_fetch_assoc($fetchResult)){
+                        ?>
+                                    <a href="" class="member">
+                                        <div class="photo">
+                                            <img src="../<?php echo $row["photo"]; ?>" alt="member photo">
+                                        </div>
+                                        <div class="about">
+                                            <div class="name"><?php echo $row["fullname"]; ?></div>
+                                            <div class="tag">Ward: <?php echo $row["wardno"]; ?></div>
+                                        </div>
+                                    </a>
+                        <?php
+                                }
+                                    
+                            }else{
+
+                            }
+                        ?>
                     </div>
                 </div>
             </div>

@@ -466,6 +466,11 @@ body {
   height: 66px;
 }
 
+.main .container .members-list .members .member .photo img {
+  width: 66px;
+  height: 66px;
+}
+
 .main .container .members-list .members .member .about {
   display: -webkit-box;
   display: -ms-flexbox;
