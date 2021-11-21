@@ -1,6 +1,6 @@
 @import "./components.scss";
 
-@mixin card() {
+@mixin card($shadow) {
   text-decoration: none;
   cursor: pointer;
   display: flex;
@@ -9,7 +9,7 @@
   padding: 12px;
   width: 260px;
   background: $white;
-  box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
+  box-shadow: $shadow;
   border-radius: 10px;
   transition: 0.2s ease-in-out;
 }
@@ -68,7 +68,7 @@ body {
       }
       .add-president {
         margin-top: 24px;
-        @include card();
+        @include card(0px 10px 20px rgba(237, 237, 237, 0.25));
         .icon {
           padding: 18px;
           background: $primaryFade;
@@ -90,42 +90,6 @@ body {
           box-shadow: 0px 14px 28px rgba(191, 191, 191, 0.25);
         }
       }
-      .president {
-        margin-top: 24px;
-        @include card();
-        .photo {
-          width: 66px;
-          height: 66px;
-          border-radius: 4px;
-          img {
-            width: 66px;
-            height: 66px;
-            border-radius:4px;
-          }
-        }
-        .about {
-          display: flex;
-          flex-direction: column;
-          row-gap: 10px;
-          align-items: flex-start;
-          .name {
-            font-family: "Gilroy_SB";
-            font-size: 18px;
-            color: $text;
-          }
-          .tag {
-            font-family: "Gilroy_SB";
-            font-size: 14px;
-            color: $primary;
-            padding: 3px 12px;
-            background: $primaryFade;
-            border-radius: 10px;
-          }
-        }
-        &:hover {
-          box-shadow: 0px 14px 28px rgba(191, 191, 191, 0.25);
-        }
-      }
     }
     .members-list {
       margin-top: 60px;
@@ -141,11 +105,11 @@ body {
         flex-wrap: wrap;
         row-gap: 36px;
         .add-member {
-          @include card();
+          @include card(0px 10px 20px rgba(237, 237, 237, 0.25));
           .icon {
             padding: 18px;
             background: $primaryFade;
-            border-radius:4px;
+            border-radius: 4px;
             svg {
               height: 30px;
               width: 30px;
@@ -164,7 +128,7 @@ body {
           }
         }
         .member {
-          @include card();
+          @include card(0px 10px 20px rgba(237, 237, 237, 0.25));
           .photo {
             width: 66px;
             height: 66px;
@@ -172,7 +136,7 @@ body {
             img {
               width: 66px;
               height: 66px;
-              border-radius:4px;
+              border-radius: 4px;
             }
           }
           .about {
@@ -214,25 +178,7 @@ body {
 }
 
 .box {
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  @include box_model();
-  .title {
-    font-family: "Gilroy_B";
-    font-size: 36px;
-  }
-  .modal-close-btn {
-    position: absolute;
-    top: 24px;
-    right: 24px;
-    cursor: pointer;
-    img {
-      height: 24px;
-    }
-  }
+  @include box_model(556px, auto);
   .inputs {
     display: flex;
     flex-direction: column;
@@ -248,6 +194,53 @@ body {
   .button {
     .primary-button {
       @include primary_button(100%);
+    }
+  }
+}
+
+.box2 {
+  @include box_model(1244px, 691px);
+  #add-president {
+    margin-top: 38px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 36px;
+    flex-wrap: wrap;
+    row-gap: 36px;
+    .member {
+      @include card(0px 10px 20px rgba(205, 205, 205, 0.25));
+      .photo {
+        width: 66px;
+        height: 66px;
+        border-radius: 4px;
+        img {
+          width: 66px;
+          height: 66px;
+          border-radius: 4px;
+        }
+      }
+      .about {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+        align-items: flex-start;
+        .name {
+          font-family: "Gilroy_SB";
+          font-size: 18px;
+          color: $text;
+        }
+        .tag {
+          font-family: "Gilroy_SB";
+          font-size: 14px;
+          color: $primary;
+          padding: 3px 12px;
+          background: $primaryFade;
+          border-radius: 10px;
+        }
+      }
+      &:hover {
+        box-shadow: 0px 10px 20px rgba(150, 150, 150, 0.25);
+      }
     }
   }
 }

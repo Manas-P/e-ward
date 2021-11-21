@@ -42,14 +42,33 @@ a {
 //=============Mixins=================
 
 //=============Box=================
-@mixin box_model() {
-  width: 556px;
+@mixin box_model($width,$height) {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: $width;
+  height:$height;
   padding: 62px 48px 70px 48px;
   background: $white;
   box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.04),
     20px 40px 80px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
   transition: 1s ease-in-out;
+  .title {
+    font-family: "Gilroy_B";
+    font-size: 36px;
+  }
+  .modal-close-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    cursor: pointer;
+    img {
+      height: 24px;
+    }
+  }
 }
 
 //==========input Fields=============

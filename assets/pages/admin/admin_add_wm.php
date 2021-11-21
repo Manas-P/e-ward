@@ -223,7 +223,7 @@
             </form>
         </div>
         <!-- Form to add President -->
-        <div class="box modal-box2 modal-hidden">
+        <div class="box2 modal-box2 modal-hidden">
             <div class="title">
                 Add president
             </div>
@@ -231,61 +231,29 @@
                 <img src="../../images/close.svg" alt="close button">
             </div>
             <form action="" method="post" id="add-president">
-                <div class="inputs">
-                    <div class="input p-fullname">
-                        <div class="label">
-                            Full name
-                        </div>
-                        <input type="text" name="fname" id="p-full-name" placeholder="John Doe" autocomplete="off">
-                        <div class="error error-hidden">
-                        </div>
-                    </div>
-                    <div class="input p-email">
-                        <div class="label">
-                            Email ID
-                        </div>
-                        <input type="text" name="email" id="p-email-id" placeholder="example@gmail.com" autocomplete="off">
-                        <div class="error error-hidden">
-                        </div>
-                    </div>
-                    <div class="input p-phno">
-                        <div class="label">
-                            Phone number
-                        </div>
-                        <input type="text" name="phno" id="p-phn-number" placeholder="9568547512" autocomplete="off">
-                        <div class="error error-hidden">
-                        </div>
-                    </div>
-                    <div class="half-input">
-                        <div class="input p-wrdno">
-                            <div class="label">
-                                Ward number
+            <?php
+                include '../../include/dbcon.php';
+                $fetchQuery="SELECT * FROM `tbl_ward_member` WHERE `status`=1";
+                $fetchResult=mysqli_query($conn,$fetchQuery);
+                if(mysqli_num_rows($fetchResult)>0){
+                    while($row = mysqli_fetch_assoc($fetchResult)){
+            ?>
+                        <a href="" class="member">
+                            <div class="photo">
+                                <img src="../<?php echo $row["photo"]; ?>" alt="member photo">
                             </div>
-                            <input type="text" name="wrdno" id="p-ward-number" placeholder="25" autocomplete="off">
-                            <div class="error error-hidden">
+                            <div class="about">
+                                <div class="name"><?php echo $row["fullname"]; ?></div>
+                                <div class="tag">Ward: <?php echo $row["wardno"]; ?></div>
                             </div>
-                        </div>
-                        <div class="input p-date">
-                            <div class="label">
-                                Valid upto
-                            </div>
-                            <input type="date" name="houno" id="p-date" autocomplete="off">
-                            <div class="error error-hidden">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="input p-photo">
-                        <div class="label">
-                            Upload photo
-                        </div>
-                        <input type="file" name="phno" id="p-photo" accept="image/png,image/jpeg">
-                        <div class="error error-hidden">
-                        </div>
-                    </div>
-                    <div class="button pBtn cursor-disable">
-                        <input type="submit" value="Add member" name="regbtn" id="add-p" class="primary-button disabled">
-                    </div>
-                </div>
+                        </a>
+            <?php
+                    }
+                        
+                }else{
+
+                }
+            ?>
             </form>
         </div>
         <div id="warrning-box" >
