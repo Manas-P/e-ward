@@ -370,6 +370,74 @@ body {
           box-shadow: 0px 14px 28px rgba(191, 191, 191, 0.25);
 }
 
+.main .container .president .presidentt {
+  margin-top: 24px;
+  text-decoration: none;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 12px;
+          column-gap: 12px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 12px;
+  width: 260px;
+  background: #fff;
+  -webkit-box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
+          box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
+  border-radius: 10px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.main .container .president .presidentt .photo {
+  width: 66px;
+  height: 66px;
+  border-radius: 4px;
+}
+
+.main .container .president .presidentt .photo img {
+  width: 66px;
+  height: 66px;
+  border-radius: 4px;
+}
+
+.main .container .president .presidentt .about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 10px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.main .container .president .presidentt .about .name {
+  font-family: "Gilroy_SB";
+  font-size: 18px;
+  color: #1e1e1e;
+}
+
+.main .container .president .presidentt .about .tag {
+  font-family: "Gilroy_SB";
+  font-size: 14px;
+  color: #5744e3;
+  padding: 3px 12px;
+  background: #eeecfc;
+  border-radius: 10px;
+}
+
+.main .container .president .presidentt:hover {
+  -webkit-box-shadow: 0px 14px 28px rgba(191, 191, 191, 0.25);
+          box-shadow: 0px 14px 28px rgba(191, 191, 191, 0.25);
+}
+
 .main .container .members-list {
   margin-top: 60px;
 }
