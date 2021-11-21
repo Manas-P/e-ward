@@ -61,7 +61,7 @@
             elseif($adminCheckCount==1){
                 $_SESSION['adminId'] = session_id();
                 $_SESSION['aid']=$userData['aid'];
-                header("Location: ../pages/admin.php");
+                header("Location: ../pages/admin/admin_add_wm.php");
                 die();
             }
             else
