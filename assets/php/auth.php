@@ -48,6 +48,10 @@
             $adminCheck="SELECT * FROM `tbl_admin` WHERE `username`='$userName' and `password`='$password'";
             $adminCheckResult = mysqli_query($conn,$adminCheck);
             $adminCheckCount=mysqli_num_rows($adminCheckResult);
+            //Check Ward Member
+            $wardMemberCheck="SELECT * FROM `tbl_ward_member` WHERE `wardno`='$userName' and `password`='$password' and `status`=1";
+            $wardMemberCheckResult=mysqli_query($conn,$wardMemberCheck);
+            $wardMemberCount=mysqli_num_rows($wardMemberCheckResult);
             //No user exists
             if($checkLoginCount==1)
             {
@@ -62,6 +66,13 @@
                 $_SESSION['adminId'] = session_id();
                 $_SESSION['aid']=$userData['aid'];
                 header("Location: ../pages/admin/admin_add_wm.php");
+                die();
+            }
+            elseif($wardMemberCount==1){
+                $_SESSION['memebrId'] = session_id();
+                $_SESSION['wardno']=$userData['wardno'];
+                $_SESSION['fullname']=$userData['fullname'];
+                header("Location: ../pages/wardmember.php");
                 die();
             }
             else

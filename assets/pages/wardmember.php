@@ -1,12 +1,17 @@
 <?php
-session_start();
-if (isset($_SESSION["adminId"]) != session_id()) {
-    header("Location: ../pages/login.php");
-    die();
-}
-else
-{
-	?>
+    session_start();
+    $name=$_SESSION['fullname'];
+    $wardno=$_SESSION['wardno'];
+    if (isset($_SESSION["memebrId"]) != session_id()) {
+        header("Location: ../pages/login.php");
+        die();
+    }
+    else
+    {
+        
+        echo $name;
+        echo $wardno;
+?>
 	<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -17,7 +22,7 @@ else
         <title>Admin</title>
     </head>
     <body>
-	    hi Admin
+	    hi <?php echo $name;?>
         <table>
             <tr>
                 <th>Name</th>
@@ -29,7 +34,7 @@ else
             </tr>
             <?php
                 include '../include/dbcon.php';
-                $query="SELECT * FROM `tbl_registration` WHERE `status`=0";
+                $query="SELECT * FROM `tbl_registration` WHERE `status`=0 and `wardno`='$wardno'";
                 $result=mysqli_query($conn,$query);
                 while($row=mysqli_fetch_array($result)){
             ?>
