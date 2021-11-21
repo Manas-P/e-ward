@@ -597,6 +597,8 @@ body {
           transform: translate(-50%, -50%);
   width: 556px;
   height: auto;
+  overflow: none;
+  overflow-y: scroll;
   padding: 62px 48px 70px 48px;
   background: #fff;
   -webkit-box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.04), 20px 40px 80px rgba(0, 0, 0, 0.1);
@@ -763,8 +765,10 @@ body {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  width: 1244px;
+  width: 1300px;
   height: 691px;
+  overflow: none;
+  overflow-y: scroll;
   padding: 62px 48px 70px 48px;
   background: #fff;
   -webkit-box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.04), 20px 40px 80px rgba(0, 0, 0, 0.1);

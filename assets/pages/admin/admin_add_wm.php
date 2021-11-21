@@ -238,7 +238,7 @@
                 if(mysqli_num_rows($fetchResult)>0){
                     while($row = mysqli_fetch_assoc($fetchResult)){
             ?>
-                        <a href="" class="member">
+                        <a href="../../php/president_add.php?wardno=<?php echo $row["wardno"]; ?>" class="member">
                             <div class="photo">
                                 <img src="../<?php echo $row["photo"]; ?>" alt="member photo">
                             </div>

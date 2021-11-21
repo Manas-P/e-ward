@@ -90,8 +90,8 @@ body {
           box-shadow: 0px 14px 28px rgba(191, 191, 191, 0.25);
         }
       }
-      .presidentt{
-        margin-top:24px;
+      .presidentt {
+        margin-top: 24px;
         @include card(0px 10px 20px rgba(237, 237, 237, 0.25));
         .photo {
           width: 66px;
@@ -235,7 +235,7 @@ body {
 }
 
 .box2 {
-  @include box_model(1244px, 691px);
+  @include box_model(1300px, 691px);
   #add-president {
     margin-top: 38px;
     display: flex;
