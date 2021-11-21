@@ -70,8 +70,9 @@
             }
             elseif($wardMemberCount==1){
                 $_SESSION['memebrId'] = session_id();
-                $_SESSION['wardno']=$userData['wardno'];
-                $_SESSION['fullname']=$userData['fullname'];
+                // $_SESSION['wardno']=$userData['wardno'];
+                // $_SESSION['fullname']=$userData['fullname'];
+                $_SESSION['wardno']=$userName;
                 header("Location: ../pages/wardmember.php");
                 die();
             }

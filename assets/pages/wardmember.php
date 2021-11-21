@@ -1,16 +1,21 @@
 <?php
+    include '../include/dbcon.php';
     session_start();
-    $name=$_SESSION['fullname'];
-    $wardno=$_SESSION['wardno'];
+    //Check login
     if (isset($_SESSION["memebrId"]) != session_id()) {
         header("Location: ../pages/login.php");
         die();
     }
     else
     {
-        
-        echo $name;
-        echo $wardno;
+        $wardno=$_SESSION['wardno'];
+        //Fetch User data
+        $memberData="SELECT * FROM `tbl_ward_member` WHERE `wardno`='$wardno'";
+        $dataResult=mysqli_query($conn,$memberData);
+        while ($row = mysqli_fetch_assoc($dataResult))
+        {
+            $name= $row['fullname'];
+        }
 ?>
 	<!DOCTYPE html>
     <html lang="en">
