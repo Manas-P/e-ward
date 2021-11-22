@@ -64,7 +64,7 @@
                         }else{
                             while($mrow = mysqli_fetch_assoc($memberResult)){
                     ?>
-                            <a href="" class="presidentt">
+                            <a href="./ward_member_show.php?wardno=<?php echo $mrow['wardno']; ?>" class="presidentt">
                                 <div class="photo">
                                     <img src="../<?php echo $mrow["photo"]; ?>" alt="member photo">
                                 </div>

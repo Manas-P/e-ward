@@ -103,7 +103,7 @@ if (isset($_SESSION["adminId"]) != session_id()) {
                     </div>
                     <div class="buttons">
                         <a href="" class="update">Update</a>
-                        <a href="" class="remove">Remove</a>
+                        <a href="../../php/remove_member.php?wardno=<?php echo $wardno ?>" class="remove">Remove</a>
                     </div>
                 </div>
             </div>
