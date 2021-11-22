@@ -108,6 +108,75 @@ if (isset($_SESSION["adminId"]) != session_id()) {
                 </div>
             </div>
         </section>
+        <!--=========== Modal ============-->
+        <div class="overlay modal-hidden"></div>
+        <!-- form to add members-->
+        <div class="box modal-box modal-hidden">
+            <div class="title">
+                Add ward member
+            </div>
+            <div class="modal-close-btn">
+                <img src="../../images/close.svg" alt="close button">
+            </div>
+            <!-- Add Ward Memeber -->
+            <form action="../../php/auth.php" method="post" id="add-ward-member" enctype="multipart/form-data">
+                <div class="inputs">
+                    <div class="input w-fullname">
+                        <div class="label">
+                            Full name
+                        </div>
+                        <input type="text" name="wfname" id="w-full-name" placeholder="John Doe" autocomplete="off">
+                        <div class="error error-hidden">
+                        </div>
+                    </div>
+                    <div class="input w-email">
+                        <div class="label">
+                            Email ID
+                        </div>
+                        <input type="text" name="wemail" id="w-email-id" placeholder="example@gmail.com" autocomplete="off">
+                        <div class="error error-hidden">
+                        </div>
+                    </div>
+                    <div class="input w-phno">
+                        <div class="label">
+                            Phone number
+                        </div>
+                        <input type="text" name="wphno" id="w-phn-number" placeholder="9568547512" autocomplete="off">
+                        <div class="error error-hidden">
+                        </div>
+                    </div>
+                    <div class="half-input">
+                        <div class="input w-wrdno">
+                            <div class="label">
+                                Ward number
+                            </div>
+                            <input type="text" name="wwrdno" id="w-ward-number" placeholder="25" autocomplete="off" oninput="validateWardNo(this.value)">
+                            <div class="error error-hidden">
+                            </div>
+                        </div>
+                        <div class="input w-date">
+                            <div class="label">
+                                Valid upto
+                            </div>
+                            <input type="date" name="wvalidity" id="w-date" autocomplete="off">
+                            <div class="error error-hidden">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input w-photo">
+                        <div class="label">
+                            Upload photo
+                        </div>
+                        <input type="file" name="wphoto" id="w-photo" accept="image/png,image/jpeg">
+                        <div class="error error-hidden">
+                        </div>
+                    </div>
+                    <div class="button wBtn cursor-disable">
+                        <input type="submit" value="Add member" name="add-wm" id="add-wm" class="primary-button disabled">
+                    </div>
+                </div>
+            </form>
+        </div>
 
 
 
@@ -118,7 +187,8 @@ if (isset($_SESSION["adminId"]) != session_id()) {
 
 
 
-        <!-- <div id="warrning-box" >
+        <div id="warrning-box" >
+            <!-- inject error -->
         </div>
         <?php
         if (isset($_SESSION['loginMessage'])) {
@@ -150,7 +220,7 @@ if (isset($_SESSION["adminId"]) != session_id()) {
                     }
                 });
              }
-        </script> -->
+        </script>
     </body>
 
     </html>
