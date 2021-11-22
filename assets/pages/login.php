@@ -176,11 +176,13 @@ session_start();
     <script>
         function validateHouseNo(house)
         {  
+           const wardNo=$('#ward-number').val();
              $.ajax({
                 url: "../php/auth.php",
                 type: "POST",
                 data: {
-                    houseNo:house
+                    houseNo:house,
+                    wardno:wardNo
                 },
                 success: function(data, status) {
                     $('#warrning-box').html(data);

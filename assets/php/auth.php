@@ -6,7 +6,7 @@
         //check houseno exisit
         if(isset($_POST['houseNo']))
         {
-            $chk = "SELECT * FROM tbl_registration WHERE houseno='$houseNo'";
+            $chk = "SELECT * FROM tbl_registration WHERE houseno='$houseNo' and wardno='$wardno'";
             $res = mysqli_query($conn, $chk);
             if(mysqli_num_rows($res)>0)
             {
