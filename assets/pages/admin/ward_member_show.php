@@ -102,7 +102,7 @@ if (isset($_SESSION["adminId"]) != session_id()) {
                         </div>
                     </div>
                     <div class="buttons">
-                        <a href="" class="update">Update</a>
+                        <a class="update" id="add-member">Update</a>
                         <a href="../../php/remove_member.php?wardno=<?php echo $wardno ?>" class="remove">Remove</a>
                     </div>
                 </div>
@@ -113,7 +113,7 @@ if (isset($_SESSION["adminId"]) != session_id()) {
         <!-- form to add members-->
         <div class="box modal-box modal-hidden">
             <div class="title">
-                Add ward member
+                Update details
             </div>
             <div class="modal-close-btn">
                 <img src="../../images/close.svg" alt="close button">
@@ -125,7 +125,7 @@ if (isset($_SESSION["adminId"]) != session_id()) {
                         <div class="label">
                             Full name
                         </div>
-                        <input type="text" name="wfname" id="w-full-name" placeholder="John Doe" autocomplete="off">
+                        <input type="text" name="wfname" id="w-full-name" value="<?php echo $name ?>" placeholder="John Doe" autocomplete="off">
                         <div class="error error-hidden">
                         </div>
                     </div>
@@ -133,7 +133,7 @@ if (isset($_SESSION["adminId"]) != session_id()) {
                         <div class="label">
                             Email ID
                         </div>
-                        <input type="text" name="wemail" id="w-email-id" placeholder="example@gmail.com" autocomplete="off">
+                        <input type="text" name="wemail" id="w-email-id" value="<?php echo $email ?>" placeholder="example@gmail.com" autocomplete="off">
                         <div class="error error-hidden">
                         </div>
                     </div>
@@ -141,7 +141,7 @@ if (isset($_SESSION["adminId"]) != session_id()) {
                         <div class="label">
                             Phone number
                         </div>
-                        <input type="text" name="wphno" id="w-phn-number" placeholder="9568547512" autocomplete="off">
+                        <input type="text" name="wphno" id="w-phn-number" value="<?php echo $phno ?>" placeholder="9568547512" autocomplete="off">
                         <div class="error error-hidden">
                         </div>
                     </div>
@@ -150,7 +150,7 @@ if (isset($_SESSION["adminId"]) != session_id()) {
                             <div class="label">
                                 Ward number
                             </div>
-                            <input type="text" name="wwrdno" id="w-ward-number" placeholder="25" autocomplete="off" oninput="validateWardNo(this.value)">
+                            <input type="text" name="wwrdno" id="w-ward-number" value="<?php echo $wardno ?>" placeholder="25" autocomplete="off" oninput="validateWardNo(this.value)">
                             <div class="error error-hidden">
                             </div>
                         </div>
@@ -158,7 +158,7 @@ if (isset($_SESSION["adminId"]) != session_id()) {
                             <div class="label">
                                 Valid upto
                             </div>
-                            <input type="date" name="wvalidity" id="w-date" autocomplete="off">
+                            <input type="date" name="wvalidity" <?php echo $validity ?> id="w-date" autocomplete="off">
                             <div class="error error-hidden">
                             </div>
                         </div>
@@ -172,20 +172,11 @@ if (isset($_SESSION["adminId"]) != session_id()) {
                         </div>
                     </div>
                     <div class="button wBtn cursor-disable">
-                        <input type="submit" value="Add member" name="add-wm" id="add-wm" class="primary-button disabled">
+                        <input type="submit" value="Update" name="update-wm" id="add-wm" class="primary-button disabled">
                     </div>
                 </div>
             </form>
         </div>
-
-
-
-
-
-
-
-
-
 
         <div id="warrning-box" >
             <!-- inject error -->
@@ -204,7 +195,7 @@ if (isset($_SESSION["adminId"]) != session_id()) {
                     </div>";
             unset($_SESSION['loginMessage']);
         } ?>
-        <script src="../../js/admin_add_wm.js"></script>
+        <script src="../../js/admin_member_update.js"></script>
         <script>
             function validateWardNo(ward)
             {  
