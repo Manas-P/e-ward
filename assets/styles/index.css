@@ -27,6 +27,10 @@ a {
   text-decoration: none;
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+}
+
 ::-webkit-calendar-picker-indicator {
   cursor: pointer;
   color: #b1b1b1;

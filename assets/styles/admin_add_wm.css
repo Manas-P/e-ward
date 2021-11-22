@@ -27,6 +27,10 @@ a {
   text-decoration: none;
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+}
+
 ::-webkit-calendar-picker-indicator {
   cursor: pointer;
   color: #b1b1b1;
@@ -624,6 +628,10 @@ body {
   height: 24px;
 }
 
+.box::-webkit-scrollbar {
+  width: 0px;
+}
+
 .box .inputs {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -792,6 +800,10 @@ body {
 
 .box2 .modal-close-btn img {
   height: 24px;
+}
+
+.box2::-webkit-scrollbar {
+  width: 0px;
 }
 
 .box2 #add-president {

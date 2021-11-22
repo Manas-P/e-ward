@@ -39,6 +39,11 @@ a {
   text-decoration: none;
 }
 
+//Hide Scrollbar
+::-webkit-scrollbar {
+  width: 0px;
+}
+
 //=============Mixins=================
 
 //=============Box=================
@@ -70,6 +75,9 @@ a {
     img {
       height: 24px;
     }
+  }
+  &::-webkit-scrollbar {
+    width: 0px;
   }
 }
 
@@ -156,9 +164,11 @@ a {
   border-radius: 10px;
   cursor: pointer;
   transition: 0.1s ease-in-out;
+  &:hover {
+    background: #f4f3ff;
+  }
   &:active {
     transform: scale(0.99);
-    background: #f4f3ff;
   }
 }
 
