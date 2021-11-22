@@ -22,9 +22,26 @@ if (isset($_SESSION["adminId"]) != session_id()) {
         <section class="main">
             <!-- ==========Sidebar============= -->
             <?php
-            include '../../include/admin/sidebar_manage_wm.php'
+                include '../../include/admin/sidebar_manage_wm.php'
             ?>
             <!-- ==========Sidebar End============= -->
+
+            <?php
+                    include '../../include/dbcon.php';
+                    $wardno=$_GET['wardno'];
+                    //Fetch Member Details
+                    $memberDetals="SELECT * FROM `tbl_ward_member` WHERE `wardno`=$wardno";
+                    $detailsResult=mysqli_query($conn,$memberDetals);
+                    while($row=mysqli_fetch_assoc($detailsResult)){
+                        $name=$row['fullname'];
+                        $email=$row['email'];
+                        $phno=$row['phno'];
+                        $photo=$row['photo'];
+                        $validity=$row['validupto'];
+                        $president=$row['president'];
+                    }
+                ?>
+                
             <div class="container">
                 <div class="header">
                     <div class="title">
@@ -39,21 +56,33 @@ if (isset($_SESSION["adminId"]) != session_id()) {
                     </div>
                 </div>
                 <div class="bread-crumbs">
-                    <a href="./admin_add_wm.php" class="previous">Ward memebrs</a>
+                    <a href="./admin_add_wm.php" class="previous">
+                        <?php 
+                            if($president!=1){
+                                echo "Ward members";
+                            }else{
+                                echo "President";
+                            }
+                        ?>
+                    </a>
                     <svg class="str" width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2.2002 8.59999L5.8002 4.99999L2.2002 1.39999" stroke="#1E1E1E" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
-                    <a href="" class="now">Wade Warren</a>
+                    <a href="" class="now">
+                        <?php
+                            echo $name;
+                        ?>
+                    </a>
                 </div>
                 <!-- Member detals box -->
                 <div class="member-data">
                     <div class="basic-details">
-                        <img src="../../images/uploads/photos/1637437604.png" alt="Member-photo">
+                        <img src="../<?php echo $photo ?>" alt="Member-photo">
                         <div class="details">
-                            <div class="name">Wade Warren</div>
-                            <div class="info">wadewarren@gmail.com</div>
-                            <div class="info">+91 9458789658</div>
-                            <div class="tag">Ward: 1</div>
+                            <div class="name"><?php echo $name ?></div>
+                            <div class="info"><?php echo $email ?></div>
+                            <div class="info">+91 <?php echo $phno ?></div>
+                            <div class="tag">Ward: <?php echo $wardno ?></div>
                         </div>
                     </div>
                     <div class="other-content">
@@ -67,7 +96,7 @@ if (isset($_SESSION["adminId"]) != session_id()) {
                     <div class="other-content">
                         <div class="divider"></div>
                         <div class="contents">
-                            <div class="content">Valid upto:<span>24/10/2025</span></div>
+                            <div class="content">Valid upto:<span><?php echo $validity ?></span></div>
                             <div class="content">Goals acheived:<span>24</span></div>
                             <div class="content">Goals acheived:<span>24</span></div>
                         </div>
