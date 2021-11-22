@@ -63,16 +63,17 @@
                 die();
             }
             elseif($adminCheckCount==1){
+                $adminData=mysqli_fetch_assoc($adminCheckResult);
                 $_SESSION['adminId'] = session_id();
-                $_SESSION['aid']=$userData['aid'];
+                $_SESSION['aid']=$adminData['aid'];
                 header("Location: ../pages/admin/admin_add_wm.php");
                 die();
             }
             elseif($wardMemberCount==1){
+                $wardMemberData=mysqli_fetch_assoc($wardMemberCheckResult);
                 $_SESSION['memebrId'] = session_id();
-                // $_SESSION['wardno']=$userData['wardno'];
-                // $_SESSION['fullname']=$userData['fullname'];
-                $_SESSION['wardno']=$userName;
+                $_SESSION['wardno']=$wardMemberData['wardno'];
+                $_SESSION['fullname']=$wardMemberData['fullname'];
                 header("Location: ../pages/wardmember.php");
                 die();
             }

@@ -8,14 +8,9 @@
     }
     else
     {
-        $wardno=$_SESSION['wardno'];
         //Fetch User data
-        $memberData="SELECT * FROM `tbl_ward_member` WHERE `wardno`='$wardno'";
-        $dataResult=mysqli_query($conn,$memberData);
-        while ($row = mysqli_fetch_assoc($dataResult))
-        {
-            $name= $row['fullname'];
-        }
+        $wardno=$_SESSION['wardno'];
+        $name=$_SESSION['fullname'];
 ?>
 	<!DOCTYPE html>
     <html lang="en">
