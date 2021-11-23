@@ -158,7 +158,7 @@ if (isset($_SESSION["adminId"]) != session_id()) {
                             <div class="label">
                                 Valid upto
                             </div>
-                            <input type="date" name="wvalidity" <?php echo $validity ?> id="w-date" autocomplete="off">
+                            <input type="date" name="wvalidity" value="<?php echo $validity ?>" id="w-date" autocomplete="off">
                             <div class="error error-hidden">
                             </div>
                         </div>
