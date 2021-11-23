@@ -148,4 +148,31 @@
                 header("Location: ../pages/admin/admin_add_wm.php");
             }
         }
+
+        //Update ward member
+        if(isset($_POST['update-wm'])){
+            $wrno=$_GET['wrno'];
+            //check image updated
+            if($_FILES["wphoto"]["size"]==0){
+                $update="UPDATE `tbl_ward_member` SET `fullname`='$wfname',`email`='$wemail',`phno`='$wphno',`wardno`='$wwrdno',`validupto`='$wvalidity' WHERE `wardno`='$wrno'";
+                $updateResult=mysqli_query($conn,$update);
+                header("Location: ../pages/admin/admin_add_wm.php");
+            }else{
+                $upload_dir = '../images/uploads/photos/';
+                $file_tmpname = $_FILES['wphoto']['tmp_name'];
+                $file_name = $_FILES['wphoto']['name'];
+                $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
+                $filepath = $upload_dir . time().".".$file_ext;
+                //Check File Upload
+                if(move_uploaded_file($file_tmpname, $filepath)){
+                    $update="UPDATE `tbl_ward_member` SET `fullname`='$wfname',`email`='$wemail',`phno`='$wphno',`wardno`='$wwrdno',`validupto`='$wvalidity',`photo`='$filepath' WHERE `wardno`='$wrno'";
+                    $updateResult=mysqli_query($conn,$update);
+                    header("Location: ../pages/admin/admin_add_wm.php");
+                }else{
+                    $_SESSION['loginMessage'] = "File upload error";
+                    header("Location: ../pages/admin/admin_add_wm.php");
+                }
+               
+            }
+        }
     ?>

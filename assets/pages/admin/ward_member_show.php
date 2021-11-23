@@ -119,7 +119,7 @@ if (isset($_SESSION["adminId"]) != session_id()) {
                 <img src="../../images/close.svg" alt="close button">
             </div>
             <!-- Add Ward Memeber -->
-            <form action="../../php/auth.php" method="post" id="add-ward-member" enctype="multipart/form-data">
+            <form action="../../php/auth.php?wrno=<?php echo $wardno;?>" method="post" id="add-ward-member" enctype="multipart/form-data">
                 <div class="inputs">
                     <div class="input w-fullname">
                         <div class="label">

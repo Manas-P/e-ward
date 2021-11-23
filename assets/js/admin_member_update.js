@@ -52,9 +52,10 @@ wFullname.addEventListener("input",()=>{
         wFullnameError.classList.remove("error-visible");
         wFullnameSubmit=true;
     }else if(wFullname.value==""){
-        wFullnameError.classList.add("error-hidden");
-        wFullnameError.classList.remove("error-visible");
-        wFullnameSubmit=true;
+        wFullnameError.classList.add("error-visible");
+        wFullnameError.classList.remove("error-hidden");
+        wFullnameError.innerText="Field cannot be blank";
+        wFullnameSubmit=false;
     }else{
         wFullnameError.classList.add("error-visible");
         wFullnameError.classList.remove("error-hidden");
@@ -71,9 +72,10 @@ wEmail.addEventListener("input",()=>{
         wEmailError.classList.remove("error-visible");
         wEmailSubmit=true;
     }else if(wEmail.value==""){
-        wEmailError.classList.add("error-hidden");
-        wEmailError.classList.remove("error-visible");
-        wEmailSubmit=true;
+        wEmailError.classList.add("error-visible");
+        wEmailError.classList.remove("error-hidden");
+        wEmailError.innerText="Field cannot be blank";
+        wEmailSubmit=false;
     }else{
         wEmailError.classList.add("error-visible");
         wEmailError.classList.remove("error-hidden");
@@ -90,9 +92,10 @@ wPhno.addEventListener("input",()=>{
        wPhnoError.classList.remove("error-visible");
        wPhnoSubmit=true;
     }else if(wPhno.value==""){
-        wPhnoError.classList.add("error-hidden");
-        wPhnoError.classList.remove("error-visible");
-        wPhnoSubmit=true;
+       wPhnoError.classList.add("error-visible");
+       wPhnoError.classList.remove("error-hidden");
+       wPhnoError.innerText="Field cannot be blank";
+       wPhnoSubmit=false;
     }else{
        wPhnoError.classList.add("error-visible");
        wPhnoError.classList.remove("error-hidden");
@@ -109,9 +112,10 @@ wWardno.addEventListener("input",()=>{
         wWardnoError.classList.remove("error-visible");
        wWrdnoSubmit=true;
     }else if(wWardno.value==""){
-        wWardnoError.classList.add("error-hidden");
-        wWardnoError.classList.remove("error-visible");
-       wWrdnoSubmit=true;
+        wWardnoError.classList.add("error-visible");
+        wWardnoError.classList.remove("error-hidden");
+        wWardnoError.innerText="Field cannot be blank";
+       wWrdnoSubmit=false;
     }else{
         wWardnoError.classList.add("error-visible");
         wWardnoError.classList.remove("error-hidden");
@@ -128,9 +132,10 @@ wDatePicker.addEventListener("input",()=>{
         wDateError.classList.remove("error-visible");
         wDateSubmit=true;
     }else if(wDatePicker.value == ""){
-        wDateError.classList.add("error-hidden");
-        wDateError.classList.remove("error-visible");
-        wDateSubmit=true;
+        wDateError.classList.add("error-visible");
+        wDateError.classList.remove("error-hidden");
+        wDateError.innerText="Invalid date";
+        wDateSubmit=false;
     }else{
         wDateError.classList.add("error-visible");
         wDateError.classList.remove("error-hidden");
@@ -152,7 +157,6 @@ wPhoto.addEventListener("input",()=>{
 //Submit Button Visibility
 const buttonCursor=document.querySelector(".wBtn");//To avoid poniterevent and cursor problem
 addMemberForm.addEventListener("keyup",()=>{
-    console.log(wFullnameSubmit, wEmailSubmit, wPhnoSubmit, wWrdnoSubmit, wDateSubmit, wPhotoSubmit);
     if(wFullnameSubmit==true && wEmailSubmit==true && wPhnoSubmit==true && wWrdnoSubmit==true && wDateSubmit==true &&  wPhotoSubmit==true){
         wAddBtn.classList.remove("disabled");
         buttonCursor.classList.remove("cursor-disabled");
