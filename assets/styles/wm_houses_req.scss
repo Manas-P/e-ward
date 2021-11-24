@@ -1,0 +1,51 @@
+@import "./components.scss";
+
+body {
+  background: $bg;
+}
+
+.main {
+    display: flex;
+    .sidebar {
+      @include sidebar();
+    }
+    .container {
+      margin: 46px 63px 0 calc(476px - 63px);
+      width: calc(100% - 476px);
+      .header {
+        display: flex;
+        justify-content: space-between;
+        .title {
+          font-family: Gilroy_SB;
+          font-size: 38px;
+        }
+        .search {
+          svg {
+            position: relative;
+            left: 38px;
+            height: 20px;
+            width: 20px;
+            top: 3px;
+          }
+          input {
+            width: 408px;
+            font-size: 18px;
+            font-family: "Gilroy_M";
+            padding: 16px 0px 16px 42px;
+            border-radius: 10px;
+            border: 1px solid $border;
+            color: $text;
+            outline: none;
+            transition: 0.2s ease-in-out;
+            &:focus {
+              border: 1px solid $text;
+            }
+            &:focus svg .str {
+              stroke: $text;
+            }
+          }
+        }
+      }
+    }
+  }
+  

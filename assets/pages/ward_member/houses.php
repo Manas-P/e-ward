@@ -32,7 +32,7 @@
             <div class="container">
                 <div class="header">
                     <div class="title">
-                        Registered houses
+                        Manage houses
                     </div>
                     <div class="search">
                         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -43,7 +43,7 @@
                     </div>
                 </div>
                 <div class="request">
-                    <a href="">
+                    <a href="./houses_request.php">
                         View requests
                     </a>
                 </div>
