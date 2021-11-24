@@ -10,7 +10,7 @@ body {
     @include sidebar();
   }
   .container {
-    margin: 46px 63px;
+    margin: 46px 63px 0 calc(476px - 63px);
     width: calc(100% - 476px);
     .header {
       display: flex;
@@ -43,6 +43,43 @@ body {
           &:focus svg .str {
             stroke: $text;
           }
+        }
+      }
+    }
+    .request {
+      margin-top: 36px;
+      display: flex;
+      justify-content: flex-end;
+      font-family: "Gilroy_SB";
+      font-size: 20px;
+      a {
+        text-decoration: underline;
+        color: $primary;
+      }
+    }
+    .headings {
+      margin: 36px 16px 0 16px;
+      font-family: "Gilroy_SB";
+      font-size: 20px;
+      color: $text;
+      display: flex;
+    }
+    .datas {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      row-gap: 24px;
+      .data {
+        padding: 20px;
+        background: $white;
+        border-radius: 10px;
+        font-family: "Gilroy_M";
+        font-size: 18px;
+        color: $darkSubText;
+        td {
+          padding-right: 28px;
+          vertical-align: top;
+          text-align: left;
         }
       }
     }

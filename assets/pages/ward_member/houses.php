@@ -42,7 +42,37 @@
                         <input type="text" name="" placeholder="Search..." id="">
                     </div>
                 </div>
-               
+                <div class="request">
+                    <a href="">
+                        View requests
+                    </a>
+                </div>
+                <div class="headings">
+                    <div>Slno.</div>
+                    <div style="margin-left: 70px;">House name</div>
+                    <div style="margin-left: 124px;">House no.</div>
+                    <div style="margin-left: 90px;">Members</div>
+                    <div style="margin-left: 79px;">Locality</div>
+                    <div style="margin-left: 105px;">Post office</div>
+                    <div style="margin-left: 114px;">Ration card no.</div>
+                    <div style="margin-left: 100px;">Category</div>
+                </div>
+                <div class="datas">
+                    <div class="data">
+                        <table>
+                            <tr>
+                                <td width=104px>1.</td>
+                                <td width=238px>Pachakkil house</td>
+                                <td width=180px>124</td>
+                                <td width=160px>4</td>
+                                <td width=176px>Kottooli</td>
+                                <td width=208px>Kuthiravattom</td>
+                                <td width=240px>6587845236</td>
+                                <td>APL</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
             </div>
         </section>
     </html>
