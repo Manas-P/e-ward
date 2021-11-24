@@ -74,7 +74,7 @@
                 $_SESSION['memebrId'] = session_id();
                 $_SESSION['wardno']=$wardMemberData['wardno'];
                 $_SESSION['fullname']=$wardMemberData['fullname'];
-                header("Location: ../pages/wardmember.php");
+                header("Location: ../pages/ward_member/houses.php");
                 die();
             }
             else
