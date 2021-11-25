@@ -316,4 +316,79 @@ body {
 .main .container .header .search input:focus svg .str {
   stroke: #1e1e1e;
 }
+
+.main .container .bread-crumbs {
+  margin-top: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 4px;
+          column-gap: 4px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .container .bread-crumbs .previous {
+  font-family: "Gilroy_M";
+  font-size: 16px;
+  color: #8b8b8b;
+}
+
+.main .container .bread-crumbs svg .str {
+  stroke: #1e1e1e;
+}
+
+.main .container .bread-crumbs .now {
+  font-family: "Gilroy_SB";
+  font-size: 16px;
+  color: #1e1e1e;
+}
+
+.main .container .headings {
+  margin: 48px 16px 0 16px;
+  font-family: "Gilroy_SB";
+  font-size: 20px;
+  color: #1e1e1e;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main .container .datas {
+  margin-top: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 24px;
+}
+
+.main .container .datas .data {
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  font-family: "Gilroy_M";
+  font-size: 18px;
+  color: #545454;
+}
+
+.main .container .datas .data td {
+  padding-right: 28px;
+  vertical-align: top;
+  text-align: left;
+}
+
+.main .container .datas .data .approve {
+  font-family: "Gilroy_SB";
+  color: #039B00;
+}
+
+.main .container .datas .data .reject {
+  font-family: "Gilroy_SB";
+  color: #ec0000;
+}
 /*# sourceMappingURL=wm_houses_req.css.map */

@@ -35,7 +35,7 @@
         //Update User Status and Password
         $updateQuery="UPDATE `tbl_registration` SET `password`='$generatedPassword',`status`=1 WHERE `rid`='$id'";
         $updateResult=mysqli_query($conn,$updateQuery);
-        header("Location: ../pages/admin.php");
+        header("Location: ../pages/ward_member/houses_request.php");
     }else{
         echo "Mail not Send";
     }

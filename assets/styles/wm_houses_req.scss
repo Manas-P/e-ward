@@ -46,6 +46,61 @@ body {
           }
         }
       }
+      .bread-crumbs {
+        margin-top: 60px;
+        display: flex;
+        column-gap: 4px;
+        align-items: center;
+        .previous {
+          font-family: "Gilroy_M";
+          font-size: 16px;
+          color: $subText;
+        }
+        svg {
+          .str {
+            stroke: $text;
+          }
+        }
+        .now {
+          font-family: "Gilroy_SB";
+          font-size: 16px;
+          color: $text;
+        }
+      }
+      .headings {
+        margin: 48px 16px 0 16px;
+        font-family: "Gilroy_SB";
+        font-size: 20px;
+        color: $text;
+        display: flex;
+      }
+      .datas {
+        margin-top: 24px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 24px;
+        .data {
+          padding: 20px;
+          background: $white;
+          border-radius: 10px;
+          font-family: "Gilroy_M";
+          font-size: 18px;
+          color: $darkSubText;
+          td {
+            padding-right: 28px;
+            vertical-align: top;
+            text-align: left;
+          }
+          .approve{
+            font-family: "Gilroy_SB";
+            color:$green;
+          }
+          .reject{
+            font-family: "Gilroy_SB";
+            color:$error;
+          }
+        }
+      }
     }
   }
   

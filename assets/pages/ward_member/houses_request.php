@@ -19,7 +19,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../../images/fav.svg" type="image/x-icon">
-    <link rel="stylesheet" href="../../styles/wm_houses.css">
+    <link rel="stylesheet" href="../../styles/wm_houses_req.css">
     <title>Admin</title>
 </head>
 <body>
@@ -42,9 +42,55 @@
                     <input type="text" name="" placeholder="Search..." id="">
                 </div>
             </div>
-           
-            
-           
+            <div class="bread-crumbs">
+                <a href="./houses.php" class="previous">
+                    Houses
+                </a>
+                <svg class="str" width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.2002 8.59999L5.8002 4.99999L2.2002 1.39999" stroke="#1E1E1E" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <a href="" class="now">
+                    Requests
+                </a>
+            </div>
+            <div class="headings">
+                <div>Slno.</div>
+                <div style="margin-left: 70px;">Full name</div>
+                <div style="margin-left: 129px;">Email id</div>
+                <div style="margin-left: 265px;">Phno.</div>
+                <div style="margin-left: 88px;">House no.</div>
+                <div style="margin-left: 90px;">Ration card no.</div>
+                <div style="margin-left: 92px;">Action</div>
+            </div>
+            <div class="datas">
+                <?php
+                    include '../../include/dbcon.php';
+                    $query="SELECT * FROM `tbl_registration` WHERE `status`=0 and `wardno`='$wardno'";
+                    $result=mysqli_query($conn,$query);
+                    while($row=mysqli_fetch_array($result)){
+                ?>
+                <div class="data">
+                    <table>
+                        <tr>
+                            <td width=104px><?php echo $row["rid"]; ?></td>
+                            <td width=218px><?php echo $row["fname"]; ?></td>
+                            <td width=333px><?php echo $row["email"]; ?></td>
+                            <td width=140px><?php echo $row["phno"]; ?></td>
+                            <td width=180px><?php echo $row["houseno"]; ?></td>
+                            <td width=225px><?php echo $row["rationno"]; ?></td>
+                            <td width=95px>
+                                <a href="../../php/approve.php?apprId=<?php echo $row['rid']; ?>" class="approve">Approve</a>
+                            </td>
+                            <td>
+                                <a href="../../php/reject.php?rejId=<?php echo $row['rid']; ?>" class="reject">Reject</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <?php
+                    }
+                ?>
+            </div>
         </div>
     </section>
 </html>
