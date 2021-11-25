@@ -67,12 +67,13 @@
                     include '../../include/dbcon.php';
                     $query="SELECT * FROM `tbl_registration` WHERE `status`=0 and `wardno`='$wardno'";
                     $result=mysqli_query($conn,$query);
+                    $i=1;
                     while($row=mysqli_fetch_array($result)){
                 ?>
                 <div class="data">
                     <table>
                         <tr>
-                            <td width=104px><?php echo $row["rid"]; ?></td>
+                            <td width=104px><?php echo $i; ?></td>
                             <td width=218px><?php echo $row["fname"]; ?></td>
                             <td width=333px><?php echo $row["email"]; ?></td>
                             <td width=140px><?php echo $row["phno"]; ?></td>
@@ -88,6 +89,7 @@
                     </table>
                 </div>
                 <?php
+                    $i=$i+1;
                     }
                 ?>
             </div>
