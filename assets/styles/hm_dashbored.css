@@ -287,4 +287,131 @@ body {
   font-family: Gilroy_SB;
   font-size: 38px;
 }
+
+.main .container .update-form {
+  margin: 60px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 48px;
+  background: #fff;
+  width: 556px;
+  -webkit-box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.04), 20px 40px 80px rgba(0, 0, 0, 0.1);
+          box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.04), 20px 40px 80px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+}
+
+.main .container .update-form .register-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 12px;
+}
+
+.main .container .update-form .register-text .title {
+  font-family: "Gilroy_SB";
+  font-size: 28px;
+}
+
+.main .container .update-form .inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 32px;
+  margin-top: 40px;
+}
+
+.main .container .update-form .inputs .input {
+  width: 460px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 8px;
+}
+
+.main .container .update-form .inputs .input .label {
+  font-size: 16px;
+  font-family: "Gilroy_M";
+}
+
+.main .container .update-form .inputs .input input[type="text"],
+.main .container .update-form .inputs .input input[type="date"],
+.main .container .update-form .inputs .input input[type="file"] {
+  width: 100%;
+  font-size: 18px;
+  font-family: "Gilroy_M";
+  padding: 16px 0px 16px 16px;
+  border-radius: 10px;
+  border: 1px solid #c1c1c1;
+  color: #1e1e1e;
+  outline: none;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.main .container .update-form .inputs .input input[type="text"]:focus,
+.main .container .update-form .inputs .input input[type="date"]:focus,
+.main .container .update-form .inputs .input input[type="file"]:focus {
+  border: 1px solid #1e1e1e;
+}
+
+.main .container .update-form .inputs .input .error {
+  position: absolute;
+  margin-top: 84px;
+  color: #ec0000;
+  font-family: "Gilroy_M";
+  font-size: 14px;
+}
+
+.main .container .update-form .radios {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 32px;
+          column-gap: 32px;
+  font-family: "Gilroy_M";
+  font-size: 18px;
+  color: #1e1e1e;
+}
+
+.main .container .update-form .radios label {
+  cursor: pointer;
+}
+
+.main .container .update-form .button .primary-button {
+  background: #5744e3;
+  color: #fff;
+  font-family: "Gilroy_B";
+  font-size: 18px;
+  padding: 16px 0;
+  border: none;
+  outline: none;
+  width: 460px;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+}
+
+.main .container .update-form .button .primary-button:active {
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
+  background: #6756eb;
+}
 /*# sourceMappingURL=hm_dashbored.css.map */

@@ -43,10 +43,75 @@ else
             <div class="container">
                 <div class="header">
                     <div class="title">
-                        Update house details
+                        Update Profile
                     </div>
                 </div>
                 <!-- content -->
+                <div class="update-form">
+                    <div class="register-text">
+                        <div class="title">
+                            House details
+                        </div>
+                    </div>
+                    <form id="reg-form" action="../../php/auth.php" method="post" enctype="multipart/form-data">
+                        <div class="inputs">
+                            <div class="input housename">
+                                <div class="label">
+                                    House name
+                                </div>
+                                <input type="text" name="hname" id="house-name" placeholder="Dream house" autocomplete="off">
+                                <div class="error error-hidden">
+                                    
+                                </div>
+                            </div>
+                            <div class="input houseno">
+                                <div class="label">
+                                    House number
+                                </div>
+                                <input type="text" name="houno" id="house-number" placeholder="153" autocomplete="off" oninput="validateHouseNo(this.value)">
+                                <div class="error error-hidden">
+                                </div>
+                            </div>
+                            <div class="input locality">
+                                <div class="label">
+                                    Locality
+                                </div>
+                                <input type="text" name="locality" id="locality-id" placeholder="7529 E. Pecan St." autocomplete="off">
+                                <div class="error error-hidden">
+                                </div>
+                            </div>
+                            <div class="input po">
+                                <div class="label">
+                                    Post office
+                                </div>
+                                <input type="text" name="po" id="por" placeholder="Baton Rouge (LA)" autocomplete="off">
+                                <div class="error error-hidden">
+                                </div>
+                            </div>
+                            <div class="input rationno">
+                                <div class="label">
+                                    Ration number
+                                </div>
+                                <input type="text" name="rano" id="ration-number" placeholder="2547863214" autocomplete="off">
+                                <div class="error error-hidden">
+                                </div>
+                            </div>
+                            <div class="radios">
+                                <div class="radio">
+                                    <input type="radio" id="apl" name="rationCat" value="APL" checked>
+                                    <label for="apl">APL</label>
+                                </div>
+                                <div class="radio">
+                                    <input type="radio" id="bpl" name="rationCat" value="BPL">
+                                    <label for="bpl">BPL</label>
+                                </div>
+                            </div>
+                            <div class="button cursor-disable">
+                                <input type="submit" value="Update" name="upbtn" id="up-btn" class="primary-button disabled">
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </section>
         <?php

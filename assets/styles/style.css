@@ -27,6 +27,10 @@ a {
   text-decoration: none;
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+}
+
 ::-webkit-calendar-picker-indicator {
   cursor: pointer;
   color: #b1b1b1;
@@ -131,14 +135,11 @@ a {
 }
 
 .main .sections .form .box {
-  width: 556px;
   padding: 62px 48px 70px 48px;
   background: #fff;
   -webkit-box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.04), 20px 40px 80px rgba(0, 0, 0, 0.1);
           box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.04), 20px 40px 80px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
-  -webkit-transition: 1s ease-in-out;
-  transition: 1s ease-in-out;
 }
 
 .main .sections .form .box .login-text {
@@ -379,23 +380,23 @@ a {
   transition: 0.1s ease-in-out;
 }
 
+.main .sections .form .box .buttons .secondary-button:hover {
+  background: #f4f3ff;
+}
+
 .main .sections .form .box .buttons .secondary-button:active {
   -webkit-transform: scale(0.99);
           transform: scale(0.99);
-  background: #f4f3ff;
 }
 
 .box2 {
   opacity: 0;
   display: none;
-  width: 556px;
   padding: 62px 48px 70px 48px;
   background: #fff;
   -webkit-box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.04), 20px 40px 80px rgba(0, 0, 0, 0.1);
           box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.04), 20px 40px 80px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
-  -webkit-transition: 1s ease-in-out;
-  transition: 1s ease-in-out;
 }
 
 .box2 .register-text {

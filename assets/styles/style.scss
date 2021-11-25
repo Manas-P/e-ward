@@ -1,7 +1,6 @@
 //Components
 @import "./components.scss";
 
-
 @mixin anchor() {
   font-family: "Gilroy_M";
   font-size: 16px;
@@ -51,7 +50,7 @@
     }
     .form {
       .box {
-        @include box_model();
+        @include box();
         .login-text {
           display: flex;
           flex-direction: column;
@@ -118,7 +117,7 @@
 .box2 {
   opacity: 0;
   display: none;
-  @include box_model();
+  @include box();
   .register-text {
     display: flex;
     flex-direction: column;
@@ -177,8 +176,6 @@
 .box2-hide {
   @include switch(0, 0.5, none, none);
 }
-
-
 
 //Alert
 @include error-alert();
