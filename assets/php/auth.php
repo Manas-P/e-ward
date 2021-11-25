@@ -183,7 +183,7 @@
             $insHouse = "INSERT INTO `tbl_house`(`rid`, `house_name`, `house_no`, `ward_no`, `locality`, `post_office`, `ration_no`, `category`) VALUES ('$rid','$hname', '$houno', '$wardno','$locality','$po','$rano','$rationCat')";
             $insHouseRes=mysqli_query($conn,$insHouse);
             if($insHouseRes){
-                header("Location: ../pages/house_member/dashboard.php");
+                header("Location: ../pages/house_member/update_house_details.php");
             }else{
                 echo '<script language="javascript" type="text/javascript">';
                 echo 'alert("Error")';
