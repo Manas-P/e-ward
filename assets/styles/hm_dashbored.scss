@@ -64,3 +64,23 @@ body {
     }
   }
 }
+
+.dashboard {
+    display: flex;
+    .sidebar {
+      @include sidebar();
+    }
+    .container {
+      margin: 46px 63px 0 calc(476px - 63px);
+      width: calc(100% - 476px);
+      .header {
+        display: flex;
+        justify-content: space-between;
+        .title {
+          font-family: Gilroy_SB;
+          font-size: 38px;
+        }
+      }
+    }
+  }
+  

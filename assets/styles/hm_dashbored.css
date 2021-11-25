@@ -414,4 +414,203 @@ body {
           transform: scale(0.99);
   background: #6756eb;
 }
+
+.dashboard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.dashboard .sidebar {
+  width: 350px;
+  height: 100vh;
+  overflow-y: hidden;
+  background: #fff;
+  -webkit-box-shadow: 5px 0px 20px rgba(0, 0, 0, 0.01);
+          box-shadow: 5px 0px 20px rgba(0, 0, 0, 0.01);
+  border-radius: 0px 30px 30px 0px;
+  padding: 0px 36px 42px 36px;
+}
+
+.dashboard .sidebar .brand {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 32px 0px;
+}
+
+.dashboard .sidebar .brand img {
+  width: 151px;
+  height: auto;
+}
+
+.dashboard .sidebar .brand .user {
+  font-family: "Gilroy_SB";
+  font-size: 14px;
+  color: #5744e3;
+  padding: 2px 12px 2px 12px;
+  background: #eeecfc;
+  border-radius: 10px;
+}
+
+.dashboard .sidebar .division {
+  height: 2px;
+  width: 100%;
+  border-radius: 2px;
+  background: #eeecfc;
+}
+
+.dashboard .sidebar .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 82%;
+  margin: 48px 0 42px 0;
+}
+
+.dashboard .sidebar .links .menus {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 20px;
+}
+
+.dashboard .sidebar .links .menus .menu {
+  text-decoration: none;
+  cursor: pointer;
+  padding: 12px 0 12px 12px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+  border-radius: 10px;
+}
+
+.dashboard .sidebar .links .menus .menu.active {
+  background: #5744e3;
+}
+
+.dashboard .sidebar .links .menus .menu:hover {
+  background: #5744e3;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+.dashboard .sidebar .links .menus .menu:hover .text {
+  color: #fff;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.dashboard .sidebar .links .menus .menu:hover svg .str {
+  stroke: #fff;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.dashboard .sidebar .links .menus .menu svg {
+  height: 24px;
+  width: 24px;
+}
+
+.dashboard .sidebar .links .menus .menu svg .active {
+  stroke: #fff;
+}
+
+.dashboard .sidebar .links .menus .menu .text {
+  font-family: "Gilroy_SB";
+  font-size: 20px;
+  color: #1e1e1e;
+}
+
+.dashboard .sidebar .links .menus .menu .text.active {
+  color: #fff;
+}
+
+.dashboard .sidebar .logout a {
+  text-decoration: none;
+  cursor: pointer;
+  padding: 14px 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+  border-radius: 10px;
+  background: #eeecfc;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.dashboard .sidebar .logout a:hover {
+  background: #5744e3;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+.dashboard .sidebar .logout a:hover .text {
+  color: #fff;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.dashboard .sidebar .logout a:hover svg .str {
+  stroke: #fff;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.dashboard .sidebar .logout a svg {
+  height: 24px;
+  width: 24px;
+}
+
+.dashboard .sidebar .logout a .text {
+  font-family: "Gilroy_SB";
+  font-size: 20px;
+  color: #1e1e1e;
+}
+
+.dashboard .container {
+  margin: 46px 63px 0 calc(476px - 63px);
+  width: calc(100% - 476px);
+}
+
+.dashboard .container .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.dashboard .container .header .title {
+  font-family: Gilroy_SB;
+  font-size: 38px;
+}
 /*# sourceMappingURL=hm_dashbored.css.map */

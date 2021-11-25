@@ -6,7 +6,7 @@
                 <div class="division"></div>
                 <div class="links">
                     <div class="menus">
-                        <a href="" class="menu">
+                        <a href="../../pages/house_member/dashboard.php" class="menu">
                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path class="str" d="M9.16667 2.75H2.75V9.16667H9.16667V2.75Z" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path class="str" d="M19.25 2.75H12.8333V9.16667H19.25V2.75Z" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>

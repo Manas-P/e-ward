@@ -10,6 +10,7 @@ else
     $fname=$_SESSION['fname'];
     $rid=$_SESSION['rid'];
     $houseno= $_SESSION['houseno'];
+    $wardno= $_SESSION['wardno'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,8 +54,17 @@ else
                             House details
                         </div>
                     </div>
+
+                    <?php
+                        $query="SELECT * FROM `tbl_registration` WHERE `rid`='$rid'";
+                        $result=mysqli_query($conn,$query);
+                        while($row=mysqli_fetch_array($result)){
+                    ?>
+
                     <form id="reg-form" action="../../php/auth.php" method="post" enctype="multipart/form-data">
                         <div class="inputs">
+                            <input type="text" name="rid" value="<?php echo $row['rid']; ?>" style="display: none;">
+                            <input type="text" name="wardno" value="<?php echo $row['wardno']; ?>" style="display: none;">
                             <div class="input housename">
                                 <div class="label">
                                     House name
@@ -68,7 +78,7 @@ else
                                 <div class="label">
                                     House number
                                 </div>
-                                <input type="text" name="houno" id="house-number" placeholder="153" autocomplete="off" oninput="validateHouseNo(this.value)">
+                                <input type="text" name="houno" id="house-number" placeholder="153" value="<?php echo $row['houseno']; ?>" autocomplete="off" readonly>
                                 <div class="error error-hidden">
                                 </div>
                             </div>
@@ -92,7 +102,7 @@ else
                                 <div class="label">
                                     Ration number
                                 </div>
-                                <input type="text" name="rano" id="ration-number" placeholder="2547863214" autocomplete="off">
+                                <input type="text" name="rano" id="ration-number" placeholder="2547863214" value="<?php echo $row['rationno']; ?>" autocomplete="off" readonly>
                                 <div class="error error-hidden">
                                 </div>
                             </div>
@@ -106,11 +116,14 @@ else
                                     <label for="bpl">BPL</label>
                                 </div>
                             </div>
-                            <div class="button cursor-disable">
-                                <input type="submit" value="Update" name="upbtn" id="up-btn" class="primary-button disabled">
+                            <div class="button">
+                                <input type="submit" value="Update" name="upbtn" id="up-btn" class="primary-button">
                             </div>
                         </div>
                     </form>
+                    <?php
+                        }
+                    ?>
                 </div>
             </div>
         </section>
@@ -118,6 +131,21 @@ else
             }else{
         ?>
         <!-- Dashboard -->
+        <section class="dashboard">
+            <!-- ==========Sidebar============= -->
+            <?php
+                include '../../include/house_member/sidebar_hm_dashboard.php'
+            ?>
+            <!-- ==========Sidebar End============= -->
+            <div class="container">
+                <div class="header">
+                    <div class="title">
+                        Dashboard
+                    </div>
+                </div>
+                <!-- content -->
+            </div>
+        </section>
 
         <?php
             }

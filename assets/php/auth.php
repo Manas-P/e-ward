@@ -60,6 +60,7 @@
                 $_SESSION['fname'] = $userData['fname'];
                 $_SESSION['rid'] = $userData['rid'];
                 $_SESSION['houseno']= $userData['houseno'];
+                $_SESSION['wardno']= $userData['wardno'];
                 header("Location: ../pages/house_member/dashboard.php");
                 die();
             }
@@ -174,6 +175,19 @@
                     header("Location: ../pages/admin/admin_add_wm.php");
                 }
                
+            }
+        }
+
+        //First time Update profile (House member)
+        if(isset($_POST['upbtn'])){
+            $insHouse = "INSERT INTO `tbl_house`(`rid`, `house_name`, `house_no`, `ward_no`, `locality`, `post_office`, `ration_no`, `category`) VALUES ('$rid','$hname', '$houno', '$wardno','$locality','$po','$rano','$rationCat')";
+            $insHouseRes=mysqli_query($conn,$insHouse);
+            if($insHouseRes){
+                header("Location: ../pages/house_member/dashboard.php");
+            }else{
+                echo '<script language="javascript" type="text/javascript">';
+                echo 'alert("Error")';
+                echo '</script>';
             }
         }
     ?>

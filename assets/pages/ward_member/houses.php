@@ -58,34 +58,28 @@
                     <div style="margin-left: 100px;">Category</div>
                 </div>
                 <div class="datas">
+                <?php
+                        $query="SELECT * FROM `tbl_house`";
+                        $result=mysqli_query($conn,$query);
+                        while($row=mysqli_fetch_array($result)){
+                    ?>
                     <div class="data">
                         <table>
                             <tr>
                                 <td width=104px>1.</td>
-                                <td width=238px>Pachakkil house</td>
-                                <td width=180px>124</td>
+                                <td width=238px><?php echo $row['house_name']; ?></td>
+                                <td width=180px><?php echo $row['house_no']; ?></td>
                                 <td width=160px>4</td>
-                                <td width=176px>Kottooli</td>
-                                <td width=208px>Kuthiravattom</td>
-                                <td width=240px>6587845236</td>
-                                <td>APL</td>
+                                <td width=176px><?php echo $row['locality']; ?></td>
+                                <td width=208px><?php echo $row['post_office']; ?></td>
+                                <td width=240px><?php echo $row['ration_no']; ?></td>
+                                <td><?php echo $row['category']; ?></td>
                             </tr>
                         </table>
                     </div>
-                    <div class="data">
-                        <table>
-                            <tr>
-                                <td width=104px>2.</td>
-                                <td width=238px>Veluthedath house</td>
-                                <td width=180px>12</td>
-                                <td width=160px>5</td>
-                                <td width=176px>Mankav</td>
-                                <td width=208px>Veliya Mankav</td>
-                                <td width=240px>8545215236</td>
-                                <td>APL</td>
-                            </tr>
-                        </table>
-                    </div>
+                    <?php
+                        }
+                    ?>
                 </div>
             </div>
         </section>
