@@ -72,6 +72,20 @@
                             </tr>
                         </table>
                     </div>
+                    <div class="data">
+                        <table>
+                            <tr>
+                                <td width=104px>2.</td>
+                                <td width=238px>Veluthedath house</td>
+                                <td width=180px>12</td>
+                                <td width=160px>5</td>
+                                <td width=176px>Mankav</td>
+                                <td width=208px>Veliya Mankav</td>
+                                <td width=240px>8545215236</td>
+                                <td>APL</td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
         </section>
