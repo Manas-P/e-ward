@@ -59,7 +59,8 @@
                 $_SESSION['e-wardId'] = session_id();
                 $_SESSION['fname'] = $userData['fname'];
                 $_SESSION['rid'] = $userData['rid'];
-                header("Location: ../pages/dashboard.php");
+                $_SESSION['houseno']= $userData['houseno'];
+                header("Location: ../pages/house_member/dashboard.php");
                 die();
             }
             elseif($adminCheckCount==1){
