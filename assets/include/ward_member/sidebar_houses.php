@@ -1,7 +1,7 @@
 <div class="sidebar" style="position: fixed;">
                 <div class="brand">
                     <img src="../../images/logo.svg" alt="logo" srcset="">
-                    <div class="user">Ward: 2</div>
+                    <div class="user">Ward: <?php echo $wardno ?></div>
                 </div>
                 <div class="division"></div>
                 <div class="links">
