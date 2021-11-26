@@ -287,4 +287,138 @@ body {
   font-family: Gilroy_SB;
   font-size: 38px;
 }
+
+.main .container .members-list {
+  margin-top: 60px;
+}
+
+.main .container .members-list .members {
+  margin-top: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-column-gap: 36px;
+          column-gap: 36px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  row-gap: 36px;
+}
+
+.main .container .members-list .members .add-member {
+  text-decoration: none;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 12px;
+          column-gap: 12px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 12px;
+  width: 260px;
+  background: #fff;
+  -webkit-box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
+          box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
+  border-radius: 10px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.main .container .members-list .members .add-member .icon {
+  padding: 18px;
+  background: #eeecfc;
+  border-radius: 4px;
+}
+
+.main .container .members-list .members .add-member .icon svg {
+  height: 30px;
+  width: 30px;
+}
+
+.main .container .members-list .members .add-member .icon .str {
+  stroke: #5744e3;
+}
+
+.main .container .members-list .members .add-member .text {
+  font-family: "Gilroy_SB";
+  font-size: 18px;
+  color: #8b8b8b;
+}
+
+.main .container .members-list .members .add-member:hover {
+  -webkit-box-shadow: 0px 14px 28px rgba(191, 191, 191, 0.25);
+          box-shadow: 0px 14px 28px rgba(191, 191, 191, 0.25);
+}
+
+.main .container .members-list .members .member {
+  text-decoration: none;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 12px;
+          column-gap: 12px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 12px;
+  width: 260px;
+  background: #fff;
+  -webkit-box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
+          box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
+  border-radius: 10px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.main .container .members-list .members .member .photo {
+  width: 66px;
+  height: 66px;
+  border-radius: 4px;
+}
+
+.main .container .members-list .members .member .photo img {
+  width: 66px;
+  height: 66px;
+  border-radius: 4px;
+}
+
+.main .container .members-list .members .member .about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 10px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.main .container .members-list .members .member .about .name {
+  font-family: "Gilroy_SB";
+  font-size: 18px;
+  color: #1e1e1e;
+}
+
+.main .container .members-list .members .member .about .tag {
+  font-family: "Gilroy_SB";
+  font-size: 14px;
+  color: #5744e3;
+  padding: 3px 12px;
+  background: #eeecfc;
+  border-radius: 10px;
+}
+
+.main .container .members-list .members .member:hover {
+  -webkit-box-shadow: 0px 14px 28px rgba(191, 191, 191, 0.25);
+          box-shadow: 0px 14px 28px rgba(191, 191, 191, 0.25);
+}
 /*# sourceMappingURL=hm_add_hm.css.map */

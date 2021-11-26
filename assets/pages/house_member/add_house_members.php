@@ -38,6 +38,40 @@ else
                     </div>
                 </div>
                 <!-- content -->
+                <div class="members-list">
+                    <div class="members">
+                        <a class="add-member">
+                            <div class="icon">
+                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="str" d="M15 6.25V23.75" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path class="str" d="M6.25 15H23.75" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="text">Add members</div>
+                        </a>
+
+                        <a href="" class="member">
+                            <div class="photo">
+                                <img src="../../images/uploads/photos/1637438202.png" alt="member photo">
+                            </div>
+                            <div class="about">
+                                <div class="name">Annette Black</div>
+                                <div class="tag">Age: 22</div>
+                            </div>
+                        </a>
+
+                        <a href="" class="member">
+                            <div class="photo">
+                                <img src="../../images/uploads/photos/1637689636.png" alt="member photo">
+                            </div>
+                            <div class="about">
+                                <div class="name">Wade Warren</div>
+                                <div class="tag">Age: 52</div>
+                            </div>
+                        </a>
+                        
+                    </div>
+                </div>
 
             </div>
         </section>
