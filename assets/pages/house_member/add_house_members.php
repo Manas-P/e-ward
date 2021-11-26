@@ -40,6 +40,7 @@ else
                 <!-- content -->
                 <div class="members-list">
                     <div class="members">
+
                         <a class="add-member">
                             <div class="icon">
                                 <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -75,6 +76,76 @@ else
 
             </div>
         </section>
+        =========== Modal ============
+        <div class="overlay modal-hidden"></div>
+        <!-- form to add members-->
+        <div class="box modal-box modal-hidden">
+            <div class="title">
+                Add house member
+            </div>
+            <div class="modal-close-btn">
+                <img src="../../images/close.svg" alt="close button">
+            </div>
+            <!-- Add House Memeber -->
+            <form action="../../php/auth.php" method="post" id="add-house-member" enctype="multipart/form-data">
+                <div class="inputs">
+                    <div class="input h-fullname">
+                        <div class="label">
+                            Full name
+                        </div>
+                        <input type="text" name="hfname" id="h-full-name" placeholder="John Doe" autocomplete="off">
+                        <div class="error error-hidden">
+                        </div>
+                    </div>
+                    <div class="input h-email">
+                        <div class="label">
+                            Email ID
+                        </div>
+                        <input type="text" name="hemail" id="h-email-id" placeholder="example@gmail.com" autocomplete="off">
+                        <div class="error error-hidden">
+                        </div>
+                    </div>
+                    <div class="input h-phno">
+                        <div class="label">
+                            Phone number
+                        </div>
+                        <input type="text" name="hphno" id="h-phn-number" placeholder="9568547512" autocomplete="off">
+                        <div class="error error-hidden">
+                        </div>
+                    </div>
+                    <div class="half-input">
+                        <div class="input h-blood">
+                            <div class="label">
+                                Blood group
+                            </div>
+                            <input type="text" name="hwrdno" id="h-blood" placeholder="A+" autocomplete="off">
+                            <div class="error error-hidden">
+                            </div>
+                        </div>
+                        <div class="input h-date">
+                            <div class="label">
+                                Date of birth
+                            </div>
+                            <input type="date" name="hvalidity" id="h-date" autocomplete="off">
+                            <div class="error error-hidden">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input h-photo">
+                        <div class="label">
+                            Upload photo
+                        </div>
+                        <input type="file" name="hphoto" id="h-photo" accept="image/png,image/jpeg">
+                        <div class="error error-hidden">
+                        </div>
+                    </div>
+                    <div class="button hBtn cursor-disable">
+                        <input type="submit" value="Add member" name="add-hm" id="add-hm" class="primary-button disabled">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <script src="../../js/hm_add_hm.js"></script>
     </body>
 </html>
 	<?php
