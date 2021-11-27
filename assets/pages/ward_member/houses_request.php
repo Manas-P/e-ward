@@ -83,9 +83,9 @@
                                     <a href="../../php/approve.php?apprId=<?php echo $row['rid']; ?>" class="approve">Approve</a>
                                 </td>
                                 <td>
-                                    <?php $rejId=$row['rid']; ?>
+                                    <!-- <?php $rejId=$row['rid']; ?> -->
                                     <!-- <a href="../../php/reject.php?rejId=<?php echo $row['rid']; ?>" class="reject">Reject</a> -->
-                                    <a class="reject"><?php echo $rejId;?></a>
+                                    <a class="reject">Reject</a>
                                 </td>
                             </tr>
                         </table>
@@ -105,7 +105,7 @@
         <!-- form to reject houuse request-->
         <div class="box modal-box modal-hidden">
             <div class="title">
-                <!-- Reason for rejection -->
+                Reason for rejection
             </div>
             <div class="modal-close-btn">
                 <img src="../../images/close.svg" alt="close button">
@@ -115,7 +115,7 @@
                     <textarea name="rej_reason" id="rejreason" rows="10"></textarea>
                    
                     <div class="button wBtn cursor-disable">
-                        <input type="submit" value="<?php echo $row['rid']; ?>" name="reject_house_req" id="rej" class="primary-button disabled">
+                        <input type="submit" value="Continue" name="reject_house_req" id="rej" class="primary-button disabled">
                     </div>
                 </div>
             </form>
