@@ -190,4 +190,36 @@
                 echo '</script>';
             }
         }
+
+        //Add house member
+        if(isset($_POST['add-hm'])){
+            $houseno= $_SESSION['houseno'];
+            $wardno= $_SESSION['wardno'];
+            //Photo path upload
+            $upload_dir = '../images/uploads/photos/';
+            $file_tmpname = $_FILES['hphoto']['tmp_name'];
+            $file_name = $_FILES['hphoto']['name'];
+            $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
+            $filepath = $upload_dir . time().".".$file_ext;
+            if(empty($hemail)){
+               //Check photo upload error
+               if(move_uploaded_file($file_tmpname, $filepath)){
+                    $insHouseMember="INSERT INTO `tbl_house_member`(`ward_no`, `house_no`, `fname`, `phno`, `blood_grp`, `dob`, `photo`) VALUES ('$wardno','$houseno','$hfname','$hphno','$hblood','$hdob','$filepath')";
+                    $insResult=mysqli_query($conn,$insHouseMember);
+                    header("Location: ../pages/house_member/add_house_members.php");
+                }else{
+                    $_SESSION['loginMessage'] = "File upload error";
+                    header("Location: ../pages/house_member/add_house_members.php");
+                }
+            }else{
+                if(move_uploaded_file($file_tmpname, $filepath)){
+                    $insHouseMember="INSERT INTO `tbl_house_member`(`ward_no`, `house_no`, `fname`,`email`, `phno`, `blood_grp`, `dob`, `photo`) VALUES ('$wardno','$houseno','$hfname','$hemail','$hphno','$hblood','$hdob','$filepath')";
+                    $insResult=mysqli_query($conn,$insHouseMember);
+                    header("Location: ../pages/house_member/add_house_members.php");
+                }else{
+                    $_SESSION['loginMessage'] = "File upload error";
+                    header("Location: ../pages/house_member/add_house_members.php");
+                }
+            }
+        }
     ?>

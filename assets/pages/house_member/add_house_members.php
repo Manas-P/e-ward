@@ -51,25 +51,32 @@ else
                             <div class="text">Add members</div>
                         </a>
 
+                        <!-- Fetch Ward Members -->
+                        <?php
+                            $fetchQuery="SELECT * FROM `tbl_house_member` WHERE `ward_no`='$wardno' and `house_no`='$houseno'";
+                            $fetchResult=mysqli_query($conn,$fetchQuery);
+                            if(mysqli_num_rows($fetchResult)>0){
+                                while($row = mysqli_fetch_assoc($fetchResult)){
+                                    // Convert dob to age
+                                    $dob=$row["dob"];
+                                    $age = (date('Y') - date('Y',strtotime($dob)));
+                        ?>
                         <a href="" class="member">
                             <div class="photo">
-                                <img src="../../images/uploads/photos/1637438202.png" alt="member photo">
+                                <img src="../<?php echo $row["photo"]; ?>" alt="member photo">
                             </div>
                             <div class="about">
-                                <div class="name">Annette Black</div>
-                                <div class="tag">Age: 22</div>
+                                <div class="name"><?php echo $row["fname"]; ?></div>
+                                <div class="tag">Age: <?php echo $age; ?></div>
                             </div>
                         </a>
+                        <?php
+                                }
+                                    
+                            }else{
 
-                        <a href="" class="member">
-                            <div class="photo">
-                                <img src="../../images/uploads/photos/1637689636.png" alt="member photo">
-                            </div>
-                            <div class="about">
-                                <div class="name">Wade Warren</div>
-                                <div class="tag">Age: 52</div>
-                            </div>
-                        </a>
+                            }
+                        ?>
                         
                     </div>
                 </div>
@@ -118,7 +125,7 @@ else
                             <div class="label">
                                 Blood group
                             </div>
-                            <input type="text" name="hwrdno" id="h-blood" placeholder="A+" autocomplete="off">
+                            <input type="text" name="hblood" id="h-blood" placeholder="A+" autocomplete="off">
                             <div class="error error-hidden">
                             </div>
                         </div>
@@ -126,7 +133,7 @@ else
                             <div class="label">
                                 Date of birth
                             </div>
-                            <input type="date" name="hvalidity" id="h-date" autocomplete="off">
+                            <input type="date" name="hdob" id="h-date" autocomplete="off">
                             <div class="error error-hidden">
                             </div>
                         </div>
@@ -146,6 +153,20 @@ else
             </form>
         </div>
         <script src="../../js/hm_add_hm.js"></script>
+        <?php
+        if (isset($_SESSION['loginMessage'])) {
+            $msg=$_SESSION['loginMessage'];
+          echo " <div class='alertt alert-visible'>
+                        <div class='econtent'>
+                            <img src='../../images/warning.svg' alt='warning'>
+                            <div class='text'>
+                                $msg
+                            </div>
+                        </div>
+                        <img src='../../images/close.svg' alt='close' class='alert-close'>
+                    </div>";
+          unset($_SESSION['loginMessage']);
+        }?>
     </body>
 </html>
 	<?php

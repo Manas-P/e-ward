@@ -35,7 +35,7 @@ const hBloodError=document.querySelector(".h-blood .error");
 const hDateError=document.querySelector(".h-date .error");
 const hPhotoError=document.querySelector(".h-photo .error");
 var hFullnameSubmit=false;
-var hEmailSubmit=false;
+var hEmailSubmit=true;
 var hPhnoSubmit=false;
 var hBloodSubmit=false;
 var hDateSubmit=false;
@@ -69,10 +69,10 @@ hEmail.addEventListener("input",()=>{
         hEmailError.classList.remove("error-visible");
         hEmailSubmit=true;
     }else if(hEmail.value==""){
-        hEmailError.classList.add("error-visible");
-        hEmailError.classList.remove("error-hidden");
-        hEmailError.innerText="Field cannot be blank";
-        hEmailSubmit=false;
+        //No error shown for blank
+        hEmailError.classList.add("error-hidden");
+        hEmailError.classList.remove("error-visible");
+        hEmailSubmit=true;
     }else{
         hEmailError.classList.add("error-visible");
         hEmailError.classList.remove("error-hidden");
