@@ -222,4 +222,10 @@
                 }
             }
         }
+
+        //Reject House register request
+        if(isset($_POST['reject_house_req'])){
+            $rejId=$_GET['rejId'];
+            echo $rejId;
+        }
     ?>

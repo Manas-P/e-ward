@@ -83,8 +83,9 @@
                                     <a href="../../php/approve.php?apprId=<?php echo $row['rid']; ?>" class="approve">Approve</a>
                                 </td>
                                 <td>
+                                    <?php $rejId=$row['rid']; ?>
                                     <!-- <a href="../../php/reject.php?rejId=<?php echo $row['rid']; ?>" class="reject">Reject</a> -->
-                                    <a class="reject">Reject</a>
+                                    <a class="reject"><?php echo $rejId;?></a>
                                 </td>
                             </tr>
                         </table>
@@ -97,23 +98,24 @@
             </div>
         </section>
 
+        
+
         <!--=========== Modal ============-->
         <div class="overlay modal-hidden"></div>
         <!-- form to reject houuse request-->
         <div class="box modal-box modal-hidden">
             <div class="title">
-                Reason for rejection
+                <!-- Reason for rejection -->
             </div>
             <div class="modal-close-btn">
                 <img src="../../images/close.svg" alt="close button">
             </div>
-            <!-- Add Ward Memeber -->
-            <form action="../../php/auth.php?wrno=<?php echo $wardno;?>" method="post" id="reject-form" enctype="multipart/form-data">
+            <form action="../../php/auth.php?rejId=<?php echo $rejId;?>" method="post" id="reject-form" enctype="multipart/form-data">
                 <div class="inputs">
-                    <textarea name="" id="rejreason" rows="10"></textarea>
+                    <textarea name="rej_reason" id="rejreason" rows="10"></textarea>
                    
                     <div class="button wBtn cursor-disable">
-                        <input type="submit" value="Continue" name="update-wm" id="rej" class="primary-button disabled">
+                        <input type="submit" value="<?php echo $row['rid']; ?>" name="reject_house_req" id="rej" class="primary-button disabled">
                     </div>
                 </div>
             </form>
