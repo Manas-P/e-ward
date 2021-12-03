@@ -25,6 +25,7 @@
 
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 
 ::-webkit-scrollbar {
@@ -130,7 +131,7 @@ body {
   color: #5744e3;
   padding: 2px 12px 2px 12px;
   background: #eeecfc;
-  border-radius: 10px;
+  border-radius: 1px;
 }
 
 .main .sidebar .division {

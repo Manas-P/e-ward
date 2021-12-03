@@ -385,7 +385,7 @@ body {
 
 .main .container .datas .data .approve {
   font-family: "Gilroy_SB";
-  color: #039B00;
+  color: #039b00;
 }
 
 .main .container .datas .data .reject {
@@ -458,6 +458,8 @@ body {
 
 .box .inputs textarea {
   resize: vertical;
+  max-height: 50vh;
+  min-height: 24vh;
   font-size: 18px;
   font-family: "Gilroy_M";
   padding: 16px;

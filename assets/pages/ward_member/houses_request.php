@@ -85,6 +85,7 @@
                                 <td>
                                     <!-- <?php $rejId=$row['rid']; ?> -->
                                     <!-- <a href="../../php/reject.php?rejId=<?php echo $row['rid']; ?>" class="reject">Reject</a> -->
+                                    <!-- <a class="reject" href="javascript:void();" data-balance="<?php $rejId=$row['rid']; echo $rejId; ?>" onclick="window.alert(this.getAttribute('data-balance'))">Reject</a> -->
                                     <a class="reject">Reject</a>
                                 </td>
                             </tr>
