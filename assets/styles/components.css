@@ -23,6 +23,46 @@
   src: url(../fonts/Gilroy-MediumItalic.ttf);
 }
 
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  color: #b1b1b1;
+  padding-right: 16px;
+}
+
+::-webkit-file-upload-button {
+  background: #eeecfc;
+  border-radius: 6px;
+  border: none;
+  margin-right: 20px;
+  outline: none;
+}
+
+.disabled {
+  opacity: 40%;
+  pointer-events: none;
+}
+
+.cursor-disable {
+  cursor: not-allowed;
+}
+
+.error-visible {
+  visibility: visible;
+}
+
+.error-hidden {
+  visibility: hidden;
+}
+
 ::-webkit-input-placeholder {
   color: #b1b1b1;
 }

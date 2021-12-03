@@ -27,13 +27,69 @@
 //============Colors==================
 $primary: #5744e3;
 $text: #1e1e1e;
+$darkSubText: #545454;
 $subText: #8b8b8b;
 $placeholder: #b1b1b1;
 $border: #c1c1c1;
 $white: #fff;
 $error: #ec0000;
+$green: #039b00;
+$bg: #f9f9f9;
+$primaryFade: #eeecfc;
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+//Hide Scrollbar
+::-webkit-scrollbar {
+  width: 0px;
+}
 
 //=============Mixins=================
+
+//=============Box=================
+@mixin box() {
+  padding: 62px 48px 70px 48px;
+  background: $white;
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.04),
+    20px 40px 80px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+}
+@mixin box_model($width, $height) {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: $width;
+  height: $height;
+  overflow: none;
+  overflow-y: scroll;
+  padding: 62px 48px 70px 48px;
+  background: $white;
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.04),
+    20px 40px 80px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  transition: 1s ease-in-out;
+  .title {
+    font-family: "Gilroy_B";
+    font-size: 36px;
+  }
+  .modal-close-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    cursor: pointer;
+    img {
+      height: 24px;
+    }
+  }
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
+}
 
 //==========input Fields=============
 @mixin input_fields($width) {
@@ -46,7 +102,9 @@ $error: #ec0000;
       font-size: 16px;
       font-family: "Gilroy_M";
     }
-    input[type="text"] {
+    input[type="text"],
+    input[type="date"],
+    input[type="file"] {
       width: 100%;
       font-size: 18px;
       font-family: "Gilroy_M";
@@ -70,6 +128,19 @@ $error: #ec0000;
   }
 }
 
+::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  color: $placeholder;
+  padding-right: 16px;
+}
+
+::-webkit-file-upload-button {
+  background: $primaryFade;
+  border-radius: 6px;
+  border: none;
+  margin-right: 20px;
+  outline: none;
+}
 
 //===========Primary Button===========
 @mixin primary_button($width) {
@@ -103,9 +174,11 @@ $error: #ec0000;
   border-radius: 10px;
   cursor: pointer;
   transition: 0.1s ease-in-out;
+  &:hover {
+    background: #f4f3ff;
+  }
   &:active {
     transform: scale(0.99);
-    background: #f4f3ff;
   }
 }
 
@@ -153,9 +226,68 @@ $error: #ec0000;
   }
 }
 
+//Disabled Button Style
+.disabled {
+  opacity: 40%;
+  pointer-events: none;
+}
+.cursor-disable {
+  cursor: not-allowed;
+}
+
+//Error Visibility
+.error-visible {
+  visibility: visible;
+}
+.error-hidden {
+  visibility: hidden;
+}
+
 //============Placeholder============
 ::placeholder {
   color: $placeholder;
+}
+
+@mixin error-alert() {
+  .alertt {
+    background: $white;
+    padding: 18px 18px 18px 24px;
+    box-shadow: 0px 7px 16px rgba(0, 0, 0, 0.16);
+    border-radius: 6px;
+    border-left: 10px solid $error;
+    position: absolute;
+    bottom: 5%;
+    right: 4%;
+    display: flex;
+    column-gap: 32px;
+    align-items: center;
+    .econtent {
+      display: flex;
+      column-gap: 10px;
+      align-items: center;
+      img {
+        width: 22px;
+        height: auto;
+      }
+      .text {
+        font-family: "Gilroy_M";
+        font-size: 18px;
+      }
+    }
+    .alert-close {
+      width: 16px;
+      height: auto;
+      cursor: pointer;
+    }
+  }
+
+  .alert-hidden {
+    visibility: hidden;
+  }
+
+  .alert-visible {
+    visibility: visible;
+  }
 }
 
 //===========Primary Style===========
@@ -164,3 +296,126 @@ $error: #ec0000;
   padding: 0;
   box-sizing: border-box;
 }
+
+//============Sidebar===============
+@mixin sidebar() {
+  width: 350px;
+  height: 100vh;
+  overflow-y: hidden;
+  background: $white;
+  box-shadow: 5px 0px 20px rgba(0, 0, 0, 0.01);
+  border-radius: 0px 30px 30px 0px;
+  padding: 0px 36px 42px 36px;
+  .brand {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 0px;
+    img {
+      width: 151px;
+      height: auto;
+    }
+    .user {
+      font-family: "Gilroy_SB";
+      font-size: 14px;
+      color: $primary;
+      padding: 2px 12px 2px 12px;
+      background: $primaryFade;
+      border-radius: 10px;
+    }
+  }
+  .division {
+    height: 2px;
+    width: 100%;
+    border-radius: 2px;
+    background: $primaryFade;
+  }
+  .links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 82%;
+    margin: 48px 0 42px 0;
+    .menus {
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+      .menu {
+        text-decoration: none;
+        cursor: pointer;
+        padding: 12px 0 12px 12px;
+        width: 100%;
+        display: flex;
+        column-gap: 10px;
+        border-radius: 10px;
+        &.active {
+          background: $primary;
+        }
+        &:hover {
+          background: $primary;
+          transition: 0.5s ease-in-out;
+        }
+        &:hover .text {
+          color: $white;
+          transition: 0.2s ease-in-out;
+        }
+        &:hover svg .str {
+          stroke: $white;
+          transition: 0.2s ease-in-out;
+        }
+        svg {
+          height: 24px;
+          width: 24px;
+          .active {
+            stroke: $white;
+          }
+        }
+        .text {
+          font-family: "Gilroy_SB";
+          font-size: 20px;
+          color: $text;
+          &.active {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+  .logout {
+    a {
+      text-decoration: none;
+      cursor: pointer;
+      padding: 14px 0;
+      width: 100%;
+      display: flex;
+      column-gap: 10px;
+      border-radius: 10px;
+      background: $primaryFade;
+      align-items: center;
+      justify-content: center;
+      &:hover {
+        background: $primary;
+        transition: 0.5s ease-in-out;
+      }
+      &:hover .text {
+        color: $white;
+        transition: 0.2s ease-in-out;
+      }
+      &:hover svg .str {
+        stroke: $white;
+        transition: 0.2s ease-in-out;
+      }
+      svg {
+        height: 24px;
+        width: 24px;
+      }
+      .text {
+        font-family: "Gilroy_SB";
+        font-size: 20px;
+        color: $text;
+      }
+    }
+  }
+}
+
+//============End of Sidebar===============

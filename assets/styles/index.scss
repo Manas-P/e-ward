@@ -1,0 +1,120 @@
+@import "./components.scss";
+
+body {
+  background-color: linear-gradient(110.33deg, #ffffff 0%, #ededed 107.08%);
+  overflow-x: hidden;
+  // padding:0 226px;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: auto;
+  z-index: -2;
+}
+
+.main {
+  .header {
+    height: 100px;
+    width: 100vw;
+    background: $white;
+    padding: 0 226px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 10px 20px rgba(69, 69, 69, 0.02);
+    .logo {
+      flex: 1;
+      img {
+        width: 151px;
+        height: auto;
+      }
+    }
+    .links {
+      flex: 1;
+      display: flex;
+      column-gap: 56px;
+      justify-content: flex-end;
+      align-items: center;
+      .link {
+        font-family: "Gilroy_SB";
+        font-size: 20px;
+        color: $text;
+        transition: 0.2s ease-in-out;
+        &:hover {
+          color: $primary;
+        }
+      }
+      .login-btn {
+        padding: 12px 56px;
+        border-radius: 10px;
+        background: $primary;
+        color: $white;
+        &:hover {
+          color: $white;
+          box-shadow: 0px 6px 12px rgba(87, 68, 227, 0.3);
+          transform: scale(1.03);
+        }
+        &:active {
+          box-shadow: none;
+          transform: scale(1);
+        }
+      }
+    }
+  }
+  .hero {
+    display: flex;
+    align-items: center;
+    padding: 0 226px;
+    margin-top: 90px;
+    .content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      row-gap: 24px;
+      .heading {
+        font-family: "Gilroy_B";
+        font-size: 52px;
+        line-height: 71px;
+        color: $text;
+        span {
+          color: $primary;
+        }
+      }
+      .description {
+        font-family: "Gilroy_M";
+        font-size: 20px;
+        line-height: 30px;
+      }
+      .cta {
+        display: flex;
+        width:230px;
+        background: #fff;
+        color: $primary;
+        font-family: "Gilroy_SB";
+        font-size: 20px;
+        padding: 16px 56px;
+        border: 2px solid $primary;
+        outline: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+        &:hover{
+            background: $primary;
+            color: $white;
+        }
+        &:active {
+          transform: scale(0.99);
+        }
+      }
+    }
+    .hero-img {
+      flex: 1;
+      img{
+          width:720px;
+          height:auto;
+      }
+    }
+  }
+}

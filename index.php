@@ -1,152 +1,47 @@
+<!-- Landing Page -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Ward | Login</title>
+    <title>E-Ward</title>
     <link rel="shortcut icon" href="./assets/images/fav.svg" type="image/x-icon">
-    <link rel="stylesheet" href="./assets/styles/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="./assets/styles/index.css">
 </head>
 <body>
-    <section class="main">
-        <div class="sections">
-            <div class="content">
-                <div class="logo">
-                    <img src="./assets/images/logo.svg" alt="Logo">
-                </div>
-                <div class="description">
-                    The goal of this web application is to reduce the amount of 
-                    work that ward members have to do, make their jobs easier, 
-                    and make their activities more transparent. Here, manual 
-                    tasks are transformed to digital, allowing paper tasks to 
-                    be reduced to online tasks.
-                </div>
-                <div class="connection">
-                    <img src="./assets/images/connections.png" alt="Connections">
-                </div>
+    <div class="bg">
+        <img src="./assets/images/landingBg.png" alt="Background image">
+    </div>
+    <div class="main">
+        <div class="header">
+            <div class="logo">
+                <img src="./assets/images/logo.svg" alt="logo">
             </div>
-            <div class="form">
-                <div class="box">
-                    <div class="login-text">
-                        <div class="title">
-                            Login to continue
-                        </div>
-                        <div class="sub-title">
-                            A web-based application for managing your ward.
-                        </div>
-                    </div>
-                    <form action="#">
-                        <div class="inputs">
-                            <div class="input">
-                                <div class="label">
-                                    Username
-                                </div>
-                                <input type="text" name="" id="" placeholder="House no./committe no." autocomplete="off">
-                            </div>
-                            <div class="input">
-                                <div class="label">
-                                    Password
-                                </div>
-                                <input type="text" name="" id="" placeholder="Password" autocomplete="off">
-                            </div>
-                        </div>
-                        <div class="sub">
-                            <div class="checkbox">
-                                <input type="checkbox" name="" id="check" checked>
-                                <label for="check">Remember me</label>
-                            </div>
-                                <a href="#" class="forgot">Forgot password?</a>
-                        </div>
-                        <div class="buttons">
-                            <input type="submit" value="Login" class="primary-button">
-                            <div class="or">
-                                <div class="line"></div>
-                                <span>Or</span>
-                                <div class="line"></div>
-                            </div>
-                            <input type="button" value="Register" id="register" class="secondary-button">
-                        </div>
-                    </form>
-                </div>
-
-                <!-- Registration Form -->
-
-                <div class="box2">
-                    <div class="register-text">
-                        <div class="title">
-                            Register your house
-                        </div>
-                        <div class="sub-title">
-                            Already have an account?<a>Login</a> 
-                        </div>
-                    </div>
-                    <form id="reg-form">
-                        <div class="inputs">
-                            <div class="input fullname">
-                                <div class="label">
-                                    Full name
-                                </div>
-                                <input type="text" name="" id="full-name" placeholder="John Doe" autocomplete="off">
-                                <div class="error error-hidden">
-                                    
-                                </div>
-                            </div>
-                            <div class="input email">
-                                <div class="label">
-                                    Email ID
-                                </div>
-                                <input type="text" name="" id="email-id" placeholder="example@gmail.com" autocomplete="off">
-                                <div class="error error-hidden">
-                                </div>
-                            </div>
-                            <div class="input phno">
-                                <div class="label">
-                                    Phone number
-                                </div>
-                                <input type="text" name="" id="phn-number" placeholder="9568547512" autocomplete="off">
-                                <div class="error error-hidden">
-                                </div>
-                            </div>
-                            <div class="half-input">
-                                <div class="input wrdno">
-                                    <div class="label">
-                                        Ward number
-                                    </div>
-                                    <input type="text" name="" id="ward-number" placeholder="25" autocomplete="off">
-                                    <div class="error error-hidden">
-                                    </div>
-                                </div>
-                                <div class="input houseno">
-                                    <div class="label">
-                                        House number
-                                    </div>
-                                    <input type="text" name="" id="house-number" placeholder="153" autocomplete="off">
-                                    <div class="error error-hidden">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="input rationno">
-                                <div class="label">
-                                    Ration number
-                                </div>
-                                <input type="text" name="" id="ration-number" placeholder="2547863214" autocomplete="off">
-                                <div class="error error-hidden">
-                                </div>
-                            </div>
-                            <div class="button cursor-disable">
-                                <input type="submit" value="Register" id="reg-btn" class="primary-button disabled">
-                            </div>
-                            <div class="message">
-                                *The login details will be sent to you via email or SMS.
-                            </div>
-                        </div>
-                    </form>
-                </div>
+            <div class="links">
+                <a href="" class="link">Services</a>
+                <a href="" class="link">About</a>
+                <a href="" class="link">contact us</a>
+                <a href="./assets/pages/login.php" class="link login-btn">login</a>
             </div>
         </div>
-    </section>
-    <script src="./assets/js/app.js"></script>
+        <div class="hero">
+            <div class="content">
+                <div class="heading">
+                    Get your <span>E-Ward</span> services in a single click
+                </div>
+                <div class="description">
+                    E-ward is a user-friendly web platform designed to assist ward 
+                    members, house members, and various committee members. All 
+                    transparency in the ward will be lowered after using this platform. 
+                    The ward's activities may be more engaging.
+                </div>
+                <a href="" class="cta">Get Started</a>
+            </div>
+            <div class="hero-img">
+                <img src="./assets/images/landing-hero.png" alt="">
+            </div>
+        </div>
+    </div>
 </body>
 </html>

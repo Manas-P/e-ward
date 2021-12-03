@@ -1,17 +1,6 @@
 //Components
 @import "./components.scss";
 
-//Mixins
-@mixin box_model() {
-  width: 556px;
-  padding: 62px 48px 70px 48px;
-  background: $white;
-  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.04),
-    20px 40px 80px rgba(0, 0, 0, 0.1);
-  border-radius: 16px;
-  transition: 1s ease-in-out;
-}
-
 @mixin anchor() {
   font-family: "Gilroy_M";
   font-size: 16px;
@@ -61,7 +50,7 @@
     }
     .form {
       .box {
-        @include box_model();
+        @include box();
         .login-text {
           display: flex;
           flex-direction: column;
@@ -128,7 +117,7 @@
 .box2 {
   opacity: 0;
   display: none;
-  @include box_model();
+  @include box();
   .register-text {
     display: flex;
     flex-direction: column;
@@ -188,19 +177,5 @@
   @include switch(0, 0.5, none, none);
 }
 
-//Disabled Button Style
-.disabled {
-  opacity: 40%;
-  pointer-events: none;
-}
-.cursor-disable{
-  cursor: not-allowed;
-}
-
-//Error Visibility
-.error-visible {
-  visibility: visible;
-}
-.error-hidden {
-  visibility: hidden;
-}
+//Alert
+@include error-alert();
