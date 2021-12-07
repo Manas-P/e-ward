@@ -116,6 +116,11 @@ if (isset($_SESSION["adminId"]) != session_id()) {
                             ?>
                     </div>
                 </div>
+                <div class="analytics">
+                    <div class="title">
+                        Analytics
+                    </div>
+                </div>
             </div>
         </section>
         <!--=========== Modal ============-->

@@ -19,7 +19,10 @@ session_start();
         <div class="sections">
             <div class="content">
                 <div class="logo">
-                    <img src="../images/logo.svg" alt="Logo">
+                    <a href="../../index.php">
+                        <img src="../images/logo.svg" alt="Logo">
+                    </a>
+                    
                 </div>
                 <div class="description">
                     The goal of this web application is to reduce the amount of 
@@ -70,7 +73,7 @@ session_start();
                                 <div class="label">
                                     Password
                                 </div>
-                                <input type="text" name="password" id="" placeholder="Password" autocomplete="off">
+                                <input type="password" name="password" id="" placeholder="Password" autocomplete="off">
                             </div>
                         </div>
                         <div class="sub">

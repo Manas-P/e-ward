@@ -353,7 +353,8 @@ body {
 
 .main .container .update-form .inputs .input input[type="text"],
 .main .container .update-form .inputs .input input[type="date"],
-.main .container .update-form .inputs .input input[type="file"] {
+.main .container .update-form .inputs .input input[type="file"],
+.main .container .update-form .inputs .input input[type="password"] {
   width: 100%;
   font-size: 18px;
   font-family: "Gilroy_M";
@@ -368,7 +369,8 @@ body {
 
 .main .container .update-form .inputs .input input[type="text"]:focus,
 .main .container .update-form .inputs .input input[type="date"]:focus,
-.main .container .update-form .inputs .input input[type="file"]:focus {
+.main .container .update-form .inputs .input input[type="file"]:focus,
+.main .container .update-form .inputs .input input[type="password"]:focus {
   border: 1px solid #1e1e1e;
 }
 

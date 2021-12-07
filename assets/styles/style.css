@@ -196,7 +196,8 @@ a {
 
 .main .sections .form .box .inputs .input input[type="text"],
 .main .sections .form .box .inputs .input input[type="date"],
-.main .sections .form .box .inputs .input input[type="file"] {
+.main .sections .form .box .inputs .input input[type="file"],
+.main .sections .form .box .inputs .input input[type="password"] {
   width: 100%;
   font-size: 18px;
   font-family: "Gilroy_M";
@@ -211,7 +212,8 @@ a {
 
 .main .sections .form .box .inputs .input input[type="text"]:focus,
 .main .sections .form .box .inputs .input input[type="date"]:focus,
-.main .sections .form .box .inputs .input input[type="file"]:focus {
+.main .sections .form .box .inputs .input input[type="file"]:focus,
+.main .sections .form .box .inputs .input input[type="password"]:focus {
   border: 1px solid #1e1e1e;
 }
 
@@ -466,7 +468,8 @@ a {
 
 .box2 .inputs .input input[type="text"],
 .box2 .inputs .input input[type="date"],
-.box2 .inputs .input input[type="file"] {
+.box2 .inputs .input input[type="file"],
+.box2 .inputs .input input[type="password"] {
   width: 100%;
   font-size: 18px;
   font-family: "Gilroy_M";
@@ -481,7 +484,8 @@ a {
 
 .box2 .inputs .input input[type="text"]:focus,
 .box2 .inputs .input input[type="date"]:focus,
-.box2 .inputs .input input[type="file"]:focus {
+.box2 .inputs .input input[type="file"]:focus,
+.box2 .inputs .input input[type="password"]:focus {
   border: 1px solid #1e1e1e;
 }
 
@@ -521,7 +525,8 @@ a {
 
 .box2 .inputs .half-input .input input[type="text"],
 .box2 .inputs .half-input .input input[type="date"],
-.box2 .inputs .half-input .input input[type="file"] {
+.box2 .inputs .half-input .input input[type="file"],
+.box2 .inputs .half-input .input input[type="password"] {
   width: 100%;
   font-size: 18px;
   font-family: "Gilroy_M";
@@ -536,7 +541,8 @@ a {
 
 .box2 .inputs .half-input .input input[type="text"]:focus,
 .box2 .inputs .half-input .input input[type="date"]:focus,
-.box2 .inputs .half-input .input input[type="file"]:focus {
+.box2 .inputs .half-input .input input[type="file"]:focus,
+.box2 .inputs .half-input .input input[type="password"]:focus {
   border: 1px solid #1e1e1e;
 }
 

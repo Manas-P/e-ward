@@ -61,12 +61,13 @@
                 <?php
                         $query="SELECT * FROM `tbl_house`";
                         $result=mysqli_query($conn,$query);
+                        $i=1;
                         while($row=mysqli_fetch_array($result)){
                     ?>
                     <div class="data">
                         <table>
                             <tr>
-                                <td width=104px>1.</td>
+                                <td width=104px><?php echo $i; ?></td>
                                 <td width=238px><?php echo $row['house_name']; ?></td>
                                 <td width=180px><?php echo $row['house_no']; ?></td>
                                 <td width=160px>4</td>
@@ -78,6 +79,7 @@
                         </table>
                     </div>
                     <?php
+                        $i=$i+1;
                         }
                     ?>
                 </div>

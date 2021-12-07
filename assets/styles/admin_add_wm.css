@@ -131,7 +131,7 @@ body {
   color: #5744e3;
   padding: 2px 12px 2px 12px;
   background: #eeecfc;
-  border-radius: 1px;
+  border-radius: 10px;
 }
 
 .main .sidebar .division {
@@ -664,7 +664,8 @@ body {
 
 .box .inputs .input input[type="text"],
 .box .inputs .input input[type="date"],
-.box .inputs .input input[type="file"] {
+.box .inputs .input input[type="file"],
+.box .inputs .input input[type="password"] {
   width: 100%;
   font-size: 18px;
   font-family: "Gilroy_M";
@@ -679,7 +680,8 @@ body {
 
 .box .inputs .input input[type="text"]:focus,
 .box .inputs .input input[type="date"]:focus,
-.box .inputs .input input[type="file"]:focus {
+.box .inputs .input input[type="file"]:focus,
+.box .inputs .input input[type="password"]:focus {
   border: 1px solid #1e1e1e;
 }
 
@@ -719,7 +721,8 @@ body {
 
 .box .inputs .half-input .input input[type="text"],
 .box .inputs .half-input .input input[type="date"],
-.box .inputs .half-input .input input[type="file"] {
+.box .inputs .half-input .input input[type="file"],
+.box .inputs .half-input .input input[type="password"] {
   width: 100%;
   font-size: 18px;
   font-family: "Gilroy_M";
@@ -734,7 +737,8 @@ body {
 
 .box .inputs .half-input .input input[type="text"]:focus,
 .box .inputs .half-input .input input[type="date"]:focus,
-.box .inputs .half-input .input input[type="file"]:focus {
+.box .inputs .half-input .input input[type="file"]:focus,
+.box .inputs .half-input .input input[type="password"]:focus {
   border: 1px solid #1e1e1e;
 }
 
