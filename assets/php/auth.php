@@ -225,7 +225,7 @@
 
         //Reject House register request
         if(isset($_POST['reject_house_req'])){
-            $rejId=$_GET['rejId'];
+            $rejId=$_POST['HiddenItemId'];
             echo $rejId;
         }
     ?>

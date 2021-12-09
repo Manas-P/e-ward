@@ -85,8 +85,7 @@
                                 <td>
                                     <!-- <?php $rejId=$row['rid']; ?> -->
                                     <!-- <a href="../../php/reject.php?rejId=<?php echo $row['rid']; ?>" class="reject">Reject</a> -->
-                                    <!-- <a class="reject" href="javascript:void();" data-balance="<?php $rejId=$row['rid']; echo $rejId; ?>" onclick="window.alert(this.getAttribute('data-balance'))">Reject</a> -->
-                                    <a class="reject">Reject</a>
+                                    <a class="reject"  onclick="deleteItem(<?php $rejId=$row['rid']; echo $rejId; ?>)">Reject</a>
                                 </td>
                             </tr>
                         </table>
@@ -111,7 +110,8 @@
             <div class="modal-close-btn">
                 <img src="../../images/close.svg" alt="close button">
             </div>
-            <form action="../../php/auth.php?rejId=<?php echo $rejId;?>" method="post" id="reject-form" enctype="multipart/form-data">
+            <form action="../../php/auth.php" method="post" id="reject-form" enctype="multipart/form-data">
+            <input type="hidden" name="HiddenItemId" id="hiddenItemId">
                 <div class="inputs">
                     <textarea name="rej_reason" id="rejreason" rows="10"></textarea>
                    
@@ -121,7 +121,12 @@
                 </div>
             </form>
         </div>
+        <script>
+            let deleteItem=(DataId)=>{
+                document.getElementById('hiddenItemId').value=DataId;
 
+            }
+        </script>
 
         <script src="../../js/reject_house_reg.js"></script>
     </body>
