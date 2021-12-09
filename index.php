@@ -8,6 +8,7 @@
     <title>E-Ward</title>
     <link rel="shortcut icon" href="./assets/images/fav.svg" type="image/x-icon">
     <link rel="stylesheet" href="./assets/styles/index.css">
+    <link rel="stylesheet" href="./assets/styles/google_translater.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 <body>
@@ -44,46 +45,9 @@
             </div>
         </div>
     </div>
-
-    <!-- Google Translater -->
-    <div id="google_translate_element"></div>
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,hi,ml,gu,pa,ta,te,ur,ar', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: true}, 'google_translate_element');
-        }
-
-        //Languages Dropdown Style
-        $('document').ready(function () {
-            $('#google_translate_element').on("click", function () {
-
-                // Change menu's padding
-                $("iframe").contents().find('.goog-te-menu2-item-selected').css ('display', 'none');
-
-                // Change menu's padding
-                $("iframe").contents().find('.goog-te-menu2').css ('padding', '0px');
-
-                // Change the padding of the languages
-                $("iframe").contents().find('.goog-te-menu2-item div').css('padding', '20px 100px 20px 20px');
-
-                // Change the width of the languages
-                $("iframe").contents().find('.goog-te-menu2-item').css('width', '200px');
-                $("iframe").contents().find('td').css('width', '200px');
-
-                // Change the iframe's size and position?
-                $(".goog-te-menu-frame").css({
-                    'height': '43.5%',
-                    'width': '200px',
-                    'border-radius':'8px',
-                    'top':'446px'
-                });
-                // Change iframes's size
-                $("iframe").contents().find('.goog-te-menu2').css({
-                    'height': '100%',
-                    'width': '200px'
-                });
-            });
-        });
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <!--Google translater -->
+    <?php
+        include './assets/include/google_translater.php'
+    ?>
 </body>
 </html>
