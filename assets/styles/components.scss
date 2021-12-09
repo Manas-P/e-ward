@@ -249,6 +249,7 @@ a {
   color: $placeholder;
 }
 
+//============Toast============
 @mixin error-alert() {
   .alertt {
     background: $white;
@@ -262,6 +263,7 @@ a {
     display: flex;
     column-gap: 32px;
     align-items: center;
+    z-index: 4;
     .econtent {
       display: flex;
       column-gap: 10px;

@@ -12,6 +12,8 @@ session_start();
     <link rel="shortcut icon" href="../images/fav.svg" type="image/x-icon">
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="../styles/google_translater.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -175,6 +177,11 @@ session_start();
     <div id="warrning-box" >
         <!-- Inject Error Toast -->
     </div>
+
+    <!--Google translater -->
+    <?php
+        include '../include/google_translater.php'
+    ?>
     <script src="../js/login.js"></script>
     <script>
         function validateHouseNo(house)
