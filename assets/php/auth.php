@@ -1,4 +1,4 @@
-<?php
+    <?php
         include '../include/dbcon.php';
         session_start();
         // Collecting values
@@ -226,6 +226,19 @@
         //Reject House register request
         if(isset($_POST['reject_house_req'])){
             $rejId=$_POST['HiddenItemId'];
-            echo $rejId;
+            $body=$_POST['rej_reason'];
+            $query="SELECT * FROM `tbl_registration` WHERE `rid`='$rejId'";
+            $result=mysqli_query($conn,$query);
+            while($row=mysqli_fetch_array($result)){
+                $toMail=$row["email"];
+            }
+            $subject="E-Ward House Rejection";
+            $headers="From: ewardmember@gmail.com";
+            if(mail($toMail,$subject,$body,$headers)){
+                mysqli_query($conn,"DELETE FROM `tbl_registration` WHERE `rid`='$rejId'");
+                header("Location: ../pages/ward_member/houses_request.php");
+            }else{
+                 echo "Mail not Send";
+            }
         }
     ?>
