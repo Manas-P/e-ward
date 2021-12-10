@@ -191,6 +191,21 @@
             }
         }
 
+        //Update House Details (House member)
+        if(isset($_POST['uphbtn'])){
+            $updateh="UPDATE `tbl_house` SET `house_name`='$hname', `locality`='$locality', `post_office`='$po', `category`='$rationCat' WHERE `rid`='$rid'";
+            // $insHouse = "INSERT INTO `tbl_house`(`rid`, `house_name`, `house_no`, `ward_no`, `locality`, `post_office`, `ration_no`, `category`) VALUES ('$rid','$hname', '$houno', '$wardno','$locality','$po','$rano','$rationCat')";
+            $upHouseRes=mysqli_query($conn,$updateh);
+            if($upHouseRes){
+                header("Location: ../pages/house_member/update_house_details.php");
+                $_SESSION['loginMessage'] = "House Info Updated Successfully";
+            }else{
+                echo '<script language="javascript" type="text/javascript">';
+                echo 'alert("Error")';
+                echo '</script>';
+            }
+        }
+
         //Add house member
         if(isset($_POST['add-hm'])){
             $houseno= $_SESSION['houseno'];

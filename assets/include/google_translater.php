@@ -27,7 +27,7 @@
                     'height': '43.5%',
                     'width': '200px',
                     'border-radius':'8px',
-                    'top':'446px'
+                    'top':'490px'
                 });
                 // Change iframes's size
                 $("iframe").contents().find('.goog-te-menu2').css({
