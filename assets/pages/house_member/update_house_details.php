@@ -107,8 +107,8 @@ else
                                     <label for="bpl">BPL</label>
                                 </div>
                             </div>
-                            <div class="button">
-                                <input type="submit" value="Update" name="uphbtn" id="up-btn" class="primary-button">
+                            <div class="button ubn cursor-disable">
+                                <input type="submit" value="Update" name="uphbtn" id="up-btn" class="primary-button disabled">
                             </div>
                         </div>
                     </form>
@@ -133,6 +133,7 @@ else
                 unset($_SESSION['loginMessage']);
         }?>
     <script src="../../js/update_house_details.js"></script>
+    <script src="../../js/toast.js"></script>
     </body>
 </html>
 	<?php
