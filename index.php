@@ -52,8 +52,7 @@
                 </div>
                 <div class="parag">
                     Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
-                    Velit officia consequat duis enim velit mollit. Exercitation veniam 
-                    consequat sunt nostrud amet.
+                    Velit officia consequat duis enim velit mollit. Exercitation veniam.
                 </div>
             </div>
             <div class="card">
@@ -63,8 +62,7 @@
                 </div>
                 <div class="parag">
                     Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
-                    Velit officia consequat duis enim velit mollit. Exercitation veniam 
-                    consequat sunt nostrud amet.
+                    Velit officia consequat duis enim velit mollit. Exercitation veniam.
                 </div>
             </div>
             <div class="card">
@@ -74,8 +72,7 @@
                 </div>
                 <div class="parag">
                     Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
-                    Velit officia consequat duis enim velit mollit. Exercitation veniam 
-                    consequat sunt nostrud amet.
+                    Velit officia consequat duis enim velit mollit. Exercitation veniam.
                 </div>
             </div>
         </div>
@@ -87,5 +84,15 @@
     <?php
         include './assets/include/google_translater.php'
     ?>
+    <script src="./assets/js/tilt.jquery.js"></script>
+    <script>
+        //Tilt Js
+        $(document).ready(function () {
+            $(".card").tilt({
+                maxTilt: 2,
+                scale: 1.01
+            });
+        });
+    </script>
 </body>
 </html>

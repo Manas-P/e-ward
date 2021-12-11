@@ -121,33 +121,42 @@ body {
     padding: 0 226px;
     margin-top: 140px;
     display: flex;
-    column-gap: 24px;
+    column-gap: 36px;
     .card {
-      padding: 30px;
+      padding: 38px;
       background: $white;
       border-radius: 20px;
       box-shadow: 0px 5px 10px rgba(200, 200, 200, 0.25),
         0px 20px 40px rgba(199, 199, 199, 0.25);
       display: flex;
       flex-direction: column;
-      img{
-        width:80px;
+      transform-style: preserve-3d;
+      &:hover img,
+      &:hover .title,
+      &:hover .parag {
+        transform: translateZ(10px);
+      }
+      img {
+        width: 80px;
         height: auto;
         padding: 18px;
         border-radius: 18px;
+        transition: 0.3s ease-in-out;
       }
-      .title{
+      .title {
         font-family: "Gilroy_SB";
         color: $text;
         font-size: 26px;
         margin-top: 20px;
+        transition: 0.5s ease-in-out;
       }
-      .parag{
+      .parag {
         font-family: "Gilroy_M";
-        color:$subText;
+        color: $subText;
         font-size: 20px;
         line-height: 30px;
         margin-top: 12px;
+        transition: 0.7s ease-in-out;
       }
     }
   }

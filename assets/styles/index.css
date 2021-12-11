@@ -264,12 +264,12 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-column-gap: 24px;
-          column-gap: 24px;
+  -webkit-column-gap: 36px;
+          column-gap: 36px;
 }
 
 .main .features .card {
-  padding: 30px;
+  padding: 38px;
   background: #fff;
   border-radius: 20px;
   -webkit-box-shadow: 0px 5px 10px rgba(200, 200, 200, 0.25), 0px 20px 40px rgba(199, 199, 199, 0.25);
@@ -281,6 +281,15 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.main .features .card:hover img,
+.main .features .card:hover .title,
+.main .features .card:hover .parag {
+  -webkit-transform: translateZ(10px);
+          transform: translateZ(10px);
 }
 
 .main .features .card img {
@@ -288,6 +297,8 @@ body {
   height: auto;
   padding: 18px;
   border-radius: 18px;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 .main .features .card .title {
@@ -295,6 +306,8 @@ body {
   color: #1e1e1e;
   font-size: 26px;
   margin-top: 20px;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 .main .features .card .parag {
@@ -303,5 +316,7 @@ body {
   font-size: 20px;
   line-height: 30px;
   margin-top: 12px;
+  -webkit-transition: 0.7s ease-in-out;
+  transition: 0.7s ease-in-out;
 }
 /*# sourceMappingURL=index.css.map */
