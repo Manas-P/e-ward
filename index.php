@@ -13,7 +13,7 @@
 </head>
 <body>
     <div class="bg">
-        <img src="./assets/images/landingBg.png" alt="Background image">
+        <img src="./assets/images/landingBgFade.png" alt="Background image">
     </div>
     <div class="main">
         <div class="header">
