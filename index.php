@@ -44,7 +44,45 @@
                 <img src="./assets/images/landing-hero.png" alt="">
             </div>
         </div>
+        <div class="features">
+            <div class="card">
+                <img src="./assets/images/time.svg" alt="Time saving" style="background: #E5E7FF;">
+                <div class="title">
+                    Time saving
+                </div>
+                <div class="parag">
+                    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
+                    Velit officia consequat duis enim velit mollit. Exercitation veniam 
+                    consequat sunt nostrud amet.
+                </div>
+            </div>
+            <div class="card">
+                <img src="./assets/images/queue.svg" alt="Queue" style="background: #D4FFDE;">
+                <div class="title">
+                    No more queue
+                </div>
+                <div class="parag">
+                    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
+                    Velit officia consequat duis enim velit mollit. Exercitation veniam 
+                    consequat sunt nostrud amet.
+                </div>
+            </div>
+            <div class="card">
+                <img src="./assets/images/status.svg" alt="status" style="background: #FFEFE0;">
+                <div class="title">
+                    Live status check
+                </div>
+                <div class="parag">
+                    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
+                    Velit officia consequat duis enim velit mollit. Exercitation veniam 
+                    consequat sunt nostrud amet.
+                </div>
+            </div>
+        </div>
     </div>
+
+
+
     <!--Google translater -->
     <?php
         include './assets/include/google_translater.php'

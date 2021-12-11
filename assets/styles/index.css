@@ -257,4 +257,51 @@ body {
   width: 720px;
   height: auto;
 }
+
+.main .features {
+  padding: 0 226px;
+  margin-top: 140px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 24px;
+          column-gap: 24px;
+}
+
+.main .features .card {
+  padding: 30px;
+  background: #fff;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 5px 10px rgba(200, 200, 200, 0.25), 0px 20px 40px rgba(199, 199, 199, 0.25);
+          box-shadow: 0px 5px 10px rgba(200, 200, 200, 0.25), 0px 20px 40px rgba(199, 199, 199, 0.25);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main .features .card img {
+  width: 80px;
+  height: auto;
+  padding: 18px;
+  border-radius: 18px;
+}
+
+.main .features .card .title {
+  font-family: "Gilroy_SB";
+  color: #1e1e1e;
+  font-size: 26px;
+  margin-top: 20px;
+}
+
+.main .features .card .parag {
+  font-family: "Gilroy_M";
+  color: #8b8b8b;
+  font-size: 20px;
+  line-height: 30px;
+  margin-top: 12px;
+}
 /*# sourceMappingURL=index.css.map */
