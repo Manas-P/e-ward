@@ -24,7 +24,9 @@
         //Registration
         if(isset($_POST['regbtn'])){
             //While using extract, no need to define variable use $nameAttribute from the form
-            $ins="INSERT INTO `tbl_registration`(`fname`, `email`, `phno`, `wardno`, `houseno`, `rationno`) VALUES ('$fname','$email','$phno','$wrdno','$houno','$rano')";
+            $userid=$wrdno . $houno;
+            echo $userid;
+            $ins="INSERT INTO `tbl_registration`(`fname`, `email`, `phno`, `wardno`, `houseno`, `userid`, `rationno`) VALUES ('$fname','$email','$phno','$wrdno','$houno','$userid','$rano')";
             $ins_res=mysqli_query($conn,$ins);
             if($ins_res){
                 header("Location: ../pages/login.php");
@@ -41,7 +43,7 @@
         {
             // $password=$password;
             //Check if mobile already exisit
-            $checkLogin = "SELECT * FROM `tbl_registration` WHERE `houseno`='$userName' and `password`='$password' and `status`=1";
+            $checkLogin = "SELECT * FROM `tbl_registration` WHERE `userid`='$userName' and `password`='$password' and `status`=1";
             $checkLoginResult = mysqli_query($conn, $checkLogin);
             $checkLoginCount = mysqli_num_rows($checkLoginResult);
             //Check Admin

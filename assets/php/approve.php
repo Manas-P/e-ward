@@ -24,11 +24,13 @@
         $toMail= $row['email'];
         $houseNo=$row['houseno'];
         $name=$row['fname'];
+        $wardno=$row['wardno'];
     }
     
     //Mail Informations
+    $userid=$wardno . $houseNo;
     $subject="E-Ward Approved";
-    $body="Dear $name, your request have approved. You can login to E-Ward using Id = $houseNo and Password = $generatedPassword";
+    $body="Dear $name, your request have approved. You can login to E-Ward using Id = $userid and Password = $generatedPassword";
     $headers="From: ewardmember@gmail.com";
 
     if(mail($toMail,$subject,$body,$headers)){
