@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 01, 2022 at 08:26 PM
+-- Generation Time: Feb 01, 2022 at 11:20 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.25
 
@@ -67,7 +67,8 @@ INSERT INTO `tbl_house` (`hid`, `rid`, `house_name`, `house_no`, `ward_no`, `loc
 (2, 20, 'Pachakkil House', 145, 2, 'Kottooli', 'Kuthiravattom P.O.', 9568784568, 'APL'),
 (3, 27, 'Paramthottu', 154, 2, 'Pala', 'Chengalam', 1256325879, 'APL'),
 (4, 21, 'qwer', 124, 2, 'hjhyg', 'ikjjhy', 9865874585, 'APL'),
-(6, 31, 'qwert', 15, 2, 'fcrdrdcrd', 'wsxedxed', 8569857458, 'APL');
+(6, 31, 'qwert', 15, 2, 'fcrdrdcrd', 'wsxedxed', 8569857458, 'APL'),
+(7, 39, 'abcd villa', 5, 2, 'abcdefgh', 'abcdefgh', 4565434567, 'APL');
 
 -- --------------------------------------------------------
 
@@ -113,7 +114,7 @@ CREATE TABLE `tbl_registration` (
   `houseno` bigint(10) NOT NULL,
   `userid` bigint(10) DEFAULT NULL,
   `password` varchar(60) NOT NULL DEFAULT '0',
-  `rationno` bigint(100) NOT NULL,
+  `taxreport` varchar(200) NOT NULL,
   `status` int(10) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -121,35 +122,40 @@ CREATE TABLE `tbl_registration` (
 -- Dumping data for table `tbl_registration`
 --
 
-INSERT INTO `tbl_registration` (`rid`, `fname`, `email`, `phno`, `wardno`, `houseno`, `userid`, `password`, `rationno`, `status`) VALUES
-(1, 'Manas', 'manas@gmail.com', 9446184518, 15, 125, NULL, 'NuYivsek', 2458696351, 1),
-(2, 'mudhiu', 'manas@gmail.com', 4512365987, 25, 214, NULL, '0', 5369874512, 0),
-(3, 'asd', 'asd@gmail.com', 4125632569, 15, 125, NULL, '0', 5236598744, 0),
-(4, 'Man', 'man@gmail.com', 1234567898, 12, 145, NULL, '0', 1254589632, 0),
-(5, 'qwe', 'qwe@gmail.com', 4125632587, 45, 236, NULL, '0', 1254587452, 0),
-(6, 'telbincherian', 'ctelbin@gmail.com', 9605020907, 12, 124, NULL, '0', 7894561211, 0),
-(7, 'qw', 'qw@gmail.com', 1254125632, 14, 137, NULL, '0', 1256587856, 0),
-(8, 'qw', 'qw@gmail.com', 45125632547, 41, 47, NULL, '0', 4589632321, 0),
-(9, 'Appy Kurian', 'kuriantom@mca.ajce.in', 9548751256, 14, 123, 14123, '123', 1254896325, 1),
-(10, 'Amal Joy', 'amaljoy@mca.ajce.in', 8569878542, 14, 21, NULL, 'i3f69EAm', 1254589658, 1),
-(11, 'Akshai Biju', 'akshaibiju@mca.ajce.in', 4589652365, 17, 11, NULL, 'uj42Ayol', 1214526987, 1),
-(12, 'Kunni Bhai', 'telbincherian@mca.ajce.in', 7845698541, 12, 965, NULL, 'BmzxyDGj', 1458978745, 1),
-(13, 'Ebin Johnson', 'ebinjohnson@mca.ajce', 8545896587, 54, 456, NULL, 'GvjBPt3h', 9458965412, 1),
-(14, 'Anali Jose', 'josekemerson@mca.ajce.in', 9865487854, 14, 23, NULL, '5IE8TctU', 1254897785, 1),
-(15, 'Kozhi Sanju', 'sanjuabrahambinu@mca.ajce.in', 9548785468, 14, 234, NULL, '77gsp0th', 1254896587, 1),
-(16, 'Katta', 'akshaibiju3@gmail.com', 58965236587, 3, 14, NULL, '4PjLplOg', 1254895632, 1),
-(17, 'Anumol', 'anualexander@mca.ajce.in', 9565874587, 14, 128, NULL, 'Vtypy03e', 2548965236, 1),
-(18, 'aa', 'aa@gmail.com', 9854887541, 2, 121, NULL, '123', 4879856854, 1),
-(19, 'Akshai', 'akshaibiju@mca.ajce.in', 9856587458, 8, 12, NULL, 'MwhagcFF', 8754521254, 1),
-(20, 'Manas P', 'manas4513pachakkil@gmail.com', 9446184518, 2, 145, 2145, '123', 9568784568, 1),
-(21, 'Telbin Cherian', 'telbincherian@gmail.com', 9565878451, 2, 124, NULL, '123', 9865874585, 1),
-(22, 'Kurian Tom', 'kuriantom2017@gmail.com', 9856587458, 2, 12, NULL, '6D0Ab93X', 6587845213, 1),
-(25, 'Maamachan', 'albinpthomas@mca.ajce.in', 9856547854, 2, 158, NULL, '0', 6589856587, 0),
-(27, 'Frank Thomas', 'frankmathewsthomas@mca.ajce.in', 9856548785, 2, 154, NULL, '123', 1256325879, 1),
-(28, 'laali', 'laali@ed.fvv', 8785698745, 2, 147, NULL, '0', 1523658795, 0),
-(29, 'Laali Bhaai', 'laa@gmz.ff', 5485478965, 2, 14, NULL, '0', 1523659875, 0),
-(31, 'aaa', 'aaa@gmail.com', 9547586965, 2, 15, NULL, '1w4xL4O6', 8569857458, 1),
-(35, 'test', 'test@gmail.com', 5478965256, 2, 143, 2143, 'FZEra6FT', 1258963254, 1);
+INSERT INTO `tbl_registration` (`rid`, `fname`, `email`, `phno`, `wardno`, `houseno`, `userid`, `password`, `taxreport`, `status`) VALUES
+(1, 'Manas', 'manas@gmail.com', 9446184518, 15, 125, NULL, 'NuYivsek', '2458696351', 1),
+(2, 'mudhiu', 'manas@gmail.com', 4512365987, 25, 214, NULL, '0', '5369874512', 0),
+(3, 'asd', 'asd@gmail.com', 4125632569, 15, 125, NULL, '0', '5236598744', 0),
+(4, 'Man', 'man@gmail.com', 1234567898, 12, 145, NULL, '0', '1254589632', 0),
+(5, 'qwe', 'qwe@gmail.com', 4125632587, 45, 236, NULL, '0', '1254587452', 0),
+(6, 'telbincherian', 'ctelbin@gmail.com', 9605020907, 12, 124, NULL, '0', '7894561211', 0),
+(7, 'qw', 'qw@gmail.com', 1254125632, 14, 137, NULL, '0', '1256587856', 0),
+(8, 'qw', 'qw@gmail.com', 45125632547, 41, 47, NULL, '0', '4589632321', 0),
+(9, 'Appy Kurian', 'kuriantom@mca.ajce.in', 9548751256, 14, 123, 14123, '123', '1254896325', 1),
+(10, 'Amal Joy', 'amaljoy@mca.ajce.in', 8569878542, 14, 21, NULL, 'i3f69EAm', '1254589658', 1),
+(11, 'Akshai Biju', 'akshaibiju@mca.ajce.in', 4589652365, 17, 11, NULL, 'uj42Ayol', '1214526987', 1),
+(12, 'Kunni Bhai', 'telbincherian@mca.ajce.in', 7845698541, 12, 965, NULL, 'BmzxyDGj', '1458978745', 1),
+(13, 'Ebin Johnson', 'ebinjohnson@mca.ajce', 8545896587, 54, 456, NULL, 'GvjBPt3h', '9458965412', 1),
+(14, 'Anali Jose', 'josekemerson@mca.ajce.in', 9865487854, 14, 23, NULL, '5IE8TctU', '1254897785', 1),
+(15, 'Kozhi Sanju', 'sanjuabrahambinu@mca.ajce.in', 9548785468, 14, 234, NULL, '77gsp0th', '1254896587', 1),
+(16, 'Katta', 'akshaibiju3@gmail.com', 58965236587, 3, 14, NULL, '4PjLplOg', '1254895632', 1),
+(17, 'Anumol', 'anualexander@mca.ajce.in', 9565874587, 14, 128, NULL, 'Vtypy03e', '2548965236', 1),
+(18, 'aa', 'aa@gmail.com', 9854887541, 2, 121, NULL, '123', '4879856854', 1),
+(19, 'Akshai', 'akshaibiju@mca.ajce.in', 9856587458, 8, 12, NULL, 'MwhagcFF', '8754521254', 1),
+(20, 'Manas P', 'manas4513pachakkil@gmail.com', 9446184518, 2, 145, 2145, '123', '9568784568', 1),
+(21, 'Telbin Cherian', 'telbincherian@gmail.com', 9565878451, 2, 124, NULL, '123', '9865874585', 1),
+(22, 'Kurian Tom', 'kuriantom2017@gmail.com', 9856587458, 2, 12, NULL, '6D0Ab93X', '6587845213', 1),
+(25, 'Maamachan', 'albinpthomas@mca.ajce.in', 9856547854, 2, 158, NULL, '0', '6589856587', 0),
+(27, 'Frank Thomas', 'frankmathewsthomas@mca.ajce.in', 9856548785, 2, 154, NULL, '123', '1256325879', 1),
+(28, 'laali', 'laali@ed.fvv', 8785698745, 2, 147, NULL, '0', '1523658795', 0),
+(29, 'Laali Bhaai', 'laa@gmz.ff', 5485478965, 2, 14, NULL, '0', '1523659875', 0),
+(31, 'aaa', 'aaa@gmail.com', 9547586965, 2, 15, NULL, '1w4xL4O6', '8569857458', 1),
+(35, 'test', 'test@gmail.com', 5478965256, 2, 143, 2143, 'FZEra6FT', '1258963254', 1),
+(36, 'test', 'test@gmail.com', 5674567543, 2, 123, 2123, '0', '../documents/taxreport1643745313.txt', 0),
+(37, 'test', 'test@gmail.com', 3456765434, 2, 125, 2125, '0', '../documents/taxreport/1643745381.txt', 0),
+(38, 'test', 'test@gmail.com', 5456765679, 2, 56, 256, '0', '../documents/taxreport/1643748995.pdf', 0),
+(39, 'test', 'test@gmail.com', 5467543345, 2, 5, 25, '123', '../documents/taxreport/1643751741.pdf', 1),
+(40, 'Manas test', 'manasp@mca.ajce.in', 7678976780, 2, 4, 24, '0', '../documents/taxreport/1643752792.pdf', 0);
 
 -- --------------------------------------------------------
 
@@ -234,7 +240,7 @@ ALTER TABLE `tbl_admin`
 -- AUTO_INCREMENT for table `tbl_house`
 --
 ALTER TABLE `tbl_house`
-  MODIFY `hid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `hid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `tbl_house_member`
@@ -246,7 +252,7 @@ ALTER TABLE `tbl_house_member`
 -- AUTO_INCREMENT for table `tbl_registration`
 --
 ALTER TABLE `tbl_registration`
-  MODIFY `rid` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `rid` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `tbl_ward_member`
