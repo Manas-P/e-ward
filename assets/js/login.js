@@ -27,7 +27,7 @@ const email=document.querySelector("#email-id");
 const phno=document.querySelector("#phn-number");
 const wardNo=document.querySelector("#ward-number");
 const houseNo=document.querySelector("#house-number");
-const rationNo=document.querySelector("#ration-number");
+const taxRep=document.querySelector("#tax-report");
 const regSubBtn=document.querySelector("#reg-btn");
 
 //Error Message Class
@@ -36,13 +36,13 @@ const emailError=document.querySelector(".email .error");
 const phnoError=document.querySelector(".phno .error");
 const wardnoError=document.querySelector(".wrdno .error");
 const housenoError=document.querySelector(".houseno .error");
-const rationnoError=document.querySelector(".rationno .error");
+const taxrepError=document.querySelector(".taxreport .error");
 var fullNameSubmit=false;
 var emailSubmit=false;
 var phnoSubmit=false;
 var wrdnoSubmit=false;
 var hosnoSubmit=false;
-var ranoSubmit=false;
+var taxrepSubmit=false;
 
 //Fullname Validation
 var nameChk=/^[a-z A-Z]+$/;
@@ -85,7 +85,7 @@ email.addEventListener("input",()=>{
 });
 
 //Phno Validation
-var phnoChk=/^([0-9_\-]{10,13})+$/;
+var phnoChk=/^(\+\d{1,3}[- ]?)?\d{10}$/;
 phno.addEventListener("input",()=>{
     if(phno.value.match(phnoChk)){
         phnoError.classList.add("error-hidden");
@@ -145,30 +145,38 @@ houseNo.addEventListener("input",()=>{
 });
 
 //Ration Number Validation
-var rationnoChk=/^[1-9]{10}$/;
-rationNo.addEventListener("input",()=>{
-    if(rationNo.value.match(rationnoChk)){
-        rationnoError.classList.add("error-hidden");
-        rationnoError.classList.remove("error-visible");
-        ranoSubmit=true;
-    }else if(rationNo.value==""){
-        rationnoError.classList.add("error-visible");
-        rationnoError.classList.remove("error-hidden");
-        rationnoError.innerText="Field cannot be blank";
-        ranoSubmit=false;
+// var rationnoChk=/^[1-9]{10}$/;
+// rationNo.addEventListener("input",()=>{
+//     if(rationNo.value.match(rationnoChk)){
+//         rationnoError.classList.add("error-hidden");
+//         rationnoError.classList.remove("error-visible");
+//         ranoSubmit=true;
+//     }else if(rationNo.value==""){
+//         rationnoError.classList.add("error-visible");
+//         rationnoError.classList.remove("error-hidden");
+//         rationnoError.innerText="Field cannot be blank";
+//         ranoSubmit=false;
+//     }else{
+//         rationnoError.classList.add("error-visible");
+//         rationnoError.classList.remove("error-hidden");
+//         rationnoError.innerText="Invalid ration number";
+//         ranoSubmit=false;
+//     }
+// });
+
+taxRep.addEventListener("change",()=>{
+    if(taxRep.value == null){
+        taxrepSubmit=false;
     }else{
-        rationnoError.classList.add("error-visible");
-        rationnoError.classList.remove("error-hidden");
-        rationnoError.innerText="Invalid ration number";
-        ranoSubmit=false;
+        taxrepSubmit=true;
     }
 });
 
 //Submit Button Visibility
 const buttonCursor=document.querySelector(".button");//To avoid poniterevent and cursor problem
 regForm.addEventListener("keyup",()=>{
-    console.log(fullNameSubmit);
-    if(fullNameSubmit==true && emailSubmit==true && phnoSubmit==true && wrdnoSubmit==true && hosnoSubmit==true && ranoSubmit==true){
+    //console.log(fullNameSubmit,emailSubmit,phnoSubmit,wrdnoSubmit,hosnoSubmit,taxrepSubmit);
+    if(fullNameSubmit==true && emailSubmit==true && phnoSubmit==true && wrdnoSubmit==true && hosnoSubmit==true && taxrepSubmit){
         regSubBtn.classList.remove("disabled");
         buttonCursor.classList.remove("cursor-disabled");
     }else{

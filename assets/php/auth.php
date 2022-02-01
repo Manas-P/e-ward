@@ -25,15 +25,27 @@
         if(isset($_POST['regbtn'])){
             //While using extract, no need to define variable use $nameAttribute from the form
             $userid=$wrdno . $houno;
-            echo $userid;
-            $ins="INSERT INTO `tbl_registration`(`fname`, `email`, `phno`, `wardno`, `houseno`, `userid`, `rationno`) VALUES ('$fname','$email','$phno','$wrdno','$houno','$userid','$rano')";
-            $ins_res=mysqli_query($conn,$ins);
-            if($ins_res){
-                header("Location: ../pages/login.php");
+
+            $upload_dir = '../documents/taxreport/';
+            $file_tmpname = $_FILES['taxre']['tmp_name'];
+            $file_name = $_FILES['taxre']['name'];
+            $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
+            $filepath = $upload_dir . time().".".$file_ext;
+
+            if(move_uploaded_file($file_tmpname, $filepath)){
+
+                $ins="INSERT INTO `tbl_registration`(`fname`, `email`, `phno`, `wardno`, `houseno`, `userid`, `taxreport`) VALUES ('$fname','$email','$phno','$wrdno','$houno','$userid','$filepath')";
+                $ins_res=mysqli_query($conn,$ins);
+                if($ins_res){
+                    header("Location: ../pages/login.php");
+                }else{
+                    $_SESSION['loginMessage'] = "Error in registration";
+                    header("Location: ../pages/login.php");
+                }
+
             }else{
-                echo '<script language="javascript" type="text/javascript">';
-				echo 'alert("Error")';
-				echo '</script>';
+                $_SESSION['loginMessage'] = "File upload error";
+                header("Location: ../pages/login.php");
             }
         }
 
