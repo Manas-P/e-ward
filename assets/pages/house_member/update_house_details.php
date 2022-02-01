@@ -93,7 +93,7 @@ else
                                 <div class="label">
                                     Ration number
                                 </div>
-                                <input type="text" name="rano" id="ration-number" placeholder="2547863214" value="<?php echo $row['ration_no']; ?>" autocomplete="off" readonly>
+                                <input type="text" name="rano" id="ration-number" placeholder="2547863214" value="<?php echo $row['ration_no']; ?>" autocomplete="off">
                                 <div class="error error-hidden">
                                 </div>
                             </div>
