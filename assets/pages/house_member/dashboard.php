@@ -31,8 +31,7 @@ else
             $checkResult=mysqli_query($conn,$checkQuery);
             if(mysqli_num_rows($checkResult)==0){
         ?>
-        <!-- Update profile -->
-
+        <!-- Add house info -->
 
         <section class="main">
             <!-- ==========Sidebar============= -->
@@ -44,7 +43,7 @@ else
             <div class="container">
                 <div class="header">
                     <div class="title">
-                        Update Profile
+                        Add house details
                     </div>
                 </div>
                 <!-- content -->
@@ -116,8 +115,8 @@ else
                                     <label for="bpl">BPL</label>
                                 </div>
                             </div>
-                            <div class="button">
-                                <input type="submit" value="Add details" name="upbtn" id="up-btn" class="primary-button">
+                            <div class="button ubn cursor-disable">
+                                <input type="submit" value="Add details" name="upbtn" id="up-btn" class="primary-button disabled">
                             </div>
                         </div>
                     </form>
@@ -165,6 +164,7 @@ else
                 unset($_SESSION['loginMessage']);
         }?>
     </body>
+    <script src="../../js/hm_dashboard.js"></script>
 </html>
 	<?php
 }
