@@ -24,7 +24,7 @@
         //Registration
         if(isset($_POST['regbtn'])){
             //While using extract, no need to define variable use $nameAttribute from the form
-            $userid=$wrdno . $houno;
+            $userid=$wrdno . $houno . "0";
 
             $upload_dir = '../documents/taxreport/';
             $file_tmpname = $_FILES['taxre']['tmp_name'];
@@ -198,6 +198,7 @@
             $insHouseRes=mysqli_query($conn,$insHouse);
             if($insHouseRes){
                 header("Location: ../pages/house_member/update_house_details.php");
+                $_SESSION['loginMessage'] = "House Info Added";
             }else{
                 echo '<script language="javascript" type="text/javascript">';
                 echo 'alert("Error")';

@@ -28,7 +28,7 @@
     }
     
     //Mail Informations
-    $userid=$wardno . $houseNo;
+    $userid=$wardno . $houseNo . "0";
     $subject="E-Ward Approved";
     $body="Dear $name, your request have approved. You can login to E-Ward using Id = $userid and Password = $generatedPassword";
     $headers="From: ewardmember@gmail.com";
