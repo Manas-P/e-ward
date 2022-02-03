@@ -11,6 +11,15 @@ else
     $rid=$_SESSION['rid'];
     $houseno= $_SESSION['houseno'];
     $wardno= $_SESSION['wardno'];
+
+    //Fetch house member details
+    $hm_id=$_GET['id'];
+    $hm_data="SELECT * FROM `tbl_house_member` WHERE `hm_id`='$hm_id'";
+    $dataResult=mysqli_query($conn,$hm_data);
+    while ($row = mysqli_fetch_assoc($dataResult))
+    {
+        $name= $row['fname'];
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +39,20 @@ else
             ?>
             <!-- ==========Sidebar End============= -->
             <div class="container">
-                <h1>Hello</h1>
+                <!-- bread-crumbs -->
+                <div class="bread-crumbs">
+                    <a href="./add_house_members.php" class="previous">
+                        House members
+                    </a>
+                    <svg class="str" width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.2002 8.59999L5.8002 4.99999L2.2002 1.39999" stroke="#1E1E1E" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <a href="" class="now">
+                        <?php
+                            echo $name;
+                        ?>
+                    </a>
+                </div>
             </div>
         </section>
     </body>

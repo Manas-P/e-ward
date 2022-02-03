@@ -271,7 +271,34 @@ body {
 }
 
 .main .container {
-  margin: 46px 63px 0 calc(476px - 63px);
+  margin: 64px 63px 0 calc(476px - 63px);
   width: calc(100% - 476px);
+}
+
+.main .container .bread-crumbs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 4px;
+          column-gap: 4px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .container .bread-crumbs .previous {
+  font-family: "Gilroy_M";
+  font-size: 16px;
+  color: #8b8b8b;
+}
+
+.main .container .bread-crumbs svg .str {
+  stroke: #1e1e1e;
+}
+
+.main .container .bread-crumbs .now {
+  font-family: "Gilroy_SB";
+  font-size: 16px;
+  color: #1e1e1e;
 }
 /*# sourceMappingURL=hm_profile.css.map */

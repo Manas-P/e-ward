@@ -10,7 +10,27 @@ body {
     @include sidebar();
   }
   .container {
-    margin: 46px 63px 0 calc(476px - 63px);
+    margin: 64px 63px 0 calc(476px - 63px);
     width: calc(100% - 476px);
+    .bread-crumbs {
+        display: flex;
+        column-gap: 4px;
+        align-items: center;
+        .previous {
+          font-family: "Gilroy_M";
+          font-size: 16px;
+          color: $subText;
+        }
+        svg {
+          .str {
+            stroke: $text;
+          }
+        }
+        .now {
+          font-family: "Gilroy_SB";
+          font-size: 16px;
+          color: $text;
+        }
+      }
   }
 }
