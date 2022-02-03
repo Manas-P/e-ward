@@ -58,8 +58,13 @@ else
                             if(mysqli_num_rows($fetchResult)>0){
                                 while($row = mysqli_fetch_assoc($fetchResult)){
                                     // Convert dob to age
-                                    $dob=$row["dob"];
-                                    $age = (date('Y') - date('Y',strtotime($dob)));
+                                    if($row["dob"]==="0000-00-00"){
+                                        $age="NA";
+                                    }else{
+                                        $dob=$row["dob"];
+                                        $age = (date('Y') - date('Y',strtotime($dob)));
+                                    }
+                                    
                         ?>
                         <a href="" class="member">
                             <div class="photo">

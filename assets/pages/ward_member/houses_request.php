@@ -130,6 +130,21 @@
             }
         </script>
 
+        <?php
+            if (isset($_SESSION['loginMessage'])) {
+                $msg=$_SESSION['loginMessage'];
+                echo " <div class='alertt alert-visible' style='border-left: 10px solid #1BBD2B;'>
+                            <div class='econtent'>
+                                <img src='../../images/check.svg' alt='success'>
+                                <div class='text'>
+                                    $msg
+                                </div>
+                            </div>
+                            <img src='../../images/close.svg' alt='close' class='alert-close'>
+                        </div>";
+                unset($_SESSION['loginMessage']);
+        }?>
+
         <script src="../../js/reject_house_reg.js"></script>
     </body>
 </html>

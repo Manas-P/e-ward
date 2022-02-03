@@ -25,6 +25,7 @@
         $houseNo=$row['houseno'];
         $name=$row['fname'];
         $wardno=$row['wardno'];
+        $phno=$row['phno'];
     }
     
     //Mail Informations
@@ -35,8 +36,13 @@
 
     if(mail($toMail,$subject,$body,$headers)){
         //Update User Status and Password
-        $updateQuery="UPDATE `tbl_registration` SET `password`='$generatedPassword',`status`=1 WHERE `rid`='$id'";
-        $updateResult=mysqli_query($conn,$updateQuery);
+        $updateQuery="UPDATE `tbl_registration` SET `password`='$generatedPassword',`status`=1 WHERE `rid`='$id' ; INSERT INTO `tbl_house_member`(`ward_no`, `house_no`, `fname`, `phno`) VALUES ('$wardno','$houseNo','$name','$phno');";
+        //$updateResult=mysqli_query($conn,$updateQuery);
+        $updateResult=mysqli_multi_query($conn,$updateQuery);
+        //Insert User data
+        //$insertuser="INSERT INTO `tbl_house_member`(`ward_no`, `house_no`, `fname`, `phno`, `blood_grp`, `dob`, `photo`) VALUES ('$wardno','$houseNo','$name','$phno')";
+        //$insertuserresult=mysqli_query($conn,$insertuser);
+        $_SESSION['loginMessage'] = "House approved";
         header("Location: ../pages/ward_member/houses_request.php");
     }else{
         echo "Mail not Send";
