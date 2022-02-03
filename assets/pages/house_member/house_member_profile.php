@@ -39,19 +39,35 @@ else
             ?>
             <!-- ==========Sidebar End============= -->
             <div class="container">
-                <!-- bread-crumbs -->
-                <div class="bread-crumbs">
-                    <a href="./add_house_members.php" class="previous">
-                        House members
-                    </a>
-                    <svg class="str" width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2.2002 8.59999L5.8002 4.99999L2.2002 1.39999" stroke="#1E1E1E" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                    <a href="" class="now">
-                        <?php
-                            echo $name;
-                        ?>
-                    </a>
+
+                <div class="left">
+                    <!-- bread-crumbs -->
+                    <div class="bread-crumbs">
+                        <a href="./add_house_members.php" class="previous">
+                            House members
+                        </a>
+                        <svg class="str" width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.2002 8.59999L5.8002 4.99999L2.2002 1.39999" stroke="#1E1E1E" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <a href="" class="now">
+                            <?php
+                                echo $name;
+                            ?>
+                        </a>
+                    </div>
+                    <!-- menu -->
+                    <div class="menu">
+                        <div class="links">
+                            <a href="" class="link active">General informations</a>
+                            <a href="" class="link">Identity proofs</a>
+                            <a href="" class="link">Educational background</a>
+                            <a href="" class="link">Professional background</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="right">
+                    <h1 style="padding-bottom: 50px;">details</h1>
                 </div>
             </div>
         </section>

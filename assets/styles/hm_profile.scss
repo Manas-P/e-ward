@@ -1,18 +1,22 @@
 @import "./components.scss";
 
 body {
-    background: $bg;
-  }
+  background: $bg;
+}
 
-.main{
-    display: flex;
+.main {
+  display: flex;
   .sidebar {
     @include sidebar();
   }
   .container {
     margin: 64px 63px 0 calc(476px - 63px);
     width: calc(100% - 476px);
-    .bread-crumbs {
+    display: flex;
+    .left {
+      width: 567px;
+      .bread-crumbs {
+        position: fixed;
         display: flex;
         column-gap: 4px;
         align-items: center;
@@ -32,5 +36,30 @@ body {
           color: $text;
         }
       }
+      .menu {
+        position: fixed;
+        margin-top: 68px;
+        padding: 24px 100px 24px 54px;
+        background: $white;
+        box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
+        border-radius: 10px;
+        .links {
+          display: flex;
+          flex-direction: column;
+          .link {
+            padding: 18px 0;
+            font-family: "Gilroy_SB";
+            font-size: 20px;
+            color: $placeholder;
+          }
+          .active {
+            color: $primary;
+          }
+        }
+      }
+    }
+    .right {
+      margin-top: 68px;
+    }
   }
 }
