@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 01, 2022 at 11:20 PM
+-- Generation Time: Feb 03, 2022 at 04:19 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.25
 
@@ -68,7 +68,8 @@ INSERT INTO `tbl_house` (`hid`, `rid`, `house_name`, `house_no`, `ward_no`, `loc
 (3, 27, 'Paramthottu', 154, 2, 'Pala', 'Chengalam', 1256325879, 'APL'),
 (4, 21, 'qwer', 124, 2, 'hjhyg', 'ikjjhy', 9865874585, 'APL'),
 (6, 31, 'qwert', 15, 2, 'fcrdrdcrd', 'wsxedxed', 8569857458, 'APL'),
-(7, 39, 'abcd villa', 5, 2, 'abcdefgh', 'abcdefgh', 4565434567, 'APL');
+(7, 39, 'abcd villa', 5, 2, 'abcdefgh', 'abcdefgh', 4565434567, 'APL'),
+(15, 42, 'new house', 34, 2, 'new locality', 'new post office', 6548784521, 'APL');
 
 -- --------------------------------------------------------
 
@@ -83,9 +84,9 @@ CREATE TABLE `tbl_house_member` (
   `fname` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL DEFAULT 'Not entered',
   `phno` bigint(13) NOT NULL,
-  `blood_grp` varchar(5) NOT NULL,
+  `blood_grp` varchar(5) NOT NULL DEFAULT 'NA',
   `dob` date NOT NULL,
-  `photo` varchar(100) NOT NULL
+  `photo` varchar(100) NOT NULL DEFAULT '../images/user-profile-placeholder.png'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -97,7 +98,10 @@ INSERT INTO `tbl_house_member` (`hm_id`, `ward_no`, `house_no`, `fname`, `email`
 (2, 2, 145, 'James Black', 'jamesblack@gmail.com', 9856587452, 'O+', '1995-03-15', '../images/uploads/photos/1638009946.png'),
 (3, 2, 154, 'Frank', 'fank@gmail.com', 9854569844, 'B-', '1998-09-17', '../images/uploads/photos/1638860482.jpg'),
 (4, 2, 154, 'Celia', 'celia@gmail.com', 9856587459, 'B-', '2001-10-01', '../images/uploads/photos/1638860567.png'),
-(5, 2, 145, 'Manas P', 'manas4518pachakkil@gmail.com', 9856587855, 'O+', '1998-10-28', '../images/uploads/photos/1639161827.png');
+(5, 2, 145, 'Manas P', 'manas4518pachakkil@gmail.com', 9856587855, 'O+', '1998-10-28', '../images/uploads/photos/1639161827.png'),
+(9, 2, 34, 'new test', 'Not entered', 9858356478, 'NA', '0000-00-00', '../images/user-profile-placeholder.png'),
+(10, 2, 34, 'new user', 'newuser@gmail.com', 9854587452, 'B+', '2018-01-17', '../images/uploads/photos/1643901418.jpg'),
+(11, 2, 34, 'new new', 'new@gmail.com', 9884545129, 'O+', '1998-10-28', '../images/uploads/photos/1643901465.png');
 
 -- --------------------------------------------------------
 
@@ -153,9 +157,10 @@ INSERT INTO `tbl_registration` (`rid`, `fname`, `email`, `phno`, `wardno`, `hous
 (35, 'test', 'test@gmail.com', 5478965256, 2, 143, 2143, 'FZEra6FT', '1258963254', 1),
 (36, 'test', 'test@gmail.com', 5674567543, 2, 123, 2123, '0', '../documents/taxreport1643745313.txt', 0),
 (37, 'test', 'test@gmail.com', 3456765434, 2, 125, 2125, '0', '../documents/taxreport/1643745381.txt', 0),
-(38, 'test', 'test@gmail.com', 5456765679, 2, 56, 256, '0', '../documents/taxreport/1643748995.pdf', 0),
+(38, 'test', 'test@gmail.com', 5456765679, 2, 56, 256, 'QydKPtOS', '../documents/taxreport/1643748995.pdf', 1),
 (39, 'test', 'test@gmail.com', 5467543345, 2, 5, 25, '123', '../documents/taxreport/1643751741.pdf', 1),
-(40, 'Manas test', 'manasp@mca.ajce.in', 7678976780, 2, 4, 24, '0', '../documents/taxreport/1643752792.pdf', 0);
+(40, 'Manas test', 'manasp@mca.ajce.in', 7678976780, 2, 4, 24, 'aSpApfN6', '../documents/taxreport/1643752792.pdf', 1),
+(42, 'new test', 'newtest@gmail.com', 9858356478, 2, 34, 2340, '123', '../documents/taxreport/1643837559.pdf', 1);
 
 -- --------------------------------------------------------
 
@@ -240,19 +245,19 @@ ALTER TABLE `tbl_admin`
 -- AUTO_INCREMENT for table `tbl_house`
 --
 ALTER TABLE `tbl_house`
-  MODIFY `hid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `hid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `tbl_house_member`
 --
 ALTER TABLE `tbl_house_member`
-  MODIFY `hm_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `hm_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `tbl_registration`
 --
 ALTER TABLE `tbl_registration`
-  MODIFY `rid` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `rid` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `tbl_ward_member`
