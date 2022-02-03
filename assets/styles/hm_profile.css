@@ -344,4 +344,64 @@ body {
 .main .container .right {
   margin-top: 68px;
 }
+
+.main .container .right .general {
+  background: #fff;
+  -webkit-box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
+          box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
+  border-radius: 10px;
+  padding: 48px 56px;
+  width: 704px;
+}
+
+.main .container .right .general .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .container .right .general .header .heading {
+  font-family: "Gilroy_SB";
+  font-size: 32px;
+  color: #1e1e1e;
+}
+
+.main .container .right .general .information {
+  margin-top: 48px;
+}
+
+.main .container .right .general .information .photo img {
+  width: 132px;
+  height: 132px;
+  border-radius: 4px;
+}
+
+.main .container .right .general .information .content {
+  margin-top: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .container .right .general .information .content .title {
+  font-family: "Gilroy_M";
+  font-size: 20px;
+  color: #8b8b8b;
+}
+
+.main .container .right .general .information .content .info {
+  margin-left: 8px;
+  font-family: "Gilroy_M";
+  font-size: 20px;
+  color: #1e1e1e;
+}
 /*# sourceMappingURL=hm_profile.css.map */

@@ -60,6 +60,49 @@ body {
     }
     .right {
       margin-top: 68px;
+      .general {
+        background: $white;
+        box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
+        border-radius: 10px;
+        padding: 48px 56px;
+        width: 704px;
+        .header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .heading {
+            font-family: "Gilroy_SB";
+            font-size: 32px;
+            color: $text;
+          }
+        }
+        .information {
+          margin-top: 48px;
+          .photo {
+            img {
+              width: 132px;
+              height: 132px;
+              border-radius: 4px;
+            }
+          }
+          .content {
+            margin-top: 32px;
+            display: flex;
+            align-items: center;
+            .title {
+              font-family: "Gilroy_M";
+              font-size: 20px;
+              color: $subText;
+            }
+            .info {
+              margin-left: 8px;
+              font-family: "Gilroy_M";
+              font-size: 20px;
+              color: $text;
+            }
+          }
+        }
+      }
     }
   }
 }
