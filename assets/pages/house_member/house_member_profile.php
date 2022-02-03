@@ -58,10 +58,10 @@ else
                     <!-- menu -->
                     <div class="menu">
                         <div class="links">
-                            <a href="" class="link active">General informations</a>
-                            <a href="" class="link">Identity proofs</a>
-                            <a href="" class="link">Educational background</a>
-                            <a href="" class="link">Professional background</a>
+                            <a href="#" class="active">General informations</a>
+                            <a href="#" >Identity proofs</a>
+                            <a href="#" >Educational background</a>
+                            <a href="#" >Professional background</a>
                         </div>
                     </div>
                 </div>
@@ -72,6 +72,7 @@ else
             </div>
         </section>
     </body>
+    <script src="../../js/hm_profile.js"></script>
 </html>
 	<?php
 }
