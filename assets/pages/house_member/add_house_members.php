@@ -66,7 +66,7 @@ else
                                     }
                                     
                         ?>
-                        <a href="" class="member">
+                        <a href="./house_member_profile.php?id=<?php echo $row['hm_id']; ?>" class="member">
                             <div class="photo">
                                 <img src="../<?php echo $row["photo"]; ?>" alt="member photo">
                             </div>
