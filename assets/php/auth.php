@@ -34,7 +34,7 @@
 
             if(move_uploaded_file($file_tmpname, $filepath)){
 
-                $ins="INSERT INTO `tbl_registration`(`fname`, `email`, `phno`, `wardno`, `houseno`, `userid`, `taxreport`) VALUES ('$fname','$email','$phno','$wrdno','$houno','$userid','$filepath')";
+                $ins="INSERT INTO `tbl_registration`(`fname`, `email`, `phno`, `wardno`, `houseno`, `taxreport`) VALUES ('$fname','$email','$phno','$wrdno','$houno','$filepath')";
                 $ins_res=mysqli_query($conn,$ins);
                 if($ins_res){
                     header("Location: ../pages/login.php");
@@ -55,7 +55,7 @@
         {
             // $password=$password;
             //Check if mobile already exisit
-            $checkLogin = "SELECT * FROM `tbl_registration` WHERE `userid`='$userName' and `password`='$password' and `status`=1";
+            $checkLogin = "SELECT * FROM `tbl_house_member` WHERE `userid`='$userName' and `password`='$password'";
             $checkLoginResult = mysqli_query($conn, $checkLogin);
             $checkLoginCount = mysqli_num_rows($checkLoginResult);
             //Check Admin
@@ -72,9 +72,8 @@
                 $userData=mysqli_fetch_assoc($checkLoginResult);
                 $_SESSION['e-wardId'] = session_id();
                 $_SESSION['fname'] = $userData['fname'];
-                $_SESSION['rid'] = $userData['rid'];
-                $_SESSION['houseno']= $userData['houseno'];
-                $_SESSION['wardno']= $userData['wardno'];
+                $_SESSION['houseno']= $userData['house_no'];
+                $_SESSION['wardno']= $userData['ward_no'];
                 header("Location: ../pages/house_member/dashboard.php");
                 die();
             }
@@ -194,7 +193,7 @@
 
         //First time Update profile (House member)
         if(isset($_POST['upbtn'])){
-            $insHouse = "INSERT INTO `tbl_house`(`rid`, `house_name`, `house_no`, `ward_no`, `locality`, `post_office`, `ration_no`, `category`) VALUES ('$rid','$hname', '$houno', '$wardno','$locality','$po','$rano','$rationCat')";
+            $insHouse = "INSERT INTO `tbl_house`(`house_name`, `house_no`, `ward_no`, `locality`, `post_office`, `ration_no`, `category`) VALUES ('$hname', '$houno', '$wardno','$locality','$po','$rano','$rationCat')";
             $insHouseRes=mysqli_query($conn,$insHouse);
             if($insHouseRes){
                 header("Location: ../pages/house_member/update_house_details.php");
@@ -208,7 +207,7 @@
 
         //Update House Details (House member)
         if(isset($_POST['uphbtn'])){
-            $updateh="UPDATE `tbl_house` SET `house_name`='$hname', `locality`='$locality', `post_office`='$po', `category`='$rationCat' WHERE `rid`='$rid'";
+            $updateh="UPDATE `tbl_house` SET `house_name`='$hname', `locality`='$locality', `post_office`='$po', `category`='$rationCat' WHERE `ward_no`='$wardno' and `house_no`='$houno'";
             // $insHouse = "INSERT INTO `tbl_house`(`rid`, `house_name`, `house_no`, `ward_no`, `locality`, `post_office`, `ration_no`, `category`) VALUES ('$rid','$hname', '$houno', '$wardno','$locality','$po','$rano','$rationCat')";
             $upHouseRes=mysqli_query($conn,$updateh);
             if($upHouseRes){

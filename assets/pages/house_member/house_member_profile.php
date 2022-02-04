@@ -8,7 +8,6 @@ if (isset($_SESSION["e-wardId"]) != session_id()) {
 else
 {
     $fname=$_SESSION['fname'];
-    $rid=$_SESSION['rid'];
     $houseno= $_SESSION['houseno'];
     $wardno= $_SESSION['wardno'];
 

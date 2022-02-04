@@ -36,7 +36,7 @@
 
     if(mail($toMail,$subject,$body,$headers)){
         //Update User Status and Password
-        $updateQuery="UPDATE `tbl_registration` SET `password`='$generatedPassword',`status`=1 WHERE `rid`='$id' ; INSERT INTO `tbl_house_member`(`ward_no`, `house_no`, `fname`, `phno`) VALUES ('$wardno','$houseNo','$name','$phno');";
+        $updateQuery="UPDATE `tbl_registration` SET `status`=1 WHERE `rid`='$id' ; INSERT INTO `tbl_house_member`(`ward_no`, `house_no`, `fname`, `phno`, `userid`, `password`) VALUES ('$wardno','$houseNo','$name','$phno','$userid','$generatedPassword');";
         //$updateResult=mysqli_query($conn,$updateQuery);
         $updateResult=mysqli_multi_query($conn,$updateQuery);
         //Insert User data
