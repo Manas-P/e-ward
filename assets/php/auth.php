@@ -267,7 +267,7 @@
                 mysqli_query($conn,"DELETE FROM `tbl_registration` WHERE `rid`='$rejId'");
                 header("Location: ../pages/ward_member/houses_request.php");
             }else{
-                 echo "Mail not Send";
+                $_SESSION['loginMessage'] = "Mail not send";
             }
         }
     ?>
