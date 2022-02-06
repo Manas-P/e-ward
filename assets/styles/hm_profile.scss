@@ -10,7 +10,7 @@
   margin-bottom: 64px;
 }
 
-@mixin contentboxheader(){
+@mixin contentboxheader() {
   .header {
     display: flex;
     justify-content: space-between;
@@ -109,6 +109,34 @@ body {
               font-family: "Gilroy_M";
               font-size: 20px;
               color: $text;
+            }
+          }
+        }
+      }
+      .proofs {
+        @include contentbox();
+        @include contentboxheader();
+        .files {
+          margin-top: 48px;
+          .file {
+            margin-top: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .info {
+              display: flex;
+              align-items: center;
+              .title {
+                font-family: "Gilroy_M";
+                font-size: 20px;
+                color: $subText;
+              }
+              .info {
+                margin-left: 8px;
+                font-family: "Gilroy_M";
+                font-size: 20px;
+                color: $text;
+              }
             }
           }
         }
