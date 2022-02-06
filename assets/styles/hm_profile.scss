@@ -1,5 +1,28 @@
 @import "./components.scss";
 
+//Mixins
+@mixin contentbox() {
+  background: $white;
+  box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
+  border-radius: 10px;
+  padding: 48px 56px;
+  width: 704px;
+  margin-bottom: 64px;
+}
+
+@mixin contentboxheader(){
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .heading {
+      font-family: "Gilroy_SB";
+      font-size: 32px;
+      color: $text;
+    }
+  }
+}
+
 body {
   background: $bg;
 }
@@ -61,21 +84,8 @@ body {
     .right {
       margin-top: 68px;
       .general {
-        background: $white;
-        box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
-        border-radius: 10px;
-        padding: 48px 56px;
-        width: 704px;
-        .header {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          .heading {
-            font-family: "Gilroy_SB";
-            font-size: 32px;
-            color: $text;
-          }
-        }
+        @include contentbox();
+        @include contentboxheader();
         .information {
           margin-top: 48px;
           .photo {
