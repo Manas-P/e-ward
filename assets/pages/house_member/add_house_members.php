@@ -99,6 +99,7 @@ else
             </div>
             <!-- Add House Memeber -->
             <form action="../../php/auth.php" method="post" id="add-house-member" enctype="multipart/form-data">
+                <input type="hidden" name="fname" value="<?php echo $fname ?>">
                 <div class="inputs">
                     <div class="input h-fullname">
                         <div class="label">
@@ -157,6 +158,8 @@ else
             </form>
         </div>
         <script src="../../js/hm_add_hm.js"></script>
+
+        <!-- Error Toast -->
         <?php
         if (isset($_SESSION['loginMessage'])) {
             $msg=$_SESSION['loginMessage'];
@@ -171,7 +174,24 @@ else
                     </div>";
           unset($_SESSION['loginMessage']);
         }?>
+
+        <!-- Success toast -->
+        <?php
+            if (isset($_SESSION['success'])) {
+                $msg=$_SESSION['success'];
+                echo " <div class='alertt alert-visible' style='border-left: 10px solid #1BBD2B;'>
+                            <div class='econtent'>
+                                <img src='../../images/check.svg' alt='success'>
+                                <div class='text'>
+                                    $msg
+                                </div>
+                            </div>
+                            <img src='../../images/close.svg' alt='close' class='alert-close'>
+                        </div>";
+                unset($_SESSION['success']);
+        }?>
     </body>
+    <script src="../../js/toast.js"></script>
 </html>
 	<?php
 }

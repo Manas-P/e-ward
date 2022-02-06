@@ -130,12 +130,7 @@
             if(move_uploaded_file($file_tmpname, $filepath)){
                 
                 // Generate Random Password
-                $length=8;
-                $generatedPassword='';
-                $validChar='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-                while(0<$length--){
-                    $generatedPassword.=$validChar[random_int(0,strlen($validChar)-1)];
-                }
+                include '../include/password_generator.php';
 
                 $subject="E-Ward Approved";
                 $body="Dear $wfname, you have been added as Ward member. You can login to E-Ward using Id = $wwrdno and Password = $generatedPassword";
@@ -242,9 +237,32 @@
                 }
             }else{
                 if(move_uploaded_file($file_tmpname, $filepath)){
-                    $insHouseMember="INSERT INTO `tbl_house_member`(`ward_no`, `house_no`, `fname`,`email`, `phno`, `blood_grp`, `dob`, `photo`) VALUES ('$wardno','$houseno','$hfname','$hemail','$hphno','$hblood','$hdob','$filepath')";
-                    $insResult=mysqli_query($conn,$insHouseMember);
-                    header("Location: ../pages/house_member/add_house_members.php");
+
+                    // Generate Random Password
+                    include '../include/password_generator.php';
+
+                    //Count number of users
+                    $count="SELECT * FROM `tbl_house_member` WHERE `house_no`='$houseno'";
+                    $countResult=mysqli_query($conn,$count);
+                    $rowcount = mysqli_num_rows($countResult);
+                    $rowcount+=1;
+
+                    //Generate user id
+                    $userid=$wardno . $houseno . $rowcount;
+
+                    //Send mail
+                    $subject="E-Ward membership added";
+                    $body="Dear $hfname, you have been added as House member by $fname. You can login to E-Ward using Id = $userid and Password = $generatedPassword";
+                    $headers="From: ewardmember@gmail.com";
+
+                    if(mail($hemail,$subject,$body,$headers)){
+                        $insHouseMember="INSERT INTO `tbl_house_member`(`ward_no`, `house_no`, `fname`,`email`, `phno`, `blood_grp`, `dob`, `photo`, `userid`, `password`) VALUES ('$wardno','$houseno','$hfname','$hemail','$hphno','$hblood','$hdob','$filepath','$userid','$generatedPassword')";
+                        $insResult=mysqli_query($conn,$insHouseMember);
+                        header("Location: ../pages/house_member/add_house_members.php");
+                        $_SESSION['success'] = "House member added";
+                    }else{
+                        $_SESSION['loginMessage'] = "Error in sending E-mail";
+                    }
                 }else{
                     $_SESSION['loginMessage'] = "File upload error";
                     header("Location: ../pages/house_member/add_house_members.php");
