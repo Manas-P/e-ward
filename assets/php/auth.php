@@ -186,6 +186,24 @@
             }
         }
 
+        //Update validity for all ward members
+        if(isset($_POST['upVal'])){
+            if(empty($upvalidity)){
+                $_SESSION['loginMessage'] = "Please enter a date";
+                header("Location: ../pages/admin/admin_add_wm.php");
+            }else{
+                $upquery="UPDATE `tbl_ward_member` SET `validupto`='$upvalidity' where `status`='1'";
+                $upqueryResult=mysqli_query($conn,$upquery);
+                if($upqueryResult){
+                    $_SESSION['success'] = "Validity updated successfully";
+                    header("Location: ../pages/admin/admin_add_wm.php");
+                }else{
+                    $_SESSION['loginMessage'] = "Error in updating validity";
+                    header("Location: ../pages/admin/admin_add_wm.php");
+                }            
+            }
+        }
+
         //First time Update profile (House member)
         if(isset($_POST['upbtn'])){
             $insHouse = "INSERT INTO `tbl_house`(`house_name`, `house_no`, `ward_no`, `locality`, `post_office`, `ration_no`, `category`) VALUES ('$hname', '$houno', '$wardno','$locality','$po','$rano','$rationCat')";
