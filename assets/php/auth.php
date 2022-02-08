@@ -74,6 +74,7 @@
                 $_SESSION['fname'] = $userData['fname'];
                 $_SESSION['houseno']= $userData['house_no'];
                 $_SESSION['wardno']= $userData['ward_no'];
+                $_SESSION['userid']= $userData['userid'];
                 header("Location: ../pages/house_member/dashboard.php");
                 die();
             }
