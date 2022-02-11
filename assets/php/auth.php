@@ -277,8 +277,12 @@
                     if(mail($hemail,$subject,$body,$headers)){
                         $insHouseMember="INSERT INTO `tbl_house_member`(`ward_no`, `house_no`, `fname`,`email`, `phno`, `blood_grp`, `dob`, `photo`, `userid`, `password`) VALUES ('$wardno','$houseno','$hfname','$hemail','$hphno','$hblood','$hdob','$filepath','$userid','$generatedPassword') ; INSERT INTO `tbl_id_proof`(`userid`) VALUES ('$userid')";
                         $insResult=mysqli_multi_query($conn,$insHouseMember);
-                        header("Location: ../pages/house_member/add_house_members.php");
-                        $_SESSION['success'] = "House member added";
+                        if($insResult){
+                            header("Location: ../pages/house_member/add_house_members.php");
+                            $_SESSION['success'] = "House member added";
+                        }else{
+                            $_SESSION['loginMessage'] = "Error in adding member";
+                        }
                     }else{
                         $_SESSION['loginMessage'] = "Error in sending E-mail";
                     }
