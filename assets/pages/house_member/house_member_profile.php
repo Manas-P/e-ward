@@ -27,7 +27,7 @@ else
     }
     //check user
     $arr = str_split($user_id); // convert string to an array
-    $chk= end($arr);
+    $chk= end($arr); // 0 = house head
     $arr2=str_split($hm_id);
     $chk2= end($arr2);
 ?>

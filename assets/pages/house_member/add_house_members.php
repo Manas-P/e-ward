@@ -10,6 +10,11 @@ else
     $fname=$_SESSION['fname'];
     $houseno= $_SESSION['houseno'];
     $wardno= $_SESSION['wardno'];
+    $user_id= $_SESSION['userid'];
+
+    //check user
+    $arr = str_split($user_id); // convert string to an array
+    $chk= end($arr); // 0 = house head
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,15 +45,22 @@ else
                 <div class="members-list">
                     <div class="members">
 
-                        <a class="add-member">
-                            <div class="icon">
-                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path class="str" d="M15 6.25V23.75" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path class="str" d="M6.25 15H23.75" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                            <div class="text">Add members</div>
-                        </a>
+                        <!-- Check if user is head or not -->
+                        <?php
+                            if($chk==0){
+                        ?>
+                            <a class="add-member">
+                                <div class="icon">
+                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path class="str" d="M15 6.25V23.75" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path class="str" d="M6.25 15H23.75" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="text">Add members</div>
+                            </a>
+                        <?php
+                            }
+                        ?>
 
                         <!-- Fetch Ward Members -->
                         <?php
