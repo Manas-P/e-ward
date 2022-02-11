@@ -79,7 +79,7 @@
                                 <td width=154px><?php echo $row["phno"]; ?></td>
                                 <td width=180px><?php echo $row["houseno"]; ?></td>
                                 <td width=225px>
-                                    <a class="view" href="./view_pdf.php?pdf=<?php echo $row["taxreport"]; ?>" target="_blank">View</a>
+                                    <a class="view" href="../../php/view_pdf.php?pdf=<?php echo $row["taxreport"]; ?>" target="_blank">View</a>
                                 </td>
                                 <td width=95px>
                                     <a href="../../php/approve.php?apprId=<?php echo $row['rid']; ?>" class="approve">Approve</a>
