@@ -27,7 +27,7 @@ else
         <section class="main">
             <!-- ==========Sidebar============= -->
             <?php
-                include '../../include/house_member/sidebar_hm_update.php'
+                include '../../include/house_member/sidebar_hm_houseupdate.php'
             ?>
             <!-- ==========Sidebar End============= -->
                 
