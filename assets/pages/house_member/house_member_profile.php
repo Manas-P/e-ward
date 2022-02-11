@@ -148,6 +148,14 @@ else
 
 
                     <!-- Identity Proofs -->
+                    <!-- Fetch id proof data -->
+                    <?php
+                        $idproofQuery="SELECT * FROM `tbl_id_proof` WHERE `userid`='$hm_id'";
+                        $idproofResult=mysqli_query($conn,$idproofQuery);
+                        while ($idProof = mysqli_fetch_assoc($idproofResult)){
+                        
+                    ?>
+
                     <section class="proofs" id="identityProof">
                         <div class="header">
                             <div class="heading">
@@ -176,17 +184,29 @@ else
                                         Aadhar number:
                                     </div>
                                     <div class="info">
-                                        215487896563
+                                        <?php
+                                            if($idProof['aadhar_no']=='0'){
+                                                echo "Not entered";
+                                            }else{
+                                                echo $idProof['aadhar_no'];
+                                            }
+                                        ?>
                                     </div>
                                 </div>
                                 <div class="download">
-                                    <a href="#">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M17.5 12.5V15.8333C17.5 16.2754 17.3244 16.6993 17.0118 17.0118C16.6993 17.3244 16.2754 17.5 15.8333 17.5H4.16667C3.72464 17.5 3.30072 17.3244 2.98816 17.0118C2.67559 16.6993 2.5 16.2754 2.5 15.8333V12.5" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M5.8335 8.33325L10.0002 12.4999L14.1668 8.33325" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M10 12.5V2.5" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </a>
+                                    <?php
+                                        if($idProof['aadhar_file']!='0'){
+                                    ?>
+                                        <a href="#">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M17.5 12.5V15.8333C17.5 16.2754 17.3244 16.6993 17.0118 17.0118C16.6993 17.3244 16.2754 17.5 15.8333 17.5H4.16667C3.72464 17.5 3.30072 17.3244 2.98816 17.0118C2.67559 16.6993 2.5 16.2754 2.5 15.8333V12.5" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M5.8335 8.33325L10.0002 12.4999L14.1668 8.33325" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M10 12.5V2.5" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </a>
+                                    <?php
+                                        }
+                                    ?>
                                 </div>
                             </div>
                             <!-- ---------------- -->
@@ -196,17 +216,29 @@ else
                                         Election id:
                                     </div>
                                     <div class="info">
-                                        458962357
+                                        <?php
+                                            if($idProof['election_id']=='0'){
+                                                echo "Not entered";
+                                            }else{
+                                                echo $idProof['election_id'];
+                                            }
+                                        ?>
                                     </div>
                                 </div>
                                 <div class="download">
-                                    <a href="#">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M17.5 12.5V15.8333C17.5 16.2754 17.3244 16.6993 17.0118 17.0118C16.6993 17.3244 16.2754 17.5 15.8333 17.5H4.16667C3.72464 17.5 3.30072 17.3244 2.98816 17.0118C2.67559 16.6993 2.5 16.2754 2.5 15.8333V12.5" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M5.8335 8.33325L10.0002 12.4999L14.1668 8.33325" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M10 12.5V2.5" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </a>
+                                    <?php
+                                        if($idProof['election_id_file']!='0'){
+                                    ?>
+                                        <a href="#">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M17.5 12.5V15.8333C17.5 16.2754 17.3244 16.6993 17.0118 17.0118C16.6993 17.3244 16.2754 17.5 15.8333 17.5H4.16667C3.72464 17.5 3.30072 17.3244 2.98816 17.0118C2.67559 16.6993 2.5 16.2754 2.5 15.8333V12.5" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M5.8335 8.33325L10.0002 12.4999L14.1668 8.33325" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M10 12.5V2.5" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </a>
+                                    <?php
+                                        }
+                                    ?>
                                 </div>
                             </div>
                             <!-- ---------------- -->
@@ -216,17 +248,29 @@ else
                                         Driving licence:
                                     </div>
                                     <div class="info">
-                                        587856985647
+                                        <?php
+                                            if($idProof['driving_lic']=='0'){
+                                                echo "Not entered";
+                                            }else{
+                                                echo $idProof['driving_lic'];
+                                            }
+                                        ?>
                                     </div>
                                 </div>
                                 <div class="download">
-                                    <a href="#">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M17.5 12.5V15.8333C17.5 16.2754 17.3244 16.6993 17.0118 17.0118C16.6993 17.3244 16.2754 17.5 15.8333 17.5H4.16667C3.72464 17.5 3.30072 17.3244 2.98816 17.0118C2.67559 16.6993 2.5 16.2754 2.5 15.8333V12.5" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M5.8335 8.33325L10.0002 12.4999L14.1668 8.33325" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M10 12.5V2.5" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </a>
+                                    <?php
+                                        if($idProof['driving_lic_file']!='0'){
+                                    ?>
+                                        <a href="#">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M17.5 12.5V15.8333C17.5 16.2754 17.3244 16.6993 17.0118 17.0118C16.6993 17.3244 16.2754 17.5 15.8333 17.5H4.16667C3.72464 17.5 3.30072 17.3244 2.98816 17.0118C2.67559 16.6993 2.5 16.2754 2.5 15.8333V12.5" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M5.8335 8.33325L10.0002 12.4999L14.1668 8.33325" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M10 12.5V2.5" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </a>
+                                    <?php
+                                        }
+                                    ?>
                                 </div>
                             </div>
                             <!-- ---------------- -->
@@ -236,17 +280,29 @@ else
                                         PAN card:
                                     </div>
                                     <div class="info">
-                                        425685412548
+                                        <?php
+                                            if($idProof['pan_card']=='0'){
+                                                echo "Not entered";
+                                            }else{
+                                                echo $idProof['pan_card'];
+                                            }
+                                        ?>
                                     </div>
                                 </div>
                                 <div class="download">
-                                    <a href="#">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M17.5 12.5V15.8333C17.5 16.2754 17.3244 16.6993 17.0118 17.0118C16.6993 17.3244 16.2754 17.5 15.8333 17.5H4.16667C3.72464 17.5 3.30072 17.3244 2.98816 17.0118C2.67559 16.6993 2.5 16.2754 2.5 15.8333V12.5" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M5.8335 8.33325L10.0002 12.4999L14.1668 8.33325" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M10 12.5V2.5" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </a>
+                                    <?php
+                                        if($idProof['pan_card_file']!='0'){
+                                    ?>
+                                        <a href="#">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M17.5 12.5V15.8333C17.5 16.2754 17.3244 16.6993 17.0118 17.0118C16.6993 17.3244 16.2754 17.5 15.8333 17.5H4.16667C3.72464 17.5 3.30072 17.3244 2.98816 17.0118C2.67559 16.6993 2.5 16.2754 2.5 15.8333V12.5" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M5.8335 8.33325L10.0002 12.4999L14.1668 8.33325" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M10 12.5V2.5" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </a>
+                                    <?php
+                                        }
+                                    ?>
                                 </div>
                             </div>
                             <!-- ---------------- -->
@@ -256,22 +312,37 @@ else
                                         Birth certificate:
                                     </div>
                                     <div class="info">
-                                        2000-08-24
+                                        <?php
+                                            if($idProof['birth_cer']=='0'){
+                                                echo "Not entered";
+                                            }else{
+                                                echo $idProof['birth_cer'];
+                                            }
+                                        ?>
                                     </div>
                                 </div>
                                 <div class="download">
-                                    <a href="#">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M17.5 12.5V15.8333C17.5 16.2754 17.3244 16.6993 17.0118 17.0118C16.6993 17.3244 16.2754 17.5 15.8333 17.5H4.16667C3.72464 17.5 3.30072 17.3244 2.98816 17.0118C2.67559 16.6993 2.5 16.2754 2.5 15.8333V12.5" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M5.8335 8.33325L10.0002 12.4999L14.1668 8.33325" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M10 12.5V2.5" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </a>
+                                    <?php
+                                        if($idProof['birth_cer_file']!='0'){
+                                    ?>
+                                        <a href="#">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M17.5 12.5V15.8333C17.5 16.2754 17.3244 16.6993 17.0118 17.0118C16.6993 17.3244 16.2754 17.5 15.8333 17.5H4.16667C3.72464 17.5 3.30072 17.3244 2.98816 17.0118C2.67559 16.6993 2.5 16.2754 2.5 15.8333V12.5" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M5.8335 8.33325L10.0002 12.4999L14.1668 8.33325" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M10 12.5V2.5" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </a>
+                                    <?php
+                                        }
+                                    ?>
                                 </div>
                             </div>
                             <!-- ---------------- -->
                         </div>
                     </section>
+                    <?php
+                        }
+                    ?>
 
                     <!-- Educational Background -->
                     <section class="proofs" id="educationalbackground">
