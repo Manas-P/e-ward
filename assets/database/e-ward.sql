@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 04, 2022 at 11:12 AM
+-- Generation Time: Feb 11, 2022 at 06:46 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.25
 
@@ -69,7 +69,8 @@ INSERT INTO `tbl_house` (`hid`, `house_name`, `house_no`, `ward_no`, `locality`,
 (6, 'qwert', 15, 2, 'fcrdrdcrd', 'wsxedxed', 8569857458, 'APL'),
 (7, 'abcd villa', 5, 2, 'abcdefgh', 'abcdefgh', 4565434567, 'APL'),
 (17, 'New housee', 34, 2, 'New locality', 'New post office', 5685458745, 'APL'),
-(18, 'new reg ho', 18, 2, 'new', 'new', 8459658745, 'APL');
+(18, 'new reg ho', 18, 2, 'new', 'new', 8459658745, 'APL'),
+(19, 'Guetta House', 23, 2, 'Miami, Street 23', 'Miami PO', 2154785632, 'APL');
 
 -- --------------------------------------------------------
 
@@ -103,7 +104,44 @@ INSERT INTO `tbl_house_member` (`hm_id`, `ward_no`, `house_no`, `fname`, `email`
 (5, 2, 145, 'Manas P', 'manas4518pachakkil@gmail.com', 9856587855, 'O+', '1998-10-28', '../images/uploads/photos/1639161827.png', 0, ''),
 (15, 2, 34, 'new test', 'Not entered', 9858356478, 'NA', '0000-00-00', '../images/user-profile-placeholder.png', 2340, '123'),
 (16, 2, 18, 'new reg', 'Not entered', 5458965879, 'NA', '0000-00-00', '../images/user-profile-placeholder.png', 2180, '123'),
-(17, 2, 18, 'new regg', 'new@gmail.com', 9856587459, 'O+', '2019-07-10', '../images/uploads/photos/1643969508.png', 0, '0');
+(17, 2, 18, 'new regg', 'new@gmail.com', 9856587459, 'O+', '2019-07-10', '../images/uploads/photos/1643969508.png', 0, '0'),
+(23, 2, 34, 'New new test', 'newnewtest@gmail.com', 9565878456, 'A+', '2000-01-05', '../images/uploads/photos/1644173899.png', 2342, '123'),
+(24, 2, 34, 'new newe', 'new@gmail.com', 8965236589, 'A+', '2016-02-10', '../images/uploads/photos/1644286381.png', 2343, '123'),
+(25, 2, 34, 'new nneww', 'new@gmail.com', 9565215487, 'A+', '2014-02-18', '../images/uploads/photos/1644592133.png', 2344, 'NdyprVQa'),
+(26, 2, 23, 'David Guetta', 'Not entered', 9565878452, 'NA', '0000-00-00', '../images/user-profile-placeholder.png', 2230, '123'),
+(27, 2, 24, 'Martin Garrix', 'Not entered', 9565878457, 'NA', '0000-00-00', '../images/user-profile-placeholder.png', 2240, 'eer5XjwS'),
+(28, 2, 23, 'Martin Garrix', 'martingrrx@gmail.com', 9856547854, 'B+', '2002-05-15', '../images/uploads/photos/1644593753.png', 2232, '123');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_id_proof`
+--
+
+CREATE TABLE `tbl_id_proof` (
+  `id` int(10) NOT NULL,
+  `userid` int(50) NOT NULL,
+  `aadhar_no` int(100) NOT NULL DEFAULT 0,
+  `aadhar_file` varchar(200) NOT NULL DEFAULT '0',
+  `election_id` int(50) NOT NULL DEFAULT 0,
+  `election_id_file` varchar(200) NOT NULL DEFAULT '0',
+  `driving_lic` varchar(100) NOT NULL DEFAULT '0',
+  `driving_lic_file` varchar(200) NOT NULL DEFAULT '0',
+  `pan_card` varchar(100) NOT NULL DEFAULT '0',
+  `pan_card_file` varchar(200) NOT NULL DEFAULT '0',
+  `birth_cer` int(50) NOT NULL DEFAULT 0,
+  `birth_cer_file` varchar(200) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_id_proof`
+--
+
+INSERT INTO `tbl_id_proof` (`id`, `userid`, `aadhar_no`, `aadhar_file`, `election_id`, `election_id_file`, `driving_lic`, `driving_lic_file`, `pan_card`, `pan_card_file`, `birth_cer`, `birth_cer_file`) VALUES
+(1, 2344, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
+(2, 2230, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
+(3, 2240, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
+(4, 2232, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0');
 
 -- --------------------------------------------------------
 
@@ -159,7 +197,10 @@ INSERT INTO `tbl_registration` (`rid`, `fname`, `email`, `phno`, `wardno`, `hous
 (39, 'test', 'test@gmail.com', 5467543345, 2, 5, '../documents/taxreport/1643751741.pdf', 1),
 (40, 'Manas test', 'manasp@mca.ajce.in', 7678976780, 2, 4, '../documents/taxreport/1643752792.pdf', 1),
 (42, 'new test', 'newtest@gmail.com', 9858356478, 2, 34, '../documents/taxreport/1643837559.pdf', 1),
-(43, 'new reg', 'newreg@gmail.com', 5458965879, 2, 18, '../documents/taxreport/1643969173.pdf', 1);
+(43, 'new reg', 'newreg@gmail.com', 5458965879, 2, 18, '../documents/taxreport/1643969173.pdf', 1),
+(44, 'David Guetta', 'davidguetta@gmail.com', 9565878452, 2, 23, '../documents/taxreport/1644592357.pdf', 1),
+(45, 'Martin Garrix', 'martingrx@gmail.com', 9565878457, 2, 24, '../documents/taxreport/1644593477.pdf', 1),
+(46, 'dont accept', 'sont@gmail.com', 9565878454, 2, 78, '../documents/taxreport/1644595851.pdf', 0);
 
 -- --------------------------------------------------------
 
@@ -185,16 +226,16 @@ CREATE TABLE `tbl_ward_member` (
 --
 
 INSERT INTO `tbl_ward_member` (`mid`, `fullname`, `email`, `phno`, `wardno`, `validupto`, `photo`, `president`, `status`, `password`) VALUES
-(1, 'Wade Warren', 'wade@gmail.com', 9854875632, 1, '2025-05-17', '../images/uploads/photos/1637689913.png', 0, 1, 'vebnoDxw'),
-(2, 'Manas P', 'manas4518pachakkil@gmail.com', 9446184519, 2, '2025-06-25', '../images/uploads/photos/1637437831.png', 0, 1, '123'),
-(3, 'Annette Black', 'annette@gmail.com', 9845587455, 3, '2025-06-19', '../images/uploads/photos/1637438042.png', 0, 1, 'WMRwL7Zm'),
-(4, 'Marvin McKinney', 'marvin@gmail.com', 9865478524, 4, '2024-09-30', '../images/uploads/photos/1637438149.png', 0, 1, 'Yl6Xxf2p'),
-(5, 'Savannah Nguyen', 'savannah@gmail.com', 7458965237, 5, '2023-06-26', '../images/uploads/photos/1637438202.png', 0, 1, 'UNmwfQ4j'),
-(6, 'Kurian Tom', 'kuriantom@mca.ajce.in', 9856547854, 6, '2025-03-18', '../images/uploads/photos/1637516935.jpeg', 0, 1, 'ILMxnMgV'),
-(7, 'Telbin Cherian', 'telbincherian@mca.ajce.in', 9856587745, 7, '2025-06-18', '../images/uploads/photos/1637517031.jpg', 0, 1, 'laEQbXxJ'),
-(8, 'Vinu Reji John', 'vinurejijohn21@gmail.com', 9856687458, 8, '2025-07-15', '../images/uploads/photos/1637659458.jpg', 0, 1, 'AyNAxXRD'),
-(9, 'Mrudul A', 'ganjan@gmail.com', 9565874587, 9, '2025-06-25', '../images/uploads/photos/1637837216.png', 0, 1, 'Bxs3FNtl'),
-(10, 'James George', 'jamesgeorge@gmail.com', 9568784523, 10, '2025-06-24', '../images/uploads/photos/1638012009.png', 0, 1, 'l6lrouag');
+(1, 'Wade Warren', 'wade@gmail.com', 9854875632, 1, '2025-03-19', '../images/uploads/photos/1637689913.png', 0, 1, 'vebnoDxw'),
+(2, 'Manas P', 'manas4518pachakkil@gmail.com', 9446184519, 2, '2025-03-19', '../images/uploads/photos/1637437831.png', 0, 1, '123'),
+(3, 'Annette Black', 'annette@gmail.com', 9845587455, 3, '2025-03-19', '../images/uploads/photos/1637438042.png', 0, 1, 'WMRwL7Zm'),
+(4, 'Marvin McKinney', 'marvin@gmail.com', 9865478524, 4, '2025-03-19', '../images/uploads/photos/1637438149.png', 0, 1, 'Yl6Xxf2p'),
+(5, 'Savannah Nguyen', 'savannah@gmail.com', 7458965237, 5, '2025-03-19', '../images/uploads/photos/1637438202.png', 0, 1, 'UNmwfQ4j'),
+(6, 'Kurian Tom', 'kuriantom@mca.ajce.in', 9856547854, 6, '2025-03-19', '../images/uploads/photos/1637516935.jpeg', 0, 1, 'ILMxnMgV'),
+(7, 'Telbin Cherian', 'telbincherian@mca.ajce.in', 9856587745, 7, '2025-03-19', '../images/uploads/photos/1637517031.jpg', 0, 1, 'laEQbXxJ'),
+(8, 'Vinu Reji John', 'vinurejijohn21@gmail.com', 9856687458, 8, '2025-03-19', '../images/uploads/photos/1637659458.jpg', 0, 1, 'AyNAxXRD'),
+(9, 'Mrudul A', 'ganjan@gmail.com', 9565874587, 9, '2025-03-19', '../images/uploads/photos/1637837216.png', 0, 1, 'Bxs3FNtl'),
+(10, 'James George', 'jamesgeorge@gmail.com', 9568784523, 10, '2025-03-19', '../images/uploads/photos/1638012009.png', 0, 1, 'l6lrouag');
 
 --
 -- Indexes for dumped tables
@@ -217,6 +258,12 @@ ALTER TABLE `tbl_house`
 --
 ALTER TABLE `tbl_house_member`
   ADD PRIMARY KEY (`hm_id`);
+
+--
+-- Indexes for table `tbl_id_proof`
+--
+ALTER TABLE `tbl_id_proof`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tbl_registration`
@@ -244,19 +291,25 @@ ALTER TABLE `tbl_admin`
 -- AUTO_INCREMENT for table `tbl_house`
 --
 ALTER TABLE `tbl_house`
-  MODIFY `hid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `hid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `tbl_house_member`
 --
 ALTER TABLE `tbl_house_member`
-  MODIFY `hm_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `hm_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
+--
+-- AUTO_INCREMENT for table `tbl_id_proof`
+--
+ALTER TABLE `tbl_id_proof`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tbl_registration`
 --
 ALTER TABLE `tbl_registration`
-  MODIFY `rid` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `rid` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT for table `tbl_ward_member`
