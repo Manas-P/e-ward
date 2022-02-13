@@ -508,6 +508,7 @@ body {
 .box .inputs .input input[type="file"],
 .box .inputs .input input[type="password"] {
   width: 100%;
+  height: 53px;
   font-size: 18px;
   font-family: "Gilroy_M";
   padding: 16px 0px 16px 16px;
@@ -565,6 +566,7 @@ body {
 .box .inputs .half-input .input input[type="file"],
 .box .inputs .half-input .input input[type="password"] {
   width: 100%;
+  height: 53px;
   font-size: 18px;
   font-family: "Gilroy_M";
   padding: 16px 0px 16px 16px;

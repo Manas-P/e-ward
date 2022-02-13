@@ -38,7 +38,7 @@ else
                 include '../../include/house_member/sidebar_hm_add_members.php'
             ?>
             <!-- ==========Sidebar End============= -->
-            <form action="#" method="post" enctype="multipart/form-data">
+            <form action="#" id="reg-form" method="post" enctype="multipart/form-data">
                 <div class="container">
 
                     <div class="left">
@@ -71,8 +71,8 @@ else
                                 <a href="#" >Professional background</a>
                             </div>
                         </div>
-                        <div class="buttn">
-                            <input type="submit" value="Update changes" class="button">
+                        <div class="buttn ubn cursor-disable">
+                            <input type="submit" id="hm-up-btn" value="Update changes" class="button">
                         </div>
                     </div>
                     
@@ -98,15 +98,15 @@ else
                                             <div class="label">
                                                 Upload photo
                                             </div>
-                                            <input type="file" name="hphoto" id="h-photo" accept="image/png,image/jpeg" value="<?php echo $hm_info['photo'] ?>">
+                                            <input type="file" name="hmuphoto" id="h-photo" accept="image/png,image/jpeg" value="<?php echo $hm_info['photo'] ?>">
                                             <div class="error error-hidden">
                                             </div>
                                         </div>
-                                        <div class="input h-fullname">
+                                        <div class="input hm-fullname">
                                             <div class="label">
                                                 Full name
                                             </div>
-                                            <input type="text" name="hfname" id="h-full-name" placeholder="John Doe" value="<?php echo $hm_info['fname'] ?>" autocomplete="off">
+                                            <input type="text" name="hmufname" id="hm-full-name" placeholder="John Doe" value="<?php echo $hm_info['fname'] ?>" autocomplete="off">
                                             <div class="error error-hidden">
                                             </div>
                                         </div>
@@ -115,32 +115,32 @@ else
                                                 <div class="label">
                                                     Date of birth
                                                 </div>
-                                                <input type="date" name="hdob" id="h-date" value="<?php echo $hm_info['dob'] ?>" autocomplete="off">
+                                                <input type="date" name="hmudob" id="h-date" value="<?php echo $hm_info['dob'] ?>" autocomplete="off">
                                                 <div class="error error-hidden">
                                                 </div>
                                             </div>
-                                            <div class="input h-blood">
+                                            <div class="input hm-blood">
                                                 <div class="label">
                                                     Blood group
                                                 </div>
-                                                <input type="text" name="hblood" id="h-blood" placeholder="A+" value="<?php if($hm_info['blood_grp']!='NA'){ echo $hm_info['blood_grp']; } ?>" autocomplete="off">
+                                                <input type="text" name="hmublood" id="hm-blood" placeholder="A+" value="<?php if($hm_info['blood_grp']!='NA'){ echo $hm_info['blood_grp']; } ?>" autocomplete="off">
                                                 <div class="error error-hidden">
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="input h-email">
+                                        <div class="input hm-email">
                                             <div class="label">
                                                 Email ID
                                             </div>
-                                            <input type="text" name="hemail" id="h-email-id" placeholder="example@gmail.com" value="<?php if($hm_info['email']!='Not entered'){ echo $hm_info['email']; } ?>" autocomplete="off">
+                                            <input type="text" name="hmuemail" id="hm-email-id" placeholder="example@gmail.com" value="<?php if($hm_info['email']!='Not entered'){ echo $hm_info['email']; } ?>" autocomplete="off">
                                             <div class="error error-hidden">
                                             </div>
                                         </div>
-                                        <div class="input h-phno">
+                                        <div class="input hm-phno">
                                             <div class="label">
                                                 Phone number
                                             </div>
-                                            <input type="text" name="hphno" id="h-phn-number" placeholder="9568547512" value="<?php echo $hm_info['phno'] ?>" autocomplete="off">
+                                            <input type="text" name="hmuphno" id="hm-phn-number" placeholder="9568547512" value="<?php echo $hm_info['phno'] ?>" autocomplete="off">
                                             <div class="error error-hidden">
                                             </div>
                                         </div>
@@ -202,6 +202,7 @@ else
         </section>
     </body>
     <script src="../../js/hm_profile.js"></script>
+    <script src="../../js/update_hm_details.js"></script>
 </html>
 	<?php
 }
