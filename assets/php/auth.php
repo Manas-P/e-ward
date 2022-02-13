@@ -311,4 +311,38 @@
                 $_SESSION['loginMessage'] = "Mail not send";
             }
         }
+
+        //Update house member details
+        if(isset($_POST['hm-up-btn'])){
+            //check profile photo added or not
+            if(empty($_FILES["hmuphoto"]['name'])){
+                $filepath=$hm_already_photo;
+            }else{
+                $upload_dir = '../images/uploads/photos/';
+                $file_tmpname = $_FILES['hmuphoto']['tmp_name'];
+                $file_name = $_FILES['hmuphoto']['name'];
+                $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
+                $filepath = $upload_dir . time().".".$file_ext;
+                if(move_uploaded_file($file_tmpname, $filepath)){}else{
+                    $_SESSION['loginMessage'] = "Error in file upload";
+                    header("Location: ../pages/house_member/add_house_members.php");
+                }
+            }
+            //Check empty field
+            if(empty($hmuemail)){
+                $hmuemail="Not entered";
+            }
+            if(empty($hmublood)){
+                $hmublood="NA";
+            }
+            $updatehmQuery="UPDATE `tbl_house_member` SET `fname`='$hmufname',`email`='$hmuemail',`phno`='$hmuphno',`blood_grp`='$hmublood',`dob`='$hmudob',`photo`='$filepath' WHERE `userid`='$hm_id'";
+            $updatehmResult=mysqli_query($conn,$updatehmQuery);
+            if($updatehmResult){
+                $_SESSION['success'] = "Update successfull";
+                header("Location: ../pages/house_member/add_house_members.php");
+            }else{
+                $_SESSION['loginMessage'] = "Error in updatation";
+                header("Location: ../pages/house_member/add_house_members.php");
+            }
+        }
     ?>

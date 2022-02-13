@@ -38,7 +38,7 @@ else
                 include '../../include/house_member/sidebar_hm_add_members.php'
             ?>
             <!-- ==========Sidebar End============= -->
-            <form action="#" id="reg-form" method="post" enctype="multipart/form-data">
+            <form action="../../php/auth.php" id="reg-form" method="post" enctype="multipart/form-data">
                 <div class="container">
 
                     <div class="left">
@@ -72,7 +72,7 @@ else
                             </div>
                         </div>
                         <div class="buttn ubn cursor-disable">
-                            <input type="submit" id="hm-up-btn" value="Update changes" class="button">
+                            <input type="submit" id="hm-up-btn" name="hm-up-btn" value="Update changes" class="button">
                         </div>
                     </div>
                     
@@ -92,6 +92,8 @@ else
                                         General informations
                                     </div>
                                 </div>
+                                <input type="hidden" name="hm_id" value="<?php echo $hm_id; ?>">
+                                <input type="hidden" name="hm_already_photo" value="<?php echo $hm_info['photo'] ?>">
                                 <div class="information">
                                     <div class="inputs">
                                         <div class="input h-photo">
@@ -200,9 +202,10 @@ else
                 </div>
             </form>
         </section>
+
+        <script src="../../js/hm_profile.js"></script>
+        <script src="../../js/update_hm_details.js"></script>
     </body>
-    <script src="../../js/hm_profile.js"></script>
-    <script src="../../js/update_hm_details.js"></script>
 </html>
 	<?php
 }
