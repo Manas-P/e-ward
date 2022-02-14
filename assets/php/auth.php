@@ -282,9 +282,11 @@
                             $_SESSION['success'] = "House member added";
                         }else{
                             $_SESSION['loginMessage'] = "Error in adding member";
+                            header("Location: ../pages/house_member/add_house_members.php");
                         }
                     }else{
                         $_SESSION['loginMessage'] = "Error in sending E-mail";
+                        header("Location: ../pages/house_member/add_house_members.php");
                     }
                 }else{
                     $_SESSION['loginMessage'] = "File upload error";
@@ -338,7 +340,7 @@
             $updatehmQuery="UPDATE `tbl_house_member` SET `fname`='$hmufname',`email`='$hmuemail',`phno`='$hmuphno',`blood_grp`='$hmublood',`dob`='$hmudob',`photo`='$filepath' WHERE `userid`='$hm_id'";
             $updatehmResult=mysqli_query($conn,$updatehmQuery);
             if($updatehmResult){
-                $_SESSION['success'] = "Update successfull";
+                $_SESSION['success'] = "$hmufname's profile updated successfully";
                 header("Location: ../pages/house_member/add_house_members.php");
             }else{
                 $_SESSION['loginMessage'] = "Error in updatation";
