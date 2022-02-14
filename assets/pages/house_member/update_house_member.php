@@ -153,6 +153,48 @@ else
                             }
                         ?>
 
+                        <!-- Identity Proofs -->
+                    <!-- Fetch id proof data -->
+                    <?php
+                    $idproofQuery="SELECT * FROM `tbl_id_proof` WHERE `userid`='$hm_id'";
+                    $idproofResult=mysqli_query($conn,$idproofQuery);
+                    while ($idProof = mysqli_fetch_assoc($idproofResult)){
+                    
+                ?>
+
+                <section class="proofs" id="identityProof">
+                    <div class="header">
+                        <div class="heading">
+                            Identity proofs
+                        </div>
+                    </div>
+                    <div class="files">
+                        <div class="inputs">
+                            <!-- Aadhar number -->
+                            <div class="input hm-aadharno">
+                                <div class="label">
+                                    Aadhar number
+                                </div>
+                                <input type="text" name="hmuaadharno" id="hm-aadharno" placeholder="9562547845" value="<?php if($idProof['aadhar_no']!='0'){ echo $idProof['blood_grp']; } ?>" autocomplete="off">
+                                <div class="error error-hidden">
+                                </div>
+                            </div>
+                            <div class="input hm-aadhar-file">
+                                <div class="label">
+                                    Upload aadhar (pdf)
+                                </div>
+                                <input type="file" name="hmuaadharfile" id="hm-aadhar-file" accept="application/pdf" value="<?php echo $idProof['aadhar_file'] ?>">
+                                <div class="error error-hidden">
+                                </div>
+                            </div>
+                            <!-- ---------- -->
+                        </div>
+                    </div>
+                </section>
+                <?php
+                    }
+                ?>
+
 
                         
 

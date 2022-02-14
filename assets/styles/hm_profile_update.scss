@@ -116,26 +116,12 @@ body {
         @include contentboxheader();
         .files {
           margin-top: 48px;
-          .file {
-            margin-top: 32px;
+          .inputs {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            .info {
-              display: flex;
-              align-items: center;
-              .title {
-                font-family: "Gilroy_M";
-                font-size: 20px;
-                color: $subText;
-              }
-              .info {
-                margin-left: 8px;
-                font-family: "Gilroy_M";
-                font-size: 20px;
-                color: $text;
-              }
-            }
+            flex-direction: column;
+            row-gap: 32px;
+            margin-top: 40px;
+            @include input_fields(460px);
           }
         }
       }
