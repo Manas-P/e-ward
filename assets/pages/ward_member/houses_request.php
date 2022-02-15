@@ -133,9 +133,9 @@
         <?php
             if (isset($_SESSION['loginMessage'])) {
                 $msg=$_SESSION['loginMessage'];
-                echo " <div class='alertt alert-visible' style='border-left: 10px solid #1BBD2B;'>
+                echo " <div class='alertt alert-visible'>
                             <div class='econtent'>
-                                <img src='../../images/check.svg' alt='success'>
+                                <img src='../../images/warning.svg' alt='error'>
                                 <div class='text'>
                                     $msg
                                 </div>
@@ -146,6 +146,7 @@
         }?>
 
         <script src="../../js/reject_house_reg.js"></script>
+        <script src="../../js/toast.js"></script>
     </body>
 </html>
 	<?php
