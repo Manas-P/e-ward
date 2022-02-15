@@ -316,7 +316,9 @@
 
         //Update house member details
         if(isset($_POST['hm-up-btn'])){
-            //check profile photo added or not
+
+            //check empty file 
+            //profile photo
             if(empty($_FILES["hmuphoto"]['name'])){
                 $filepath=$hm_already_photo;
             }else{
@@ -330,15 +332,39 @@
                     header("Location: ../pages/house_member/add_house_members.php");
                 }
             }
+
+            //Id proofs
+            $upload_dir_doc = '../documents/';
+            $file_ext_pdf = ".pdf";
+            //Aadhar
+            if(empty($_FILES["hmuaadharfile"]['name'])){
+                $filepath_aadhar=$hm_already_aadhar;
+            }else{
+                $file_tmpname_aadhar = $_FILES['hmuaadharfile']['tmp_name'];
+                $file_name_aadhar = $_FILES['hmuaadharfile']['name'];
+                $filepath_aadhar = $upload_dir_doc . time().".".$file_ext_pdf;
+                if(move_uploaded_file($file_tmpname_aadhar, $filepath_aadhar)){}else{
+                    $_SESSION['loginMessage'] = "Error in file upload";
+                    header("Location: ../pages/house_member/add_house_members.php");
+                }
+            }
+
             //Check empty field
+            //General info
             if(empty($hmuemail)){
                 $hmuemail="Not entered";
             }
             if(empty($hmublood)){
                 $hmublood="NA";
             }
-            $updatehmQuery="UPDATE `tbl_house_member` SET `fname`='$hmufname',`email`='$hmuemail',`phno`='$hmuphno',`blood_grp`='$hmublood',`dob`='$hmudob',`photo`='$filepath' WHERE `userid`='$hm_id'";
-            $updatehmResult=mysqli_query($conn,$updatehmQuery);
+            //Id proof
+            if(empty($hmuaadharno)){
+                $hmuaadharno="0";
+            }
+
+            //Update request
+            $updatehmQuery="UPDATE `tbl_house_member` SET `fname`='$hmufname',`email`='$hmuemail',`phno`='$hmuphno',`blood_grp`='$hmublood',`dob`='$hmudob',`photo`='$filepath' WHERE `userid`='$hm_id' ; UPDATE `tbl_id_proof` SET `aadhar_no`='$hmuaadharno',`aadhar_file`='$filepath_aadhar' WHERE `userid`='$hm_id'";
+            $updatehmResult=mysqli_multi_query($conn,$updatehmQuery);
             if($updatehmResult){
                 $_SESSION['success'] = "$hmufname's profile updated successfully";
                 header("Location: ../pages/house_member/add_house_members.php");

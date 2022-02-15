@@ -168,6 +168,8 @@ else
                                     Identity proofs
                                 </div>
                             </div>
+                            <!-- To take already exist files -->
+                            <input type="hidden" name="hm_already_aadhar" value="<?php echo $idProof['aadhar_file'] ?>">
                             <div class="files">
                                 <div class="inputs">
                                     <!-- Aadhar number -->
