@@ -154,118 +154,118 @@ else
                         ?>
 
                         <!-- Identity Proofs -->
-                    <!-- Fetch id proof data -->
-                    <?php
-                    $idproofQuery="SELECT * FROM `tbl_id_proof` WHERE `userid`='$hm_id'";
-                    $idproofResult=mysqli_query($conn,$idproofQuery);
-                    while ($idProof = mysqli_fetch_assoc($idproofResult)){
-                    
-                ?>
+                        <!-- Fetch id proof data -->
+                        <?php
+                            $idproofQuery="SELECT * FROM `tbl_id_proof` WHERE `userid`='$hm_id'";
+                            $idproofResult=mysqli_query($conn,$idproofQuery);
+                            while ($idProof = mysqli_fetch_assoc($idproofResult)){
+                        
+                        ?>
 
-                <section class="proofs" id="identityProof">
-                    <div class="header">
-                        <div class="heading">
-                            Identity proofs
-                        </div>
-                    </div>
-                    <div class="files">
-                        <div class="inputs">
-                            <!-- Aadhar number -->
-                            <div class="input hm-aadharno">
-                                <div class="label">
-                                    Aadhar number
-                                </div>
-                                <input type="text" name="hmuaadharno" id="hm-aadharno" placeholder="9562547845" value="<?php if($idProof['aadhar_no']!='0'){ echo $idProof['aadhar_no']; } ?>" autocomplete="off">
-                                <div class="error error-hidden">
+                        <section class="proofs" id="identityProof">
+                            <div class="header">
+                                <div class="heading">
+                                    Identity proofs
                                 </div>
                             </div>
-                            <div class="input hm-aadhar-file">
-                                <div class="label">
-                                    Upload aadhar (pdf)
-                                </div>
-                                <input type="file" name="hmuaadharfile" id="hm-aadhar-file" accept="application/pdf" value="<?php echo $idProof['aadhar_file'] ?>">
-                                <div class="error error-hidden">
+                            <div class="files">
+                                <div class="inputs">
+                                    <!-- Aadhar number -->
+                                    <div class="input hm-aadharno">
+                                        <div class="label">
+                                            Aadhar number
+                                        </div>
+                                        <input type="text" name="hmuaadharno" id="hm-aadharno" placeholder="9562547845" value="<?php if($idProof['aadhar_no']!='0'){ echo $idProof['aadhar_no']; } ?>" autocomplete="off">
+                                        <div class="error error-hidden">
+                                        </div>
+                                    </div>
+                                    <div class="input hm-aadhar-file">
+                                        <div class="label">
+                                            Upload aadhar (pdf)
+                                        </div>
+                                        <input type="file" name="hmuaadharfile" id="hm-aadhar-file" accept="application/pdf" value="<?php echo $idProof['aadhar_file'] ?>">
+                                        <div class="error error-hidden">
+                                        </div>
+                                    </div>
+                                    <!-- ---------- -->
+                                    <!-- Election id -->
+                                    <div class="input hm-electionid">
+                                        <div class="label">
+                                            Election id number
+                                        </div>
+                                        <input type="text" name="hmuelectionid" id="hm-electionid" placeholder="215487896563" value="<?php if($idProof['election_id']!='0'){ echo $idProof['election_id']; } ?>" autocomplete="off">
+                                        <div class="error error-hidden">
+                                        </div>
+                                    </div>
+                                    <div class="input hm-election-file">
+                                        <div class="label">
+                                            Upload election id (pdf)
+                                        </div>
+                                        <input type="file" name="hmuelectionfile" id="hm-election-file" accept="application/pdf" value="<?php echo $idProof['election_id_file'] ?>">
+                                        <div class="error error-hidden">
+                                        </div>
+                                    </div>
+                                    <!-- ---------- -->
+                                    <!-- Driving licence -->
+                                    <div class="input hm-drivingid">
+                                        <div class="label">
+                                            Driving licence number
+                                        </div>
+                                        <input type="text" name="hmudrivingid" id="hm-drivingid" placeholder="06/5265/2005" value="<?php if($idProof['driving_lic']!='0'){ echo $idProof['driving_lic']; } ?>" autocomplete="off">
+                                        <div class="error error-hidden">
+                                        </div>
+                                    </div>
+                                    <div class="input hm-driving-file">
+                                        <div class="label">
+                                            Upload driving licence (pdf)
+                                        </div>
+                                        <input type="file" name="hmudrivingfile" id="hm-driving-file" accept="application/pdf" value="<?php echo $idProof['driving_lic_file'] ?>">
+                                        <div class="error error-hidden">
+                                        </div>
+                                    </div>
+                                    <!-- ---------- -->
+                                    <!-- PAN card -->
+                                    <div class="input hm-pancard">
+                                        <div class="label">
+                                        PAN card number
+                                        </div>
+                                        <input type="text" name="hmupancard" id="hm-pancard" placeholder="EF58562RF541" value="<?php if($idProof['pan_card']!='0'){ echo $idProof['pan_card']; } ?>" autocomplete="off">
+                                        <div class="error error-hidden">
+                                        </div>
+                                    </div>
+                                    <div class="input hm-pancard-file">
+                                        <div class="label">
+                                            Upload PAN card (pdf)
+                                        </div>
+                                        <input type="file" name="hmupancardfile" id="hm-pancard-file" accept="application/pdf" value="<?php echo $idProof['pan_card_file'] ?>">
+                                        <div class="error error-hidden">
+                                        </div>
+                                    </div>
+                                    <!-- ---------- -->
+                                    <!-- Birth certificate -->
+                                    <div class="input hm-drivingid">
+                                        <div class="label">
+                                        Birth certificate number
+                                        </div>
+                                        <input type="text" name="hmubirth" id="hm-birth" placeholder="EF58562RF541" value="<?php if($idProof['birth_cer']!='0'){ echo $idProof['birth_cer']; } ?>" autocomplete="off">
+                                        <div class="error error-hidden">
+                                        </div>
+                                    </div>
+                                    <div class="input hm-birth-file">
+                                        <div class="label">
+                                            Upload birth certificate (pdf)
+                                        </div>
+                                        <input type="file" name="hmubirthfile" id="hm-birth-file" accept="application/pdf" value="<?php echo $idProof['birth_cer_file'] ?>">
+                                        <div class="error error-hidden">
+                                        </div>
+                                    </div>
+                                    <!-- ---------- -->
                                 </div>
                             </div>
-                            <!-- ---------- -->
-                            <!-- Election id -->
-                            <div class="input hm-electionid">
-                                <div class="label">
-                                    Election id number
-                                </div>
-                                <input type="text" name="hmuelectionid" id="hm-electionid" placeholder="215487896563" value="<?php if($idProof['election_id']!='0'){ echo $idProof['election_id']; } ?>" autocomplete="off">
-                                <div class="error error-hidden">
-                                </div>
-                            </div>
-                            <div class="input hm-election-file">
-                                <div class="label">
-                                    Upload election id (pdf)
-                                </div>
-                                <input type="file" name="hmuelectionfile" id="hm-election-file" accept="application/pdf" value="<?php echo $idProof['election_id_file'] ?>">
-                                <div class="error error-hidden">
-                                </div>
-                            </div>
-                            <!-- ---------- -->
-                            <!-- Driving licence -->
-                            <div class="input hm-drivingid">
-                                <div class="label">
-                                    Driving licence number
-                                </div>
-                                <input type="text" name="hmudrivingid" id="hm-drivingid" placeholder="06/5265/2005" value="<?php if($idProof['driving_lic']!='0'){ echo $idProof['driving_lic']; } ?>" autocomplete="off">
-                                <div class="error error-hidden">
-                                </div>
-                            </div>
-                            <div class="input hm-driving-file">
-                                <div class="label">
-                                    Upload driving licence (pdf)
-                                </div>
-                                <input type="file" name="hmudrivingfile" id="hm-driving-file" accept="application/pdf" value="<?php echo $idProof['driving_lic_file'] ?>">
-                                <div class="error error-hidden">
-                                </div>
-                            </div>
-                            <!-- ---------- -->
-                            <!-- PAN card -->
-                            <div class="input hm-pancard">
-                                <div class="label">
-                                   PAN card number
-                                </div>
-                                <input type="text" name="hmupancard" id="hm-pancard" placeholder="EF58562RF541" value="<?php if($idProof['pan_card']!='0'){ echo $idProof['pan_card']; } ?>" autocomplete="off">
-                                <div class="error error-hidden">
-                                </div>
-                            </div>
-                            <div class="input hm-pancard-file">
-                                <div class="label">
-                                    Upload PAN card (pdf)
-                                </div>
-                                <input type="file" name="hmupancardfile" id="hm-pancard-file" accept="application/pdf" value="<?php echo $idProof['pan_card_file'] ?>">
-                                <div class="error error-hidden">
-                                </div>
-                            </div>
-                            <!-- ---------- -->
-                            <!-- Birth certificate -->
-                            <div class="input hm-drivingid">
-                                <div class="label">
-                                   Birth certificate number
-                                </div>
-                                <input type="text" name="hmubirth" id="hm-birth" placeholder="EF58562RF541" value="<?php if($idProof['birth_cer']!='0'){ echo $idProof['birth_cer']; } ?>" autocomplete="off">
-                                <div class="error error-hidden">
-                                </div>
-                            </div>
-                            <div class="input hm-birth-file">
-                                <div class="label">
-                                    Upload birth certificate (pdf)
-                                </div>
-                                <input type="file" name="hmubirthfile" id="hm-birth-file" accept="application/pdf" value="<?php echo $idProof['birth_cer_file'] ?>">
-                                <div class="error error-hidden">
-                                </div>
-                            </div>
-                            <!-- ---------- -->
-                        </div>
-                    </div>
-                </section>
-                <?php
-                    }
-                ?>
+                        </section>
+                        <?php
+                            }
+                        ?>
 
 
                         
