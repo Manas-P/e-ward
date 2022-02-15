@@ -344,7 +344,55 @@
                 $file_name_aadhar = $_FILES['hmuaadharfile']['name'];
                 $filepath_aadhar = $upload_dir_doc . time().".".$file_ext_pdf;
                 if(move_uploaded_file($file_tmpname_aadhar, $filepath_aadhar)){}else{
-                    $_SESSION['loginMessage'] = "Error in file upload";
+                    $_SESSION['loginMessage'] = "Error in uploading Aadhar";
+                    header("Location: ../pages/house_member/add_house_members.php");
+                }
+            }
+            //Election id
+            if(empty($_FILES["hmuelectionfile"]['name'])){
+                $filepath_election=$hm_already_election;
+            }else{
+                $file_tmpname_election = $_FILES['hmuelectionfile']['tmp_name'];
+                $file_name_election = $_FILES['hmuelectionfile']['name'];
+                $filepath_election = $upload_dir_doc . time()."1".".".$file_ext_pdf;
+                if(move_uploaded_file($file_tmpname_election, $filepath_election)){}else{
+                    $_SESSION['loginMessage'] = "Error in uploading Election id";
+                    header("Location: ../pages/house_member/add_house_members.php");
+                }
+            }
+            //Driving Licence
+            if(empty($_FILES["hmudrivingfile"]['name'])){
+                $filepath_driving=$hm_already_driving;
+            }else{
+                $file_tmpname_driving = $_FILES['hmudrivingfile']['tmp_name'];
+                $file_name_driving = $_FILES['hmudrivingfile']['name'];
+                $filepath_driving = $upload_dir_doc . time()."2".".".$file_ext_pdf;
+                if(move_uploaded_file($file_tmpname_driving, $filepath_driving)){}else{
+                    $_SESSION['loginMessage'] = "Error in uploading Driving licence";
+                    header("Location: ../pages/house_member/add_house_members.php");
+                }
+            }
+            //PAN card
+            if(empty($_FILES["hmupancardfile"]['name'])){
+                $filepath_pan=$hm_already_pan;
+            }else{
+                $file_tmpname_pan = $_FILES['hmupancardfile']['tmp_name'];
+                $file_name_pan = $_FILES['hmupancardfile']['name'];
+                $filepath_pan = $upload_dir_doc . time()."3".".".$file_ext_pdf;
+                if(move_uploaded_file($file_tmpname_pan, $filepath_pan)){}else{
+                    $_SESSION['loginMessage'] = "Error in uploading PAN card";
+                    header("Location: ../pages/house_member/add_house_members.php");
+                }
+            }
+            //Birth certificate
+            if(empty($_FILES["hmubirthfile"]['name'])){
+                $filepath_birth=$hm_already_birth;
+            }else{
+                $file_tmpname_birth = $_FILES['hmubirthfile']['tmp_name'];
+                $file_name_birth = $_FILES['hmubirthfile']['name'];
+                $filepath_birth = $upload_dir_doc . time()."4".".".$file_ext_pdf;
+                if(move_uploaded_file($file_tmpname_birth, $filepath_birth)){}else{
+                    $_SESSION['loginMessage'] = "Error in uploading Birth certificate";
                     header("Location: ../pages/house_member/add_house_members.php");
                 }
             }
@@ -361,9 +409,22 @@
             if(empty($hmuaadharno)){
                 $hmuaadharno="0";
             }
+            if(empty($hmuelectionid)){
+                $hmuelectionid="0";
+            }
+            if(empty($hmudrivingid)){
+                $hmudrivingid="0";
+            }
+            if(empty($hmupancard)){
+                $hmupancard="0";
+            }
+            if(empty($hmubirth)){
+                $hmubirth="0";
+            }
 
             //Update request
-            $updatehmQuery="UPDATE `tbl_house_member` SET `fname`='$hmufname',`email`='$hmuemail',`phno`='$hmuphno',`blood_grp`='$hmublood',`dob`='$hmudob',`photo`='$filepath' WHERE `userid`='$hm_id' ; UPDATE `tbl_id_proof` SET `aadhar_no`='$hmuaadharno',`aadhar_file`='$filepath_aadhar' WHERE `userid`='$hm_id'";
+            $updatehmQuery="UPDATE `tbl_house_member` SET `fname`='$hmufname',`email`='$hmuemail',`phno`='$hmuphno',`blood_grp`='$hmublood',`dob`='$hmudob',`photo`='$filepath' WHERE `userid`='$hm_id' ; 
+                            UPDATE `tbl_id_proof` SET `aadhar_no`='$hmuaadharno',`aadhar_file`='$filepath_aadhar',`election_id`='$hmuelectionid',`election_id_file`='$filepath_election',`driving_lic`='$hmudrivingid',`driving_lic_file`='$filepath_driving',`pan_card`='$hmupancard',`pan_card_file`='$filepath_pan',`birth_cer`='$hmubirth',`birth_cer_file`='$filepath_birth' WHERE `userid`='$hm_id'";
             $updatehmResult=mysqli_multi_query($conn,$updatehmQuery);
             if($updatehmResult){
                 $_SESSION['success'] = "$hmufname's profile updated successfully";

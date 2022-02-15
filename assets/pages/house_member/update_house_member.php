@@ -170,6 +170,10 @@ else
                             </div>
                             <!-- To take already exist files -->
                             <input type="hidden" name="hm_already_aadhar" value="<?php echo $idProof['aadhar_file'] ?>">
+                            <input type="hidden" name="hm_already_election" value="<?php echo $idProof['election_id_file'] ?>">
+                            <input type="hidden" name="hm_already_driving" value="<?php echo $idProof['driving_lic_file'] ?>">
+                            <input type="hidden" name="hm_already_pan" value="<?php echo $idProof['pan_card_file'] ?>">
+                            <input type="hidden" name="hm_already_birth" value="<?php echo $idProof['birth_cer_file'] ?>">
                             <div class="files">
                                 <div class="inputs">
                                     <!-- Aadhar number -->
@@ -207,7 +211,7 @@ else
                                         <div class="error error-hidden">
                                         </div>
                                     </div>
-                                    <!-- ---------- -->
+                                    <!-- --------------- -->
                                     <!-- Driving licence -->
                                     <div class="input hm-drivingid">
                                         <div class="label">
@@ -245,7 +249,7 @@ else
                                     </div>
                                     <!-- ---------- -->
                                     <!-- Birth certificate -->
-                                    <div class="input hm-drivingid">
+                                    <div class="input hm-birth">
                                         <div class="label">
                                         Birth certificate number
                                         </div>
