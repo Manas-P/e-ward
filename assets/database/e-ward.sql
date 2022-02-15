@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 11, 2022 at 06:46 PM
+-- Generation Time: Feb 15, 2022 at 01:16 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.25
 
@@ -70,7 +70,7 @@ INSERT INTO `tbl_house` (`hid`, `house_name`, `house_no`, `ward_no`, `locality`,
 (7, 'abcd villa', 5, 2, 'abcdefgh', 'abcdefgh', 4565434567, 'APL'),
 (17, 'New housee', 34, 2, 'New locality', 'New post office', 5685458745, 'APL'),
 (18, 'new reg ho', 18, 2, 'new', 'new', 8459658745, 'APL'),
-(19, 'Guetta House', 23, 2, 'Miami, Street 23', 'Miami PO', 2154785632, 'APL');
+(19, 'Guettaa House', 23, 2, 'Miami, Street 23', 'Miami PO', 2154785632, 'APL');
 
 -- --------------------------------------------------------
 
@@ -108,9 +108,10 @@ INSERT INTO `tbl_house_member` (`hm_id`, `ward_no`, `house_no`, `fname`, `email`
 (23, 2, 34, 'New new test', 'newnewtest@gmail.com', 9565878456, 'A+', '2000-01-05', '../images/uploads/photos/1644173899.png', 2342, '123'),
 (24, 2, 34, 'new newe', 'new@gmail.com', 8965236589, 'A+', '2016-02-10', '../images/uploads/photos/1644286381.png', 2343, '123'),
 (25, 2, 34, 'new nneww', 'new@gmail.com', 9565215487, 'A+', '2014-02-18', '../images/uploads/photos/1644592133.png', 2344, 'NdyprVQa'),
-(26, 2, 23, 'David Guetta', 'Not entered', 9565878452, 'NA', '0000-00-00', '../images/user-profile-placeholder.png', 2230, '123'),
+(26, 2, 23, 'Rubin Siby', 'Not entered', 9565878452, 'B+', '1988-06-15', '../images/uploads/photos/1644834244.png', 2230, '123'),
 (27, 2, 24, 'Martin Garrix', 'Not entered', 9565878457, 'NA', '0000-00-00', '../images/user-profile-placeholder.png', 2240, 'eer5XjwS'),
-(28, 2, 23, 'Martin Garrix', 'martingrrx@gmail.com', 9856547854, 'B+', '2002-05-15', '../images/uploads/photos/1644593753.png', 2232, '123');
+(28, 2, 23, 'Kunni Bhai', 'martingrrx@gmail.com', 9856547854, 'B+', '2002-05-15', '../images/uploads/photos/1644839475.jpg', 2232, '123'),
+(29, 2, 23, 'Jacob Kurien', 'jacobkurien@gmail.com', 9856587457, 'O+', '1999-11-03', '../images/uploads/photos/1644838551.jpg', 2233, '123');
 
 -- --------------------------------------------------------
 
@@ -121,15 +122,15 @@ INSERT INTO `tbl_house_member` (`hm_id`, `ward_no`, `house_no`, `fname`, `email`
 CREATE TABLE `tbl_id_proof` (
   `id` int(10) NOT NULL,
   `userid` int(50) NOT NULL,
-  `aadhar_no` int(100) NOT NULL DEFAULT 0,
+  `aadhar_no` bigint(100) NOT NULL DEFAULT 0,
   `aadhar_file` varchar(200) NOT NULL DEFAULT '0',
-  `election_id` int(50) NOT NULL DEFAULT 0,
+  `election_id` bigint(50) NOT NULL DEFAULT 0,
   `election_id_file` varchar(200) NOT NULL DEFAULT '0',
   `driving_lic` varchar(100) NOT NULL DEFAULT '0',
   `driving_lic_file` varchar(200) NOT NULL DEFAULT '0',
   `pan_card` varchar(100) NOT NULL DEFAULT '0',
   `pan_card_file` varchar(200) NOT NULL DEFAULT '0',
-  `birth_cer` int(50) NOT NULL DEFAULT 0,
+  `birth_cer` bigint(50) NOT NULL DEFAULT 0,
   `birth_cer_file` varchar(200) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -141,7 +142,8 @@ INSERT INTO `tbl_id_proof` (`id`, `userid`, `aadhar_no`, `aadhar_file`, `electio
 (1, 2344, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
 (2, 2230, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
 (3, 2240, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
-(4, 2232, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0');
+(4, 2232, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
+(5, 2233, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0');
 
 -- --------------------------------------------------------
 
@@ -200,7 +202,8 @@ INSERT INTO `tbl_registration` (`rid`, `fname`, `email`, `phno`, `wardno`, `hous
 (43, 'new reg', 'newreg@gmail.com', 5458965879, 2, 18, '../documents/taxreport/1643969173.pdf', 1),
 (44, 'David Guetta', 'davidguetta@gmail.com', 9565878452, 2, 23, '../documents/taxreport/1644592357.pdf', 1),
 (45, 'Martin Garrix', 'martingrx@gmail.com', 9565878457, 2, 24, '../documents/taxreport/1644593477.pdf', 1),
-(46, 'dont accept', 'sont@gmail.com', 9565878454, 2, 78, '../documents/taxreport/1644595851.pdf', 0);
+(46, 'dont accept', 'sont@gmail.com', 9565878454, 2, 78, '../documents/taxreport/1644595851.pdf', 0),
+(47, 'kunnuz', 'kunnu@gmail.com', 9565874587, 2, 48, '../documents/taxreport/1644849229.pdf', 0);
 
 -- --------------------------------------------------------
 
@@ -297,19 +300,19 @@ ALTER TABLE `tbl_house`
 -- AUTO_INCREMENT for table `tbl_house_member`
 --
 ALTER TABLE `tbl_house_member`
-  MODIFY `hm_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `hm_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `tbl_id_proof`
 --
 ALTER TABLE `tbl_id_proof`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_registration`
 --
 ALTER TABLE `tbl_registration`
-  MODIFY `rid` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `rid` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `tbl_ward_member`
