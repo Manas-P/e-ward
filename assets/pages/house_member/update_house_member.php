@@ -175,7 +175,7 @@ else
                                 <div class="label">
                                     Aadhar number
                                 </div>
-                                <input type="text" name="hmuaadharno" id="hm-aadharno" placeholder="9562547845" value="<?php if($idProof['aadhar_no']!='0'){ echo $idProof['blood_grp']; } ?>" autocomplete="off">
+                                <input type="text" name="hmuaadharno" id="hm-aadharno" placeholder="9562547845" value="<?php if($idProof['aadhar_no']!='0'){ echo $idProof['aadhar_no']; } ?>" autocomplete="off">
                                 <div class="error error-hidden">
                                 </div>
                             </div>
@@ -184,6 +184,24 @@ else
                                     Upload aadhar (pdf)
                                 </div>
                                 <input type="file" name="hmuaadharfile" id="hm-aadhar-file" accept="application/pdf" value="<?php echo $idProof['aadhar_file'] ?>">
+                                <div class="error error-hidden">
+                                </div>
+                            </div>
+                            <!-- ---------- -->
+                            <!-- Election id number -->
+                            <div class="input hm-electionno">
+                                <div class="label">
+                                    Election id number
+                                </div>
+                                <input type="text" name="hmuelectionno" id="hm-electionno" placeholder="9562547845" value="<?php if($idProof['election_id']!='0'){ echo $idProof['election_id']; } ?>" autocomplete="off">
+                                <div class="error error-hidden">
+                                </div>
+                            </div>
+                            <div class="input hm-election-file">
+                                <div class="label">
+                                    Upload election id (pdf)
+                                </div>
+                                <input type="file" name="hmuelectionfile" id="hm-election-file" accept="application/pdf" value="<?php echo $idProof['election_id_file'] ?>">
                                 <div class="error error-hidden">
                                 </div>
                             </div>
