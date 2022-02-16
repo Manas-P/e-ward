@@ -3,15 +3,18 @@ const updateForm=document.querySelector("#reg-form");
 const houseName=document.querySelector("#house-name");
 const locality=document.querySelector("#locality-id");
 const postOffice=document.querySelector("#por");
+const rationNo=document.querySelector("#ration-number");
 
 
 //Error Message Class
 const houseNameError=document.querySelector(".housename .error");
 const localityError=document.querySelector(".locality .error");
 const postOfficeError=document.querySelector(".po .error");
+const rationnoError=document.querySelector(".rationno .error");
 var houseNameSubmit=true;
 var localitySubmit=true;
 var postOfficeSubmit=true;
+var ranoSubmit=true;
 
 //Check house name
 houseName.addEventListener("input",()=>{
@@ -55,11 +58,31 @@ postOffice.addEventListener("input",()=>{
     }
 });
 
+//Ration Number Validation
+var rationnoChk=/^[1-9]{10}$/;
+rationNo.addEventListener("input",()=>{
+    if(rationNo.value.match(rationnoChk)){
+        rationnoError.classList.add("error-hidden");
+        rationnoError.classList.remove("error-visible");
+        ranoSubmit=true;
+    }else if(rationNo.value==""){
+        rationnoError.classList.add("error-visible");
+        rationnoError.classList.remove("error-hidden");
+        rationnoError.innerText="Field cannot be blank";
+        ranoSubmit=false;
+    }else{
+        rationnoError.classList.add("error-visible");
+        rationnoError.classList.remove("error-hidden");
+        rationnoError.innerText="Invalid ration number";
+        ranoSubmit=false;
+    }
+});
+
 //Submit Button Visibility
 const upBtn=document.querySelector("#up-btn");
 const buttonCursor=document.querySelector(".ubn");//To avoid poniterevent and cursor problem
 updateForm.addEventListener("keyup",()=>{
-    if(houseNameSubmit==true && localitySubmit==true && postOfficeSubmit==true){
+    if(houseNameSubmit==true && localitySubmit==true && postOfficeSubmit==true && ranoSubmit){
         upBtn.classList.remove("disabled");
         buttonCursor.classList.remove("cursor-disabled");
     }else{

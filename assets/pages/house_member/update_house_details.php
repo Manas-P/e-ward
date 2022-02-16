@@ -8,7 +8,6 @@ if (isset($_SESSION["e-wardId"]) != session_id()) {
 else
 {
     $fname=$_SESSION['fname'];
-    $rid=$_SESSION['rid'];
     $houseno= $_SESSION['houseno'];
     $wardno= $_SESSION['wardno'];
 ?>
@@ -28,7 +27,7 @@ else
         <section class="main">
             <!-- ==========Sidebar============= -->
             <?php
-                include '../../include/house_member/sidebar_hm_update.php'
+                include '../../include/house_member/sidebar_hm_houseupdate.php'
             ?>
             <!-- ==========Sidebar End============= -->
                 
@@ -47,15 +46,14 @@ else
                     </div>
 
                     <?php
-                        $query="SELECT * FROM `tbl_house` WHERE `rid`='$rid'";
+                        $query="SELECT * FROM `tbl_house` WHERE `ward_no`=$wardno and `house_no`=$houseno";
                         $result=mysqli_query($conn,$query);
                         while($row=mysqli_fetch_array($result)){
                     ?>
 
                     <form id="reg-form" action="../../php/auth.php" method="post" enctype="multipart/form-data">
                         <div class="inputs">
-                            <input type="text" name="rid" value="<?php echo $row['rid']; ?>" style="display: none;">
-                            <input type="text" name="wardno" value="<?php echo $row['wardno']; ?>" style="display: none;">
+                            <input type="text" name="wardno" value="<?php echo $row['ward_no']; ?>" style="display: none;">
                             <div class="input housename">
                                 <div class="label">
                                     House name
@@ -93,7 +91,7 @@ else
                                 <div class="label">
                                     Ration number
                                 </div>
-                                <input type="text" name="rano" id="ration-number" placeholder="2547863214" value="<?php echo $row['ration_no']; ?>" autocomplete="off" readonly>
+                                <input type="text" name="rano" id="ration-number" placeholder="2547863214" value="<?php echo $row['ration_no']; ?>" autocomplete="off">
                                 <div class="error error-hidden">
                                 </div>
                             </div>

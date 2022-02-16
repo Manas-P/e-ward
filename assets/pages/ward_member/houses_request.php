@@ -58,9 +58,9 @@
                     <div style="margin-left: 70px;">Full name</div>
                     <div style="margin-left: 129px;">Email id</div>
                     <div style="margin-left: 265px;">Phno.</div>
-                    <div style="margin-left: 88px;">House no.</div>
-                    <div style="margin-left: 90px;">Ration card no.</div>
-                    <div style="margin-left: 92px;">Action</div>
+                    <div style="margin-left: 100px;">House no.</div>
+                    <div style="margin-left: 90px;">House tax report</div>
+                    <div style="margin-left: 72px;">Action</div>
                 </div>
                 <div class="datas">
                     <?php
@@ -76,9 +76,11 @@
                                 <td width=104px><?php echo $i; ?></td>
                                 <td width=218px><?php echo $row["fname"]; ?></td>
                                 <td width=333px><?php echo $row["email"]; ?></td>
-                                <td width=140px><?php echo $row["phno"]; ?></td>
+                                <td width=154px><?php echo $row["phno"]; ?></td>
                                 <td width=180px><?php echo $row["houseno"]; ?></td>
-                                <td width=225px><?php echo $row["rationno"]; ?></td>
+                                <td width=225px>
+                                    <a class="view" href="../../php/view_pdf.php?pdf=<?php echo $row["taxreport"]; ?>" target="_blank">View</a>
+                                </td>
                                 <td width=95px>
                                     <a href="../../php/approve.php?apprId=<?php echo $row['rid']; ?>" class="approve">Approve</a>
                                 </td>
@@ -128,7 +130,23 @@
             }
         </script>
 
+        <?php
+            if (isset($_SESSION['loginMessage'])) {
+                $msg=$_SESSION['loginMessage'];
+                echo " <div class='alertt alert-visible'>
+                            <div class='econtent'>
+                                <img src='../../images/warning.svg' alt='error'>
+                                <div class='text'>
+                                    $msg
+                                </div>
+                            </div>
+                            <img src='../../images/close.svg' alt='close' class='alert-close'>
+                        </div>";
+                unset($_SESSION['loginMessage']);
+        }?>
+
         <script src="../../js/reject_house_reg.js"></script>
+        <script src="../../js/toast.js"></script>
     </body>
 </html>
 	<?php

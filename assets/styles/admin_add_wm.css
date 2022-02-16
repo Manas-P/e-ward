@@ -448,8 +448,28 @@ body {
 }
 
 .main .container .members-list .heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .container .members-list .heading .titl {
   font-family: "Gilroy_SB";
   font-size: 24px;
+}
+
+.main .container .members-list .heading .upvalid {
+  font-family: "Gilroy_SB";
+  font-size: 20px;
+  text-decoration: underline;
+  color: #5744e3;
+  cursor: pointer;
 }
 
 .main .container .members-list .members {
@@ -667,6 +687,7 @@ body {
 .box .inputs .input input[type="file"],
 .box .inputs .input input[type="password"] {
   width: 100%;
+  height: 53px;
   font-size: 18px;
   font-family: "Gilroy_M";
   padding: 16px 0px 16px 16px;
@@ -724,6 +745,7 @@ body {
 .box .inputs .half-input .input input[type="file"],
 .box .inputs .half-input .input input[type="password"] {
   width: 100%;
+  height: 53px;
   font-size: 18px;
   font-family: "Gilroy_M";
   padding: 16px 0px 16px 16px;
@@ -892,6 +914,128 @@ body {
 .box2 #add-president .member:hover {
   -webkit-box-shadow: 0px 10px 20px rgba(150, 150, 150, 0.25);
           box-shadow: 0px 10px 20px rgba(150, 150, 150, 0.25);
+}
+
+.box3 {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 556px;
+  height: auto;
+  overflow: none;
+  overflow-y: scroll;
+  padding: 62px 48px 70px 48px;
+  background: #fff;
+  -webkit-box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.04), 20px 40px 80px rgba(0, 0, 0, 0.1);
+          box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.04), 20px 40px 80px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+}
+
+.box3 .title {
+  font-family: "Gilroy_B";
+  font-size: 36px;
+}
+
+.box3 .modal-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  cursor: pointer;
+}
+
+.box3 .modal-close-btn img {
+  height: 24px;
+}
+
+.box3::-webkit-scrollbar {
+  width: 0px;
+}
+
+.box3 .inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 32px;
+  margin-top: 40px;
+}
+
+.box3 .inputs .input {
+  width: 460px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 8px;
+}
+
+.box3 .inputs .input .label {
+  font-size: 16px;
+  font-family: "Gilroy_M";
+}
+
+.box3 .inputs .input input[type="text"],
+.box3 .inputs .input input[type="date"],
+.box3 .inputs .input input[type="file"],
+.box3 .inputs .input input[type="password"] {
+  width: 100%;
+  height: 53px;
+  font-size: 18px;
+  font-family: "Gilroy_M";
+  padding: 16px 0px 16px 16px;
+  border-radius: 10px;
+  border: 1px solid #c1c1c1;
+  color: #1e1e1e;
+  outline: none;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.box3 .inputs .input input[type="text"]:focus,
+.box3 .inputs .input input[type="date"]:focus,
+.box3 .inputs .input input[type="file"]:focus,
+.box3 .inputs .input input[type="password"]:focus {
+  border: 1px solid #1e1e1e;
+}
+
+.box3 .inputs .input .error {
+  position: absolute;
+  margin-top: 84px;
+  color: #ec0000;
+  font-family: "Gilroy_M";
+  font-size: 14px;
+}
+
+.box3 .button .primary-button {
+  background: #5744e3;
+  color: #fff;
+  font-family: "Gilroy_B";
+  font-size: 18px;
+  padding: 16px 0;
+  border: none;
+  outline: none;
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+}
+
+.box3 .button .primary-button:active {
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
+  background: #6756eb;
 }
 
 .modal-hidden {

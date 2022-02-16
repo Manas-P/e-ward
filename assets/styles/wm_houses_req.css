@@ -383,6 +383,11 @@ body {
   text-align: left;
 }
 
+.main .container .datas .data .view {
+  font-family: "Gilroy_SB";
+  color: #5744e3;
+}
+
 .main .container .datas .data .approve {
   font-family: "Gilroy_SB";
   color: #039b00;

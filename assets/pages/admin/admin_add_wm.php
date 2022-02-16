@@ -81,7 +81,12 @@
                 <!-- Ward Members -->
                 <div class="members-list">
                     <div class="heading">
-                        Ward Members
+                        <div class="titl">
+                            Ward Members
+                        </div>
+                        <div class="upvalid">
+                            Update validity for all
+                        </div>
                     </div>
                     <div class="members">
                         <a class="add-member">
@@ -224,6 +229,32 @@
             ?>
             </form>
         </div>
+        <!-- Form to update validity for all -->
+        <div class="box3 modal-box3 modal-hidden">
+            <div class="title">
+                Add president
+            </div>
+            <div class="modal-close-btn up-cls-btn">
+                <img src="../../images/close.svg" alt="close button">
+            </div>
+            <form action="../../php/auth.php" method="post" id="add-president">
+                <div class="inputs">
+                    <div class="input w-date">
+                        <div class="label">
+                            Valid upto
+                        </div>
+                        <input type="date" name="upvalidity" id="a-date" autocomplete="off">
+                        <div class="error error-hidden">
+                        </div>
+                    </div>
+                    <div class="button wBtn">
+                        <input type="submit" value="Update validity" name="upVal" id="upVal" class="primary-button">
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
         <div id="warrning-box" >
             <!-- Inject Error Toast -->
         </div>
@@ -241,7 +272,23 @@
                     </div>";
           unset($_SESSION['loginMessage']);
         }?>
+        <!-- Success toast -->
+        <?php
+            if (isset($_SESSION['success'])) {
+                $msg=$_SESSION['success'];
+                echo " <div class='alertt alert-visible' style='border-left: 10px solid #1BBD2B;'>
+                            <div class='econtent'>
+                                <img src='../../images/check.svg' alt='success'>
+                                <div class='text'>
+                                    $msg
+                                </div>
+                            </div>
+                            <img src='../../images/close.svg' alt='close' class='alert-close'>
+                        </div>";
+                unset($_SESSION['success']);
+        }?>
         <script src="../../js/admin_add_wm.js"></script>
+        <script src="../../js/toast.js"></script>
         <script>
             function validateWardNo(ward)
             {  

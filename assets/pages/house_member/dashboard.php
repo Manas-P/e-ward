@@ -8,7 +8,6 @@ if (isset($_SESSION["e-wardId"]) != session_id()) {
 else
 {
     $fname=$_SESSION['fname'];
-    $rid=$_SESSION['rid'];
     $houseno= $_SESSION['houseno'];
     $wardno= $_SESSION['wardno'];
 ?>
@@ -27,12 +26,11 @@ else
     <body>
         <!-- Check if the user entered house details -->
         <?php
-            $checkQuery="SELECT * FROM `tbl_house` WHERE `rid`=$rid";
+            $checkQuery="SELECT * FROM `tbl_house` WHERE `ward_no`='$wardno' and `house_no`='$houseno'";
             $checkResult=mysqli_query($conn,$checkQuery);
             if(mysqli_num_rows($checkResult)==0){
         ?>
-        <!-- Update profile -->
-
+        <!-- Add house info -->
 
         <section class="main">
             <!-- ==========Sidebar============= -->
@@ -44,7 +42,7 @@ else
             <div class="container">
                 <div class="header">
                     <div class="title">
-                        Update Profile
+                        Add house details
                     </div>
                 </div>
                 <!-- content -->
@@ -56,15 +54,14 @@ else
                     </div>
 
                     <?php
-                        $query="SELECT * FROM `tbl_registration` WHERE `rid`='$rid'";
+                        $query="SELECT * FROM `tbl_house_member` WHERE `ward_no`=$wardno and `house_no`=$houseno";
                         $result=mysqli_query($conn,$query);
                         while($row=mysqli_fetch_array($result)){
                     ?>
 
                     <form id="reg-form" action="../../php/auth.php" method="post" enctype="multipart/form-data">
                         <div class="inputs">
-                            <input type="text" name="rid" value="<?php echo $row['rid']; ?>" style="display: none;">
-                            <input type="text" name="wardno" value="<?php echo $row['wardno']; ?>" style="display: none;">
+                            <input type="text" name="wardno" value="<?php echo $row['ward_no']; ?>" style="display: none;">
                             <div class="input housename">
                                 <div class="label">
                                     House name
@@ -78,7 +75,7 @@ else
                                 <div class="label">
                                     House number
                                 </div>
-                                <input type="text" name="houno" id="house-number" placeholder="153" value="<?php echo $row['houseno']; ?>" autocomplete="off" readonly>
+                                <input type="text" name="houno" id="house-number" placeholder="153" value="<?php echo $row['house_no']; ?>" autocomplete="off" readonly>
                                 <div class="error error-hidden">
                                 </div>
                             </div>
@@ -102,7 +99,7 @@ else
                                 <div class="label">
                                     Ration number
                                 </div>
-                                <input type="text" name="rano" id="ration-number" placeholder="2547863214" value="<?php echo $row['rationno']; ?>" autocomplete="off" readonly>
+                                <input type="text" name="rano" id="ration-number" placeholder="2547863214" autocomplete="off">
                                 <div class="error error-hidden">
                                 </div>
                             </div>
@@ -116,8 +113,8 @@ else
                                     <label for="bpl">BPL</label>
                                 </div>
                             </div>
-                            <div class="button">
-                                <input type="submit" value="Update" name="upbtn" id="up-btn" class="primary-button">
+                            <div class="button ubn cursor-disable">
+                                <input type="submit" value="Add details" name="upbtn" id="up-btn" class="primary-button disabled">
                             </div>
                         </div>
                     </form>
@@ -150,7 +147,22 @@ else
         <?php
             }
         ?>
+        <?php
+            if (isset($_SESSION['loginMessage'])) {
+                $msg=$_SESSION['loginMessage'];
+                echo " <div class='alertt alert-visible' style='border-left: 10px solid #1BBD2B;'>
+                            <div class='econtent'>
+                                <img src='../../images/check.svg' alt='success'>
+                                <div class='text'>
+                                    $msg
+                                </div>
+                            </div>
+                            <img src='../../images/close.svg' alt='close' class='alert-close'>
+                        </div>";
+                unset($_SESSION['loginMessage']);
+        }?>
     </body>
+    <script src="../../js/hm_dashboard.js"></script>
 </html>
 	<?php
 }

@@ -1,0 +1,146 @@
+@import "./components.scss";
+
+//Mixins
+@mixin contentbox() {
+  background: $white;
+  box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
+  border-radius: 10px;
+  padding: 48px 56px;
+  width: 704px;
+  margin-bottom: 64px;
+}
+
+@mixin contentboxheader() {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .heading {
+      font-family: "Gilroy_SB";
+      font-size: 32px;
+      color: $text;
+    }
+  }
+}
+
+body {
+  background: $bg;
+}
+
+.main {
+  display: flex;
+  .sidebar {
+    @include sidebar();
+  }
+  .container {
+    margin: 64px 63px 0 calc(476px - 63px);
+    width: calc(100% - 476px);
+    display: flex;
+    .left {
+      width: 567px;
+      .bread-crumbs {
+        position: fixed;
+        display: flex;
+        column-gap: 4px;
+        align-items: center;
+        .previous {
+          font-family: "Gilroy_M";
+          font-size: 16px;
+          color: $subText;
+        }
+        svg {
+          .str {
+            stroke: $text;
+          }
+        }
+        .now {
+          font-family: "Gilroy_SB";
+          font-size: 16px;
+          color: $text;
+        }
+      }
+      .menu {
+        position: fixed;
+        margin-top: 68px;
+        padding: 24px 100px 24px 54px;
+        background: $white;
+        box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
+        border-radius: 10px;
+        .links {
+          display: flex;
+          flex-direction: column;
+          a {
+            padding: 18px 0;
+            font-family: "Gilroy_SB";
+            font-size: 20px;
+            color: $placeholder;
+          }
+          .active {
+            color: $primary;
+          }
+        }
+      }
+    }
+    .right {
+      margin-top: 68px;
+      .general {
+        @include contentbox();
+        @include contentboxheader();
+        .information {
+          margin-top: 48px;
+          .photo {
+            img {
+              width: 132px;
+              height: 132px;
+              border-radius: 4px;
+            }
+          }
+          .content {
+            margin-top: 32px;
+            display: flex;
+            align-items: center;
+            .title {
+              font-family: "Gilroy_M";
+              font-size: 20px;
+              color: $subText;
+            }
+            .info {
+              margin-left: 8px;
+              font-family: "Gilroy_M";
+              font-size: 20px;
+              color: $text;
+            }
+          }
+        }
+      }
+      .proofs {
+        @include contentbox();
+        @include contentboxheader();
+        .files {
+          margin-top: 48px;
+          .file {
+            margin-top: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .info {
+              display: flex;
+              align-items: center;
+              .title {
+                font-family: "Gilroy_M";
+                font-size: 20px;
+                color: $subText;
+              }
+              .info {
+                margin-left: 8px;
+                font-family: "Gilroy_M";
+                font-size: 20px;
+                color: $text;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

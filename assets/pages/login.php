@@ -153,11 +153,11 @@ session_start();
                                     </div>
                                 </div>
                             </div>
-                            <div class="input rationno">
+                            <div class="input taxreport">
                                 <div class="label">
-                                    Ration number
+                                    House tax report
                                 </div>
-                                <input type="text" name="rano" id="ration-number" placeholder="2547863214" autocomplete="off">
+                                <input type="file" name="taxre" id="tax-report" accept="application/pdf">
                                 <div class="error error-hidden">
                                 </div>
                             </div>
@@ -196,7 +196,7 @@ session_start();
                 },
                 success: function(data, status) {
                     $('#warrning-box').html(data);
-                    // hosnoSubmit=false;
+                    //hosnoSubmit=false;
                 }
             });
          }

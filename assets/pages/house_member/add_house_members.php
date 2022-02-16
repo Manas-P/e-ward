@@ -8,9 +8,13 @@ if (isset($_SESSION["e-wardId"]) != session_id()) {
 else
 {
     $fname=$_SESSION['fname'];
-    $rid=$_SESSION['rid'];
     $houseno= $_SESSION['houseno'];
     $wardno= $_SESSION['wardno'];
+    $user_id= $_SESSION['userid'];
+
+    //check user
+    $arr = str_split($user_id); // convert string to an array
+    $chk= end($arr); // 0 = house head
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,15 +45,22 @@ else
                 <div class="members-list">
                     <div class="members">
 
-                        <a class="add-member">
-                            <div class="icon">
-                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path class="str" d="M15 6.25V23.75" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path class="str" d="M6.25 15H23.75" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                            <div class="text">Add members</div>
-                        </a>
+                        <!-- Check if user is head or not -->
+                        <?php
+                            if($chk==0){
+                        ?>
+                            <a class="add-member">
+                                <div class="icon">
+                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path class="str" d="M15 6.25V23.75" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path class="str" d="M6.25 15H23.75" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="text">Add members</div>
+                            </a>
+                        <?php
+                            }
+                        ?>
 
                         <!-- Fetch Ward Members -->
                         <?php
@@ -58,10 +69,15 @@ else
                             if(mysqli_num_rows($fetchResult)>0){
                                 while($row = mysqli_fetch_assoc($fetchResult)){
                                     // Convert dob to age
-                                    $dob=$row["dob"];
-                                    $age = (date('Y') - date('Y',strtotime($dob)));
+                                    if($row["dob"]==="0000-00-00"){
+                                        $age="NA";
+                                    }else{
+                                        $dob=$row["dob"];
+                                        $age = (date('Y') - date('Y',strtotime($dob)));
+                                    }
+                                    
                         ?>
-                        <a href="" class="member">
+                        <a href="./house_member_profile.php?id=<?php echo $row['userid']; ?>" class="member">
                             <div class="photo">
                                 <img src="../<?php echo $row["photo"]; ?>" alt="member photo">
                             </div>
@@ -95,6 +111,7 @@ else
             </div>
             <!-- Add House Memeber -->
             <form action="../../php/auth.php" method="post" id="add-house-member" enctype="multipart/form-data">
+                <input type="hidden" name="fname" value="<?php echo $fname ?>">
                 <div class="inputs">
                     <div class="input h-fullname">
                         <div class="label">
@@ -153,6 +170,8 @@ else
             </form>
         </div>
         <script src="../../js/hm_add_hm.js"></script>
+
+        <!-- Error Toast -->
         <?php
         if (isset($_SESSION['loginMessage'])) {
             $msg=$_SESSION['loginMessage'];
@@ -167,7 +186,24 @@ else
                     </div>";
           unset($_SESSION['loginMessage']);
         }?>
+
+        <!-- Success toast -->
+        <?php
+            if (isset($_SESSION['success'])) {
+                $msg=$_SESSION['success'];
+                echo " <div class='alertt alert-visible' style='border-left: 10px solid #1BBD2B;'>
+                            <div class='econtent'>
+                                <img src='../../images/check.svg' alt='success'>
+                                <div class='text'>
+                                    $msg
+                                </div>
+                            </div>
+                            <img src='../../images/close.svg' alt='close' class='alert-close'>
+                        </div>";
+                unset($_SESSION['success']);
+        }?>
     </body>
+    <script src="../../js/toast.js"></script>
 </html>
 	<?php
 }

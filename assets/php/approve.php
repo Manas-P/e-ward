@@ -1,12 +1,6 @@
 <?php
     include '../include/dbcon.php';
     $id=$_GET['apprId'];
-    // $query="SELECT * FROM `tbl_registration` WHERE `rid`='$id'";
-    // $result=mysqli_query($conn,$query);
-    // while ($row = mysqli_fetch_assoc($result))
-    // {
-    //     echo $row['email'];
-    // }
     
     // Generate Random Password
     $length=8;
@@ -25,18 +19,21 @@
         $houseNo=$row['houseno'];
         $name=$row['fname'];
         $wardno=$row['wardno'];
+        $phno=$row['phno'];
     }
     
     //Mail Informations
-    $userid=$wardno . $houseNo;
+    $userid=$wardno . $houseNo . "0";
     $subject="E-Ward Approved";
     $body="Dear $name, your request have approved. You can login to E-Ward using Id = $userid and Password = $generatedPassword";
     $headers="From: ewardmember@gmail.com";
 
     if(mail($toMail,$subject,$body,$headers)){
-        //Update User Status and Password
-        $updateQuery="UPDATE `tbl_registration` SET `password`='$generatedPassword',`status`=1 WHERE `rid`='$id'";
-        $updateResult=mysqli_query($conn,$updateQuery);
+        //Update User Status and Password (Multi-query)
+        $updateQuery="UPDATE `tbl_registration` SET `status`=1 WHERE `rid`='$id' ; INSERT INTO `tbl_house_member`(`ward_no`, `house_no`, `fname`, `phno`, `userid`, `password`) VALUES ('$wardno','$houseNo','$name','$phno','$userid','$generatedPassword') ; INSERT INTO `tbl_id_proof`(`userid`) VALUES ('$userid')";
+        $updateResult=mysqli_multi_query($conn,$updateQuery);
+        
+        $_SESSION['loginMessage'] = "House approved";
         header("Location: ../pages/ward_member/houses_request.php");
     }else{
         echo "Mail not Send";

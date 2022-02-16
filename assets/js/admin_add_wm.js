@@ -3,9 +3,12 @@ const addMember=document.querySelector(".add-member");
 const addpresident=document.querySelector(".add-president");
 const closeModal=document.querySelector(".modal-close-btn");
 const closeModalPresident=document.querySelector(".pre-cls-btn");
+const closeModalUpdateValidity=document.querySelector(".up-cls-btn");
 const overlay=document.querySelector(".overlay");
 const memberBox=document.querySelector(".modal-box");
 const presidentBox=document.querySelector(".modal-box2");
+const upvalid=document.querySelector(".upvalid");
+const upvalidBox=document.querySelector(".modal-box3");
 
 //Add Member
 addMember.addEventListener("click",()=>{
@@ -17,6 +20,12 @@ addMember.addEventListener("click",()=>{
 addpresident.addEventListener("click",()=>{
     overlay.classList.remove("modal-hidden");
     presidentBox.classList.remove("modal-hidden");
+})
+
+//Update validity for all
+upvalid.addEventListener("click",()=>{
+    overlay.classList.remove("modal-hidden");
+    upvalidBox.classList.remove("modal-hidden");
 })
 
 //Close button ward member
@@ -31,6 +40,12 @@ closeModalPresident.addEventListener("click",()=>{
     presidentBox.classList.add("modal-hidden");
 })
 
+//Close button update validity
+closeModalUpdateValidity.addEventListener("click",()=>{
+    overlay.classList.add("modal-hidden");
+    upvalidBox.classList.add("modal-hidden");
+})
+
 //===============Validation Ward Member=====================
 const addMemberForm=document.querySelector("#add-ward-member");
 const wFullname=document.querySelector("#w-full-name");
@@ -39,6 +54,7 @@ const wPhno=document.querySelector("#w-phn-number");
 const wWardno=document.querySelector("#w-ward-number");
 const wAddBtn=document.querySelector("#add-wm");
 const wDatePicker=document.querySelector("#w-date");
+const aDatePicker=document.querySelector("#a-date");
 const wPhoto=document.querySelector("#w-photo");
 
 
@@ -196,5 +212,6 @@ if(mm<10){
 
 today = yyyy+'-'+mm+'-'+dd;
 wDatePicker.setAttribute("min", today);
+aDatePicker.setAttribute("min", today);
 //===============End of Validation Ward Member=====================
 

@@ -24,16 +24,28 @@
         //Registration
         if(isset($_POST['regbtn'])){
             //While using extract, no need to define variable use $nameAttribute from the form
-            $userid=$wrdno . $houno;
-            echo $userid;
-            $ins="INSERT INTO `tbl_registration`(`fname`, `email`, `phno`, `wardno`, `houseno`, `userid`, `rationno`) VALUES ('$fname','$email','$phno','$wrdno','$houno','$userid','$rano')";
-            $ins_res=mysqli_query($conn,$ins);
-            if($ins_res){
-                header("Location: ../pages/login.php");
+            $userid=$wrdno . $houno . "0";
+
+            $upload_dir = '../documents/taxreport/';
+            $file_tmpname = $_FILES['taxre']['tmp_name'];
+            $file_name = $_FILES['taxre']['name'];
+            $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
+            $filepath = $upload_dir . time().".".$file_ext;
+
+            if(move_uploaded_file($file_tmpname, $filepath)){
+
+                $ins="INSERT INTO `tbl_registration`(`fname`, `email`, `phno`, `wardno`, `houseno`, `taxreport`) VALUES ('$fname','$email','$phno','$wrdno','$houno','$filepath')";
+                $ins_res=mysqli_query($conn,$ins);
+                if($ins_res){
+                    header("Location: ../pages/login.php");
+                }else{
+                    $_SESSION['loginMessage'] = "Error in registration";
+                    header("Location: ../pages/login.php");
+                }
+
             }else{
-                echo '<script language="javascript" type="text/javascript">';
-				echo 'alert("Error")';
-				echo '</script>';
+                $_SESSION['loginMessage'] = "File upload error";
+                header("Location: ../pages/login.php");
             }
         }
 
@@ -43,7 +55,7 @@
         {
             // $password=$password;
             //Check if mobile already exisit
-            $checkLogin = "SELECT * FROM `tbl_registration` WHERE `userid`='$userName' and `password`='$password' and `status`=1";
+            $checkLogin = "SELECT * FROM `tbl_house_member` WHERE `userid`='$userName' and `password`='$password'";
             $checkLoginResult = mysqli_query($conn, $checkLogin);
             $checkLoginCount = mysqli_num_rows($checkLoginResult);
             //Check Admin
@@ -60,9 +72,9 @@
                 $userData=mysqli_fetch_assoc($checkLoginResult);
                 $_SESSION['e-wardId'] = session_id();
                 $_SESSION['fname'] = $userData['fname'];
-                $_SESSION['rid'] = $userData['rid'];
-                $_SESSION['houseno']= $userData['houseno'];
-                $_SESSION['wardno']= $userData['wardno'];
+                $_SESSION['houseno']= $userData['house_no'];
+                $_SESSION['wardno']= $userData['ward_no'];
+                $_SESSION['userid']= $userData['userid'];
                 header("Location: ../pages/house_member/dashboard.php");
                 die();
             }
@@ -119,12 +131,7 @@
             if(move_uploaded_file($file_tmpname, $filepath)){
                 
                 // Generate Random Password
-                $length=8;
-                $generatedPassword='';
-                $validChar='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-                while(0<$length--){
-                    $generatedPassword.=$validChar[random_int(0,strlen($validChar)-1)];
-                }
+                include '../include/password_generator.php';
 
                 $subject="E-Ward Approved";
                 $body="Dear $wfname, you have been added as Ward member. You can login to E-Ward using Id = $wwrdno and Password = $generatedPassword";
@@ -180,12 +187,31 @@
             }
         }
 
+        //Update validity for all ward members
+        if(isset($_POST['upVal'])){
+            if(empty($upvalidity)){
+                $_SESSION['loginMessage'] = "Please enter a date";
+                header("Location: ../pages/admin/admin_add_wm.php");
+            }else{
+                $upquery="UPDATE `tbl_ward_member` SET `validupto`='$upvalidity' where `status`='1'";
+                $upqueryResult=mysqli_query($conn,$upquery);
+                if($upqueryResult){
+                    $_SESSION['success'] = "Validity updated successfully";
+                    header("Location: ../pages/admin/admin_add_wm.php");
+                }else{
+                    $_SESSION['loginMessage'] = "Error in updating validity";
+                    header("Location: ../pages/admin/admin_add_wm.php");
+                }            
+            }
+        }
+
         //First time Update profile (House member)
         if(isset($_POST['upbtn'])){
-            $insHouse = "INSERT INTO `tbl_house`(`rid`, `house_name`, `house_no`, `ward_no`, `locality`, `post_office`, `ration_no`, `category`) VALUES ('$rid','$hname', '$houno', '$wardno','$locality','$po','$rano','$rationCat')";
+            $insHouse = "INSERT INTO `tbl_house`(`house_name`, `house_no`, `ward_no`, `locality`, `post_office`, `ration_no`, `category`) VALUES ('$hname', '$houno', '$wardno','$locality','$po','$rano','$rationCat')";
             $insHouseRes=mysqli_query($conn,$insHouse);
             if($insHouseRes){
                 header("Location: ../pages/house_member/update_house_details.php");
+                $_SESSION['loginMessage'] = "House Info Added";
             }else{
                 echo '<script language="javascript" type="text/javascript">';
                 echo 'alert("Error")';
@@ -195,7 +221,7 @@
 
         //Update House Details (House member)
         if(isset($_POST['uphbtn'])){
-            $updateh="UPDATE `tbl_house` SET `house_name`='$hname', `locality`='$locality', `post_office`='$po', `category`='$rationCat' WHERE `rid`='$rid'";
+            $updateh="UPDATE `tbl_house` SET `house_name`='$hname', `locality`='$locality', `post_office`='$po', `category`='$rationCat' WHERE `ward_no`='$wardno' and `house_no`='$houno'";
             // $insHouse = "INSERT INTO `tbl_house`(`rid`, `house_name`, `house_no`, `ward_no`, `locality`, `post_office`, `ration_no`, `category`) VALUES ('$rid','$hname', '$houno', '$wardno','$locality','$po','$rano','$rationCat')";
             $upHouseRes=mysqli_query($conn,$updateh);
             if($upHouseRes){
@@ -230,9 +256,38 @@
                 }
             }else{
                 if(move_uploaded_file($file_tmpname, $filepath)){
-                    $insHouseMember="INSERT INTO `tbl_house_member`(`ward_no`, `house_no`, `fname`,`email`, `phno`, `blood_grp`, `dob`, `photo`) VALUES ('$wardno','$houseno','$hfname','$hemail','$hphno','$hblood','$hdob','$filepath')";
-                    $insResult=mysqli_query($conn,$insHouseMember);
-                    header("Location: ../pages/house_member/add_house_members.php");
+
+                    // Generate Random Password
+                    include '../include/password_generator.php';
+
+                    //Count number of users
+                    $count="SELECT * FROM `tbl_house_member` WHERE `house_no`='$houseno'";
+                    $countResult=mysqli_query($conn,$count);
+                    $rowcount = mysqli_num_rows($countResult);
+                    $rowcount+=1;
+
+                    //Generate user id
+                    $userid=$wardno . $houseno . $rowcount;
+
+                    //Send mail
+                    $subject="E-Ward membership added";
+                    $body="Dear $hfname, you have been added as House member by $fname. You can login to E-Ward using Id = $userid and Password = $generatedPassword";
+                    $headers="From: ewardmember@gmail.com";
+
+                    if(mail($hemail,$subject,$body,$headers)){
+                        $insHouseMember="INSERT INTO `tbl_house_member`(`ward_no`, `house_no`, `fname`,`email`, `phno`, `blood_grp`, `dob`, `photo`, `userid`, `password`) VALUES ('$wardno','$houseno','$hfname','$hemail','$hphno','$hblood','$hdob','$filepath','$userid','$generatedPassword') ; INSERT INTO `tbl_id_proof`(`userid`) VALUES ('$userid')";
+                        $insResult=mysqli_multi_query($conn,$insHouseMember);
+                        if($insResult){
+                            header("Location: ../pages/house_member/add_house_members.php");
+                            $_SESSION['success'] = "House member added";
+                        }else{
+                            $_SESSION['loginMessage'] = "Error in adding member";
+                            header("Location: ../pages/house_member/add_house_members.php");
+                        }
+                    }else{
+                        $_SESSION['loginMessage'] = "Error in sending E-mail";
+                        header("Location: ../pages/house_member/add_house_members.php");
+                    }
                 }else{
                     $_SESSION['loginMessage'] = "File upload error";
                     header("Location: ../pages/house_member/add_house_members.php");
@@ -255,7 +310,128 @@
                 mysqli_query($conn,"DELETE FROM `tbl_registration` WHERE `rid`='$rejId'");
                 header("Location: ../pages/ward_member/houses_request.php");
             }else{
-                 echo "Mail not Send";
+                $_SESSION['loginMessage'] = "Mail not send";
+            }
+        }
+
+        //Update house member details
+        if(isset($_POST['hm-up-btn'])){
+
+            //check empty file 
+            //profile photo
+            if(empty($_FILES["hmuphoto"]['name'])){
+                $filepath=$hm_already_photo;
+            }else{
+                $upload_dir = '../images/uploads/photos/';
+                $file_tmpname = $_FILES['hmuphoto']['tmp_name'];
+                $file_name = $_FILES['hmuphoto']['name'];
+                $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
+                $filepath = $upload_dir . time().".".$file_ext;
+                if(move_uploaded_file($file_tmpname, $filepath)){}else{
+                    $_SESSION['loginMessage'] = "Error in file upload";
+                    header("Location: ../pages/house_member/add_house_members.php");
+                }
+            }
+
+            //Id proofs
+            $upload_dir_doc = '../documents/';
+            $file_ext_pdf = ".pdf";
+            //Aadhar
+            if(empty($_FILES["hmuaadharfile"]['name'])){
+                $filepath_aadhar=$hm_already_aadhar;
+            }else{
+                $file_tmpname_aadhar = $_FILES['hmuaadharfile']['tmp_name'];
+                $file_name_aadhar = $_FILES['hmuaadharfile']['name'];
+                $filepath_aadhar = $upload_dir_doc . time().".".$file_ext_pdf;
+                if(move_uploaded_file($file_tmpname_aadhar, $filepath_aadhar)){}else{
+                    $_SESSION['loginMessage'] = "Error in uploading Aadhar";
+                    header("Location: ../pages/house_member/add_house_members.php");
+                }
+            }
+            //Election id
+            if(empty($_FILES["hmuelectionfile"]['name'])){
+                $filepath_election=$hm_already_election;
+            }else{
+                $file_tmpname_election = $_FILES['hmuelectionfile']['tmp_name'];
+                $file_name_election = $_FILES['hmuelectionfile']['name'];
+                $filepath_election = $upload_dir_doc . time()."1".".".$file_ext_pdf;
+                if(move_uploaded_file($file_tmpname_election, $filepath_election)){}else{
+                    $_SESSION['loginMessage'] = "Error in uploading Election id";
+                    header("Location: ../pages/house_member/add_house_members.php");
+                }
+            }
+            //Driving Licence
+            if(empty($_FILES["hmudrivingfile"]['name'])){
+                $filepath_driving=$hm_already_driving;
+            }else{
+                $file_tmpname_driving = $_FILES['hmudrivingfile']['tmp_name'];
+                $file_name_driving = $_FILES['hmudrivingfile']['name'];
+                $filepath_driving = $upload_dir_doc . time()."2".".".$file_ext_pdf;
+                if(move_uploaded_file($file_tmpname_driving, $filepath_driving)){}else{
+                    $_SESSION['loginMessage'] = "Error in uploading Driving licence";
+                    header("Location: ../pages/house_member/add_house_members.php");
+                }
+            }
+            //PAN card
+            if(empty($_FILES["hmupancardfile"]['name'])){
+                $filepath_pan=$hm_already_pan;
+            }else{
+                $file_tmpname_pan = $_FILES['hmupancardfile']['tmp_name'];
+                $file_name_pan = $_FILES['hmupancardfile']['name'];
+                $filepath_pan = $upload_dir_doc . time()."3".".".$file_ext_pdf;
+                if(move_uploaded_file($file_tmpname_pan, $filepath_pan)){}else{
+                    $_SESSION['loginMessage'] = "Error in uploading PAN card";
+                    header("Location: ../pages/house_member/add_house_members.php");
+                }
+            }
+            //Birth certificate
+            if(empty($_FILES["hmubirthfile"]['name'])){
+                $filepath_birth=$hm_already_birth;
+            }else{
+                $file_tmpname_birth = $_FILES['hmubirthfile']['tmp_name'];
+                $file_name_birth = $_FILES['hmubirthfile']['name'];
+                $filepath_birth = $upload_dir_doc . time()."4".".".$file_ext_pdf;
+                if(move_uploaded_file($file_tmpname_birth, $filepath_birth)){}else{
+                    $_SESSION['loginMessage'] = "Error in uploading Birth certificate";
+                    header("Location: ../pages/house_member/add_house_members.php");
+                }
+            }
+
+            //Check empty field
+            //General info
+            if(empty($hmuemail)){
+                $hmuemail="Not entered";
+            }
+            if(empty($hmublood)){
+                $hmublood="NA";
+            }
+            //Id proof
+            if(empty($hmuaadharno)){
+                $hmuaadharno="0";
+            }
+            if(empty($hmuelectionid)){
+                $hmuelectionid="0";
+            }
+            if(empty($hmudrivingid)){
+                $hmudrivingid="0";
+            }
+            if(empty($hmupancard)){
+                $hmupancard="0";
+            }
+            if(empty($hmubirth)){
+                $hmubirth="0";
+            }
+
+            //Update request
+            $updatehmQuery="UPDATE `tbl_house_member` SET `fname`='$hmufname',`email`='$hmuemail',`phno`='$hmuphno',`blood_grp`='$hmublood',`dob`='$hmudob',`photo`='$filepath' WHERE `userid`='$hm_id' ; 
+                            UPDATE `tbl_id_proof` SET `aadhar_no`='$hmuaadharno',`aadhar_file`='$filepath_aadhar',`election_id`='$hmuelectionid',`election_id_file`='$filepath_election',`driving_lic`='$hmudrivingid',`driving_lic_file`='$filepath_driving',`pan_card`='$hmupancard',`pan_card_file`='$filepath_pan',`birth_cer`='$hmubirth',`birth_cer_file`='$filepath_birth' WHERE `userid`='$hm_id'";
+            $updatehmResult=mysqli_multi_query($conn,$updatehmQuery);
+            if($updatehmResult){
+                $_SESSION['success'] = "$hmufname's profile updated successfully";
+                header("Location: ../pages/house_member/add_house_members.php");
+            }else{
+                $_SESSION['loginMessage'] = "Error in updatation";
+                header("Location: ../pages/house_member/add_house_members.php");
             }
         }
     ?>
