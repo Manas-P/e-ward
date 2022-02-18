@@ -344,7 +344,7 @@
             }else{
                 $file_tmpname_aadhar = $_FILES['hmuaadharfile']['tmp_name'];
                 $file_name_aadhar = $_FILES['hmuaadharfile']['name'];
-                $filepath_aadhar = $upload_dir_doc . time().".".$file_ext_pdf;
+                $filepath_aadhar = $upload_dir_doc . time()."0".".".$file_ext_pdf;
                 if(move_uploaded_file($file_tmpname_aadhar, $filepath_aadhar)){}else{
                     $_SESSION['loginMessage'] = "Error in uploading Aadhar";
                     header("Location: ../pages/house_member/add_house_members.php");
@@ -399,6 +399,69 @@
                 }
             }
 
+            //Professional backgrounds
+            //Secondary school
+            if(empty($_FILES["hmuhsfile"]['name'])){
+                $filepath_hs=$hm_already_hs;
+            }else{
+                $file_tmpname_hs = $_FILES['hmuhsfile']['tmp_name'];
+                $file_name_hs = $_FILES['hmuhsfile']['name'];
+                $filepath_hs = $upload_dir_doc . time()."5".".".$file_ext_pdf;
+                if(move_uploaded_file($file_tmpname_hs, $filepath_hs)){}else{
+                    $_SESSION['loginMessage'] = "Error in uploading secondary school certificate";
+                    header("Location: ../pages/house_member/add_house_members.php");
+                }
+            }
+            //Higher secondary school
+            if(empty($_FILES["hmuhssfile"]['name'])){
+                $filepath_hss=$hm_already_hss;
+            }else{
+                $file_tmpname_hss = $_FILES['hmuhssfile']['tmp_name'];
+                $file_name_hss = $_FILES['hmuhssfile']['name'];
+                $filepath_hss = $upload_dir_doc . time()."6".".".$file_ext_pdf;
+                if(move_uploaded_file($file_tmpname_hss, $filepath_hss)){}else{
+                    $_SESSION['loginMessage'] = "Error in uploading higher secondary certificate";
+                    header("Location: ../pages/house_member/add_house_members.php");
+                }
+            }
+            //Diploma
+            if(empty($_FILES["hmudiplomafile"]['name'])){
+                $filepath_diploma=$hm_already_diploma;
+            }else{
+                $file_tmpname_diploma = $_FILES['hmudiplomafile']['tmp_name'];
+                $file_name_diploma = $_FILES['hmudiplomafile']['name'];
+                $filepath_diploma = $upload_dir_doc . time()."7".".".$file_ext_pdf;
+                if(move_uploaded_file($file_tmpname_diploma, $filepath_diploma)){}else{
+                    $_SESSION['loginMessage'] = "Error in uploading diploma certificate";
+                    header("Location: ../pages/house_member/add_house_members.php");
+                }
+            }
+            //Under graduation
+            if(empty($_FILES["hmuugfile"]['name'])){
+                $filepath_ug=$hm_already_ug;
+            }else{
+                $file_tmpname_ug = $_FILES['hmuugfile']['tmp_name'];
+                $file_name_ug = $_FILES['hmuugfile']['name'];
+                $filepath_ug = $upload_dir_doc . time()."8".".".$file_ext_pdf;
+                if(move_uploaded_file($file_tmpname_ug, $filepath_ug)){}else{
+                    $_SESSION['loginMessage'] = "Error in uploading under graduation certificate";
+                    header("Location: ../pages/house_member/add_house_members.php");
+                }
+            }
+            //Post graduation
+            if(empty($_FILES["hmupgfile"]['name'])){
+                $filepath_pg=$hm_already_pg;
+            }else{
+                $file_tmpname_pg = $_FILES['hmupgfile']['tmp_name'];
+                $file_name_pg = $_FILES['hmupgfile']['name'];
+                $filepath_pg = $upload_dir_doc . time()."9".".".$file_ext_pdf;
+                if(move_uploaded_file($file_tmpname_pg, $filepath_pg)){}else{
+                    $_SESSION['loginMessage'] = "Error in uploading post graduation certificate";
+                    header("Location: ../pages/house_member/add_house_members.php");
+                }
+            }
+
+
             //Check empty field
             //General info
             if(empty($hmuemail)){
@@ -426,7 +489,8 @@
 
             //Update request
             $updatehmQuery="UPDATE `tbl_house_member` SET `fname`='$hmufname',`email`='$hmuemail',`phno`='$hmuphno',`blood_grp`='$hmublood',`dob`='$hmudob',`photo`='$filepath' WHERE `userid`='$hm_id' ; 
-                            UPDATE `tbl_id_proof` SET `aadhar_no`='$hmuaadharno',`aadhar_file`='$filepath_aadhar',`election_id`='$hmuelectionid',`election_id_file`='$filepath_election',`driving_lic`='$hmudrivingid',`driving_lic_file`='$filepath_driving',`pan_card`='$hmupancard',`pan_card_file`='$filepath_pan',`birth_cer`='$hmubirth',`birth_cer_file`='$filepath_birth' WHERE `userid`='$hm_id'";
+                            UPDATE `tbl_id_proof` SET `aadhar_no`='$hmuaadharno',`aadhar_file`='$filepath_aadhar',`election_id`='$hmuelectionid',`election_id_file`='$filepath_election',`driving_lic`='$hmudrivingid',`driving_lic_file`='$filepath_driving',`pan_card`='$hmupancard',`pan_card_file`='$filepath_pan',`birth_cer`='$hmubirth',`birth_cer_file`='$filepath_birth' WHERE `userid`='$hm_id' ; 
+                            UPDATE `tbl_edu_bg` SET `hs`='$filepath_hs',`hss`='$filepath_hss',`diploma`='$filepath_diploma',`ug`='$filepath_ug',`pg`='$filepath_pg' WHERE `userid`='$hm_id'";
             $updatehmResult=mysqli_multi_query($conn,$updatehmQuery);
             if($updatehmResult){
                 $_SESSION['success'] = "$hmufname's profile updated successfully";

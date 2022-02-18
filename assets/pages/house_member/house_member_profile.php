@@ -153,7 +153,6 @@ else
                         $idproofQuery="SELECT * FROM `tbl_id_proof` WHERE `userid`='$hm_id'";
                         $idproofResult=mysqli_query($conn,$idproofQuery);
                         while ($idProof = mysqli_fetch_assoc($idproofResult)){
-                        
                     ?>
 
                     <section class="proofs" id="identityProof">
@@ -350,7 +349,6 @@ else
                         $eduQuery="SELECT * FROM `tbl_edu_bg` WHERE `userid`='$hm_id'";
                         $eduResult=mysqli_query($conn,$eduQuery);
                         while ($edu = mysqli_fetch_assoc($eduResult)){
-                        
                     ?>
                     <section class="proofs" id="educationalbackground">
                         <div class="header">
