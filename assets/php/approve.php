@@ -30,7 +30,11 @@
 
     if(mail($toMail,$subject,$body,$headers)){
         //Update User Status and Password (Multi-query)
-        $updateQuery="UPDATE `tbl_registration` SET `status`=1 WHERE `rid`='$id' ; INSERT INTO `tbl_house_member`(`ward_no`, `house_no`, `fname`, `phno`, `userid`, `password`) VALUES ('$wardno','$houseNo','$name','$phno','$userid','$generatedPassword') ; INSERT INTO `tbl_id_proof`(`userid`) VALUES ('$userid')";
+        $updateQuery="UPDATE `tbl_registration` SET `status`=1 WHERE `rid`='$id' ; 
+        INSERT INTO `tbl_house_member`(`ward_no`, `house_no`, `fname`, `phno`, `userid`, `password`) VALUES ('$wardno','$houseNo','$name','$phno','$userid','$generatedPassword') ; 
+        INSERT INTO `tbl_id_proof`(`userid`) VALUES ('$userid') ; 
+        INSERT INTO `tbl_edu_bg`(`userid`) VALUES ('$userid') ;
+        INSERT INTO `tbl_pro_bg`(`userid`) VALUES ('$userid')";
         $updateResult=mysqli_multi_query($conn,$updateQuery);
         
         $_SESSION['loginMessage'] = "House approved";
