@@ -10,6 +10,10 @@ else
     $fname=$_SESSION['fname'];
     $houseno= $_SESSION['houseno'];
     $wardno= $_SESSION['wardno'];
+
+    //slice first name of user
+    $slices=explode(" ", $fname);
+    $firstName=$slices[0];
 ?>
 <!DOCTYPE html>
 <html lang="en">

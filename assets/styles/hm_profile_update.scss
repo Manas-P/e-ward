@@ -80,14 +80,14 @@ body {
           }
         }
       }
-      .buttn{
-          position: fixed;
-          margin-top: 389px;
-          .button{
-              @include secondary_button(382px);
-              width:382px;
-              background: none;
-          }
+      .buttn {
+        position: fixed;
+        margin-top: 389px;
+        .button {
+          @include secondary_button(382px);
+          width: 382px;
+          background: none;
+        }
       }
     }
     .right {

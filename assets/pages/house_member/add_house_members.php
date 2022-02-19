@@ -15,6 +15,10 @@ else
     //check user
     $arr = str_split($user_id); // convert string to an array
     $chk= end($arr); // 0 = house head
+
+    //slice first name of user
+    $slices=explode(" ", $fname);
+    $firstName=$slices[0];
 ?>
 <!DOCTYPE html>
 <html lang="en">

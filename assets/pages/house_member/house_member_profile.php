@@ -30,6 +30,10 @@ else
     $chk= end($arr); // 0 = house head
     $arr2=str_split($hm_id);
     $chk2= end($arr2);
+
+    //slice first name of user
+    $slices=explode(" ", $fname);
+    $firstName=$slices[0];
 ?>
 <!DOCTYPE html>
 <html lang="en">

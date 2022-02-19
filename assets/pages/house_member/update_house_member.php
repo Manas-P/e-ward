@@ -20,6 +20,10 @@ else
     {
         $name=$row['fname'];
     }
+
+    //slice first name of user
+    $slices=explode(" ", $fname);
+    $firstName=$slices[0];
 ?>
 <!DOCTYPE html>
 <html lang="en">
