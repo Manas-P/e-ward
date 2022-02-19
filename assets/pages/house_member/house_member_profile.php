@@ -72,10 +72,10 @@ else
                     <!-- menu -->
                     <div class="menu">
                         <div class="links">
-                            <a href="#general" class="active">General informations</a>
-                            <a href="#identityProof" >Identity proofs</a>
-                            <a href="#educationalbackground" >Educational background</a>
-                            <a href="#professionalbackground" >Professional background</a>
+                            <a href="#general" class="general active">General informations</a>
+                            <a href="#identityProof" class="identityProof">Identity proofs</a>
+                            <a href="#educationalbackground" class="educationalbackground">Educational background</a>
+                            <a href="#professionalbackground" class="professionalbackground">Professional background</a>
                         </div>
                     </div>
                 </div>
@@ -83,7 +83,7 @@ else
                 <div class="right">
 
                     <!-- General Indormation -->
-                    <section class="general" id="general">
+                    <section class="section general" id="general">
                         <div class="header">
                             <div class="heading">
                                 General informations
@@ -159,7 +159,7 @@ else
                         while ($idProof = mysqli_fetch_assoc($idproofResult)){
                     ?>
 
-                    <section class="proofs" id="identityProof">
+                    <section class="section proofs" id="identityProof">
                         <div class="header">
                             <div class="heading">
                                 Identity proofs
@@ -354,7 +354,7 @@ else
                         $eduResult=mysqli_query($conn,$eduQuery);
                         while ($edu = mysqli_fetch_assoc($eduResult)){
                     ?>
-                    <section class="proofs" id="educationalbackground">
+                    <section class="section proofs" id="educationalbackground">
                         <div class="header">
                             <div class="heading">
                                 Educational backgrond
@@ -550,7 +550,7 @@ else
                         $proResult=mysqli_query($conn,$proQuery);
                         while ($pro = mysqli_fetch_assoc($proResult)){
                     ?>
-                    <section class="proofs" id="professionalbackground">
+                    <section class="section proofs" id="professionalbackground">
                         <div class="header">
                             <div class="heading">
                                 Professional backgrond

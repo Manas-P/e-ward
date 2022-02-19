@@ -28,6 +28,10 @@ a {
   cursor: pointer;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 ::-webkit-scrollbar {
   width: 0px;
 }
@@ -374,6 +378,7 @@ body {
 
 .main .container .right {
   margin-top: 68px;
+  padding-bottom: 100px;
 }
 
 .main .container .right .general {
