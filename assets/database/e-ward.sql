@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 18, 2022 at 01:08 PM
+-- Generation Time: Feb 19, 2022 at 06:41 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.25
 
@@ -51,7 +51,7 @@ CREATE TABLE `tbl_edu_bg` (
   `userid` int(10) NOT NULL,
   `hs` varchar(200) NOT NULL DEFAULT '0',
   `hss` varchar(200) NOT NULL DEFAULT '0',
-  `deploma` varchar(200) NOT NULL DEFAULT '0',
+  `diploma` varchar(200) NOT NULL DEFAULT '0',
   `ug` varchar(200) NOT NULL DEFAULT '0',
   `pg` varchar(200) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -60,8 +60,8 @@ CREATE TABLE `tbl_edu_bg` (
 -- Dumping data for table `tbl_edu_bg`
 --
 
-INSERT INTO `tbl_edu_bg` (`id`, `userid`, `hs`, `hss`, `deploma`, `ug`, `pg`) VALUES
-(1, 2230, '0', '0', '0', '0', '0'),
+INSERT INTO `tbl_edu_bg` (`id`, `userid`, `hs`, `hss`, `diploma`, `ug`, `pg`) VALUES
+(1, 2230, '../documents/16452101445..pdf', '0', '../documents/16452101077..pdf', '0', '0'),
 (2, 2232, '0', '0', '0', '0', '0'),
 (5, 2233, '0', '0', '0', '0', '0'),
 (7, 2234, '0', '0', '0', '0', '0');
@@ -96,7 +96,7 @@ INSERT INTO `tbl_house` (`hid`, `house_name`, `house_no`, `ward_no`, `locality`,
 (7, 'abcd villa', 5, 2, 'abcdefgh', 'abcdefgh', 4565434567, 'APL'),
 (17, 'New housee', 34, 2, 'New locality', 'New post office', 5685458745, 'APL'),
 (18, 'new reg ho', 18, 2, 'new', 'new', 8459658745, 'APL'),
-(19, 'Guettaa House', 23, 2, 'Miami, Street 23', 'Miami PO', 2154785632, 'APL');
+(19, 'Kunni House', 23, 2, 'Miami, Street 23', 'Miami PO', 2154785632, 'APL');
 
 -- --------------------------------------------------------
 
@@ -136,9 +136,9 @@ INSERT INTO `tbl_house_member` (`hm_id`, `ward_no`, `house_no`, `fname`, `email`
 (25, 2, 34, 'new nneww', 'new@gmail.com', 9565215487, 'A+', '2014-02-18', '../images/uploads/photos/1644592133.png', 2344, 'NdyprVQa'),
 (26, 2, 23, 'Rubin Siby', 'Not entered', 9565878452, 'B+', '1988-06-15', '../images/uploads/photos/1644834244.png', 2230, '123'),
 (27, 2, 24, 'Martin Garrix', 'Not entered', 9565878457, 'NA', '0000-00-00', '../images/user-profile-placeholder.png', 2240, 'eer5XjwS'),
-(28, 2, 23, 'abc', 'martingrrx@gmail.com', 9856547854, 'B+', '2002-05-15', '../images/uploads/photos/1644839475.jpg', 2232, '123'),
+(28, 2, 23, 'Kunnus', 'martingrrx@gmail.com', 9856547854, 'B+', '2002-05-15', '../images/uploads/photos/1644839475.jpg', 2232, '123'),
 (29, 2, 23, 'Jacob Kurien', 'jacobkurien@gmail.com', 9856587457, 'O+', '1999-11-03', '../images/uploads/photos/1644838551.jpg', 2233, '123'),
-(30, 2, 23, 'Kuri Appy', 'kuriappy@gmail.com', 9565874521, 'A+', '1999-06-15', '../images/uploads/photos/1645185833.jpeg', 2234, '123');
+(30, 2, 23, 'Appy Kurian', 'kuriappy@gmail.com', 9565874521, 'A+', '1999-06-15', '../images/uploads/photos/1645185833.jpeg', 2234, '123');
 
 -- --------------------------------------------------------
 
@@ -172,6 +172,29 @@ INSERT INTO `tbl_id_proof` (`id`, `userid`, `aadhar_no`, `aadhar_file`, `electio
 (4, 2232, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
 (5, 2233, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
 (6, 2234, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_pro_bg`
+--
+
+CREATE TABLE `tbl_pro_bg` (
+  `id` int(10) NOT NULL,
+  `userid` int(100) NOT NULL,
+  `cur_pro` varchar(200) NOT NULL DEFAULT '0',
+  `cur_pro_file` varchar(200) NOT NULL DEFAULT '0',
+  `comp_name` varchar(200) NOT NULL DEFAULT '0',
+  `location` varchar(200) NOT NULL DEFAULT '0',
+  `pro_started` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_pro_bg`
+--
+
+INSERT INTO `tbl_pro_bg` (`id`, `userid`, `cur_pro`, `cur_pro_file`, `comp_name`, `location`, `pro_started`) VALUES
+(1, 2230, '0', '0', '0', '0', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -303,6 +326,12 @@ ALTER TABLE `tbl_id_proof`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tbl_pro_bg`
+--
+ALTER TABLE `tbl_pro_bg`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tbl_registration`
 --
 ALTER TABLE `tbl_registration`
@@ -347,6 +376,12 @@ ALTER TABLE `tbl_house_member`
 --
 ALTER TABLE `tbl_id_proof`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `tbl_pro_bg`
+--
+ALTER TABLE `tbl_pro_bg`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tbl_registration`
