@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 19, 2022 at 06:41 PM
+-- Generation Time: Feb 19, 2022 at 08:05 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.25
 
@@ -194,7 +194,8 @@ CREATE TABLE `tbl_pro_bg` (
 --
 
 INSERT INTO `tbl_pro_bg` (`id`, `userid`, `cur_pro`, `cur_pro_file`, `comp_name`, `location`, `pro_started`) VALUES
-(1, 2230, '0', '0', '0', '0', '0000-00-00');
+(1, 2230, 'Software engineer', '../documents/164529716910..pdf', 'Cognizant', 'Bangalore', '2021-12-16'),
+(2, 2232, 'Software developer', '0', 'TCS', 'Red street', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -381,7 +382,7 @@ ALTER TABLE `tbl_id_proof`
 -- AUTO_INCREMENT for table `tbl_pro_bg`
 --
 ALTER TABLE `tbl_pro_bg`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_registration`
