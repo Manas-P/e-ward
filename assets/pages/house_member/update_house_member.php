@@ -280,7 +280,7 @@ else
 
                         
                         <!-- Educational Background -->
-                        <!-- Fetch id proof data -->
+                        <!-- Fetch edu bg data -->
                         <?php
                             $eduQuery="SELECT * FROM `tbl_edu_bg` WHERE `userid`='$hm_id'";
                             $eduResult=mysqli_query($conn,$eduQuery);
@@ -346,6 +346,81 @@ else
                                             Post graduation certificate (pdf)
                                         </div>
                                         <input type="file" name="hmupgfile" id="hm-pg-file" accept="application/pdf" value="<?php echo $edu['pg'] ?>">
+                                        <div class="error error-hidden">
+                                        </div>
+                                    </div>
+                                    <!-- ---------- -->
+                                </div>
+                            </div>
+                        </section>
+                        <?php
+                            }
+                        ?>
+
+
+                        <!-- Professional Background -->
+                        <!-- Fetch pro bg data -->
+                        <?php
+                            $proQuery="SELECT * FROM `tbl_pro_bg` WHERE `userid`='$hm_id'";
+                            $proResult=mysqli_query($conn,$proQuery);
+                            while ($pro = mysqli_fetch_assoc($proResult)){
+                        ?>
+                        <section class="proofs" id="professionalbackground">
+                            <div class="header">
+                                <div class="heading">
+                                    Professional backgrond
+                                </div>
+                            </div>
+                            <!-- To take already exist files -->
+                            <input type="hidden" name="hm_already_pro" value="<?php echo $pro['cur_pro_file'] ?>">
+                            <div class="files">
+                                <div class="inputs">
+                                   <!-- Current profession -->
+                                    <div class="input hm-cur-pro">
+                                        <div class="label">
+                                            Current Profession
+                                        </div>
+                                        <input type="text" name="hmucurpro" id="hm-cur-pro" placeholder="Teacher" value="<?php if($pro['cur_pro']!='0'){ echo $pro['cur_pro']; } ?>" autocomplete="off">
+                                        <div class="error error-hidden">
+                                        </div>
+                                    </div>
+                                    <!-- ---------- -->
+                                    <!-- Profession certificate -->
+                                    <div class="input hm-pro-file">
+                                        <div class="label">
+                                            Profession certificate (pdf)
+                                        </div>
+                                        <input type="file" name="hmuprofile" id="hm-pro-file" accept="application/pdf" value="<?php echo $pro['cur_pro_file'] ?>">
+                                        <div class="error error-hidden">
+                                        </div>
+                                    </div>
+                                    <!-- ---------- -->
+                                    <!-- Company name -->
+                                    <div class="input hm-comp-name">
+                                        <div class="label">
+                                            Company name
+                                        </div>
+                                        <input type="text" name="hmucompname" id="hm-comp-name" placeholder="Unity" value="<?php if($pro['comp_name']!='0'){ echo $pro['comp_name']; } ?>" autocomplete="off">
+                                        <div class="error error-hidden">
+                                        </div>
+                                    </div>
+                                    <!-- ---------- -->
+                                    <!-- Company name -->
+                                    <div class="input hm-location">
+                                        <div class="label">
+                                            Location
+                                        </div>
+                                        <input type="text" name="hmulocation" id="hm-location" placeholder="Baton Rouge (LA)" value="<?php if($pro['location']!='0'){ echo $pro['location']; } ?>" autocomplete="off">
+                                        <div class="error error-hidden">
+                                        </div>
+                                    </div>
+                                    <!-- ---------- -->
+                                    <!-- Company name -->
+                                    <div class="input hm-pro-start">
+                                        <div class="label">
+                                            Profession Started
+                                        </div>
+                                        <input type="date" name="hmuprostart" id="hm-pro-start" value="<?php if($pro['pro_started']!='0'){ echo $pro['pro_started']; } ?>" autocomplete="off">
                                         <div class="error error-hidden">
                                         </div>
                                     </div>

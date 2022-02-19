@@ -461,6 +461,18 @@
                     header("Location: ../pages/house_member/add_house_members.php");
                 }
             }
+            //Current profession
+            if(empty($_FILES["hmuprofile"]['name'])){
+                $filepath_cur_pro=$hm_already_pro;
+            }else{
+                $file_tmpname_cur_pro = $_FILES['hmuprofile']['tmp_name'];
+                $file_name_cur_pro = $_FILES['hmuprofile']['name'];
+                $filepath_cur_pro = $upload_dir_doc . time()."10".".".$file_ext_pdf;
+                if(move_uploaded_file($file_tmpname_cur_pro, $filepath_cur_pro)){}else{
+                    $_SESSION['loginMessage'] = "Error in uploading profession certificate";
+                    header("Location: ../pages/house_member/add_house_members.php");
+                }
+            }
 
 
             //Check empty field
@@ -487,11 +499,25 @@
             if(empty($hmubirth)){
                 $hmubirth="0";
             }
+            //Profession background
+            if(empty($hmucurpro)){
+                $hmucurpro="0";
+            }
+            if(empty($hmucompname)){
+                $hmucompname="0";
+            }
+            if(empty($hmulocation)){
+                $hmulocation="0";
+            }
+            if(empty($hmuprostart)){
+                $hmuprostart="";
+            }
 
             //Update request
             $updatehmQuery="UPDATE `tbl_house_member` SET `fname`='$hmufname',`email`='$hmuemail',`phno`='$hmuphno',`blood_grp`='$hmublood',`dob`='$hmudob',`photo`='$filepath' WHERE `userid`='$hm_id' ; 
                             UPDATE `tbl_id_proof` SET `aadhar_no`='$hmuaadharno',`aadhar_file`='$filepath_aadhar',`election_id`='$hmuelectionid',`election_id_file`='$filepath_election',`driving_lic`='$hmudrivingid',`driving_lic_file`='$filepath_driving',`pan_card`='$hmupancard',`pan_card_file`='$filepath_pan',`birth_cer`='$hmubirth',`birth_cer_file`='$filepath_birth' WHERE `userid`='$hm_id' ; 
-                            UPDATE `tbl_edu_bg` SET `hs`='$filepath_hs',`hss`='$filepath_hss',`diploma`='$filepath_diploma',`ug`='$filepath_ug',`pg`='$filepath_pg' WHERE `userid`='$hm_id'";
+                            UPDATE `tbl_edu_bg` SET `hs`='$filepath_hs',`hss`='$filepath_hss',`diploma`='$filepath_diploma',`ug`='$filepath_ug',`pg`='$filepath_pg' WHERE `userid`='$hm_id' ; 
+                            UPDATE `tbl_pro_bg` SET `cur_pro`='$hmucurpro',`cur_pro_file`='$filepath_cur_pro',`comp_name`='$hmucompname',`location`='$hmulocation',`pro_started`='$hmuprostart' WHERE `userid`='$hm_id'";
             $updatehmResult=mysqli_multi_query($conn,$updatehmQuery);
             if($updatehmResult){
                 $_SESSION['success'] = "$hmufname's profile updated successfully";
