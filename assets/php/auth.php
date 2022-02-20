@@ -314,6 +314,7 @@
                 header("Location: ../pages/ward_member/houses_request.php");
             }else{
                 $_SESSION['loginMessage'] = "Mail not send";
+                header("Location: ../pages/ward_member/houses_request.php");
             }
         }
 
