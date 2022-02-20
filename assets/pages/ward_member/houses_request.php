@@ -85,8 +85,6 @@
                                     <a href="../../php/approve.php?apprId=<?php echo $row['rid']; ?>" class="approve">Approve</a>
                                 </td>
                                 <td>
-                                    <!-- <?php $rejId=$row['rid']; ?> -->
-                                    <!-- <a href="../../php/reject.php?rejId=<?php echo $row['rid']; ?>" class="reject">Reject</a> -->
                                     <a class="reject"  onclick="deleteItem(<?php $rejId=$row['rid']; echo $rejId; ?>)">Reject</a>
                                 </td>
                             </tr>
