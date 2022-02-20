@@ -4,13 +4,39 @@ body {
   background: $bg;
 }
 
+@mixin tableData {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+  b {
+    font-family: "Gilroy_SB";
+    font-size: 20px;
+    color: $subText;
+    text-align: center;
+    margin-top: 160px;
+  }
+  .data {
+    padding: 20px;
+    background: $white;
+    border-radius: 10px;
+    font-family: "Gilroy_M";
+    font-size: 18px;
+    color: $darkSubText;
+    td {
+      padding-right: 28px;
+      vertical-align: top;
+      text-align: left;
+    }
+  }
+}
+
 .main {
   display: flex;
   .sidebar {
     @include sidebar();
   }
   .container {
-    margin: 46px 63px 0 calc(476px - 63px);
+    margin: 46px 63px 46px calc(476px - 63px);
     width: calc(100% - 476px);
     .header {
       display: flex;
@@ -63,25 +89,16 @@ body {
       font-size: 20px;
       color: $text;
       display: flex;
+      margin-bottom: 24px;
     }
     .datas {
-      margin-top: 24px;
-      display: flex;
-      flex-direction: column;
-      row-gap: 24px;
-      .data {
-        padding: 20px;
-        background: $white;
-        border-radius: 10px;
-        font-family: "Gilroy_M";
-        font-size: 18px;
-        color: $darkSubText;
-        td {
-          padding-right: 28px;
-          vertical-align: top;
-          text-align: left;
-        }
-      }
+      @include tableData();
+    }
+    .allResult {
+      @include tableData();
+    }
+    .displayNone {
+      display: none;
     }
   }
 }
