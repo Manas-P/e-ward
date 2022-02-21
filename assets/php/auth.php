@@ -532,7 +532,8 @@
         //Ward member - Houses page search
         if(isset($_POST['item'])){
             $input=$_POST['item'];
-            $searchQuery="SELECT * FROM `tbl_house` WHERE house_name LIKE '{$input}%' OR house_no LIKE '{$input}%' OR locality LIKE '{$input}%' OR post_office LIKE '{$input}%' OR ration_no LIKE '{$input}%' OR category LIKE '{$input}%'";
+            $wardno=$_POST['wardno'];
+            $searchQuery="SELECT * FROM `tbl_house` WHERE (house_name LIKE '{$input}%' OR house_no LIKE '{$input}%' OR locality LIKE '{$input}%' OR post_office LIKE '{$input}%' OR ration_no LIKE '{$input}%' OR category LIKE '{$input}%') AND ward_no='$wardno'";
             $searchResult=mysqli_query($conn,$searchQuery);
             
             if(mysqli_num_rows($searchResult)>0){

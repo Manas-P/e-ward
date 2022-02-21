@@ -59,13 +59,14 @@
                     <div style="margin-left: 114px;">Ration card no.</div>
                     <div style="margin-left: 100px;">Category</div>
                 </div>
+
                 <div class="datas" id="search-result">
                     <!-- inject search result -->
                 </div>
 
                 <div class="allResult">
                     <?php
-                        $query="SELECT * FROM `tbl_house`";
+                        $query="SELECT * FROM `tbl_house` WHERE `ward_no`='$wardno'";
                         $result=mysqli_query($conn,$query);
                         $i=1;
                         while($row=mysqli_fetch_array($result)){
@@ -96,10 +97,14 @@
                 if(item.length!=0){
                     document.querySelector(".allResult").classList.add("displayNone");
                     document.querySelector(".datas").classList.remove("displayNone");
+                    const wardno='<?php echo $wardno?>';
                     $.ajax({
                         url:"../../php/auth.php",
                         method:"POST",
-                        data:{item:item},
+                        data:{
+                            item:item,
+                            wardno:wardno
+                        },
                         success:function(data){
                             $("#search-result").html(data);
                         }
