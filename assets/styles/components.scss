@@ -427,3 +427,35 @@ html {
 }
 
 //============End of Sidebar===============
+
+//============Loading===============
+@mixin loading() {
+  .loading {
+    display: block;
+    pointer-events: none;
+    overflow: hidden;
+    .loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      background: rgba(0, 0, 0, 0.096);
+      backdrop-filter: blur(10px);
+    }
+    .gif {
+      width: 100%;
+      height: auto;
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 300px;
+      }
+    }
+  }
+  .loading-hide {
+    display: none;
+  }
+}
