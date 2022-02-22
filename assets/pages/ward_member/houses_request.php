@@ -130,19 +130,36 @@
             }
         </script>
 
+        <!-- Error Toast -->
         <?php
-            if (isset($_SESSION['loginMessage'])) {
-                $msg=$_SESSION['loginMessage'];
-                echo " <div class='alertt alert-visible'>
+        if (isset($_SESSION['loginMessage'])) {
+            $msg=$_SESSION['loginMessage'];
+          echo " <div class='alertt alert-visible'> 
+                        <div class='econtent'>
+                            <img src='../../images/warning.svg' alt='warning'>
+                            <div class='text'>
+                                $msg
+                            </div>
+                        </div>
+                        <img src='../../images/close.svg' alt='close' class='alert-close'>
+                    </div>";
+          unset($_SESSION['loginMessage']);
+        }?>
+
+        <!-- Success toast -->
+        <?php
+            if (isset($_SESSION['success'])) {
+                $msg=$_SESSION['success'];
+                echo " <div class='alertt alert-visible' style='border-left: 10px solid #1BBD2B;'>
                             <div class='econtent'>
-                                <img src='../../images/warning.svg' alt='error'>
+                                <img src='../../images/check.svg' alt='success'>
                                 <div class='text'>
                                     $msg
                                 </div>
                             </div>
                             <img src='../../images/close.svg' alt='close' class='alert-close'>
                         </div>";
-                unset($_SESSION['loginMessage']);
+                unset($_SESSION['success']);
         }?>
 
 
@@ -155,7 +172,7 @@
         </div>
 
         <!-- Ajax for request loading -->
-        <script>
+        <!-- <script>
             function loader(){
                 $.ajax({
                         url:"../../php/auth.php",
@@ -164,10 +181,21 @@
                         beforeSend:function(){
                             document.querySelector(".loading").classList.remove("loading-hide");
                         },
-                        complete:function(){
+                        success:function(){
                             document.querySelector(".loading").classList.add("loading-hide");
                         }
                     })
+            }
+        </script> -->
+
+        <!-- Temporary delay for sending mail -->
+        <script>
+            function loader(){
+                document.querySelector(".loading").classList.remove("loading-hide");
+                const timeout = setTimeout(closeLoader, 20000);
+            }
+            function closeLoader(){
+                document.querySelector(".loading").classList.add("loading-hide");
             }
         </script>
 
