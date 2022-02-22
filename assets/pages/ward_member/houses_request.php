@@ -20,6 +20,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="../../images/fav.svg" type="image/x-icon">
         <link rel="stylesheet" href="../../styles/wm_houses_req.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
         <title>Admin</title>
     </head>
     <body>
@@ -82,7 +84,7 @@
                                     <a class="view" href="../../php/view_pdf.php?pdf=<?php echo $row["taxreport"]; ?>" target="_blank">View</a>
                                 </td>
                                 <td width=95px>
-                                    <a href="../../php/approve.php?apprId=<?php echo $row['rid']; ?>" class="approve">Approve</a>
+                                    <a href="../../php/approve.php?apprId=<?php echo $row['rid']; ?>" class="approve" onclick="loader()" >Approve</a>
                                 </td>
                                 <td>
                                     <a class="reject"  onclick="deleteItem(<?php $rejId=$row['rid']; echo $rejId; ?>)">Reject</a>
@@ -128,20 +130,74 @@
             }
         </script>
 
+        <!-- Error Toast -->
         <?php
-            if (isset($_SESSION['loginMessage'])) {
-                $msg=$_SESSION['loginMessage'];
-                echo " <div class='alertt alert-visible'>
+        if (isset($_SESSION['loginMessage'])) {
+            $msg=$_SESSION['loginMessage'];
+          echo " <div class='alertt alert-visible'> 
+                        <div class='econtent'>
+                            <img src='../../images/warning.svg' alt='warning'>
+                            <div class='text'>
+                                $msg
+                            </div>
+                        </div>
+                        <img src='../../images/close.svg' alt='close' class='alert-close'>
+                    </div>";
+          unset($_SESSION['loginMessage']);
+        }?>
+
+        <!-- Success toast -->
+        <?php
+            if (isset($_SESSION['success'])) {
+                $msg=$_SESSION['success'];
+                echo " <div class='alertt alert-visible' style='border-left: 10px solid #1BBD2B;'>
                             <div class='econtent'>
-                                <img src='../../images/warning.svg' alt='error'>
+                                <img src='../../images/check.svg' alt='success'>
                                 <div class='text'>
                                     $msg
                                 </div>
                             </div>
                             <img src='../../images/close.svg' alt='close' class='alert-close'>
                         </div>";
-                unset($_SESSION['loginMessage']);
+                unset($_SESSION['success']);
         }?>
+
+
+        <!-- loading -->
+        <div class="loading loading-hide">
+            <div class="loading-overlay"></div>
+            <div class="gif">
+                <img src="../../images/loading.gif" alt="loading gif">
+            </div>
+        </div>
+
+        <!-- Ajax for request loading -->
+        <!-- <script>
+            function loader(){
+                $.ajax({
+                        url:"../../php/auth.php",
+                        method:"GET",
+                        
+                        beforeSend:function(){
+                            document.querySelector(".loading").classList.remove("loading-hide");
+                        },
+                        success:function(){
+                            document.querySelector(".loading").classList.add("loading-hide");
+                        }
+                    })
+            }
+        </script> -->
+
+        <!-- Temporary delay for sending mail -->
+        <script>
+            function loader(){
+                document.querySelector(".loading").classList.remove("loading-hide");
+                const timeout = setTimeout(closeLoader, 20000);
+            }
+            function closeLoader(){
+                document.querySelector(".loading").classList.add("loading-hide");
+            }
+        </script>
 
         <script src="../../js/reject_house_reg.js"></script>
         <script src="../../js/toast.js"></script>

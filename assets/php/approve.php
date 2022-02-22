@@ -36,10 +36,15 @@
         INSERT INTO `tbl_edu_bg`(`userid`) VALUES ('$userid') ;
         INSERT INTO `tbl_pro_bg`(`userid`) VALUES ('$userid')";
         $updateResult=mysqli_multi_query($conn,$updateQuery);
-        
-        $_SESSION['loginMessage'] = "House approved";
-        header("Location: ../pages/ward_member/houses_request.php");
+        if($updateResult){
+            $_SESSION['success'] = "House approved";
+            header("Location: ../pages/ward_member/houses_request.php");
+        }else{
+            $_SESSION['loginMessage'] = "Error in approval";
+            header("Location: ../pages/ward_member/houses_request.php");
+        }
     }else{
-        echo "Mail not Send";
+        $_SESSION['loginMessage'] = "Mail not send";
+        header("Location: ../pages/ward_member/houses_request.php");
     }
 ?>
