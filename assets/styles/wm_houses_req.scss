@@ -104,6 +104,14 @@ body {
           color: $error;
         }
       }
+      .no-result {
+        font-family: "Gilroy_M";
+        font-size: 20px;
+        color: $subText;
+        text-align: center;
+        transform: translateX(-60px);
+        margin-top: 160px;
+      }
     }
   }
 }

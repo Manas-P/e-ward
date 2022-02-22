@@ -95,6 +95,13 @@
                     <?php
                         $i=$i+1;
                         }
+                        if(mysqli_num_rows($result)==0){
+                    ?>
+                    <div class="no-result">
+                        No records
+                    </div>
+                    <?php
+                        }
                     ?>
                 </div>
             </div>
