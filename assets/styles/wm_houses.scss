@@ -83,6 +83,16 @@ body {
         text-decoration: underline;
         color: $primary;
       }
+      .noti-badge {
+        text-decoration: none;
+        padding: 5px 8px 4px 8px;
+        color: $white;
+        background: $primary;
+        font-family: "Gilroy_B";
+        font-size: 12px;
+        border-radius: 6px;
+        margin-left: 8px;
+      }
     }
     .headings {
       margin: 36px 16px 0 16px;
@@ -103,4 +113,3 @@ body {
     }
   }
 }
-

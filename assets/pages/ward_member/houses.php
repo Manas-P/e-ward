@@ -48,6 +48,14 @@
                     <a href="./houses_request.php">
                         View requests
                     </a>
+                    <span class="noti-badge">
+                        <!-- Fetch registration request -->
+                        <?php
+                            $query="SELECT * FROM `tbl_registration` WHERE `wardno`='$wardno' AND `status`='0'";
+                            $result=mysqli_query($conn,$query);
+                            echo mysqli_num_rows($result);
+                        ?>
+                    </span>
                 </div>
                 <div class="headings">
                     <div>Slno.</div>

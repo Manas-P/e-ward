@@ -339,6 +339,17 @@ body {
   color: #5744e3;
 }
 
+.main .container .request .noti-badge {
+  text-decoration: none;
+  padding: 5px 8px 4px 8px;
+  color: #fff;
+  background: #5744e3;
+  font-family: "Gilroy_B";
+  font-size: 12px;
+  border-radius: 6px;
+  margin-left: 8px;
+}
+
 .main .container .headings {
   margin: 36px 16px 0 16px;
   font-family: "Gilroy_SB";
