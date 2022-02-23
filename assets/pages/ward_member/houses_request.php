@@ -125,7 +125,7 @@
                     <textarea name="rej_reason" id="rejreason" rows="10"></textarea>
                    
                     <div class="button wBtn cursor-disable">
-                        <input type="submit" value="Continue" name="reject_house_req" id="rej" class="primary-button disabled">
+                        <input type="submit" value="Continue" name="reject_house_req" id="rej" onclick="loader()" class="primary-button disabled">
                     </div>
                 </div>
             </form>
@@ -169,15 +169,6 @@
                 unset($_SESSION['success']);
         }?>
 
-
-        <!-- loading -->
-        <div class="loading loading-hide">
-            <div class="loading-overlay"></div>
-            <div class="gif">
-                <img src="../../images/loading5.gif" alt="loading gif">
-            </div>
-        </div>
-
         <!-- Ajax for request loading -->
         <!-- <script>
             function loader(){
@@ -195,16 +186,11 @@
             }
         </script> -->
 
-        <!-- Temporary delay for sending mail -->
-        <script>
-            function loader(){
-                document.querySelector(".loading").classList.remove("loading-hide");
-                const timeout = setTimeout(closeLoader, 20000);
-            }
-            function closeLoader(){
-                document.querySelector(".loading").classList.add("loading-hide");
-            }
-        </script>
+            <!-- ==========Loading============= -->
+            <?php
+                include '../../include/loading.php'
+            ?>
+            <!-- ==========Loading End============= -->
 
         <script src="../../js/reject_house_reg.js"></script>
         <script src="../../js/toast.js"></script>
