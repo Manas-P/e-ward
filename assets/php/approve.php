@@ -1,5 +1,6 @@
 <?php
     include '../include/dbcon.php';
+    session_start();
     $id=$_GET['apprId'];
     
     // Generate Random Password
