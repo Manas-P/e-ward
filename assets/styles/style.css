@@ -686,4 +686,40 @@ html {
 .alert-visible {
   visibility: visible;
 }
+
+.loading {
+  display: block;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.loading .loading-overlay {
+  position: fixed;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.096);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+
+.loading .gif {
+  width: 100%;
+  height: auto;
+}
+
+.loading .gif img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 300px;
+}
+
+.loading-hide {
+  display: none;
+}
 /*# sourceMappingURL=style.css.map */

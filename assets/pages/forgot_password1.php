@@ -56,13 +56,13 @@ session_start();
                                 <div class="label">
                                     User id
                                 </div>
-                                <input type="number" id="fp-userid" oninput="validateUserId(this.value)" placeholder="2451" autocomplete="off" >
+                                <input type="number" id="fp-userid" oninput="validateUserId(this.value)" name="ftpUserId" placeholder="2451" autocomplete="off" >
                                 <div class="error error-hidden">
                                 </div>
                             </div>
                         </div>
                         <div class="buttons">
-                            <input type="submit" value="Continue" id="fp-sub" name="submitButton" class="primary-button disabled">
+                            <input type="submit" value="Continue" id="fp-sub" name="fpContinue" onclick="loader()" class="primary-button disabled">
                             <input type="submit" value="Back to login/signup" name="toLoginPage" id="fp-sub" class="secondary-button">
                         </div>
                     </form>
@@ -79,6 +79,33 @@ session_start();
     <?php
         include '../include/google_translater.php'
     ?>
+
+    <!-- Error Toast -->
+    <?php
+        if (isset($_SESSION['errorMessage'])) {
+            $msg=$_SESSION['errorMessage'];
+        echo " <div class='alertt alert-visible'>
+                        <div class='econtent'>
+                            <img src='../images/warning.svg' alt='warning'>
+                            <div class='text'>
+                                $msg
+                            </div>
+                        </div>
+                        <img src='../images/close.svg' alt='close' class='alert-close'>
+                    </div>";
+        unset($_SESSION['errorMessage']);
+    }?>
+
+    <!-- ==========Loading============= -->
+    <div class="loading loading-hide">
+        <div class="loading-overlay"></div>
+        <div class="gif">
+            <img src="../images/loading5.gif" alt="loading gif">
+        </div>
+    </div>
+    <!-- ==========Loading End============= -->
+
+    <script src="../../js/toast.js"></script>
     <script>
         //check user id exist or not with button enable or disable
         function validateUserId(userid)
@@ -115,8 +142,16 @@ session_start();
              
          }
 
-        
-
+         //Loader
+         function loader(){
+            document.querySelector(".loading").classList.remove("loading-hide");
+            document.querySelector("body").style.pointerEvents = "none";
+            const timeout = setTimeout(closeLoader, 20000);
+        }
+        function closeLoader(){
+            document.querySelector(".loading").classList.add("loading-hide");
+            document.querySelector("body").style.pointerEvents = "auto";
+        }
     </script>
 
     

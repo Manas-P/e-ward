@@ -588,4 +588,34 @@
             }
         }
 
+        //Send otp
+        if(isset($_POST['fpContinue'])){
+            $fetchMailQ="SELECT * FROM `tbl_house_member` WHERE `userid`='$ftpUserId'";
+            $fetchMailQRes = mysqli_query($conn, $fetchMailQ);
+            while($row=mysqli_fetch_array($fetchMailQRes)){
+                $email=$row['email'];
+                $fname=$row['fname'];
+            }
+
+            //Generate otp
+            $length=5;
+            $generatedOtp='';
+            $validChar='0123456789';
+            while(0<$length--){
+                $generatedOtp.=$validChar[random_int(0,strlen($validChar)-1)];
+            }
+
+            $subject="E-Ward OTP";
+            $body="Dear $fname, your one time password is: $generatedOtp";
+            $headers="From: ewardmember@gmail.com";
+
+            if(mail($email,$subject,$body,$headers)){
+                $otpQuery="INSERT INTO `tbl_forgot_password`(`userid`, `otp`) VALUES ('$ftpUserId','$generatedOtp')";
+                mysqli_query($conn, $otpQuery);
+                header("Location: ../pages/forgot_password2.php");
+            }else{
+                $_SESSION['errorMessage'] = "Error in sending E-mail";
+                header("Location: ../pages/forgot_password1.php");
+            }
+        }
     ?>
