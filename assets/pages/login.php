@@ -83,7 +83,7 @@ session_start();
                                 <input type="checkbox" name="" id="check" checked>
                                 <label for="check">Remember me</label>
                             </div>
-                                <a href="#" class="forgot">Forgot password?</a>
+                                <a href="./forgot_password1.php" class="forgot">Forgot password?</a>
                         </div>
                         <div class="buttons">
                             <input type="submit" value="Login" name="submitButton" class="primary-button">

@@ -167,6 +167,7 @@ html {
   font-family: "Gilroy_M";
   font-size: 16px;
   color: #8b8b8b;
+  width: 460px;
 }
 
 .main .sections .form .box .inputs {
@@ -290,7 +291,7 @@ html {
 }
 
 .main .sections .form .box .sub .checkbox label {
-  font-family: "Gilroy_M";
+  font-family: "Gilroy_SB";
   font-size: 16px;
   color: #1e1e1e;
   cursor: pointer;
@@ -301,7 +302,7 @@ html {
 }
 
 .main .sections .form .box .sub .forgot {
-  font-family: "Gilroy_M";
+  font-family: "Gilroy_SB";
   font-size: 16px;
   color: #5744e3;
   cursor: pointer;
@@ -310,6 +311,10 @@ html {
       -ms-user-select: none;
           user-select: none;
   text-decoration: none;
+}
+
+.main .sections .form .box .sub .forgot:hover {
+  text-decoration: underline;
 }
 
 .main .sections .form .box .buttons {
@@ -431,7 +436,7 @@ html {
 
 .box2 .register-text .sub-title a {
   margin-left: 6px;
-  font-family: "Gilroy_M";
+  font-family: "Gilroy_SB";
   font-size: 16px;
   color: #5744e3;
   cursor: pointer;

@@ -562,4 +562,9 @@
                 echo '<b> No result found</b>';
             }
         }
+
+        // Forgot password
+        if(isset($_POST['toLoginPage'])){
+            header("Location: ../pages/login.php");
+        }
     ?>

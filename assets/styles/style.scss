@@ -2,7 +2,7 @@
 @import "./components.scss";
 
 @mixin anchor() {
-  font-family: "Gilroy_M";
+  font-family: "Gilroy_SB";
   font-size: 16px;
   color: $primary;
   cursor: pointer;
@@ -63,6 +63,7 @@
             font-family: "Gilroy_M";
             font-size: 16px;
             color: $subText;
+            width: 460px;
           }
         }
         .inputs {
@@ -79,6 +80,9 @@
           @include checkbox();
           .forgot {
             @include anchor();
+            &:hover {
+              text-decoration: underline;
+            }
           }
         }
         .buttons {
