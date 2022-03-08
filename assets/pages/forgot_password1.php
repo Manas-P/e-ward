@@ -38,20 +38,6 @@ session_start();
                     <img src="../images/connections.png" alt="Connections">
                 </div>
             </div>
-            <?php
-    if (isset($_SESSION['loginMessage'])) {
-        $msg=$_SESSION['loginMessage'];
-      echo " <div class='alertt alert-visible'>
-                    <div class='econtent'>
-                        <img src='../images/warning.svg' alt='warning'>
-                        <div class='text'>
-                            $msg
-                        </div>
-                    </div>
-                    <img src='../images/close.svg' alt='close' class='alert-close'>
-                </div>";
-      unset($_SESSION['loginMessage']);
-    }?>
 
             <div class="form">
                 <div class="box">
@@ -70,7 +56,7 @@ session_start();
                                 <div class="label">
                                     User id
                                 </div>
-                                <input type="number" name="userName" id="fp-userid" placeholder="2451" autocomplete="off" >
+                                <input type="number" id="fp-userid" oninput="validateUserId(this.value)" placeholder="2451" autocomplete="off" >
                                 <div class="error error-hidden">
                                 </div>
                             </div>
@@ -94,33 +80,38 @@ session_start();
         include '../include/google_translater.php'
     ?>
     <script>
+        //check user id exist or not
+        const subBtn=document.querySelector("#fp-sub");
+        const useridd=document.querySelector("#fp-userid");
+        const useridError=document.querySelector(".fpuserid .error");
+        function validateUserId(userid)
+        {  
+            if(userid.length!=0){
+                $.ajax({
+                    url: "../php/auth.php",
+                    type: "POST",
+                    data: {
+                        userId:userid
+                    },
+                    success: function(data, status) {
+                        $('#warrning-box').html(data);
+                        subBtn.classList.remove("disabled");
+                    }
+                });
 
-        // User id validation
-         const userid=document.querySelector("#fp-userid");
-         const useridError=document.querySelector(".fpuserid .error");
-         var useridSubmit=false;
-         
-         userid.addEventListener("input",()=>{
-             if(userid.value==""){
+                useridError.classList.add("error-hidden");
+                useridError.classList.remove("error-visible");
+                subBtn.classList.remove("disabled");
+            }else{
                 useridError.classList.add("error-visible");
                 useridError.classList.remove("error-hidden");
                 useridError.innerText="Field cannot be blank";
-                useridSubmit=false;
-             }else if(userid.value.length!=0){
-                useridError.classList.add("error-hidden");
-                useridError.classList.remove("error-visible");
-                useridSubmit=true;
-             }
-         });
-         const subBtn=document.querySelector("#fp-sub");
-         const fpForm=document.querySelector("#fp-form");
-         fpForm.addEventListener("input",()=>{
-             if(useridSubmit==true){
-                 subBtn.classList.remove("disabled");
-             }else{
                 subBtn.classList.add("disabled");
-             }
-         })
+            }
+             
+         }
+
+        
 
     </script>
 

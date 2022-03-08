@@ -563,8 +563,27 @@
             }
         }
 
-        // Forgot password
+        // ---------Forgot password-----------
         if(isset($_POST['toLoginPage'])){
             header("Location: ../pages/login.php");
         }
+        
+        // Check user id exist or not
+        if(isset($_POST['userId'])){
+            $uidchk="SELECT * FROM `tbl_house_member` WHERE `userid`='$userId'";
+            $uidchkres = mysqli_query($conn, $uidchk);
+            if(mysqli_num_rows($uidchkres)<1)
+            {
+                 // Toast should appear
+                 echo  '<div class="alertt alert-visible">
+                            <div class="econtent">
+                                <img src="../images/warning.svg" alt="warning">
+                                <div class="text">
+                                    User id does not exist
+                                </div>
+                            </div>
+                        </div>';
+            }
+        }
+
     ?>
