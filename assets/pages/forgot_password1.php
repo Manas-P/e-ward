@@ -80,12 +80,12 @@ session_start();
         include '../include/google_translater.php'
     ?>
     <script>
-        //check user id exist or not
-        const subBtn=document.querySelector("#fp-sub");
-        const useridd=document.querySelector("#fp-userid");
-        const useridError=document.querySelector(".fpuserid .error");
+        //check user id exist or not with button enable or disable
         function validateUserId(userid)
         {  
+            const subBtn=document.querySelector("#fp-sub");
+            const useridd=document.querySelector("#fp-userid");
+            const useridError=document.querySelector(".fpuserid .error");
             if(userid.length!=0){
                 $.ajax({
                     url: "../php/auth.php",
@@ -94,14 +94,18 @@ session_start();
                         userId:userid
                     },
                     success: function(data, status) {
-                        $('#warrning-box').html(data);
-                        subBtn.classList.remove("disabled");
+                        if(data!=0){
+                            $('#warrning-box').html(data);
+                            $('#fp-sub').addClass('disabled');
+                        }else{
+                            $('#warrning-box').html(data);
+                            $('#fp-sub').removeClass('disabled');
+                        }
+                        
                     }
                 });
-
                 useridError.classList.add("error-hidden");
                 useridError.classList.remove("error-visible");
-                subBtn.classList.remove("disabled");
             }else{
                 useridError.classList.add("error-visible");
                 useridError.classList.remove("error-hidden");

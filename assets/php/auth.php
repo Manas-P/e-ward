@@ -583,6 +583,8 @@
                                 </div>
                             </div>
                         </div>';
+            }else{
+                return 0;
             }
         }
 
