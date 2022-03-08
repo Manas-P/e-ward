@@ -64,18 +64,20 @@ session_start();
                             to corresponding email.
                         </div>
                     </div>
-                    <form action="../php/auth.php" method="post">
+                    <form action="../php/auth.php" method="post" id="fp-form">
                         <div class="inputs">
-                            <div class="input">
+                            <div class="input fpuserid">
                                 <div class="label">
                                     User id
                                 </div>
-                                <input type="text" name="userName" id="" placeholder="2451" autocomplete="off" >
+                                <input type="number" name="userName" id="fp-userid" placeholder="2451" autocomplete="off" >
+                                <div class="error error-hidden">
+                                </div>
                             </div>
                         </div>
                         <div class="buttons">
-                            <input type="submit" value="Continue" name="submitButton" class="primary-button">
-                            <input type="submit" value="Back to login/signup" name="toLoginPage" id="register" class="secondary-button">
+                            <input type="submit" value="Continue" id="fp-sub" name="submitButton" class="primary-button disabled">
+                            <input type="submit" value="Back to login/signup" name="toLoginPage" id="fp-sub" class="secondary-button">
                         </div>
                     </form>
                 </div>
@@ -92,22 +94,34 @@ session_start();
         include '../include/google_translater.php'
     ?>
     <script>
-        function validateHouseNo(house)
-        {  
-           const wardNo=$('#ward-number').val();
-             $.ajax({
-                url: "../php/auth.php",
-                type: "POST",
-                data: {
-                    houseNo:house,
-                    wardno:wardNo
-                },
-                success: function(data, status) {
-                    $('#warrning-box').html(data);
-                    //hosnoSubmit=false;
-                }
-            });
-         }
+
+        // User id validation
+         const userid=document.querySelector("#fp-userid");
+         const useridError=document.querySelector(".fpuserid .error");
+         var useridSubmit=false;
+         
+         userid.addEventListener("input",()=>{
+             if(userid.value==""){
+                useridError.classList.add("error-visible");
+                useridError.classList.remove("error-hidden");
+                useridError.innerText="Field cannot be blank";
+                useridSubmit=false;
+             }else if(userid.value.length!=0){
+                useridError.classList.add("error-hidden");
+                useridError.classList.remove("error-visible");
+                useridSubmit=true;
+             }
+         });
+         const subBtn=document.querySelector("#fp-sub");
+         const fpForm=document.querySelector("#fp-form");
+         fpForm.addEventListener("input",()=>{
+             if(useridSubmit==true){
+                 subBtn.classList.remove("disabled");
+             }else{
+                subBtn.classList.add("disabled");
+             }
+         })
+
     </script>
 
     
