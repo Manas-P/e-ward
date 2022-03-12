@@ -597,6 +597,10 @@
                 $fname=$row['fname'];
             }
 
+            //Session
+            $_SESSION['fp-email']=$email;
+            $_SESSION['fp-uid']=$ftpUserId;
+
             //Generate otp
             $length=5;
             $generatedOtp='';
@@ -616,6 +620,29 @@
             }else{
                 $_SESSION['errorMessage'] = "Error in sending E-mail";
                 header("Location: ../pages/forgot_password1.php");
+            }
+        }
+
+        // Back to user id section
+        if(isset($_POST['touid'])){
+            $ftpUserId=$_SESSION['fp-uid'];
+            $deleteQuery="DELETE FROM `tbl_forgot_password` WHERE `userid`='$ftpUserId'";
+            mysqli_query($conn, $deleteQuery);
+            unset($_SESSION['fp-email']);
+            unset($_SESSION['fp-uid']);
+            header("Location: ../pages/forgot_password1.php");
+        }
+
+        //Check OTP
+        if(isset($_POST['fpContinueOtp'])){
+            $ftpUserId=$_SESSION['fp-uid'];
+            $fetchOtp="SELECT `otp` FROM `tbl_forgot_password` WHERE `userid`='$ftpUserId' AND `otp`='$fpotp'";
+            $fetchOtpRes=mysqli_query($conn, $fetchOtp);
+            if(mysqli_num_rows($fetchOtpRes)>=1){
+                header("Location: ../pages/forgot_password3.php");
+            }else{
+                $_SESSION['errorMessage'] = "Invalid OTP";
+                header("Location: ../pages/forgot_password2.php");
             }
         }
     ?>

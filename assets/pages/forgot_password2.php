@@ -1,5 +1,7 @@
 <?php
 session_start();
+$fpEmail=$_SESSION['fp-email'];
+$fpUID=$_SESSION['fp-uid'];
 ?>
 <!DOCTYPE html>
 
@@ -46,24 +48,23 @@ session_start();
                             Forgot password?
                         </div>
                         <div class="sub-title">
-                            Enter your login id, we’ll send you one time password 
-                            to corresponding email.
+                        Please check your email <span class="email-h"><?php echo $fpEmail ?></span> and enter the one time password to continue
                         </div>
                     </div>
                     <form action="../php/auth.php" method="post" id="fp-form">
                         <div class="inputs">
-                            <div class="input fpuserid">
+                            <div class="input fpotp">
                                 <div class="label">
-                                    User id
+                                    One time password
                                 </div>
-                                <input type="number" id="fp-userid" oninput="validateUserId(this.value)" name="ftpUserId" placeholder="2451" autocomplete="off" >
+                                <input type="number" id="fp-otp" name="fpotp" placeholder="24513" onkeyup="validateOtp(this.value)" autocomplete="off" >
                                 <div class="error error-hidden">
                                 </div>
                             </div>
                         </div>
                         <div class="buttons">
-                            <input type="submit" value="Continue" id="fp-sub" name="fpContinue" onclick="loader()" class="primary-button disabled">
-                            <input type="submit" value="Back to login/signup" name="toLoginPage" id="fp-sub" class="secondary-button">
+                            <input type="submit" value="Continue" id="fp-sub" name="fpContinueOtp" class="primary-button disabled">
+                            <input type="submit" value="Go back" name="touid" id="fp-sub" class="secondary-button">
                         </div>
                     </form>
                 </div>
@@ -96,62 +97,26 @@ session_start();
         unset($_SESSION['errorMessage']);
     }?>
 
-    <!-- ==========Loading============= -->
-    <div class="loading loading-hide">
-        <div class="loading-overlay"></div>
-        <div class="gif">
-            <img src="../images/loading5.gif" alt="loading gif">
-        </div>
-    </div>
-    <!-- ==========Loading End============= -->
-
     <script src="../js/toast.js"></script>
     <script>
-        //check user id exist or not with button enable or disable
-        function validateUserId(userid)
-        {  
+
+        function validateOtp(otp){
             const subBtn=document.querySelector("#fp-sub");
-            const useridd=document.querySelector("#fp-userid");
-            const useridError=document.querySelector(".fpuserid .error");
-            if(userid.length!=0){
-                $.ajax({
-                    url: "../php/auth.php",
-                    type: "POST",
-                    data: {
-                        userId:userid
-                    },
-                    success: function(data, status) {
-                        if(data!=0){
-                            $('#warrning-box').html(data);
-                            $('#fp-sub').addClass('disabled');
-                        }else{
-                            $('#warrning-box').html(data);
-                            $('#fp-sub').removeClass('disabled');
-                        }
-                        
-                    }
-                });
+            const useridd=document.querySelector("#fp-otp");
+            const useridError=document.querySelector(".fpotp .error");
+            if(otp.length==5){
                 useridError.classList.add("error-hidden");
                 useridError.classList.remove("error-visible");
+                subBtn.classList.remove("disabled");
             }else{
                 useridError.classList.add("error-visible");
                 useridError.classList.remove("error-hidden");
-                useridError.innerText="Field cannot be blank";
+                useridError.innerText="Invalid OTP";
                 subBtn.classList.add("disabled");
             }
-             
-         }
-
-         //Loader
-         function loader(){
-            document.querySelector(".loading").classList.remove("loading-hide");
-            document.querySelector("body").style.pointerEvents = "none";
-            const timeout = setTimeout(closeLoader, 20000);
-        }
-        function closeLoader(){
-            document.querySelector(".loading").classList.add("loading-hide");
-            document.querySelector("body").style.pointerEvents = "auto";
         }
     </script>
+
+    
 </body>
 </html>
