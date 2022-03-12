@@ -38,20 +38,37 @@ session_start();
                     <img src="../images/connections.png" alt="Connections">
                 </div>
             </div>
+            <!-- Error toast -->
             <?php
-    if (isset($_SESSION['loginMessage'])) {
-        $msg=$_SESSION['loginMessage'];
-      echo " <div class='alertt alert-visible'>
-                    <div class='econtent'>
-                        <img src='../images/warning.svg' alt='warning'>
-                        <div class='text'>
-                            $msg
-                        </div>
-                    </div>
-                    <img src='../images/close.svg' alt='close' class='alert-close'>
-                </div>";
-      unset($_SESSION['loginMessage']);
-    }?>
+                if (isset($_SESSION['loginMessage'])) {
+                    $msg=$_SESSION['loginMessage'];
+                    echo " <div class='alertt alert-visible'>
+                                    <div class='econtent'>
+                                        <img src='../images/warning.svg' alt='warning'>
+                                        <div class='text'>
+                                            $msg
+                                        </div>
+                                    </div>
+                                    <img src='../images/close.svg' alt='close' class='alert-close'>
+                                </div>";
+                    unset($_SESSION['loginMessage']);
+            }?>
+
+            <!-- Success toast -->
+            <?php
+                if (isset($_SESSION['success'])) {
+                    $msg=$_SESSION['success'];
+                    echo " <div class='alertt alert-visible' style='border-left: 10px solid #1BBD2B;'>
+                                <div class='econtent'>
+                                    <img src='../images/check.svg' alt='success'>
+                                    <div class='text'>
+                                        $msg
+                                    </div>
+                                </div>
+                                <img src='../images/close.svg' alt='close' class='alert-close'>
+                            </div>";
+                    unset($_SESSION['success']);
+            }?>
 
             <div class="form">
                 <div class="box">

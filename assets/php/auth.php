@@ -645,4 +645,25 @@
                 header("Location: ../pages/forgot_password2.php");
             }
         }
+
+        //New password
+        if(isset($_POST['fpConNewPass'])){
+            $ftpUserId=$_SESSION['fp-uid'];
+            $updateQuery="UPDATE `tbl_house_member` SET `password`='$fpNewPass' WHERE `userid`='$ftpUserId'";
+            if(mysqli_query($conn, $updateQuery)){
+                $deleteQuery="DELETE FROM `tbl_forgot_password` WHERE `userid`='$ftpUserId'";
+                mysqli_query($conn, $deleteQuery);
+                unset($_SESSION['fp-email']);
+                unset($_SESSION['fp-uid']);
+                $_SESSION['success'] = "Password changed successfully";
+                header("Location: ../pages/login.php");
+            }else{
+                $deleteQuery="DELETE FROM `tbl_forgot_password` WHERE `userid`='$ftpUserId'";
+                mysqli_query($conn, $deleteQuery);
+                unset($_SESSION['fp-email']);
+                unset($_SESSION['fp-uid']);
+                $_SESSION['loginMessage'] = "Please try again";
+                header("Location: ../pages/login.php");
+            }
+        }
     ?>
