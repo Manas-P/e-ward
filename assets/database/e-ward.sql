@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 15, 2022 at 01:16 PM
+-- Generation Time: Feb 19, 2022 at 08:05 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.25
 
@@ -43,6 +43,32 @@ INSERT INTO `tbl_admin` (`adid`, `username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_edu_bg`
+--
+
+CREATE TABLE `tbl_edu_bg` (
+  `id` int(10) NOT NULL,
+  `userid` int(10) NOT NULL,
+  `hs` varchar(200) NOT NULL DEFAULT '0',
+  `hss` varchar(200) NOT NULL DEFAULT '0',
+  `diploma` varchar(200) NOT NULL DEFAULT '0',
+  `ug` varchar(200) NOT NULL DEFAULT '0',
+  `pg` varchar(200) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_edu_bg`
+--
+
+INSERT INTO `tbl_edu_bg` (`id`, `userid`, `hs`, `hss`, `diploma`, `ug`, `pg`) VALUES
+(1, 2230, '../documents/16452101445..pdf', '0', '../documents/16452101077..pdf', '0', '0'),
+(2, 2232, '0', '0', '0', '0', '0'),
+(5, 2233, '0', '0', '0', '0', '0'),
+(7, 2234, '0', '0', '0', '0', '0');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_house`
 --
 
@@ -70,7 +96,7 @@ INSERT INTO `tbl_house` (`hid`, `house_name`, `house_no`, `ward_no`, `locality`,
 (7, 'abcd villa', 5, 2, 'abcdefgh', 'abcdefgh', 4565434567, 'APL'),
 (17, 'New housee', 34, 2, 'New locality', 'New post office', 5685458745, 'APL'),
 (18, 'new reg ho', 18, 2, 'new', 'new', 8459658745, 'APL'),
-(19, 'Guettaa House', 23, 2, 'Miami, Street 23', 'Miami PO', 2154785632, 'APL');
+(19, 'Kunni House', 23, 2, 'Miami, Street 23', 'Miami PO', 2154785632, 'APL');
 
 -- --------------------------------------------------------
 
@@ -110,8 +136,9 @@ INSERT INTO `tbl_house_member` (`hm_id`, `ward_no`, `house_no`, `fname`, `email`
 (25, 2, 34, 'new nneww', 'new@gmail.com', 9565215487, 'A+', '2014-02-18', '../images/uploads/photos/1644592133.png', 2344, 'NdyprVQa'),
 (26, 2, 23, 'Rubin Siby', 'Not entered', 9565878452, 'B+', '1988-06-15', '../images/uploads/photos/1644834244.png', 2230, '123'),
 (27, 2, 24, 'Martin Garrix', 'Not entered', 9565878457, 'NA', '0000-00-00', '../images/user-profile-placeholder.png', 2240, 'eer5XjwS'),
-(28, 2, 23, 'Kunni Bhai', 'martingrrx@gmail.com', 9856547854, 'B+', '2002-05-15', '../images/uploads/photos/1644839475.jpg', 2232, '123'),
-(29, 2, 23, 'Jacob Kurien', 'jacobkurien@gmail.com', 9856587457, 'O+', '1999-11-03', '../images/uploads/photos/1644838551.jpg', 2233, '123');
+(28, 2, 23, 'Kunnus', 'martingrrx@gmail.com', 9856547854, 'B+', '2002-05-15', '../images/uploads/photos/1644839475.jpg', 2232, '123'),
+(29, 2, 23, 'Jacob Kurien', 'jacobkurien@gmail.com', 9856587457, 'O+', '1999-11-03', '../images/uploads/photos/1644838551.jpg', 2233, '123'),
+(30, 2, 23, 'Appy Kurian', 'kuriappy@gmail.com', 9565874521, 'A+', '1999-06-15', '../images/uploads/photos/1645185833.jpeg', 2234, '123');
 
 -- --------------------------------------------------------
 
@@ -140,10 +167,35 @@ CREATE TABLE `tbl_id_proof` (
 
 INSERT INTO `tbl_id_proof` (`id`, `userid`, `aadhar_no`, `aadhar_file`, `election_id`, `election_id_file`, `driving_lic`, `driving_lic_file`, `pan_card`, `pan_card_file`, `birth_cer`, `birth_cer_file`) VALUES
 (1, 2344, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
-(2, 2230, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
+(2, 2230, 1, '../documents/1644947316..pdf', 2, '../documents/16449473161..pdf', '3', '../documents/16449473162..pdf', '4', '../documents/16449473163..pdf', 5, '../documents/16449473164..pdf'),
 (3, 2240, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
 (4, 2232, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
-(5, 2233, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0');
+(5, 2233, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
+(6, 2234, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_pro_bg`
+--
+
+CREATE TABLE `tbl_pro_bg` (
+  `id` int(10) NOT NULL,
+  `userid` int(100) NOT NULL,
+  `cur_pro` varchar(200) NOT NULL DEFAULT '0',
+  `cur_pro_file` varchar(200) NOT NULL DEFAULT '0',
+  `comp_name` varchar(200) NOT NULL DEFAULT '0',
+  `location` varchar(200) NOT NULL DEFAULT '0',
+  `pro_started` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_pro_bg`
+--
+
+INSERT INTO `tbl_pro_bg` (`id`, `userid`, `cur_pro`, `cur_pro_file`, `comp_name`, `location`, `pro_started`) VALUES
+(1, 2230, 'Software engineer', '../documents/164529716910..pdf', 'Cognizant', 'Bangalore', '2021-12-16'),
+(2, 2232, 'Software developer', '0', 'TCS', 'Red street', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -251,6 +303,12 @@ ALTER TABLE `tbl_admin`
   ADD PRIMARY KEY (`adid`);
 
 --
+-- Indexes for table `tbl_edu_bg`
+--
+ALTER TABLE `tbl_edu_bg`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tbl_house`
 --
 ALTER TABLE `tbl_house`
@@ -266,6 +324,12 @@ ALTER TABLE `tbl_house_member`
 -- Indexes for table `tbl_id_proof`
 --
 ALTER TABLE `tbl_id_proof`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_pro_bg`
+--
+ALTER TABLE `tbl_pro_bg`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -291,6 +355,12 @@ ALTER TABLE `tbl_admin`
   MODIFY `adid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `tbl_edu_bg`
+--
+ALTER TABLE `tbl_edu_bg`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
 -- AUTO_INCREMENT for table `tbl_house`
 --
 ALTER TABLE `tbl_house`
@@ -300,13 +370,19 @@ ALTER TABLE `tbl_house`
 -- AUTO_INCREMENT for table `tbl_house_member`
 --
 ALTER TABLE `tbl_house_member`
-  MODIFY `hm_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `hm_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `tbl_id_proof`
 --
 ALTER TABLE `tbl_id_proof`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `tbl_pro_bg`
+--
+ALTER TABLE `tbl_pro_bg`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_registration`

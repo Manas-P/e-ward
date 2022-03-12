@@ -28,6 +28,10 @@ a {
   cursor: pointer;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 ::-webkit-scrollbar {
   width: 0px;
 }
@@ -127,11 +131,11 @@ body {
 
 .main .sidebar .brand .user {
   font-family: "Gilroy_SB";
-  font-size: 14px;
+  font-size: 16px;
   color: #5744e3;
-  padding: 2px 12px 2px 12px;
+  padding: 3px 14px 3px 14px;
   background: #eeecfc;
-  border-radius: 10px;
+  border-radius: 14px;
 }
 
 .main .sidebar .division {
@@ -398,6 +402,16 @@ body {
   color: #ec0000;
 }
 
+.main .container .datas .no-result {
+  font-family: "Gilroy_M";
+  font-size: 20px;
+  color: #8b8b8b;
+  text-align: center;
+  -webkit-transform: translateX(-60px);
+          transform: translateX(-60px);
+  margin-top: 160px;
+}
+
 .overlay {
   position: absolute;
   top: 0;
@@ -560,5 +574,41 @@ body {
 
 .alert-visible {
   visibility: visible;
+}
+
+.loading {
+  display: block;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.loading .loading-overlay {
+  position: fixed;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.096);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+
+.loading .gif {
+  width: 100%;
+  height: auto;
+}
+
+.loading .gif img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 300px;
+}
+
+.loading-hide {
+  display: none;
 }
 /*# sourceMappingURL=wm_houses_req.css.map */

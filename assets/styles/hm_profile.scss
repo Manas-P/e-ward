@@ -83,6 +83,7 @@ body {
     }
     .right {
       margin-top: 68px;
+      padding-bottom: 437px;
       .general {
         @include contentbox();
         @include contentboxheader();

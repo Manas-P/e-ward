@@ -15,6 +15,10 @@ else
     //check user
     $arr = str_split($user_id); // convert string to an array
     $chk= end($arr); // 0 = house head
+
+    //slice first name of user
+    $slices=explode(" ", $fname);
+    $firstName=$slices[0];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -164,11 +168,12 @@ else
                         </div>
                     </div>
                     <div class="button hBtn cursor-disable">
-                        <input type="submit" value="Add member" name="add-hm" id="add-hm" class="primary-button disabled">
+                        <input type="submit" value="Add member" name="add-hm" id="add-hm" onclick="loader()" class="primary-button disabled">
                     </div>
                 </div>
             </form>
         </div>
+
         <script src="../../js/hm_add_hm.js"></script>
 
         <!-- Error Toast -->
@@ -202,8 +207,18 @@ else
                         </div>";
                 unset($_SESSION['success']);
         }?>
+
+
+            <!-- ==========Loading============= -->
+            <?php
+                include '../../include/loading.php'
+            ?>
+            <!-- ==========Loading End============= -->
+        
+
+        <script src="../../js/toast.js"></script>
     </body>
-    <script src="../../js/toast.js"></script>
+    
 </html>
 	<?php
 }

@@ -28,6 +28,10 @@ a {
   cursor: pointer;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 ::-webkit-scrollbar {
   width: 0px;
 }
@@ -127,11 +131,11 @@ body {
 
 .main .sidebar .brand .user {
   font-family: "Gilroy_SB";
-  font-size: 14px;
+  font-size: 16px;
   color: #5744e3;
-  padding: 2px 12px 2px 12px;
+  padding: 3px 14px 3px 14px;
   background: #eeecfc;
-  border-radius: 10px;
+  border-radius: 14px;
 }
 
 .main .sidebar .division {
@@ -271,7 +275,7 @@ body {
 }
 
 .main .container {
-  margin: 46px 63px 0 calc(476px - 63px);
+  margin: 46px 63px 46px calc(476px - 63px);
   width: calc(100% - 476px);
 }
 
@@ -335,6 +339,17 @@ body {
   color: #5744e3;
 }
 
+.main .container .request .noti-badge {
+  text-decoration: none;
+  padding: 5px 8px 4px 8px;
+  color: #fff;
+  background: #5744e3;
+  font-family: "Gilroy_B";
+  font-size: 12px;
+  border-radius: 6px;
+  margin-left: 8px;
+}
+
 .main .container .headings {
   margin: 36px 16px 0 16px;
   font-family: "Gilroy_SB";
@@ -343,10 +358,10 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-bottom: 24px;
 }
 
 .main .container .datas {
-  margin-top: 24px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -355,6 +370,16 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   row-gap: 24px;
+}
+
+.main .container .datas b {
+  font-family: "Gilroy_SB";
+  font-size: 20px;
+  color: #8b8b8b;
+  text-align: center;
+  -webkit-transform: translateX(-60px);
+          transform: translateX(-60px);
+  margin-top: 160px;
 }
 
 .main .container .datas .data {
@@ -370,5 +395,45 @@ body {
   padding-right: 28px;
   vertical-align: top;
   text-align: left;
+}
+
+.main .container .allResult {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 24px;
+}
+
+.main .container .allResult b {
+  font-family: "Gilroy_SB";
+  font-size: 20px;
+  color: #8b8b8b;
+  text-align: center;
+  -webkit-transform: translateX(-60px);
+          transform: translateX(-60px);
+  margin-top: 160px;
+}
+
+.main .container .allResult .data {
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  font-family: "Gilroy_M";
+  font-size: 18px;
+  color: #545454;
+}
+
+.main .container .allResult .data td {
+  padding-right: 28px;
+  vertical-align: top;
+  text-align: left;
+}
+
+.main .container .displayNone {
+  display: none;
 }
 /*# sourceMappingURL=wm_houses.css.map */

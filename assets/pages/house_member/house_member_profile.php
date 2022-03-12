@@ -30,6 +30,10 @@ else
     $chk= end($arr); // 0 = house head
     $arr2=str_split($hm_id);
     $chk2= end($arr2);
+
+    //slice first name of user
+    $slices=explode(" ", $fname);
+    $firstName=$slices[0];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -68,10 +72,10 @@ else
                     <!-- menu -->
                     <div class="menu">
                         <div class="links">
-                            <a href="#general" class="active">General informations</a>
-                            <a href="#identityProof" >Identity proofs</a>
-                            <a href="#educationalbackground" >Educational background</a>
-                            <a href="#" >Professional background</a>
+                            <a href="#general" class="general active">General informations</a>
+                            <a href="#identityProof" class="identityProof">Identity proofs</a>
+                            <a href="#educationalbackground" class="educationalbackground">Educational background</a>
+                            <a href="#professionalbackground" class="professionalbackground">Professional background</a>
                         </div>
                     </div>
                 </div>
@@ -79,7 +83,7 @@ else
                 <div class="right">
 
                     <!-- General Indormation -->
-                    <section class="general" id="general">
+                    <section class="section general" id="general">
                         <div class="header">
                             <div class="heading">
                                 General informations
@@ -153,10 +157,9 @@ else
                         $idproofQuery="SELECT * FROM `tbl_id_proof` WHERE `userid`='$hm_id'";
                         $idproofResult=mysqli_query($conn,$idproofQuery);
                         while ($idProof = mysqli_fetch_assoc($idproofResult)){
-                        
                     ?>
 
-                    <section class="proofs" id="identityProof">
+                    <section class="section proofs" id="identityProof">
                         <div class="header">
                             <div class="heading">
                                 Identity proofs
@@ -165,7 +168,7 @@ else
                                 if($chk==0 || $chk==$chk2){
                             ?>
                                     <div class="edit">
-                                        <a href="./update_house_member.php?id=<?php echo $hm_id ?>">
+                                        <a href="./update_house_member.php?id=<?php echo $hm_id ?>#identityProof">
                                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M10.0833 3.77783H3.66659C3.18036 3.77783 2.71404 3.97099 2.37022 4.3148C2.02641 4.65862 1.83325 5.12494 1.83325 5.61117V18.4445C1.83325 18.9307 2.02641 19.397 2.37022 19.7409C2.71404 20.0847 3.18036 20.2778 3.66659 20.2778H16.4999C16.9861 20.2778 17.4525 20.0847 17.7963 19.7409C18.1401 19.397 18.3333 18.9307 18.3333 18.4445V12.0278" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <path d="M16.9583 2.40286C17.3229 2.03818 17.8175 1.83331 18.3333 1.83331C18.849 1.83331 19.3436 2.03818 19.7083 2.40286C20.0729 2.76753 20.2778 3.26213 20.2778 3.77786C20.2778 4.29358 20.0729 4.78818 19.7083 5.15286L10.9999 13.8612L7.33325 14.7779L8.24992 11.1112L16.9583 2.40286Z" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -345,46 +348,319 @@ else
                     ?>
 
                     <!-- Educational Background -->
-                    <section class="proofs" id="educationalbackground">
+                    <!-- Fetch edu bg data -->
+                    <?php
+                        $eduQuery="SELECT * FROM `tbl_edu_bg` WHERE `userid`='$hm_id'";
+                        $eduResult=mysqli_query($conn,$eduQuery);
+                        while ($edu = mysqli_fetch_assoc($eduResult)){
+                    ?>
+                    <section class="section proofs" id="educationalbackground">
                         <div class="header">
                             <div class="heading">
                                 Educational backgrond
                             </div>
-                            <div class="edit">
-                                <a href="#">
-                                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M10.0833 3.77783H3.66659C3.18036 3.77783 2.71404 3.97099 2.37022 4.3148C2.02641 4.65862 1.83325 5.12494 1.83325 5.61117V18.4445C1.83325 18.9307 2.02641 19.397 2.37022 19.7409C2.71404 20.0847 3.18036 20.2778 3.66659 20.2778H16.4999C16.9861 20.2778 17.4525 20.0847 17.7963 19.7409C18.1401 19.397 18.3333 18.9307 18.3333 18.4445V12.0278" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M16.9583 2.40286C17.3229 2.03818 17.8175 1.83331 18.3333 1.83331C18.849 1.83331 19.3436 2.03818 19.7083 2.40286C20.0729 2.76753 20.2778 3.26213 20.2778 3.77786C20.2778 4.29358 20.0729 4.78818 19.7083 5.15286L10.9999 13.8612L7.33325 14.7779L8.24992 11.1112L16.9583 2.40286Z" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </a>
-                            </div>
+                            <?php
+                                if($chk==0 || $chk==$chk2){
+                            ?>
+                                    <div class="edit">
+                                        <a href="./update_house_member.php?id=<?php echo $hm_id ?>#educationalbackground">
+                                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M10.0833 3.77783H3.66659C3.18036 3.77783 2.71404 3.97099 2.37022 4.3148C2.02641 4.65862 1.83325 5.12494 1.83325 5.61117V18.4445C1.83325 18.9307 2.02641 19.397 2.37022 19.7409C2.71404 20.0847 3.18036 20.2778 3.66659 20.2778H16.4999C16.9861 20.2778 17.4525 20.0847 17.7963 19.7409C18.1401 19.397 18.3333 18.9307 18.3333 18.4445V12.0278" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M16.9583 2.40286C17.3229 2.03818 17.8175 1.83331 18.3333 1.83331C18.849 1.83331 19.3436 2.03818 19.7083 2.40286C20.0729 2.76753 20.2778 3.26213 20.2778 3.77786C20.2778 4.29358 20.0729 4.78818 19.7083 5.15286L10.9999 13.8612L7.33325 14.7779L8.24992 11.1112L16.9583 2.40286Z" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                            <?php
+                                }
+                            ?>
                         </div>
                         <div class="files">
                             <!-- ---------------- -->
                             <div class="file">
                                 <div class="info">
                                     <div class="title">
-                                        ______________:
+                                        Secondary school:
                                     </div>
                                     <div class="info">
-                                        ______________
+                                        <?php
+                                            if($edu['hs']=='0'){
+                                                echo "Not uploaded";
+                                            }else{
+                                                echo "Uploaded";
+                                            }
+                                        ?>
                                     </div>
                                 </div>
                                 <div class="download">
-                                    <a href="#">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M17.5 12.5V15.8333C17.5 16.2754 17.3244 16.6993 17.0118 17.0118C16.6993 17.3244 16.2754 17.5 15.8333 17.5H4.16667C3.72464 17.5 3.30072 17.3244 2.98816 17.0118C2.67559 16.6993 2.5 16.2754 2.5 15.8333V12.5" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M5.8335 8.33325L10.0002 12.4999L14.1668 8.33325" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M10 12.5V2.5" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </a>
+                                    <?php
+                                        if($edu['hs']!='0'){
+                                    ?>
+                                        <a href="../../php/view_pdf.php?pdf=<?php echo $edu['hs']; ?>" target="_blank">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M17.5 12.5V15.8333C17.5 16.2754 17.3244 16.6993 17.0118 17.0118C16.6993 17.3244 16.2754 17.5 15.8333 17.5H4.16667C3.72464 17.5 3.30072 17.3244 2.98816 17.0118C2.67559 16.6993 2.5 16.2754 2.5 15.8333V12.5" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M5.8335 8.33325L10.0002 12.4999L14.1668 8.33325" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M10 12.5V2.5" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </a>
+                                    <?php
+                                        }
+                                    ?>
                                 </div>
                             </div>
+                            <!-- ---------------- -->
+                            <div class="file">
+                                <div class="info">
+                                    <div class="title">
+                                        Higher secondary:
+                                    </div>
+                                    <div class="info">
+                                        <?php
+                                            if($edu['hss']=='0'){
+                                                echo "Not uploaded";
+                                            }else{
+                                                echo "Uploaded";
+                                            }
+                                        ?>
+                                    </div>
+                                </div>
+                                <div class="download">
+                                    <?php
+                                        if($edu['hss']!='0'){
+                                    ?>
+                                        <a href="../../php/view_pdf.php?pdf=<?php echo $edu['hss']; ?>" target="_blank">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M17.5 12.5V15.8333C17.5 16.2754 17.3244 16.6993 17.0118 17.0118C16.6993 17.3244 16.2754 17.5 15.8333 17.5H4.16667C3.72464 17.5 3.30072 17.3244 2.98816 17.0118C2.67559 16.6993 2.5 16.2754 2.5 15.8333V12.5" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M5.8335 8.33325L10.0002 12.4999L14.1668 8.33325" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M10 12.5V2.5" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </a>
+                                    <?php
+                                        }
+                                    ?>
+                                </div>
+                            </div>
+                            <!-- ---------------- -->
+                            <div class="file">
+                                <div class="info">
+                                    <div class="title">
+                                        Diploma:
+                                    </div>
+                                    <div class="info">
+                                        <?php
+                                            if($edu['diploma']=='0'){
+                                                echo "Not uploaded";
+                                            }else{
+                                                echo "Uploaded";
+                                            }
+                                        ?>
+                                    </div>
+                                </div>
+                                <div class="download">
+                                    <?php
+                                        if($edu['diploma']!='0'){
+                                    ?>
+                                        <a href="../../php/view_pdf.php?pdf=<?php echo $edu['diploma']; ?>" target="_blank">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M17.5 12.5V15.8333C17.5 16.2754 17.3244 16.6993 17.0118 17.0118C16.6993 17.3244 16.2754 17.5 15.8333 17.5H4.16667C3.72464 17.5 3.30072 17.3244 2.98816 17.0118C2.67559 16.6993 2.5 16.2754 2.5 15.8333V12.5" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M5.8335 8.33325L10.0002 12.4999L14.1668 8.33325" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M10 12.5V2.5" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </a>
+                                    <?php
+                                        }
+                                    ?>
+                                </div>
+                            </div>
+                            <!-- ---------------- -->
+                            <div class="file">
+                                <div class="info">
+                                    <div class="title">
+                                        Under graduation:
+                                    </div>
+                                    <div class="info">
+                                        <?php
+                                            if($edu['ug']=='0'){
+                                                echo "Not uploaded";
+                                            }else{
+                                                echo "Uploaded";
+                                            }
+                                        ?>
+                                    </div>
+                                </div>
+                                <div class="download">
+                                    <?php
+                                        if($edu['ug']!='0'){
+                                    ?>
+                                        <a href="../../php/view_pdf.php?pdf=<?php echo $edu['ug']; ?>" target="_blank">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M17.5 12.5V15.8333C17.5 16.2754 17.3244 16.6993 17.0118 17.0118C16.6993 17.3244 16.2754 17.5 15.8333 17.5H4.16667C3.72464 17.5 3.30072 17.3244 2.98816 17.0118C2.67559 16.6993 2.5 16.2754 2.5 15.8333V12.5" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M5.8335 8.33325L10.0002 12.4999L14.1668 8.33325" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M10 12.5V2.5" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </a>
+                                    <?php
+                                        }
+                                    ?>
+                                </div>
+                            </div>
+                            <!-- ---------------- -->
+                            <div class="file">
+                                <div class="info">
+                                    <div class="title">
+                                        Post graduation:
+                                    </div>
+                                    <div class="info">
+                                        <?php
+                                            if($edu['pg']=='0'){
+                                                echo "Not uploaded";
+                                            }else{
+                                                echo "Uploaded";
+                                            }
+                                        ?>
+                                    </div>
+                                </div>
+                                <div class="download">
+                                    <?php
+                                        if($edu['pg']!='0'){
+                                    ?>
+                                        <a href="../../php/view_pdf.php?pdf=<?php echo $edu['pg']; ?>" target="_blank">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M17.5 12.5V15.8333C17.5 16.2754 17.3244 16.6993 17.0118 17.0118C16.6993 17.3244 16.2754 17.5 15.8333 17.5H4.16667C3.72464 17.5 3.30072 17.3244 2.98816 17.0118C2.67559 16.6993 2.5 16.2754 2.5 15.8333V12.5" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M5.8335 8.33325L10.0002 12.4999L14.1668 8.33325" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M10 12.5V2.5" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </a>
+                                    <?php
+                                        }
+                                    ?>
+                                </div>
+                            </div>
+                            <!-- ---------------- -->
+                        </div>
+                    </section>
+                    <?php
+                        }
+                    ?>
+
+
+                    <!-- Professional Background -->
+                    <!-- Fetch pro bg data -->
+                    <?php
+                        $proQuery="SELECT * FROM `tbl_pro_bg` WHERE `userid`='$hm_id'";
+                        $proResult=mysqli_query($conn,$proQuery);
+                        while ($pro = mysqli_fetch_assoc($proResult)){
+                    ?>
+                    <section class="section proofs" id="professionalbackground">
+                        <div class="header">
+                            <div class="heading">
+                                Professional backgrond
+                            </div>
+                            <?php
+                                if($chk==0 || $chk==$chk2){
+                            ?>
+                                    <div class="edit">
+                                        <a href="./update_house_member.php?id=<?php echo $hm_id ?>#professionalbackground">
+                                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M10.0833 3.77783H3.66659C3.18036 3.77783 2.71404 3.97099 2.37022 4.3148C2.02641 4.65862 1.83325 5.12494 1.83325 5.61117V18.4445C1.83325 18.9307 2.02641 19.397 2.37022 19.7409C2.71404 20.0847 3.18036 20.2778 3.66659 20.2778H16.4999C16.9861 20.2778 17.4525 20.0847 17.7963 19.7409C18.1401 19.397 18.3333 18.9307 18.3333 18.4445V12.0278" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M16.9583 2.40286C17.3229 2.03818 17.8175 1.83331 18.3333 1.83331C18.849 1.83331 19.3436 2.03818 19.7083 2.40286C20.0729 2.76753 20.2778 3.26213 20.2778 3.77786C20.2778 4.29358 20.0729 4.78818 19.7083 5.15286L10.9999 13.8612L7.33325 14.7779L8.24992 11.1112L16.9583 2.40286Z" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                            <?php
+                                }
+                            ?>
+                        </div>
+                        <div class="files">
+                            <!-- ---------------- -->
+                            <div class="file">
+                                <div class="info">
+                                    <div class="title">
+                                        Current Profession:
+                                    </div>
+                                    <div class="info">
+                                        <?php
+                                            if($pro['cur_pro']=='0'){
+                                                echo "Not entered";
+                                            }else{
+                                                echo $pro['cur_pro'];
+                                            }
+                                        ?>
+                                    </div>
+                                </div>
+                                <div class="download">
+                                    <?php
+                                        if($pro['cur_pro_file']!='0'){
+                                    ?>
+                                        <a href="../../php/view_pdf.php?pdf=<?php echo $edu['hs']; ?>" target="_blank">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M17.5 12.5V15.8333C17.5 16.2754 17.3244 16.6993 17.0118 17.0118C16.6993 17.3244 16.2754 17.5 15.8333 17.5H4.16667C3.72464 17.5 3.30072 17.3244 2.98816 17.0118C2.67559 16.6993 2.5 16.2754 2.5 15.8333V12.5" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M5.8335 8.33325L10.0002 12.4999L14.1668 8.33325" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M10 12.5V2.5" stroke="#5744E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </a>
+                                    <?php
+                                        }
+                                    ?>
+                                </div>
+                            </div>
+                            <!-- ---------------- -->
+                            <div class="file">
+                                <div class="info">
+                                    <div class="title">
+                                        Company name:
+                                    </div>
+                                    <div class="info">
+                                        <?php
+                                            if($pro['comp_name']=='0'){
+                                                echo "Not entered";
+                                            }else{
+                                                echo $pro['comp_name'];
+                                            }
+                                        ?>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ---------------- -->
+                            <div class="file">
+                                <div class="info">
+                                    <div class="title">
+                                        Location:
+                                    </div>
+                                    <div class="info">
+                                        <?php
+                                            if($pro['location']=='0'){
+                                                echo "Not entered";
+                                            }else{
+                                                echo $pro['location'];
+                                            }
+                                        ?>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ---------------- -->
+                            <div class="file">
+                                <div class="info">
+                                    <div class="title">
+                                        Profession started:
+                                    </div>
+                                    <div class="info">
+                                        <?php
+                                            if($pro['pro_started']=='0000-00-00'){
+                                                echo "Not entered";
+                                            }else{
+                                                echo $pro['pro_started'];
+                                            }
+                                        ?>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ---------------- -->
                            
                         </div>
                     </section>
-
-
+                    <?php
+                        }
+                    ?>
 
                 </div>
             </div>

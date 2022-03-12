@@ -1,7 +1,7 @@
 <div class="sidebar" style="position: fixed;">
     <div class="brand">
         <img src="../../images/logo.svg" alt="logo" srcset="">
-        <div class="user">House: <?php echo $houseno; ?></div>
+        <div class="user"><?php echo $firstName; ?></div>
     </div>
     <div class="division"></div>
     <div class="links">

@@ -20,6 +20,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="../../images/fav.svg" type="image/x-icon">
         <link rel="stylesheet" href="../../styles/wm_houses_req.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
         <title>Admin</title>
     </head>
     <body>
@@ -82,11 +84,9 @@
                                     <a class="view" href="../../php/view_pdf.php?pdf=<?php echo $row["taxreport"]; ?>" target="_blank">View</a>
                                 </td>
                                 <td width=95px>
-                                    <a href="../../php/approve.php?apprId=<?php echo $row['rid']; ?>" class="approve">Approve</a>
+                                    <a href="../../php/approve.php?apprId=<?php echo $row['rid']; ?>" class="approve" onclick="loader()" >Approve</a>
                                 </td>
                                 <td>
-                                    <!-- <?php $rejId=$row['rid']; ?> -->
-                                    <!-- <a href="../../php/reject.php?rejId=<?php echo $row['rid']; ?>" class="reject">Reject</a> -->
                                     <a class="reject"  onclick="deleteItem(<?php $rejId=$row['rid']; echo $rejId; ?>)">Reject</a>
                                 </td>
                             </tr>
@@ -94,6 +94,13 @@
                     </div>
                     <?php
                         $i=$i+1;
+                        }
+                        if(mysqli_num_rows($result)==0){
+                    ?>
+                    <div class="no-result">
+                        No records
+                    </div>
+                    <?php
                         }
                     ?>
                 </div>
@@ -118,7 +125,7 @@
                     <textarea name="rej_reason" id="rejreason" rows="10"></textarea>
                    
                     <div class="button wBtn cursor-disable">
-                        <input type="submit" value="Continue" name="reject_house_req" id="rej" class="primary-button disabled">
+                        <input type="submit" value="Continue" name="reject_house_req" id="rej" onclick="loader()" class="primary-button disabled">
                     </div>
                 </div>
             </form>
@@ -130,20 +137,60 @@
             }
         </script>
 
+        <!-- Error Toast -->
         <?php
-            if (isset($_SESSION['loginMessage'])) {
-                $msg=$_SESSION['loginMessage'];
-                echo " <div class='alertt alert-visible'>
+        if (isset($_SESSION['loginMessage'])) {
+            $msg=$_SESSION['loginMessage'];
+          echo " <div class='alertt alert-visible'> 
+                        <div class='econtent'>
+                            <img src='../../images/warning.svg' alt='warning'>
+                            <div class='text'>
+                                $msg
+                            </div>
+                        </div>
+                        <img src='../../images/close.svg' alt='close' class='alert-close'>
+                    </div>";
+          unset($_SESSION['loginMessage']);
+        }?>
+
+        <!-- Success toast -->
+        <?php
+            if (isset($_SESSION['success'])) {
+                $msg=$_SESSION['success'];
+                echo " <div class='alertt alert-visible' style='border-left: 10px solid #1BBD2B;'>
                             <div class='econtent'>
-                                <img src='../../images/warning.svg' alt='error'>
+                                <img src='../../images/check.svg' alt='success'>
                                 <div class='text'>
                                     $msg
                                 </div>
                             </div>
                             <img src='../../images/close.svg' alt='close' class='alert-close'>
                         </div>";
-                unset($_SESSION['loginMessage']);
+                unset($_SESSION['success']);
         }?>
+
+        <!-- Ajax for request loading -->
+        <!-- <script>
+            function loader(){
+                $.ajax({
+                        url:"../../php/auth.php",
+                        method:"GET",
+                        
+                        beforeSend:function(){
+                            document.querySelector(".loading").classList.remove("loading-hide");
+                        },
+                        success:function(){
+                            document.querySelector(".loading").classList.add("loading-hide");
+                        }
+                    })
+            }
+        </script> -->
+
+            <!-- ==========Loading============= -->
+            <?php
+                include '../../include/loading.php'
+            ?>
+            <!-- ==========Loading End============= -->
 
         <script src="../../js/reject_house_reg.js"></script>
         <script src="../../js/toast.js"></script>

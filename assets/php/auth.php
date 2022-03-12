@@ -275,7 +275,10 @@
                     $headers="From: ewardmember@gmail.com";
 
                     if(mail($hemail,$subject,$body,$headers)){
-                        $insHouseMember="INSERT INTO `tbl_house_member`(`ward_no`, `house_no`, `fname`,`email`, `phno`, `blood_grp`, `dob`, `photo`, `userid`, `password`) VALUES ('$wardno','$houseno','$hfname','$hemail','$hphno','$hblood','$hdob','$filepath','$userid','$generatedPassword') ; INSERT INTO `tbl_id_proof`(`userid`) VALUES ('$userid')";
+                        $insHouseMember="INSERT INTO `tbl_house_member`(`ward_no`, `house_no`, `fname`,`email`, `phno`, `blood_grp`, `dob`, `photo`, `userid`, `password`) VALUES ('$wardno','$houseno','$hfname','$hemail','$hphno','$hblood','$hdob','$filepath','$userid','$generatedPassword') ; 
+                        INSERT INTO `tbl_id_proof`(`userid`) VALUES ('$userid') ; 
+                        INSERT INTO `tbl_edu_bg`(`userid`) VALUES ('$userid') ; 
+                        INSERT INTO `tbl_pro_bg`(`userid`) VALUES ('$userid')";
                         $insResult=mysqli_multi_query($conn,$insHouseMember);
                         if($insResult){
                             header("Location: ../pages/house_member/add_house_members.php");
@@ -311,6 +314,7 @@
                 header("Location: ../pages/ward_member/houses_request.php");
             }else{
                 $_SESSION['loginMessage'] = "Mail not send";
+                header("Location: ../pages/ward_member/houses_request.php");
             }
         }
 
@@ -342,7 +346,7 @@
             }else{
                 $file_tmpname_aadhar = $_FILES['hmuaadharfile']['tmp_name'];
                 $file_name_aadhar = $_FILES['hmuaadharfile']['name'];
-                $filepath_aadhar = $upload_dir_doc . time().".".$file_ext_pdf;
+                $filepath_aadhar = $upload_dir_doc . time()."0".".".$file_ext_pdf;
                 if(move_uploaded_file($file_tmpname_aadhar, $filepath_aadhar)){}else{
                     $_SESSION['loginMessage'] = "Error in uploading Aadhar";
                     header("Location: ../pages/house_member/add_house_members.php");
@@ -397,6 +401,81 @@
                 }
             }
 
+            //Professional backgrounds
+            //Secondary school
+            if(empty($_FILES["hmuhsfile"]['name'])){
+                $filepath_hs=$hm_already_hs;
+            }else{
+                $file_tmpname_hs = $_FILES['hmuhsfile']['tmp_name'];
+                $file_name_hs = $_FILES['hmuhsfile']['name'];
+                $filepath_hs = $upload_dir_doc . time()."5".".".$file_ext_pdf;
+                if(move_uploaded_file($file_tmpname_hs, $filepath_hs)){}else{
+                    $_SESSION['loginMessage'] = "Error in uploading secondary school certificate";
+                    header("Location: ../pages/house_member/add_house_members.php");
+                }
+            }
+            //Higher secondary school
+            if(empty($_FILES["hmuhssfile"]['name'])){
+                $filepath_hss=$hm_already_hss;
+            }else{
+                $file_tmpname_hss = $_FILES['hmuhssfile']['tmp_name'];
+                $file_name_hss = $_FILES['hmuhssfile']['name'];
+                $filepath_hss = $upload_dir_doc . time()."6".".".$file_ext_pdf;
+                if(move_uploaded_file($file_tmpname_hss, $filepath_hss)){}else{
+                    $_SESSION['loginMessage'] = "Error in uploading higher secondary certificate";
+                    header("Location: ../pages/house_member/add_house_members.php");
+                }
+            }
+            //Diploma
+            if(empty($_FILES["hmudiplomafile"]['name'])){
+                $filepath_diploma=$hm_already_diploma;
+            }else{
+                $file_tmpname_diploma = $_FILES['hmudiplomafile']['tmp_name'];
+                $file_name_diploma = $_FILES['hmudiplomafile']['name'];
+                $filepath_diploma = $upload_dir_doc . time()."7".".".$file_ext_pdf;
+                if(move_uploaded_file($file_tmpname_diploma, $filepath_diploma)){}else{
+                    $_SESSION['loginMessage'] = "Error in uploading diploma certificate";
+                    header("Location: ../pages/house_member/add_house_members.php");
+                }
+            }
+            //Under graduation
+            if(empty($_FILES["hmuugfile"]['name'])){
+                $filepath_ug=$hm_already_ug;
+            }else{
+                $file_tmpname_ug = $_FILES['hmuugfile']['tmp_name'];
+                $file_name_ug = $_FILES['hmuugfile']['name'];
+                $filepath_ug = $upload_dir_doc . time()."8".".".$file_ext_pdf;
+                if(move_uploaded_file($file_tmpname_ug, $filepath_ug)){}else{
+                    $_SESSION['loginMessage'] = "Error in uploading under graduation certificate";
+                    header("Location: ../pages/house_member/add_house_members.php");
+                }
+            }
+            //Post graduation
+            if(empty($_FILES["hmupgfile"]['name'])){
+                $filepath_pg=$hm_already_pg;
+            }else{
+                $file_tmpname_pg = $_FILES['hmupgfile']['tmp_name'];
+                $file_name_pg = $_FILES['hmupgfile']['name'];
+                $filepath_pg = $upload_dir_doc . time()."9".".".$file_ext_pdf;
+                if(move_uploaded_file($file_tmpname_pg, $filepath_pg)){}else{
+                    $_SESSION['loginMessage'] = "Error in uploading post graduation certificate";
+                    header("Location: ../pages/house_member/add_house_members.php");
+                }
+            }
+            //Current profession
+            if(empty($_FILES["hmuprofile"]['name'])){
+                $filepath_cur_pro=$hm_already_pro;
+            }else{
+                $file_tmpname_cur_pro = $_FILES['hmuprofile']['tmp_name'];
+                $file_name_cur_pro = $_FILES['hmuprofile']['name'];
+                $filepath_cur_pro = $upload_dir_doc . time()."10".".".$file_ext_pdf;
+                if(move_uploaded_file($file_tmpname_cur_pro, $filepath_cur_pro)){}else{
+                    $_SESSION['loginMessage'] = "Error in uploading profession certificate";
+                    header("Location: ../pages/house_member/add_house_members.php");
+                }
+            }
+
+
             //Check empty field
             //General info
             if(empty($hmuemail)){
@@ -421,10 +500,25 @@
             if(empty($hmubirth)){
                 $hmubirth="0";
             }
+            //Profession background
+            if(empty($hmucurpro)){
+                $hmucurpro="0";
+            }
+            if(empty($hmucompname)){
+                $hmucompname="0";
+            }
+            if(empty($hmulocation)){
+                $hmulocation="0";
+            }
+            if(empty($hmuprostart)){
+                $hmuprostart="";
+            }
 
             //Update request
             $updatehmQuery="UPDATE `tbl_house_member` SET `fname`='$hmufname',`email`='$hmuemail',`phno`='$hmuphno',`blood_grp`='$hmublood',`dob`='$hmudob',`photo`='$filepath' WHERE `userid`='$hm_id' ; 
-                            UPDATE `tbl_id_proof` SET `aadhar_no`='$hmuaadharno',`aadhar_file`='$filepath_aadhar',`election_id`='$hmuelectionid',`election_id_file`='$filepath_election',`driving_lic`='$hmudrivingid',`driving_lic_file`='$filepath_driving',`pan_card`='$hmupancard',`pan_card_file`='$filepath_pan',`birth_cer`='$hmubirth',`birth_cer_file`='$filepath_birth' WHERE `userid`='$hm_id'";
+                            UPDATE `tbl_id_proof` SET `aadhar_no`='$hmuaadharno',`aadhar_file`='$filepath_aadhar',`election_id`='$hmuelectionid',`election_id_file`='$filepath_election',`driving_lic`='$hmudrivingid',`driving_lic_file`='$filepath_driving',`pan_card`='$hmupancard',`pan_card_file`='$filepath_pan',`birth_cer`='$hmubirth',`birth_cer_file`='$filepath_birth' WHERE `userid`='$hm_id' ; 
+                            UPDATE `tbl_edu_bg` SET `hs`='$filepath_hs',`hss`='$filepath_hss',`diploma`='$filepath_diploma',`ug`='$filepath_ug',`pg`='$filepath_pg' WHERE `userid`='$hm_id' ; 
+                            UPDATE `tbl_pro_bg` SET `cur_pro`='$hmucurpro',`cur_pro_file`='$filepath_cur_pro',`comp_name`='$hmucompname',`location`='$hmulocation',`pro_started`='$hmuprostart' WHERE `userid`='$hm_id'";
             $updatehmResult=mysqli_multi_query($conn,$updatehmQuery);
             if($updatehmResult){
                 $_SESSION['success'] = "$hmufname's profile updated successfully";
@@ -434,4 +528,143 @@
                 header("Location: ../pages/house_member/add_house_members.php");
             }
         }
+
+        //Ward member - Houses page search
+        if(isset($_POST['item'])){
+            $input=$_POST['item'];
+            $wardno=$_POST['wardno'];
+            $searchQuery="SELECT * FROM `tbl_house` WHERE (house_name LIKE '{$input}%' OR house_no LIKE '{$input}%' OR locality LIKE '{$input}%' OR post_office LIKE '{$input}%' OR ration_no LIKE '{$input}%' OR category LIKE '{$input}%') AND ward_no='$wardno'";
+            $searchResult=mysqli_query($conn,$searchQuery);
+            
+            if(mysqli_num_rows($searchResult)>0){
+                $i=1;
+                while($row=mysqli_fetch_array($searchResult)){
+                ?>
+                    <div class="data">
+                        <table>
+                            <tr>
+                                <td width=104px><?php echo $i; ?></td>
+                                <td width=238px><?php echo $row['house_name']; ?></td>
+                                <td width=180px><?php echo $row['house_no']; ?></td>
+                                <td width=160px>4</td>
+                                <td width=176px><?php echo $row['locality']; ?></td>
+                                <td width=208px><?php echo $row['post_office']; ?></td>
+                                <td width=240px><?php echo $row['ration_no']; ?></td>
+                                <td><?php echo $row['category']; ?></td>
+                            </tr>
+                        </table>
+                    </div>
+
+            <?php
+            $i=$i+1;
+                }
+            }else{
+                echo '<b> No result found</b>';
+            }
+        }
+
+        // ---------Forgot password-----------
+        if(isset($_POST['toLoginPage'])){
+            header("Location: ../pages/login.php");
+        }
+        
+        // Check user id exist or not
+        if(isset($_POST['userId'])){
+            $uidchk="SELECT * FROM `tbl_house_member` WHERE `userid`='$userId'";
+            $uidchkres = mysqli_query($conn, $uidchk);
+            if(mysqli_num_rows($uidchkres)<1)
+            {
+                 // Toast should appear
+                 echo  '<div class="alertt alert-visible">
+                            <div class="econtent">
+                                <img src="../images/warning.svg" alt="warning">
+                                <div class="text">
+                                    User id does not exist
+                                </div>
+                            </div>
+                        </div>';
+            }else{
+                return 0;
+            }
+        }
+
+        //Send otp
+        if(isset($_POST['fpContinue'])){
+            $fetchMailQ="SELECT * FROM `tbl_house_member` WHERE `userid`='$ftpUserId'";
+            $fetchMailQRes = mysqli_query($conn, $fetchMailQ);
+            while($row=mysqli_fetch_array($fetchMailQRes)){
+                $email=$row['email'];
+                $fname=$row['fname'];
+            }
+
+            //Session
+            $_SESSION['fp-email']=$email;
+            $_SESSION['fp-uid']=$ftpUserId;
+
+            //Generate otp
+            $length=5;
+            $generatedOtp='';
+            $validChar='0123456789';
+            while(0<$length--){
+                $generatedOtp.=$validChar[random_int(0,strlen($validChar)-1)];
+            }
+
+            $subject="E-Ward OTP";
+            $body="Dear $fname, your one time password is: $generatedOtp";
+            $headers="From: ewardmember@gmail.com";
+
+            if(mail($email,$subject,$body,$headers)){
+                $otpQuery="INSERT INTO `tbl_forgot_password`(`userid`, `otp`) VALUES ('$ftpUserId','$generatedOtp')";
+                mysqli_query($conn, $otpQuery);
+                header("Location: ../pages/verify_otp.php");
+            }else{
+                $_SESSION['errorMessage'] = "Error in sending E-mail";
+                header("Location: ../pages/forgot_password.php");
+            }
+        }
+
+        // Back to user id section
+        if(isset($_POST['touid'])){
+            $ftpUserId=$_SESSION['fp-uid'];
+            $deleteQuery="DELETE FROM `tbl_forgot_password` WHERE `userid`='$ftpUserId'";
+            mysqli_query($conn, $deleteQuery);
+            unset($_SESSION['fp-email']);
+            unset($_SESSION['fp-uid']);
+            header("Location: ../pages/forgot_password.php");
+        }
+
+        //Check OTP
+        if(isset($_POST['fpContinueOtp'])){
+            $ftpUserId=$_SESSION['fp-uid'];
+            $fetchOtp="SELECT `otp` FROM `tbl_forgot_password` WHERE `userid`='$ftpUserId' AND `otp`='$fpotp'";
+            $fetchOtpRes=mysqli_query($conn, $fetchOtp);
+            if(mysqli_num_rows($fetchOtpRes)>=1){
+                header("Location: ../pages/new_password.php");
+            }else{
+                $_SESSION['errorMessage'] = "Invalid OTP";
+                header("Location: ../pages/verify_otp.php");
+            }
+        }
+
+        //New password
+        if(isset($_POST['fpConNewPass'])){
+            $ftpUserId=$_SESSION['fp-uid'];
+            $updateQuery="UPDATE `tbl_house_member` SET `password`='$fpNewPass' WHERE `userid`='$ftpUserId'";
+            if(mysqli_query($conn, $updateQuery)){
+                $deleteQuery="DELETE FROM `tbl_forgot_password` WHERE `userid`='$ftpUserId'";
+                mysqli_query($conn, $deleteQuery);
+                unset($_SESSION['fp-email']);
+                unset($_SESSION['fp-uid']);
+                $_SESSION['success'] = "Password changed successfully";
+                header("Location: ../pages/login.php");
+            }else{
+                $deleteQuery="DELETE FROM `tbl_forgot_password` WHERE `userid`='$ftpUserId'";
+                mysqli_query($conn, $deleteQuery);
+                unset($_SESSION['fp-email']);
+                unset($_SESSION['fp-uid']);
+                $_SESSION['loginMessage'] = "Please try again";
+                header("Location: ../pages/login.php");
+            }
+        }
+        // ---------End of forgot password-----------
     ?>

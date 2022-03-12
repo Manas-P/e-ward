@@ -28,6 +28,10 @@ a {
   cursor: pointer;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 ::-webkit-scrollbar {
   width: 0px;
 }
@@ -127,11 +131,11 @@ body {
 
 .main .sidebar .brand .user {
   font-family: "Gilroy_SB";
-  font-size: 14px;
+  font-size: 16px;
   color: #5744e3;
-  padding: 2px 12px 2px 12px;
+  padding: 3px 14px 3px 14px;
   background: #eeecfc;
-  border-radius: 10px;
+  border-radius: 14px;
 }
 
 .main .sidebar .division {
@@ -506,6 +510,7 @@ body {
 .box .inputs .input input[type="text"],
 .box .inputs .input input[type="date"],
 .box .inputs .input input[type="file"],
+.box .inputs .input input[type="number"],
 .box .inputs .input input[type="password"] {
   width: 100%;
   height: 53px;
@@ -523,6 +528,7 @@ body {
 .box .inputs .input input[type="text"]:focus,
 .box .inputs .input input[type="date"]:focus,
 .box .inputs .input input[type="file"]:focus,
+.box .inputs .input input[type="number"]:focus,
 .box .inputs .input input[type="password"]:focus {
   border: 1px solid #1e1e1e;
 }
@@ -564,6 +570,7 @@ body {
 .box .inputs .half-input .input input[type="text"],
 .box .inputs .half-input .input input[type="date"],
 .box .inputs .half-input .input input[type="file"],
+.box .inputs .half-input .input input[type="number"],
 .box .inputs .half-input .input input[type="password"] {
   width: 100%;
   height: 53px;
@@ -581,6 +588,7 @@ body {
 .box .inputs .half-input .input input[type="text"]:focus,
 .box .inputs .half-input .input input[type="date"]:focus,
 .box .inputs .half-input .input input[type="file"]:focus,
+.box .inputs .half-input .input input[type="number"]:focus,
 .box .inputs .half-input .input input[type="password"]:focus {
   border: 1px solid #1e1e1e;
 }
@@ -673,5 +681,41 @@ body {
 
 .alert-visible {
   visibility: visible;
+}
+
+.loading {
+  display: block;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.loading .loading-overlay {
+  position: fixed;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.096);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+
+.loading .gif {
+  width: 100%;
+  height: auto;
+}
+
+.loading .gif img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 300px;
+}
+
+.loading-hide {
+  display: none;
 }
 /*# sourceMappingURL=hm_add_hm.css.map */

@@ -28,6 +28,10 @@ a {
   cursor: pointer;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 ::-webkit-scrollbar {
   width: 0px;
 }
@@ -127,11 +131,11 @@ body {
 
 .main .sidebar .brand .user {
   font-family: "Gilroy_SB";
-  font-size: 14px;
+  font-size: 16px;
   color: #5744e3;
-  padding: 2px 12px 2px 12px;
+  padding: 3px 14px 3px 14px;
   background: #eeecfc;
-  border-radius: 10px;
+  border-radius: 14px;
 }
 
 .main .sidebar .division {
@@ -354,6 +358,7 @@ body {
 .main .container .update-form .inputs .input input[type="text"],
 .main .container .update-form .inputs .input input[type="date"],
 .main .container .update-form .inputs .input input[type="file"],
+.main .container .update-form .inputs .input input[type="number"],
 .main .container .update-form .inputs .input input[type="password"] {
   width: 100%;
   height: 53px;
@@ -371,6 +376,7 @@ body {
 .main .container .update-form .inputs .input input[type="text"]:focus,
 .main .container .update-form .inputs .input input[type="date"]:focus,
 .main .container .update-form .inputs .input input[type="file"]:focus,
+.main .container .update-form .inputs .input input[type="number"]:focus,
 .main .container .update-form .inputs .input input[type="password"]:focus {
   border: 1px solid #1e1e1e;
 }
@@ -456,11 +462,11 @@ body {
 
 .dashboard .sidebar .brand .user {
   font-family: "Gilroy_SB";
-  font-size: 14px;
+  font-size: 16px;
   color: #5744e3;
-  padding: 2px 12px 2px 12px;
+  padding: 3px 14px 3px 14px;
   background: #eeecfc;
-  border-radius: 10px;
+  border-radius: 14px;
 }
 
 .dashboard .sidebar .division {

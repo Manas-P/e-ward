@@ -42,6 +42,10 @@ a {
   cursor: pointer;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 //Hide Scrollbar
 ::-webkit-scrollbar {
   width: 0px;
@@ -105,9 +109,10 @@ a {
     input[type="text"],
     input[type="date"],
     input[type="file"],
+    input[type="number"],
     input[type="password"] {
       width: 100%;
-      height:53px;
+      height: 53px;
       font-size: 18px;
       font-family: "Gilroy_M";
       padding: 16px 0px 16px 16px;
@@ -126,6 +131,7 @@ a {
       color: $error;
       font-family: "Gilroy_M";
       font-size: 14px;
+      width:460px;
     }
   }
 }
@@ -219,7 +225,7 @@ a {
     }
 
     label {
-      font-family: "Gilroy_M";
+      font-family: "Gilroy_SB";
       font-size: 16px;
       color: $text;
       cursor: pointer;
@@ -321,11 +327,11 @@ a {
     }
     .user {
       font-family: "Gilroy_SB";
-      font-size: 14px;
+      font-size: 16px;
       color: $primary;
-      padding: 2px 12px 2px 12px;
+      padding: 3px 14px 3px 14px;
       background: $primaryFade;
-      border-radius: 10px;
+      border-radius: 14px;
     }
   }
   .division {
@@ -423,3 +429,36 @@ a {
 }
 
 //============End of Sidebar===============
+
+//============Loading===============
+@mixin loading() {
+  .loading {
+    display: block;
+    pointer-events: none;
+    overflow: hidden;
+    .loading-overlay {
+      position: fixed;
+      pointer-events: none;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      background: rgba(0, 0, 0, 0.096);
+      backdrop-filter: blur(10px);
+    }
+    .gif {
+      width: 100%;
+      height: auto;
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 300px;
+      }
+    }
+  }
+  .loading-hide {
+    display: none;
+  }
+}

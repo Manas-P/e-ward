@@ -190,7 +190,7 @@
                         </div>
                     </div>
                     <div class="button wBtn cursor-disable">
-                        <input type="submit" value="Add member" name="add-wm" id="add-wm" class="primary-button disabled">
+                        <input type="submit" value="Add member" name="add-wm" onclick="loader()" id="add-wm" class="primary-button disabled">
                     </div>
                 </div>
             </form>
@@ -287,6 +287,15 @@
                         </div>";
                 unset($_SESSION['success']);
         }?>
+
+
+            <!-- ==========Loading============= -->
+            <?php
+                include '../../include/loading.php'
+            ?>
+            <!-- ==========Loading End============= -->
+
+
         <script src="../../js/admin_add_wm.js"></script>
         <script src="../../js/toast.js"></script>
         <script>
