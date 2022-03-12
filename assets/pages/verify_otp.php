@@ -45,7 +45,7 @@ $fpUID=$_SESSION['fp-uid'];
                 <div class="box">
                     <div class="login-text">
                         <div class="title">
-                            Forgot password?
+                            Verify OTP
                         </div>
                         <div class="sub-title">
                         Please check your email <span class="email-h"><?php echo $fpEmail ?></span> and enter the one time password to continue
@@ -102,16 +102,15 @@ $fpUID=$_SESSION['fp-uid'];
 
         function validateOtp(otp){
             const subBtn=document.querySelector("#fp-sub");
-            const useridd=document.querySelector("#fp-otp");
-            const useridError=document.querySelector(".fpotp .error");
+            const vOtpError=document.querySelector(".fpotp .error");
             if(otp.length==5){
-                useridError.classList.add("error-hidden");
-                useridError.classList.remove("error-visible");
+                vOtpError.classList.add("error-hidden");
+                vOtpError.classList.remove("error-visible");
                 subBtn.classList.remove("disabled");
             }else{
-                useridError.classList.add("error-visible");
-                useridError.classList.remove("error-hidden");
-                useridError.innerText="Invalid OTP";
+                vOtpError.classList.add("error-visible");
+                vOtpError.classList.remove("error-hidden");
+                vOtpError.innerText="Invalid OTP";
                 subBtn.classList.add("disabled");
             }
         }

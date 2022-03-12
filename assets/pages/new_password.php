@@ -53,7 +53,7 @@ $fpUID=$_SESSION['fp-uid'];
                     </div>
                     <form action="../php/auth.php" method="post" id="fp-form">
                         <div class="inputs">
-                            <div class="input fpotp">
+                            <div class="input fpnewpass">
                                 <div class="label">
                                     New password
                                 </div>
@@ -100,24 +100,23 @@ $fpUID=$_SESSION['fp-uid'];
     <script>
         function validatepass(input){
             const subBtn=document.querySelector("#fp-sub");
-            const useridd=document.querySelector("#fp-otp");
-            const useridError=document.querySelector(".fpotp .error");
+            const newPassError=document.querySelector(".fpnewpass .error");
             var passRegx=/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$/;
             if(input.match(passRegx)){
-                useridError.classList.add("error-hidden");
-                useridError.classList.remove("error-visible");
+                newPassError.classList.add("error-hidden");
+                newPassError.classList.remove("error-visible");
                 subBtn.classList.remove("disabled");
                 subBtn.style.marginTop="0px";
             }else if(input.length==0){
-                useridError.classList.add("error-visible");
-                useridError.classList.remove("error-hidden");
-                useridError.innerText="Field cannot be blank";
+                newPassError.classList.add("error-visible");
+                newPassError.classList.remove("error-hidden");
+                newPassError.innerText="Field cannot be blank";
                 subBtn.classList.add("disabled");
                 subBtn.style.marginTop="0px";
             }else{
-                useridError.classList.add("error-visible");
-                useridError.classList.remove("error-hidden");
-                useridError.innerText="Password must be a minimum of 8 characters including number, Upper, Lower And one special character";
+                newPassError.classList.add("error-visible");
+                newPassError.classList.remove("error-hidden");
+                newPassError.innerText="Password must be a minimum of 8 characters including number, Upper, Lower And one special character";
                 subBtn.style.marginTop="12px";
                 subBtn.classList.add("disabled");
             }

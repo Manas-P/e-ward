@@ -111,7 +111,6 @@ session_start();
         function validateUserId(userid)
         {  
             const subBtn=document.querySelector("#fp-sub");
-            const useridd=document.querySelector("#fp-userid");
             const useridError=document.querySelector(".fpuserid .error");
             if(userid.length!=0){
                 $.ajax({

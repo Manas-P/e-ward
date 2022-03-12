@@ -616,10 +616,10 @@
             if(mail($email,$subject,$body,$headers)){
                 $otpQuery="INSERT INTO `tbl_forgot_password`(`userid`, `otp`) VALUES ('$ftpUserId','$generatedOtp')";
                 mysqli_query($conn, $otpQuery);
-                header("Location: ../pages/forgot_password2.php");
+                header("Location: ../pages/verify_otp.php");
             }else{
                 $_SESSION['errorMessage'] = "Error in sending E-mail";
-                header("Location: ../pages/forgot_password1.php");
+                header("Location: ../pages/forgot_password.php");
             }
         }
 
@@ -630,7 +630,7 @@
             mysqli_query($conn, $deleteQuery);
             unset($_SESSION['fp-email']);
             unset($_SESSION['fp-uid']);
-            header("Location: ../pages/forgot_password1.php");
+            header("Location: ../pages/forgot_password.php");
         }
 
         //Check OTP
@@ -639,10 +639,10 @@
             $fetchOtp="SELECT `otp` FROM `tbl_forgot_password` WHERE `userid`='$ftpUserId' AND `otp`='$fpotp'";
             $fetchOtpRes=mysqli_query($conn, $fetchOtp);
             if(mysqli_num_rows($fetchOtpRes)>=1){
-                header("Location: ../pages/forgot_password3.php");
+                header("Location: ../pages/new_password.php");
             }else{
                 $_SESSION['errorMessage'] = "Invalid OTP";
-                header("Location: ../pages/forgot_password2.php");
+                header("Location: ../pages/verify_otp.php");
             }
         }
 
@@ -666,4 +666,5 @@
                 header("Location: ../pages/login.php");
             }
         }
+        // ---------End of forgot password-----------
     ?>
