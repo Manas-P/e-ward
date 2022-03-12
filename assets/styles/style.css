@@ -167,6 +167,7 @@ html {
   font-family: "Gilroy_M";
   font-size: 16px;
   color: #8b8b8b;
+  width: 460px;
 }
 
 .main .sections .form .box .inputs {
@@ -201,6 +202,7 @@ html {
 .main .sections .form .box .inputs .input input[type="text"],
 .main .sections .form .box .inputs .input input[type="date"],
 .main .sections .form .box .inputs .input input[type="file"],
+.main .sections .form .box .inputs .input input[type="number"],
 .main .sections .form .box .inputs .input input[type="password"] {
   width: 100%;
   height: 53px;
@@ -218,6 +220,7 @@ html {
 .main .sections .form .box .inputs .input input[type="text"]:focus,
 .main .sections .form .box .inputs .input input[type="date"]:focus,
 .main .sections .form .box .inputs .input input[type="file"]:focus,
+.main .sections .form .box .inputs .input input[type="number"]:focus,
 .main .sections .form .box .inputs .input input[type="password"]:focus {
   border: 1px solid #1e1e1e;
 }
@@ -228,6 +231,7 @@ html {
   color: #ec0000;
   font-family: "Gilroy_M";
   font-size: 14px;
+  width: 460px;
 }
 
 .main .sections .form .box .sub {
@@ -290,7 +294,7 @@ html {
 }
 
 .main .sections .form .box .sub .checkbox label {
-  font-family: "Gilroy_M";
+  font-family: "Gilroy_SB";
   font-size: 16px;
   color: #1e1e1e;
   cursor: pointer;
@@ -301,7 +305,7 @@ html {
 }
 
 .main .sections .form .box .sub .forgot {
-  font-family: "Gilroy_M";
+  font-family: "Gilroy_SB";
   font-size: 16px;
   color: #5744e3;
   cursor: pointer;
@@ -310,6 +314,10 @@ html {
       -ms-user-select: none;
           user-select: none;
   text-decoration: none;
+}
+
+.main .sections .form .box .sub .forgot:hover {
+  text-decoration: underline;
 }
 
 .main .sections .form .box .buttons {
@@ -431,7 +439,7 @@ html {
 
 .box2 .register-text .sub-title a {
   margin-left: 6px;
-  font-family: "Gilroy_M";
+  font-family: "Gilroy_SB";
   font-size: 16px;
   color: #5744e3;
   cursor: pointer;
@@ -474,6 +482,7 @@ html {
 .box2 .inputs .input input[type="text"],
 .box2 .inputs .input input[type="date"],
 .box2 .inputs .input input[type="file"],
+.box2 .inputs .input input[type="number"],
 .box2 .inputs .input input[type="password"] {
   width: 100%;
   height: 53px;
@@ -491,6 +500,7 @@ html {
 .box2 .inputs .input input[type="text"]:focus,
 .box2 .inputs .input input[type="date"]:focus,
 .box2 .inputs .input input[type="file"]:focus,
+.box2 .inputs .input input[type="number"]:focus,
 .box2 .inputs .input input[type="password"]:focus {
   border: 1px solid #1e1e1e;
 }
@@ -501,6 +511,7 @@ html {
   color: #ec0000;
   font-family: "Gilroy_M";
   font-size: 14px;
+  width: 460px;
 }
 
 .box2 .inputs .half-input {
@@ -532,6 +543,7 @@ html {
 .box2 .inputs .half-input .input input[type="text"],
 .box2 .inputs .half-input .input input[type="date"],
 .box2 .inputs .half-input .input input[type="file"],
+.box2 .inputs .half-input .input input[type="number"],
 .box2 .inputs .half-input .input input[type="password"] {
   width: 100%;
   height: 53px;
@@ -549,6 +561,7 @@ html {
 .box2 .inputs .half-input .input input[type="text"]:focus,
 .box2 .inputs .half-input .input input[type="date"]:focus,
 .box2 .inputs .half-input .input input[type="file"]:focus,
+.box2 .inputs .half-input .input input[type="number"]:focus,
 .box2 .inputs .half-input .input input[type="password"]:focus {
   border: 1px solid #1e1e1e;
 }
@@ -559,6 +572,7 @@ html {
   color: #ec0000;
   font-family: "Gilroy_M";
   font-size: 14px;
+  width: 460px;
 }
 
 .box2 .button .primary-button {
@@ -620,6 +634,11 @@ html {
   display: none;
 }
 
+.email-h {
+  color: #1e1e1e;
+  font-family: "Gilroy_SB";
+}
+
 .alertt {
   background: #fff;
   padding: 18px 18px 18px 24px;
@@ -674,5 +693,41 @@ html {
 
 .alert-visible {
   visibility: visible;
+}
+
+.loading {
+  display: block;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.loading .loading-overlay {
+  position: fixed;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.096);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+
+.loading .gif {
+  width: 100%;
+  height: auto;
+}
+
+.loading .gif img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 300px;
+}
+
+.loading-hide {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */

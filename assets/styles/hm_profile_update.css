@@ -445,6 +445,7 @@ body {
 .main .container .right .general .information .inputs .input input[type="text"],
 .main .container .right .general .information .inputs .input input[type="date"],
 .main .container .right .general .information .inputs .input input[type="file"],
+.main .container .right .general .information .inputs .input input[type="number"],
 .main .container .right .general .information .inputs .input input[type="password"] {
   width: 100%;
   height: 53px;
@@ -462,6 +463,7 @@ body {
 .main .container .right .general .information .inputs .input input[type="text"]:focus,
 .main .container .right .general .information .inputs .input input[type="date"]:focus,
 .main .container .right .general .information .inputs .input input[type="file"]:focus,
+.main .container .right .general .information .inputs .input input[type="number"]:focus,
 .main .container .right .general .information .inputs .input input[type="password"]:focus {
   border: 1px solid #1e1e1e;
 }
@@ -502,6 +504,7 @@ body {
 .main .container .right .general .information .inputs .half-input .input input[type="text"],
 .main .container .right .general .information .inputs .half-input .input input[type="date"],
 .main .container .right .general .information .inputs .half-input .input input[type="file"],
+.main .container .right .general .information .inputs .half-input .input input[type="number"],
 .main .container .right .general .information .inputs .half-input .input input[type="password"] {
   width: 100%;
   height: 53px;
@@ -519,6 +522,7 @@ body {
 .main .container .right .general .information .inputs .half-input .input input[type="text"]:focus,
 .main .container .right .general .information .inputs .half-input .input input[type="date"]:focus,
 .main .container .right .general .information .inputs .half-input .input input[type="file"]:focus,
+.main .container .right .general .information .inputs .half-input .input input[type="number"]:focus,
 .main .container .right .general .information .inputs .half-input .input input[type="password"]:focus {
   border: 1px solid #1e1e1e;
 }
@@ -595,6 +599,7 @@ body {
 .main .container .right .proofs .files .inputs .input input[type="text"],
 .main .container .right .proofs .files .inputs .input input[type="date"],
 .main .container .right .proofs .files .inputs .input input[type="file"],
+.main .container .right .proofs .files .inputs .input input[type="number"],
 .main .container .right .proofs .files .inputs .input input[type="password"] {
   width: 100%;
   height: 53px;
@@ -612,6 +617,7 @@ body {
 .main .container .right .proofs .files .inputs .input input[type="text"]:focus,
 .main .container .right .proofs .files .inputs .input input[type="date"]:focus,
 .main .container .right .proofs .files .inputs .input input[type="file"]:focus,
+.main .container .right .proofs .files .inputs .input input[type="number"]:focus,
 .main .container .right .proofs .files .inputs .input input[type="password"]:focus {
   border: 1px solid #1e1e1e;
 }
