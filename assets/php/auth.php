@@ -53,7 +53,6 @@
         //login 
         if(isset($_POST['userName']) && isset($_POST['password']) && isset($_POST['submitButton']))
         {
-            // $password=$password;
             //Check if mobile already exisit
             $checkLogin = "SELECT * FROM `tbl_house_member` WHERE `userid`='$userName' and `password`='$password'";
             $checkLoginResult = mysqli_query($conn, $checkLogin);
