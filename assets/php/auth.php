@@ -53,6 +53,12 @@
         //login 
         if(isset($_POST['userName']) && isset($_POST['password']) && isset($_POST['submitButton']))
         {
+            //To prevent mysqli injection
+            $userName=mysqli_real_escape_string($conn,$userName);
+            $password=mysqli_real_escape_string($conn,$password);
+            $userName=filter_var($userName, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
+            $password=filter_var($password, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
+
             //Check if mobile already exisit
             $checkLogin = "SELECT * FROM `tbl_house_member` WHERE `userid`='$userName' and `password`='$password'";
             $checkLoginResult = mysqli_query($conn, $checkLogin);
