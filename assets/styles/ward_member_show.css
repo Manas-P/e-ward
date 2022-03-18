@@ -658,6 +658,7 @@ body {
   color: #ec0000;
   font-family: "Gilroy_M";
   font-size: 14px;
+  width: 460px;
 }
 
 .box .inputs .half-input {
@@ -718,6 +719,7 @@ body {
   color: #ec0000;
   font-family: "Gilroy_M";
   font-size: 14px;
+  width: 460px;
 }
 
 .box .button .primary-button {

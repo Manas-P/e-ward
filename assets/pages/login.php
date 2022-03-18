@@ -40,8 +40,8 @@ session_start();
             </div>
             <!-- Error toast -->
             <?php
-                if (isset($_SESSION['loginMessage'])) {
-                    $msg=$_SESSION['loginMessage'];
+                if (isset($_SESSION['error'])) {
+                    $msg=$_SESSION['error'];
                     echo " <div class='alertt alert-visible'>
                                     <div class='econtent'>
                                         <img src='../images/warning.svg' alt='warning'>
@@ -51,7 +51,7 @@ session_start();
                                     </div>
                                     <img src='../images/close.svg' alt='close' class='alert-close'>
                                 </div>";
-                    unset($_SESSION['loginMessage']);
+                    unset($_SESSION['error']);
             }?>
 
             <!-- Success toast -->
@@ -80,7 +80,7 @@ session_start();
                             A web-based application for managing your ward.
                         </div>
                     </div>
-                    <form action="../php/auth.php" method="post">
+                    <form action="../../application/controller/authentication.php" method="post">
                         <div class="inputs">
                             <div class="input">
                                 <div class="label">

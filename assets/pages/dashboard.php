@@ -1,7 +1,7 @@
 <?php
 session_start();
 $fname=$_SESSION['fname'];
-if (isset($_SESSION["e-wardId"]) != session_id()) {
+if (isset($_SESSION["sessionId"]) != session_id()) {
     header("Location: ../pages/login.php");
     die();
 }

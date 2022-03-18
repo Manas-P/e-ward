@@ -1,7 +1,7 @@
 <?php
 session_start();
 include '../../include/dbcon.php';
-if (isset($_SESSION["e-wardId"]) != session_id()) {
+if (isset($_SESSION["sessionId"]) != session_id()) {
     header("Location: ../login.php");
     die();
 }

@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if (isset($_SESSION["adminId"]) != session_id()) {
+    if (isset($_SESSION["sessionId"]) != session_id()) {
         header("Location: ../login.php");
         die();
     }

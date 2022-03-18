@@ -2,7 +2,7 @@
     include '../../include/dbcon.php';
     session_start();
     //Check login
-    if (isset($_SESSION["memebrId"]) != session_id()) {
+    if (isset($_SESSION["sessionId"]) != session_id()) {
         header("Location: ../login.php");
         die();
     }
