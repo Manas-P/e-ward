@@ -49,63 +49,6 @@
             }
         }
 
-
-        //login 
-        if(isset($_POST['userName']) && isset($_POST['password']) && isset($_POST['submitButton']))
-        {
-            //To prevent mysqli injection
-            $userName=mysqli_real_escape_string($conn,$userName);
-            $password=mysqli_real_escape_string($conn,$password);
-            $userName=filter_var($userName, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
-            $password=filter_var($password, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
-
-            //Check if mobile already exisit
-            $checkLogin = "SELECT * FROM `tbl_house_member` WHERE `userid`='$userName' and `password`='$password'";
-            $checkLoginResult = mysqli_query($conn, $checkLogin);
-            $checkLoginCount = mysqli_num_rows($checkLoginResult);
-            //Check Admin
-            $adminCheck="SELECT * FROM `tbl_admin` WHERE `username`='$userName' and `password`='$password'";
-            $adminCheckResult = mysqli_query($conn,$adminCheck);
-            $adminCheckCount=mysqli_num_rows($adminCheckResult);
-            //Check Ward Member
-            $wardMemberCheck="SELECT * FROM `tbl_ward_member` WHERE `wardno`='$userName' and `password`='$password' and `status`=1";
-            $wardMemberCheckResult=mysqli_query($conn,$wardMemberCheck);
-            $wardMemberCount=mysqli_num_rows($wardMemberCheckResult);
-            //No user exists
-            if($checkLoginCount==1)
-            {
-                $userData=mysqli_fetch_assoc($checkLoginResult);
-                $_SESSION['e-wardId'] = session_id();
-                $_SESSION['fname'] = $userData['fname'];
-                $_SESSION['houseno']= $userData['house_no'];
-                $_SESSION['wardno']= $userData['ward_no'];
-                $_SESSION['userid']= $userData['userid'];
-                header("Location: ../pages/house_member/dashboard.php");
-                die();
-            }
-            elseif($adminCheckCount==1){
-                $adminData=mysqli_fetch_assoc($adminCheckResult);
-                $_SESSION['adminId'] = session_id();
-                $_SESSION['aid']=$adminData['aid'];
-                header("Location: ../pages/admin/admin_add_wm.php");
-                die();
-            }
-            elseif($wardMemberCount==1){
-                $wardMemberData=mysqli_fetch_assoc($wardMemberCheckResult);
-                $_SESSION['memebrId'] = session_id();
-                $_SESSION['wardno']=$wardMemberData['wardno'];
-                $_SESSION['fullname']=$wardMemberData['fullname'];
-                header("Location: ../pages/ward_member/houses.php");
-                die();
-            }
-            else
-            {
-                $_SESSION['loginMessage'] = "Invalid Username or Password";
-                header("Location: ../pages/login.php");
-                die();
-            }
-        }
-
         //check wardno exisit
         if(isset($_POST['wardNo']))
         {
