@@ -38,25 +38,25 @@
             $_SESSION['houseno']= $userData['house_no'];
             $_SESSION['wardno']= $userData['ward_no'];
             $_SESSION['userid']= $userData['userid'];
-            header("Location: ../../assets/pages/house_member/dashboard.php");
+            header("Location: ../view/pages/house_member/dashboard.php");
             die();
         }elseif($wardMemberCount==1){
             $userData=mysqli_fetch_assoc($wardMemberCheckResult);
             $_SESSION['sessionId'] = session_id();
             $_SESSION['wardno']=$userData['wardno'];
             $_SESSION['fullname']=$userData['fullname'];
-            header("Location: ../../assets/pages/ward_member/houses.php");
+            header("Location: ../view/pages/ward_member/houses.php");
             die();
         }elseif($adminCheckCount==1){
             $userData=mysqli_fetch_assoc($adminCheckResult);
             $_SESSION['sessionId'] = session_id();
             $_SESSION['adid']=$userData['adid'];
             echo "admin";
-            header("Location: ../../assets/pages/admin/admin_add_wm.php");
+            header("Location: ../view/pages/admin/admin_add_wm.php");
             die();
         }else{
             $_SESSION['error'] = "Invalid Username or Password";
-            header("Location: ../../assets/pages/login.php");
+            header("Location: ../view/pages/login/login.php");
             die();
         }
     }

@@ -9,10 +9,10 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Ward | Login</title>
-    <link rel="shortcut icon" href="../../public/assets/images/fav.svg" type="image/x-icon">
-    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="shortcut icon" href="../../../../public/assets/images/fav.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../../../../public/assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="../styles/google_translater.css">
+    <link rel="stylesheet" href="../../../../public/assets/css/google_translater.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </head>
@@ -21,8 +21,8 @@ session_start();
         <div class="sections">
             <div class="content">
                 <div class="logo">
-                    <a href="../../index.php">
-                        <img src="../../public/assets/images/logo.svg" alt="Logo">
+                    <a href="../../../../public/index.php">
+                        <img src="../../../../public/assets/images/logo.svg" alt="Logo">
                     </a>
                     
                 </div>
@@ -35,7 +35,7 @@ session_start();
                 </div>
 
                 <div class="connection">
-                    <img src="../../public/assets/images/connections.png" alt="Connections">
+                    <img src="../../../../public/assets/images/connections.png" alt="Connections">
                 </div>
             </div>
             <!-- Error toast -->
@@ -44,12 +44,12 @@ session_start();
                     $msg=$_SESSION['error'];
                     echo " <div class='alertt alert-visible'>
                                     <div class='econtent'>
-                                        <img src='../../public/assets/images/warning.svg' alt='warning'>
+                                        <img src='../../../../public/assets/images/warning.svg' alt='warning'>
                                         <div class='text'>
                                             $msg
                                         </div>
                                     </div>
-                                    <img src='../../public/assets/images/close.svg' alt='close' class='alert-close'>
+                                    <img src='../../../../public/assets/images/close.svg' alt='close' class='alert-close'>
                                 </div>";
                     unset($_SESSION['error']);
             }?>
@@ -60,12 +60,12 @@ session_start();
                     $msg=$_SESSION['success'];
                     echo " <div class='alertt alert-visible' style='border-left: 10px solid #1BBD2B;'>
                                 <div class='econtent'>
-                                    <img src='../../public/assets/images/check.svg' alt='success'>
+                                    <img src='../../../../public/assets/images/check.svg' alt='success'>
                                     <div class='text'>
                                         $msg
                                     </div>
                                 </div>
-                                <img src='../../public/assets/images/close.svg' alt='close' class='alert-close'>
+                                <img src='../../../../public/assets/images/close.svg' alt='close' class='alert-close'>
                             </div>";
                     unset($_SESSION['success']);
             }?>
@@ -80,7 +80,7 @@ session_start();
                             A web-based application for managing your ward.
                         </div>
                     </div>
-                    <form action="../../application/controller/authentication.php" method="post">
+                    <form action="../../../controller/authentication.php" method="post">
                         <div class="inputs">
                             <div class="input">
                                 <div class="label">
@@ -125,7 +125,7 @@ session_start();
                             Already have an account?<a>Login</a> 
                         </div>
                     </div>
-                    <form id="reg-form" action="../../application/model/registration.php" method="post" enctype="multipart/form-data">
+                    <form id="reg-form" action="../../../model/registration.php" method="post" enctype="multipart/form-data">
                         <div class="inputs">
                             <div class="input fullname">
                                 <div class="label">
@@ -199,7 +199,8 @@ session_start();
     <?php
         include '../include/google_translater.php'
     ?>
-    <script src="../js/login.js"></script>
+    <script src="../../../../public/assets/js/login.js"></script>
+    <script src="../../../../public/assets/js/toast.js"></script>
     <script>
         function validateHouseNo(house)
         {  

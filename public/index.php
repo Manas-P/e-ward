@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Ward</title>
     <link rel="shortcut icon" href="./assets/images/fav.svg" type="image/x-icon">
-    <link rel="stylesheet" href="./assets/styles/index.css">
-    <link rel="stylesheet" href="./assets/styles/google_translater.css">
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/css/google_translater.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 <body>
@@ -24,7 +24,7 @@
                 <a href="" class="link">Services</a>
                 <a href="" class="link">About</a>
                 <a href="" class="link">contact us</a>
-                <a href="./assets/pages/login.php" class="link login-btn">login</a>
+                <a href="../application/view/pages/login/login.php" class="link login-btn">login</a>
             </div>
         </div>
         <div class="hero">
@@ -82,9 +82,9 @@
 
     <!--Google translater -->
     <?php
-        include './assets/include/google_translater.php'
+        include '../application/view/layout/google_translater.php'
     ?>
-    <script src="./assets/js/tilt.jquery.js"></script>
+    <script src="./assets/libraries/tilt.jquery.js"></script>
     <script>
         //Tilt Js
         $(document).ready(function () {

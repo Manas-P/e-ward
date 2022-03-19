@@ -48,7 +48,7 @@
         $houno=filter_var($houno, FILTER_SANITIZE_NUMBER_INT, FILTER_FLAG_STRIP_HIGH);
         
         //Upload tax report (pdf)
-        $upload_dir = '../../assets/documents/taxreport/';
+        $upload_dir = '../../public/assets/documents/taxreport/';
         $file_tmpname = $_FILES['taxre']['tmp_name'];
         $file_name = $_FILES['taxre']['name'];
         $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
@@ -59,14 +59,14 @@
             $ins_res=mysqli_query($conn,$ins);
             if($ins_res){
                 $_SESSION['success'] = "Registration request send";
-                header("Location: ../../assets/pages/login.php");
+                header("Location: ../view/pages/login/login.php");
             }else{
                 $_SESSION['error'] = "Error in registration";
-                header("Location: ../../assets/pages/login.php");
+                header("Location: ../view/pages/login/login.php");
             }
         }else{
             $_SESSION['error'] = "File upload error";
-            header("Location: ../../assets/pages/login.php");
+            header("Location: ../view/pages/login/login.php");
         }
     }
 ?>

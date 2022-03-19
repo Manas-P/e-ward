@@ -9,10 +9,10 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Ward | Login</title>
-    <link rel="shortcut icon" href="../images/fav.svg" type="image/x-icon">
-    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="shortcut icon" href="../../../../public/assets/images/fav.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../../../../public/assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="../styles/google_translater.css">
+    <link rel="stylesheet" href="../../../../public/assets/css/google_translater.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </head>
@@ -21,8 +21,8 @@ session_start();
         <div class="sections">
             <div class="content">
                 <div class="logo">
-                    <a href="../../index.php">
-                        <img src="../images/logo.svg" alt="Logo">
+                    <a href="../../../../public/index.php">
+                        <img src="../../../../public/assets/images/logo.svg" alt="Logo">
                     </a>
                     
                 </div>
@@ -35,7 +35,7 @@ session_start();
                 </div>
 
                 <div class="connection">
-                    <img src="../images/connections.png" alt="Connections">
+                    <img src="../../../../public/assets/images/connections.png" alt="Connections">
                 </div>
             </div>
 
@@ -50,7 +50,7 @@ session_start();
                             to corresponding email.
                         </div>
                     </div>
-                    <form action="../php/auth.php" method="post" id="fp-form">
+                    <form action="../../../model/forgotPassword.php" method="post" id="fp-form">
                         <div class="inputs">
                             <div class="input fpuserid">
                                 <div class="label">
@@ -77,7 +77,7 @@ session_start();
 
     <!--Google translater -->
     <?php
-        include '../include/google_translater.php'
+        include '../../layout/google_translater.php';
     ?>
 
     <!-- Error Toast -->
@@ -86,12 +86,12 @@ session_start();
             $msg=$_SESSION['errorMessage'];
         echo " <div class='alertt alert-visible'>
                         <div class='econtent'>
-                            <img src='../images/warning.svg' alt='warning'>
+                            <img src='../../../../public/assets/images/warning.svg' alt='warning'>
                             <div class='text'>
                                 $msg
                             </div>
                         </div>
-                        <img src='../images/close.svg' alt='close' class='alert-close'>
+                        <img src='../../../../public/assets/images/close.svg' alt='close' class='alert-close'>
                     </div>";
         unset($_SESSION['errorMessage']);
     }?>
@@ -100,12 +100,12 @@ session_start();
     <div class="loading loading-hide">
         <div class="loading-overlay"></div>
         <div class="gif">
-            <img src="../images/loading5.gif" alt="loading gif">
+            <img src="../../../../public/assets/images/loading5.gif" alt="loading gif">
         </div>
     </div>
     <!-- ==========Loading End============= -->
 
-    <script src="../js/toast.js"></script>
+    <script src="../../../../public/assets/js/toast.js"></script>
     <script>
         //check user id exist or not with button enable or disable
         function validateUserId(userid)
@@ -114,7 +114,7 @@ session_start();
             const useridError=document.querySelector(".fpuserid .error");
             if(userid.length!=0){
                 $.ajax({
-                    url: "../php/auth.php",
+                    url: "../../../model/forgotPassword.php",
                     type: "POST",
                     data: {
                         userId:userid
