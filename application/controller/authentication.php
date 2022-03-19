@@ -7,9 +7,12 @@
     if(isset($_POST['userName']) && isset($_POST['password']) && isset($_POST['submitButton'])){
         
         //Input sanitization
+        $userName = trim($userName); 
         $userName=mysqli_real_escape_string($conn,$userName);
-        $password=mysqli_real_escape_string($conn,$password);
         $userName=filter_var($userName, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
+
+        $password = trim($password); 
+        $password=mysqli_real_escape_string($conn,$password);
         $password=filter_var($password, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
 
         //Check if the user is Admin

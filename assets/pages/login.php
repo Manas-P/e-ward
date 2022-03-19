@@ -9,7 +9,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Ward | Login</title>
-    <link rel="shortcut icon" href="../images/fav.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="../../public/assets/images/fav.svg" type="image/x-icon">
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="../styles/google_translater.css">
@@ -22,7 +22,7 @@ session_start();
             <div class="content">
                 <div class="logo">
                     <a href="../../index.php">
-                        <img src="../images/logo.svg" alt="Logo">
+                        <img src="../../public/assets/images/logo.svg" alt="Logo">
                     </a>
                     
                 </div>
@@ -35,7 +35,7 @@ session_start();
                 </div>
 
                 <div class="connection">
-                    <img src="../images/connections.png" alt="Connections">
+                    <img src="../../public/assets/images/connections.png" alt="Connections">
                 </div>
             </div>
             <!-- Error toast -->
@@ -44,12 +44,12 @@ session_start();
                     $msg=$_SESSION['error'];
                     echo " <div class='alertt alert-visible'>
                                     <div class='econtent'>
-                                        <img src='../images/warning.svg' alt='warning'>
+                                        <img src='../../public/assets/images/warning.svg' alt='warning'>
                                         <div class='text'>
                                             $msg
                                         </div>
                                     </div>
-                                    <img src='../images/close.svg' alt='close' class='alert-close'>
+                                    <img src='../../public/assets/images/close.svg' alt='close' class='alert-close'>
                                 </div>";
                     unset($_SESSION['error']);
             }?>
@@ -60,12 +60,12 @@ session_start();
                     $msg=$_SESSION['success'];
                     echo " <div class='alertt alert-visible' style='border-left: 10px solid #1BBD2B;'>
                                 <div class='econtent'>
-                                    <img src='../images/check.svg' alt='success'>
+                                    <img src='../../public/assets/images/check.svg' alt='success'>
                                     <div class='text'>
                                         $msg
                                     </div>
                                 </div>
-                                <img src='../images/close.svg' alt='close' class='alert-close'>
+                                <img src='../../public/assets/images/close.svg' alt='close' class='alert-close'>
                             </div>";
                     unset($_SESSION['success']);
             }?>
@@ -125,7 +125,7 @@ session_start();
                             Already have an account?<a>Login</a> 
                         </div>
                     </div>
-                    <form id="reg-form" action="../php/auth.php" method="post" enctype="multipart/form-data">
+                    <form id="reg-form" action="../../application/model/registration.php" method="post" enctype="multipart/form-data">
                         <div class="inputs">
                             <div class="input fullname">
                                 <div class="label">
