@@ -1,6 +1,6 @@
 <?php
     session_start();
     session_unset();  
-    header("Location: ../../assets/pages/login.php");
+    header("Location: ../view/pages/login/login.php");
     die();
 ?>

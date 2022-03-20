@@ -3,7 +3,7 @@
 <div class="loading loading-hide">
     <div class="loading-overlay"></div>
     <div class="gif">
-        <img src="../../images/loading5.gif" alt="loading gif">
+        <img src="../../../../public/assets/images/loading5.gif" alt="loading gif">
     </div>
 </div>
 
