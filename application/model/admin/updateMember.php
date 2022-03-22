@@ -6,6 +6,24 @@
     //Update ward member
     if(isset($_POST['update-wm'])){
         $wrno=$_GET['wrno'];
+
+        //Input sanitization
+        $wfname = trim($wfname); 
+        $wfname=mysqli_real_escape_string($conn,$wfname);
+        $wfname=filter_var($wfname, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
+
+        $wemail = trim($wemail);
+        $wemail=mysqli_real_escape_string($conn,$wemail);
+        $wemail=filter_var($wemail, FILTER_SANITIZE_EMAIL, FILTER_FLAG_STRIP_HIGH);
+
+        $wphno = trim($wphno);
+        $wphno=mysqli_real_escape_string($conn,$wphno);
+        $wphno=filter_var($wphno, FILTER_SANITIZE_NUMBER_INT, FILTER_FLAG_STRIP_HIGH);
+
+        $wwrdno = trim($wwrdno);
+        $wwrdno=mysqli_real_escape_string($conn,$wwrdno);
+        $wwrdno=filter_var($wwrdno, FILTER_SANITIZE_NUMBER_INT, FILTER_FLAG_STRIP_HIGH);
+
         //check image updated
         if($_FILES["wphoto"]["size"]==0){
             $update="UPDATE `tbl_ward_member` SET `fullname`='$wfname',`email`='$wemail',`phno`='$wphno',`wardno`='$wwrdno',`validupto`='$wvalidity' WHERE `wardno`='$wrno'";
