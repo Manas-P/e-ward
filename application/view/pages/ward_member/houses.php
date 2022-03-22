@@ -1,9 +1,9 @@
 <?php
-    include '../../include/dbcon.php';
+    include '../../../config/dbcon.php';
     session_start();
     //Check login
     if (isset($_SESSION["sessionId"]) != session_id()) {
-        header("Location: ../login.php");
+        header("Location: ../login/login.php");
         die();
     }
     else
@@ -18,17 +18,17 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="../../images/fav.svg" type="image/x-icon">
+        <link rel="shortcut icon" href="../../../../public/assets/images/fav.svg" type="image/x-icon">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="../../styles/wm_houses.css">
+        <link rel="stylesheet" href="../../../../public/assets/css/ward_member/wm_houses.css">
         <title>Admin</title>
     </head>
     <body>
 	    <section class="main">
             <!-- ==========Sidebar============= -->
             <?php
-                include '../../include/ward_member/sidebar_houses.php'
+                include '../../layout/ward_member/sidebar_houses.php'
             ?>
             <!-- ==========Sidebar End============= -->
             <div class="container">
@@ -51,7 +51,7 @@
                     <span class="noti-badge">
                         <!-- Fetch registration request -->
                         <?php
-                            $query="SELECT * FROM `tbl_registration` WHERE `wardno`='$wardno' AND `status`='0'";
+                            $query="SELECT `rid` FROM `tbl_registration` WHERE `wardno`='$wardno' AND `status`='0'";
                             $result=mysqli_query($conn,$query);
                             echo mysqli_num_rows($result);
                         ?>
@@ -74,7 +74,7 @@
 
                 <div class="allResult">
                     <?php
-                        $query="SELECT * FROM `tbl_house` WHERE `ward_no`='$wardno'";
+                        $query="SELECT `house_name`, `house_no`, `locality`, `post_office`, `ration_no`, `category` FROM `tbl_house` WHERE `ward_no`='$wardno'";
                         $result=mysqli_query($conn,$query);
                         $i=1;
                         while($row=mysqli_fetch_array($result)){
@@ -107,7 +107,7 @@
                     document.querySelector(".datas").classList.remove("displayNone");
                     const wardno='<?php echo $wardno?>';
                     $.ajax({
-                        url:"../../php/auth.php",
+                        url:"../../../model/ward_member/search_house.php",
                         method:"POST",
                         data:{
                             item:item,
