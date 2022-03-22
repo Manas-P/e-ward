@@ -1,5 +1,7 @@
 <?php
     include '../../config/dbcon.php';
+    session_start();
+    extract($_POST);
     $wardno=$_GET['wardno'];
     $presidentUpdate="UPDATE `tbl_ward_member` SET `president`=1 WHERE `wardno`='$wardno'";
     $updateResult=mysqli_query($conn,$presidentUpdate);

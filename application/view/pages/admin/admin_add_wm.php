@@ -233,9 +233,9 @@
                 Add president
             </div>
             <div class="modal-close-btn up-cls-btn">
-                <img src="../../images/close.svg" alt="close button">
+                <img src="../../../../public/assets/images/close.svg" alt="close button">
             </div>
-            <form action="../../php/auth.php" method="post" id="add-president">
+            <form action="../../../model/admin/updateMember.php" method="post" id="add-president">
                 <div class="inputs">
                     <div class="input w-date">
                         <div class="label">

@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION["sessionId"]) != session_id()) {
-    header("Location: ../login.php");
+    header("Location: ../login/login.php");
     die();
 } else {
 ?>
@@ -12,8 +12,8 @@ if (isset($_SESSION["sessionId"]) != session_id()) {
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Admin | Add Ward Memeber</title>
-        <link rel="shortcut icon" href="../../images/fav.svg" type="image/x-icon">
-        <link rel="stylesheet" href="../../styles/ward_member_show.css">
+        <link rel="shortcut icon" href="../../../../public/assets/images/fav.svg" type="image/x-icon">
+        <link rel="stylesheet" href="../../../../public/assets/css/ward_member/ward_member_show.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     </head>
@@ -22,24 +22,23 @@ if (isset($_SESSION["sessionId"]) != session_id()) {
         <section class="main">
             <!-- ==========Sidebar============= -->
             <?php
-                include '../../include/admin/sidebar_manage_wm.php'
+                include '../../layout/admin/sidebar_manage_wm.php'
             ?>
             <!-- ==========Sidebar End============= -->
 
             <?php
-                    include '../../include/dbcon.php';
+                    include '../../../config/dbcon.php';
                     $wardno=$_GET['wardno'];
                     //Fetch Member Details
-                    $memberDetals="SELECT * FROM `tbl_ward_member` WHERE `wardno`=$wardno";
+                    $memberDetals="SELECT `fullname`, `email`, `phno`, `photo`, `validupto`, `president` FROM `tbl_ward_member` WHERE `wardno`=$wardno";
                     $detailsResult=mysqli_query($conn,$memberDetals);
-                    while($row=mysqli_fetch_assoc($detailsResult)){
-                        $name=$row['fullname'];
-                        $email=$row['email'];
-                        $phno=$row['phno'];
-                        $photo=$row['photo'];
-                        $validity=$row['validupto'];
-                        $president=$row['president'];
-                    }
+                    $userData=mysqli_fetch_assoc($detailsResult);
+                    $name=$userData['fullname'];
+                    $email=$userData['email'];
+                    $phno=$userData['phno'];
+                    $photo=$userData['photo'];
+                    $validity=$userData['validupto'];
+                    $president=$userData['president'];
                 ?>
                 
             <div class="container">
@@ -105,15 +104,15 @@ if (isset($_SESSION["sessionId"]) != session_id()) {
                         <a class="update" id="add-member">Update</a>
                         <?php 
                             if($president==0){
-                                ?>
-                            <a href="../../php/remove_member.php?wardno=<?php echo $wardno ?>" class="remove">Remove</a>
-                            <?php
+                        ?>
+                            <a href="../../../model/admin/removeMember.php?wardno=<?php echo $wardno ?>" class="remove">Remove</a>
+                        <?php
                             }else{
-                                ?>
-                            <a href="../../php/remove_president.php?wardno=<?php echo $wardno ?>" class="remove">Remove</a>
-                            <?php    
+                        ?>
+                            <a href="../../../model/admin/removePresident.php?wardno=<?php echo $wardno ?>" class="remove">Remove</a>
+                        <?php    
                             }
-                            ?>
+                        ?>
                     </div>
                 </div>
                 <div class="analytics">
@@ -131,10 +130,10 @@ if (isset($_SESSION["sessionId"]) != session_id()) {
                 Update details
             </div>
             <div class="modal-close-btn">
-                <img src="../../images/close.svg" alt="close button">
+                <img src="../../../../public/assets/images/close.svg" alt="close button">
             </div>
             <!-- Add Ward Memeber -->
-            <form action="../../php/auth.php?wrno=<?php echo $wardno;?>" method="post" id="add-ward-member" enctype="multipart/form-data">
+            <form action="../../../model/admin/updateMember.php?wrno=<?php echo $wardno;?>" method="post" id="add-ward-member" enctype="multipart/form-data">
                 <div class="inputs">
                     <div class="input w-fullname">
                         <div class="label">
@@ -197,25 +196,26 @@ if (isset($_SESSION["sessionId"]) != session_id()) {
             <!-- inject error -->
         </div>
         <?php
-        if (isset($_SESSION['loginMessage'])) {
-            $msg = $_SESSION['loginMessage'];
+        if (isset($_SESSION['error'])) {
+            $msg = $_SESSION['error'];
             echo " <div class='alertt alert-visible'>
                         <div class='econtent'>
-                            <img src='../../images/warning.svg' alt='warning'>
+                            <img src='../../../../public/assets/images/warning.svg' alt='warning'>
                             <div class='text'>
                                 $msg
                             </div>
                         </div>
-                        <img src='../../images/close.svg' alt='close' class='alert-close'>
+                        <img src='../../../../public/assets/images/close.svg' alt='close' class='alert-close'>
                     </div>";
-            unset($_SESSION['loginMessage']);
+            unset($_SESSION['error']);
         } ?>
-        <script src="../../js/admin_member_update.js"></script>
+        <script src="../../../../public/assets/js/admin_member_update.js"></script>
+        <script src="../../../../public/assets/js/toast.js"></script>
         <script>
             function validateWardNo(ward)
             {  
                  $.ajax({
-                    url: "../../php/auth.php",
+                    url: "../../../model/admin/addWardMember.php",
                     type: "POST",
                     data: {
                         wardNo:ward
