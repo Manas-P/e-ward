@@ -61,11 +61,11 @@
                     <div>Slno.</div>
                     <div style="margin-left: 70px;">House name</div>
                     <div style="margin-left: 124px;">House no.</div>
-                    <div style="margin-left: 90px;">Members</div>
-                    <div style="margin-left: 79px;">Locality</div>
-                    <div style="margin-left: 105px;">Post office</div>
-                    <div style="margin-left: 114px;">Ration card no.</div>
-                    <div style="margin-left: 100px;">Category</div>
+                    <div style="margin-left: 50px;">Members</div>
+                    <div style="margin-left: 50px;">Locality</div>
+                    <div style="margin-left: 155px;">Post office</div>
+                    <div style="margin-left: 134px;">Ration card no.</div>
+                    <div style="margin-left: 80px;">Category</div>
                 </div>
 
                 <div class="datas" id="search-result">
@@ -84,11 +84,11 @@
                             <tr>
                                 <td width=104px><?php echo $i; ?></td>
                                 <td width=238px><?php echo $row['house_name']; ?></td>
-                                <td width=180px><?php echo $row['house_no']; ?></td>
-                                <td width=160px>4</td>
-                                <td width=176px><?php echo $row['locality']; ?></td>
-                                <td width=208px><?php echo $row['post_office']; ?></td>
-                                <td width=240px><?php echo $row['ration_no']; ?></td>
+                                <td width=140px><?php echo $row['house_no']; ?></td>
+                                <td width=132px>4</td>
+                                <td width=226px><?php echo $row['locality']; ?></td>
+                                <td width=228px><?php echo $row['post_office']; ?></td>
+                                <td width=220px><?php echo $row['ration_no']; ?></td>
                                 <td><?php echo $row['category']; ?></td>
                             </tr>
                         </table>
