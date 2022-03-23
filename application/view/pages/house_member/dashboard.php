@@ -1,8 +1,8 @@
 <?php
+include '../../../config/dbcon.php';
 session_start();
-include '../../include/dbcon.php';
 if (isset($_SESSION["sessionId"]) != session_id()) {
-    header("Location: ../login.php");
+    header("Location: ../login/login.php");
     die();
 }
 else
@@ -22,15 +22,15 @@ else
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>E Ward</title>
-        <link rel="shortcut icon" href="../../images/fav.svg" type="image/x-icon">
-        <link rel="stylesheet" href="../../styles/hm_dashbored.css">
+        <link rel="shortcut icon" href="../../../../public/assets/images/fav.svg" type="image/x-icon">
+        <link rel="stylesheet" href="../../../../public/assets/css/house_member/hm_dashbored.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     </head>
     <body>
         <!-- Check if the user entered house details -->
         <?php
-            $checkQuery="SELECT * FROM `tbl_house` WHERE `ward_no`='$wardno' and `house_no`='$houseno'";
+            $checkQuery="SELECT `hid` FROM `tbl_house` WHERE `ward_no`='$wardno' and `house_no`='$houseno'";
             $checkResult=mysqli_query($conn,$checkQuery);
             if(mysqli_num_rows($checkResult)==0){
         ?>
@@ -39,7 +39,7 @@ else
         <section class="main">
             <!-- ==========Sidebar============= -->
             <?php
-                include '../../include/house_member/sidebar_hm_update.php'
+                include '../../layout/house_member/sidebar_hm_update.php';
             ?>
             <!-- ==========Sidebar End============= -->
                 
@@ -135,7 +135,7 @@ else
         <section class="dashboard">
             <!-- ==========Sidebar============= -->
             <?php
-                include '../../include/house_member/sidebar_hm_dashboard.php'
+                include '../../layout/house_member/sidebar_hm_dashboard.php';
             ?>
             <!-- ==========Sidebar End============= -->
             <div class="container">
