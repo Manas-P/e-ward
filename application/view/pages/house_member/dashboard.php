@@ -58,12 +58,12 @@ else
                     </div>
 
                     <?php
-                        $query="SELECT * FROM `tbl_house_member` WHERE `ward_no`=$wardno and `house_no`=$houseno";
+                        $query="SELECT `ward_no`, `house_no` FROM `tbl_house_member` WHERE `ward_no`=$wardno and `house_no`=$houseno";
                         $result=mysqli_query($conn,$query);
                         while($row=mysqli_fetch_array($result)){
                     ?>
 
-                    <form id="reg-form" action="../../php/auth.php" method="post" enctype="multipart/form-data">
+                    <form id="reg-form" action="../../../model/house_member/update_house_details.php" method="post" enctype="multipart/form-data">
                         <div class="inputs">
                             <input type="text" name="wardno" value="<?php echo $row['ward_no']; ?>" style="display: none;">
                             <div class="input housename">
@@ -152,21 +152,37 @@ else
             }
         ?>
         <?php
-            if (isset($_SESSION['loginMessage'])) {
-                $msg=$_SESSION['loginMessage'];
+            if (isset($_SESSION['success'])) {
+                $msg=$_SESSION['success'];
                 echo " <div class='alertt alert-visible' style='border-left: 10px solid #1BBD2B;'>
                             <div class='econtent'>
-                                <img src='../../images/check.svg' alt='success'>
+                                <img src='../../../../public/assets/images/check.svg' alt='success'>
                                 <div class='text'>
                                     $msg
                                 </div>
                             </div>
-                            <img src='../../images/close.svg' alt='close' class='alert-close'>
+                            <img src='../../../../public/assets/images/close.svg' alt='close' class='alert-close'>
                         </div>";
-                unset($_SESSION['loginMessage']);
+                unset($_SESSION['success']);
+        }?>
+
+        <?php
+            if (isset($_SESSION['error'])) {
+                $msg=$_SESSION['error'];
+                echo " <div class='alertt alert-visible'>
+                                <div class='econtent'>
+                                    <img src='../../../../public/assets/images/warning.svg' alt='warning'>
+                                    <div class='text'>
+                                        $msg
+                                    </div>
+                                </div>
+                                <img src='../../../../public/assets/images/close.svg' alt='close' class='alert-close'>
+                            </div>";
+                unset($_SESSION['error']);
         }?>
     </body>
-    <script src="../../js/hm_dashboard.js"></script>
+    <script src="../../../../public/assets/js/hm_dashboard.js"></script>
+    <script src="../../../../public/assets/js/toast.js"></script>
 </html>
 	<?php
 }

@@ -1,8 +1,8 @@
 <?php
+include '../../../config/dbcon.php';
 session_start();
-include '../../include/dbcon.php';
 if (isset($_SESSION["sessionId"]) != session_id()) {
-    header("Location: ../login.php");
+    header("Location: ../login/login.php");
     die();
 }
 else
@@ -22,8 +22,8 @@ else
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>E Ward</title>
-        <link rel="shortcut icon" href="../../images/fav.svg" type="image/x-icon">
-        <link rel="stylesheet" href="../../styles/hm_dashbored.css">
+        <link rel="shortcut icon" href="../../../../public/assets/images/fav.svg" type="image/x-icon">
+        <link rel="stylesheet" href="../../../../public/assets/css/house_member/hm_dashbored.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     </head>
@@ -31,7 +31,7 @@ else
         <section class="main">
             <!-- ==========Sidebar============= -->
             <?php
-                include '../../include/house_member/sidebar_hm_houseupdate.php'
+                include '../../layout/house_member/sidebar_hm_houseupdate.php'
             ?>
             <!-- ==========Sidebar End============= -->
                 
@@ -50,12 +50,12 @@ else
                     </div>
 
                     <?php
-                        $query="SELECT * FROM `tbl_house` WHERE `ward_no`=$wardno and `house_no`=$houseno";
+                        $query="SELECT `ward_no`, `house_name`, `house_no`, `locality`, `post_office`, `ration_no` FROM `tbl_house` WHERE `ward_no`=$wardno and `house_no`=$houseno";
                         $result=mysqli_query($conn,$query);
                         while($row=mysqli_fetch_array($result)){
                     ?>
 
-                    <form id="reg-form" action="../../php/auth.php" method="post" enctype="multipart/form-data">
+                    <form id="reg-form" action="../../../model/house_member/update_house_details.php" method="post" enctype="multipart/form-data">
                         <div class="inputs">
                             <input type="text" name="wardno" value="<?php echo $row['ward_no']; ?>" style="display: none;">
                             <div class="input housename">
@@ -121,21 +121,35 @@ else
             </div>
         </section>
         <?php
-            if (isset($_SESSION['loginMessage'])) {
-                $msg=$_SESSION['loginMessage'];
+            if (isset($_SESSION['success'])) {
+                $msg=$_SESSION['success'];
                 echo " <div class='alertt alert-visible' style='border-left: 10px solid #1BBD2B;'>
                             <div class='econtent'>
-                                <img src='../../images/check.svg' alt='success'>
+                                <img src='../../../../public/assets/images/check.svg' alt='success'>
                                 <div class='text'>
                                     $msg
                                 </div>
                             </div>
-                            <img src='../../images/close.svg' alt='close' class='alert-close'>
+                            <img src='../../../../public/assets/images/close.svg' alt='close' class='alert-close'>
                         </div>";
-                unset($_SESSION['loginMessage']);
+                unset($_SESSION['success']);
         }?>
-    <script src="../../js/update_house_details.js"></script>
-    <script src="../../js/toast.js"></script>
+        <?php
+            if (isset($_SESSION['error'])) {
+                $msg=$_SESSION['error'];
+                echo " <div class='alertt alert-visible'>
+                                <div class='econtent'>
+                                    <img src='../../../../public/assets/images/warning.svg' alt='warning'>
+                                    <div class='text'>
+                                        $msg
+                                    </div>
+                                </div>
+                                <img src='../../../../public/assets/images/close.svg' alt='close' class='alert-close'>
+                            </div>";
+                unset($_SESSION['error']);
+        }?>
+    <script src="../../../../public/assets/js/update_house_details.js"></script>
+    <script src="../../../../public/assets/js/toast.js"></script>
     </body>
 </html>
 	<?php

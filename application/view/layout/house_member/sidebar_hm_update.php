@@ -6,7 +6,7 @@
                 <div class="division"></div>
                 <div class="links">
                     <div class="menus">
-                        <a href="../../house_member/dashboard.php" class="menu">
+                        <a href="../../pages/house_member/dashboard.php" class="menu">
                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path class="str" d="M9.16667 2.75H2.75V9.16667H9.16667V2.75Z" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path class="str" d="M19.25 2.75H12.8333V9.16667H19.25V2.75Z" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -22,7 +22,7 @@
                             </svg>
                             <div class="text active">Update House Info</div>
                         </a>
-                        <a href="../../house_member/dashboard.php" class="menu">
+                        <a href="../../pages/house_member/dashboard.php" class="menu">
                             <svg width="24" height="22" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path class="str" d="M15.6667 19.25V17.4167C15.6667 16.4442 15.2804 15.5116 14.5927 14.8239C13.9051 14.1363 12.9725 13.75 12 13.75H5.58335C4.61089 13.75 3.67826 14.1363 2.99063 14.8239C2.303 15.5116 1.91669 16.4442 1.91669 17.4167V19.25" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path class="str" d="M8.79167 10.0833C10.8167 10.0833 12.4583 8.44171 12.4583 6.41667C12.4583 4.39162 10.8167 2.75 8.79167 2.75C6.76662 2.75 5.125 4.39162 5.125 6.41667C5.125 8.44171 6.76662 10.0833 8.79167 10.0833Z" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -33,7 +33,7 @@
                         </a>
                     </div>
                     <div class="logout">
-                        <a href="../../../application/controller/logout.php">
+                        <a href="../../../controller/logout.php">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path class="str" d="M9 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H9" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                 <path class="str" d="M16 17L21 12L16 7" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
