@@ -22,13 +22,13 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="../../../../public/assets/css/ward_member/wm_houses.css">
-        <title>Admin</title>
+        <title>Ward <?php echo $wardno; ?> || Houses</title>
     </head>
     <body>
 	    <section class="main">
             <!-- ==========Sidebar============= -->
             <?php
-                include '../../layout/ward_member/sidebar_houses.php'
+                include '../../layout/ward_member/sidebar_houses.php';
             ?>
             <!-- ==========Sidebar End============= -->
             <div class="container">

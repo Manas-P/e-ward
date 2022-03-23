@@ -1,27 +1,22 @@
 <?php
-    include '../include/dbcon.php';
+    include '../../config/dbcon.php';
     session_start();
+    extract($_POST);
     $id=$_GET['apprId'];
     
     // Generate Random Password
-    $length=8;
-    $generatedPassword='';
-    $validChar='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    while(0<$length--){
-        $generatedPassword.=$validChar[random_int(0,strlen($validChar)-1)];
-    }
+    include '../passwordGenerator.php';
+
     //============================Send Mail==================================
     //Get user mail
-    $userMail="SELECT * FROM `tbl_registration` WHERE `rid`='$id'";
+    $userMail="SELECT `email`, `houseno`, `fname`, `wardno`, `phno` FROM `tbl_registration` WHERE `rid`='$id'";
     $mailResult=mysqli_query($conn,$userMail);
-    while ($row = mysqli_fetch_assoc($mailResult))
-    {
-        $toMail= $row['email'];
-        $houseNo=$row['houseno'];
-        $name=$row['fname'];
-        $wardno=$row['wardno'];
-        $phno=$row['phno'];
-    }
+    $userData=mysqli_fetch_assoc($mailResult);
+    $toMail= $userData['email'];
+    $houseNo=$userData['houseno'];
+    $name=$userData['fname'];
+    $wardno=$userData['wardno'];
+    $phno=$userData['phno'];
     
     //Mail Informations
     $userid=$wardno . $houseNo . "0";
@@ -39,13 +34,13 @@
         $updateResult=mysqli_multi_query($conn,$updateQuery);
         if($updateResult){
             $_SESSION['success'] = "House approved";
-            header("Location: ../pages/ward_member/houses_request.php");
+            header("Location: ../../view/pages/ward_member/houses_request.php");
         }else{
-            $_SESSION['loginMessage'] = "Error in approval";
-            header("Location: ../pages/ward_member/houses_request.php");
+            $_SESSION['error'] = "Error in approval";
+            header("Location: ../../view/pages/ward_member/houses_request.php");
         }
     }else{
-        $_SESSION['loginMessage'] = "Mail not send";
-        header("Location: ../pages/ward_member/houses_request.php");
+        $_SESSION['error'] = "Mail not send";
+        header("Location: ../../view/pages/ward_member/houses_request.php");
     }
 ?>

@@ -1,9 +1,9 @@
 <?php
-    include '../../include/dbcon.php';
+    include '../../../config/dbcon.php';
     session_start();
     //Check login
     if (isset($_SESSION["sessionId"]) != session_id()) {
-        header("Location: ../login.php");
+        header("Location: ../login/login.php");
         die();
     }
     else
@@ -18,17 +18,17 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="../../images/fav.svg" type="image/x-icon">
-        <link rel="stylesheet" href="../../styles/wm_houses_req.css">
+        <link rel="shortcut icon" href="../../../../public/assets/images/fav.svg" type="image/x-icon">
+        <link rel="stylesheet" href="../../../../public/assets/css/ward_member/wm_houses_req.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-        <title>Admin</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <title>Ward <?php echo $wardno; ?> || House Requests</title>
     </head>
     <body>
         <section class="main">
             <!-- ==========Sidebar============= -->
             <?php
-                include '../../include/ward_member/sidebar_houses.php'
+            include '../../layout/ward_member/sidebar_houses.php';
             ?>
             <!-- ==========Sidebar End============= -->
             <div class="container">
@@ -66,8 +66,7 @@
                 </div>
                 <div class="datas">
                     <?php
-                        include '../../include/dbcon.php';
-                        $query="SELECT * FROM `tbl_registration` WHERE `status`=0 and `wardno`='$wardno'";
+                        $query="SELECT `fname`, `email`, `phno`, `houseno`, `taxreport`, `rid` FROM `tbl_registration` WHERE `status`=0 and `wardno`='$wardno'";
                         $result=mysqli_query($conn,$query);
                         $i=1;
                         while($row=mysqli_fetch_array($result)){
@@ -81,10 +80,10 @@
                                 <td width=154px><?php echo $row["phno"]; ?></td>
                                 <td width=180px><?php echo $row["houseno"]; ?></td>
                                 <td width=225px>
-                                    <a class="view" href="../../php/view_pdf.php?pdf=<?php echo $row["taxreport"]; ?>" target="_blank">View</a>
+                                    <a class="view" href="../../../model/viewPdf.php?pdf=<?php echo $row["taxreport"]; ?>" target="_blank">View</a>
                                 </td>
                                 <td width=95px>
-                                    <a href="../../php/approve.php?apprId=<?php echo $row['rid']; ?>" class="approve" onclick="loader()" >Approve</a>
+                                    <a href="../../../model/ward_member/approve_house.php?apprId=<?php echo $row['rid']; ?>" class="approve" onclick="loader()" >Approve</a>
                                 </td>
                                 <td>
                                     <a class="reject"  onclick="deleteItem(<?php $rejId=$row['rid']; echo $rejId; ?>)">Reject</a>
@@ -117,9 +116,9 @@
                 Reason for rejection
             </div>
             <div class="modal-close-btn">
-                <img src="../../images/close.svg" alt="close button">
+                <img src="../../../../public/assets/images/close.svg" alt="close button">
             </div>
-            <form action="../../php/auth.php" method="post" id="reject-form" enctype="multipart/form-data">
+            <form action="../../../model/ward_member/reject_house.php" method="post" id="reject-form" enctype="multipart/form-data">
             <input type="hidden" name="HiddenItemId" id="hiddenItemId">
                 <div class="inputs">
                     <textarea name="rej_reason" id="rejreason" rows="10"></textarea>
@@ -139,18 +138,18 @@
 
         <!-- Error Toast -->
         <?php
-        if (isset($_SESSION['loginMessage'])) {
-            $msg=$_SESSION['loginMessage'];
+        if (isset($_SESSION['error'])) {
+            $msg=$_SESSION['error'];
           echo " <div class='alertt alert-visible'> 
                         <div class='econtent'>
-                            <img src='../../images/warning.svg' alt='warning'>
+                            <img src='../../../../public/assets/images/warning.svg' alt='warning'>
                             <div class='text'>
                                 $msg
                             </div>
                         </div>
-                        <img src='../../images/close.svg' alt='close' class='alert-close'>
+                        <img src='../../../../public/assets/images/close.svg' alt='close' class='alert-close'>
                     </div>";
-          unset($_SESSION['loginMessage']);
+          unset($_SESSION['error']);
         }?>
 
         <!-- Success toast -->
@@ -159,41 +158,23 @@
                 $msg=$_SESSION['success'];
                 echo " <div class='alertt alert-visible' style='border-left: 10px solid #1BBD2B;'>
                             <div class='econtent'>
-                                <img src='../../images/check.svg' alt='success'>
+                                <img src='../../../../public/assets/images/check.svg' alt='success'>
                                 <div class='text'>
                                     $msg
                                 </div>
                             </div>
-                            <img src='../../images/close.svg' alt='close' class='alert-close'>
+                            <img src='../../../../public/assets/images/close.svg' alt='close' class='alert-close'>
                         </div>";
                 unset($_SESSION['success']);
         }?>
 
-        <!-- Ajax for request loading -->
-        <!-- <script>
-            function loader(){
-                $.ajax({
-                        url:"../../php/auth.php",
-                        method:"GET",
-                        
-                        beforeSend:function(){
-                            document.querySelector(".loading").classList.remove("loading-hide");
-                        },
-                        success:function(){
-                            document.querySelector(".loading").classList.add("loading-hide");
-                        }
-                    })
-            }
-        </script> -->
-
-            <!-- ==========Loading============= -->
-            <?php
-                include '../../include/loading.php'
-            ?>
-            <!-- ==========Loading End============= -->
-
-        <script src="../../js/reject_house_reg.js"></script>
-        <script src="../../js/toast.js"></script>
+        <!-- ==========Loading============= -->
+        <?php
+            include '../../includes/loading.php';
+        ?>
+        <!-- ==========Loading End============= -->
+        <script src="../../../../public/assets/js/reject_house_reg.js"></script>
+        <script src="../../../../public/assets/js/toast.js"></script>
     </body>
 </html>
 	<?php

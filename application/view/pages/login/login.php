@@ -197,7 +197,7 @@ session_start();
 
     <!--Google translater -->
     <?php
-        include '../include/google_translater.php'
+        include '../../layout/google_translater.php'
     ?>
     <script src="../../../../public/assets/js/login.js"></script>
     <script src="../../../../public/assets/js/toast.js"></script>
@@ -206,7 +206,7 @@ session_start();
         {  
            const wardNo=$('#ward-number').val();
              $.ajax({
-                url: "../php/auth.php",
+                url: "../../../model/registration.php",
                 type: "POST",
                 data: {
                     houseNo:house,
