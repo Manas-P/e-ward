@@ -1,8 +1,8 @@
 <?php
+include '../../../config/dbcon.php';
 session_start();
-include '../../include/dbcon.php';
 if (isset($_SESSION["sessionId"]) != session_id()) {
-    header("Location: ../login.php");
+    header("Location: ../login/login.php");
     die();
 }
 else
@@ -14,17 +14,16 @@ else
 
     //Fetch house member details
     $hm_id=$_GET['id'];
-    $hm_data="SELECT * FROM `tbl_house_member` WHERE `userid`='$hm_id'";
-    $dataResult=mysqli_query($conn,$hm_data);
-    while ($row = mysqli_fetch_assoc($dataResult))
-    {
-        $photo=$row['photo'];
-        $name= $row['fname'];
-        $dob=$row['dob'];
-        $blood=$row['blood_grp'];
-        $email=$row['email'];
-        $phno=$row['phno'];
-    }
+    $hm_data="SELECT `photo`, `fname`, `dob`, `blood_grp`, `email`, `phno` FROM `tbl_house_member` WHERE `userid`='$hm_id'";
+    $hm_dataResult=mysqli_query($conn,$hm_data);
+    $userData=mysqli_fetch_assoc($hm_dataResult);
+    $photo=$userData['photo'];
+    $name= $userData['fname'];
+    $dob=$userData['dob'];
+    $blood=$userData['blood_grp'];
+    $email=$userData['email'];
+    $phno=$userData['phno'];
+
     //check user
     $arr = str_split($user_id); // convert string to an array
     $chk= end($arr); // 0 = house head
@@ -42,14 +41,14 @@ else
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>E Ward</title>
-        <link rel="shortcut icon" href="../../images/fav.svg" type="image/x-icon">
-        <link rel="stylesheet" href="../../styles/hm_profile.css">
+        <link rel="shortcut icon" href="../../../../public/assets/images/fav.svg" type="image/x-icon">
+        <link rel="stylesheet" href="../../../../public/assets/css/house_member/hm_profile.css">
     </head>
     <body>
         <section class="main">
             <!-- ==========Sidebar============= -->
             <?php
-                include '../../include/house_member/sidebar_hm_add_members.php'
+                include '../../layout/house_member/sidebar_hm_add_members.php'
             ?>
             <!-- ==========Sidebar End============= -->
             <div class="container">
@@ -666,7 +665,7 @@ else
             </div>
         </section>
     </body>
-    <script src="../../js/hm_profile.js"></script>
+    <script src="../../../../public/assets/js/hm_profile.js"></script>
 </html>
 	<?php
 }
