@@ -7,6 +7,20 @@
     if(isset($_POST['add-hm'])){
         $houseno= $_SESSION['houseno'];
         $wardno= $_SESSION['wardno'];
+
+        //Input Sanitization
+        $hfname = trim($hfname); 
+        $hfname=mysqli_real_escape_string($conn,$hfname);
+        $hfname=filter_var($hfname, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
+
+        $hemail = trim($hemail);
+        $hemail=mysqli_real_escape_string($conn,$hemail);
+        $hemail=filter_var($hemail, FILTER_SANITIZE_EMAIL, FILTER_FLAG_STRIP_HIGH);
+
+        $hphno = trim($hphno);
+        $hphno=mysqli_real_escape_string($conn,$hphno);
+        $hphno=filter_var($hphno, FILTER_SANITIZE_NUMBER_INT, FILTER_FLAG_STRIP_HIGH);
+
         //Photo path upload
         $upload_dir = '../../../public/assets/images/';
         $file_tmpname = $_FILES['hphoto']['tmp_name'];
@@ -30,7 +44,7 @@
                 include '../passwordGenerator.php';
 
                 //Count number of users
-                $count="SELECT * FROM `tbl_house_member` WHERE `house_no`='$houseno'";
+                $count="SELECT `hm_id` FROM `tbl_house_member` WHERE `house_no`='$houseno'";
                 $countResult=mysqli_query($conn,$count);
                 $rowcount = mysqli_num_rows($countResult);
                 $rowcount+=1;
