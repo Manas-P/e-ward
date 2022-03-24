@@ -1,8 +1,8 @@
 <?php
+include '../../../config/dbcon.php';
 session_start();
-include '../../include/dbcon.php';
 if (isset($_SESSION["sessionId"]) != session_id()) {
-    header("Location: ../login.php");
+    header("Location: ../login/login.php");
     die();
 }
 else
@@ -27,8 +27,8 @@ else
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>E Ward</title>
-        <link rel="shortcut icon" href="../../images/fav.svg" type="image/x-icon">
-        <link rel="stylesheet" href="../../styles/hm_add_hm.css">
+        <link rel="shortcut icon" href="../../../../public/assets/images/fav.svg" type="image/x-icon">
+        <link rel="stylesheet" href="../../../../public/assets/css/house_member/hm_add_hm.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     </head>
@@ -36,7 +36,7 @@ else
         <section class="main">
             <!-- ==========Sidebar============= -->
             <?php
-                include '../../include/house_member/sidebar_hm_add_members.php'
+                include '../../layout/house_member/sidebar_hm_add_members.php'
             ?>
             <!-- ==========Sidebar End============= -->
             <div class="container">
@@ -66,9 +66,9 @@ else
                             }
                         ?>
 
-                        <!-- Fetch Ward Members -->
+                        <!-- Fetch House Members -->
                         <?php
-                            $fetchQuery="SELECT * FROM `tbl_house_member` WHERE `ward_no`='$wardno' and `house_no`='$houseno'";
+                            $fetchQuery="SELECT `userid`, `dob`, `photo`, `fname` FROM `tbl_house_member` WHERE `ward_no`='$wardno' and `house_no`='$houseno'";
                             $fetchResult=mysqli_query($conn,$fetchQuery);
                             if(mysqli_num_rows($fetchResult)>0){
                                 while($row = mysqli_fetch_assoc($fetchResult)){
@@ -111,10 +111,10 @@ else
                 Add house member
             </div>
             <div class="modal-close-btn">
-                <img src="../../images/close.svg" alt="close button">
+                <img src="../../../../public/assets/images/close.svg" alt="close button">
             </div>
             <!-- Add House Memeber -->
-            <form action="../../php/auth.php" method="post" id="add-house-member" enctype="multipart/form-data">
+            <form action="../../../model/house_member/add_house_member.php" method="post" id="add-house-member" enctype="multipart/form-data">
                 <input type="hidden" name="fname" value="<?php echo $fname ?>">
                 <div class="inputs">
                     <div class="input h-fullname">
@@ -174,22 +174,22 @@ else
             </form>
         </div>
 
-        <script src="../../js/hm_add_hm.js"></script>
+        <script src="../../../../public/assets/js/hm_add_hm.js"></script>
 
         <!-- Error Toast -->
         <?php
-        if (isset($_SESSION['loginMessage'])) {
-            $msg=$_SESSION['loginMessage'];
+        if (isset($_SESSION['error'])) {
+            $msg=$_SESSION['error'];
           echo " <div class='alertt alert-visible'>
                         <div class='econtent'>
-                            <img src='../../images/warning.svg' alt='warning'>
+                            <img src='../../../../public/assets/images/warning.svg' alt='warning'>
                             <div class='text'>
                                 $msg
                             </div>
                         </div>
-                        <img src='../../images/close.svg' alt='close' class='alert-close'>
+                        <img src='../../../../public/assets/images/close.svg' alt='close' class='alert-close'>
                     </div>";
-          unset($_SESSION['loginMessage']);
+          unset($_SESSION['error']);
         }?>
 
         <!-- Success toast -->
@@ -198,12 +198,12 @@ else
                 $msg=$_SESSION['success'];
                 echo " <div class='alertt alert-visible' style='border-left: 10px solid #1BBD2B;'>
                             <div class='econtent'>
-                                <img src='../../images/check.svg' alt='success'>
+                                <img src='../../../../public/assets/images/check.svg' alt='success'>
                                 <div class='text'>
                                     $msg
                                 </div>
                             </div>
-                            <img src='../../images/close.svg' alt='close' class='alert-close'>
+                            <img src='../../../../public/assets/images/close.svg' alt='close' class='alert-close'>
                         </div>";
                 unset($_SESSION['success']);
         }?>
@@ -211,12 +211,11 @@ else
 
             <!-- ==========Loading============= -->
             <?php
-                include '../../include/loading.php'
+                include '../../includes/loading.php';
             ?>
             <!-- ==========Loading End============= -->
         
-
-        <script src="../../js/toast.js"></script>
+        <script src="../../../../public/assets/js/toast.js"></script>
     </body>
     
 </html>
