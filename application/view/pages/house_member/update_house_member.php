@@ -1,8 +1,8 @@
 <?php
+include '../../../config/dbcon.php';
 session_start();
-include '../../include/dbcon.php';
 if (isset($_SESSION["sessionId"]) != session_id()) {
-    header("Location: ../login.php");
+    header("Location: ../login/login.php");
     die();
 }
 else
@@ -14,12 +14,10 @@ else
 
     //Fetch house member details
     $hm_id=$_GET['id'];
-    $hm_data="SELECT * FROM `tbl_house_member` WHERE `userid`='$hm_id'";
+    $hm_data="SELECT `fname` FROM `tbl_house_member` WHERE `userid`='$hm_id'";
     $dataResult=mysqli_query($conn,$hm_data);
-    while ($row = mysqli_fetch_assoc($dataResult))
-    {
-        $name=$row['fname'];
-    }
+    $row = mysqli_fetch_assoc($dataResult);
+    $name=$row['fname'];
 
     //slice first name of user
     $slices=explode(" ", $fname);
@@ -32,17 +30,17 @@ else
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>E Ward</title>
-        <link rel="shortcut icon" href="../../images/fav.svg" type="image/x-icon">
-        <link rel="stylesheet" href="../../styles/hm_profile_update.css">
+        <link rel="shortcut icon" href="../../../../public/assets/images/fav.svg" type="image/x-icon">
+        <link rel="stylesheet" href="../../../../public/assets/css/house_member/hm_profile_update.css">
     </head>
     <body>
         <section class="main">
             <!-- ==========Sidebar============= -->
             <?php
-                include '../../include/house_member/sidebar_hm_add_members.php'
+                include '../../layout/house_member/sidebar_hm_add_members.php'
             ?>
             <!-- ==========Sidebar End============= -->
-            <form action="../../php/auth.php" id="reg-form" method="post" enctype="multipart/form-data">
+            <form action="../../../model/house_member/update_member_details.php" id="reg-form" method="post" enctype="multipart/form-data">
                 <div class="container">
 
                     <div class="left">
@@ -438,8 +436,8 @@ else
             </form>
         </section>
 
-        <script src="../../js/hm_profile.js"></script>
-        <script src="../../js/update_hm_details.js"></script>
+        <script src="../../../../public/assets/js/hm_profile.js"></script>
+        <script src="../../../../public/assets/js/update_hm_details.js"></script>
     </body>
 </html>
 	<?php

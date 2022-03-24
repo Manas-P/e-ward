@@ -12,5 +12,5 @@
     // Send the file to the browser.
     readfile($pdf);
 ?>
-<!-- <a href="../../public/assets/documents/taxreport/"></a>
-../../public/assets/documents/taxreport/1647663153.pdf -->
+<!-- ../../public/assets/documents/
+../../../public/assets/documents/ -->
