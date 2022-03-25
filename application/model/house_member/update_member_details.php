@@ -3,8 +3,25 @@
     session_start();
     extract($_POST);
 
-    //Update house member details
+        //Update house member details
         if(isset($_POST['hm-up-btn'])){
+
+            //Input Sanitization
+            $hmufname = trim($hmufname); 
+            $hmufname=mysqli_real_escape_string($conn,$hmufname);
+            $hmufname=filter_var($hmufname, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
+
+            $hmuemail = trim($hmuemail);
+            $hmuemail=mysqli_real_escape_string($conn,$hmuemail);
+            $hmuemail=filter_var($hmuemail, FILTER_SANITIZE_EMAIL, FILTER_FLAG_STRIP_HIGH);
+
+            $hmuphno = trim($hmuphno);
+            $hmuphno=mysqli_real_escape_string($conn,$hmuphno);
+            $hmuphno=filter_var($hmuphno, FILTER_SANITIZE_NUMBER_INT, FILTER_FLAG_STRIP_HIGH);
+
+            $hmuaadharno = trim($hmuaadharno);
+            $hmuaadharno=mysqli_real_escape_string($conn,$hmuaadharno);
+            $hmuaadharno=filter_var($hmuaadharno, FILTER_SANITIZE_NUMBER_INT, FILTER_FLAG_STRIP_HIGH);
 
             //check empty file 
             //profile photo
