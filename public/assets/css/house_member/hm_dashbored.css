@@ -1,0 +1,683 @@
+@font-face {
+  font-family: "Gilroy_R";
+  src: url(../../fonts/Gilroy-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Gilroy_M";
+  src: url(../../fonts/Gilroy-Medium.ttf);
+}
+
+@font-face {
+  font-family: "Gilroy_B";
+  src: url(../../fonts/Gilroy-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Gilroy_SB";
+  src: url(../../fonts/Gilroy-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: "Gilroy_Italics_M";
+  src: url(../../fonts/Gilroy-MediumItalic.ttf);
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  color: #b1b1b1;
+  padding-right: 16px;
+}
+
+::-webkit-file-upload-button {
+  background: #eeecfc;
+  border-radius: 6px;
+  border: none;
+  margin-right: 20px;
+  outline: none;
+}
+
+.disabled {
+  opacity: 40%;
+  pointer-events: none;
+}
+
+.cursor-disable {
+  cursor: not-allowed;
+}
+
+.error-visible {
+  visibility: visible;
+}
+
+.error-hidden {
+  visibility: hidden;
+}
+
+::-webkit-input-placeholder {
+  color: #b1b1b1;
+}
+
+:-ms-input-placeholder {
+  color: #b1b1b1;
+}
+
+::-ms-input-placeholder {
+  color: #b1b1b1;
+}
+
+::placeholder {
+  color: #b1b1b1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: #f9f9f9;
+}
+
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main .sidebar {
+  width: 350px;
+  height: 100vh;
+  overflow-y: hidden;
+  background: #fff;
+  -webkit-box-shadow: 5px 0px 20px rgba(0, 0, 0, 0.01);
+          box-shadow: 5px 0px 20px rgba(0, 0, 0, 0.01);
+  border-radius: 0px 30px 30px 0px;
+  padding: 0px 36px 42px 36px;
+}
+
+.main .sidebar .brand {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 32px 0px;
+}
+
+.main .sidebar .brand img {
+  width: 151px;
+  height: auto;
+}
+
+.main .sidebar .brand .user {
+  font-family: "Gilroy_SB";
+  font-size: 16px;
+  color: #5744e3;
+  padding: 3px 14px 3px 14px;
+  background: #eeecfc;
+  border-radius: 14px;
+}
+
+.main .sidebar .division {
+  height: 2px;
+  width: 100%;
+  border-radius: 2px;
+  background: #eeecfc;
+}
+
+.main .sidebar .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 82%;
+  margin: 48px 0 42px 0;
+}
+
+.main .sidebar .links .menus {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 20px;
+}
+
+.main .sidebar .links .menus .menu {
+  text-decoration: none;
+  cursor: pointer;
+  padding: 12px 0 12px 12px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+  border-radius: 10px;
+}
+
+.main .sidebar .links .menus .menu.active {
+  background: #5744e3;
+}
+
+.main .sidebar .links .menus .menu:hover {
+  background: #5744e3;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+.main .sidebar .links .menus .menu:hover .text {
+  color: #fff;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.main .sidebar .links .menus .menu:hover svg .str {
+  stroke: #fff;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.main .sidebar .links .menus .menu svg {
+  height: 24px;
+  width: 24px;
+}
+
+.main .sidebar .links .menus .menu svg .active {
+  stroke: #fff;
+}
+
+.main .sidebar .links .menus .menu .text {
+  font-family: "Gilroy_SB";
+  font-size: 20px;
+  color: #1e1e1e;
+}
+
+.main .sidebar .links .menus .menu .text.active {
+  color: #fff;
+}
+
+.main .sidebar .logout a {
+  text-decoration: none;
+  cursor: pointer;
+  padding: 14px 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+  border-radius: 10px;
+  background: #eeecfc;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main .sidebar .logout a:hover {
+  background: #5744e3;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+.main .sidebar .logout a:hover .text {
+  color: #fff;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.main .sidebar .logout a:hover svg .str {
+  stroke: #fff;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.main .sidebar .logout a svg {
+  height: 24px;
+  width: 24px;
+}
+
+.main .sidebar .logout a .text {
+  font-family: "Gilroy_SB";
+  font-size: 20px;
+  color: #1e1e1e;
+}
+
+.main .container {
+  margin: 46px 63px 0 calc(476px - 63px);
+  width: calc(100% - 476px);
+}
+
+.main .container .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main .container .header .title {
+  font-family: Gilroy_SB;
+  font-size: 38px;
+}
+
+.main .container .update-form {
+  margin: 60px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 48px;
+  background: #fff;
+  width: 556px;
+  -webkit-box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.02);
+          box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.02);
+  border-radius: 16px;
+}
+
+.main .container .update-form .register-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 12px;
+}
+
+.main .container .update-form .register-text .title {
+  font-family: "Gilroy_SB";
+  font-size: 28px;
+}
+
+.main .container .update-form .inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 32px;
+  margin-top: 40px;
+}
+
+.main .container .update-form .inputs .input {
+  width: 460px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 8px;
+}
+
+.main .container .update-form .inputs .input .label {
+  font-size: 16px;
+  font-family: "Gilroy_M";
+}
+
+.main .container .update-form .inputs .input input[type="text"],
+.main .container .update-form .inputs .input input[type="date"],
+.main .container .update-form .inputs .input input[type="file"],
+.main .container .update-form .inputs .input input[type="number"],
+.main .container .update-form .inputs .input input[type="password"] {
+  width: 100%;
+  height: 53px;
+  font-size: 18px;
+  font-family: "Gilroy_M";
+  padding: 16px 0px 16px 16px;
+  border-radius: 10px;
+  border: 1px solid #c1c1c1;
+  color: #1e1e1e;
+  outline: none;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.main .container .update-form .inputs .input input[type="text"]:focus,
+.main .container .update-form .inputs .input input[type="date"]:focus,
+.main .container .update-form .inputs .input input[type="file"]:focus,
+.main .container .update-form .inputs .input input[type="number"]:focus,
+.main .container .update-form .inputs .input input[type="password"]:focus {
+  border: 1px solid #1e1e1e;
+}
+
+.main .container .update-form .inputs .input .error {
+  position: absolute;
+  margin-top: 84px;
+  color: #ec0000;
+  font-family: "Gilroy_M";
+  font-size: 14px;
+  width: 460px;
+}
+
+.main .container .update-form .radios {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 32px;
+          column-gap: 32px;
+  font-family: "Gilroy_M";
+  font-size: 18px;
+  color: #1e1e1e;
+}
+
+.main .container .update-form .radios label {
+  cursor: pointer;
+}
+
+.main .container .update-form .button .primary-button {
+  background: #5744e3;
+  color: #fff;
+  font-family: "Gilroy_B";
+  font-size: 18px;
+  padding: 16px 0;
+  border: none;
+  outline: none;
+  width: 460px;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+}
+
+.main .container .update-form .button .primary-button:active {
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
+  background: #6756eb;
+}
+
+.dashboard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.dashboard .sidebar {
+  width: 350px;
+  height: 100vh;
+  overflow-y: hidden;
+  background: #fff;
+  -webkit-box-shadow: 5px 0px 20px rgba(0, 0, 0, 0.01);
+          box-shadow: 5px 0px 20px rgba(0, 0, 0, 0.01);
+  border-radius: 0px 30px 30px 0px;
+  padding: 0px 36px 42px 36px;
+}
+
+.dashboard .sidebar .brand {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 32px 0px;
+}
+
+.dashboard .sidebar .brand img {
+  width: 151px;
+  height: auto;
+}
+
+.dashboard .sidebar .brand .user {
+  font-family: "Gilroy_SB";
+  font-size: 16px;
+  color: #5744e3;
+  padding: 3px 14px 3px 14px;
+  background: #eeecfc;
+  border-radius: 14px;
+}
+
+.dashboard .sidebar .division {
+  height: 2px;
+  width: 100%;
+  border-radius: 2px;
+  background: #eeecfc;
+}
+
+.dashboard .sidebar .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 82%;
+  margin: 48px 0 42px 0;
+}
+
+.dashboard .sidebar .links .menus {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 20px;
+}
+
+.dashboard .sidebar .links .menus .menu {
+  text-decoration: none;
+  cursor: pointer;
+  padding: 12px 0 12px 12px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+  border-radius: 10px;
+}
+
+.dashboard .sidebar .links .menus .menu.active {
+  background: #5744e3;
+}
+
+.dashboard .sidebar .links .menus .menu:hover {
+  background: #5744e3;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+.dashboard .sidebar .links .menus .menu:hover .text {
+  color: #fff;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.dashboard .sidebar .links .menus .menu:hover svg .str {
+  stroke: #fff;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.dashboard .sidebar .links .menus .menu svg {
+  height: 24px;
+  width: 24px;
+}
+
+.dashboard .sidebar .links .menus .menu svg .active {
+  stroke: #fff;
+}
+
+.dashboard .sidebar .links .menus .menu .text {
+  font-family: "Gilroy_SB";
+  font-size: 20px;
+  color: #1e1e1e;
+}
+
+.dashboard .sidebar .links .menus .menu .text.active {
+  color: #fff;
+}
+
+.dashboard .sidebar .logout a {
+  text-decoration: none;
+  cursor: pointer;
+  padding: 14px 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+  border-radius: 10px;
+  background: #eeecfc;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.dashboard .sidebar .logout a:hover {
+  background: #5744e3;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+.dashboard .sidebar .logout a:hover .text {
+  color: #fff;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.dashboard .sidebar .logout a:hover svg .str {
+  stroke: #fff;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.dashboard .sidebar .logout a svg {
+  height: 24px;
+  width: 24px;
+}
+
+.dashboard .sidebar .logout a .text {
+  font-family: "Gilroy_SB";
+  font-size: 20px;
+  color: #1e1e1e;
+}
+
+.dashboard .container {
+  margin: 46px 63px 0 calc(476px - 63px);
+  width: calc(100% - 476px);
+}
+
+.dashboard .container .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.dashboard .container .header .title {
+  font-family: Gilroy_SB;
+  font-size: 38px;
+}
+
+.alertt {
+  background: #fff;
+  padding: 18px 18px 18px 24px;
+  -webkit-box-shadow: 0px 7px 16px rgba(0, 0, 0, 0.16);
+          box-shadow: 0px 7px 16px rgba(0, 0, 0, 0.16);
+  border-radius: 6px;
+  border-left: 10px solid #ec0000;
+  position: fixed;
+  bottom: 5%;
+  right: 4%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 32px;
+          column-gap: 32px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 4;
+}
+
+.alertt .econtent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.alertt .econtent img {
+  width: 22px;
+  height: auto;
+}
+
+.alertt .econtent .text {
+  font-family: "Gilroy_M";
+  font-size: 18px;
+}
+
+.alertt .alert-close {
+  width: 16px;
+  height: auto;
+  cursor: pointer;
+}
+
+.alert-hidden {
+  visibility: hidden;
+}
+
+.alert-visible {
+  visibility: visible;
+}
+/*# sourceMappingURL=hm_dashbored.css.map */

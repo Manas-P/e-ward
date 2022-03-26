@@ -1,0 +1,733 @@
+@font-face {
+  font-family: "Gilroy_R";
+  src: url(../../fonts/Gilroy-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Gilroy_M";
+  src: url(../../fonts/Gilroy-Medium.ttf);
+}
+
+@font-face {
+  font-family: "Gilroy_B";
+  src: url(../../fonts/Gilroy-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Gilroy_SB";
+  src: url(../../fonts/Gilroy-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: "Gilroy_Italics_M";
+  src: url(../../fonts/Gilroy-MediumItalic.ttf);
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  color: #b1b1b1;
+  padding-right: 16px;
+}
+
+::-webkit-file-upload-button {
+  background: #eeecfc;
+  border-radius: 6px;
+  border: none;
+  margin-right: 20px;
+  outline: none;
+}
+
+.disabled {
+  opacity: 40%;
+  pointer-events: none;
+}
+
+.cursor-disable {
+  cursor: not-allowed;
+}
+
+.error-visible {
+  visibility: visible;
+}
+
+.error-hidden {
+  visibility: hidden;
+}
+
+::-webkit-input-placeholder {
+  color: #b1b1b1;
+}
+
+:-ms-input-placeholder {
+  color: #b1b1b1;
+}
+
+::-ms-input-placeholder {
+  color: #b1b1b1;
+}
+
+::placeholder {
+  color: #b1b1b1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.main {
+  background-image: url("../images/bg.png");
+  background-color: linear-gradient(110.33deg, #ffffff 0%, #ededed 107.08%);
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}
+
+.main .sections {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.main .sections .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 26px;
+}
+
+.main .sections .content .logo {
+  width: 310px;
+}
+
+.main .sections .content .description {
+  font-family: "Gilroy_M";
+  font-size: 24px;
+  width: 852px;
+  font-weight: 500;
+  line-height: 36px;
+  color: #1e1e1e;
+}
+
+.main .sections .content .connection {
+  width: 872px;
+}
+
+.main .sections .form .box {
+  padding: 62px 48px 70px 48px;
+  background: #fff;
+  -webkit-box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.04), 20px 40px 80px rgba(0, 0, 0, 0.1);
+          box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.04), 20px 40px 80px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+}
+
+.main .sections .form .box .login-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 12px;
+}
+
+.main .sections .form .box .login-text .title {
+  font-family: "Gilroy_B";
+  font-size: 36px;
+}
+
+.main .sections .form .box .login-text .sub-title {
+  font-family: "Gilroy_M";
+  font-size: 16px;
+  color: #8b8b8b;
+  width: 460px;
+}
+
+.main .sections .form .box .inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 32px;
+  margin-top: 40px;
+}
+
+.main .sections .form .box .inputs .input {
+  width: 460px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 8px;
+}
+
+.main .sections .form .box .inputs .input .label {
+  font-size: 16px;
+  font-family: "Gilroy_M";
+}
+
+.main .sections .form .box .inputs .input input[type="text"],
+.main .sections .form .box .inputs .input input[type="date"],
+.main .sections .form .box .inputs .input input[type="file"],
+.main .sections .form .box .inputs .input input[type="number"],
+.main .sections .form .box .inputs .input input[type="password"] {
+  width: 100%;
+  height: 53px;
+  font-size: 18px;
+  font-family: "Gilroy_M";
+  padding: 16px 0px 16px 16px;
+  border-radius: 10px;
+  border: 1px solid #c1c1c1;
+  color: #1e1e1e;
+  outline: none;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.main .sections .form .box .inputs .input input[type="text"]:focus,
+.main .sections .form .box .inputs .input input[type="date"]:focus,
+.main .sections .form .box .inputs .input input[type="file"]:focus,
+.main .sections .form .box .inputs .input input[type="number"]:focus,
+.main .sections .form .box .inputs .input input[type="password"]:focus {
+  border: 1px solid #1e1e1e;
+}
+
+.main .sections .form .box .inputs .input .error {
+  position: absolute;
+  margin-top: 84px;
+  color: #ec0000;
+  font-family: "Gilroy_M";
+  font-size: 14px;
+  width: 460px;
+}
+
+.main .sections .form .box .sub {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 18px;
+}
+
+.main .sections .form .box .sub .checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 8px;
+          column-gap: 8px;
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+}
+
+.main .sections .form .box .sub .checkbox input[type="checkbox"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  height: 18px;
+  width: 18px;
+  border-radius: 4px;
+  border: 1px solid #888888;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  outline: none;
+}
+
+.main .sections .form .box .sub .checkbox input[type="checkbox"]:after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 600;
+  content: "\f00c";
+  font-size: 12px;
+  color: #fff;
+  display: none;
+}
+
+.main .sections .form .box .sub .checkbox input[type="checkbox"]:checked {
+  background: #5744e3;
+  border: 1px solid #5744e3;
+}
+
+.main .sections .form .box .sub .checkbox input[type="checkbox"]:checked:after {
+  display: block;
+}
+
+.main .sections .form .box .sub .checkbox label {
+  font-family: "Gilroy_SB";
+  font-size: 16px;
+  color: #1e1e1e;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.main .sections .form .box .sub .forgot {
+  font-family: "Gilroy_SB";
+  font-size: 16px;
+  color: #5744e3;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  text-decoration: none;
+}
+
+.main .sections .form .box .sub .forgot:hover {
+  text-decoration: underline;
+}
+
+.main .sections .form .box .buttons {
+  margin-top: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  row-gap: 28px;
+}
+
+.main .sections .form .box .buttons .primary-button {
+  background: #5744e3;
+  color: #fff;
+  font-family: "Gilroy_B";
+  font-size: 18px;
+  padding: 16px 0;
+  border: none;
+  outline: none;
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+}
+
+.main .sections .form .box .buttons .primary-button:active {
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
+  background: #6756eb;
+}
+
+.main .sections .form .box .buttons .or {
+  font-family: "Gilroy_M";
+  font-weight: 500;
+  font-size: 16px;
+  color: #1e1e1e;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.main .sections .form .box .buttons .or .line {
+  height: 1px;
+  width: 210px;
+  background: #c4c4c4;
+}
+
+.main .sections .form .box .buttons .secondary-button {
+  background: #fff;
+  color: #5744e3;
+  font-family: "Gilroy_B";
+  font-size: 18px;
+  padding: 16px 0;
+  border: 2px solid #5744e3;
+  outline: none;
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+}
+
+.main .sections .form .box .buttons .secondary-button:hover {
+  background: #f4f3ff;
+}
+
+.main .sections .form .box .buttons .secondary-button:active {
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
+}
+
+.box2 {
+  opacity: 0;
+  display: none;
+  padding: 62px 48px 70px 48px;
+  background: #fff;
+  -webkit-box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.04), 20px 40px 80px rgba(0, 0, 0, 0.1);
+          box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.04), 20px 40px 80px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+}
+
+.box2 .register-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 12px;
+}
+
+.box2 .register-text .title {
+  font-family: "Gilroy_B";
+  font-size: 36px;
+}
+
+.box2 .register-text .sub-title {
+  font-family: "Gilroy_M";
+  font-size: 16px;
+  color: #8b8b8b;
+}
+
+.box2 .register-text .sub-title a {
+  margin-left: 6px;
+  font-family: "Gilroy_SB";
+  font-size: 16px;
+  color: #5744e3;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  text-decoration: none;
+}
+
+.box2 .inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 32px;
+  margin-top: 40px;
+}
+
+.box2 .inputs .input {
+  width: 460px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 8px;
+}
+
+.box2 .inputs .input .label {
+  font-size: 16px;
+  font-family: "Gilroy_M";
+}
+
+.box2 .inputs .input input[type="text"],
+.box2 .inputs .input input[type="date"],
+.box2 .inputs .input input[type="file"],
+.box2 .inputs .input input[type="number"],
+.box2 .inputs .input input[type="password"] {
+  width: 100%;
+  height: 53px;
+  font-size: 18px;
+  font-family: "Gilroy_M";
+  padding: 16px 0px 16px 16px;
+  border-radius: 10px;
+  border: 1px solid #c1c1c1;
+  color: #1e1e1e;
+  outline: none;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.box2 .inputs .input input[type="text"]:focus,
+.box2 .inputs .input input[type="date"]:focus,
+.box2 .inputs .input input[type="file"]:focus,
+.box2 .inputs .input input[type="number"]:focus,
+.box2 .inputs .input input[type="password"]:focus {
+  border: 1px solid #1e1e1e;
+}
+
+.box2 .inputs .input .error {
+  position: absolute;
+  margin-top: 84px;
+  color: #ec0000;
+  font-family: "Gilroy_M";
+  font-size: 14px;
+  width: 460px;
+}
+
+.box2 .inputs .half-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.box2 .inputs .half-input .input {
+  width: 216px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 8px;
+}
+
+.box2 .inputs .half-input .input .label {
+  font-size: 16px;
+  font-family: "Gilroy_M";
+}
+
+.box2 .inputs .half-input .input input[type="text"],
+.box2 .inputs .half-input .input input[type="date"],
+.box2 .inputs .half-input .input input[type="file"],
+.box2 .inputs .half-input .input input[type="number"],
+.box2 .inputs .half-input .input input[type="password"] {
+  width: 100%;
+  height: 53px;
+  font-size: 18px;
+  font-family: "Gilroy_M";
+  padding: 16px 0px 16px 16px;
+  border-radius: 10px;
+  border: 1px solid #c1c1c1;
+  color: #1e1e1e;
+  outline: none;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.box2 .inputs .half-input .input input[type="text"]:focus,
+.box2 .inputs .half-input .input input[type="date"]:focus,
+.box2 .inputs .half-input .input input[type="file"]:focus,
+.box2 .inputs .half-input .input input[type="number"]:focus,
+.box2 .inputs .half-input .input input[type="password"]:focus {
+  border: 1px solid #1e1e1e;
+}
+
+.box2 .inputs .half-input .input .error {
+  position: absolute;
+  margin-top: 84px;
+  color: #ec0000;
+  font-family: "Gilroy_M";
+  font-size: 14px;
+  width: 460px;
+}
+
+.box2 .button .primary-button {
+  background: #5744e3;
+  color: #fff;
+  font-family: "Gilroy_B";
+  font-size: 18px;
+  padding: 16px 0;
+  border: none;
+  outline: none;
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+}
+
+.box2 .button .primary-button:active {
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
+  background: #6756eb;
+}
+
+.box2 .message {
+  font-family: "Gilroy_Italics_M";
+  font-size: 14px;
+  margin-top: -8px;
+}
+
+.box-visible {
+  opacity: 1;
+  -webkit-transform: 1;
+          transform: 1;
+  pointer-events: visible;
+  display: block;
+}
+
+.box-hide {
+  opacity: 0;
+  -webkit-transform: 0.5;
+          transform: 0.5;
+  pointer-events: none;
+  display: none;
+}
+
+.box2-visible {
+  opacity: 1;
+  -webkit-transform: 1;
+          transform: 1;
+  pointer-events: visible;
+  display: block;
+}
+
+.box2-hide {
+  opacity: 0;
+  -webkit-transform: 0.5;
+          transform: 0.5;
+  pointer-events: none;
+  display: none;
+}
+
+.email-h {
+  color: #1e1e1e;
+  font-family: "Gilroy_SB";
+}
+
+.alertt {
+  background: #fff;
+  padding: 18px 18px 18px 24px;
+  -webkit-box-shadow: 0px 7px 16px rgba(0, 0, 0, 0.16);
+          box-shadow: 0px 7px 16px rgba(0, 0, 0, 0.16);
+  border-radius: 6px;
+  border-left: 10px solid #ec0000;
+  position: fixed;
+  bottom: 5%;
+  right: 4%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 32px;
+          column-gap: 32px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 4;
+}
+
+.alertt .econtent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.alertt .econtent img {
+  width: 22px;
+  height: auto;
+}
+
+.alertt .econtent .text {
+  font-family: "Gilroy_M";
+  font-size: 18px;
+}
+
+.alertt .alert-close {
+  width: 16px;
+  height: auto;
+  cursor: pointer;
+}
+
+.alert-hidden {
+  visibility: hidden;
+}
+
+.alert-visible {
+  visibility: visible;
+}
+
+.loading {
+  display: block;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.loading .loading-overlay {
+  position: fixed;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.096);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+
+.loading .gif {
+  width: 100%;
+  height: auto;
+}
+
+.loading .gif img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 300px;
+}
+
+.loading-hide {
+  display: none;
+}
+/*# sourceMappingURL=style.css.map */
