@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 12, 2022 at 09:24 PM
+-- Generation Time: Mar 26, 2022 at 08:22 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.25
 
@@ -88,7 +88,9 @@ INSERT INTO `tbl_edu_bg` (`id`, `userid`, `hs`, `hss`, `diploma`, `ug`, `pg`) VA
 (28, 2136, '0', '0', '0', '0', '0'),
 (29, 2137, '0', '0', '0', '0', '0'),
 (30, 2530, '0', '0', '0', '0', '0'),
-(31, 2430, '0', '0', '0', '0', '0');
+(31, 2430, '0', '0', '0', '0', '0'),
+(32, 2160, '0', '0', '0', '0', '0'),
+(33, 2162, '0', '0', '0', '0', '0');
 
 -- --------------------------------------------------------
 
@@ -132,10 +134,11 @@ INSERT INTO `tbl_house` (`hid`, `house_name`, `house_no`, `ward_no`, `locality`,
 (7, 'abcd villa', 5, 2, 'abcdefgh', 'abcdefgh', 4565434567, 'APL'),
 (17, 'New housee', 34, 2, 'New locality', 'New post office', 5685458745, 'APL'),
 (18, 'new reg ho', 18, 2, 'new', 'new', 8459658745, 'APL'),
-(19, 'Kunni House', 23, 2, 'Miami, Street 23', 'Miami PO', 2154785632, 'APL'),
+(19, 'Kunni House', 23, 2, 'Miami, Street 23, Near beach', 'Miami PO', 2154785632, 'APL'),
 (20, 'Thenamara', 54, 2, 'Kannimala', 'Kanimala PO', 2156325454, 'APL'),
 (21, 'test new', 0, 2, 'qwe', 'qwe', 9854589562, 'APL'),
-(22, 'qwe', 13, 2, 'qwe', 'qwe', 5878458965, 'APL');
+(22, 'qwe', 13, 2, 'qwe', 'qwe', 5878458965, 'APL'),
+(23, 'new chk house', 16, 2, 'Kottooli, kozhikode, kerala, india, earth', 'new house space PO', 9545874541, 'APL');
 
 -- --------------------------------------------------------
 
@@ -152,7 +155,7 @@ CREATE TABLE `tbl_house_member` (
   `phno` bigint(13) NOT NULL,
   `blood_grp` varchar(5) NOT NULL DEFAULT 'NA',
   `dob` date NOT NULL,
-  `photo` varchar(100) NOT NULL DEFAULT '../images/user-profile-placeholder.png',
+  `photo` varchar(100) NOT NULL DEFAULT '../../../../public/assets/images/user-profile-placeholder.png',
   `userid` int(50) NOT NULL DEFAULT 0,
   `password` varchar(50) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -176,7 +179,7 @@ INSERT INTO `tbl_house_member` (`hm_id`, `ward_no`, `house_no`, `fname`, `email`
 (26, 2, 23, 'Rubin Siby', 'rubinsibyy@gmail.com', 9565878452, 'B+', '1988-06-15', '../images/uploads/photos/1644834244.png', 2230, 'Qerty@123'),
 (27, 2, 24, 'Martin Garrix', 'Not entered', 9565878457, 'NA', '0000-00-00', '../images/user-profile-placeholder.png', 2240, 'eer5XjwS'),
 (28, 2, 23, 'Kunni', 'martingrrx@gmail.com', 9856547854, 'B+', '2002-05-15', '../images/uploads/photos/1644839475.jpg', 2232, '123'),
-(29, 2, 23, 'Jacob Kurien', 'jacobkurien@gmail.com', 9856587457, 'O+', '1999-11-03', '../images/uploads/photos/1644838551.jpg', 2233, 'Qerty@123'),
+(29, 2, 23, 'Jacob Kurien', 'jacob@gmail.com', 9856587457, 'O+', '1999-11-03', '../images/uploads/photos/1644838551.jpg', 2233, 'Qwertyy@123'),
 (30, 2, 23, 'Appy Kurian', 'kuriappy@gmail.com', 9565874521, 'A+', '1999-06-15', '../images/uploads/photos/1645185833.jpeg', 2234, '123'),
 (31, 2, 23, 'Martin Garrix', 'martingar@gmail.com', 9856548758, 'O+', '1998-09-29', '../images/uploads/photos/1645306463.jpg', 2235, 'T4bAKtE3'),
 (32, 2, 48, 'kunnuz', 'Not entered', 9565874587, 'NA', '0000-00-00', '../images/user-profile-placeholder.png', 2480, 'WuuzszdT'),
@@ -201,7 +204,9 @@ INSERT INTO `tbl_house_member` (`hm_id`, `ward_no`, `house_no`, `fname`, `email`
 (51, 2, 13, 'fghjgfp', 'jhvj@gmail.com', 9856589685, 'O+', '2022-02-10', '../images/uploads/photos/1645631386.png', 2136, 'IWVZzj2p'),
 (52, 2, 13, 'fghl', 'njn@gmail.com', 9856523258, 'O+', '2022-02-09', '../images/uploads/photos/1645631700.png', 2137, 'krvJbvnq'),
 (53, 2, 53, 'djkfhg', 'jb@gmail.com', 9854589858, 'NA', '0000-00-00', '../images/user-profile-placeholder.png', 2530, 'VubsYXvs'),
-(54, 2, 43, 'tyutut', 'tyutyu@gmail.com', 9565458785, 'NA', '0000-00-00', '../images/user-profile-placeholder.png', 2430, 'PZyugaZF');
+(54, 2, 43, 'tyutut', 'tyutyu@gmail.com', 9565458785, 'NA', '0000-00-00', '../images/user-profile-placeholder.png', 2430, 'PZyugaZF'),
+(55, 2, 16, 'new chk new', 'nwwechk@gmail.com', 9854512547, 'B+', '2018-02-14', '../../../public/assets/images/user-profile-placeholder.png', 2160, '123'),
+(56, 2, 16, 'dfsdf sedfq', 'sdf@djfgn.sdf', 9565215477, 'B+', '2017-07-03', '../../../public/assets/images/1648126052.png', 2162, '123');
 
 -- --------------------------------------------------------
 
@@ -258,7 +263,9 @@ INSERT INTO `tbl_id_proof` (`id`, `userid`, `aadhar_no`, `aadhar_file`, `electio
 (27, 2136, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
 (28, 2137, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
 (29, 2530, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
-(30, 2430, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0');
+(30, 2430, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
+(31, 2160, 9874512145, '../../../public/assets/documents/16481377510..pdf', 0, '0', '0', '0', '0', '0', 0, '0'),
+(32, 2162, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0');
 
 -- --------------------------------------------------------
 
@@ -306,7 +313,9 @@ INSERT INTO `tbl_pro_bg` (`id`, `userid`, `cur_pro`, `cur_pro_file`, `comp_name`
 (23, 2136, '0', '0', '0', '0', '0000-00-00'),
 (24, 2137, '0', '0', '0', '0', '0000-00-00'),
 (25, 2530, '0', '0', '0', '0', '0000-00-00'),
-(26, 2430, '0', '0', '0', '0', '0000-00-00');
+(26, 2430, '0', '0', '0', '0', '0000-00-00'),
+(27, 2160, '0', '0', '0', '0', '0000-00-00'),
+(28, 2162, '0', '0', '0', '0', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -380,7 +389,10 @@ INSERT INTO `tbl_registration` (`rid`, `fname`, `email`, `phno`, `wardno`, `hous
 (60, 'new test', 'lkjnhk@gmail.com', 9856587854, 2, 45, '../documents/taxreport/1645593021.pdf', 1),
 (62, 'fghefs', 'fghf@gmail.com', 9856587845, 2, 41, '../documents/taxreport/1645634535.pdf', 0),
 (63, 'djkfhg', 'jb@gmail.com', 9854589858, 2, 53, '../documents/taxreport/1645634562.pdf', 1),
-(65, 'tyutut', 'tyutyu@gmail.com', 9565458785, 2, 43, '../documents/taxreport/1646710445.pdf', 1);
+(65, 'tyutut', 'tyutyu@gmail.com', 9565458785, 2, 43, '../documents/taxreport/1646710445.pdf', 1),
+(66, 'chknew', 'chknew@gmail.com', 9854587452, 2, 144, '../../assets/documents/taxreport/1647660841.pdf', 0),
+(67, 'hjkkh hjk', 'dsfg@gmai.coj', 4523256587, 2, 125, '../../assets/documents/taxreport/1647660965.pdf', 0),
+(69, 'new chk', 'nwwechk@gmail.com', 9854512547, 2, 16, '../../public/assets/documents/taxreport/1648015712.pdf', 1);
 
 -- --------------------------------------------------------
 
@@ -406,17 +418,18 @@ CREATE TABLE `tbl_ward_member` (
 --
 
 INSERT INTO `tbl_ward_member` (`mid`, `fullname`, `email`, `phno`, `wardno`, `validupto`, `photo`, `president`, `status`, `password`) VALUES
-(1, 'Wade Warren', 'wade@gmail.com', 9854875632, 1, '2025-03-19', '../images/uploads/photos/1637689913.png', 0, 1, '123'),
-(2, 'Manas P', 'manas4518pachakkil@gmail.com', 9446184519, 2, '2025-03-19', '../images/uploads/photos/1637437831.png', 0, 1, '123'),
-(3, 'Annette Black', 'annette@gmail.com', 9845587455, 3, '2025-03-19', '../images/uploads/photos/1637438042.png', 0, 1, '123'),
-(4, 'Marvin McKinney', 'marvin@gmail.com', 9865478524, 4, '2025-03-19', '../images/uploads/photos/1637438149.png', 0, 1, 'Yl6Xxf2p'),
-(5, 'Savannah Nguyen', 'savannah@gmail.com', 7458965237, 5, '2025-03-19', '../images/uploads/photos/1637438202.png', 0, 1, 'UNmwfQ4j'),
-(6, 'Kurian Tom', 'kuriantom@mca.ajce.in', 9856547854, 6, '2025-03-19', '../images/uploads/photos/1637516935.jpeg', 0, 1, 'ILMxnMgV'),
-(7, 'Telbin Cherian', 'telbincherian@mca.ajce.in', 9856587745, 7, '2025-03-19', '../images/uploads/photos/1637517031.jpg', 0, 1, 'laEQbXxJ'),
-(8, 'Vinu Reji John', 'vinurejijohn21@gmail.com', 9856687458, 8, '2025-03-19', '../images/uploads/photos/1637659458.jpg', 0, 1, 'AyNAxXRD'),
-(9, 'Mrudul A', 'ganjan@gmail.com', 9565874587, 9, '2025-03-19', '../images/uploads/photos/1637837216.png', 0, 1, 'Bxs3FNtl'),
-(10, 'James George', 'jamesgeorge@gmail.com', 9568784523, 10, '2025-03-19', '../images/uploads/photos/1638012009.png', 0, 1, 'l6lrouag'),
-(11, 'new member', 'newmwmber@gmail.com', 9854589655, 11, '2025-07-16', '../images/uploads/photos/1645632011.png', 0, 1, '4rK9Wa9C');
+(1, 'Wade Warren', 'wade@gmail.com', 9854875632, 1, '2027-10-13', '../../../public/assets/images/uploads/photos/1637689913.png', 0, 1, '123'),
+(2, 'Manas P', 'manas4518pachakkil@gmail.com', 9446184519, 2, '2027-10-13', '../../../public/assets/images/uploads/photos/1637437831.png', 0, 1, '123'),
+(3, 'Annette Black', 'annette@gmail.com', 9845587455, 3, '2027-10-13', '../../../public/assets/images/uploads/photos/1637438042.png', 0, 1, '123'),
+(4, 'Marvin McKinney', 'marvin@gmail.com', 9865478524, 4, '2027-10-13', '../../../public/assets/images/uploads/photos/1637438149.png', 0, 1, 'Yl6Xxf2p'),
+(5, 'Savannah Nguyen', 'savannah@gmail.com', 7458965237, 5, '2027-10-13', '../../../public/assets/images/uploads/photos/1637438202.png', 0, 1, 'UNmwfQ4j'),
+(6, 'Kurian Tom', 'kuriantom@mca.ajce.in', 9856547854, 6, '2027-10-13', '../../../public/assets/images/uploads/photos/1637516935.jpeg', 0, 1, 'ILMxnMgV'),
+(7, 'Kummaadan', 'telbincherian@mca.ajce.in', 9856587745, 7, '2027-10-13', '../../../public/assets/images/uploads/photos/1647929084.jpg', 0, 1, 'laEQbXxJ'),
+(8, 'Vinu Reji John', 'vinurejijohn21@gmail.com', 9856687458, 8, '2027-10-13', '../../../public/assets/images/uploads/photos/1637659458.jpg', 0, 1, 'AyNAxXRD'),
+(9, 'Mrudul A', 'ganjan@gmail.com', 9565874587, 9, '2027-10-13', '../../../public/assets/images/uploads/photos/1637837216.png', 0, 1, 'Bxs3FNtl'),
+(10, 'James George', 'jamesgeorge@gmail.com', 9568784523, 10, '2027-10-13', '../../../public/assets/images/uploads/photos/1638012009.png', 0, 1, 'l6lrouag'),
+(11, 'new member', 'newmwmber@gmail.com', 9854589655, 11, '2027-10-13', '../../../public/assets/images/uploads/photos/1645632011.png', 0, 1, '4rK9Wa9C'),
+(12, 'testing', 'test@gmail.com', 9854587845, 12, '2027-10-13', '../../../public/assets/images/uploads/photos/1647775793.png', 0, 1, 'nhHJODZB');
 
 --
 -- Indexes for dumped tables
@@ -432,19 +445,22 @@ ALTER TABLE `tbl_admin`
 -- Indexes for table `tbl_edu_bg`
 --
 ALTER TABLE `tbl_edu_bg`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `userid` (`userid`);
 
 --
 -- Indexes for table `tbl_forgot_password`
 --
 ALTER TABLE `tbl_forgot_password`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `userid` (`userid`);
 
 --
 -- Indexes for table `tbl_house`
 --
 ALTER TABLE `tbl_house`
-  ADD PRIMARY KEY (`hid`);
+  ADD PRIMARY KEY (`hid`),
+  ADD KEY `house_no` (`house_no`,`ward_no`);
 
 --
 -- Indexes for table `tbl_house_member`
@@ -464,19 +480,22 @@ ALTER TABLE `tbl_id_proof`
 -- Indexes for table `tbl_pro_bg`
 --
 ALTER TABLE `tbl_pro_bg`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `userid` (`userid`);
 
 --
 -- Indexes for table `tbl_registration`
 --
 ALTER TABLE `tbl_registration`
-  ADD PRIMARY KEY (`rid`);
+  ADD PRIMARY KEY (`rid`),
+  ADD KEY `wardno` (`wardno`,`houseno`);
 
 --
 -- Indexes for table `tbl_ward_member`
 --
 ALTER TABLE `tbl_ward_member`
-  ADD PRIMARY KEY (`mid`);
+  ADD PRIMARY KEY (`mid`),
+  ADD KEY `wardno` (`wardno`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -492,49 +511,49 @@ ALTER TABLE `tbl_admin`
 -- AUTO_INCREMENT for table `tbl_edu_bg`
 --
 ALTER TABLE `tbl_edu_bg`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `tbl_forgot_password`
 --
 ALTER TABLE `tbl_forgot_password`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `tbl_house`
 --
 ALTER TABLE `tbl_house`
-  MODIFY `hid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `hid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `tbl_house_member`
 --
 ALTER TABLE `tbl_house_member`
-  MODIFY `hm_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `hm_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT for table `tbl_id_proof`
 --
 ALTER TABLE `tbl_id_proof`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `tbl_pro_bg`
 --
 ALTER TABLE `tbl_pro_bg`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `tbl_registration`
 --
 ALTER TABLE `tbl_registration`
-  MODIFY `rid` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `rid` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT for table `tbl_ward_member`
 --
 ALTER TABLE `tbl_ward_member`
-  MODIFY `mid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `mid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
