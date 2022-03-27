@@ -1,5 +1,5 @@
 //Components
-@import "./components.scss";
+@import "../components.scss";
 
 @mixin anchor() {
   font-family: "Gilroy_SB";
@@ -77,7 +77,7 @@
           display: flex;
           justify-content: space-between;
           margin-top: 18px;
-          @include checkbox();
+          @include checkbox(16px, "Gilroy_SB");
           .forgot {
             @include anchor();
             &:hover {

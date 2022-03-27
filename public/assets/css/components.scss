@@ -191,7 +191,7 @@ html {
 }
 
 //==============Checkbox=============
-@mixin checkbox() {
+@mixin checkbox($size, $family) {
   .checkbox {
     display: flex;
     column-gap: 8px;
@@ -225,8 +225,8 @@ html {
     }
 
     label {
-      font-family: "Gilroy_SB";
-      font-size: 16px;
+      font-family: $family;
+      font-size: $size;
       color: $text;
       cursor: pointer;
       user-select: none;
