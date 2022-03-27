@@ -112,38 +112,38 @@
                 <img src="../../../../public/assets/images/close.svg" alt="close button">
             </div>
             <!-- Add office staffs -->
-            <form action="" method="post" id="add-house-member" enctype="multipart/form-data">
+            <form action="" method="post" id="add-office-staff" enctype="multipart/form-data">
                 <input type="hidden" name="fname" value="<?php echo $fname ?>">
                 <div class="inputs">
-                    <div class="input h-fullname">
+                    <div class="input of-fullname">
                         <div class="label">
                             Full name
                         </div>
-                        <input type="text" name="hfname" id="h-full-name" placeholder="John Doe" autocomplete="off">
+                        <input type="text" name="hfname" id="of-full-name" placeholder="John Doe" autocomplete="off">
                         <div class="error error-hidden">
                         </div>
                     </div>
-                    <div class="input h-email">
+                    <div class="input of-email">
                         <div class="label">
                             Email ID
                         </div>
-                        <input type="text" name="hemail" id="h-email-id" placeholder="example@gmail.com" autocomplete="off">
+                        <input type="text" name="hemail" id="of-email-id" placeholder="example@gmail.com" autocomplete="off">
                         <div class="error error-hidden">
                         </div>
                     </div>
-                    <div class="input h-phno">
+                    <div class="input of-phno">
                         <div class="label">
                             Phone number
                         </div>
-                        <input type="text" name="hphno" id="h-phn-number" placeholder="9568547512" autocomplete="off">
+                        <input type="text" name="hphno" id="of-phn-number" placeholder="9568547512" autocomplete="off">
                         <div class="error error-hidden">
                         </div>
                     </div>
-                    <div class="input h-photo">
+                    <div class="input of-photo">
                         <div class="label">
                             Upload photo
                         </div>
-                        <input type="file" name="hphoto" id="h-photo" accept="image/png,image/jpeg">
+                        <input type="file" name="hphoto" id="of-photo" accept="image/png,image/jpeg">
                         <div class="error error-hidden">
                         </div>
                     </div>
@@ -167,7 +167,7 @@
                         </div>
                     </div>
                     <div class="button hBtn cursor-disable">
-                        <input type="submit" value="Add office staff" name="add-hm" id="add-hm" onclick="loader()" class="primary-button disabled">
+                        <input type="submit" value="Add office staff" name="add-hm" id="add-of" onclick="loader()" class="primary-button disabled">
                     </div>
                 </div>
             </form>
