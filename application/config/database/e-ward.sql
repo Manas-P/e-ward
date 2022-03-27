@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 26, 2022 at 08:22 AM
+-- Generation Time: Mar 27, 2022 at 06:38 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.25
 
@@ -179,7 +179,7 @@ INSERT INTO `tbl_house_member` (`hm_id`, `ward_no`, `house_no`, `fname`, `email`
 (26, 2, 23, 'Rubin Siby', 'rubinsibyy@gmail.com', 9565878452, 'B+', '1988-06-15', '../images/uploads/photos/1644834244.png', 2230, 'Qerty@123'),
 (27, 2, 24, 'Martin Garrix', 'Not entered', 9565878457, 'NA', '0000-00-00', '../images/user-profile-placeholder.png', 2240, 'eer5XjwS'),
 (28, 2, 23, 'Kunni', 'martingrrx@gmail.com', 9856547854, 'B+', '2002-05-15', '../images/uploads/photos/1644839475.jpg', 2232, '123'),
-(29, 2, 23, 'Jacob Kurien', 'jacob@gmail.com', 9856587457, 'O+', '1999-11-03', '../images/uploads/photos/1644838551.jpg', 2233, 'Qwertyy@123'),
+(29, 2, 23, 'Jacob Kurien', 'jacob@gmail.com', 9856587457, 'O+', '1999-11-03', '../../../public/assets/images/1648279852.jpg', 2233, 'Qwerty@123'),
 (30, 2, 23, 'Appy Kurian', 'kuriappy@gmail.com', 9565874521, 'A+', '1999-06-15', '../images/uploads/photos/1645185833.jpeg', 2234, '123'),
 (31, 2, 23, 'Martin Garrix', 'martingar@gmail.com', 9856548758, 'O+', '1998-09-29', '../images/uploads/photos/1645306463.jpg', 2235, 'T4bAKtE3'),
 (32, 2, 48, 'kunnuz', 'Not entered', 9565874587, 'NA', '0000-00-00', '../images/user-profile-placeholder.png', 2480, 'WuuzszdT'),
@@ -266,6 +266,25 @@ INSERT INTO `tbl_id_proof` (`id`, `userid`, `aadhar_no`, `aadhar_file`, `electio
 (30, 2430, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
 (31, 2160, 9874512145, '../../../public/assets/documents/16481377510..pdf', 0, '0', '0', '0', '0', '0', 0, '0'),
 (32, 2162, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_office_staff`
+--
+
+CREATE TABLE `tbl_office_staff` (
+  `id` int(10) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phno` bigint(12) NOT NULL,
+  `photo` varchar(200) NOT NULL,
+  `m_house` int(1) NOT NULL DEFAULT 0,
+  `m_committee` int(1) NOT NULL DEFAULT 0,
+  `m_complaint` int(1) NOT NULL DEFAULT 0,
+  `userid` int(10) NOT NULL,
+  `password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -477,6 +496,13 @@ ALTER TABLE `tbl_id_proof`
   ADD KEY `userid` (`userid`);
 
 --
+-- Indexes for table `tbl_office_staff`
+--
+ALTER TABLE `tbl_office_staff`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `userid` (`userid`);
+
+--
 -- Indexes for table `tbl_pro_bg`
 --
 ALTER TABLE `tbl_pro_bg`
@@ -517,7 +543,7 @@ ALTER TABLE `tbl_edu_bg`
 -- AUTO_INCREMENT for table `tbl_forgot_password`
 --
 ALTER TABLE `tbl_forgot_password`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `tbl_house`
@@ -536,6 +562,12 @@ ALTER TABLE `tbl_house_member`
 --
 ALTER TABLE `tbl_id_proof`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+
+--
+-- AUTO_INCREMENT for table `tbl_office_staff`
+--
+ALTER TABLE `tbl_office_staff`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbl_pro_bg`
