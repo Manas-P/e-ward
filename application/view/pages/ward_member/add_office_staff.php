@@ -10,7 +10,6 @@
     {
         //Fetch User data
         $wardno=$_SESSION['wardno'];
-        $name=$_SESSION['fullname'];
 ?>
 	<!DOCTYPE html>
     <html lang="en">
@@ -65,36 +64,38 @@
                 <!-- content -->
                 <div class="members-list">
                     <div class="members">
-                            <a class="add-member">
-                                <div class="icon">
-                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path class="str" d="M15 6.25V23.75" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path class="str" d="M6.25 15H23.75" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                                <div class="text">Add office staff</div>
-                            </a>
-
-                        <!-- Fetch House Members -->
-                        <a href="" class="member">
-                            <div class="photo">
-                                <img src="../../../../public/assets/images/uploads/photos/1637433746.png" alt="member photo">
+                        <a class="add-member">
+                            <div class="icon">
+                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="str" d="M15 6.25V23.75" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path class="str" d="M6.25 15H23.75" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
                             </div>
-                            <div class="about">
-                                <div class="name">Manas P</div>
-                                <div class="tag">9587452365</div>
-                            </div>
+                            <div class="text">Add office staff</div>
                         </a>
 
-                        <a href="" class="member">
-                            <div class="photo">
-                                <img src="../../../../public/assets/images/uploads/photos/1637438149.png" alt="member photo">
-                            </div>
-                            <div class="about">
-                                <div class="name">Wade Warren</div>
-                                <div class="tag">9587452365</div>
-                            </div>
-                        </a>
+                        <!-- Fetch office staffs -->
+                        <?php
+                            $fetchQuery="SELECT `name`, `phno`, `photo` FROM `tbl_office_staff` WHERE `wardno`='$wardno'";
+                            $fetchResult=mysqli_query($conn,$fetchQuery);
+                            if(mysqli_num_rows($fetchResult)>0){
+                                while($row = mysqli_fetch_assoc($fetchResult)){
+                        ?>
+                                <a href="" class="member">
+                                    <div class="photo">
+                                        <img src="../<?php echo $row["photo"]; ?>" alt="member photo">
+                                    </div>
+                                    <div class="about">
+                                        <div class="name"><?php echo $row["name"]; ?></div>
+                                        <div class="tag"><?php echo $row["phno"]; ?></div>
+                                    </div>
+                                </a>
+                        <?php
+                                } 
+                            }else{
+                            }
+                        ?>
+
                     </div>
                 </div>
                 
@@ -112,14 +113,13 @@
                 <img src="../../../../public/assets/images/close.svg" alt="close button">
             </div>
             <!-- Add office staffs -->
-            <form action="" method="post" id="add-office-staff" enctype="multipart/form-data">
-                <input type="hidden" name="fname" value="<?php echo $fname ?>">
+            <form action="../../../model/ward_member/add_office_staff.php" method="post" id="add-office-staff" enctype="multipart/form-data">
                 <div class="inputs">
                     <div class="input of-fullname">
                         <div class="label">
                             Full name
                         </div>
-                        <input type="text" name="hfname" id="of-full-name" placeholder="John Doe" autocomplete="off">
+                        <input type="text" name="name" id="of-full-name" placeholder="John Doe" autocomplete="off">
                         <div class="error error-hidden">
                         </div>
                     </div>
@@ -127,7 +127,7 @@
                         <div class="label">
                             Email ID
                         </div>
-                        <input type="text" name="hemail" id="of-email-id" placeholder="example@gmail.com" autocomplete="off">
+                        <input type="text" name="email" id="of-email-id" placeholder="example@gmail.com" autocomplete="off">
                         <div class="error error-hidden">
                         </div>
                     </div>
@@ -135,7 +135,7 @@
                         <div class="label">
                             Phone number
                         </div>
-                        <input type="text" name="hphno" id="of-phn-number" placeholder="9568547512" autocomplete="off">
+                        <input type="text" name="phno" id="of-phn-number" placeholder="9568547512" autocomplete="off">
                         <div class="error error-hidden">
                         </div>
                     </div>
@@ -143,7 +143,7 @@
                         <div class="label">
                             Upload photo
                         </div>
-                        <input type="file" name="hphoto" id="of-photo" accept="image/png,image/jpeg">
+                        <input type="file" name="photo" id="of-photo" accept="image/png,image/jpeg">
                         <div class="error error-hidden">
                         </div>
                     </div>
@@ -153,21 +153,21 @@
                         </div>
                         <div class="checkboxes">
                             <div class="checkbox">
-                                <input type="checkbox" name="" id="manage-house">
+                                <input type="checkbox" name="mhouse" value="0" id="manage-house">
                                 <label for="manage-house">Manage houses</label>
                             </div>
                             <div class="checkbox">
-                                <input type="checkbox" name="" id="manage-committees">
+                                <input type="checkbox" name="mcommittee" value="0" id="manage-committees">
                                 <label for="manage-committees">Manage committees</label>
                             </div>
                             <div class="checkbox">
-                                <input type="checkbox" name="" id="manage-complaints">
+                                <input type="checkbox" name="mcomplaint" value="0" id="manage-complaints">
                                 <label for="manage-complaints">Manage complaints</label>
                             </div>
                         </div>
                     </div>
                     <div class="button hBtn cursor-disable">
-                        <input type="submit" value="Add office staff" name="add-hm" id="add-of" onclick="loader()" class="primary-button disabled">
+                        <input type="submit" value="Add office staff" name="add-staff" id="add-of" onclick="loader()" class="primary-button disabled">
                     </div>
                 </div>
             </form>
@@ -212,6 +212,7 @@
         <!-- ==========Loading End============= -->
 
         <script src="../../../../public/assets/js/wm_add_staffs.js"></script>
+        <script src="../../../../public/assets/js/toast.js"></script>
     </body>
     </html>
 <?php

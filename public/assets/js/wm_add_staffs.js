@@ -111,7 +111,7 @@ ofPhoto.addEventListener("input",()=>{
 
 //Submit Button Visibility
 const buttonCursor=document.querySelector(".hBtn");//To avoid poniterevent and cursor problem
-addOfficeStaff.addEventListener("keyup",()=>{
+addOfficeStaff.addEventListener("change",()=>{
     if(ofFullNameSubmit==true && ofEmailSubmit==true && ofPhnoSubmit==true && ofPhotoSubmit==true){
         hAddBtn.classList.remove("disabled");
         buttonCursor.classList.remove("cursor-disabled");
@@ -121,6 +121,6 @@ addOfficeStaff.addEventListener("keyup",()=>{
     }
 });
 
-//===============End of Validation Ward Member=====================
+//===============End of Validation office staff=====================
 
 
