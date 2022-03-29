@@ -596,7 +596,25 @@ body {
   width: 460px;
 }
 
-.box .inputs textarea {
+.box .inputs .inputt {
+  margin-bottom: -20px;
+  width: 460px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 8px;
+}
+
+.box .inputs .inputt .label {
+  font-size: 16px;
+  font-family: "Gilroy_M";
+}
+
+.box .inputs .inputt textarea {
   resize: vertical;
   max-height: 165px;
   min-height: 116px;
@@ -611,8 +629,27 @@ body {
   transition: 0.1s ease-in-out;
 }
 
-.box .inputs textarea:focus {
+.box .inputs .inputt textarea:focus {
   border: 1px solid #1e1e1e;
+}
+
+.box .inputs .inputt .subtext {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-family: "Gilroy_M";
+  font-size: 14px;
+}
+
+.box .inputs .inputt .subtext .error {
+  color: #ec0000;
+}
+
+.box .inputs .inputt .subtext .count-limit {
+  color: #1e1e1e;
 }
 
 .box .button .primary-button {

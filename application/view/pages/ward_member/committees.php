@@ -98,42 +98,47 @@
                 <img src="../../../../public/assets/images/close.svg" alt="close button">
             </div>
             <!-- Add committee -->
-            <form action="" method="post" id="add-office-staff" enctype="multipart/form-data">
+            <form action="" method="post" id="add-committe" enctype="multipart/form-data">
                 <div class="inputs">
-                    <div class="input of-fullname">
+                    <div class="input commName">
                         <div class="label">
                             Committee name
                         </div>
-                        <input type="text" name="name" id="of-full-name" placeholder="John Doe" autocomplete="off">
+                        <input type="text" name="name" id="comm-name" placeholder="John Doe" autocomplete="off">
                         <div class="error error-hidden">
                         </div>
                     </div>
-                    <div class="input of-fullname">
+                    <div class="inputt commDes">
                         <div class="label">
                             Committee description
                         </div>
-                        <textarea name="comm_des" id="comm_des" rows="10"></textarea>
-                        <div class="error error-hidden">
+                        <textarea name="comm_des" id="comm-des" rows="10"></textarea>
+                        <div class="subtext">
+                            <div class="error error-hidden">
+                            </div>
+                            <div class="count-limit">
+                                <span id="count-char">0</span>/300
+                            </div>
                         </div>
                     </div>
-                    <div class="input of-photo">
+                    <div class="input commPhoto">
                         <div class="label">
                             Upload photo
                         </div>
-                        <input type="file" name="photo" id="of-photo" accept="image/png,image/jpeg">
+                        <input type="file" name="photo" id="comm-photo" accept="image/png,image/jpeg">
                         <div class="error error-hidden">
                         </div>
                     </div>
-                    <div class="input of-fullname">
+                    <div class="input commLimit">
                         <div class="label">
                             Members limit
                         </div>
-                        <input type="text" name="name" id="of-limit" placeholder="20" autocomplete="off">
+                        <input type="text" name="name" id="comm-limit" placeholder="20" autocomplete="off">
                         <div class="error error-hidden">
                         </div>
                     </div>
                     <div class="button hBtn cursor-disable">
-                        <input type="submit" value="Add committee" name="add-staff" id="add-of" onclick="loader()" class="primary-button disabled">
+                        <input type="submit" value="Add committee" name="add-comm" id="add-comm" onclick="loader()" class="primary-button disabled">
                     </div>
                 </div>
             </form>

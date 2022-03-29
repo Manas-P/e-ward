@@ -166,7 +166,17 @@ body {
     row-gap: 32px;
     margin-top: 40px;
     @include input_fields(460px);
-    textarea {
+    .inputt {
+      margin-bottom: -20px;
+      width: 460px;
+      display: flex;
+      flex-direction: column;
+      row-gap: 8px;
+      .label {
+        font-size: 16px;
+        font-family: "Gilroy_M";
+      }
+      textarea {
         resize: vertical;
         max-height: 165px;
         min-height: 116px;
@@ -182,6 +192,19 @@ body {
           border: 1px solid $text;
         }
       }
+      .subtext {
+        display: flex;
+        justify-content: space-between;
+        font-family: "Gilroy_M";
+        font-size: 14px;
+        .error {
+          color: $error;
+        }
+        .count-limit {
+          color: $text;
+        }
+      }
+    }
   }
   .button {
     .primary-button {
