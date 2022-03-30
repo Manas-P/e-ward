@@ -113,10 +113,10 @@ body {
           .photo {
             width: 66px;
             height: 66px;
+            overflow: hidden;
             border-radius: 4px;
             img {
-              width: 66px;
-              height: 66px;
+              height: 100%;
               border-radius: 4px;
             }
           }
