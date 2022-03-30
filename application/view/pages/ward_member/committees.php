@@ -76,13 +76,20 @@
                             $fetchResult=mysqli_query($conn,$fetchQuery);
                             if(mysqli_num_rows($fetchResult)>0){
                                 while($row = mysqli_fetch_assoc($fetchResult)){
+
+                                    //display only 13 character if it exceeds the limit
+                                    $name=$row["c_name"];
+                                    if(strlen($name)>13){
+                                        $name = substr($name, 0, 13);
+                                        $name=$name . "...";
+                                    }
                         ?>
                                 <a href="" class="member">
                                     <div class="photo">
                                         <img src="../<?php echo $row["c_photo"]; ?>" alt="member photo">
                                     </div>
                                     <div class="about">
-                                        <div class="name"><?php echo $row["c_name"]; ?></div>
+                                        <div class="name"><?php echo $name; ?></div>
                                         <div class="tag">Members: <?php echo $row["m_joined"]; ?>/<?php echo $row["m_limit"]; ?></div>
                                     </div>
                                 </a>
