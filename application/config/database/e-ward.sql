@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 27, 2022 at 06:38 PM
+-- Generation Time: Mar 30, 2022 at 06:29 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.25
 
@@ -39,6 +39,32 @@ CREATE TABLE `tbl_admin` (
 
 INSERT INTO `tbl_admin` (`adid`, `username`, `password`) VALUES
 (1, 'admin', 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_committee`
+--
+
+CREATE TABLE `tbl_committee` (
+  `id` int(10) NOT NULL,
+  `wardno` int(10) NOT NULL,
+  `c_name` varchar(100) NOT NULL,
+  `c_description` varchar(300) NOT NULL,
+  `c_photo` varchar(100) NOT NULL,
+  `m_limit` int(10) NOT NULL,
+  `m_joined` int(10) NOT NULL DEFAULT 0,
+  `added_by` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_committee`
+--
+
+INSERT INTO `tbl_committee` (`id`, `wardno`, `c_name`, `c_description`, `c_photo`, `m_limit`, `m_joined`, `added_by`) VALUES
+(1, 2, 'Committee new', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', '../../../public/assets/images/uploads/photos/1648653556.jpg', 25, 0, '2'),
+(2, 2, 'Committe two', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', '../../../public/assets/images/uploads/photos/1648653604.jpg', 20, 0, '2'),
+(3, 2, 'Committee long name submitted', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', '../../../public/assets/images/uploads/photos/1648653685.jpg', 15, 0, '2');
 
 -- --------------------------------------------------------
 
@@ -205,7 +231,7 @@ INSERT INTO `tbl_house_member` (`hm_id`, `ward_no`, `house_no`, `fname`, `email`
 (52, 2, 13, 'fghl', 'njn@gmail.com', 9856523258, 'O+', '2022-02-09', '../images/uploads/photos/1645631700.png', 2137, 'krvJbvnq'),
 (53, 2, 53, 'djkfhg', 'jb@gmail.com', 9854589858, 'NA', '0000-00-00', '../images/user-profile-placeholder.png', 2530, 'VubsYXvs'),
 (54, 2, 43, 'tyutut', 'tyutyu@gmail.com', 9565458785, 'NA', '0000-00-00', '../images/user-profile-placeholder.png', 2430, 'PZyugaZF'),
-(55, 2, 16, 'new chk new', 'nwwechk@gmail.com', 9854512547, 'B+', '2018-02-14', '../../../public/assets/images/user-profile-placeholder.png', 2160, '123'),
+(55, 2, 16, 'new chk new', 'nwwechk@gmail.com', 9854512547, 'B+', '2012-02-14', '../../../public/assets/images/1648463828.png', 2160, 'Qwerty@123'),
 (56, 2, 16, 'dfsdf sedfq', 'sdf@djfgn.sdf', 9565215477, 'B+', '2017-07-03', '../../../public/assets/images/1648126052.png', 2162, '123');
 
 -- --------------------------------------------------------
@@ -282,9 +308,19 @@ CREATE TABLE `tbl_office_staff` (
   `m_house` int(1) NOT NULL DEFAULT 0,
   `m_committee` int(1) NOT NULL DEFAULT 0,
   `m_complaint` int(1) NOT NULL DEFAULT 0,
+  `wardno` int(5) NOT NULL,
   `userid` int(10) NOT NULL,
   `password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_office_staff`
+--
+
+INSERT INTO `tbl_office_staff` (`id`, `name`, `email`, `phno`, `photo`, `m_house`, `m_committee`, `m_complaint`, `wardno`, `userid`, `password`) VALUES
+(1, 'Wade Warren', 'wadewarren@gmail.com', 9854587857, '../../../public/assets/images/1648462592.png', 1, 1, 1, 2, 2001, 'a8DExL40'),
+(2, 'Telbin Cherian', 'telbin@gmail.com', 9854523265, '../../../public/assets/images/1648462655.jpg', 1, 1, 1, 2, 2002, 'orVX7ZPW'),
+(3, 'Kurian Tom', 'lskdnv@gmail.com', 9653235687, '../../../public/assets/images/1648463311.jpeg', 1, 0, 1, 2, 2003, 'RetNgXzT');
 
 -- --------------------------------------------------------
 
@@ -461,6 +497,13 @@ ALTER TABLE `tbl_admin`
   ADD PRIMARY KEY (`adid`);
 
 --
+-- Indexes for table `tbl_committee`
+--
+ALTER TABLE `tbl_committee`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `wardno` (`wardno`);
+
+--
 -- Indexes for table `tbl_edu_bg`
 --
 ALTER TABLE `tbl_edu_bg`
@@ -500,7 +543,8 @@ ALTER TABLE `tbl_id_proof`
 --
 ALTER TABLE `tbl_office_staff`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `userid` (`userid`);
+  ADD KEY `userid` (`userid`),
+  ADD KEY `wardno` (`wardno`);
 
 --
 -- Indexes for table `tbl_pro_bg`
@@ -534,6 +578,12 @@ ALTER TABLE `tbl_admin`
   MODIFY `adid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `tbl_committee`
+--
+ALTER TABLE `tbl_committee`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `tbl_edu_bg`
 --
 ALTER TABLE `tbl_edu_bg`
@@ -543,7 +593,7 @@ ALTER TABLE `tbl_edu_bg`
 -- AUTO_INCREMENT for table `tbl_forgot_password`
 --
 ALTER TABLE `tbl_forgot_password`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `tbl_house`
@@ -567,7 +617,7 @@ ALTER TABLE `tbl_id_proof`
 -- AUTO_INCREMENT for table `tbl_office_staff`
 --
 ALTER TABLE `tbl_office_staff`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tbl_pro_bg`
