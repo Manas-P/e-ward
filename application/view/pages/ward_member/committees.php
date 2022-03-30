@@ -71,16 +71,26 @@
                         </a>
 
                         <!-- Fetch committees -->
-                        <a href="" class="member">
-                            <div class="photo">
-                                <img src="../../../../public/assets/images/1648462592.png" alt="member photo">
-                            </div>
-                            <div class="about">
-                                <div class="name">Committee 1</div>
-                                <div class="tag">Members: 20/25</div>
-                            </div>
-                        </a>
-
+                        <?php
+                            $fetchQuery="SELECT `wardno`, `c_name`, `c_photo`, `m_limit`, `m_joined` FROM `tbl_committee` WHERE `wardno`='$wardno'";
+                            $fetchResult=mysqli_query($conn,$fetchQuery);
+                            if(mysqli_num_rows($fetchResult)>0){
+                                while($row = mysqli_fetch_assoc($fetchResult)){
+                        ?>
+                                <a href="" class="member">
+                                    <div class="photo">
+                                        <img src="../<?php echo $row["c_photo"]; ?>" alt="member photo">
+                                    </div>
+                                    <div class="about">
+                                        <div class="name"><?php echo $row["c_name"]; ?></div>
+                                        <div class="tag">Members: <?php echo $row["m_joined"]; ?>/<?php echo $row["m_limit"]; ?></div>
+                                    </div>
+                                </a>
+                        <?php
+                                } 
+                            }else{
+                            }
+                        ?>
                     </div>
                 </div>
                 
@@ -98,7 +108,7 @@
                 <img src="../../../../public/assets/images/close.svg" alt="close button">
             </div>
             <!-- Add committee -->
-            <form action="" method="post" id="add-committe" enctype="multipart/form-data">
+            <form action="../../../model/ward_member/add_committee.php" method="post" id="add-committe" enctype="multipart/form-data">
                 <div class="inputs">
                     <div class="input commName">
                         <div class="label">
@@ -133,7 +143,7 @@
                         <div class="label">
                             Members limit
                         </div>
-                        <input type="text" name="name" id="comm-limit" placeholder="20" autocomplete="off">
+                        <input type="text" name="commLimit" id="comm-limit" placeholder="20" autocomplete="off">
                         <div class="error error-hidden">
                         </div>
                     </div>
