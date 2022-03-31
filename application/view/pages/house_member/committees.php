@@ -52,7 +52,53 @@ else
                         <input type="text" name="hsearch" placeholder="Search..." id="live-search" autocomplete="off" onkeyup="searchHouse(this.value)">
                     </div>
                 </div>
+                <div class="hyper-link">
+                    <div class="leave-req">
+                        <a href="">
+                            View requests
+                        </a>
+                        <span class="noti-badge">
+                            <!-- Fetch request -->
+                            4
+                        </span>
+                    </div>
+                </div>
                 <!-- content -->
+                <div class="headings">
+                    <div>Slno.</div>
+                    <div style="margin-left: 70px;">Committee name</div>
+                    <div style="margin-left: 90px;">Description</div>
+                    <div style="margin-left: 810px;">Action</div>
+                </div>
+                <div class="datas">
+                    <?php
+                        $query="SELECT `c_name`, `c_description`, `m_limit`, `m_joined` FROM `tbl_committee` WHERE `wardno`='$wardno'";
+                        $result=mysqli_query($conn,$query);
+                        $i=1;
+                        while($row=mysqli_fetch_array($result)){
+                            if($row["m_joined"]!=0){
+                                if($row["m_limit"]/$row["m_joined"]==1){
+                                    continue;
+                                }
+                            }
+                    ?>
+                    <div class="data">
+                        <table>
+                            <tr>
+                                <td width=108px><?php echo $i; ?></td>
+                                <td width=248px><?php echo $row["c_name"]; ?></td>
+                                <td width=908px style="padding-right: 40px;"><?php echo $row["c_description"]; ?></td>
+                                <td width=95px>
+                                    <a href="" class="approve" onclick="loader()" >Request</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <?php
+                        $i=$i+1;
+                        }
+                    ?>
+                </div>
                 
 
             </div>

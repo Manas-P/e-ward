@@ -60,7 +60,62 @@ body {
         }
       }
     }
+    .hyper-link {
+      margin-top: 36px;
+      display: flex;
+      justify-content: flex-end;
+      font-family: "Gilroy_SB";
+      font-size: 20px;
+      column-gap: 48px;
+      a {
+        text-decoration: underline;
+        color: $primary;
+      }
+      .leave-req {
+        display: flex;
+        .noti-badge {
+          text-decoration: none;
+          padding: 5px 8px 4px 8px;
+          color: $white;
+          background: $primary;
+          font-family: "Gilroy_B";
+          font-size: 12px;
+          border-radius: 6px;
+          margin-left: 8px;
+        }
+      }
+    }
     // content
+    .headings {
+      margin: 48px 16px 0 16px;
+      font-family: "Gilroy_SB";
+      font-size: 20px;
+      color: $text;
+      display: flex;
+    }
+    .datas {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      row-gap: 24px;
+      .data {
+        padding: 20px;
+        background: $white;
+        border-radius: 10px;
+        font-family: "Gilroy_M";
+        font-size: 18px;
+        color: $darkSubText;
+        td {
+          padding-right: 28px;
+          vertical-align: top;
+          text-align: left;
+        }
+        .approve {
+          font-family: "Gilroy_SB";
+          color: $green;
+        }
+      }
+    }
   }
 }
 
