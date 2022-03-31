@@ -31,6 +31,15 @@
                 </svg>
                 <div class="text">Add house members</div>
             </a>
+            <a href="../../pages/house_member/committees.php" class="menu">
+                <svg width="24" height="22" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="str" d="M16.5834 19.25V17.4167C16.5834 16.4442 16.197 15.5116 15.5094 14.8239C14.8218 14.1363 13.8891 13.75 12.9167 13.75H5.58335C4.61089 13.75 3.67826 14.1363 2.99063 14.8239C2.303 15.5116 1.91669 16.4442 1.91669 17.4167V19.25" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path class="str" d="M9.24998 10.0833C11.275 10.0833 12.9166 8.44171 12.9166 6.41667C12.9166 4.39162 11.275 2.75 9.24998 2.75C7.22494 2.75 5.58331 4.39162 5.58331 6.41667C5.58331 8.44171 7.22494 10.0833 9.24998 10.0833Z" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path class="str" d="M22.0833 19.25V17.4166C22.0827 16.6042 21.8123 15.815 21.3146 15.1729C20.8168 14.5308 20.1199 14.0722 19.3333 13.8691" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path class="str" d="M15.6667 2.86914C16.4554 3.07108 17.1545 3.52978 17.6537 4.17293C18.1529 4.81607 18.4239 5.60707 18.4239 6.42122C18.4239 7.23538 18.1529 8.02638 17.6537 8.66952C17.1545 9.31266 16.4554 9.77136 15.6667 9.97331" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>                                
+                <div class="text">Committees</div>
+            </a>
         </div>
         <div class="logout">
             <a href="../../../controller/logout.php">
