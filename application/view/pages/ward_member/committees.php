@@ -84,7 +84,7 @@
                                         $name=$name . "...";
                                     }
                         ?>
-                                <a href="" class="member">
+                                <a href="./view_committee.php" class="member">
                                     <div class="photo">
                                         <img src="../<?php echo $row["c_photo"]; ?>" alt="member photo">
                                     </div>
