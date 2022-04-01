@@ -550,6 +550,18 @@ body {
 .main .container .tab-menu .tabs .active {
   color: #5744e3;
   background: #eeecfc;
+  width: auto;
+}
+
+.main .container .tab-menu .tabs .active::after {
+  content: "";
+  position: relative;
+  display: block;
+  width: calc(100% + 48px);
+  height: 2px;
+  background: #5744e3;
+  top: 22px;
+  left: -24px;
 }
 
 .main .container .tab-menu .underline {

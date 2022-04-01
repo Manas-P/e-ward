@@ -91,13 +91,13 @@
                 <!-- Tab Menu -->
                 <div class="tab-menu">
                     <div class="tabs">
-                        <div class="tab active">
+                        <div class="tab">
                             Members
                         </div>
                         <div class="tab">
                             Committee tasks
                         </div>
-                        <div class="tab">
+                        <div class="tab active">
                             Requests
                         </div>
                     </div>

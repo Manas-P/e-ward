@@ -180,10 +180,22 @@ body {
           padding: 8px 24px;
           border-radius: 10px;
           cursor: pointer;
+          
         }
         .active{
           color: $primary;
           background: $primaryFade;
+          width:auto;
+          &::after{
+            content: "";
+            position: relative;
+            display: block;
+            width:calc(100% + 48px);
+            height: 2px;
+            background: $primary;
+            top:22px;
+            left:-24px;
+          }
         }
       }
       .underline{
