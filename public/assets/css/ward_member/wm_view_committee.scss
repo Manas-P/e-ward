@@ -60,7 +60,112 @@ body {
         }
       }
     }
+    .bread-crumbs {
+        margin-top: 60px;
+        display: flex;
+        column-gap: 4px;
+        align-items: center;
+        .previous {
+          font-family: "Gilroy_M";
+          font-size: 16px;
+          color: $subText;
+        }
+        svg {
+          .str {
+            stroke: $text;
+          }
+        }
+        .now {
+          font-family: "Gilroy_SB";
+          font-size: 16px;
+          color: $text;
+        }
+      }
     // content
+    .committee-details{
+      display: flex;
+      width: 100%;
+      background: $white;
+      box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
+      border-radius: 10px;
+      padding: 24px;
+      margin-top: 38px;
+      justify-content: space-between;
+      .basic-description{
+        display: flex;
+        column-gap: 18px;
+        .img{
+          height:134px;
+          width: 134px;
+          border-radius: 4px;
+          img{
+            width:100%;
+          }
+        }
+        .description{
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          .heading{
+              font-family: "Gilroy_SB";
+              color: $text;
+              font-size: 24px;
+          }
+          .det{
+            width:640px;
+            font-family: "Gilroy_M";
+            font-size: 18px;
+            color: $subText;
+            line-height: 24px;
+          }
+        }
+      }
+      .other-content {
+        margin-left: -60px;
+        display: flex;
+        align-items: center;
+        column-gap: 24px;
+        .divider {
+          height: 100%;
+          width: 2px;
+          border-radius: 4px;
+          background: #ececec;
+        }
+        .contents {
+          display: flex;
+          flex-direction: column;
+          row-gap: 26px;
+          .content {
+            font-family: "Gilroy_M";
+            font-size: 18px;
+            color: $subText;
+            span {
+              margin-left: 8px;
+              font-family: "Gilroy_SB";
+              color: $text;
+            }
+          }
+        }
+      }
+      .buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .update {
+          @include primary_button(100%);
+          padding: 16px 82px;
+        }
+        .close {
+          @include secondary_button(100%);
+          border: 2px solid $error;
+          color: $error;
+          padding: 16px 82px;
+          &:hover {
+            background: #fff9f9;
+          }
+        }
+      }
+    }
   }
 }
 

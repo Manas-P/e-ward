@@ -44,8 +44,49 @@
                         <input type="text" name="hsearch" placeholder="Search..." id="live-search" autocomplete="off" onkeyup="searchHouse(this.value)">
                     </div>
                 </div>
+                <div class="bread-crumbs">
+                    <a href="./committees" class="previous">
+                        Committees
+                    </a>
+                    <svg class="str" width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.2002 8.59999L5.8002 4.99999L2.2002 1.39999" stroke="#1E1E1E" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <a href="" class="now">
+                        Committee new
+                    </a>
+                </div>
 
                 <!-- content -->
+                <div class="committee-details">
+                    <div class="basic-description">
+                        <div class="img">
+                            <img src="../../../../public/assets/images/uploads/photos/1637689886.png" alt="">
+                        </div>
+                        <div class="description">
+                            <div class="heading">
+                                Committee new
+                            </div>
+                            <div class="det">
+                                Amet minim mollit non deserunt ullamco est sit aliqua dolor do 
+                                amet sint. Velit officia consequat duis enim velit mollit. 
+                                Exercitation veniam consequat sunt nostrud amet.Amet minim 
+                                mollit non deserunt ullamco est sit aliqua dolor do amet sint.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="other-content">
+                        <div class="divider"></div>
+                        <div class="contents">
+                            <div class="content">Members limit:<span>25</span></div>
+                            <div class="content">Members joined:<span>16</span></div>
+                            <div class="content">Created by:<span>Wade Warren</span></div>
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <a href="" class="update">Update</a>
+                        <a href="" class="close">Close</a>
+                    </div>
+                </div>
                 
                 
             </div>

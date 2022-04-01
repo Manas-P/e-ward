@@ -322,6 +322,203 @@ body {
   stroke: #1e1e1e;
 }
 
+.main .container .bread-crumbs {
+  margin-top: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 4px;
+          column-gap: 4px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .container .bread-crumbs .previous {
+  font-family: "Gilroy_M";
+  font-size: 16px;
+  color: #8b8b8b;
+}
+
+.main .container .bread-crumbs svg .str {
+  stroke: #1e1e1e;
+}
+
+.main .container .bread-crumbs .now {
+  font-family: "Gilroy_SB";
+  font-size: 16px;
+  color: #1e1e1e;
+}
+
+.main .container .committee-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  background: #fff;
+  -webkit-box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
+          box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
+  border-radius: 10px;
+  padding: 24px;
+  margin-top: 38px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main .container .committee-details .basic-description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 18px;
+          column-gap: 18px;
+}
+
+.main .container .committee-details .basic-description .img {
+  height: 134px;
+  width: 134px;
+  border-radius: 4px;
+}
+
+.main .container .committee-details .basic-description .img img {
+  width: 100%;
+}
+
+.main .container .committee-details .basic-description .description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main .container .committee-details .basic-description .description .heading {
+  font-family: "Gilroy_SB";
+  color: #1e1e1e;
+  font-size: 24px;
+}
+
+.main .container .committee-details .basic-description .description .det {
+  width: 640px;
+  font-family: "Gilroy_M";
+  font-size: 18px;
+  color: #8b8b8b;
+  line-height: 24px;
+}
+
+.main .container .committee-details .other-content {
+  margin-left: -60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 24px;
+          column-gap: 24px;
+}
+
+.main .container .committee-details .other-content .divider {
+  height: 100%;
+  width: 2px;
+  border-radius: 4px;
+  background: #ececec;
+}
+
+.main .container .committee-details .other-content .contents {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 26px;
+}
+
+.main .container .committee-details .other-content .contents .content {
+  font-family: "Gilroy_M";
+  font-size: 18px;
+  color: #8b8b8b;
+}
+
+.main .container .committee-details .other-content .contents .content span {
+  margin-left: 8px;
+  font-family: "Gilroy_SB";
+  color: #1e1e1e;
+}
+
+.main .container .committee-details .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main .container .committee-details .buttons .update {
+  background: #5744e3;
+  color: #fff;
+  font-family: "Gilroy_B";
+  font-size: 18px;
+  padding: 16px 0;
+  border: none;
+  outline: none;
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+  padding: 16px 82px;
+}
+
+.main .container .committee-details .buttons .update:active {
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
+  background: #6756eb;
+}
+
+.main .container .committee-details .buttons .close {
+  background: #fff;
+  color: #5744e3;
+  font-family: "Gilroy_B";
+  font-size: 18px;
+  padding: 16px 0;
+  border: 2px solid #5744e3;
+  outline: none;
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+  border: 2px solid #ec0000;
+  color: #ec0000;
+  padding: 16px 82px;
+}
+
+.main .container .committee-details .buttons .close:hover {
+  background: #f4f3ff;
+}
+
+.main .container .committee-details .buttons .close:active {
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
+}
+
+.main .container .committee-details .buttons .close:hover {
+  background: #fff9f9;
+}
+
 .alertt {
   background: #fff;
   padding: 18px 18px 18px 24px;
