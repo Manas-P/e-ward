@@ -45,7 +45,7 @@
                     </div>
                 </div>
                 <div class="bread-crumbs">
-                    <a href="./committees" class="previous">
+                    <a href="./committees.php" class="previous">
                         Committees
                     </a>
                     <svg class="str" width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -86,6 +86,22 @@
                         <a href="" class="update">Update</a>
                         <a href="" class="close">Close</a>
                     </div>
+                </div>
+
+                <!-- Tab Menu -->
+                <div class="tab-menu">
+                    <div class="tabs">
+                        <div class="tab active">
+                            Members
+                        </div>
+                        <div class="tab">
+                            Committee tasks
+                        </div>
+                        <div class="tab">
+                            Requests
+                        </div>
+                    </div>
+                    <div class="underline"></div>
                 </div>
                 
                 
