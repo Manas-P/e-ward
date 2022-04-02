@@ -165,7 +165,7 @@
         
                             <!-- Fetch office staffs -->
                                 
-                            <a href="" class="task">
+                            <a href="./view_task.php" class="task">
                                 <div class="about">
                                     <div class="name">Task name one</div>
                                     <div class="members-asgn"><span>Members assigned:</span>active</div>
@@ -173,7 +173,7 @@
                                 </div>
                             </a>
 
-                            <a href="" class="task">
+                            <a href="./view_task.php" class="task">
                                 <div class="about">
                                     <div class="name">Task name two</div>
                                     <div class="members-asgn"><span>Members assigned:</span>active</div>
