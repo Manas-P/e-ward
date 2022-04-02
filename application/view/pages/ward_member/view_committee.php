@@ -104,16 +104,94 @@
                     <div class="underline"></div>
                 </div>
 
+                <!-- View members -->
                 <div id="tabCon1" class="tab-content tab-con-active">
-                    <h1>tab1</h1>
+                    <div class="content-table">
+                        <div class="headings">
+                            <div>Slno.</div>
+                            <div style="margin-left: 70px;">Name</div>
+                            <div style="margin-left: 184px;">House no.</div>
+                            <div style="margin-left: 74px;">Phone no.</div>
+                            <div style="margin-left: 89px;">Email id</div>
+                            <div style="margin-left: 282px;">Assigned tasks</div>
+                            <div style="margin-left: 58px;">Completed tasks</div>
+                        </div>
+                        <div class="datas">
+                            <div class="data">
+                                <table>
+                                    <tr>
+                                        <td width=108px>1.</td>
+                                        <td width=236px>Brooklyn Simmons</td>
+                                        <td width=160px>124</td>
+                                        <td width=180px>9854587856</td>
+                                        <td width=354px>brooklynsimmo01n@gmail.com</td>
+                                        <td width=194px>3</td>
+                                        <td>1</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="datas">
+                            <div class="data">
+                                <table>
+                                    <tr>
+                                        <td width=108px>2.</td>
+                                        <td width=236px>Wade Warren</td>
+                                        <td width=160px>15</td>
+                                        <td width=180px>9587845126</td>
+                                        <td width=354px>wadewarren@gmail.com</td>
+                                        <td width=194px>5</td>
+                                        <td>3</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <!-- End of view members -->
+
                 <div id="tabCon2" class="tab-content">
-                    <h1>tab2</h1>
+                    <div class="content2">
+                        <h1>Tab2</h1>
+                        <h2>Add committee tasks</h2>
+                    </div>
                 </div>
+
+                <!-- View membership request -->
                 <div id="tabCon3" class="tab-content">
-                    <h1>tab3</h1>
+                    <div class="content-table">
+                        <div class="headings">
+                            <div>Slno.</div>
+                            <div style="margin-left: 70px;">Name</div>
+                            <div style="margin-left: 184px;">House no.</div>
+                            <div style="margin-left: 74px;">Phone no.</div>
+                            <div style="margin-left: 89px;">Email id</div>
+                            <div style="margin-left: 324px;">Age</div>
+                            <div style="margin-left: 90px;">Action</div>
+                        </div>
+                        <div class="datas">
+                            <div class="data">
+                                <table>
+                                    <tr>
+                                        <td width=108px>1.</td>
+                                        <td width=236px>Brooklyn Simmons</td>
+                                        <td width=160px>124</td>
+                                        <td width=180px>9854587856</td>
+                                        <td width=396px>brooklynsimmo01n@gmail.com</td>
+                                        <td width=130px>23</td>
+                                        <td width=95px>
+                                            <a  class="approve" onclick="loader()" >Approve</a>
+                                        </td>
+                                        <td>
+                                            <a class="reject" >Reject</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
+                <!-- End of membership request -->
                 
             </div>
         </section>

@@ -182,7 +182,6 @@ body {
           cursor: pointer;
           &:hover{
             color: $primary;
-            transition: .5s ease-in-out;
           }
         }
         .tab-active{
@@ -210,13 +209,44 @@ body {
       }
     }
     .tab-content{
-      width:100%;
-      padding:40px;
-      background: $white;
-      border-radius: 10px;
       margin-top: 42px;
-      position: absolute;
-      display: none
+      display: none;
+      .content-table{
+        .headings {
+          margin: 0px 16px 0 16px;
+          font-family: "Gilroy_SB";
+          font-size: 20px;
+          color: $text;
+          display: flex;
+        }
+        .datas {
+          margin-top: 24px;
+          display: flex;
+          flex-direction: column;
+          row-gap: 24px;
+          .data {
+            padding: 20px;
+            background: $white;
+            border-radius: 10px;
+            font-family: "Gilroy_M";
+            font-size: 18px;
+            color: $darkSubText;
+            td {
+              padding-right: 28px;
+              vertical-align: top;
+              text-align: left;
+            }
+            .approve {
+              font-family: "Gilroy_SB";
+              color: $green;
+            }
+            .reject {
+              font-family: "Gilroy_SB";
+              color: $error;
+            }
+          }
+        }
+      }
     }
     .tab-con-active{
       display: block;
