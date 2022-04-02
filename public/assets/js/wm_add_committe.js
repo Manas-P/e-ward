@@ -1,4 +1,4 @@
-// Add Ward Member Modal 
+// Add committee Modal 
 const addMember=document.querySelector(".add-member");
 const closeModal=document.querySelector(".modal-close-btn");
 const overlay=document.querySelector(".overlay");

@@ -177,7 +177,7 @@
                                 <div class="about">
                                     <div class="name">Task name two</div>
                                     <div class="members-asgn"><span>Members assigned:</span>active</div>
-                                    <div class="sub">Status:<div class="tag" style="color:#1BBD2B; background:#DDF5DF;">Incomplete</div></div>
+                                    <div class="sub">Status:<div class="tag" style="color:#1BBD2B; background:#DDF5DF;">Completed</div></div>
                                 </div>
                             </a>
 
@@ -223,6 +223,49 @@
                 
             </div>
         </section>
+
+
+        <!-- =========== Modal ============ -->
+        <div class="overlay modal-hidden"></div>
+        <!-- form to add committee task-->
+        <div class="box modal-box modal-hidden">
+            <div class="title">
+                Add committee task
+            </div>
+            <div class="modal-close-btn">
+                <img src="../../../../public/assets/images/close.svg" alt="close button">
+            </div>
+            <!-- Add task -->
+            <form action="" method="post" id="add-task" enctype="multipart/form-data">
+                <div class="inputs">
+                    <div class="input commName">
+                        <div class="label">
+                            Task name
+                        </div>
+                        <input type="text" name="name" id="comm-name" placeholder="John Doe" autocomplete="off">
+                        <div class="error error-hidden">
+                        </div>
+                    </div>
+                    <div class="inputt commDes">
+                        <div class="label">
+                            Task description
+                        </div>
+                        <textarea name="comm_des" id="comm-des" rows="10"></textarea>
+                        <div class="subtext">
+                            <div class="error error-hidden">
+                            </div>
+                            <div class="count-limit">
+                                <span id="count-char">0</span>/370
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button hBtn cursor-disable">
+                        <input type="submit" value="Add task" name="add-comm" id="add-comm" onclick="loader()" class="primary-button disabled">
+                    </div>
+                </div>
+            </form>
+        </div>
+
 
         <!-- Error Toast -->
         <?php
