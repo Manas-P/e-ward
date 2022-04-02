@@ -151,9 +151,37 @@
                 <!-- End of view members -->
 
                 <div id="tabCon2" class="tab-content">
-                    <div class="content2">
-                        <h1>Tab2</h1>
-                        <h2>Add committee tasks</h2>
+                    <div class="committe-tasks">
+                        <div class="tasks">
+                            <a class="add-task">
+                                <div class="icon">
+                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path class="str" d="M15 6.25V23.75" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path class="str" d="M6.25 15H23.75" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="text">Add task</div>
+                            </a>
+        
+                            <!-- Fetch office staffs -->
+                                
+                            <a href="" class="task">
+                                <div class="about">
+                                    <div class="name">Task name one</div>
+                                    <div class="members-asgn"><span>Members assigned:</span>active</div>
+                                    <div class="sub">Status:<div class="tag" style="color:#EC0000; background:#FCD9D9;">Incomplete</div></div>
+                                </div>
+                            </a>
+
+                            <a href="" class="task">
+                                <div class="about">
+                                    <div class="name">Task name two</div>
+                                    <div class="members-asgn"><span>Members assigned:</span>active</div>
+                                    <div class="sub">Status:<div class="tag" style="color:#1BBD2B; background:#DDF5DF;">Incomplete</div></div>
+                                </div>
+                            </a>
+
+                        </div>
                     </div>
                 </div>
 
@@ -174,10 +202,10 @@
                                 <table>
                                     <tr>
                                         <td width=108px>1.</td>
-                                        <td width=236px>Brooklyn Simmons</td>
-                                        <td width=160px>124</td>
+                                        <td width=236px>Annette Black</td>
+                                        <td width=160px>46</td>
                                         <td width=180px>9854587856</td>
-                                        <td width=396px>brooklynsimmo01n@gmail.com</td>
+                                        <td width=396px>annetteblack@gmail.com</td>
                                         <td width=130px>23</td>
                                         <td width=95px>
                                             <a  class="approve" onclick="loader()" >Approve</a>
