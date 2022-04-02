@@ -547,13 +547,19 @@ body {
   cursor: pointer;
 }
 
-.main .container .tab-menu .tabs .active {
+.main .container .tab-menu .tabs .tab:hover {
+  color: #5744e3;
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+}
+
+.main .container .tab-menu .tabs .tab-active {
   color: #5744e3;
   background: #eeecfc;
   width: auto;
 }
 
-.main .container .tab-menu .tabs .active::after {
+.main .container .tab-menu .tabs .tab-active::after {
   content: "";
   position: relative;
   display: block;
@@ -570,6 +576,20 @@ body {
   width: 100%;
   background: #D9D5F5;
   border-radius: 4px;
+}
+
+.main .container .tab-content {
+  width: 100%;
+  padding: 40px;
+  background: #fff;
+  border-radius: 10px;
+  margin-top: 42px;
+  position: absolute;
+  display: none;
+}
+
+.main .container .tab-con-active {
+  display: block;
 }
 
 .alertt {

@@ -180,9 +180,12 @@ body {
           padding: 8px 24px;
           border-radius: 10px;
           cursor: pointer;
-          
+          &:hover{
+            color: $primary;
+            transition: .5s ease-in-out;
+          }
         }
-        .active{
+        .tab-active{
           color: $primary;
           background: $primaryFade;
           width:auto;
@@ -205,6 +208,18 @@ body {
         background:#D9D5F5;
         border-radius: 4px;
       }
+    }
+    .tab-content{
+      width:100%;
+      padding:40px;
+      background: $white;
+      border-radius: 10px;
+      margin-top: 42px;
+      position: absolute;
+      display: none
+    }
+    .tab-con-active{
+      display: block;
     }
   }
 }

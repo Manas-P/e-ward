@@ -91,17 +91,27 @@
                 <!-- Tab Menu -->
                 <div class="tab-menu">
                     <div class="tabs">
-                        <div class="tab">
+                        <div id="tabBtn1" class="tab tab-active">
                             Members
                         </div>
-                        <div class="tab">
+                        <div id="tabBtn2" class="tab">
                             Committee tasks
                         </div>
-                        <div class="tab active">
+                        <div id="tabBtn3" class="tab">
                             Requests
                         </div>
                     </div>
                     <div class="underline"></div>
+                </div>
+
+                <div id="tabCon1" class="tab-content tab-con-active">
+                    <h1>tab1</h1>
+                </div>
+                <div id="tabCon2" class="tab-content">
+                    <h1>tab2</h1>
+                </div>
+                <div id="tabCon3" class="tab-content">
+                    <h1>tab3</h1>
                 </div>
                 
                 
@@ -146,6 +156,7 @@
         ?>
         <!-- ==========Loading End============= -->
 
+        <script src="../../../../public/assets/js/wm_view_committee.js"></script>
         <script src="../../../../public/assets/js/toast.js"></script>
     </body>
     </html>
