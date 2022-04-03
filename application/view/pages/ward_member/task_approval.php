@@ -87,7 +87,49 @@
 
                 <!-- Pending approval -->
                 <div id="tabCon1" class="tab-content tab-con-active">
-                    <h1>Tab 1</h1>
+                    <div class="cards">
+                        <div class="card">
+                            <div class="header">
+                                <div class="title">
+                                    Title
+                                </div>
+                                <div class="date">
+                                    20-03-2022
+                                </div>
+                            </div>
+                            <div class="description">
+                                Amet minim mollit non deserunt ullamco est sit aliqua dolor 
+                                do amet sint. Velit officia consequat duis enim velit
+                                mollit. Exercitation veniam consequat sunt nostrud amet. 
+                                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+                                amet sint. Duis enim velit mollit. Exercitation veniam 
+                                consequat sunt nostrud amet.Amet minim mollit non deserunt
+                                ullamco est sit aliqua dolor do amet sint.
+                            </div>
+                            <div class="photos">
+                                <div class="title">
+                                    Photos
+                                </div>
+                                <div class="images">
+                                    <div class="img">
+                                        <img src="../../../../public/assets/images/uploads/photos/1637689428.png" alt="">
+                                    </div>
+                                    <div class="img">
+                                        <img src="../../../../public/assets/images/uploads/photos/1644758474.png" alt="">
+                                    </div>
+                                    <div class="img">
+                                        <img src="../../../../public/assets/images/uploads/photos/1643901418.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="underline">
+                            </div>
+                            <div class="buttons">
+                                <a href="" class="approve">Approve</a>
+                                <a href="" class="reject">Reject</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- End of Pending approval -->
 

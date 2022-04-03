@@ -412,6 +412,170 @@ body {
   display: none;
 }
 
+.main .container .tab-content .cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.main .container .tab-content .cards .card {
+  background: #fff;
+  -webkit-box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
+          box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
+  border-radius: 10px;
+  padding: 24px;
+}
+
+.main .container .tab-content .cards .card .header {
+  display: fles;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .container .tab-content .cards .card .header .title {
+  font-family: "Gilroy_SB";
+  font-size: 24px;
+  color: #1e1e1e;
+}
+
+.main .container .tab-content .cards .card .header .date {
+  font-family: "Gilroy_M";
+  font-size: 18px;
+  color: #1e1e1e;
+}
+
+.main .container .tab-content .cards .card .description {
+  margin-top: 8px;
+  width: 656px;
+  height: 130px;
+  line-height: 26px;
+  font-family: "Gilroy_M";
+  font-size: 18px;
+  color: #8b8b8b;
+}
+
+.main .container .tab-content .cards .card .photos {
+  margin-top: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 12px;
+}
+
+.main .container .tab-content .cards .card .photos .title {
+  font-family: "Gilroy_SB";
+  font-size: 18px;
+  color: #1e1e1e;
+}
+
+.main .container .tab-content .cards .card .photos .images {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 12px;
+          column-gap: 12px;
+}
+
+.main .container .tab-content .cards .card .photos .images .img {
+  width: 124px;
+  height: 72px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid #c1c1c1;
+}
+
+.main .container .tab-content .cards .card .photos .images .img img {
+  width: 100%;
+}
+
+.main .container .tab-content .cards .card .underline {
+  margin-top: 28px;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  background: #ECECEC;
+}
+
+.main .container .tab-content .cards .card .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 32px;
+          column-gap: 32px;
+  margin-top: 28px;
+  margin-bottom: 4px;
+}
+
+.main .container .tab-content .cards .card .buttons .approve {
+  background: #fff;
+  color: #5744e3;
+  font-family: "Gilroy_B";
+  font-size: 18px;
+  text-align: center;
+  padding: 16px 0;
+  border: 2px solid #5744e3;
+  outline: none;
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+}
+
+.main .container .tab-content .cards .card .buttons .approve:hover {
+  background: #f4f3ff;
+}
+
+.main .container .tab-content .cards .card .buttons .approve:active {
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
+}
+
+.main .container .tab-content .cards .card .buttons .reject {
+  background: #fff;
+  color: #5744e3;
+  font-family: "Gilroy_B";
+  font-size: 18px;
+  text-align: center;
+  padding: 16px 0;
+  border: 2px solid #5744e3;
+  outline: none;
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+  color: #ec0000;
+  border: 2px solid #ec0000;
+}
+
+.main .container .tab-content .cards .card .buttons .reject:hover {
+  background: #f4f3ff;
+}
+
+.main .container .tab-content .cards .card .buttons .reject:active {
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
+}
+
+.main .container .tab-content .cards .card .buttons .reject:hover {
+  background: #fde1e1;
+}
+
 .main .container .tab-con-active {
   display: block;
 }

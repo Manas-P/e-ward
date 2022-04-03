@@ -128,6 +128,91 @@ body {
       .tab-content{
         margin-top: 42px;
         display: none;
+        .cards{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            .card{
+                background: $white;
+                box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
+                border-radius: 10px;
+                padding:24px;
+                .header{
+                  display: fles;
+                  justify-content: space-between;
+                  align-items: center;
+                  .title{
+                    font-family: "Gilroy_SB";
+                    font-size: 24px;
+                    color:$text;
+                  }
+                  .date{
+                    font-family: "Gilroy_M";
+                    font-size: 18px;
+                    color:$text;
+                  }
+                }
+                .description{
+                  margin-top: 8px;
+                  width: 656px;
+                  height: 130px;
+                  line-height: 26px;
+                  font-family: "Gilroy_M";
+                  font-size: 18px;
+                  color:$subText;
+                }
+                .photos{
+                  margin-top: 18px;
+                  display: flex;
+                  flex-direction: column;
+                  row-gap: 12px;
+                  .title{
+                    font-family: "Gilroy_SB";
+                    font-size: 18px;
+                    color:$text;
+                  }
+                  .images{
+                    display: flex;
+                    column-gap: 12px;
+                    .img{
+                      width: 124px;
+                      height: 72px;
+                      border-radius: 10px;
+                      overflow: hidden;
+                      cursor: pointer;
+                      border: 1px solid $border;
+                      img{
+                        width:100%;
+                      }
+                    }
+                  }
+                }
+                .underline{
+                  margin-top: 28px;
+                  width:100%;
+                  height:2px;
+                  border-radius: 2px;
+                  background: #ECECEC;
+                }
+                .buttons{
+                  display: flex;
+                  column-gap: 32px;
+                  margin-top: 28px;
+                  margin-bottom: 4px;
+                  .approve{
+                    @include secondary_button(310px);
+                  }
+                  .reject {
+                    @include secondary_button(310px);
+                    color: $error;
+                    border:2px solid $error;
+                    &:hover{
+                      background: #fde1e1;
+                    }
+                  }
+                }
+            }
+        }
       }
       .tab-con-active{
         display: block;
