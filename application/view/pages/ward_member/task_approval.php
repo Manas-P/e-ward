@@ -69,6 +69,39 @@
                 </div>
 
                 <!-- content -->
+                <!-- Tab Menu -->
+                <div class="tab-menu">
+                    <div class="tabs">
+                        <div id="tabBtn1" class="tab tab-active">
+                            Pending approval
+                        </div>
+                        <div id="tabBtn2" class="tab">
+                            Approved work
+                        </div>
+                        <div id="tabBtn3" class="tab">
+                            Rejected work
+                        </div>
+                    </div>
+                    <div class="underline"></div>
+                </div>
+
+                <!-- Pending approval -->
+                <div id="tabCon1" class="tab-content tab-con-active">
+                    <h1>Tab 1</h1>
+                </div>
+                <!-- End of Pending approval -->
+
+                <!-- Approved work -->
+                <div id="tabCon2" class="tab-content">
+                    <h1>Tab 2</h1>
+                </div>
+                <!-- End of Approved work -->
+
+                <!-- Rejected work -->
+                <div id="tabCon3" class="tab-content">
+                    <h1>Tab 3</h1>
+                </div>
+                <!-- End of Rejected work -->
                 
             </div>
         </section>
@@ -115,6 +148,7 @@
         ?>
         <!-- ==========Loading End============= -->
 
+        <script src="../../../../public/assets/js/wm_task_approval.js"></script>
         <script src="../../../../public/assets/js/toast.js"></script>
     </body>
     </html>
