@@ -471,6 +471,7 @@ body {
   color: #fff;
   font-family: "Gilroy_B";
   font-size: 18px;
+  text-align: center;
   padding: 16px 0;
   border: none;
   outline: none;
@@ -493,6 +494,7 @@ body {
   color: #5744e3;
   font-family: "Gilroy_B";
   font-size: 18px;
+  text-align: center;
   padding: 16px 0;
   border: 2px solid #5744e3;
   outline: none;
@@ -955,6 +957,7 @@ body {
   color: #fff;
   font-family: "Gilroy_B";
   font-size: 18px;
+  text-align: center;
   padding: 16px 0;
   border: none;
   outline: none;

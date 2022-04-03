@@ -135,7 +135,41 @@
 
                 <!-- Approved work -->
                 <div id="tabCon2" class="tab-content">
-                    <h1>Tab 2</h1>
+                    <div class="cards">
+                        <div class="card">
+                            <div class="header">
+                                <div class="title">
+                                    New title
+                                </div>
+                                <div class="date">
+                                    18-03-2022
+                                </div>
+                            </div>
+                            <div class="description">
+                                Amet minim mollit non deserunt ullamco est sit aliqua dolor
+                                do amet sint. Velit officia consequat duis enim velit
+                                mollit. Exercitation veniam consequat sunt nostrud amet.
+                                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+                                amet sint. Duis enim velit mollit.
+                            </div>
+                            <div class="photos">
+                                <div class="title">
+                                    Photos
+                                </div>
+                                <div class="images">
+                                    <div class="img">
+                                        <img src="../../../../public/assets/images/uploads/photos/1637437604.png" alt="">
+                                    </div>
+                                    <div class="img">
+                                        <img src="../../../../public/assets/images/uploads/photos/1637438042.png" alt="">
+                                    </div>
+                                    <div class="img">
+                                        <img src="../../../../public/assets/images/uploads/photos/1637438149.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- End of Approved work -->
 
