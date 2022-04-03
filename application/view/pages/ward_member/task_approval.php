@@ -21,7 +21,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="../../../../public/assets/css/ward_member/wm_view_task.css">
+        <link rel="stylesheet" href="../../../../public/assets/css/ward_member/wm_task_approval.css">
         <title>Ward <?php echo $wardno; ?> || Committees</title>
     </head>
     <body>
@@ -57,70 +57,18 @@
                     <svg class="str" width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2.2002 8.59999L5.8002 4.99999L2.2002 1.39999" stroke="#1E1E1E" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
-                    <a href="" class="now">
+                    <a href="./view_task.php" class="previous">
                         Task name 1
+                    </a>
+                    <svg class="str" width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.2002 8.59999L5.8002 4.99999L2.2002 1.39999" stroke="#1E1E1E" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <a href="" class="now">
+                        Member name
                     </a>
                 </div>
 
                 <!-- content -->
-                <div class="task-det">
-                    <div class="card">
-                        <div class="content">
-                            <div class="heading">
-                                Task name 1
-                            </div>
-                            <div class="description">
-                                Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
-                                Velit officia consequat duis enim velit mollit. Exercitation veniam 
-                                consequat sunt nostrud amet.Amet minim mollit non deserunt ullamco est 
-                                sit aliqua dolor do amet sint. Duis enim velit mollit. Exercitation 
-                                veniam consequat sunt nostrud amet.Amet minim mollit non deserunt ullamco 
-                                est sit udyfg wyegr.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">wer</div>
-                </div>
-
-                <!-- Add members -->
-                <div class="title">
-                    Members
-                </div>
-                <div class="members-list">
-                    <div class="members">
-                        <a class="add-member">
-                            <div class="icon">
-                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path class="str" d="M15 6.25V23.75" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path class="str" d="M6.25 15H23.75" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                            <div class="text">Add members</div>
-                        </a>
-
-                        <!-- Fetch members -->
-                        <a href="./task_approval.php" class="member">
-                            <div class="photo">
-                                <img src="../../../../public/assets/images/uploads/photos/1637689638.png" alt="member photo">
-                            </div>
-                            <div class="about">
-                                <div class="name">Wade Warren</div>
-                                <div class="tag" style="color:#1BBD2B; background:#DDF5DF;">Completed</div>
-                            </div>
-                        </a>
-
-                        <a href="./task_approval.php" class="member">
-                            <div class="photo">
-                                <img src="../../../../public/assets/images/uploads/photos/1645631386.png" alt="member photo">
-                            </div>
-                            <div class="about">
-                                <div class="name">Annette Black</div>
-                                <div class="tag" style="color:#EC0000; background:#FCD9D9;">Incomplete</div>
-                            </div>
-                        </a>
-
-                    </div>
-                </div>
                 
             </div>
         </section>
