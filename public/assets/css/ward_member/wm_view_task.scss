@@ -8,9 +8,9 @@ body {
   text-decoration: none;
   cursor: pointer;
   display: flex;
-  column-gap: $padding;
+  column-gap: 12px;
   align-items: center;
-  padding: 12px;
+  padding: $padding;
   width: 260px;
   background: $white;
   box-shadow: $shadow;
@@ -82,6 +82,108 @@ body {
         }
       }
     // content
+    .task-det{
+      margin-top: 38px;
+      display: flex;
+      justify-content: space-between;
+      .card{
+        height:222px;
+        width: 704px;
+        background: $white;
+        box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
+        border-radius: 10px;
+        padding:20px 24px;
+        .content{
+          display: flex;
+          flex-direction: column;
+          row-gap: 8px;
+          .heading{
+            font-family: "Gilroy_SB";
+            font-size: 24px;
+            color: $text;
+          }
+          .description{
+            font-family: "Gilroy_M";
+            font-size: 18px;
+            color: $subText;
+            line-height: 26px;
+            max-width:656px;
+          }
+        }
+      }
+    }
+    .title{
+      margin-top: 42px;
+      font-family: "Gilroy_SB";
+      font-size: 28px;
+    }
+    .members-list {
+      margin-top: 36px;
+      .members {
+        margin-top: 24px;
+        display: flex;
+        flex-direction: row;
+        column-gap: 36px;
+        flex-wrap: wrap;
+        row-gap: 36px;
+        .add-member {
+          @include card(0px 10px 20px rgba(237, 237, 237, 0.25),12px);
+          .icon {
+            padding: 18px;
+            background: $primaryFade;
+            border-radius: 4px;
+            svg {
+              height: 30px;
+              width: 30px;
+            }
+            .str {
+              stroke: $primary;
+            }
+          }
+          .text {
+            font-family: "Gilroy_SB";
+            font-size: 18px;
+            color: $subText;
+          }
+          &:hover {
+            box-shadow: 0px 14px 28px rgba(191, 191, 191, 0.25);
+          }
+        }
+        .member {
+          @include card(0px 10px 20px rgba(237, 237, 237, 0.25),12px);
+          .photo {
+            width: 66px;
+            height: 66px;
+            border-radius: 4px;
+            img {
+              width: 66px;
+              height: 66px;
+              border-radius: 4px;
+            }
+          }
+          .about {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            align-items: flex-start;
+            .name {
+              font-family: "Gilroy_SB";
+              font-size: 18px;
+              color: $text;
+            }
+            .tag {
+              font-family: "Gilroy_SB";
+              font-size: 14px;
+              padding: 3px 12px;
+              border-radius: 10px;
+            }
+          }
+          &:hover {
+            box-shadow: 0px 14px 28px rgba(191, 191, 191, 0.25);
+          }
+        }
+      }
+    }
   }
 }
 

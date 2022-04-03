@@ -63,6 +63,64 @@
                 </div>
 
                 <!-- content -->
+                <div class="task-det">
+                    <div class="card">
+                        <div class="content">
+                            <div class="heading">
+                                Task name 1
+                            </div>
+                            <div class="description">
+                                Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
+                                Velit officia consequat duis enim velit mollit. Exercitation veniam 
+                                consequat sunt nostrud amet.Amet minim mollit non deserunt ullamco est 
+                                sit aliqua dolor do amet sint. Duis enim velit mollit. Exercitation 
+                                veniam consequat sunt nostrud amet.Amet minim mollit non deserunt ullamco 
+                                est sit udyfg wyegr.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">wer</div>
+                </div>
+
+                <!-- Add members -->
+                <div class="title">
+                    Members
+                </div>
+                <div class="members-list">
+                    <div class="members">
+                        <a class="add-member">
+                            <div class="icon">
+                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="str" d="M15 6.25V23.75" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path class="str" d="M6.25 15H23.75" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="text">Add members</div>
+                        </a>
+
+                        <!-- Fetch members -->
+                        <a href="" class="member">
+                            <div class="photo">
+                                <img src="../../../../public/assets/images/uploads/photos/1637689638.png" alt="member photo">
+                            </div>
+                            <div class="about">
+                                <div class="name">Wade Warren</div>
+                                <div class="tag" style="color:#1BBD2B; background:#DDF5DF;">Completed</div>
+                            </div>
+                        </a>
+
+                        <a href="" class="member">
+                            <div class="photo">
+                                <img src="../../../../public/assets/images/uploads/photos/1645631386.png" alt="member photo">
+                            </div>
+                            <div class="about">
+                                <div class="name">Annette Black</div>
+                                <div class="tag" style="color:#EC0000; background:#FCD9D9;">Incomplete</div>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
                 
             </div>
         </section>

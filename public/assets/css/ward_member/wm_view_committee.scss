@@ -8,9 +8,9 @@ body {
   text-decoration: none;
   cursor: pointer;
   display: flex;
-  column-gap: $padding;
+  column-gap:12px;
   align-items: center;
-  padding: 12px;
+  padding:  $padding;
   width: 260px;
   background: $white;
   box-shadow: $shadow;
