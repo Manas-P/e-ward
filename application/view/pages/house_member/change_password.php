@@ -46,6 +46,36 @@ else
                     </div>
                 </div>
                 <!-- content -->
+                <div class="change-pass">
+                    <div class="text">
+                            *Passwords work like a key to important personal information, such as name, birth date, home address, phone number and
+                            credit card. <br>
+                            It’s a perfect time to change your passwords to stronger ones.
+                    </div>
+                    <form id="reg-form" action="" method="post" enctype="multipart/form-data">
+                        <div class="inputs">
+                            <div class="input curPass">
+                                <div class="label">
+                                    Current password
+                                </div>
+                                <input type="password" id="cur-pass" name="curPass" placeholder="********" autocomplete="off">
+                                <div class="error error-hidden">
+                                </div>
+                            </div>
+                            <div class="input newPass">
+                                <div class="label">
+                                    New password
+                                </div>
+                                <input type="password" id="new-pass" name="newPass" placeholder="********" onkeyup="validatepass(this.value)" autocomplete="off">
+                                <div class="error error-hidden">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="button">
+                            <input type="submit" value="Continue" id="cp-sub" name="fpConNewPass" class="primary-button disabled">
+                        </div>
+                    </form>
+                </div>
                 
 
             </div>
@@ -92,6 +122,31 @@ else
             <!-- ==========Loading End============= -->
         
         <script src="../../../../public/assets/js/toast.js"></script>
+        <script>
+            function validatepass ( input ){
+                const subBtn = document.querySelector( "#cp-sub" );
+                const newPassError = document.querySelector( ".newPass .error" );
+                var passRegx = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$/;
+                if ( input.match( passRegx ) ){
+                    newPassError.classList.add( "error-hidden" );
+                    newPassError.classList.remove( "error-visible" );
+                    subBtn.classList.remove( "disabled" );
+                    subBtn.style.marginTop = "0px";
+                } else if ( input.length == 0 ){
+                    newPassError.classList.add( "error-visible" );
+                    newPassError.classList.remove( "error-hidden" );
+                    newPassError.innerText = "Field cannot be blank";
+                    subBtn.classList.add( "disabled" );
+                    subBtn.style.marginTop = "0px";
+                } else{
+                    newPassError.classList.add( "error-visible" );
+                    newPassError.classList.remove( "error-hidden" );
+                    newPassError.innerText = "Password must be a minimum of 8 characters including number, Upper, Lower And one special character";
+                    subBtn.style.marginTop = "12px";
+                    subBtn.classList.add( "disabled" );
+                }
+            }
+        </script>
     </body>
     
 </html>
