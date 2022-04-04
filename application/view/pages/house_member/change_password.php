@@ -52,13 +52,14 @@ else
                             credit card. <br>
                             It’s a perfect time to change your passwords to stronger ones.
                     </div>
-                    <form id="reg-form" action="" method="post" enctype="multipart/form-data">
+                    <form id="cp-form" action="../../../model/house_member/change_password.php" method="post" enctype="multipart/form-data">
+                        <input type="text" name="userid" value="<?php echo $user_id; ?>" id="user-id" style="display: none;">
                         <div class="inputs">
                             <div class="input curPass">
                                 <div class="label">
                                     Current password
                                 </div>
-                                <input type="password" id="cur-pass" name="curPass" placeholder="********" autocomplete="off">
+                                <input type="password" id="cur-pass" name="curpass" placeholder="********" oninput="validateCurrentPass(this.value)" autocomplete="off">
                                 <div class="error error-hidden">
                                 </div>
                             </div>
@@ -80,7 +81,11 @@ else
 
             </div>
         </section>
-        
+
+
+        <div id="warrning-box">
+            <!-- Inject Error Toast -->
+        </div>
 
         <!-- Error Toast -->
         <?php
@@ -123,29 +128,89 @@ else
         
         <script src="../../../../public/assets/js/toast.js"></script>
         <script>
+            var curError = false;
+            var newError = false;
+
+            const subBtn = document.querySelector( "#cp-sub" );
+
+            //check current password
+            function validateCurrentPass ( curpass )
+            {
+                const userId = $( '#user-id' ).val();
+                const curPassError = document.querySelector( ".curPass .error" );
+                if ( curpass.length != 0 ){
+                    $.ajax( {
+                        url: "../../../model/house_member/change_password.php",
+                        type: "POST",
+                        data: {
+                            curPass: curpass,
+                            userId: userId
+                        },
+                        success: function( data,status ){
+                            if ( data != 0 ){
+                                $( '#warrning-box' ).html( data );
+                                subBtn.classList.add( "disabled" );
+                                curError = false;
+                            }
+                            if ( data == 0 ){
+                                $( '#warrning-box' ).html( data );
+                                subBtn.classList.remove( "disabled" );
+                                curError = true;
+                            }
+                        }
+                    } );
+                    curPassError.classList.add( "error-hidden" );
+                    curPassError.classList.remove( "error-visible" );
+                } else{
+                    curPassError.classList.add( "error-visible" );
+                    curPassError.classList.remove( "error-hidden" );
+                    curPassError.innerText = "Field cannot be blank";
+                    curError = false;
+                }
+            }
+
+            //Validate New password
             function validatepass ( input ){
-                const subBtn = document.querySelector( "#cp-sub" );
+                const oldPass = document.querySelector("#cur-pass").value;
+                console.log(oldPass, input);
                 const newPassError = document.querySelector( ".newPass .error" );
                 var passRegx = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$/;
-                if ( input.match( passRegx ) ){
-                    newPassError.classList.add( "error-hidden" );
-                    newPassError.classList.remove( "error-visible" );
-                    subBtn.classList.remove( "disabled" );
+                if ( oldPass === input ){
+                    console.log( "entered" );
+                    newPassError.classList.add( "error-visible" );
+                    newPassError.classList.remove( "error-hidden" );
+                    newPassError.innerText = "Old password and new password cannot be same";
+                    newError = false;
                     subBtn.style.marginTop = "0px";
                 } else if ( input.length == 0 ){
                     newPassError.classList.add( "error-visible" );
                     newPassError.classList.remove( "error-hidden" );
                     newPassError.innerText = "Field cannot be blank";
-                    subBtn.classList.add( "disabled" );
+                    newError = false;
                     subBtn.style.marginTop = "0px";
-                } else{
+                } else if ( input.match( passRegx ) ){
+                    newPassError.classList.add( "error-hidden" );
+                    newPassError.classList.remove( "error-visible" );
+                    newError = true;
+                    subBtn.style.marginTop = "0px";
+                }else{
                     newPassError.classList.add( "error-visible" );
                     newPassError.classList.remove( "error-hidden" );
                     newPassError.innerText = "Password must be a minimum of 8 characters including number, Upper, Lower And one special character";
                     subBtn.style.marginTop = "12px";
-                    subBtn.classList.add( "disabled" );
+                    newError = false;
                 }
             }
+
+            //Button State
+            const subForm = document.querySelector( "#cp-form" );
+            subForm.addEventListener( "keyup",() =>{
+                if ( curError == true && newError == true ){
+                    subBtn.classList.remove( "disabled" );
+                } else{
+                    subBtn.classList.add( "disabled" );
+                }
+            } );
         </script>
     </body>
     
