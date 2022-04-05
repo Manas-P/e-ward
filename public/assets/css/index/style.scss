@@ -1,0 +1,193 @@
+//Components
+@import "../components.scss";
+
+@mixin anchor() {
+  font-family: "Gilroy_SB";
+  font-size: 16px;
+  color: $primary;
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+}
+
+//Login. Register Switch
+@mixin switch($op, $scale, $vis, $dis) {
+  opacity: $op;
+  transform: $scale;
+  pointer-events: $vis;
+  display: $dis;
+}
+
+.main {
+  background-image: url("../../images/bg.png");
+  background-color: linear-gradient(110.33deg, #ffffff 0%, #ededed 107.08%);
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  .sections {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    .content {
+      display: flex;
+      flex-direction: column;
+      row-gap: 26px;
+      .logo {
+        width: 310px;
+      }
+      .description {
+        font-family: "Gilroy_M";
+        font-size: 24px;
+        width: 852px;
+        font-weight: 500;
+        line-height: 36px;
+        color: $text;
+      }
+      .connection {
+        width: 872px;
+      }
+    }
+    .form {
+      .box {
+        @include box();
+        .login-text {
+          display: flex;
+          flex-direction: column;
+          row-gap: 12px;
+          .title {
+            font-family: "Gilroy_B";
+            font-size: 36px;
+          }
+          .sub-title {
+            font-family: "Gilroy_M";
+            font-size: 16px;
+            color: $subText;
+            width: 460px;
+          }
+        }
+        .inputs {
+          display: flex;
+          flex-direction: column;
+          row-gap: 32px;
+          margin-top: 40px;
+          @include input_fields(460px);
+        }
+        .sub {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 18px;
+          @include checkbox(16px, "Gilroy_SB");
+          .forgot {
+            @include anchor();
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+        .buttons {
+          margin-top: 32px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          row-gap: 28px;
+          .primary-button {
+            @include primary_button(100%);
+          }
+          .or {
+            font-family: "Gilroy_M";
+            font-weight: 500;
+            font-size: 16px;
+            color: $text;
+            display: flex;
+            align-items: center;
+            column-gap: 10px;
+            user-select: none;
+            .line {
+              height: 1px;
+              width: 210px;
+              background: #c4c4c4;
+            }
+          }
+          .secondary-button {
+            @include secondary_button(100%);
+          }
+        }
+      }
+    }
+  }
+}
+
+.box2 {
+  opacity: 0;
+  display: none;
+  @include box();
+  .register-text {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+    .title {
+      font-family: "Gilroy_B";
+      font-size: 36px;
+    }
+    .sub-title {
+      font-family: "Gilroy_M";
+      font-size: 16px;
+      color: $subText;
+      a {
+        margin-left: 6px;
+        @include anchor();
+      }
+    }
+  }
+  .inputs {
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+    margin-top: 40px;
+    @include input_fields(460px);
+    .half-input {
+      display: flex;
+      justify-content: space-between;
+      @include input_fields(216px);
+    }
+  }
+  .button {
+    .primary-button {
+      @include primary_button(100%);
+    }
+  }
+  .message {
+    font-family: "Gilroy_Italics_M";
+    font-size: 14px;
+    margin-top: -8px;
+  }
+}
+
+.box-visible {
+  //Pointer, Display
+  @include switch(1, 1, visible, block);
+}
+
+.box-hide {
+  @include switch(0, 0.5, none, none);
+}
+
+.box2-visible {
+  @include switch(1, 1, visible, block);
+}
+
+.box2-hide {
+  @include switch(0, 0.5, none, none);
+}
+
+.email-h {
+  color: $text;
+  font-family: "Gilroy_SB";
+}
+
+//Alert
+@include error-alert();
+
+//Loader
+@include loading();

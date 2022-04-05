@@ -1,0 +1,225 @@
+@import "../components.scss";
+
+body {
+  background: $bg;
+}
+
+@mixin card($shadow) {
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  column-gap: 12px;
+  align-items: center;
+  padding: 12px;
+  width: 260px;
+  background: $white;
+  box-shadow: $shadow;
+  border-radius: 10px;
+  transition: 0.2s ease-in-out;
+}
+
+.main {
+  display: flex;
+  .sidebar {
+    @include sidebar();
+  }
+  .container {
+    margin: 46px 63px 46px calc(476px - 63px);
+    width: calc(100% - 476px);
+    .header {
+      display: flex;
+      justify-content: space-between;
+      .title {
+        font-family: Gilroy_SB;
+        font-size: 38px;
+      }
+      .search {
+        svg {
+          position: relative;
+          left: 38px;
+          height: 20px;
+          width: 20px;
+          top: 3px;
+        }
+        input {
+          width: 408px;
+          font-size: 18px;
+          font-family: "Gilroy_M";
+          padding: 16px 0px 16px 42px;
+          border-radius: 10px;
+          border: 1px solid $border;
+          color: $text;
+          outline: none;
+          transition: 0.2s ease-in-out;
+          &:focus {
+            border: 1px solid $text;
+          }
+          &:focus svg .str {
+            stroke: $text;
+          }
+        }
+      }
+    }
+    .hyper-link {
+      margin-top: 36px;
+      display: flex;
+      justify-content: flex-end;
+      font-family: "Gilroy_SB";
+      font-size: 20px;
+      column-gap: 48px;
+      a {
+        text-decoration: underline;
+        color: $primary;
+      }
+      .leave-req {
+        display: flex;
+      }
+    }
+    // content
+    .members-list {
+      margin-top: 36px;
+      .members {
+        margin-top: 24px;
+        display: flex;
+        flex-direction: row;
+        column-gap: 36px;
+        flex-wrap: wrap;
+        row-gap: 36px;
+        .add-member {
+          @include card(0px 10px 20px rgba(237, 237, 237, 0.25));
+          .icon {
+            padding: 18px;
+            background: $primaryFade;
+            border-radius: 4px;
+            svg {
+              height: 30px;
+              width: 30px;
+            }
+            .str {
+              stroke: $primary;
+            }
+          }
+          .text {
+            font-family: "Gilroy_SB";
+            font-size: 18px;
+            color: $subText;
+          }
+          &:hover {
+            box-shadow: 0px 14px 28px rgba(191, 191, 191, 0.25);
+          }
+        }
+        .member {
+          @include card(0px 10px 20px rgba(237, 237, 237, 0.25));
+          .photo {
+            width: 66px;
+            height: 66px;
+            overflow: hidden;
+            border-radius: 4px;
+            img {
+              height: 100%;
+              border-radius: 4px;
+            }
+          }
+          .about {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            align-items: flex-start;
+            .name {
+              font-family: "Gilroy_SB";
+              font-size: 18px;
+              color: $text;
+            }
+            .tag {
+              font-family: "Gilroy_SB";
+              font-size: 14px;
+              color: $primary;
+              padding: 3px 12px;
+              background: $primaryFade;
+              border-radius: 10px;
+            }
+          }
+          &:hover {
+            box-shadow: 0px 14px 28px rgba(191, 191, 191, 0.25);
+          }
+        }
+      }
+    }
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.box {
+  @include box_model(556px, auto);
+  .inputs {
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+    margin-top: 40px;
+    @include input_fields(460px);
+    .inputt {
+      margin-bottom: -20px;
+      width: 460px;
+      display: flex;
+      flex-direction: column;
+      row-gap: 8px;
+      .label {
+        font-size: 16px;
+        font-family: "Gilroy_M";
+      }
+      textarea {
+        resize: vertical;
+        max-height: 168px;
+        min-height: 116px;
+        font-size: 18px;
+        line-height: 27px;
+        font-family: "Gilroy_M";
+        padding: 16px;
+        border-radius: 10px;
+        border: 1px solid $border;
+        color: $text;
+        outline: none;
+        transition: 0.1s ease-in-out;
+        &:focus {
+          border: 1px solid $text;
+        }
+      }
+      .subtext {
+        display: flex;
+        justify-content: space-between;
+        font-family: "Gilroy_M";
+        font-size: 14px;
+        .error {
+          color: $error;
+        }
+        .count-limit {
+          color: $text;
+        }
+      }
+    }
+  }
+  .button {
+    .primary-button {
+      @include primary_button(100%);
+    }
+  }
+}
+
+.modal-hidden {
+  display: none;
+  pointer-events: none;
+}
+
+//Alert
+@include error-alert();
+
+@include loading();
