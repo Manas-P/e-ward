@@ -91,7 +91,7 @@ html {
 }
 
 .main {
-  background-image: url("../images/bg.png");
+  background-image: url("../../images/bg.png");
   background-color: linear-gradient(110.33deg, #ffffff 0%, #ededed 107.08%);
   background-size: cover;
   height: 100vh;
@@ -340,6 +340,7 @@ html {
   color: #fff;
   font-family: "Gilroy_B";
   font-size: 18px;
+  text-align: center;
   padding: 16px 0;
   border: none;
   outline: none;
@@ -386,6 +387,7 @@ html {
   color: #5744e3;
   font-family: "Gilroy_B";
   font-size: 18px;
+  text-align: center;
   padding: 16px 0;
   border: 2px solid #5744e3;
   outline: none;
@@ -580,6 +582,7 @@ html {
   color: #fff;
   font-family: "Gilroy_B";
   font-size: 18px;
+  text-align: center;
   padding: 16px 0;
   border: none;
   outline: none;

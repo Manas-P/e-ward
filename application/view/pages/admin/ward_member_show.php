@@ -13,7 +13,7 @@ if (isset($_SESSION["sessionId"]) != session_id()) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Admin | Add Ward Memeber</title>
         <link rel="shortcut icon" href="../../../../public/assets/images/fav.svg" type="image/x-icon">
-        <link rel="stylesheet" href="../../../../public/assets/css/ward_member/ward_member_show.css">
+        <link rel="stylesheet" href="../../../../public/assets/css/admin/ward_member_show.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     </head>

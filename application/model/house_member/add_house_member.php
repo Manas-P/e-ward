@@ -22,7 +22,7 @@
         $hphno=filter_var($hphno, FILTER_SANITIZE_NUMBER_INT, FILTER_FLAG_STRIP_HIGH);
 
         //Photo path upload
-        $upload_dir = '../../../public/assets/images/';
+        $upload_dir = '../../../public/assets/images/uploads/photos/';
         $file_tmpname = $_FILES['hphoto']['tmp_name'];
         $file_name = $_FILES['hphoto']['name'];
         $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);

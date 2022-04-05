@@ -275,7 +275,7 @@ body {
 }
 
 .main .container {
-  margin: 46px 63px;
+  margin: 46px 63px 46px calc(476px - 63px);
   width: calc(100% - 476px);
 }
 
@@ -350,40 +350,27 @@ body {
   color: #1e1e1e;
 }
 
-.main .container .member-data {
+.main .container .task-det {
+  margin-top: 38px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
-  background: #fff;
-  -webkit-box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
-          box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
-  border-radius: 10px;
-  padding: 24px;
-  margin-top: 38px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
 
-.main .container .member-data .basic-details {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-column-gap: 18px;
-          column-gap: 18px;
+.main .container .task-det .card {
+  height: 222px;
+  width: 704px;
+  background: #fff;
+  -webkit-box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
+          box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
+  border-radius: 10px;
+  padding: 20px 24px;
 }
 
-.main .container .member-data .basic-details img {
-  height: 131px;
-  width: 131px;
-  border-radius: 4px;
-}
-
-.main .container .member-data .basic-details .details {
+.main .container .task-det .card .content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -391,287 +378,130 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  row-gap: 12px;
+  row-gap: 8px;
 }
 
-.main .container .member-data .basic-details .details .name {
+.main .container .task-det .card .content .heading {
   font-family: "Gilroy_SB";
   font-size: 24px;
   color: #1e1e1e;
 }
 
-.main .container .member-data .basic-details .details .info {
+.main .container .task-det .card .content .description {
   font-family: "Gilroy_M";
   font-size: 18px;
   color: #8b8b8b;
+  line-height: 26px;
+  max-width: 656px;
 }
 
-.main .container .member-data .basic-details .details .tag {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.main .container .title {
+  margin-top: 42px;
   font-family: "Gilroy_SB";
-  font-size: 14px;
-  color: #5744e3;
-  padding: 3px 12px;
-  background: #eeecfc;
-  border-radius: 10px;
-  width: 82px;
+  font-size: 28px;
 }
 
-.main .container .other-content {
+.main .container .members-list {
+  margin-top: 36px;
+}
+
+.main .container .members-list .members {
+  margin-top: 24px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-column-gap: 36px;
+          column-gap: 36px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  row-gap: 36px;
+}
+
+.main .container .members-list .members .add-member {
+  text-decoration: none;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 12px;
+          column-gap: 12px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-column-gap: 24px;
-          column-gap: 24px;
-}
-
-.main .container .other-content .divider {
-  height: 100%;
-  width: 2px;
-  border-radius: 4px;
-  background: #ececec;
-}
-
-.main .container .other-content .contents {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  row-gap: 26px;
-}
-
-.main .container .other-content .contents .content {
-  font-family: "Gilroy_M";
-  font-size: 18px;
-  color: #8b8b8b;
-}
-
-.main .container .other-content .contents .content span {
-  margin-left: 8px;
-  font-family: "Gilroy_SB";
-  color: #1e1e1e;
-}
-
-.main .container .buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.main .container .buttons .update {
-  background: #fff;
-  color: #5744e3;
-  font-family: "Gilroy_B";
-  font-size: 18px;
-  padding: 16px 0;
-  border: 2px solid #5744e3;
-  outline: none;
-  width: 100%;
-  border-radius: 10px;
-  cursor: pointer;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
-  padding: 16px 82px;
-}
-
-.main .container .buttons .update:hover {
-  background: #f4f3ff;
-}
-
-.main .container .buttons .update:active {
-  -webkit-transform: scale(0.99);
-          transform: scale(0.99);
-}
-
-.main .container .buttons .remove {
-  background: #fff;
-  color: #5744e3;
-  font-family: "Gilroy_B";
-  font-size: 18px;
-  padding: 16px 0;
-  border: 2px solid #5744e3;
-  outline: none;
-  width: 100%;
-  border-radius: 10px;
-  cursor: pointer;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
-  border: 2px solid #ec0000;
-  color: #ec0000;
-  padding: 16px 82px;
-}
-
-.main .container .buttons .remove:hover {
-  background: #f4f3ff;
-}
-
-.main .container .buttons .remove:active {
-  -webkit-transform: scale(0.99);
-          transform: scale(0.99);
-}
-
-.main .container .buttons .remove:hover {
-  background: #fff9f9;
-}
-
-.main .container .analytics {
-  width: 100%;
-  height: 500px;
+  padding: 12px;
+  width: 260px;
   background: #fff;
   -webkit-box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
           box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
   border-radius: 10px;
-  padding: 24px;
-  margin-top: 38px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
-.main .container .analytics .title {
+.main .container .members-list .members .add-member .icon {
+  padding: 18px;
+  background: #eeecfc;
+  border-radius: 4px;
+}
+
+.main .container .members-list .members .add-member .icon svg {
+  height: 30px;
+  width: 30px;
+}
+
+.main .container .members-list .members .add-member .icon .str {
+  stroke: #5744e3;
+}
+
+.main .container .members-list .members .add-member .text {
   font-family: "Gilroy_SB";
-  font-size: 28px;
-  color: #1e1e1e;
+  font-size: 18px;
+  color: #8b8b8b;
 }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  background: rgba(0, 0, 0, 0.2);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+.main .container .members-list .members .add-member:hover {
+  -webkit-box-shadow: 0px 14px 28px rgba(191, 191, 191, 0.25);
+          box-shadow: 0px 14px 28px rgba(191, 191, 191, 0.25);
 }
 
-.box {
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  width: 556px;
-  height: auto;
-  overflow: none;
-  overflow-y: scroll;
-  padding: 62px 48px 70px 48px;
+.main .container .members-list .members .member {
+  text-decoration: none;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 12px;
+          column-gap: 12px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 12px;
+  width: 260px;
   background: #fff;
-  -webkit-box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.04), 20px 40px 80px rgba(0, 0, 0, 0.1);
-          box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.04), 20px 40px 80px rgba(0, 0, 0, 0.1);
-  border-radius: 16px;
-  -webkit-transition: 1s ease-in-out;
-  transition: 1s ease-in-out;
-}
-
-.box .title {
-  font-family: "Gilroy_B";
-  font-size: 36px;
-}
-
-.box .modal-close-btn {
-  position: absolute;
-  top: 24px;
-  right: 24px;
-  cursor: pointer;
-}
-
-.box .modal-close-btn img {
-  height: 24px;
-}
-
-.box::-webkit-scrollbar {
-  width: 0px;
-}
-
-.box .inputs {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  row-gap: 32px;
-  margin-top: 40px;
-}
-
-.box .inputs .input {
-  width: 460px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  row-gap: 8px;
-}
-
-.box .inputs .input .label {
-  font-size: 16px;
-  font-family: "Gilroy_M";
-}
-
-.box .inputs .input input[type="text"],
-.box .inputs .input input[type="date"],
-.box .inputs .input input[type="file"],
-.box .inputs .input input[type="number"],
-.box .inputs .input input[type="password"] {
-  width: 100%;
-  height: 53px;
-  font-size: 18px;
-  font-family: "Gilroy_M";
-  padding: 16px 0px 16px 16px;
+  -webkit-box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
+          box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
   border-radius: 10px;
-  border: 1px solid #c1c1c1;
-  color: #1e1e1e;
-  outline: none;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
 }
 
-.box .inputs .input input[type="text"]:focus,
-.box .inputs .input input[type="date"]:focus,
-.box .inputs .input input[type="file"]:focus,
-.box .inputs .input input[type="number"]:focus,
-.box .inputs .input input[type="password"]:focus {
-  border: 1px solid #1e1e1e;
+.main .container .members-list .members .member .photo {
+  width: 66px;
+  height: 66px;
+  border-radius: 4px;
 }
 
-.box .inputs .input .error {
-  position: absolute;
-  margin-top: 84px;
-  color: #ec0000;
-  font-family: "Gilroy_M";
-  font-size: 14px;
-  width: 460px;
+.main .container .members-list .members .member .photo img {
+  width: 66px;
+  height: 66px;
+  border-radius: 4px;
 }
 
-.box .inputs .half-input {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.box .inputs .half-input .input {
-  width: 216px;
+.main .container .members-list .members .member .about {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -679,73 +509,28 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  row-gap: 8px;
+  row-gap: 10px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
-.box .inputs .half-input .input .label {
-  font-size: 16px;
-  font-family: "Gilroy_M";
-}
-
-.box .inputs .half-input .input input[type="text"],
-.box .inputs .half-input .input input[type="date"],
-.box .inputs .half-input .input input[type="file"],
-.box .inputs .half-input .input input[type="number"],
-.box .inputs .half-input .input input[type="password"] {
-  width: 100%;
-  height: 53px;
+.main .container .members-list .members .member .about .name {
+  font-family: "Gilroy_SB";
   font-size: 18px;
-  font-family: "Gilroy_M";
-  padding: 16px 0px 16px 16px;
-  border-radius: 10px;
-  border: 1px solid #c1c1c1;
   color: #1e1e1e;
-  outline: none;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
 }
 
-.box .inputs .half-input .input input[type="text"]:focus,
-.box .inputs .half-input .input input[type="date"]:focus,
-.box .inputs .half-input .input input[type="file"]:focus,
-.box .inputs .half-input .input input[type="number"]:focus,
-.box .inputs .half-input .input input[type="password"]:focus {
-  border: 1px solid #1e1e1e;
-}
-
-.box .inputs .half-input .input .error {
-  position: absolute;
-  margin-top: 84px;
-  color: #ec0000;
-  font-family: "Gilroy_M";
+.main .container .members-list .members .member .about .tag {
+  font-family: "Gilroy_SB";
   font-size: 14px;
-  width: 460px;
-}
-
-.box .button .primary-button {
-  background: #5744e3;
-  color: #fff;
-  font-family: "Gilroy_B";
-  font-size: 18px;
-  padding: 16px 0;
-  border: none;
-  outline: none;
-  width: 100%;
+  padding: 3px 12px;
   border-radius: 10px;
-  cursor: pointer;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
 }
 
-.box .button .primary-button:active {
-  -webkit-transform: scale(0.99);
-          transform: scale(0.99);
-  background: #6756eb;
-}
-
-.modal-hidden {
-  display: none;
-  pointer-events: none;
+.main .container .members-list .members .member:hover {
+  -webkit-box-shadow: 0px 14px 28px rgba(191, 191, 191, 0.25);
+          box-shadow: 0px 14px 28px rgba(191, 191, 191, 0.25);
 }
 
 .alertt {
@@ -803,4 +588,40 @@ body {
 .alert-visible {
   visibility: visible;
 }
-/*# sourceMappingURL=ward_member_show.css.map */
+
+.loading {
+  display: block;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.loading .loading-overlay {
+  position: fixed;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.096);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+
+.loading .gif {
+  width: 100%;
+  height: auto;
+}
+
+.loading .gif img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 300px;
+}
+
+.loading-hide {
+  display: none;
+}
+/*# sourceMappingURL=wm_view_task.css.map */

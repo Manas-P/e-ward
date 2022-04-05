@@ -31,6 +31,7 @@ $darkSubText: #545454;
 $subText: #8b8b8b;
 $placeholder: #b1b1b1;
 $border: #c1c1c1;
+$tabText:#868686;
 $white: #fff;
 $error: #ec0000;
 $green: #039b00;
@@ -156,6 +157,7 @@ html {
   color: #fff;
   font-family: "Gilroy_B";
   font-size: 18px;
+  text-align: center;
   padding: 16px 0;
   border: none;
   outline: none;
@@ -175,6 +177,7 @@ html {
   color: $primary;
   font-family: "Gilroy_B";
   font-size: 18px;
+  text-align: center;
   padding: 16px 0;
   border: 2px solid $primary;
   outline: none;
@@ -191,7 +194,7 @@ html {
 }
 
 //==============Checkbox=============
-@mixin checkbox() {
+@mixin checkbox($size, $family) {
   .checkbox {
     display: flex;
     column-gap: 8px;
@@ -225,8 +228,8 @@ html {
     }
 
     label {
-      font-family: "Gilroy_SB";
-      font-size: 16px;
+      font-family: $family;
+      font-size: $size;
       color: $text;
       cursor: pointer;
       user-select: none;

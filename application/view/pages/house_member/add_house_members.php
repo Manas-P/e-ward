@@ -103,7 +103,7 @@ else
 
             </div>
         </section>
-        =========== Modal ============
+        <!-- =========== Modal ============ -->
         <div class="overlay modal-hidden"></div>
         <!-- form to add members-->
         <div class="box modal-box modal-hidden">
