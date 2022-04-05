@@ -73,7 +73,7 @@ else
                             </div>
                         </div>
                         <div class="button">
-                            <input type="submit" value="Continue" id="cp-sub" name="fpConNewPass" class="primary-button disabled">
+                            <input type="submit" value="Continue" id="cp-sub" name="changePass" class="primary-button disabled">
                         </div>
                     </form>
                 </div>

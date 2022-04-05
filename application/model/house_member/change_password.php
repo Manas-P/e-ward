@@ -22,4 +22,17 @@
             return 0;
         }
     }
+
+    // Change password
+    if(isset($_POST['changePass'])){
+        echo $updatePassQuery="UPDATE `tbl_house_member` SET `password`='$newPass' WHERE `userid`='$userid'";
+        $updatePassRes=mysqli_query($conn,$updatePassQuery);
+        if($updatePassRes){
+            header("Location: ../../view/pages/house_member/change_password.php");
+            $_SESSION['success'] = "Password changed successfully";
+        }else{
+            header("Location: ../../view/pages/house_member/change_password.php");
+            $_SESSION['error'] = "Error in changing password";
+        }
+    }
 ?>
