@@ -85,6 +85,9 @@ else
                         <?php
                             $hm_data="SELECT * FROM `tbl_house_member` WHERE `userid`='$hm_id'";
                             $dataResult=mysqli_query($conn,$hm_data);
+                            //check user
+                            $arr = str_split($hm_id); // convert string to an array
+                            $chk= end($arr); // 0 = house head
                             while ($hm_info = mysqli_fetch_assoc($dataResult))
                             {
                         ?>
@@ -119,7 +122,7 @@ else
                                                 <div class="label">
                                                     Date of birth
                                                 </div>
-                                                <input type="date" name="hmudob" id="h-date" value="<?php echo $hm_info['dob'] ?>" autocomplete="off">
+                                                <input type="date" name="hmudob" id="hm-date" value="<?php echo $hm_info['dob'] ?>" max="<?php if($chk==0){ echo '2004-01-01'; }else{ echo date('Y-m-d');} ?>" autocomplete="off">
                                                 <div class="error error-hidden">
                                                 </div>
                                             </div>
