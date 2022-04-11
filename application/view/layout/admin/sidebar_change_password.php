@@ -6,12 +6,12 @@
                 <div class="division"></div>
                 <div class="links">
                     <div class="menus">
-                        <a href="../../pages/admin/admin_add_wm.php" class="menu active">
+                        <a href="../../pages/admin/admin_add_wm.php" class="menu">
                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path class="str active" d="M18.3334 19.25V17.4167C18.3334 16.4442 17.9471 15.5116 17.2595 14.8239C16.5718 14.1363 15.6392 13.75 14.6667 13.75H7.33341C6.36095 13.75 5.42832 14.1363 4.74069 14.8239C4.05306 15.5116 3.66675 16.4442 3.66675 17.4167V19.25" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                <path class="str active" d="M11.0002 10.0833C13.0252 10.0833 14.6668 8.44171 14.6668 6.41667C14.6668 4.39162 13.0252 2.75 11.0002 2.75C8.97512 2.75 7.3335 4.39162 7.3335 6.41667C7.3335 8.44171 8.97512 10.0833 11.0002 10.0833Z" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path class="str" d="M18.3334 19.25V17.4167C18.3334 16.4442 17.9471 15.5116 17.2595 14.8239C16.5718 14.1363 15.6392 13.75 14.6667 13.75H7.33341C6.36095 13.75 5.42832 14.1363 4.74069 14.8239C4.05306 15.5116 3.66675 16.4442 3.66675 17.4167V19.25" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path class="str" d="M11.0002 10.0833C13.0252 10.0833 14.6668 8.44171 14.6668 6.41667C14.6668 4.39162 13.0252 2.75 11.0002 2.75C8.97512 2.75 7.3335 4.39162 7.3335 6.41667C7.3335 8.44171 8.97512 10.0833 11.0002 10.0833Z" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
-                            <div class="text active">Ward Members</div>
+                            <div class="text">Ward Members</div>
                         </a>
                         <a href="" class="menu">
                             <svg width="24" height="22" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -29,12 +29,12 @@
                             </svg>
                             <div class="text">Update Profile</div>
                         </a>
-                        <a href="../../pages/admin/change_password.php" class="menu">
+                        <a href="../../pages/admin/change_password.php" class="menu active">
                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path class="str" d="M17.4167 10.0835H4.58339C3.57087 10.0835 2.75006 10.9043 2.75006 11.9168V18.3335C2.75006 19.346 3.57087 20.1668 4.58339 20.1668H17.4167C18.4292 20.1668 19.2501 19.346 19.2501 18.3335V11.9168C19.2501 10.9043 18.4292 10.0835 17.4167 10.0835Z" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path class="str" d="M6.41681 10.0835V6.41683C6.41681 5.20125 6.89969 4.03547 7.75924 3.17592C8.61878 2.31638 9.78457 1.8335 11.0001 1.8335C12.2157 1.8335 13.3815 2.31638 14.241 3.17592C15.1006 4.03547 15.5835 5.20125 15.5835 6.41683V10.0835" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path class="str active" d="M17.4167 10.0835H4.58339C3.57087 10.0835 2.75006 10.9043 2.75006 11.9168V18.3335C2.75006 19.346 3.57087 20.1668 4.58339 20.1668H17.4167C18.4292 20.1668 19.2501 19.346 19.2501 18.3335V11.9168C19.2501 10.9043 18.4292 10.0835 17.4167 10.0835Z" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path class="str active" d="M6.41681 10.0835V6.41683C6.41681 5.20125 6.89969 4.03547 7.75924 3.17592C8.61878 2.31638 9.78457 1.8335 11.0001 1.8335C12.2157 1.8335 13.3815 2.31638 14.241 3.17592C15.1006 4.03547 15.5835 5.20125 15.5835 6.41683V10.0835" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            <div class="text">Change password</div>
+                            <div class="text active">Change password</div>
                         </a>
                     </div>
                     <div class="logout">
