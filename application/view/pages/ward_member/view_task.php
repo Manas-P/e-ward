@@ -64,7 +64,7 @@
 
                 <!-- content -->
                 <div class="task-det">
-                    <div class="card">
+                    <div class="card1">
                         <div class="content">
                             <div class="heading">
                                 Task name 1
@@ -79,7 +79,28 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card">wer</div>
+                    <div class="card2">
+                        <div class="heading">
+                            Other details
+                        </div>
+                        <div class="content">
+                            <div class="right">
+                                <div class="detail">Created by: <span>Wade Warren</span></div>
+                                <div class="detail">Created on: <span>20-05-2022</span></div>
+                            </div>
+                            <div class="left">
+                                <div class="divider"></div>
+                                <div class="details">
+                                    <div class="detail">Deadline: <span>24-06-2022</span></div>
+                                    <div class="detail">Created on: <span>20-05-2022</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <input type="button" value="Update" class="secondary-btn">
+                            <input type="button" value="Close" class="secondary-btn red-btn">
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Add members -->
