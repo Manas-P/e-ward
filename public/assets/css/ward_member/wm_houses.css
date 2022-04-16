@@ -389,12 +389,19 @@ body {
   font-family: "Gilroy_M";
   font-size: 18px;
   color: #545454;
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
 }
 
 .main .container .datas .data td {
   padding-right: 28px;
   vertical-align: top;
   text-align: left;
+}
+
+.main .container .datas .data:hover {
+  -webkit-box-shadow: 0px 10px 20px rgba(226, 226, 226, 0.25);
+          box-shadow: 0px 10px 20px rgba(226, 226, 226, 0.25);
 }
 
 .main .container .allResult {
@@ -425,12 +432,19 @@ body {
   font-family: "Gilroy_M";
   font-size: 18px;
   color: #545454;
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
 }
 
 .main .container .allResult .data td {
   padding-right: 28px;
   vertical-align: top;
   text-align: left;
+}
+
+.main .container .allResult .data:hover {
+  -webkit-box-shadow: 0px 10px 20px rgba(226, 226, 226, 0.25);
+          box-shadow: 0px 10px 20px rgba(226, 226, 226, 0.25);
 }
 
 .main .container .displayNone {

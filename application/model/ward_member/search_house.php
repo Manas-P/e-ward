@@ -13,7 +13,7 @@
             $i=1;
             while($row=mysqli_fetch_array($searchResult)){
             ?>
-                <div class="data">
+                <a href="./view_house.php?houseno=<?php echo $row['house_no'];?>" class="data">
                     <table>
                         <tr>
                             <td width=104px><?php echo $i; ?></td>
@@ -26,7 +26,7 @@
                             <td><?php echo $row['category']; ?></td>
                         </tr>
                     </table>
-                </div>
+                </a>
 
         <?php
         $i=$i+1;
