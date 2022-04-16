@@ -30,6 +30,11 @@
         $houseMemberCheckResult = mysqli_query($conn, $houseMemberCheck);
         $houseMemberCheckCount = mysqli_num_rows($houseMemberCheckResult);
 
+        //Check if the user is Office staff
+        $officeStaffCheck = "SELECT `name`, `wardno`, `userid` FROM `tbl_office_staff` WHERE `userid`='$userName' and `password`='$password'";
+        $officeStaffCheckResult = mysqli_query($conn, $officeStaffCheck);
+        $officeStaffCheckCount = mysqli_num_rows($officeStaffCheckResult);
+
         //Check login conditions
         if($houseMemberCheckCount==1){
             $userData=mysqli_fetch_assoc($houseMemberCheckResult);
@@ -46,6 +51,14 @@
             $_SESSION['wardno']=$userData['wardno'];
             $_SESSION['fullname']=$userData['fullname'];
             header("Location: ../view/pages/ward_member/houses.php");
+            die();
+        }elseif($officeStaffCheckCount==1){
+            $userData=mysqli_fetch_assoc($officeStaffCheckResult);
+            $_SESSION['sessionId'] = session_id();
+            $_SESSION['wardno']=$userData['wardno'];
+            $_SESSION['fullname']=$userData['name'];
+            $_SESSION['userid']= $userData['userid'];
+            header("Location: ../view/pages/office_staff/houses.php");
             die();
         }elseif($adminCheckCount==1){
             $userData=mysqli_fetch_assoc($adminCheckResult);
