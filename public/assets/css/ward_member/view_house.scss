@@ -16,6 +16,7 @@ body {
             display: flex;
             justify-content: space-between;
             .title {
+                margin-top: 0;
                 font-family: Gilroy_SB;
                 font-size: 38px;
             }
@@ -123,8 +124,76 @@ body {
                         color: $subText;
                     }
                     .ans{
-                        color: $text;
+                        color: $darkSubText;
                         width:190px;
+                    }
+                }
+            }
+        }
+        //House members
+        .title{
+            margin-top:48px;
+            font-family: "Gilroy_SB";
+            font-size: 32px;
+            color: $text;
+        }
+        .members{
+            display: flex;
+            column-gap: 38px;
+            row-gap: 38px;
+            flex-wrap: wrap;
+            margin: 20px 0 120px 0;
+            .member{
+                background: #FFFFFF;
+                box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
+                border-radius: 10px;
+                padding:24px;
+                width: 456px;
+                display: flex;
+                flex-direction: column;
+                row-gap: 24px;
+                .photo{
+                    height: 95px;
+                    width: 95px;
+                    border-radius: 4px;
+                    background: rgb(233, 233, 233);
+                    img{
+                        width:100%;
+                    }
+                }
+                .contents{
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 18px;
+                    .content{
+                        display: flex;
+                        column-gap: 8px;
+                        font-family: "Gilroy_M";
+                        font-size: 18px;
+                        .tag {
+                            color: $subText;
+                        }
+                        .ans {
+                            color: $darkSubText;
+                        }
+                    }
+                }
+                .buttons{
+                    display: flex;
+                    column-gap: 18px;
+                    .s-btn{
+                        @include secondary_button(195px);
+                    }
+                    .red {
+                        border: 2px solid $error;
+                        color: $error;
+                        background: none;
+                        &:hover {
+                            background: rgb(255, 245, 245);
+                        }
+                        &:active {
+                            transform: scale(0.99);
+                        }
                     }
                 }
             }

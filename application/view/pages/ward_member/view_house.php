@@ -87,7 +87,7 @@
                     $houseOwner=$houseOwnerData['fname'];
 
                     //Fetch house member count
-                    $membersFetch="SELECT `hm_id` FROM `tbl_house_member` WHERE `house_no`='$houseno'";
+                    $membersFetch="SELECT `fname`, `email`, `phno`, `blood_grp`, `dob`, `photo` FROM `tbl_house_member` WHERE `house_no`='$houseno'";
                     $membersFetchResult=mysqli_query($conn,$membersFetch);
                     $memebrCount = mysqli_num_rows($membersFetchResult);
                 ?>
@@ -132,6 +132,55 @@
                             <div class="ans"> <?php echo $houseOwner; ?> </div>
                         </div>
                     </div>
+                </div>
+
+                <!-- House members -->
+                <div class="title">
+                    Members
+                </div>
+                <div class="members">
+                    <?php 
+                        while($memberData = mysqli_fetch_assoc($membersFetchResult)){
+                            $age = (date('Y') - date('Y',strtotime($memberData["dob"])));
+                    ?>
+                    <div class="member">
+                        <div class="photo">
+                            <img src="../<?php echo $memberData['photo']; ?>" alt="">
+                        </div>
+                        <div class="contents">
+                            <div class="content">
+                                <div class="tag">Name:</div>
+                                <div class="ans"><?php echo $memberData["fname"]; ?></div>
+                            </div>
+                            <div class="content">
+                                <div class="tag">Date of birth:</div>
+                                <div class="ans"><?php echo $memberData["dob"]; ?></div>
+                            </div>
+                            <div class="content">
+                                <div class="tag">Age:</div>
+                                <div class="ans"><?php echo $age; ?></div>
+                            </div>
+                            <div class="content">
+                                <div class="tag">Blood group:</div>
+                                <div class="ans"><?php echo $memberData["blood_grp"]; ?></div>
+                            </div>
+                            <div class="content">
+                                <div class="tag">Email id:</div>
+                                <div class="ans"><?php echo $memberData["email"]; ?></div>
+                            </div>
+                            <div class="content">
+                                <div class="tag">Phone number:</div>
+                                <div class="ans"><?php echo $memberData["phno"]; ?></div>
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <input type="button" value="Update" class="s-btn">
+                            <input type="button" value="Delete" class="s-btn red">
+                        </div>
+                    </div>
+                    <?php
+                        }
+                    ?>
                 </div>
                 
             </div>
