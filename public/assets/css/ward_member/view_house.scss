@@ -67,6 +67,68 @@ body {
                 color: $text;
             }
         }
+        // Content
+        .head{
+            margin-top: 38px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .heading{
+                font-family: "Gilroy_SB";
+                font-size: 32px;
+                color: $text;
+            }
+            .buttons{
+                display: flex;
+                column-gap: 18px;
+                .p-btn{
+                    @include primary_button(180px);
+                }
+                .s-btn{
+                    @include secondary_button(180px);
+                }
+                .red {
+                    border: 2px solid $error;
+                    color: $error;
+                    background: none;
+                    &:hover {
+                        background: rgb(255, 245, 245);
+                    }
+                    &:active {
+                        transform: scale(0.99);
+                    }
+                }
+            }
+        }
+        // House details
+        .details{
+            display: flex;
+            width:100%;
+            background: $white;
+            padding: 32px 26px;
+            box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
+            border-radius: 10px;
+            margin-top: 16px;
+            .content{
+                flex:1;
+                display: flex;
+                flex-direction: column;
+                row-gap: 18px;
+                .detail{
+                    display: flex;
+                    column-gap: 8px;
+                    font-family: "Gilroy_M";
+                    font-size: 18px;
+                    .tag{
+                        color: $subText;
+                    }
+                    .ans{
+                        color: $text;
+                        width:190px;
+                    }
+                }
+            }
+        }
     }
 }
 

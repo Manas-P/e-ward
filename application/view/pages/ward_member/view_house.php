@@ -57,6 +57,82 @@
                         House no. <?php echo $houseno; ?>
                     </a>
                 </div>
+                <!-- Content -->
+                <div class="head">
+                    <div class="heading">
+                        House details
+                    </div>
+                    <div class="buttons">
+                        <input type="button" value="Update" class="p-btn">
+                        <input type="button" value="Delete" class="s-btn red">
+                    </div>
+                </div>
+                <!-- House details -->
+                <!-- Fetch house details -->
+                <?php
+                    $house_data="SELECT `house_name`, `locality`, `post_office`, `ration_no`, `category` FROM `tbl_house` WHERE `house_no`='$houseno'";
+                    $house_dataResult=mysqli_query($conn,$house_data);
+                    $houseData=mysqli_fetch_assoc($house_dataResult);
+                    $hName=$houseData['house_name'];
+                    $hLocality= $houseData['locality'];
+                    $hPost=$houseData['post_office'];
+                    $hRationNo=$houseData['ration_no'];
+                    $hCategory=$houseData['category'];
+
+                    //Fetch house owner
+                    $ownerId=$wardno . $houseno . "0";
+                    $houseOwnerQuery="SELECT `fname` FROM `tbl_house_member` WHERE `userid`='$ownerId'";
+                    $houseOwnerResult=mysqli_query($conn,$houseOwnerQuery);
+                    $houseOwnerData=mysqli_fetch_assoc($houseOwnerResult);
+                    $houseOwner=$houseOwnerData['fname'];
+
+                    //Fetch house member count
+                    $membersFetch="SELECT `hm_id` FROM `tbl_house_member` WHERE `house_no`='$houseno'";
+                    $membersFetchResult=mysqli_query($conn,$membersFetch);
+                    $memebrCount = mysqli_num_rows($membersFetchResult);
+                ?>
+                <div class="details">
+                    <div class="content">
+                        <div class="detail">
+                            <div class="tag"> House no.: </div>
+                            <div class="ans"> <?php echo $houseno; ?> </div>
+                        </div>
+                        <div class="detail">
+                            <div class="tag">  House name: </div>
+                            <div class="ans"> <?php echo $hName; ?> </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="detail">
+                            <div class="tag"> Members: </div>
+                            <div class="ans"> <?php echo $memebrCount; ?> members </div>
+                        </div>
+                        <div class="detail">
+                            <div class="tag"> Locality: </div>
+                            <div class="ans"> <?php echo $hLocality; ?> </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="detail">
+                            <div class="tag"> Post office: </div>
+                            <div class="ans"> <?php echo $hPost; ?> </div>
+                        </div>
+                        <div class="detail">
+                            <div class="tag"> Ration no.: </div>
+                            <div class="ans"> <?php echo $hRationNo; ?> </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="detail">
+                            <div class="tag"> Category: </div>
+                            <div class="ans"> <?php echo $hCategory; ?> </div>
+                        </div>
+                        <div class="detail">
+                            <div class="tag"> Owner: </div>
+                            <div class="ans"> <?php echo $houseOwner; ?> </div>
+                        </div>
+                    </div>
+                </div>
                 
             </div>
         </section>

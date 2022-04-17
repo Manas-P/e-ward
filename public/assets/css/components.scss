@@ -181,7 +181,7 @@ html {
   padding: 16px 0;
   border: 2px solid $primary;
   outline: none;
-  width: 100%;
+  width: $width;
   border-radius: 10px;
   cursor: pointer;
   transition: 0.1s ease-in-out;
