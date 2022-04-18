@@ -494,7 +494,7 @@ body {
 
 .box {
   display: block;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -565,7 +565,8 @@ body {
 .box .inputs .input input[type="date"],
 .box .inputs .input input[type="file"],
 .box .inputs .input input[type="number"],
-.box .inputs .input input[type="password"] {
+.box .inputs .input input[type="password"],
+.box .inputs .input select {
   width: 100%;
   height: 53px;
   font-size: 18px;
@@ -583,8 +584,20 @@ body {
 .box .inputs .input input[type="date"]:focus,
 .box .inputs .input input[type="file"]:focus,
 .box .inputs .input input[type="number"]:focus,
-.box .inputs .input input[type="password"]:focus {
+.box .inputs .input input[type="password"]:focus,
+.box .inputs .input select:focus {
   border: 1px solid #1e1e1e;
+}
+
+.box .inputs .input .select {
+  padding: 16px;
+  height: 58px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAUCAMAAACtdX32AAAAdVBMVEUAAAD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhMdQaAAAAJ3RSTlMAAAECAwQGBwsOFBwkJTg5RUZ4eYCHkJefpaytrsXGy8zW3+Do8vNn0bsyAAAAYElEQVR42tXROwJDQAAA0Ymw1p9kiT+L5P5HVEi3qJn2lcPjtIuzUIJ/rhIGy762N3XaThqMN1ZPALsZPEzG1x8LrFL77DHBnEMxBewz0fJ6LyFHTPL7xhwzWYrJ9z22AqmQBV757MHfAAAAAElFTkSuQmCC);
+  background-position: 100%;
+  background-repeat: no-repeat;
 }
 
 .box .inputs .input .error {

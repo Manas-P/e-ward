@@ -219,6 +219,22 @@ body {
         row-gap: 32px;
         margin-top: 40px;
         @include input_fields(460px);
+        textarea {
+            resize: vertical;
+            max-height: 50vh;
+            min-height: 24vh;
+            font-size: 18px;
+            font-family: "Gilroy_M";
+            padding: 16px;
+            border-radius: 10px;
+            border: 1px solid $border;
+            color: $text;
+            outline: none;
+            transition: 0.1s ease-in-out;
+            &:focus {
+                border: 1px solid $text;
+            }
+        }
     }
     .button {
         .primary-button {

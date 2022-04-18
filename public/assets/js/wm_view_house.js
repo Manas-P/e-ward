@@ -1,16 +1,15 @@
-// Update house
+// ====================================================================
+// =================== Update House Details ===========================
+// ====================================================================
 const updateHouse = document.querySelector("#up-house");
 const closeModal=document.querySelector(".modal-close-btn");
 const overlay=document.querySelector(".overlay");
 const upHouseModal = document.querySelector(".modal-box1");
-console.log(overlay);
-console.log(upHouseModal);
 
 //Add Member
 updateHouse.addEventListener("click",()=>{
     overlay.classList.remove("modal-hidden");
     upHouseModal.classList.remove("modal-hidden");
-    console.log("hi");
 })
 
 //Close button
@@ -126,3 +125,57 @@ updateForm.addEventListener("keyup",()=>{
         buttonCursor.classList.add("cursor-disabled");
     }
 });
+
+// ====================================================================
+// =============== End of Update House Details ========================
+// ====================================================================
+
+
+
+// ====================================================================
+// ========================= Delete House =============================
+// ====================================================================
+const deleteHouse = document.querySelector("#delete-house");
+const closeDeleteModal=document.querySelector(".close-delete");
+const delHouseModal = document.querySelector(".modal-box2");
+
+//Add Member
+deleteHouse.addEventListener("click",()=>{
+    overlay.classList.remove("modal-hidden");
+    delHouseModal.classList.remove("modal-hidden");
+})
+
+//Close button
+closeDeleteModal.addEventListener("click",()=>{
+    overlay.classList.add("modal-hidden");
+    delHouseModal.classList.add("modal-hidden");
+})
+
+//===============Validation for deletion=====================
+const deleteForm=document.querySelector("#delete-house-form");
+const text=document.querySelector("#hdelreason");
+const delBtn=document.querySelector("#delhBtn");
+var textflag=false;
+
+text.addEventListener("input",()=>{
+    if(text.value==""){
+        textflag=false;
+    }else{
+        textflag=true;
+    }
+});
+
+const delButtonCursor=document.querySelector(".dBtn");//To avoid poniterevent and cursor problem
+deleteForm.addEventListener("keyup",()=>{
+    if(textflag==true){
+        delBtn.classList.remove("disabled");
+        delButtonCursor.classList.remove("cursor-disabled");
+    }else{
+        delBtn.classList.add("disabled");
+        delButtonCursor.classList.add("cursor-disabled");
+    }
+});
+
+// ====================================================================
+// ====================== End of Delete House =========================
+// ====================================================================

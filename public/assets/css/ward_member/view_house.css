@@ -738,6 +738,25 @@ body {
   width: 460px;
 }
 
+.box .inputs textarea {
+  resize: vertical;
+  max-height: 50vh;
+  min-height: 24vh;
+  font-size: 18px;
+  font-family: "Gilroy_M";
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid #c1c1c1;
+  color: #1e1e1e;
+  outline: none;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+}
+
+.box .inputs textarea:focus {
+  border: 1px solid #1e1e1e;
+}
+
 .box .button .primary-button {
   background: #5744e3;
   color: #fff;

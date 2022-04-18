@@ -64,7 +64,7 @@
                     </div>
                     <div class="buttons">
                         <input type="button" value="Update" class="p-btn" id="up-house">
-                        <input type="button" value="Delete" class="s-btn red">
+                        <input type="button" value="Delete" class="s-btn red" id="delete-house">
                     </div>
                 </div>
                 <!-- House details -->
@@ -240,6 +240,24 @@
                     </div>
                     <div class="button hBtn">
                         <input type="submit" value="Update house details" name="up-h" id="up-h" onclick="loader()" class="primary-button">
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- form to delete house -->
+        <div class="box modal-box2 modal-hidden">
+            <div class="title"> Reason to delete </div>
+            <div class="modal-close-btn close-delete">
+                <img src="../../../../public/assets/images/close.svg" alt="close button">
+            </div>
+            <form action="" method="post" id="delete-house-form" enctype="multipart/form-data">
+                <input type="hidden" name="HiddenItemId" id="hiddenItemId">
+                <div class="inputs">
+                    <textarea name="rej_reason" id="hdelreason" rows="10"></textarea>
+                    <div class="button dBtn cursor-disable">
+                        <input type="submit" value="Delete house" name="reject_house_req" id="delhBtn" onclick="loader()"
+                            class="primary-button disabled">
                     </div>
                 </div>
             </form>
