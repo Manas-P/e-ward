@@ -3,6 +3,7 @@
     session_start();
     extract($_POST);
 
+    //Update house details
     if(isset($_POST['up-h'])){
         $curOwnerId=$wardno . $houseno . "0";
         
@@ -87,6 +88,41 @@
                 $_SESSION['error'] = "Error in sending mail";
                 header("Location: ../../view/pages/ward_member/view_house.php?houseno=$houseno");
             }
+        }
+    }
+
+    //Delete house
+    if(isset($_POST['deleteHouseBtn'])){
+
+        //Input Sanitization
+        $hdel_reason = trim($hdel_reason); 
+        $hdel_reason=mysqli_real_escape_string($conn,$hdel_reason);
+        $hdel_reason=filter_var($hdel_reason, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
+
+        $wardno=$_SESSION['wardno'];
+        $body=$hdel_reason;
+        $query="SELECT `email` FROM `tbl_house_member` WHERE `userid`='$hownerdel'";
+        $result=mysqli_query($conn,$query);
+        $userData=mysqli_fetch_assoc($result);
+        $toMail=$userData["email"];
+
+        //Send mail
+        $subject="E-Ward House Deletion";
+        $headers="From: ewardmember@gmail.com";
+        if(mail($toMail,$subject,$body,$headers)){
+            $deleteQuery="DELETE FROM `tbl_house` WHERE `ward_no`='$wardno' and `house_no`='$housenodel' ;
+                          DELETE FROM `tbl_house_member` WHERE `ward_no`='$wardno' and `house_no`='$housenodel'";
+            $deleteQueryResult=mysqli_multi_query($conn,$deleteQuery);
+            if($deleteQueryResult){
+                $_SESSION['success'] = "House deleted successfully";
+                header("Location: ../../view/pages/ward_member/houses.php");
+            }else{
+                $_SESSION['error'] = "Error in deleting house";
+                header("Location: ../../view/pages/ward_member/view_house.php?houseno=$housenodel");
+            }
+        }else{
+            $_SESSION['error'] = "Error in sending mail";
+            header("Location: ../../view/pages/ward_member/view_house.php?houseno=$housenodel");
         }
     }
 ?>

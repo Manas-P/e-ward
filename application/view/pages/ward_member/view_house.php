@@ -251,13 +251,13 @@
             <div class="modal-close-btn close-delete">
                 <img src="../../../../public/assets/images/close.svg" alt="close button">
             </div>
-            <form action="" method="post" id="delete-house-form" enctype="multipart/form-data">
-                <input type="hidden" name="HiddenItemId" id="hiddenItemId">
+            <form action="../../../model/ward_member/update_house.php" method="post" id="delete-house-form" enctype="multipart/form-data">
+                <input type="hidden" name="hownerdel" value="<?php echo $ownerId ?>">
+                <input type="hidden" name="housenodel" value="<?php echo $houseno ?>">
                 <div class="inputs">
-                    <textarea name="rej_reason" id="hdelreason" rows="10"></textarea>
+                    <textarea name="hdel_reason" id="hdelreason" rows="10"></textarea>
                     <div class="button dBtn cursor-disable">
-                        <input type="submit" value="Delete house" name="reject_house_req" id="delhBtn" onclick="loader()"
-                            class="primary-button disabled">
+                        <input type="submit" value="Delete house" name="deleteHouseBtn" id="delhBtn" onclick="loader()" class="primary-button disabled">
                     </div>
                 </div>
             </form>
