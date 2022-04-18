@@ -63,7 +63,7 @@
                         House details
                     </div>
                     <div class="buttons">
-                        <input type="button" value="Update" class="p-btn">
+                        <input type="button" value="Update" class="p-btn" id="up-house">
                         <input type="button" value="Delete" class="s-btn red">
                     </div>
                 </div>
@@ -186,6 +186,64 @@
             </div>
         </section>
 
+        <!-- =========== Modal ============ -->
+        <div class="overlay modal-hidden"></div>
+        <!-- Modal to update house details-->
+        <div class="box modal-box1 modal-hidden">
+            <div class="title"> Update house </div>
+            <div class="modal-close-btn">
+                <img src="../../../../public/assets/images/close.svg" alt="close button">
+            </div>
+            <!-- Update house details -->
+            <form action="" method="post" id="add-house-member" enctype="multipart/form-data">
+                <input type="hidden" name="fname" value="<?php echo $fname ?>">
+                <div class="inputs">
+                    <div class="input h-name">
+                        <div class="label"> House name </div>
+                        <input type="text" name="hname" id="h-name" value="<?php echo $hName;?>" autocomplete="off">
+                        <div class="error error-hidden">
+                        </div>
+                    </div>
+                    <div class="input h-locality">
+                        <div class="label"> Locality </div>
+                        <input type="text" name="hlocality" id="h-locality" value="<?php echo $hLocality;?>" autocomplete="off">
+                        <div class="error error-hidden">
+                        </div>
+                    </div>
+                    <div class="input h-post">
+                        <div class="label"> Post office </div>
+                        <input type="text" name="hpost" id="h-post" value="<?php echo $hPost;?>" autocomplete="off">
+                        <div class="error error-hidden">
+                        </div>
+                    </div>
+                    <div class="input h-owner">
+                        <div class="label"> House owner </div>
+                        <select name="" id="" class="select">
+                            <?php
+                                $membersFetch="SELECT `fname`, `email`, `phno`, `blood_grp`, `dob`, `photo` FROM `tbl_house_member` WHERE `house_no`='$houseno'";
+                                $membersFetchResult=mysqli_query($conn,$membersFetch);
+                                while($memberData = mysqli_fetch_assoc($membersFetchResult)){
+                            ?>
+                            <option value="<?php echo $memberData['fname']; ?>"><?php echo $memberData['fname']; ?></option>
+                            <?php
+                                }
+                            ?>
+                        </select>
+                    </div>
+                    <div class="input h-ration">
+                        <div class="label"> Ration number </div>
+                        <input type="text" name="hration" id="h-ration" value="<?php echo $hRationNo;?>" autocomplete="off">
+                        <div class="error error-hidden">
+                        </div>
+                    </div>
+                    <div class="button hBtn cursor-disable">
+                        <input type="submit" value="Update house details" name="add-hm" id="add-hm" onclick="loader()"
+                            class="primary-button disabled">
+                    </div>
+                </div>
+            </form>
+        </div>
+
 
         <!-- Error Toast -->
         <?php
@@ -224,6 +282,8 @@
             include '../../includes/loading.php';
         ?>
         <!-- ==========Loading End============= -->
+
+        <script src="../../../../public/assets/js/wm_view_house.js"></script>
         <script src="../../../../public/assets/js/toast.js"></script>
     </body>
 </html>
