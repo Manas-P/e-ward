@@ -195,7 +195,7 @@
                 <img src="../../../../public/assets/images/close.svg" alt="close button">
             </div>
             <!-- Update house details -->
-            <form action="" method="post" id="add-house-member" enctype="multipart/form-data">
+            <form action="" method="post" id="update-house" enctype="multipart/form-data">
                 <input type="hidden" name="fname" value="<?php echo $fname ?>">
                 <div class="inputs">
                     <div class="input h-name">
@@ -232,13 +232,12 @@
                     </div>
                     <div class="input h-ration">
                         <div class="label"> Ration number </div>
-                        <input type="text" name="hration" id="h-ration" value="<?php echo $hRationNo;?>" autocomplete="off">
+                        <input type="number" name="hration" id="h-ration" value="<?php echo $hRationNo;?>" autocomplete="off">
                         <div class="error error-hidden">
                         </div>
                     </div>
-                    <div class="button hBtn cursor-disable">
-                        <input type="submit" value="Update house details" name="add-hm" id="add-hm" onclick="loader()"
-                            class="primary-button disabled">
+                    <div class="button hBtn">
+                        <input type="submit" value="Update house details" name="add-hm" id="up-h" onclick="loader()" class="primary-button">
                     </div>
                 </div>
             </form>
