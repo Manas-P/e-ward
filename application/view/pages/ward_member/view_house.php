@@ -195,8 +195,9 @@
                 <img src="../../../../public/assets/images/close.svg" alt="close button">
             </div>
             <!-- Update house details -->
-            <form action="" method="post" id="update-house" enctype="multipart/form-data">
-                <input type="hidden" name="fname" value="<?php echo $fname ?>">
+            <form action="../../../model/ward_member/update_house.php" method="post" id="update-house" enctype="multipart/form-data">
+                <input type="hidden" name="wardno" value="<?php echo $wardno ?>">
+                <input type="hidden" name="houseno" value="<?php echo $houseno ?>">
                 <div class="inputs">
                     <div class="input h-name">
                         <div class="label"> House name </div>
@@ -218,13 +219,14 @@
                     </div>
                     <div class="input h-owner">
                         <div class="label"> House owner </div>
-                        <select name="" id="" class="select">
+                        <select name="newOwnerId" id="" class="select">
+                            <option value="<?php echo $ownerId ?>" selected>Select new owner</option>
                             <?php
-                                $membersFetch="SELECT `fname`, `email`, `phno`, `blood_grp`, `dob`, `photo` FROM `tbl_house_member` WHERE `house_no`='$houseno'";
+                                $membersFetch="SELECT `userid`,`fname`, `email`, `phno`, `blood_grp`, `dob`, `photo` FROM `tbl_house_member` WHERE `house_no`='$houseno'";
                                 $membersFetchResult=mysqli_query($conn,$membersFetch);
                                 while($memberData = mysqli_fetch_assoc($membersFetchResult)){
                             ?>
-                            <option value="<?php echo $memberData['fname']; ?>"><?php echo $memberData['fname']; ?></option>
+                            <option value="<?php echo $memberData['userid']; ?>"><?php echo $memberData['fname']; ?></option>
                             <?php
                                 }
                             ?>
@@ -237,7 +239,7 @@
                         </div>
                     </div>
                     <div class="button hBtn">
-                        <input type="submit" value="Update house details" name="add-hm" id="up-h" onclick="loader()" class="primary-button">
+                        <input type="submit" value="Update house details" name="up-h" id="up-h" onclick="loader()" class="primary-button">
                     </div>
                 </div>
             </form>
