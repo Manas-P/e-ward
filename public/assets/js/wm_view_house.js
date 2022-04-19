@@ -179,3 +179,50 @@ deleteForm.addEventListener("keyup",()=>{
 // ====================================================================
 // ====================== End of Delete House =========================
 // ====================================================================
+
+
+// ====================================================================
+// ====================== Delete House Member =========================
+// ====================================================================
+const deleteBtn=document.querySelectorAll("#delete-member-btn");
+const closeMemDelModal=document.querySelector(".close-delete-mem");
+const delMemModal = document.querySelector(".modal-box3");
+
+//Delete member
+for (eachdel of deleteBtn){
+    eachdel.addEventListener("click", () => {
+        overlay.classList.remove("modal-hidden");
+        delMemModal.classList.remove("modal-hidden");
+    });
+}
+
+//Close button
+closeMemDelModal.addEventListener("click",()=>{
+    overlay.classList.add("modal-hidden");
+    delMemModal.classList.add("modal-hidden");
+})
+
+//===============Validation for deletion=====================
+const deleteMemForm=document.querySelector("#delete-member-form");
+const delText=document.querySelector("#mdelreason");
+const delmBtn=document.querySelector("#delmBtn");
+var delTextflag=false;
+
+delText.addEventListener("input",()=>{
+    if(delText.value==""){
+        delTextflag=false;
+    }else{
+        delTextflag=true;
+    }
+});
+
+const delmButtonCursor=document.querySelector(".dmBtn");//To avoid poniterevent and cursor problem
+deleteMemForm.addEventListener("keyup",()=>{
+    if(delTextflag==true){
+        delmBtn.classList.remove("disabled");
+        delmButtonCursor.classList.remove("cursor-disabled");
+    }else{
+        delmBtn.classList.add("disabled");
+        delmButtonCursor.classList.add("cursor-disabled");
+    }
+});

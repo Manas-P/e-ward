@@ -87,7 +87,7 @@
                     $houseOwner=$houseOwnerData['fname'];
 
                     //Fetch house member count
-                    $membersFetch="SELECT `fname`, `email`, `phno`, `blood_grp`, `dob`, `photo` FROM `tbl_house_member` WHERE `house_no`='$houseno'";
+                    $membersFetch="SELECT `fname`, `email`, `phno`, `blood_grp`, `dob`, `photo`, `userid` FROM `tbl_house_member` WHERE `house_no`='$houseno'";
                     $membersFetchResult=mysqli_query($conn,$membersFetch);
                     $memebrCount = mysqli_num_rows($membersFetchResult);
                 ?>
@@ -175,7 +175,7 @@
                         </div>
                         <div class="buttons">
                             <input type="button" value="Update" class="s-btn">
-                            <input type="button" value="Delete" class="s-btn red">
+                            <input type="button" value="Delete" class="s-btn red" id="delete-member-btn" onclick="deletemember(<?php echo $memberData['userid']; ?>)">
                         </div>
                     </div>
                     <?php
@@ -262,6 +262,32 @@
                 </div>
             </form>
         </div>
+
+        <!-- form to delete house member -->
+        <div class="box modal-box3 modal-hidden">
+            <div class="title"> Reason to delete </div>
+            <div class="modal-close-btn close-delete-mem">
+                <img src="../../../../public/assets/images/close.svg" alt="close button">
+            </div>
+            <form action="../../../model/ward_member/update_house.php" method="post" id="delete-member-form" enctype="multipart/form-data">
+                <input type="hidden" name="HiddenItemId" id="hiddenMemId">
+                <input type="hidden" name="housenodel" value="<?php echo $houseno ?>">
+                <div class="inputs">
+                    <textarea name="mdel_reason" id="mdelreason" rows="10"></textarea>
+                    <div class="button dmBtn cursor-disable">
+                        <input type="submit" value="Delete house member" name="deleteMemberBtn" id="delmBtn" onclick="loader()" class="primary-button disabled">
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- To delete respected house member -->
+        <script>
+            let deletemember = (memberId) => {
+                document.getElementById('hiddenMemId').value = memberId;
+
+            }
+        </script>
 
 
         <!-- Error Toast -->

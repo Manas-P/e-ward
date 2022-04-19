@@ -125,4 +125,32 @@
             header("Location: ../../view/pages/ward_member/view_house.php?houseno=$housenodel");
         }
     }
+
+    //Delete house member
+    if(isset($_POST['deleteMemberBtn'])){
+        $memberId=$HiddenItemId;
+        echo $memberId;
+        $fetchEmail="SELECT `email` FROM `tbl_house_member` WHERE `userid`='$memberId'";
+        $fetchEmailResult=mysqli_query($conn,$fetchEmail);
+        $userData=mysqli_fetch_assoc($fetchEmailResult);
+        $toMail=$userData["email"];
+
+        //Send mail
+        $subject="E-Ward House Member Deletion";
+        $headers="From: ewardmember@gmail.com";
+        if(mail($toMail,$subject,$body,$headers)){
+            $deleteQuery="DELETE FROM `tbl_house_member` WHERE `userid`='$memberId'";
+            $deleteQueryResult=mysqli_query($conn,$deleteQuery);
+            if($deleteQueryResult){
+                $_SESSION['success'] = "Member deleted successfully";
+                header("Location: ../../view/pages/ward_member/view_house.php?houseno=$housenodel");
+            }else{
+                $_SESSION['error'] = "Error in deleting member";
+                header("Location: ../../view/pages/ward_member/view_house.php?houseno=$housenodel");
+            }
+        }else{
+            $_SESSION['error'] = "Error in sending mail";
+            header("Location: ../../view/pages/ward_member/view_house.php?houseno=$housenodel");
+        }
+    }
 ?>
