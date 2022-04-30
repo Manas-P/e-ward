@@ -11,10 +11,16 @@
         //Fetch User data
         $wardno=$_SESSION['wardno'];
         $staffId=$_GET['id'];
-        $staffData="SELECT `name` FROM `tbl_office_staff` WHERE `userid`='$staffId' AND `status`='1'";
+        $staffData="SELECT `name`, `email`, `phno`, `photo`, `m_house`, `m_committee`, `m_complaint` FROM `tbl_office_staff` WHERE `userid`='$staffId' AND `status`='1'";
         $staffDataResult=mysqli_query($conn,$staffData);
         $staff=mysqli_fetch_assoc($staffDataResult);
         $sName=$staff['name'];
+        $sEmail=$staff['email'];
+        $sPhno=$staff['phno'];
+        $sPhoto=$staff['photo'];
+        $mHouse=$staff['m_house'];
+        $mCommittee=$staff['m_committee'];
+        $mRequest=$staff['m_complaint'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,12 +63,12 @@
                     <div class="l-content">
                         <div class="detail">
                             <div class="img">
-                                <img src="../../../../public/assets/images/uploads/photos/1637437604.png" alt="">
+                                <img src="../<?php echo $sPhoto; ?>" alt="">
                             </div>
                             <div class="info">
-                                <div class="con">Wade Warren</div>
-                                <div class="con-fade">wadewarren@gmai.com</div>
-                                <div class="con-fade">+919854562325</div>
+                                <div class="con"><?php echo $sName; ?></div>
+                                <div class="con-fade"><?php echo $sEmail; ?></div>
+                                <div class="con-fade">+91<?php echo $sPhno; ?></div>
                             </div>
                         </div>
                         <div class="role">
@@ -70,15 +76,39 @@
                             <div class="roles">
                                 <div class="resp">
                                     <div class="title">Manage houses:</div>
-                                    <div class="sub">Eligible</div>
+                                    <div class="sub">
+                                        <?php 
+                                            if($mHouse=='1'){
+                                                echo "Eligible";
+                                            }else{
+                                                echo "Not eligible";
+                                            }
+                                        ?>
+                                    </div>
                                 </div>
                                 <div class="resp">
                                     <div class="title">Manage requests:</div>
-                                    <div class="sub">Eligible</div>
+                                    <div class="sub">
+                                        <?php 
+                                            if($mRequest=='1'){
+                                                echo "Eligible";
+                                            }else{
+                                                echo "Not eligible";
+                                            }
+                                        ?>
+                                    </div>
                                 </div>
                                 <div class="resp">
                                     <div class="title">Manage committees:</div>
-                                    <div class="sub">Eligible</div>
+                                    <div class="sub">
+                                        <?php 
+                                            if($mCommittee=='1'){
+                                                echo "Eligible";
+                                            }else{
+                                                echo "Not eligible";
+                                            }
+                                        ?>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -362,13 +362,14 @@ body {
 }
 
 .main .container .details-box .l-content .detail .img {
-  border-radius: 4px;
   height: 132px;
   width: 132px;
+  overflow: hidden;
 }
 
 .main .container .details-box .l-content .detail .img img {
   width: 100%;
+  border-radius: 4px;
 }
 
 .main .container .details-box .l-content .detail .info {

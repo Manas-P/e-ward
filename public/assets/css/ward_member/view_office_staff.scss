@@ -61,11 +61,12 @@ body {
                     column-gap: 18px;
                     align-items: center;
                     .img{
-                        border-radius: 4px;
                         height: 132px;
                         width:132px;
+                        overflow: hidden;
                         img{
                             width:100%;
+                            border-radius: 4px;
                         }
                     }
                     .info{
