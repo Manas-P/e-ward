@@ -26,7 +26,8 @@
     $dataFetched=mysqli_fetch_assoc($officeStaffResult);
     $sName=$dataFetched['name'];
     $activity="Approved house having house number: $houseNo";
-    $date_time = date("Y-m-d H:i:s");
+    date_default_timezone_set('Asia/Kolkata');
+    $date_time = date("Y-m-d H:i:s", time ());
     
     //Mail Informations
     $userid=$wardno . $houseNo . "0";

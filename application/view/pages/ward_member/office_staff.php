@@ -127,30 +127,36 @@
                     <div style="margin-left: 120px;">Activity</div>
                 </div>
                 <div class="datas">
-                    <!-- Fetch data (While loope) -->
+                    <?php
+                        $query="SELECT `activity`, `date_time` FROM `tbl_staff_activity` WHERE `userid`='$staffId'";
+                        $result=mysqli_query($conn,$query);
+                        $i=1;
+                        while($row=mysqli_fetch_array($result)){
+                            $datetime = $row["date_time"];
+                            $date = date('d-m-y', strtotime($datetime));
+                            $time = date('h:i a', strtotime($datetime));
+                    ?>
                     <div class="data">
                         <table>
                             <tr>
-                                <td width=120px>1.</td>
-                                <td width=174px>25-10-2022</td>
-                                <td width=162px>09:00 am</td>
-                                <td width=930px>
-                                    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat dolor do amet sint. Velit officia consequat
-                                </td>
+                                <td width=120px><?php echo $i; ?></td>
+                                <td width=174px><?php echo $date; ?></td>
+                                <td width=162px><?php echo $time; ?></td>
+                                <td width=930px><?php echo $row["activity"]; ?></td>
                             </tr>
                         </table>
                     </div>
-                    <!-- While loop close -->
-                    <div class="data">
-                        <table>
-                            <tr>
-                                <td width=120px>2.</td>
-                                <td width=174px>25-10-2022</td>
-                                <td width=162px>09:00 am</td>
-                                <td width=930px> Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</td>
-                            </tr>
-                        </table>
+                    <?php
+                        $i=$i+1;
+                        }
+                        if(mysqli_num_rows($result)==0){
+                    ?>
+                    <div class="no-result">
+                        No records
                     </div>
+                    <?php
+                        }
+                    ?>
                 </div>
             
                 
