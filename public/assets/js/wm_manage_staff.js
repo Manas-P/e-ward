@@ -121,3 +121,51 @@ updateOfficeStaff.addEventListener("input",()=>{
 });
 
 //===============End of Validation office staff=====================
+
+// ====================================================================
+// ========================= Delete Staff =============================
+// ====================================================================
+const deleteHouse = document.querySelector(".remove-btn");
+const closeDeleteModal=document.querySelector(".close-delete");
+const delHouseModal = document.querySelector(".modal-box2");
+
+//delete house
+deleteHouse.addEventListener("click",()=>{
+    overlay.classList.remove("modal-hidden");
+    delHouseModal.classList.remove("modal-hidden");
+})
+
+//Close button
+closeDeleteModal.addEventListener("click",()=>{
+    overlay.classList.add("modal-hidden");
+    delHouseModal.classList.add("modal-hidden");
+})
+
+//===============Validation for deletion=====================
+const deleteForm=document.querySelector("#delete-staff-form");
+const text=document.querySelector("#hdelreason");
+const delBtn=document.querySelector("#delhBtn");
+var textflag=false;
+
+text.addEventListener("input",()=>{
+    if(text.value==""){
+        textflag=false;
+    }else{
+        textflag=true;
+    }
+});
+
+const delButtonCursor=document.querySelector(".dBtn");//To avoid poniterevent and cursor problem
+deleteForm.addEventListener("keyup",()=>{
+    if(textflag==true){
+        delBtn.classList.remove("disabled");
+        delButtonCursor.classList.remove("cursor-disabled");
+    }else{
+        delBtn.classList.add("disabled");
+        delButtonCursor.classList.add("cursor-disabled");
+    }
+});
+
+// ====================================================================
+// ====================== End of Delete Staff =========================
+// ====================================================================

@@ -220,6 +220,24 @@
             </form>
         </div>
 
+        <!-- form to delete staff -->
+        <div class="box modal-box2 modal-hidden">
+            <div class="title"> Reason to remove </div>
+            <div class="modal-close-btn close-delete">
+                <img src="../../../../public/assets/images/close.svg" alt="close button">
+            </div>
+            <form action="../../../model/ward_member/manage_office_staff.php" method="post" id="delete-staff-form" enctype="multipart/form-data">
+                <input type="hidden" name="staff_id" value="<?php echo $staffId ?>">
+                <div class="inputs">
+                    <textarea name="hdel_reason" id="hdelreason" rows="10"></textarea>
+                    <div class="button dBtn cursor-disable">
+                        <input type="submit" value="Delete staff" name="deleteStaffBtn" id="delhBtn" onclick="loader()"
+                            class="primary-button disabled">
+                    </div>
+                </div>
+            </form>
+        </div>
+
         <!-- Error Toast -->
         <?php
         if (isset($_SESSION['error'])) {

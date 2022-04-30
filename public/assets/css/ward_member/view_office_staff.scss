@@ -202,6 +202,22 @@ body {
             margin-top: 6px;
             @include checkbox(18px, "Gilroy_M");
         }
+        textarea {
+            resize: vertical;
+            max-height: 50vh;
+            min-height: 24vh;
+            font-size: 18px;
+            font-family: "Gilroy_M";
+            padding: 16px;
+            border-radius: 10px;
+            border: 1px solid $border;
+            color: $text;
+            outline: none;
+            transition: 0.1s ease-in-out;
+            &:focus {
+                border: 1px solid $text;
+            }
+        }
     }
     .button {
         .primary-button {

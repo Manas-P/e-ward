@@ -6,6 +6,19 @@
     //Update office staff
     if(isset($_POST['update-staff'])){
 
+        //Input Sanitization
+        $name = trim($name); 
+        $name=mysqli_real_escape_string($conn,$name);
+        $name=filter_var($name, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
+
+        $email = trim($email);
+        $email=mysqli_real_escape_string($conn,$email);
+        $email=filter_var($email, FILTER_SANITIZE_EMAIL, FILTER_FLAG_STRIP_HIGH);
+
+        $phno = trim($phno);
+        $phno=mysqli_real_escape_string($conn,$phno);
+        $phno=filter_var($phno, FILTER_SANITIZE_NUMBER_INT, FILTER_FLAG_STRIP_HIGH);
+
         //check empty file 
         //profile photo
         if(empty($_FILES["photo"]['name'])){
@@ -41,6 +54,40 @@
             header("Location: ../../view/pages/ward_member/office_staff.php?id=$staff_id");
         }else{
             $_SESSION['error'] = "Error in updation";
+            header("Location: ../../view/pages/ward_member/office_staff.php?id=$staff_id");
+        }
+    }
+
+    //Delete staff
+    if(isset($_POST['deleteStaffBtn'])){
+
+        //Fetch data
+        $query="SELECT `email` FROM `tbl_office_staff` WHERE `userid`='$staff_id'";
+        $result=mysqli_query($conn,$query);
+        $userData=mysqli_fetch_assoc($result);
+        $toMail=$userData["email"];
+        $body=$hdel_reason;
+
+        //Input sanitization
+        $body = trim($body); 
+        $body=mysqli_real_escape_string($conn,$body);
+        $body=filter_var($body, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
+
+        //Send mail
+        $subject="E-Ward Staff Removal";
+        $headers="From: ewardmember@gmail.com";
+        if(mail($toMail,$subject,$body,$headers)){
+            $deleteQuery="UPDATE `tbl_office_staff` SET `status`='0' WHERE `userid`='$staff_id'";
+            $deleteQueryResult=mysqli_query($conn,$deleteQuery);
+            if($deleteQueryResult){
+                $_SESSION['success'] = "Staff removed successfully";
+                header("Location: ../../view/pages/ward_member/add_office_staff.php");
+            }else{
+                $_SESSION['error'] = "Error in removing staff";
+                header("Location: ../../view/pages/ward_member/office_staff.php?id=$staff_id");
+            }
+        }else{
+            $_SESSION['error'] = "Error in sending mail";
             header("Location: ../../view/pages/ward_member/office_staff.php?id=$staff_id");
         }
     }
