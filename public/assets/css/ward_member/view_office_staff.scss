@@ -1,0 +1,141 @@
+@import "../components.scss";
+
+body {
+    background: $bg;
+}
+
+.main {
+    display: flex;
+    .sidebar {
+        @include sidebar();
+    }
+    .container {
+        margin: 46px 63px 0 calc(476px - 63px);
+        width: calc(100% - 476px);
+        .header {
+            display: flex;
+            justify-content: space-between;
+            .title {
+                margin-top: 0;
+                font-family: Gilroy_SB;
+                font-size: 38px;
+            }
+        }
+        .bread-crumbs {
+            margin-top: 48px;
+            display: flex;
+            column-gap: 4px;
+            align-items: center;
+            .previous {
+                font-family: "Gilroy_M";
+                font-size: 16px;
+                color: $subText;
+            }
+            svg {
+                .str {
+                    stroke: $text;
+                }
+            }
+            .now {
+                font-family: "Gilroy_SB";
+                font-size: 16px;
+                color: $text;
+            }
+        }
+        // Content
+        .details-box{
+            margin-top: 48px;
+            background: $white;
+            padding:24px;
+            box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .l-content{
+                display: flex;
+                width: 800px;
+                justify-content: space-between;
+                .detail{
+                    display: flex;
+                    column-gap: 18px;
+                    align-items: center;
+                    .img{
+                        border-radius: 4px;
+                        height: 132px;
+                        width:132px;
+                        img{
+                            width:100%;
+                        }
+                    }
+                    .info{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        height: 100%;
+                        padding: 8px 0px;
+                        .con{
+                            font-family: "Gilroy_SB";
+                            font-size: 24px;
+                            color: $text;
+                        }
+                        .con-fade{
+                            font-family: "Gilroy_M";
+                            font-size: 18px;
+                            color: $subText;
+                        }
+                    }
+                }
+                .role{
+                    display: flex;
+                    align-items: center;
+                    column-gap: 24px;
+                    .line{
+                        height:100%;
+                        width:2px;
+                        background:#ECECEC;
+                        border-radius: 2px;
+                    }
+                    .roles{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        height: 100%;
+                        .resp{
+                            display: flex;
+                            column-gap: 8px;
+                            .title{
+                                font-family: "Gilroy_M";
+                                font-size: 18px;
+                                color: $subText;
+                            }
+                            .sub{
+                                font-family: "Gilroy_SB";
+                                font-size: 18px;
+                                color: text;
+                            }
+                        }
+                    }
+                }
+            }
+            .r-content {
+                display: flex;
+                flex-direction: column;
+                row-gap: 24px;
+                .update-btn {
+                    @include primary_button(100%);
+                    padding: 16px 82px;
+                }
+                .remove-btn{
+                    @include secondary_button(100%);
+                    border: 2px solid $error;
+                    color: $error;
+                    padding: 16px 82px;
+                    &:hover {
+                        background: #fff9f9;
+                    }
+                }
+            }
+        }
+    }
+}
