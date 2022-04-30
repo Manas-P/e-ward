@@ -138,5 +138,43 @@ body {
                 }
             }
         }
+        // Activites
+        .titlee{
+            font-family: "Gilroy_SB";
+            font-size: 28px;
+            color: text;
+            margin-top: 48px;
+        }
+        .headings {
+            margin: 48px 16px 0 16px;
+            font-family: "Gilroy_SB";
+            font-size: 20px;
+            color: $text;
+            display: flex;
+        }
+        .datas {
+            margin: 24px 0 56px 0;
+            display: flex;
+            flex-direction: column;
+            row-gap: 24px;
+            .data {
+                padding: 20px;
+                background: $white;
+                border-radius: 10px;
+                font-family: "Gilroy_M";
+                font-size: 18px;
+                color: $darkSubText;
+                box-shadow: 0px 10px 20px rgba(226, 226, 226, 0.25);
+                td {
+                    padding-right: 28px;
+                    vertical-align: top;
+                    text-align: left;
+                }
+            }
+        }
     }
 }
+
+@include error-alert();
+
+@include loading();

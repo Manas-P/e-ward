@@ -516,4 +516,142 @@ body {
 .main .container .details-box .r-content .remove-btn:hover {
   background: #fff9f9;
 }
+
+.main .container .titlee {
+  font-family: "Gilroy_SB";
+  font-size: 28px;
+  color: text;
+  margin-top: 48px;
+}
+
+.main .container .headings {
+  margin: 48px 16px 0 16px;
+  font-family: "Gilroy_SB";
+  font-size: 20px;
+  color: #1e1e1e;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main .container .datas {
+  margin: 24px 0 56px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 24px;
+}
+
+.main .container .datas .data {
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  font-family: "Gilroy_M";
+  font-size: 18px;
+  color: #545454;
+  -webkit-box-shadow: 0px 10px 20px rgba(226, 226, 226, 0.25);
+          box-shadow: 0px 10px 20px rgba(226, 226, 226, 0.25);
+}
+
+.main .container .datas .data td {
+  padding-right: 28px;
+  vertical-align: top;
+  text-align: left;
+}
+
+.alertt {
+  background: #fff;
+  padding: 18px 18px 18px 24px;
+  -webkit-box-shadow: 0px 7px 16px rgba(0, 0, 0, 0.16);
+          box-shadow: 0px 7px 16px rgba(0, 0, 0, 0.16);
+  border-radius: 6px;
+  border-left: 10px solid #ec0000;
+  position: fixed;
+  bottom: 5%;
+  right: 4%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 32px;
+          column-gap: 32px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 4;
+}
+
+.alertt .econtent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.alertt .econtent img {
+  width: 22px;
+  height: auto;
+}
+
+.alertt .econtent .text {
+  font-family: "Gilroy_M";
+  font-size: 18px;
+}
+
+.alertt .alert-close {
+  width: 16px;
+  height: auto;
+  cursor: pointer;
+}
+
+.alert-hidden {
+  visibility: hidden;
+}
+
+.alert-visible {
+  visibility: visible;
+}
+
+.loading {
+  display: block;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.loading .loading-overlay {
+  position: fixed;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.096);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+
+.loading .gif {
+  width: 100%;
+  height: auto;
+}
+
+.loading .gif img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 300px;
+}
+
+.loading-hide {
+  display: none;
+}
 /*# sourceMappingURL=view_office_staff.css.map */

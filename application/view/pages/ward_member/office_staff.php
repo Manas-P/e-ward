@@ -118,6 +118,42 @@
                         <a href="" class="remove-btn">Remove</a>
                     </div>
                 </div>
+
+                <!-- Activities -->
+                <div class="titlee">Activities</div>
+                <div class="headings">
+                    <div>Slno.</div>
+                    <div style="margin-left: 80px;">Date</div>
+                    <div style="margin-left: 134px;">Time</div>
+                    <div style="margin-left: 120px;">Activity</div>
+                </div>
+                <div class="datas">
+                    <!-- Fetch data (While loope) -->
+                    <div class="data">
+                        <table>
+                            <tr>
+                                <td width=120px>1.</td>
+                                <td width=174px>25-10-2022</td>
+                                <td width=162px>09:00 am</td>
+                                <td width=930px>
+                                    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat dolor do amet sint. Velit officia consequat
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!-- While loop close -->
+                    <div class="data">
+                        <table>
+                            <tr>
+                                <td width=120px>2.</td>
+                                <td width=174px>25-10-2022</td>
+                                <td width=162px>09:00 am</td>
+                                <td width=930px> Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            
                 
             </div>
         </section>
