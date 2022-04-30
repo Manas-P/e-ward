@@ -1,29 +1,28 @@
-// Add Ward Member Modal 
-const addMember=document.querySelector(".add-member");
+// Update office staff
+const upStaffBtn=document.querySelector(".update-btn");
 const closeModal=document.querySelector(".modal-close-btn");
 const overlay=document.querySelector(".overlay");
-const memberBox=document.querySelector(".modal-box");
+const updateModal=document.querySelector(".modal-box1");
 
-//Add Member
-addMember.addEventListener("click",()=>{
+//Update office staff
+upStaffBtn.addEventListener("click",()=>{
     overlay.classList.remove("modal-hidden");
-    memberBox.classList.remove("modal-hidden");
+    updateModal.classList.remove("modal-hidden");
 })
 
 //Close button 
 closeModal.addEventListener("click",()=>{
     overlay.classList.add("modal-hidden");
-    memberBox.classList.add("modal-hidden");
+    updateModal.classList.add("modal-hidden");
 })
 
-
 //===============Validate office staff=====================
-const addOfficeStaff=document.querySelector("#add-office-staff");
-const hAddBtn=document.querySelector("#add-of");
-const ofFullName=document.querySelector("#of-full-name");
-const ofEmail=document.querySelector("#of-email-id");
-const ofPhno=document.querySelector("#of-phn-number");
-const ofPhoto=document.querySelector("#of-photo");
+const updateOfficeStaff=document.querySelector("#up-office-staff");
+const hAddBtn=document.querySelector("#up-of");
+const ofFullName=document.querySelector("#up-full-name");
+const ofEmail=document.querySelector("#up-email-id");
+const ofPhno=document.querySelector("#up-phn-number");
+const ofPhoto=document.querySelector("#up-photo");
 
 
 //Error Message Class
@@ -31,10 +30,10 @@ const ofFullNameError=document.querySelector(".of-fullname .error");
 const ofEmailError=document.querySelector(".of-email .error");
 const ofPhnoError=document.querySelector(".of-phno .error");
 const ofPhotoError=document.querySelector(".of-photo .error");
-var ofFullNameSubmit=false;
+var ofFullNameSubmit=true;
 var ofEmailSubmit=true;
-var ofPhnoSubmit=false;
-var ofPhotoSubmit=false;
+var ofPhnoSubmit=true;
+var ofPhotoSubmit=true;
 
 //Check name
 var nameChk=/^[a-z A-Z]+$/;
@@ -111,7 +110,7 @@ ofPhoto.addEventListener("input",()=>{
 
 //Submit Button Visibility
 const buttonCursor=document.querySelector(".hBtn");//To avoid poniterevent and cursor problem
-addOfficeStaff.addEventListener("change",()=>{
+updateOfficeStaff.addEventListener("input",()=>{
     if(ofFullNameSubmit==true && ofEmailSubmit==true && ofPhnoSubmit==true && ofPhotoSubmit==true){
         hAddBtn.classList.remove("disabled");
         buttonCursor.classList.remove("cursor-disabled");
@@ -122,5 +121,3 @@ addOfficeStaff.addEventListener("change",()=>{
 });
 
 //===============End of Validation office staff=====================
-
-

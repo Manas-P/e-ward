@@ -30,8 +30,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="../../../../public/assets/images/fav.svg" type="image/x-icon">
         <link rel="stylesheet" href="../../../../public/assets/css/ward_member/view_office_staff.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <title>Ward <?php echo $wardno; ?> || Staff</title>
     </head>
     <body>
@@ -114,8 +113,8 @@
                         </div>
                     </div>
                     <div class="r-content">
-                        <a href="" class="update-btn">Update</a>
-                        <a href="" class="remove-btn">Remove</a>
+                        <a class="update-btn">Update</a>
+                        <a class="remove-btn">Remove</a>
                     </div>
                 </div>
 
@@ -159,6 +158,68 @@
         </section>
 
 
+        <!-- =========== Modal ============ -->
+        <div class="overlay modal-hidden"></div>
+        <!-- form to update office staff -->
+        <div class="box modal-box1 modal-hidden">
+            <div class="title"> Update office staff </div>
+            <div class="modal-close-btn">
+                <img src="../../../../public/assets/images/close.svg" alt="close button">
+            </div>
+            <!-- update office staffs -->
+            <form action="../../../model/ward_member/manage_office_staff.php" method="post" id="up-office-staff" enctype="multipart/form-data">
+                <input type="hidden" name="hm_already_photo" value="<?php echo $sPhoto ?>">
+                <input type="hidden" name="staff_id" value="<?php echo $staffId ?>">
+                <div class="inputs">
+                    <div class="input of-fullname">
+                        <div class="label"> Full name </div>
+                        <input type="text" name="name" id="up-full-name" value="<?php echo $sName; ?>" autocomplete="off">
+                        <div class="error error-hidden">
+                        </div>
+                    </div>
+                    <div class="input of-email">
+                        <div class="label"> Email ID </div>
+                        <input type="text" name="email" id="up-email-id" value="<?php echo $sEmail; ?>" autocomplete="off">
+                        <div class="error error-hidden">
+                        </div>
+                    </div>
+                    <div class="input of-phno">
+                        <div class="label"> Phone number </div>
+                        <input type="text" name="phno" id="up-phn-number" value="<?php echo $sPhno; ?>" autocomplete="off">
+                        <div class="error error-hidden">
+                        </div>
+                    </div>
+                    <div class="input of-photo">
+                        <div class="label"> Upload photo </div>
+                        <input type="file" name="photo" id="up-photo" value="<?php echo $sPhoto ?>" accept="image/png,image/jpeg">
+                        <div class="error error-hidden">
+                        </div>
+                    </div>
+                    <div class="input">
+                        <div class="label"> Roles </div>
+                        <div class="checkboxes">
+                            <div class="checkbox">
+                                <input type="checkbox" name="mhouse" value="0" id="manage-house">
+                                <label for="manage-house">Manage houses</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" name="mcommittee" value="0" id="manage-committees">
+                                <label for="manage-committees">Manage committees</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" name="mcomplaint" value="0" id="manage-complaints">
+                                <label for="manage-complaints">Manage requests</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button hBtn cursor-disable">
+                        <input type="submit" value="Update" name="update-staff" id="up-of" onclick="loader()"
+                            class="primary-button disabled">
+                    </div>
+                </div>
+            </form>
+        </div>
+
         <!-- Error Toast -->
         <?php
         if (isset($_SESSION['error'])) {
@@ -198,6 +259,7 @@
         <!-- ==========Loading End============= -->
 
         <script src="../../../../public/assets/js/toast.js"></script>
+        <script src="../../../../public/assets/js/wm_manage_staff.js"></script>
     </body>
 </html>
 	<?php

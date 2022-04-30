@@ -157,7 +157,7 @@
                             </div>
                             <div class="checkbox">
                                 <input type="checkbox" name="mcomplaint" value="0" id="manage-complaints">
-                                <label for="manage-complaints">Manage complaints</label>
+                                <label for="manage-complaints">Manage requests</label>
                             </div>
                         </div>
                     </div>
