@@ -69,7 +69,12 @@
             }
         }
     }else{
-        $_SESSION['error'] = "Mail not send";
-        header("Location: ../../view/pages/ward_member/houses_request.php");
+        if($officeId!=""){
+            $_SESSION['error'] = "Mail not send";
+            header("Location: ../../view/pages/office_staff/houses_request.php");
+        }else{
+            $_SESSION['error'] = "Mail not send";
+            header("Location: ../../view/pages/ward_member/houses_request.php");
+        }
     }
 ?>
