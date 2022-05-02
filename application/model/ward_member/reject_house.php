@@ -16,13 +16,15 @@
         //Check if the action is done by office staff
         $officeId=$_SESSION['userid'];
         //Fetch staff details
-        $officeStaff="SELECT `name` FROM `tbl_office_staff` WHERE `userid`='$officeId'";
-        $officeStaffResult=mysqli_query($conn,$officeStaff);
-        $dataFetched=mysqli_fetch_assoc($officeStaffResult);
-        $sName=$dataFetched['name'];
-        $activity="Rejected house having house number: $houseNo with reason: $body";
-        date_default_timezone_set('Asia/Kolkata');
-        $date_time = date("Y-m-d H:i:s", time ());
+        if($officeId!=""){
+            $officeStaff="SELECT `name` FROM `tbl_office_staff` WHERE `userid`='$officeId'";
+            $officeStaffResult=mysqli_query($conn,$officeStaff);
+            $dataFetched=mysqli_fetch_assoc($officeStaffResult);
+            $sName=$dataFetched['name'];
+            $activity="Rejected house having house number: $houseNo with reason: $body";
+            date_default_timezone_set('Asia/Kolkata');
+            $date_time = date("Y-m-d H:i:s", time ());
+        }
 
         //Send mail
         $subject="E-Ward House Rejection";

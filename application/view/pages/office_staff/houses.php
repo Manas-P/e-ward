@@ -22,8 +22,6 @@
         $restrictionsResult=mysqli_query($conn,$restrictions);
         $dataFetched=mysqli_fetch_assoc($restrictionsResult);
         $m_house=$dataFetched['m_house'];
-        $m_committee= $dataFetched['m_committee'];
-        $m_complaint=$dataFetched['m_complaint'];
 ?>
 	<!DOCTYPE html>
     <html lang="en">

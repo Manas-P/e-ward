@@ -14,6 +14,19 @@
         $curOwnerName=$ownerData['fname'];
         $curOwnerTableId=$ownerData['hm_id'];
 
+        //Check if the action is done by office staff
+        $officeId=$_SESSION['userid'];
+        //Fetch staff details
+        if($officeId!=""){
+            $officeStaff="SELECT `name` FROM `tbl_office_staff` WHERE `userid`='$officeId'";
+            $officeStaffResult=mysqli_query($conn,$officeStaff);
+            $dataFetched=mysqli_fetch_assoc($officeStaffResult);
+            $sName=$dataFetched['name'];
+            $activity="Updated house having house number: $houseno";
+            date_default_timezone_set('Asia/Kolkata');
+            $date_time = date("Y-m-d H:i:s", time ());
+        }
+
         //Input Sanitization
         $hname = trim($hname); 
         $hname=mysqli_real_escape_string($conn,$hname);
@@ -39,18 +52,37 @@
 
             //Check mail send
             if(mail($curOwnerEmail,$subject,$body,$headers)){
-                $updateQuery="UPDATE `tbl_house` SET `house_name`='$hname',`locality`='$hlocality',`post_office`='$hpost',`ration_no`='$hration' WHERE `house_no`='$houseno'";
-                $updateHouseResult=mysqli_query($conn,$updateQuery);
-                if($updateHouseResult){
-                    $_SESSION['success'] = "House details updated successfully";
-                    header("Location: ../../view/pages/ward_member/view_house.php?houseno=$houseno");
+                //Check if the action is done by office staff
+                if($officeId!=""){
+                    $updateQuery="UPDATE `tbl_house` SET `house_name`='$hname',`locality`='$hlocality',`post_office`='$hpost',`ration_no`='$hration' WHERE `house_no`='$houseno' ; 
+                                  INSERT INTO `tbl_staff_activity`(`userid`, `name`, `activity`, `date_time`) VALUES ('$officeId','$sName','$activity','$date_time')";
+                    $updateHouseResult=mysqli_multi_query($conn,$updateQuery);
+                    if($updateHouseResult){
+                        $_SESSION['success'] = "House details updated successfully";
+                        header("Location: ../../view/pages/office_staff/view_house.php?houseno=$houseno");
+                    }else{
+                        $_SESSION['error'] = "Error in updating house details";
+                        header("Location: ../../view/pages/office_staff/view_house.php?houseno=$houseno");
+                    }
                 }else{
-                    $_SESSION['error'] = "Error in updating house details";
-                    header("Location: ../../view/pages/ward_member/view_house.php?houseno=$houseno");
+                    $updateQuery="UPDATE `tbl_house` SET `house_name`='$hname',`locality`='$hlocality',`post_office`='$hpost',`ration_no`='$hration' WHERE `house_no`='$houseno'";
+                    $updateHouseResult=mysqli_query($conn,$updateQuery);
+                    if($updateHouseResult){
+                        $_SESSION['success'] = "House details updated successfully";
+                        header("Location: ../../view/pages/ward_member/view_house.php?houseno=$houseno");
+                    }else{
+                        $_SESSION['error'] = "Error in updating house details";
+                        header("Location: ../../view/pages/ward_member/view_house.php?houseno=$houseno");
+                    }
                 }
             }else{
-                $_SESSION['error'] = "Error in sending mail";
-                header("Location: ../../view/pages/ward_member/view_house.php?houseno=$houseno");
+                if($officeId!=""){
+                    $_SESSION['error'] = "Error in sending mail";
+                    header("Location: ../../view/pages/office_staff/view_house.php?houseno=$houseno");
+                }else{
+                    $_SESSION['error'] = "Error in sending mail";
+                    header("Location: ../../view/pages/ward_member/view_house.php?houseno=$houseno");
+                }
             }
         }else{
             //Fetch new owner details
@@ -73,20 +105,42 @@
 
             //Check mail send
             if(mail($newOwnerEmail,$subject1,$body1,$headers1) && mail($curOwnerEmail,$subject2,$body2,$headers2)){
-                $multipleQuery="UPDATE `tbl_house` SET `house_name`='$hname',`locality`='$hlocality',`post_office`='$hpost',`ration_no`='$hration' WHERE `house_no`='$houseno' ;
-                                UPDATE `tbl_house_member` SET `userid`='$newOwnerId' WHERE `hm_id`='$curOwnerTableId' ;
-                                UPDATE `tbl_house_member` SET `userid`='$curOwnerId' WHERE `hm_id`='$newOwnerTableId'";
-                $multipleQueryResult=mysqli_multi_query($conn,$multipleQuery);
-                if($multipleQueryResult){
-                    $_SESSION['success'] = "House details updated successfully";
-                    header("Location: ../../view/pages/ward_member/view_house.php?houseno=$houseno");
+                //Check if the action is done by office staff
+                if($officeId!=""){
+                    $activity="Updated house having house number: $houseno and changed ownership to $newOwnerName from $curOwnerName";
+                    $multipleQuery="UPDATE `tbl_house` SET `house_name`='$hname',`locality`='$hlocality',`post_office`='$hpost',`ration_no`='$hration' WHERE `house_no`='$houseno' ;
+                                    UPDATE `tbl_house_member` SET `userid`='$newOwnerId' WHERE `hm_id`='$curOwnerTableId' ;
+                                    UPDATE `tbl_house_member` SET `userid`='$curOwnerId' WHERE `hm_id`='$newOwnerTableId' ; 
+                                    INSERT INTO `tbl_staff_activity`(`userid`, `name`, `activity`, `date_time`) VALUES ('$officeId','$sName','$activity','$date_time')";
+                    $multipleQueryResult=mysqli_multi_query($conn,$multipleQuery);
+                    if($multipleQueryResult){
+                        $_SESSION['success'] = "House details updated successfully";
+                        header("Location: ../../view/pages/office_staff/view_house.php?houseno=$houseno");
+                    }else{
+                        $_SESSION['error'] = "Error in updating house details";
+                        header("Location: ../../view/pages/office_staff/view_house.php?houseno=$houseno");
+                    }
                 }else{
-                    $_SESSION['error'] = "Error in updating house details";
-                    header("Location: ../../view/pages/ward_member/view_house.php?houseno=$houseno");
+                    $multipleQuery="UPDATE `tbl_house` SET `house_name`='$hname',`locality`='$hlocality',`post_office`='$hpost',`ration_no`='$hration' WHERE `house_no`='$houseno' ;
+                                    UPDATE `tbl_house_member` SET `userid`='$newOwnerId' WHERE `hm_id`='$curOwnerTableId' ;
+                                    UPDATE `tbl_house_member` SET `userid`='$curOwnerId' WHERE `hm_id`='$newOwnerTableId'";
+                    $multipleQueryResult=mysqli_multi_query($conn,$multipleQuery);
+                    if($multipleQueryResult){
+                        $_SESSION['success'] = "House details updated successfully";
+                        header("Location: ../../view/pages/ward_member/view_house.php?houseno=$houseno");
+                    }else{
+                        $_SESSION['error'] = "Error in updating house details";
+                        header("Location: ../../view/pages/ward_member/view_house.php?houseno=$houseno");
+                    }
                 }
             }else{
-                $_SESSION['error'] = "Error in sending mail";
-                header("Location: ../../view/pages/ward_member/view_house.php?houseno=$houseno");
+                if($officeId!=""){
+                    $_SESSION['error'] = "Error in sending mail";
+                    header("Location: ../../view/pages/office_staff/view_house.php?houseno=$houseno");
+                }else{
+                    $_SESSION['error'] = "Error in sending mail";
+                    header("Location: ../../view/pages/ward_member/view_house.php?houseno=$houseno");
+                }
             }
         }
     }
@@ -106,23 +160,56 @@
         $userData=mysqli_fetch_assoc($result);
         $toMail=$userData["email"];
 
+        //Check if the action is done by office staff
+        $officeId=$_SESSION['userid'];
+        //Fetch staff details
+        if($officeId!=""){
+            $officeStaff="SELECT `name` FROM `tbl_office_staff` WHERE `userid`='$officeId'";
+            $officeStaffResult=mysqli_query($conn,$officeStaff);
+            $dataFetched=mysqli_fetch_assoc($officeStaffResult);
+            $sName=$dataFetched['name'];
+            $activity="Deleted house having house number: $housenodel with reason: $body";
+            date_default_timezone_set('Asia/Kolkata');
+            $date_time = date("Y-m-d H:i:s", time ());
+        }
+
         //Send mail
         $subject="E-Ward House Deletion";
         $headers="From: ewardmember@gmail.com";
         if(mail($toMail,$subject,$body,$headers)){
-            $deleteQuery="DELETE FROM `tbl_house` WHERE `ward_no`='$wardno' and `house_no`='$housenodel' ;
-                          DELETE FROM `tbl_house_member` WHERE `ward_no`='$wardno' and `house_no`='$housenodel'";
-            $deleteQueryResult=mysqli_multi_query($conn,$deleteQuery);
-            if($deleteQueryResult){
-                $_SESSION['success'] = "House deleted successfully";
-                header("Location: ../../view/pages/ward_member/houses.php");
+            //Check if the action is done by office staff
+            if($officeId!=""){
+                $deleteQuery="DELETE FROM `tbl_house` WHERE `ward_no`='$wardno' and `house_no`='$housenodel' ;
+                            DELETE FROM `tbl_house_member` WHERE `ward_no`='$wardno' and `house_no`='$housenodel' ;
+                            INSERT INTO `tbl_staff_activity`(`userid`, `name`, `activity`, `date_time`) VALUES ('$officeId','$sName','$activity','$date_time')";
+                $deleteQueryResult=mysqli_multi_query($conn,$deleteQuery);
+                if($deleteQueryResult){
+                    $_SESSION['success'] = "House deleted successfully";
+                    header("Location: ../../view/pages/office_staff/houses.php");
+                }else{
+                    $_SESSION['error'] = "Error in deleting house";
+                    header("Location: ../../view/pages/office_staff/view_house.php?houseno=$housenodel");
+                }
             }else{
-                $_SESSION['error'] = "Error in deleting house";
-                header("Location: ../../view/pages/ward_member/view_house.php?houseno=$housenodel");
+                $deleteQuery="DELETE FROM `tbl_house` WHERE `ward_no`='$wardno' and `house_no`='$housenodel' ;
+                            DELETE FROM `tbl_house_member` WHERE `ward_no`='$wardno' and `house_no`='$housenodel'";
+                $deleteQueryResult=mysqli_multi_query($conn,$deleteQuery);
+                if($deleteQueryResult){
+                    $_SESSION['success'] = "House deleted successfully";
+                    header("Location: ../../view/pages/ward_member/houses.php");
+                }else{
+                    $_SESSION['error'] = "Error in deleting house";
+                    header("Location: ../../view/pages/ward_member/view_house.php?houseno=$housenodel");
+                }
             }
         }else{
-            $_SESSION['error'] = "Error in sending mail";
-            header("Location: ../../view/pages/ward_member/view_house.php?houseno=$housenodel");
+            if($officeId!=""){
+                $_SESSION['error'] = "Error in sending mail";
+                header("Location: ../../view/pages/office_staff/view_house.php?houseno=$housenodel");
+            }else{
+                $_SESSION['error'] = "Error in sending mail";
+                header("Location: ../../view/pages/ward_member/view_house.php?houseno=$housenodel");
+            }
         }
     }
 
@@ -134,23 +221,56 @@
         $fetchEmailResult=mysqli_query($conn,$fetchEmail);
         $userData=mysqli_fetch_assoc($fetchEmailResult);
         $toMail=$userData["email"];
+        $body=$mdel_reason;
+
+        //Check if the action is done by office staff
+        $officeId=$_SESSION['userid'];
+        //Fetch staff details
+        if($officeId!=""){
+            $officeStaff="SELECT `name` FROM `tbl_office_staff` WHERE `userid`='$officeId'";
+            $officeStaffResult=mysqli_query($conn,$officeStaff);
+            $dataFetched=mysqli_fetch_assoc($officeStaffResult);
+            $sName=$dataFetched['name'];
+            $activity="Deleted house member having user id: $memberId and house number: $housenodel with reason: $body";
+            date_default_timezone_set('Asia/Kolkata');
+            $date_time = date("Y-m-d H:i:s", time ());
+        }
 
         //Send mail
         $subject="E-Ward House Member Deletion";
         $headers="From: ewardmember@gmail.com";
         if(mail($toMail,$subject,$body,$headers)){
-            $deleteQuery="DELETE FROM `tbl_house_member` WHERE `userid`='$memberId'";
-            $deleteQueryResult=mysqli_query($conn,$deleteQuery);
-            if($deleteQueryResult){
-                $_SESSION['success'] = "Member deleted successfully";
-                header("Location: ../../view/pages/ward_member/view_house.php?houseno=$housenodel");
+            //Check if the action is done by office staff
+            if($officeId!=""){
+                $deleteQuery="DELETE FROM `tbl_house_member` WHERE `userid`='$memberId' ;
+                            INSERT INTO `tbl_staff_activity`(`userid`, `name`, `activity`, `date_time`) VALUES ('$officeId','$sName','$activity','$date_time')";
+                $deleteQueryResult=mysqli_multi_query($conn,$deleteQuery);
+                if($deleteQueryResult){
+                    $_SESSION['success'] = "Member deleted successfully";
+                    header("Location: ../../view/pages/office_staff/view_house.php?houseno=$housenodel");
+                }else{
+                    $_SESSION['error'] = "Error in deleting member";
+                    header("Location: ../../view/pages/office_staff/view_house.php?houseno=$housenodel");
+                }
             }else{
-                $_SESSION['error'] = "Error in deleting member";
-                header("Location: ../../view/pages/ward_member/view_house.php?houseno=$housenodel");
+                $deleteQuery="DELETE FROM `tbl_house_member` WHERE `userid`='$memberId'";
+                $deleteQueryResult=mysqli_query($conn,$deleteQuery);
+                if($deleteQueryResult){
+                    $_SESSION['success'] = "Member deleted successfully";
+                    header("Location: ../../view/pages/ward_member/view_house.php?houseno=$housenodel");
+                }else{
+                    $_SESSION['error'] = "Error in deleting member";
+                    header("Location: ../../view/pages/ward_member/view_house.php?houseno=$housenodel");
+                }
             }
         }else{
-            $_SESSION['error'] = "Error in sending mail";
-            header("Location: ../../view/pages/ward_member/view_house.php?houseno=$housenodel");
+            if($officeId!=""){
+                $_SESSION['error'] = "Error in sending mail";
+                header("Location: ../../view/pages/office_staff/view_house.php?houseno=$housenodel");
+            }else{
+                $_SESSION['error'] = "Error in sending mail";
+                header("Location: ../../view/pages/ward_member/view_house.php?houseno=$housenodel");
+            }
         }
     }
 ?>
