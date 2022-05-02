@@ -104,6 +104,37 @@ else
 
             </div>
         </section>
+
+        <!-- =========== Modal ============ -->
+        <div class="overlay modal-hidden"></div>
+        <!-- form to add need request-->
+        <div class="box modal-box modal-hidden">
+            <div class="title"> Add need request </div>
+            <div class="modal-close-btn">
+                <img src="../../../../public/assets/images/close.svg" alt="close button">
+            </div>
+            <!-- Add need request -->
+            <form action="" method="post" id="add-need-req" enctype="multipart/form-data">
+                <input type="hidden" name="fname" value="<?php echo $fname ?>">
+                <div class="inputs">
+                    <div class="input reqDes">
+                        <div class="label"> Committee description </div>
+                        <textarea name="comm_des" id="req-des" rows="10"></textarea>
+                        <div class="error error-hidden">
+                        </div>
+                    </div>
+                    <div class="input reqFile">
+                        <div class="label"> Upload proof </div>
+                        <input type="file" name="hphoto" id="reqFile" accept="image/png,image/jpeg,application/pdf">
+                        <div class="error error-hidden">
+                        </div>
+                    </div>
+                    <div class="button hBtn cursor-disable">
+                        <input type="submit" value="Send request" name="add-hm" id="add-req" class="primary-button disabled">
+                    </div>
+                </div>
+            </form>
+        </div>
         
 
         <!-- Error Toast -->
@@ -145,6 +176,7 @@ else
             ?>
             <!-- ==========Loading End============= -->
         
+        <script src="../../../../public/assets/js/add_need_req.js"></script>
         <script src="../../../../public/assets/js/toast.js"></script>
     </body>
     
