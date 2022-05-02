@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 30, 2022 at 06:29 PM
+-- Generation Time: May 02, 2022 at 08:32 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.25
 
@@ -63,7 +63,7 @@ CREATE TABLE `tbl_committee` (
 
 INSERT INTO `tbl_committee` (`id`, `wardno`, `c_name`, `c_description`, `c_photo`, `m_limit`, `m_joined`, `added_by`) VALUES
 (1, 2, 'Committee new', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', '../../../public/assets/images/uploads/photos/1648653556.jpg', 25, 0, '2'),
-(2, 2, 'Committe two', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', '../../../public/assets/images/uploads/photos/1648653604.jpg', 20, 0, '2'),
+(2, 2, 'Committe two', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, se', '../../../public/assets/images/uploads/photos/1648653604.jpg', 20, 0, '2'),
 (3, 2, 'Committee long name submitted', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', '../../../public/assets/images/uploads/photos/1648653685.jpg', 15, 0, '2');
 
 -- --------------------------------------------------------
@@ -116,7 +116,19 @@ INSERT INTO `tbl_edu_bg` (`id`, `userid`, `hs`, `hss`, `diploma`, `ug`, `pg`) VA
 (30, 2530, '0', '0', '0', '0', '0'),
 (31, 2430, '0', '0', '0', '0', '0'),
 (32, 2160, '0', '0', '0', '0', '0'),
-(33, 2162, '0', '0', '0', '0', '0');
+(33, 2162, '0', '0', '0', '0', '0'),
+(34, 2110, '0', '0', '0', '0', '0'),
+(35, 2162, '0', '0', '0', '0', '0'),
+(36, 2163, '0', '0', '0', '0', '0'),
+(37, 2164, '0', '0', '0', '0', '0'),
+(38, 21250, '0', '0', '0', '0', '0'),
+(39, 21440, '0', '0', '0', '0', '0'),
+(40, 2410, '0', '0', '0', '0', '0'),
+(41, 2190, '0', '0', '0', '0', '0'),
+(42, 21220, '0', '0', '0', '0', '0'),
+(43, 21230, '0', '0', '0', '0', '0'),
+(44, 21120, '0', '0', '0', '0', '0'),
+(45, 21460, '0', '0', '0', '0', '0');
 
 -- --------------------------------------------------------
 
@@ -161,10 +173,7 @@ INSERT INTO `tbl_house` (`hid`, `house_name`, `house_no`, `ward_no`, `locality`,
 (17, 'New housee', 34, 2, 'New locality', 'New post office', 5685458745, 'APL'),
 (18, 'new reg ho', 18, 2, 'new', 'new', 8459658745, 'APL'),
 (19, 'Kunni House', 23, 2, 'Miami, Street 23, Near beach', 'Miami PO', 2154785632, 'APL'),
-(20, 'Thenamara', 54, 2, 'Kannimala', 'Kanimala PO', 2156325454, 'APL'),
-(21, 'test new', 0, 2, 'qwe', 'qwe', 9854589562, 'APL'),
-(22, 'qwe', 13, 2, 'qwe', 'qwe', 5878458965, 'APL'),
-(23, 'new chk house', 16, 2, 'Kottooli, kozhikode, kerala, india, earth', 'new house space PO', 9545874541, 'APL');
+(23, 'new house', 16, 2, 'Kottooli', 'new house space', 9545874541, 'APL');
 
 -- --------------------------------------------------------
 
@@ -191,23 +200,23 @@ CREATE TABLE `tbl_house_member` (
 --
 
 INSERT INTO `tbl_house_member` (`hm_id`, `ward_no`, `house_no`, `fname`, `email`, `phno`, `blood_grp`, `dob`, `photo`, `userid`, `password`) VALUES
-(1, 2, 145, 'Annette Black', 'Not entered', 9658784526, 'O+', '1998-06-23', '../images/uploads/photos/1638009888.png', 0, ''),
-(2, 2, 145, 'James Black', 'jamesblack@gmail.com', 9856587452, 'O+', '1995-03-15', '../images/uploads/photos/1638009946.png', 0, ''),
-(3, 2, 154, 'Frank', 'fank@gmail.com', 9854569844, 'B-', '1998-09-17', '../images/uploads/photos/1638860482.jpg', 0, ''),
-(4, 2, 154, 'Celia', 'celia@gmail.com', 9856587459, 'B-', '2001-10-01', '../images/uploads/photos/1638860567.png', 0, ''),
-(5, 2, 145, 'Manas P', 'manas4518pachakkil@gmail.com', 9856587855, 'O+', '1998-10-28', '../images/uploads/photos/1639161827.png', 0, ''),
+(1, 2, 145, 'Annette Black', 'Not entered', 9658784526, 'O+', '1998-06-23', '../images/uploads/photos/1638009888.png', 0, 'Qwerty@1'),
+(2, 2, 145, 'James Black', 'jamesblack@gmail.com', 9856587452, 'O+', '1995-03-15', '../images/uploads/photos/1638009946.png', 0, 'Qwerty@1'),
+(3, 2, 154, 'Frank', 'fank@gmail.com', 9854569844, 'B-', '1998-09-17', '../images/uploads/photos/1638860482.jpg', 0, 'Qwerty@1'),
+(4, 2, 154, 'Celia', 'celia@gmail.com', 9856587459, 'B-', '2001-10-01', '../images/uploads/photos/1638860567.png', 0, 'Qwerty@1'),
+(5, 2, 145, 'Manas P', 'manas4518pachakkil@gmail.com', 9856587855, 'O+', '1998-10-28', '../images/uploads/photos/1639161827.png', 21450, 'Qwerty@1'),
 (15, 2, 34, 'new test', 'Not entered', 9858356478, 'NA', '0000-00-00', '../images/user-profile-placeholder.png', 2340, '123'),
 (16, 2, 18, 'new reg', 'Not entered', 5458965879, 'NA', '0000-00-00', '../images/user-profile-placeholder.png', 2180, '123'),
-(17, 2, 18, 'new regg', 'new@gmail.com', 9856587459, 'O+', '2019-07-10', '../images/uploads/photos/1643969508.png', 0, '0'),
+(17, 2, 18, 'new regg', 'new@gmail.com', 9856587459, 'O+', '2019-07-10', '../images/uploads/photos/1643969508.png', 0, 'Qwerty@1'),
 (23, 2, 34, 'New new test', 'newnewtest@gmail.com', 9565878456, 'A+', '2000-01-05', '../images/uploads/photos/1644173899.png', 2342, '123'),
 (24, 2, 34, 'new newe', 'new@gmail.com', 8965236589, 'A+', '2016-02-10', '../images/uploads/photos/1644286381.png', 2343, '123'),
 (25, 2, 34, 'new nneww', 'new@gmail.com', 9565215487, 'A+', '2014-02-18', '../images/uploads/photos/1644592133.png', 2344, 'NdyprVQa'),
-(26, 2, 23, 'Rubin Siby', 'rubinsibyy@gmail.com', 9565878452, 'B+', '1988-06-15', '../images/uploads/photos/1644834244.png', 2230, 'Qerty@123'),
+(26, 2, 23, 'Rubin Siby', 'rubinsibyy@gmail.com', 9565878452, 'B+', '1988-06-15', '../../../public/assets/images/1650291688.png', 2230, 'Qerty@123'),
 (27, 2, 24, 'Martin Garrix', 'Not entered', 9565878457, 'NA', '0000-00-00', '../images/user-profile-placeholder.png', 2240, 'eer5XjwS'),
-(28, 2, 23, 'Kunni', 'martingrrx@gmail.com', 9856547854, 'B+', '2002-05-15', '../images/uploads/photos/1644839475.jpg', 2232, '123'),
-(29, 2, 23, 'Jacob Kurien', 'jacob@gmail.com', 9856587457, 'O+', '1999-11-03', '../../../public/assets/images/1648279852.jpg', 2233, 'Qwerty@123'),
-(30, 2, 23, 'Appy Kurian', 'kuriappy@gmail.com', 9565874521, 'A+', '1999-06-15', '../images/uploads/photos/1645185833.jpeg', 2234, '123'),
-(31, 2, 23, 'Martin Garrix', 'martingar@gmail.com', 9856548758, 'O+', '1998-09-29', '../images/uploads/photos/1645306463.jpg', 2235, 'T4bAKtE3'),
+(28, 2, 23, 'Kunni', 'martingrrx@gmail.com', 9856547854, 'B+', '2002-05-15', '../../../public/assets/images/1650291702.jpg', 2232, '123'),
+(29, 2, 23, 'Jacob Kurien', 'jacob@gmail.com', 9856587457, 'O+', '1999-11-03', '../../../public/assets/images/1650291719.jpg', 2233, 'Qwerty@123'),
+(30, 2, 23, 'Appy Kurian', 'kuriappy@gmail.com', 9565874521, 'A+', '1999-06-15', '../../../public/assets/images/1650291735.jpeg', 2234, '123'),
+(31, 2, 23, 'Martin Garrix', 'martingar@gmail.com', 9856548758, 'O+', '1998-09-29', '../../../public/assets/images/1650291747.jpg', 2235, 'T4bAKtE3'),
 (32, 2, 48, 'kunnuz', 'Not entered', 9565874587, 'NA', '0000-00-00', '../images/user-profile-placeholder.png', 2480, 'WuuzszdT'),
 (33, 2, 78, 'dont accept', 'Not entered', 9565878454, 'NA', '0000-00-00', '../images/user-profile-placeholder.png', 2780, 'phECFulL'),
 (34, 2, 14, 'Laali Bhaai', 'Not entered', 5485478965, 'NA', '0000-00-00', '../images/user-profile-placeholder.png', 2140, 'HLAtR9oS'),
@@ -218,21 +227,21 @@ INSERT INTO `tbl_house_member` (`hm_id`, `ward_no`, `house_no`, `fname`, `email`
 (39, 2, 7, 'ert', 'Not entered', 9587845236, 'NA', '0000-00-00', '../images/user-profile-placeholder.png', 270, 'GkSmjBDV'),
 (40, 2, 9, 'rty', 'Not entered', 9854587845, 'NA', '0000-00-00', '../images/user-profile-placeholder.png', 290, 'Rqm6Jt9s'),
 (41, 2, 8, 'sdf', 'Not entered', 9856523587, 'NA', '0000-00-00', '../images/user-profile-placeholder.png', 280, '38cNmH4f'),
-(42, 2, 54, 'Nikky George', 'Not entered', 9565878544, 'NA', '1999-08-11', '../images/uploads/photos/1645590217.jpg', 2540, '123'),
-(43, 2, 54, 'Laali', 'laali@gmail.com', 9856587854, 'B+', '1999-10-05', '../images/uploads/photos/1645590132.jpg', 2542, '123'),
 (44, 2, 85, 'fgh', 'Not entered', 9856587845, 'NA', '0000-00-00', '../images/user-profile-placeholder.png', 2850, '1jnz1SCN'),
-(45, 2, 0, '45', 'new test', 9856587854, 'NA', '0000-00-00', '../images/user-profile-placeholder.png', 2450, '123'),
-(46, 2, 13, 'Test account', 'dfg@gmail.com', 9584524655, 'NA', '0000-00-00', '../images/user-profile-placeholder.png', 2130, '123'),
-(47, 2, 13, 'Testt', 'testt@gmail.com', 9854589658, 'O+', '2018-05-08', '../images/uploads/photos/1645630210.png', 2132, 'aDmcMkGU'),
-(48, 2, 13, 'Testtt', 'sdfsf@gmail.com', 9854589652, 'B+', '2011-11-16', '../images/uploads/photos/1645630632.png', 2133, 'wzcZNXfg'),
-(49, 2, 13, 'poiuy', 'poiuy@gmail.com', 9856587844, 'O+', '2020-03-18', '../images/uploads/photos/1645630828.png', 2134, 'Pcn5yWfv'),
-(50, 2, 13, 'oiuyt', 'fdghfh@gmail.com', 9565545894, 'O+', '2015-03-03', '../images/uploads/photos/1645631301.png', 2135, 'ktXc6dgH'),
-(51, 2, 13, 'fghjgfp', 'jhvj@gmail.com', 9856589685, 'O+', '2022-02-10', '../images/uploads/photos/1645631386.png', 2136, 'IWVZzj2p'),
-(52, 2, 13, 'fghl', 'njn@gmail.com', 9856523258, 'O+', '2022-02-09', '../images/uploads/photos/1645631700.png', 2137, 'krvJbvnq'),
 (53, 2, 53, 'djkfhg', 'jb@gmail.com', 9854589858, 'NA', '0000-00-00', '../images/user-profile-placeholder.png', 2530, 'VubsYXvs'),
 (54, 2, 43, 'tyutut', 'tyutyu@gmail.com', 9565458785, 'NA', '0000-00-00', '../images/user-profile-placeholder.png', 2430, 'PZyugaZF'),
-(55, 2, 16, 'new chk new', 'nwwechk@gmail.com', 9854512547, 'B+', '2012-02-14', '../../../public/assets/images/1648463828.png', 2160, 'Qwerty@123'),
-(56, 2, 16, 'dfsdf sedfq', 'sdf@djfgn.sdf', 9565215477, 'B+', '2017-07-03', '../../../public/assets/images/1648126052.png', 2162, '123');
+(55, 2, 16, 'Manas', 'nwwechk@gmail.com', 9854512547, 'B+', '1994-06-15', '../../../public/assets/images/uploads/photos/1648463828.png', 2163, '123'),
+(57, 2, 11, 'Frank', 'frankmathewsthomas@gmail.com', 9875456324, 'NA', '0000-00-00', '../../../../public/assets/images/user-profile-placeholder.png', 2110, 'AuqzvCFx'),
+(58, 2, 16, 'new member', 'newmember@gmail.com', 9854512548, 'O+', '2014-08-14', '../../../public/assets/images/uploads/photos/1650351067.jpg', 2162, 'GfL10nVR'),
+(59, 2, 16, 'David Guetta', 'davidguetta@gmail.com', 9856523257, 'A+', '1994-02-02', '../../../public/assets/images/uploads/photos/1651300214.jpg', 2160, 'v7g7KEyl'),
+(61, 2, 125, 'hjkkh hjk', 'dsfg@gmai.coj', 4523256587, 'NA', '0000-00-00', '../../../../public/assets/images/user-profile-placeholder.png', 21250, 'WVUgxOJL'),
+(62, 2, 144, 'chknew', 'chknew@gmail.com', 9854587452, 'NA', '0000-00-00', '../../../../public/assets/images/user-profile-placeholder.png', 21440, 'Ws7PGgJZ'),
+(63, 2, 41, 'fghefs', 'fghf@gmail.com', 9856587845, 'NA', '0000-00-00', '../../../../public/assets/images/user-profile-placeholder.png', 2410, 'TYFij8Nh'),
+(64, 2, 19, 'tuyu', 'fgh@gmail.com', 9856587845, 'NA', '0000-00-00', '../../../../public/assets/images/user-profile-placeholder.png', 2190, '4S5kyI5B'),
+(65, 2, 122, 'chech staff', 'chkstaff@gmail.com', 9854562321, 'NA', '0000-00-00', '../../../../public/assets/images/user-profile-placeholder.png', 21220, 'ekPuSM2T'),
+(66, 2, 123, 'chech ward mem', 'chkmem@gmail.com', 9854563210, 'NA', '0000-00-00', '../../../../public/assets/images/user-profile-placeholder.png', 21230, 'he6pi7F9'),
+(67, 2, 112, 'tset time', 'tefy@gmail.cm', 9854512547, 'NA', '0000-00-00', '../../../../public/assets/images/user-profile-placeholder.png', 21120, 'sViKI0jh'),
+(68, 2, 146, 'new', 'nkajsdf@ah.asd', 9854512547, 'NA', '0000-00-00', '../../../../public/assets/images/user-profile-placeholder.png', 21460, 'SoEBKjhg');
 
 -- --------------------------------------------------------
 
@@ -291,7 +300,19 @@ INSERT INTO `tbl_id_proof` (`id`, `userid`, `aadhar_no`, `aadhar_file`, `electio
 (29, 2530, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
 (30, 2430, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
 (31, 2160, 9874512145, '../../../public/assets/documents/16481377510..pdf', 0, '0', '0', '0', '0', '0', 0, '0'),
-(32, 2162, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0');
+(32, 2162, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
+(33, 2110, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
+(34, 2162, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
+(35, 2163, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
+(36, 2164, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
+(37, 21250, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
+(38, 21440, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
+(39, 2410, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
+(40, 2190, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
+(41, 21220, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
+(42, 21230, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
+(43, 21120, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
+(44, 21460, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0');
 
 -- --------------------------------------------------------
 
@@ -310,6 +331,7 @@ CREATE TABLE `tbl_office_staff` (
   `m_complaint` int(1) NOT NULL DEFAULT 0,
   `wardno` int(5) NOT NULL,
   `userid` int(10) NOT NULL,
+  `status` int(2) NOT NULL DEFAULT 1,
   `password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -317,10 +339,12 @@ CREATE TABLE `tbl_office_staff` (
 -- Dumping data for table `tbl_office_staff`
 --
 
-INSERT INTO `tbl_office_staff` (`id`, `name`, `email`, `phno`, `photo`, `m_house`, `m_committee`, `m_complaint`, `wardno`, `userid`, `password`) VALUES
-(1, 'Wade Warren', 'wadewarren@gmail.com', 9854587857, '../../../public/assets/images/1648462592.png', 1, 1, 1, 2, 2001, 'a8DExL40'),
-(2, 'Telbin Cherian', 'telbin@gmail.com', 9854523265, '../../../public/assets/images/1648462655.jpg', 1, 1, 1, 2, 2002, 'orVX7ZPW'),
-(3, 'Kurian Tom', 'lskdnv@gmail.com', 9653235687, '../../../public/assets/images/1648463311.jpeg', 1, 0, 1, 2, 2003, 'RetNgXzT');
+INSERT INTO `tbl_office_staff` (`id`, `name`, `email`, `phno`, `photo`, `m_house`, `m_committee`, `m_complaint`, `wardno`, `userid`, `status`, `password`) VALUES
+(1, 'Wade Warren', 'wadewarren@gmail.com', 9854587857, '../../../public/assets/images/uploads/photos/1651301022.png', 1, 1, 1, 2, 2001, 1, '123'),
+(2, 'Telbin Cherian', 'telbin@gmail.com', 9854523265, '../../../public/assets/images/uploads/photos/1648462655.jpg', 0, 0, 0, 2, 2002, 1, '123'),
+(3, 'Kurian Tom', 'lskdnv@gmail.com', 9653235687, '../../../public/assets/images/uploads/photos/1648463311.jpeg', 0, 0, 1, 2, 2003, 1, '123'),
+(4, 'test', 'test@gmail.com', 8565487898, '../../../public/assets/images/uploads/photos/1650020330.png', 1, 0, 1, 3, 3001, 1, 'M5TF1Woc'),
+(5, 'new staff', 'sdfsdf@gmail.com', 9854587895, '../../../public/assets/images/uploads/photos/1651301311.png', 0, 0, 0, 2, 2004, 0, '123');
 
 -- --------------------------------------------------------
 
@@ -370,7 +394,19 @@ INSERT INTO `tbl_pro_bg` (`id`, `userid`, `cur_pro`, `cur_pro_file`, `comp_name`
 (25, 2530, '0', '0', '0', '0', '0000-00-00'),
 (26, 2430, '0', '0', '0', '0', '0000-00-00'),
 (27, 2160, '0', '0', '0', '0', '0000-00-00'),
-(28, 2162, '0', '0', '0', '0', '0000-00-00');
+(28, 2162, '0', '0', '0', '0', '0000-00-00'),
+(29, 2110, '0', '0', '0', '0', '0000-00-00'),
+(30, 2162, '0', '0', '0', '0', '0000-00-00'),
+(31, 2163, '0', '0', '0', '0', '0000-00-00'),
+(32, 2164, '0', '0', '0', '0', '0000-00-00'),
+(33, 21250, '0', '0', '0', '0', '0000-00-00'),
+(34, 21440, '0', '0', '0', '0', '0000-00-00'),
+(35, 2410, '0', '0', '0', '0', '0000-00-00'),
+(36, 2190, '0', '0', '0', '0', '0000-00-00'),
+(37, 21220, '0', '0', '0', '0', '0000-00-00'),
+(38, 21230, '0', '0', '0', '0', '0000-00-00'),
+(39, 21120, '0', '0', '0', '0', '0000-00-00'),
+(40, 21460, '0', '0', '0', '0', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -437,17 +473,54 @@ INSERT INTO `tbl_registration` (`rid`, `fname`, `email`, `phno`, `wardno`, `hous
 (52, 'ert', 'ert@gmail.com', 9587845236, 2, 7, '../documents/taxreport/1645545858.pdf', 1),
 (53, 'rty', 'rty@gmail.com', 9854587845, 2, 9, '../documents/taxreport/1645554420.pdf', 1),
 (54, 'sdf', 'sdf@gmail.com', 9856523587, 2, 8, '../documents/taxreport/1645555665.pdf', 1),
-(55, 'tuyu', 'fgh@gmail.com', 9856587845, 2, 19, '../documents/taxreport/1645589316.pdf', 0),
+(55, 'tuyu', 'fgh@gmail.com', 9856587845, 2, 19, '../documents/taxreport/1645589316.pdf', 1),
 (57, 'fgh', 'fgh@gmail.com', 9856587845, 2, 85, '../documents/taxreport/1645589914.pdf', 1),
 (58, 'Nikky George', 'nikkygeorgephilip@mca.ajce.in', 9565878544, 2, 54, '../documents/taxreport/1645589974.pdf', 1),
 (59, 'sdf', 'dfg@gmail.com', 9584524655, 2, 13, '../documents/taxreport/1645591942.pdf', 1),
 (60, 'new test', 'lkjnhk@gmail.com', 9856587854, 2, 45, '../documents/taxreport/1645593021.pdf', 1),
-(62, 'fghefs', 'fghf@gmail.com', 9856587845, 2, 41, '../documents/taxreport/1645634535.pdf', 0),
+(62, 'fghefs', 'fghf@gmail.com', 9856587845, 2, 41, '../documents/taxreport/1645634535.pdf', 1),
 (63, 'djkfhg', 'jb@gmail.com', 9854589858, 2, 53, '../documents/taxreport/1645634562.pdf', 1),
 (65, 'tyutut', 'tyutyu@gmail.com', 9565458785, 2, 43, '../documents/taxreport/1646710445.pdf', 1),
-(66, 'chknew', 'chknew@gmail.com', 9854587452, 2, 144, '../../assets/documents/taxreport/1647660841.pdf', 0),
-(67, 'hjkkh hjk', 'dsfg@gmai.coj', 4523256587, 2, 125, '../../assets/documents/taxreport/1647660965.pdf', 0),
-(69, 'new chk', 'nwwechk@gmail.com', 9854512547, 2, 16, '../../public/assets/documents/taxreport/1648015712.pdf', 1);
+(66, 'chknew', 'chknew@gmail.com', 9854587452, 2, 144, '../../assets/documents/taxreport/1647660841.pdf', 1),
+(67, 'hjkkh hjk', 'dsfg@gmai.coj', 4523256587, 2, 125, '../../assets/documents/taxreport/1647660965.pdf', 1),
+(69, 'new chk', 'nwwechk@gmail.com', 9854512547, 2, 16, '../../public/assets/documents/taxreport/1648015712.pdf', 1),
+(70, 'Frank', 'frankmathewsthomas@gmail.com', 9875456324, 2, 11, '../../public/assets/documents/taxreport/1648784715.pdf', 1),
+(72, 'chech staff', 'chkstaff@gmail.com', 9854562321, 2, 122, '../../public/assets/documents/taxreport/1651347683.pdf', 1),
+(73, 'chech ward mem', 'chkmem@gmail.com', 9854563210, 2, 123, '../../public/assets/documents/taxreport/1651347757.pdf', 1),
+(74, 'tset time', 'tefy@gmail.cm', 9854512547, 2, 112, '../../public/assets/documents/taxreport/1651349066.pdf', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_staff_activity`
+--
+
+CREATE TABLE `tbl_staff_activity` (
+  `id` int(10) NOT NULL,
+  `userid` int(10) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `activity` varchar(200) NOT NULL,
+  `date_time` datetime(6) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_staff_activity`
+--
+
+INSERT INTO `tbl_staff_activity` (`id`, `userid`, `name`, `activity`, `date_time`) VALUES
+(1, 2001, 'Wade Warren', 'Approved house having house number: 25', '2022-04-30 21:28:21.000000'),
+(2, 2001, 'Wade Warren', 'Approved house having house number: 41', '2022-04-30 21:28:47.000000'),
+(3, 2001, 'Wade Warren', 'Approved house having house number: 19', '2022-04-30 21:32:21.000000'),
+(4, 2001, 'Wade Warren', 'Approved house having house number: 17', '2022-04-30 21:39:55.000000'),
+(5, 2001, 'Wade Warren', 'Approved house having house number: 122', '2022-04-30 21:41:47.000000'),
+(6, 2001, 'Wade Warren', 'Approved house having house number: 112', '2022-04-30 22:04:38.000000'),
+(7, 2001, 'Wade Warren', 'Approved house having house number: 146', '2022-05-01 01:37:21.000000'),
+(8, 2001, 'Wade Warren', 'Rejected house having house number:  with reason: Invalid house tax report', '2022-05-01 18:35:08.000000'),
+(9, 2001, 'Wade Warren', 'Rejected house having house number: 142 with reason: Invalid house tax report and suspicious feeling', '2022-05-01 18:38:49.000000'),
+(10, 2001, 'Wade Warren', 'Updated house having house number: 16', '2022-05-02 11:51:32.000000'),
+(11, 2001, 'Wade Warren', 'Updated house having house number: 23', '2022-05-02 11:52:42.000000'),
+(12, 2001, 'Wade Warren', 'Updated house having house number: 16 and changed ownership to David Guetta from Manas', '2022-05-02 11:55:35.000000'),
+(13, 2001, 'Wade Warren', 'Deleted house member having user id: 2164 and house number: 16 with reason: House member does not exist in this realm', '2022-05-02 11:57:44.000000');
 
 -- --------------------------------------------------------
 
@@ -479,7 +552,7 @@ INSERT INTO `tbl_ward_member` (`mid`, `fullname`, `email`, `phno`, `wardno`, `va
 (4, 'Marvin McKinney', 'marvin@gmail.com', 9865478524, 4, '2027-10-13', '../../../public/assets/images/uploads/photos/1637438149.png', 0, 1, 'Yl6Xxf2p'),
 (5, 'Savannah Nguyen', 'savannah@gmail.com', 7458965237, 5, '2027-10-13', '../../../public/assets/images/uploads/photos/1637438202.png', 0, 1, 'UNmwfQ4j'),
 (6, 'Kurian Tom', 'kuriantom@mca.ajce.in', 9856547854, 6, '2027-10-13', '../../../public/assets/images/uploads/photos/1637516935.jpeg', 0, 1, 'ILMxnMgV'),
-(7, 'Kummaadan', 'telbincherian@mca.ajce.in', 9856587745, 7, '2027-10-13', '../../../public/assets/images/uploads/photos/1647929084.jpg', 0, 1, 'laEQbXxJ'),
+(7, 'Kunni Bhai', 'telbincherian@mca.ajce.in', 9856587745, 7, '2027-10-13', '../../../public/assets/images/uploads/photos/1647929084.jpg', 0, 1, 'laEQbXxJ'),
 (8, 'Vinu Reji John', 'vinurejijohn21@gmail.com', 9856687458, 8, '2027-10-13', '../../../public/assets/images/uploads/photos/1637659458.jpg', 0, 1, 'AyNAxXRD'),
 (9, 'Mrudul A', 'ganjan@gmail.com', 9565874587, 9, '2027-10-13', '../../../public/assets/images/uploads/photos/1637837216.png', 0, 1, 'Bxs3FNtl'),
 (10, 'James George', 'jamesgeorge@gmail.com', 9568784523, 10, '2027-10-13', '../../../public/assets/images/uploads/photos/1638012009.png', 0, 1, 'l6lrouag'),
@@ -561,6 +634,13 @@ ALTER TABLE `tbl_registration`
   ADD KEY `wardno` (`wardno`,`houseno`);
 
 --
+-- Indexes for table `tbl_staff_activity`
+--
+ALTER TABLE `tbl_staff_activity`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `userid` (`userid`);
+
+--
 -- Indexes for table `tbl_ward_member`
 --
 ALTER TABLE `tbl_ward_member`
@@ -587,7 +667,7 @@ ALTER TABLE `tbl_committee`
 -- AUTO_INCREMENT for table `tbl_edu_bg`
 --
 ALTER TABLE `tbl_edu_bg`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `tbl_forgot_password`
@@ -605,31 +685,37 @@ ALTER TABLE `tbl_house`
 -- AUTO_INCREMENT for table `tbl_house_member`
 --
 ALTER TABLE `tbl_house_member`
-  MODIFY `hm_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `hm_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
 -- AUTO_INCREMENT for table `tbl_id_proof`
 --
 ALTER TABLE `tbl_id_proof`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `tbl_office_staff`
 --
 ALTER TABLE `tbl_office_staff`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_pro_bg`
 --
 ALTER TABLE `tbl_pro_bg`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `tbl_registration`
 --
 ALTER TABLE `tbl_registration`
-  MODIFY `rid` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `rid` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+
+--
+-- AUTO_INCREMENT for table `tbl_staff_activity`
+--
+ALTER TABLE `tbl_staff_activity`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `tbl_ward_member`
