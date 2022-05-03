@@ -1,0 +1,137 @@
+@import "../components.scss";
+
+body {
+    background: $bg;
+}
+
+@mixin tableData {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    b {
+        font-family: "Gilroy_SB";
+        font-size: 20px;
+        color: $subText;
+        text-align: center;
+        transform: translateX(-60px);
+        margin-top: 160px;
+    }
+    .data {
+        padding: 20px;
+        background: $white;
+        border-radius: 10px;
+        font-family: "Gilroy_M";
+        font-size: 18px;
+        color: $darkSubText;
+        transition: .2s ease-in-out;
+        td {
+            padding-right: 28px;
+            vertical-align: top;
+            text-align: left;
+        }
+        .no-file{
+            font-family: "Gilroy_SB";
+            color: $subText;
+        }
+        .view {
+          font-family: "Gilroy_SB";
+          color: $primary;
+        }
+        .approve {
+          font-family: "Gilroy_SB";
+          color: $green;
+        }
+        .reject {
+          font-family: "Gilroy_SB";
+          color: $error;
+        }
+        &:hover {
+            box-shadow: 0px 10px 20px rgba(226, 226, 226, 0.25);
+        }
+    }
+}
+
+.main {
+    display: flex;
+    .sidebar {
+        @include sidebar();
+    }
+    .container {
+        margin: 46px 63px 46px calc(476px - 63px);
+        width: calc(100% - 476px);
+        .header {
+            display: flex;
+            justify-content: space-between;
+            .title {
+                font-family: Gilroy_SB;
+                font-size: 38px;
+            }
+            .search {
+                svg {
+                    position: relative;
+                    left: 38px;
+                    height: 20px;
+                    width: 20px;
+                    top: 3px;
+                }
+                input {
+                    width: 408px;
+                    font-size: 18px;
+                    font-family: "Gilroy_M";
+                    padding: 16px 0px 16px 42px;
+                    border-radius: 10px;
+                    border: 1px solid $border;
+                    color: $text;
+                    outline: none;
+                    transition: 0.2s ease-in-out;
+                    &:focus {
+                        border: 1px solid $text;
+                    }
+                    &:focus svg .str {
+                        stroke: $text;
+                    }
+                }
+            }
+        }
+        .request {
+            margin-top: 36px;
+            display: flex;
+            justify-content: flex-end;
+            font-family: "Gilroy_SB";
+            font-size: 20px;
+            a {
+                text-decoration: underline;
+                color: $primary;
+            }
+            .noti-badge {
+                text-decoration: none;
+                padding: 5px 8px 4px 8px;
+                color: $white;
+                background: $primary;
+                font-family: "Gilroy_B";
+                font-size: 12px;
+                border-radius: 6px;
+                margin-left: 8px;
+            }
+        }
+        .headings {
+            margin: 36px 16px 0 16px;
+            font-family: "Gilroy_SB";
+            font-size: 20px;
+            color: $text;
+            display: flex;
+            margin-bottom: 24px;
+        }
+        .datas {
+            @include tableData();
+        }
+        .allResult {
+            @include tableData();
+        }
+        .displayNone {
+            display: none;
+        }
+    }
+}
+
+@include error-alert();
