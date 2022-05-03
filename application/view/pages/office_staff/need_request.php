@@ -76,7 +76,7 @@
 
                 <div class="allResult">
                     <?php
-                        $query="SELECT `houseno`, `userid`, `description`, `proof_file` FROM `tbl_need_request` WHERE `wardno`='$wardno' AND `status`='0'";
+                        $query="SELECT `id`, `houseno`, `userid`, `description`, `proof_file` FROM `tbl_need_request` WHERE `wardno`='$wardno' AND `status`='0'";
                         $result=mysqli_query($conn,$query);
                         $i=1;
                         while($row=mysqli_fetch_array($result)){
@@ -107,7 +107,7 @@
                                     ?>
                                 </td>
                                 <td width=95px>
-                                    <a href="" class="approve" onclick="loader()">Approve</a>
+                                    <a href="../../../model/office_staff/approve.php?id=<?php echo $row['id']; ?>&houseno=<?php echo $row['houseno']; ?>&memName=<?php echo $memberName; ?>" class="approve" onclick="loader()">Approve</a>
                                 </td>
                                 <td width=73px>
                                     <a class="reject">Reject</a>
@@ -122,6 +122,43 @@
                 </div>
             </div>
         </section>
+
+        <!-- Error Toast -->
+        <?php
+                if (isset($_SESSION['error'])) {
+                    $msg=$_SESSION['error'];
+                  echo " <div class='alertt alert-visible'>
+                                <div class='econtent'>
+                                    <img src='../../../../public/assets/images/warning.svg' alt='warning'>
+                                    <div class='text'>
+                                        $msg
+                                    </div>
+                                </div>
+                                <img src='../../../../public/assets/images/close.svg' alt='close' class='alert-close'>
+                            </div>";
+                  unset($_SESSION['error']);
+                }?>
+        <!-- Success toast -->
+        <?php
+                    if (isset($_SESSION['success'])) {
+                        $msg=$_SESSION['success'];
+                        echo " <div class='alertt alert-visible' style='border-left: 10px solid #1BBD2B;'>
+                                    <div class='econtent'>
+                                        <img src='../../../../public/assets/images/check.svg' alt='success'>
+                                        <div class='text'>
+                                            $msg
+                                        </div>
+                                    </div>
+                                    <img src='../../../../public/assets/images/close.svg' alt='close' class='alert-close'>
+                                </div>";
+                        unset($_SESSION['success']);
+                }?>
+        <!-- ==========Loading============= -->
+        <?php
+                    include '../../includes/loading.php';
+                ?>
+        <!-- ==========Loading End============= -->
+        <script src="../../../../public/assets/js/toast.js"></script>
     </body>
     </html>
 <?php
