@@ -18,15 +18,12 @@ closeModal.addEventListener("click",()=>{
 
 //Validation
 const reqDes=document.querySelector("#req-des");
-const file = document.querySelector("#reqFile");
 const addNeedReqForm = document.querySelector("#add-need-req");
 const addReq=document.querySelector("#add-req");
 
 //Error Message Class
 const reqDesError=document.querySelector(".reqDes .error");
-const fileError = document.querySelector(".reqFile .error");
 var reqDesSubmit=false;
-var fileSubmit = false;
 
 //Textarea validation
 reqDes.addEventListener("input",()=>{
@@ -42,22 +39,11 @@ reqDes.addEventListener("input",()=>{
     }
 });
 
-//File Validation
-file.addEventListener("input",()=>{
-    if(file.value == null){
-        fileError.classList.add("error-visible");
-        fileError.classList.remove("error-hidden");
-        fileError.innerText="Upload a file";
-        fileSubmit=false;
-    }else{
-        fileSubmit=true;
-    }
-});
 
 //Submit Button Visibility
 const buttonCursor=document.querySelector(".hBtn");//To avoid poniterevent and cursor problem
-addNeedReqForm.addEventListener("change",()=>{
-    if(reqDesSubmit==true && fileSubmit==true){
+addNeedReqForm.addEventListener("keyup",()=>{
+    if(reqDesSubmit==true){
         addReq.classList.remove("disabled");
         buttonCursor.classList.remove("cursor-disabled");
     }else{

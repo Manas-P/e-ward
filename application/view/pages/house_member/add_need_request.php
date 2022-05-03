@@ -74,29 +74,31 @@ else
                 </div>
                 <div class="datas">
                     <?php
-                        $query="SELECT `c_name`, `c_description`, `m_limit`, `m_joined` FROM `tbl_committee` WHERE `wardno`='$wardno'";
+                        $query="SELECT `id`, `description` FROM `tbl_need_request` WHERE `wardno`='$wardno' AND `houseno`='$houseno' AND `userid`='$user_id' AND `status`='0'";
                         $result=mysqli_query($conn,$query);
                         $i=1;
                         while($row=mysqli_fetch_array($result)){
-                            if($row["m_joined"]!=0){
-                                if($row["m_limit"]/$row["m_joined"]==1){
-                                    continue;
-                                }
-                            }
                     ?>
                     <div class="data">
                         <table>
                             <tr>
                                 <td width=101px><?php echo $i; ?></td>
-                                <td width=1133px style="padding-right: 65px;"><?php echo $row["c_description"]; ?></td>
+                                <td width=1133px style="padding-right: 65px;"><?php echo $row["description"]; ?></td>
                                 <td width=170px>
-                                    <a href="" class="approve" onclick="loader()" >Delete request</a>
+                                    <a href="../../../model/house_member/delete_need_req.php?id=<?php echo $row['id'] ?>" class="approve" onclick="loader()" >Delete request</a>
                                 </td>
                             </tr>
                         </table>
                     </div>
                     <?php
                         $i=$i+1;
+                        }
+                        if(mysqli_num_rows($result)==0){
+                    ?>
+                    <div class="no-result">
+                        No records
+                    </div>
+                    <?php
                         }
                     ?>
                 </div>
@@ -114,23 +116,23 @@ else
                 <img src="../../../../public/assets/images/close.svg" alt="close button">
             </div>
             <!-- Add need request -->
-            <form action="" method="post" id="add-need-req" enctype="multipart/form-data">
+            <form action="../../../model/house_member/add_need_req.php" method="post" id="add-need-req" enctype="multipart/form-data">
                 <input type="hidden" name="fname" value="<?php echo $fname ?>">
                 <div class="inputs">
                     <div class="input reqDes">
                         <div class="label"> Committee description </div>
-                        <textarea name="comm_des" id="req-des" rows="10"></textarea>
+                        <textarea name="req_des" id="req-des" rows="10"></textarea>
                         <div class="error error-hidden">
                         </div>
                     </div>
                     <div class="input reqFile">
                         <div class="label"> Upload proof </div>
-                        <input type="file" name="hphoto" id="reqFile" accept="image/png,image/jpeg,application/pdf">
+                        <input type="file" name="upFile" id="reqFile" accept="image/png,image/jpeg,application/pdf">
                         <div class="error error-hidden">
                         </div>
                     </div>
                     <div class="button hBtn cursor-disable">
-                        <input type="submit" value="Send request" name="add-hm" id="add-req" class="primary-button disabled">
+                        <input type="submit" value="Send request" name="add-req" id="add-req" class="primary-button disabled">
                     </div>
                 </div>
             </form>
