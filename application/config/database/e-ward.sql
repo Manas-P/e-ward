@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 02, 2022 at 08:32 AM
+-- Generation Time: May 03, 2022 at 02:23 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.25
 
@@ -230,10 +230,10 @@ INSERT INTO `tbl_house_member` (`hm_id`, `ward_no`, `house_no`, `fname`, `email`
 (44, 2, 85, 'fgh', 'Not entered', 9856587845, 'NA', '0000-00-00', '../images/user-profile-placeholder.png', 2850, '1jnz1SCN'),
 (53, 2, 53, 'djkfhg', 'jb@gmail.com', 9854589858, 'NA', '0000-00-00', '../images/user-profile-placeholder.png', 2530, 'VubsYXvs'),
 (54, 2, 43, 'tyutut', 'tyutyu@gmail.com', 9565458785, 'NA', '0000-00-00', '../images/user-profile-placeholder.png', 2430, 'PZyugaZF'),
-(55, 2, 16, 'Manas', 'nwwechk@gmail.com', 9854512547, 'B+', '1994-06-15', '../../../public/assets/images/uploads/photos/1648463828.png', 2163, '123'),
+(55, 2, 16, 'Manas', 'nwwechk@gmail.com', 9854512547, 'B+', '1994-06-15', '../../../public/assets/images/uploads/photos/1648463828.png', 2160, '123'),
 (57, 2, 11, 'Frank', 'frankmathewsthomas@gmail.com', 9875456324, 'NA', '0000-00-00', '../../../../public/assets/images/user-profile-placeholder.png', 2110, 'AuqzvCFx'),
-(58, 2, 16, 'new member', 'newmember@gmail.com', 9854512548, 'O+', '2014-08-14', '../../../public/assets/images/uploads/photos/1650351067.jpg', 2162, 'GfL10nVR'),
-(59, 2, 16, 'David Guetta', 'davidguetta@gmail.com', 9856523257, 'A+', '1994-02-02', '../../../public/assets/images/uploads/photos/1651300214.jpg', 2160, 'v7g7KEyl'),
+(58, 2, 16, 'new member', 'newmember@gmail.com', 9854512548, 'O+', '2014-08-14', '../../../public/assets/images/uploads/photos/1650351067.jpg', 2162, '123'),
+(59, 2, 16, 'David Guetta', 'davidguetta@gmail.com', 9856523257, 'A+', '1994-02-02', '../../../public/assets/images/uploads/photos/1651300214.jpg', 2163, 'v7g7KEyl'),
 (61, 2, 125, 'hjkkh hjk', 'dsfg@gmai.coj', 4523256587, 'NA', '0000-00-00', '../../../../public/assets/images/user-profile-placeholder.png', 21250, 'WVUgxOJL'),
 (62, 2, 144, 'chknew', 'chknew@gmail.com', 9854587452, 'NA', '0000-00-00', '../../../../public/assets/images/user-profile-placeholder.png', 21440, 'Ws7PGgJZ'),
 (63, 2, 41, 'fghefs', 'fghf@gmail.com', 9856587845, 'NA', '0000-00-00', '../../../../public/assets/images/user-profile-placeholder.png', 2410, 'TYFij8Nh'),
@@ -313,6 +313,33 @@ INSERT INTO `tbl_id_proof` (`id`, `userid`, `aadhar_no`, `aadhar_file`, `electio
 (42, 21230, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
 (43, 21120, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
 (44, 21460, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_need_request`
+--
+
+CREATE TABLE `tbl_need_request` (
+  `id` int(10) NOT NULL,
+  `wardno` int(10) NOT NULL,
+  `houseno` int(10) NOT NULL,
+  `userid` int(10) NOT NULL,
+  `description` varchar(1000) NOT NULL,
+  `proof_file` varchar(100) NOT NULL DEFAULT '0',
+  `office_staff` varchar(100) NOT NULL DEFAULT '0',
+  `status` int(2) NOT NULL DEFAULT 0,
+  `reply` varchar(1000) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_need_request`
+--
+
+INSERT INTO `tbl_need_request` (`id`, `wardno`, `houseno`, `userid`, `description`, `proof_file`, `office_staff`, `status`, `reply`) VALUES
+(1, 2, 16, 2160, 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud', '../../../public/assets/documents/request/1651536548.pdf', '0', 0, '0'),
+(3, 2, 16, 2162, 'Testing the need request', '../../../public/assets/documents/request/1651536987.pdf', '0', 0, '0'),
+(4, 2, 16, 2160, 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud Exercitation veniam consequat sunt nostrud', '0', '0', 0, '0');
 
 -- --------------------------------------------------------
 
@@ -612,6 +639,13 @@ ALTER TABLE `tbl_id_proof`
   ADD KEY `userid` (`userid`);
 
 --
+-- Indexes for table `tbl_need_request`
+--
+ALTER TABLE `tbl_need_request`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `wardno` (`wardno`,`houseno`);
+
+--
 -- Indexes for table `tbl_office_staff`
 --
 ALTER TABLE `tbl_office_staff`
@@ -692,6 +726,12 @@ ALTER TABLE `tbl_house_member`
 --
 ALTER TABLE `tbl_id_proof`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+
+--
+-- AUTO_INCREMENT for table `tbl_need_request`
+--
+ALTER TABLE `tbl_need_request`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tbl_office_staff`
