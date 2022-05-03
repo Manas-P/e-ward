@@ -27,7 +27,7 @@
     $date_time = date("Y-m-d H:i:s", time ());
 
     if(isset($_POST['reject_need_req'])){
-        $rejQuery="UPDATE `tbl_need_request` SET `status`='3',`reply`='$rej_reason' WHERE `id`='$rejId' ; 
+        $rejQuery="UPDATE `tbl_need_request` SET `status`='3',`reply`='$rej_reason',`office_staff`='$sName' WHERE `id`='$rejId' ; 
                    INSERT INTO `tbl_staff_activity`(`userid`, `name`, `activity`, `date_time`) VALUES ('$officeId','$sName','$activity','$date_time')";
         $rejQueryResult=mysqli_multi_query($conn,$rejQuery);
         if($rejQueryResult){

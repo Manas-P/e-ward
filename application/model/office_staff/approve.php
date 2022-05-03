@@ -16,7 +16,7 @@
     date_default_timezone_set('Asia/Kolkata');
     $date_time = date("Y-m-d H:i:s", time ());
     
-    $upQuery="UPDATE `tbl_need_request` SET `status`='1' WHERE `id`='$id' ;
+    $upQuery="UPDATE `tbl_need_request` SET `status`='1', `office_staff`='$sName' WHERE `id`='$id' ;
                INSERT INTO `tbl_staff_activity`(`userid`, `name`, `activity`, `date_time`) VALUES ('$officeId','$sName','$activity','$date_time')";
     $upQueryResult=mysqli_multi_query($conn,$upQuery);
     if($upQueryResult){
