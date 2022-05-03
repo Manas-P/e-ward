@@ -110,7 +110,7 @@
                                     <a href="../../../model/office_staff/approve.php?id=<?php echo $row['id']; ?>&houseno=<?php echo $row['houseno']; ?>&memName=<?php echo $memberName; ?>" class="approve" onclick="loader()">Approve</a>
                                 </td>
                                 <td width=73px>
-                                    <a class="reject">Reject</a>
+                                    <a class="reject" onclick="deleteItem(<?php $rejId=$row['id']; echo $rejId; ?>)">Reject</a>
                                 </td>
                             </tr>
                         </table>
@@ -122,6 +122,33 @@
                 </div>
             </div>
         </section>
+
+        <!--=========== Modal ============-->
+        <div class="overlay modal-hidden"></div>
+        <!-- form to reject need request-->
+        <div class="box modal-box modal-hidden">
+            <div class="title"> Reason for rejection </div>
+            <div class="modal-close-btn">
+                <img src="../../../../public/assets/images/close.svg" alt="close button">
+            </div>
+            <form action="../../../model/office_staff/reject_need_req.php" method="post" id="reject-form"
+                enctype="multipart/form-data">
+                <input type="hidden" name="HiddenItemId" id="hiddenItemId">
+                <div class="inputs">
+                    <textarea name="rej_reason" id="rejreason" rows="10"></textarea>
+                    <div class="button wBtn cursor-disable">
+                        <input type="submit" value="Continue" name="reject_need_req" id="rej" onclick="loader()"
+                            class="primary-button disabled">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <script>
+            let deleteItem = (DataId) => {
+                document.getElementById('hiddenItemId').value = DataId;
+
+            }
+        </script>
 
         <!-- Error Toast -->
         <?php
@@ -155,9 +182,10 @@
                 }?>
         <!-- ==========Loading============= -->
         <?php
-                    include '../../includes/loading.php';
-                ?>
+            include '../../includes/loading.php';
+        ?>
         <!-- ==========Loading End============= -->
+        <script src="../../../../public/assets/js/reject_house_reg.js"></script>
         <script src="../../../../public/assets/js/toast.js"></script>
     </body>
     </html>
