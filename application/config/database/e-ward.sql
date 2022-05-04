@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 03, 2022 at 02:23 AM
+-- Generation Time: May 04, 2022 at 10:11 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.25
 
@@ -156,24 +156,27 @@ CREATE TABLE `tbl_house` (
   `locality` varchar(100) NOT NULL,
   `post_office` varchar(100) NOT NULL,
   `ration_no` bigint(12) NOT NULL,
-  `category` varchar(10) NOT NULL
+  `category` varchar(10) NOT NULL,
+  `street_light` int(10) NOT NULL DEFAULT 0,
+  `street_light_status` int(10) NOT NULL DEFAULT 0,
+  `post_no` varchar(10) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tbl_house`
 --
 
-INSERT INTO `tbl_house` (`hid`, `house_name`, `house_no`, `ward_no`, `locality`, `post_office`, `ration_no`, `category`) VALUES
-(1, 'qweew', 121, 2, 'qweqw', 'qwqeweq', 4879856854, 'APL'),
-(2, 'Pachakkil House', 145, 2, 'Kottooli', 'Kuthiravattom P.O.', 9568784568, 'APL'),
-(3, 'Paramthottu', 154, 2, 'Pala', 'Chengalam', 1256325879, 'APL'),
-(4, 'qwer', 124, 2, 'hjhyg', 'ikjjhy', 9865874585, 'APL'),
-(6, 'qwert', 15, 2, 'fcrdrdcrd', 'wsxedxed', 8569857458, 'APL'),
-(7, 'abcd villa', 5, 2, 'abcdefgh', 'abcdefgh', 4565434567, 'APL'),
-(17, 'New housee', 34, 2, 'New locality', 'New post office', 5685458745, 'APL'),
-(18, 'new reg ho', 18, 2, 'new', 'new', 8459658745, 'APL'),
-(19, 'Kunni House', 23, 2, 'Miami, Street 23, Near beach', 'Miami PO', 2154785632, 'APL'),
-(23, 'new house', 16, 2, 'Kottooli', 'new house space', 9545874541, 'APL');
+INSERT INTO `tbl_house` (`hid`, `house_name`, `house_no`, `ward_no`, `locality`, `post_office`, `ration_no`, `category`, `street_light`, `street_light_status`, `post_no`) VALUES
+(1, 'qweew', 121, 2, 'qweqw', 'qwqeweq', 4879856854, 'APL', 0, 0, '0'),
+(2, 'Pachakkil House', 145, 2, 'Kottooli', 'Kuthiravattom P.O.', 9568784568, 'APL', 1, 1, 'B32'),
+(3, 'Paramthottu', 154, 2, 'Pala', 'Chengalam', 1256325879, 'APL', 0, 0, '0'),
+(4, 'qwer', 124, 2, 'hjhyg', 'ikjjhy', 9865874585, 'APL', 1, 1, 'A54'),
+(6, 'qwert', 15, 2, 'fcrdrdcrd', 'wsxedxed', 8569857458, 'APL', 0, 0, '0'),
+(7, 'abcd villa', 5, 2, 'abcdefgh', 'abcdefgh', 4565434567, 'APL', 1, 1, 'A54'),
+(17, 'New housee', 34, 2, 'New locality', 'New post office', 5685458745, 'APL', 1, 1, 'B32'),
+(18, 'new reg ho', 18, 2, 'new', 'new', 8459658745, 'APL', 1, 1, 'A54'),
+(19, 'Kunni House', 23, 2, 'Miami, Street 23, Near beach', 'Miami PO', 2154785632, 'APL', 0, 0, '0'),
+(23, 'new house', 16, 2, 'Kottooli', 'new house space', 9545874541, 'APL', 1, 1, 'C52');
 
 -- --------------------------------------------------------
 
@@ -337,9 +340,14 @@ CREATE TABLE `tbl_need_request` (
 --
 
 INSERT INTO `tbl_need_request` (`id`, `wardno`, `houseno`, `userid`, `description`, `proof_file`, `office_staff`, `status`, `reply`) VALUES
-(1, 2, 16, 2160, 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud', '../../../public/assets/documents/request/1651536548.pdf', '0', 0, '0'),
-(3, 2, 16, 2162, 'Testing the need request', '../../../public/assets/documents/request/1651536987.pdf', '0', 0, '0'),
-(4, 2, 16, 2160, 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud Exercitation veniam consequat sunt nostrud', '0', '0', 0, '0');
+(1, 2, 16, 2160, 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud', '../../../public/assets/documents/request/1651536548.pdf', 'Wade Warren', 1, '0'),
+(3, 2, 16, 2162, 'Testing the need request', '../../../public/assets/documents/request/1651536987.pdf', 'Wade Warren', 3, 'Invalid information, please re-apply with valid information.'),
+(4, 2, 16, 2160, 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud Exercitation veniam consequat sunt nostrud', '0', 'Wade Warren', 2, 'Your request have approved, we will take necessary action on 3rd june'),
+(5, 2, 16, 2160, 'This is a new need request added by a house member', '0', '0', 0, '0'),
+(6, 2, 16, 2160, 'sdfsdgfdfg sdf sdf sfd sdf sdfg sdfsdf sdf sdfsdf sdfsdfsdf sd fsdf sdf sdf sdf s  sdfsdfsdf sdfsdf', '../../../public/assets/documents/request/1651601862.pdf', 'Kurian Tom', 3, 'sdf sdfs df sdfs df sdf '),
+(7, 2, 16, 2160, 'sdfsdfsdfih bsiduhfiuh sugydhfiu isughdfiuh isuhdfiuh iushdfiu hishdfiuhi suhdifuh isudhfiuhsiuhdfiushid ishdifhisuhdiufhisuhd ishdfih siudhf ', '0', 'Wade Warren', 3, 'reject'),
+(8, 2, 16, 2160, 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud', '0', '0', 0, '0'),
+(9, 2, 16, 2160, 'Abcd sygfuys', '0', 'Wade Warren', 1, '0');
 
 -- --------------------------------------------------------
 
@@ -367,7 +375,7 @@ CREATE TABLE `tbl_office_staff` (
 --
 
 INSERT INTO `tbl_office_staff` (`id`, `name`, `email`, `phno`, `photo`, `m_house`, `m_committee`, `m_complaint`, `wardno`, `userid`, `status`, `password`) VALUES
-(1, 'Wade Warren', 'wadewarren@gmail.com', 9854587857, '../../../public/assets/images/uploads/photos/1651301022.png', 1, 1, 1, 2, 2001, 1, '123'),
+(1, 'Wade Warren', 'wadewarren@gmail.com', 9854587857, '../../../public/assets/images/uploads/photos/1651301022.png', 0, 0, 0, 2, 2001, 1, '123'),
 (2, 'Telbin Cherian', 'telbin@gmail.com', 9854523265, '../../../public/assets/images/uploads/photos/1648462655.jpg', 0, 0, 0, 2, 2002, 1, '123'),
 (3, 'Kurian Tom', 'lskdnv@gmail.com', 9653235687, '../../../public/assets/images/uploads/photos/1648463311.jpeg', 0, 0, 1, 2, 2003, 1, '123'),
 (4, 'test', 'test@gmail.com', 8565487898, '../../../public/assets/images/uploads/photos/1650020330.png', 1, 0, 1, 3, 3001, 1, 'M5TF1Woc'),
@@ -547,7 +555,38 @@ INSERT INTO `tbl_staff_activity` (`id`, `userid`, `name`, `activity`, `date_time
 (10, 2001, 'Wade Warren', 'Updated house having house number: 16', '2022-05-02 11:51:32.000000'),
 (11, 2001, 'Wade Warren', 'Updated house having house number: 23', '2022-05-02 11:52:42.000000'),
 (12, 2001, 'Wade Warren', 'Updated house having house number: 16 and changed ownership to David Guetta from Manas', '2022-05-02 11:55:35.000000'),
-(13, 2001, 'Wade Warren', 'Deleted house member having user id: 2164 and house number: 16 with reason: House member does not exist in this realm', '2022-05-02 11:57:44.000000');
+(13, 2001, 'Wade Warren', 'Deleted house member having user id: 2164 and house number: 16 with reason: House member does not exist in this realm', '2022-05-02 11:57:44.000000'),
+(14, 2001, 'Wade Warren', 'Forwarded need request requested by Manas of house: 16', '2022-05-03 18:49:21.000000'),
+(17, 2001, 'Wade Warren', 'Rejected need request requested by new member of house: 16 with the reason: Invalid information, please re-apply with valid information.', '2022-05-03 22:49:20.000000'),
+(18, 2001, 'Wade Warren', 'Forwarded need request requested by Manas of house: 16', '2022-05-03 23:42:52.000000'),
+(19, 2001, 'Wade Warren', 'Forwarded need request requested by Manas of house: 16', '2022-05-03 23:48:10.000000'),
+(20, 2003, 'Kurian Tom', 'Rejected need request requested by Manas of house: 16 with the reason: sdf sdfs df sdfs df sdf ', '2022-05-03 23:49:13.000000'),
+(21, 0, '', 'Forwarded need request requested by Manas of house: 16', '2022-05-04 09:10:43.000000'),
+(22, 2001, 'Wade Warren', 'Forwarded need request requested by Manas of house: 16', '2022-05-04 11:30:02.000000');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_street_light`
+--
+
+CREATE TABLE `tbl_street_light` (
+  `id` int(10) NOT NULL,
+  `street_light_no` varchar(10) NOT NULL,
+  `locality` varchar(200) NOT NULL,
+  `ward_no` int(10) NOT NULL,
+  `houseno` varchar(200) NOT NULL,
+  `status` int(10) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_street_light`
+--
+
+INSERT INTO `tbl_street_light` (`id`, `street_light_no`, `locality`, `ward_no`, `houseno`, `status`) VALUES
+(1, 'A54', 'Kottooli, Near Fresco supermarket', 2, '124, 5, 18, ', 1),
+(3, 'B32', 'Mankav', 2, '145, 34, ', 1),
+(4, 'C52', 'Kottooli, Near Skyline', 2, '16, ', 1);
 
 -- --------------------------------------------------------
 
@@ -675,6 +714,12 @@ ALTER TABLE `tbl_staff_activity`
   ADD KEY `userid` (`userid`);
 
 --
+-- Indexes for table `tbl_street_light`
+--
+ALTER TABLE `tbl_street_light`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tbl_ward_member`
 --
 ALTER TABLE `tbl_ward_member`
@@ -731,7 +776,7 @@ ALTER TABLE `tbl_id_proof`
 -- AUTO_INCREMENT for table `tbl_need_request`
 --
 ALTER TABLE `tbl_need_request`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tbl_office_staff`
@@ -755,7 +800,13 @@ ALTER TABLE `tbl_registration`
 -- AUTO_INCREMENT for table `tbl_staff_activity`
 --
 ALTER TABLE `tbl_staff_activity`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT for table `tbl_street_light`
+--
+ALTER TABLE `tbl_street_light`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tbl_ward_member`
