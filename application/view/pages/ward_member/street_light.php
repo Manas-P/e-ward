@@ -62,62 +62,54 @@
                         </div>
                         <div class="headings">
                             <div>Slno.</div>
-                            <div style="margin-left: 70px;">Light number</div>
-                            <div style="margin-left: 85px;">Locality</div>
-                            <div style="margin-left: 267px;">Nearby houses</div>
+                            <div style="margin-left: 70px;">Post number</div>
+                            <div style="margin-left: 90px;">Locality</div>
+                            <div style="margin-left: 270px;">Nearby houses</div>
                             <div style="margin-left: 118px;">Status</div>
                             <div style="margin-left: 98px;">Action</div>
                         </div>
                         <div class="datas">
+                            <?php
+                                $tblQuery="SELECT `street_light_no`, `locality`, `houseno`, `status` FROM `tbl_street_light` WHERE `ward_no`='$wardno'";
+                                $tblQueryResult=mysqli_query($conn,$tblQuery);
+                                $i=1;
+                                while($strlt=mysqli_fetch_array($tblQueryResult)){
+                            ?>
                             <div class="data">
                                 <table>
                                     <tr>
-                                        <td width=108px>1.</td>
-                                        <td width=207px>E33</td>
-                                        <td width=340px>154th mile, Amet minim</td>
-                                        <td width=255px>16, 24, 15</td>
-                                        <td width=158px>Active</td>
-                                        <td width=311px>Not required</td>
-                                        <td width="22px">
-                                            <a href="">
-                                                <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M3.125 5.25H4.875H18.875" stroke="#EC0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                                    <path d="M7.5 5.25V3.5C7.5 3.03587 7.68437 2.59075 8.01256 2.26256C8.34075 1.93437 8.78587 1.75 9.25 1.75H12.75C13.2141 1.75 13.6592 1.93437 13.9874 2.26256C14.3156 2.59075 14.5 3.03587 14.5 3.5V5.25M17.125 5.25V17.5C17.125 17.9641 16.9406 18.4092 16.6124 18.7374C16.2842 19.0656 15.8391 19.25 15.375 19.25H6.625C6.16087 19.25 5.71575 19.0656 5.38756 18.7374C5.05937 18.4092 4.875 17.9641 4.875 17.5V5.25H17.125Z" stroke="#EC0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                                    <path d="M9.25 9.625V14.875" stroke="#EC0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                                    <path d="M12.75 9.625V14.875" stroke="#EC0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                                </svg>
-                                            </a>
+                                        <td width=108px><?php echo $i ?>.</td>
+                                        <td width=207px><?php echo $strlt['street_light_no']; ?></td>
+                                        <td width=340px><?php echo $strlt['locality']; ?></td>
+                                        <td width=255px><?php echo $strlt['houseno']; ?></td>
+                                        <td width=158px>
+                                            <?php
+                                                if($strlt['status']!='0'){
+                                            ?>
+                                                <div class="active">Active</div>
+                                            <?php
+                                                }else{
+                                            ?>
+                                                <div class="inactive">Inactive</div>
+                                            <?php
+                                                }
+                                            ?>
                                         </td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End of street lights -->
-                <!-- inactive street lights -->
-                <div id="tabCon2" class="tab-content">
-                    <div class="street-lights">
-                        <div class="headings">
-                            <div>Slno.</div>
-                            <div style="margin-left: 70px;">Light number</div>
-                            <div style="margin-left: 85px;">Locality</div>
-                            <div style="margin-left: 267px;">Nearby houses</div>
-                            <div style="margin-left: 118px;">Status</div>
-                            <div style="margin-left: 98px;">Action</div>
-                        </div>
-                        <div class="datas">
-                            <div class="data">
-                                <table>
-                                    <tr>
-                                        <td width=108px>1.</td>
-                                        <td width=207px>E33</td>
-                                        <td width=340px>154th mile, Amet minim</td>
-                                        <td width=255px>16, 24, 15</td>
-                                        <td width=158px>Active</td>
-                                        <td width=311px>Not required</td>
+                                        <td width=311px>
+                                            <?php
+                                                if($strlt['status']!='0'){
+                                            ?>
+                                                <div class="notreq">Not required</div>
+                                            <?php
+                                                }else{
+                                            ?>
+                                                <a href="../../../model/ward_member/repair_street_light.php?name=<?php echo $strlt['street_light_no'];?>" class="repaired">Repaired</a>
+                                            <?php
+                                                }
+                                            ?>
+                                        </td>
                                         <td width="22px">
-                                            <a href="">
+                                            <a href="../../../model/ward_member/delete_street_light.php?name=<?php echo $strlt['street_light_no'];?>">
                                                 <svg width="22" height="21" viewBox="0 0 22 21" fill="none"
                                                     xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M3.125 5.25H4.875H18.875" stroke="#EC0000" stroke-width="2"
@@ -135,6 +127,86 @@
                                     </tr>
                                 </table>
                             </div>
+                            <?php
+                                $i=$i+1;
+                                }
+                                if(mysqli_num_rows($tblQueryResult)==0){
+                            ?>
+                            <div class="no-result">
+                                No records
+                            </div>
+                            <?php
+                                }
+                            ?>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of street lights -->
+                <!-- inactive street lights -->
+                <div id="tabCon2" class="tab-content">
+                    <div class="street-lights">
+                        <div class="headings">
+                            <div>Slno.</div>
+                            <div style="margin-left: 70px;">Post number</div>
+                            <div style="margin-left: 94px;">Locality</div>
+                            <div style="margin-left: 270px;">Nearby houses</div>
+                            <div style="margin-left: 120px;">Status</div>
+                            <div style="margin-left: 100px;">Action</div>
+                        </div>
+                        <div class="datas">
+                            <?php
+                                $tblQuery="SELECT `street_light_no`, `locality`, `houseno`, `status` FROM `tbl_street_light` WHERE `ward_no`='$wardno' AND `status`='0'";
+                                $tblQueryResult=mysqli_query($conn,$tblQuery);
+                                $i=1;
+                                while($strlt=mysqli_fetch_array($tblQueryResult)){
+                            ?>
+                            <div class="data">
+                                <table>
+                                    <tr>
+                                        <td width=108px><?php echo $i ?>.</td>
+                                        <td width=207px><?php echo $strlt['street_light_no']; ?></td>
+                                        <td width=340px><?php echo $strlt['locality']; ?></td>
+                                        <td width=255px><?php echo $strlt['houseno']; ?></td>
+                                        <td width=158px>
+                                            <?php
+                                                if($strlt['status']!='0'){
+                                            ?>
+                                                <div class="active">Active</div>
+                                            <?php
+                                                }else{
+                                            ?>
+                                                <div class="inactive">Inactive</div>
+                                            <?php
+                                                }
+                                            ?>
+                                        </td>
+                                        <td width=311px>
+                                            <?php
+                                                if($strlt['status']!='0'){
+                                            ?>
+                                                <div class="notreq">Not required</div>
+                                            <?php
+                                                }else{
+                                            ?>
+                                                <a href="../../../model/ward_member/repair_street_light.php?name=<?php echo $strlt['street_light_no'];?>" class="repaired">Repaired</a>
+                                            <?php
+                                                }
+                                            ?>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <?php
+                                $i=$i+1;
+                                }
+                                if(mysqli_num_rows($tblQueryResult)==0){
+                            ?>
+                            <div class="no-result">
+                                No records
+                            </div>
+                            <?php
+                                }
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -152,44 +224,39 @@
                 <img src="../../../../public/assets/images/close.svg" alt="close button">
             </div>
             <!-- Add task -->
-            <form action="" method="post" id="add-task" enctype="multipart/form-data">
+            <form action="../../../model/ward_member/street_light.php" method="post" id="add-task" enctype="multipart/form-data">
                 <div class="inputs">
                     <div class="input commName">
                         <div class="label"> Street light number </div>
-                        <input type="text" name="name" id="comm-name" placeholder="John Doe" autocomplete="off">
+                        <input type="text" name="strltno" id="comm-name" placeholder="E34" autocomplete="off">
                         <div class="error error-hidden">
                         </div>
                     </div>
                     <div class="input commlocality">
                         <div class="label"> Locality </div>
-                        <input type="text" name="name" id="comm-locality" placeholder="John Doe" autocomplete="off">
+                        <input type="text" name="slLocality" id="comm-locality" placeholder="154th mile, Amet minim" autocomplete="off">
                         <div class="error error-hidden">
                         </div>
                     </div>
                     <div class="input">
-                        <div class="label"> Roles </div>
+                        <div class="label"> Nearby houses </div>
                         <div class="checkboxes">
-                            <div class="checkbox">
-                                <input type="checkbox" name="mhouse" value="0" id="manage-house">
-                                <label for="manage-house">12</label>
-                            </div>
-                            <div class="checkbox">
-                                <input type="checkbox" name="mcommittee" value="0" id="manage-committees">
-                                <label for="manage-committees">24</label>
-                            </div>
-                            <div class="checkbox">
-                                <input type="checkbox" name="mcomplaint" value="0" id="manage-complaints">
-                                <label for="manage-complaints">56</label>
-                            </div>
-                            <div class="checkbox">
-                                <input type="checkbox" name="mcomplaint" value="0" id="manage-complaints">
-                                <label for="manage-complaints">56</label>
-                            </div>
+                            <?php
+                                $query="SELECT `house_no` FROM `tbl_house` WHERE `ward_no`='$wardno' AND `street_light`='0'";
+                                $result=mysqli_query($conn,$query);
+                                while($row=mysqli_fetch_array($result)){
+                            ?>
+                                <div class="checkbox">
+                                    <input type="checkbox" name="houseno[]" value="<?php echo $row['house_no']; ?>" id="<?php echo $row['house_no']; ?>">
+                                    <label for="<?php echo $row['house_no']; ?>"><?php echo $row['house_no']; ?></label>
+                                </div>
+                            <?php
+                                }
+                            ?>
                         </div>
                     </div>
                     <div class="button hBtn cursor-disable">
-                        <input type="submit" value="Add task" name="add-comm" id="add-comm" onclick="loader()"
-                            class="primary-button disabled">
+                        <input type="submit" value="Add street light" name="add-sl" id="add-comm" class="primary-button disabled">
                     </div>
                 </div>
             </form>
