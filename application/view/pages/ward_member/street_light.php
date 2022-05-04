@@ -143,6 +143,58 @@
             </div>
         </section>
 
+        <!-- =========== Modal ============ -->
+        <div class="overlay modal-hidden"></div>
+        <!-- form to add street lights-->
+        <div class="box modal-box modal-hidden">
+            <div class="title"> Add street light </div>
+            <div class="modal-close-btn">
+                <img src="../../../../public/assets/images/close.svg" alt="close button">
+            </div>
+            <!-- Add task -->
+            <form action="" method="post" id="add-task" enctype="multipart/form-data">
+                <div class="inputs">
+                    <div class="input commName">
+                        <div class="label"> Street light number </div>
+                        <input type="text" name="name" id="comm-name" placeholder="John Doe" autocomplete="off">
+                        <div class="error error-hidden">
+                        </div>
+                    </div>
+                    <div class="input commlocality">
+                        <div class="label"> Locality </div>
+                        <input type="text" name="name" id="comm-locality" placeholder="John Doe" autocomplete="off">
+                        <div class="error error-hidden">
+                        </div>
+                    </div>
+                    <div class="input">
+                        <div class="label"> Roles </div>
+                        <div class="checkboxes">
+                            <div class="checkbox">
+                                <input type="checkbox" name="mhouse" value="0" id="manage-house">
+                                <label for="manage-house">12</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" name="mcommittee" value="0" id="manage-committees">
+                                <label for="manage-committees">24</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" name="mcomplaint" value="0" id="manage-complaints">
+                                <label for="manage-complaints">56</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" name="mcomplaint" value="0" id="manage-complaints">
+                                <label for="manage-complaints">56</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button hBtn cursor-disable">
+                        <input type="submit" value="Add task" name="add-comm" id="add-comm" onclick="loader()"
+                            class="primary-button disabled">
+                    </div>
+                </div>
+            </form>
+        </div>
+
 
         <!-- Error Toast -->
         <?php
