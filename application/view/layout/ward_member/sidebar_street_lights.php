@@ -29,14 +29,14 @@
                             </svg>
                             <div class="text">Office staffs</div>
                         </a>
-                        <a href="../../pages/ward_member/committees.php" class="menu active">
+                        <a href="../../pages/ward_member/committees.php" class="menu">
                             <svg width="24" height="22" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path class="str active" d="M16.5834 19.25V17.4167C16.5834 16.4442 16.197 15.5116 15.5094 14.8239C14.8218 14.1363 13.8891 13.75 12.9167 13.75H5.58335C4.61089 13.75 3.67826 14.1363 2.99063 14.8239C2.303 15.5116 1.91669 16.4442 1.91669 17.4167V19.25" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path class="str active" d="M9.24998 10.0833C11.275 10.0833 12.9166 8.44171 12.9166 6.41667C12.9166 4.39162 11.275 2.75 9.24998 2.75C7.22494 2.75 5.58331 4.39162 5.58331 6.41667C5.58331 8.44171 7.22494 10.0833 9.24998 10.0833Z" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path class="str active" d="M22.0833 19.25V17.4166C22.0827 16.6042 21.8123 15.815 21.3146 15.1729C20.8168 14.5308 20.1199 14.0722 19.3333 13.8691" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path class="str active" d="M15.6667 2.86914C16.4554 3.07108 17.1545 3.52978 17.6537 4.17293C18.1529 4.81607 18.4239 5.60707 18.4239 6.42122C18.4239 7.23538 18.1529 8.02638 17.6537 8.66952C17.1545 9.31266 16.4554 9.77136 15.6667 9.97331" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path class="str" d="M16.5834 19.25V17.4167C16.5834 16.4442 16.197 15.5116 15.5094 14.8239C14.8218 14.1363 13.8891 13.75 12.9167 13.75H5.58335C4.61089 13.75 3.67826 14.1363 2.99063 14.8239C2.303 15.5116 1.91669 16.4442 1.91669 17.4167V19.25" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path class="str" d="M9.24998 10.0833C11.275 10.0833 12.9166 8.44171 12.9166 6.41667C12.9166 4.39162 11.275 2.75 9.24998 2.75C7.22494 2.75 5.58331 4.39162 5.58331 6.41667C5.58331 8.44171 7.22494 10.0833 9.24998 10.0833Z" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path class="str" d="M22.0833 19.25V17.4166C22.0827 16.6042 21.8123 15.815 21.3146 15.1729C20.8168 14.5308 20.1199 14.0722 19.3333 13.8691" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path class="str" d="M15.6667 2.86914C16.4554 3.07108 17.1545 3.52978 17.6537 4.17293C18.1529 4.81607 18.4239 5.60707 18.4239 6.42122C18.4239 7.23538 18.1529 8.02638 17.6537 8.66952C17.1545 9.31266 16.4554 9.77136 15.6667 9.97331" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>                                
-                            <div class="text active">Committees</div>
+                            <div class="text">Committees</div>
                         </a>
                         <a href="../../pages/ward_member/need_request.php" class="menu">
                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -46,14 +46,14 @@
                             </svg>                           
                             <div class="text">Need requests</div>
                         </a>
-                        <a href="../../pages/ward_member/street_light.php" class="menu">
+                        <a href="../../pages/ward_member/street_light.php" class="menu active">
                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path class="str" d="M7.8009 16.0103H14.3168M5.35742 11.1233C5.35742 9.61121 5.95811 8.16102 7.02734 7.09179C8.09657 6.02256 9.54676 5.42188 11.0589 5.42188C12.571 5.42187 14.0212 6.02256 15.0904 7.09179C16.1596 8.16102 16.7603 9.61121 16.7603 11.1233C16.7609 12.0413 16.5388 12.9458 16.1133 13.7592C15.6877 14.5725 15.0713 15.2706 14.3168 15.7936L13.8754 19.0873C13.8169 19.4725 13.6224 19.824 13.3269 20.0781C13.0315 20.3321 12.6548 20.4718 12.2651 20.4719H9.85261C9.46297 20.4718 9.08626 20.3321 8.79083 20.0781C8.49539 19.824 8.3008 19.4725 8.24236 19.0873L7.8009 15.8026C7.0462 15.2778 6.42976 14.578 6.00425 13.7632C5.57875 12.9483 5.35682 12.0426 5.35742 11.1233Z" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <line class="str" x1="11.1035" y1="2.41699" x2="11.1035" y2="0.998589" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round"/>
-                                <line class="str" x1="17.5488" y1="4.33383" x2="18.474" y2="3.40868" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round"/>
-                                <line class="str" x1="3.52554" y1="3.40918" x2="4.4507" y2="4.33434" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round"/>
+                                <path class="str active" d="M7.8009 16.0103H14.3168M5.35742 11.1233C5.35742 9.61121 5.95811 8.16102 7.02734 7.09179C8.09657 6.02256 9.54676 5.42188 11.0589 5.42188C12.571 5.42187 14.0212 6.02256 15.0904 7.09179C16.1596 8.16102 16.7603 9.61121 16.7603 11.1233C16.7609 12.0413 16.5388 12.9458 16.1133 13.7592C15.6877 14.5725 15.0713 15.2706 14.3168 15.7936L13.8754 19.0873C13.8169 19.4725 13.6224 19.824 13.3269 20.0781C13.0315 20.3321 12.6548 20.4718 12.2651 20.4719H9.85261C9.46297 20.4718 9.08626 20.3321 8.79083 20.0781C8.49539 19.824 8.3008 19.4725 8.24236 19.0873L7.8009 15.8026C7.0462 15.2778 6.42976 14.578 6.00425 13.7632C5.57875 12.9483 5.35682 12.0426 5.35742 11.1233Z" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <line class="str active" x1="11.1035" y1="2.41699" x2="11.1035" y2="0.998589" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round"/>
+                                <line class="str active" x1="17.5488" y1="4.33383" x2="18.474" y2="3.40868" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round"/>
+                                <line class="str active" x1="3.52554" y1="3.40918" x2="4.4507" y2="4.33434" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round"/>
                             </svg>
-                            <div class="text">Street lights</div>
+                            <div class="text active">Street lights</div>
                         </a>
                         <a href="../../pages/ward_member/change_password.php" class="menu">
                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
