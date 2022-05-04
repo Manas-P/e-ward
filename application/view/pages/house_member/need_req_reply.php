@@ -28,7 +28,7 @@ else
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>E Ward</title>
         <link rel="shortcut icon" href="../../../../public/assets/images/fav.svg" type="image/x-icon">
-        <link rel="stylesheet" href="../../../../public/assets/css/house_member/hm_add_need_req.css">
+        <link rel="stylesheet" href="../../../../public/assets/css/house_member/hm_need_req_reply.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     </head>
@@ -52,33 +52,24 @@ else
                         <input type="text" name="hsearch" placeholder="Search..." id="live-search" autocomplete="off">
                     </div>
                 </div>
-                <div class="hyper-link">
-                    <div class="add-req">
-                        Add request
-                    </div>
-                    <div class="replies">
-                        <a href="./need_req_reply.php">
-                            Replies
-                        </a>
-                        <span class="noti-badge">
-                            <!-- Fetch request -->
-                            <?php
-                                $query="SELECT `id` FROM `tbl_need_request` WHERE `reply`!='0' AND `userid`='$user_id'";
-                                $result=mysqli_query($conn,$query);
-                                echo mysqli_num_rows($result);
-                            ?>
-                        </span>
-                    </div>
+                <div class="bread-crumbs">
+                    <a href="./add_need_request.php" class="previous"> Add need request </a>
+                    <svg class="str" width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.2002 8.59999L5.8002 4.99999L2.2002 1.39999" stroke="#1E1E1E" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <a href="" class="now"> Replies </a>
                 </div>
                 <!-- content -->
                 <div class="headings">
                     <div>Slno.</div>
-                    <div style="margin-left: 61px;">Description</div>
-                    <div style="margin-left:1028px;">Action</div>
+                    <div style="margin-left: 61px;">Request</div>
+                    <div style="margin-left: 516px;">Reply</div>
+                    <div style="margin-left: 540px;">Status</div>
                 </div>
                 <div class="datas">
                     <?php
-                        $query="SELECT `id`, `description` FROM `tbl_need_request` WHERE `wardno`='$wardno' AND `houseno`='$houseno' AND `userid`='$user_id' AND `status`='0'";
+                        $query="SELECT `id`, `description`,`reply`,`status` FROM `tbl_need_request` WHERE `userid`='$user_id' AND `reply`!='0'";
                         $result=mysqli_query($conn,$query);
                         $i=1;
                         while($row=mysqli_fetch_array($result)){
@@ -87,9 +78,21 @@ else
                         <table>
                             <tr>
                                 <td width=101px><?php echo $i; ?></td>
-                                <td width=1133px style="padding-right: 65px;"><?php echo $row["description"]; ?></td>
-                                <td width=170px>
-                                    <a href="../../../model/house_member/delete_need_req.php?id=<?php echo $row['id'] ?>" class="approve" onclick="loader()" >Delete request</a>
+                                <td width=586px style="padding-right: 50px;"><?php echo $row["description"]; ?></td>
+                                <td width=586px style="padding-right: 50px;"><?php echo $row["reply"]; ?></td>
+                                <td width=90px>
+                                    <?php
+                                        if($row["status"]=='2'){
+                                    ?>
+                                        <div class="approve" >Approved</div>
+                                    <?php
+                                        }
+                                        if($row["status"]=='3'){
+                                    ?>
+                                        <div class="reject">Rejected</div>
+                                    <?php
+                                        }
+                                    ?>
                                 </td>
                             </tr>
                         </table>
