@@ -45,7 +45,7 @@
                     </div>
                 </div>
                 <div class="request">
-                    <a href="./houses_request.php">
+                    <a href="">
                         View history
                     </a>
                 </div>
