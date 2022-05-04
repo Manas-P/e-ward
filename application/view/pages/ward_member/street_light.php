@@ -21,7 +21,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="../../../../public/assets/css/ward_member/wm_committees.css">
+        <link rel="stylesheet" href="../../../../public/assets/css/ward_member/wm_street_light.css">
         <title>Ward <?php echo $wardno; ?> || Street lights</title>
     </head>
     <body>
@@ -46,7 +46,99 @@
                 </div>
 
                 <!-- content -->
-                
+                <!-- Tab Menu -->
+                <div class="tab-menu">
+                    <div class="tabs">
+                        <div id="tabBtn1" class="tab tab-active"> Street lights </div>
+                        <div id="tabBtn2" class="tab"> Inactive street lights </div>
+                    </div>
+                    <div class="underline"></div>
+                </div>
+                <!-- street lights -->
+                <div id="tabCon1" class="tab-content tab-con-active">
+                    <div class="street-lights">
+                        <div class="add-sl">
+                            Add street light
+                        </div>
+                        <div class="headings">
+                            <div>Slno.</div>
+                            <div style="margin-left: 70px;">Light number</div>
+                            <div style="margin-left: 85px;">Locality</div>
+                            <div style="margin-left: 267px;">Nearby houses</div>
+                            <div style="margin-left: 118px;">Status</div>
+                            <div style="margin-left: 98px;">Action</div>
+                        </div>
+                        <div class="datas">
+                            <div class="data">
+                                <table>
+                                    <tr>
+                                        <td width=108px>1.</td>
+                                        <td width=207px>E33</td>
+                                        <td width=340px>154th mile, Amet minim</td>
+                                        <td width=255px>16, 24, 15</td>
+                                        <td width=158px>Active</td>
+                                        <td width=311px>Not required</td>
+                                        <td width="22px">
+                                            <a href="">
+                                                <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M3.125 5.25H4.875H18.875" stroke="#EC0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                                    <path d="M7.5 5.25V3.5C7.5 3.03587 7.68437 2.59075 8.01256 2.26256C8.34075 1.93437 8.78587 1.75 9.25 1.75H12.75C13.2141 1.75 13.6592 1.93437 13.9874 2.26256C14.3156 2.59075 14.5 3.03587 14.5 3.5V5.25M17.125 5.25V17.5C17.125 17.9641 16.9406 18.4092 16.6124 18.7374C16.2842 19.0656 15.8391 19.25 15.375 19.25H6.625C6.16087 19.25 5.71575 19.0656 5.38756 18.7374C5.05937 18.4092 4.875 17.9641 4.875 17.5V5.25H17.125Z" stroke="#EC0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                                    <path d="M9.25 9.625V14.875" stroke="#EC0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                                    <path d="M12.75 9.625V14.875" stroke="#EC0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                                </svg>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of street lights -->
+                <!-- inactive street lights -->
+                <div id="tabCon2" class="tab-content">
+                    <div class="street-lights">
+                        <div class="headings">
+                            <div>Slno.</div>
+                            <div style="margin-left: 70px;">Light number</div>
+                            <div style="margin-left: 85px;">Locality</div>
+                            <div style="margin-left: 267px;">Nearby houses</div>
+                            <div style="margin-left: 118px;">Status</div>
+                            <div style="margin-left: 98px;">Action</div>
+                        </div>
+                        <div class="datas">
+                            <div class="data">
+                                <table>
+                                    <tr>
+                                        <td width=108px>1.</td>
+                                        <td width=207px>E33</td>
+                                        <td width=340px>154th mile, Amet minim</td>
+                                        <td width=255px>16, 24, 15</td>
+                                        <td width=158px>Active</td>
+                                        <td width=311px>Not required</td>
+                                        <td width="22px">
+                                            <a href="">
+                                                <svg width="22" height="21" viewBox="0 0 22 21" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M3.125 5.25H4.875H18.875" stroke="#EC0000" stroke-width="2"
+                                                        stroke-linecap="round" stroke-linejoin="round" />
+                                                    <path
+                                                        d="M7.5 5.25V3.5C7.5 3.03587 7.68437 2.59075 8.01256 2.26256C8.34075 1.93437 8.78587 1.75 9.25 1.75H12.75C13.2141 1.75 13.6592 1.93437 13.9874 2.26256C14.3156 2.59075 14.5 3.03587 14.5 3.5V5.25M17.125 5.25V17.5C17.125 17.9641 16.9406 18.4092 16.6124 18.7374C16.2842 19.0656 15.8391 19.25 15.375 19.25H6.625C6.16087 19.25 5.71575 19.0656 5.38756 18.7374C5.05937 18.4092 4.875 17.9641 4.875 17.5V5.25H17.125Z"
+                                                        stroke="#EC0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                                    <path d="M9.25 9.625V14.875" stroke="#EC0000" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path d="M12.75 9.625V14.875" stroke="#EC0000" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </svg>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of inactive street lights -->
                 
             </div>
         </section>
@@ -90,6 +182,7 @@
         ?>
         <!-- ==========Loading End============= -->
 
+        <script src="../../../../public/assets/js/wm_street_light.js"></script>
         <script src="../../../../public/assets/js/toast.js"></script>
     </body>
     </html>

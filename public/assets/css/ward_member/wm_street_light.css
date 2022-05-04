@@ -322,6 +322,143 @@ body {
   stroke: #1e1e1e;
 }
 
+.main .container .tab-menu {
+  margin-top: 42px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main .container .tab-menu .tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 24px;
+          column-gap: 24px;
+}
+
+.main .container .tab-menu .tabs .tab {
+  font-family: "Gilroy_SB";
+  font-size: 20px;
+  color: #868686;
+  padding: 8px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.main .container .tab-menu .tabs .tab:hover {
+  color: #5744e3;
+}
+
+.main .container .tab-menu .tabs .tab-active {
+  color: #5744e3;
+  background: #eeecfc;
+  width: auto;
+}
+
+.main .container .tab-menu .tabs .tab-active::after {
+  content: "";
+  position: relative;
+  display: block;
+  width: calc(100% + 48px);
+  height: 2px;
+  background: #5744e3;
+  top: 22px;
+  left: -24px;
+}
+
+.main .container .tab-menu .underline {
+  margin-top: 12px;
+  height: 2px;
+  width: 100%;
+  background: #D9D5F5;
+  border-radius: 4px;
+}
+
+.main .container .tab-content {
+  display: none;
+}
+
+.main .container .tab-content .street-lights {
+  margin-top: 28px;
+}
+
+.main .container .tab-content .street-lights .add-sl {
+  padding: 8px 24px;
+  width: 191px;
+  cursor: pointer;
+  border-radius: 10px;
+  color: #fff;
+  background: #5744e3;
+  font-family: "Gilroy_SB";
+  font-size: 20px;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.main .container .tab-content .street-lights .add-sl:active {
+  -webkit-transform: scale(0.97);
+          transform: scale(0.97);
+}
+
+.main .container .tab-content .street-lights .headings {
+  margin: 32px 16px 0 16px;
+  font-family: "Gilroy_SB";
+  font-size: 20px;
+  color: #1e1e1e;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main .container .tab-content .street-lights .datas {
+  margin-top: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 24px;
+}
+
+.main .container .tab-content .street-lights .datas .data {
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  font-family: "Gilroy_M";
+  font-size: 18px;
+  color: #545454;
+}
+
+.main .container .tab-content .street-lights .datas .data td {
+  vertical-align: top;
+  text-align: left;
+}
+
+.main .container .tab-content .street-lights .datas .data .approve {
+  font-family: "Gilroy_SB";
+  color: #039b00;
+}
+
+.main .container .tab-content .street-lights .datas .data .reject {
+  font-family: "Gilroy_SB";
+  color: #ec0000;
+}
+
+.main .container .tab-con-active {
+  display: block;
+}
+
 .alertt {
   background: #fff;
   padding: 18px 18px 18px 24px;
