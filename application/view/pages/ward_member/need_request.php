@@ -123,12 +123,12 @@
             <div class="modal-close-btn app-close">
                 <img src="../../../../public/assets/images/close.svg" alt="close button">
             </div>
-            <form action="" method="post" id="approve-form" enctype="multipart/form-data">
+            <form action="../../../model/ward_member/approve_need_req.php" method="post" id="approve-form" enctype="multipart/form-data">
                 <input type="hidden" name="approveId" id="approveItemId">
                 <div class="inputs">
                     <textarea name="app_reason" id="appreason" rows="10"></textarea>
                     <div class="button aBtn cursor-disable">
-                        <input type="submit" value="Continue" name="reject_need_req" id="app" onclick="loader()"
+                        <input type="submit" value="Continue" name="approve_need_req" id="app" onclick="loader()"
                             class="primary-button disabled">
                     </div>
                 </div>
@@ -141,8 +141,8 @@
             <div class="modal-close-btn rej-close">
                 <img src="../../../../public/assets/images/close.svg" alt="close button">
             </div>
-            <form action="" method="post" id="reject-form" enctype="multipart/form-data">
-                <input type="hidden" name="approveId" id="approveItemId">
+            <form action="../../../model/ward_member/reject_need_request.php" method="post" id="reject-form" enctype="multipart/form-data">
+                <input type="hidden" name="rejectId" id="rejectItemId">
                 <div class="inputs">
                     <textarea name="rej_reason" id="rejreason" rows="10"></textarea>
                     <div class="button rBtn cursor-disable">
@@ -155,7 +155,7 @@
 
         <script>
             let deleteItem = (DataId) => {
-                document.getElementById('hiddenItemId').value = DataId;
+                document.getElementById('rejectItemId').value = DataId;
             }
 
             let approveItem = (DataId) => {
