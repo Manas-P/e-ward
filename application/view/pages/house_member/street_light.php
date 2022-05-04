@@ -46,6 +46,46 @@ else
                     </div>
                 </div>
                 <!-- content -->
+                <?php
+                    $streetLightData="SELECT `street_light`, `street_light_status`, `post_no` FROM `tbl_house` WHERE `house_no`='$houseno'"; 
+                    $streetLightDataResult=mysqli_query($conn,$streetLightData);
+                    $data=mysqli_fetch_assoc($streetLightDataResult); 
+                    $postNo=$data['post_no'];
+                    $status=$data['street_light_status'];
+                ?>
+                <div class="street-light">
+                    <div class="img">
+                        <?php
+                            if($status!='0'){
+                        ?>
+                            <img src="../../../../public/assets/images/active-street-light.svg" alt="Active street light">
+                        <?php
+                            }else{
+                        ?>
+                            <img src="../../../../public/assets/images/inactive-street-light.svg" alt="Inactive street light">
+                        <?php
+                            }
+                        ?>
+                    </div>
+                    <div class="data">
+                        <div class="detail">
+                            <div class="post">Post number:</div>
+                            <div class="numb"><?php echo $postNo ?></div>
+                        </div>
+                        <?php
+                            if($status!='0'){
+                        ?>
+                            <a href="../../../model/house_member/street_light.php?no=<?php echo $postNo ?>" class="req-btn">Request repair</a>
+                        <?php
+                            }else{
+                        ?>
+                            <div class="req-btn2">Repair requested</div>
+                        <?php
+                            }
+                        ?>
+                        
+                    </div>
+                </div>
                 
 
             </div>
