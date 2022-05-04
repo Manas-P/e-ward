@@ -99,7 +99,7 @@
                                     ?>
                                 </td>
                                 <td width=95px>
-                                    <a href="../../../model/office_staff/approve.php?id=<?php echo $row['id']; ?>&houseno=<?php echo $row['houseno']; ?>&memName=<?php echo $memberName; ?>" class="approve" onclick="loader()">Approve</a>
+                                    <a class="approve" onclick="approveItem(<?php $rejId=$row['id']; echo $rejId; ?>)">Approve</a>
                                 </td>
                                 <td width=73px>
                                     <a class="reject" onclick="deleteItem(<?php $rejId=$row['id']; echo $rejId; ?>)">Reject</a>
@@ -114,6 +114,54 @@
                 </div>
             </div>
         </section>
+
+        <!--=========== Modal ============-->
+        <div class="overlay modal-hidden"></div>
+        <!-- form to approve need request-->
+        <div class="box modal-box-app modal-hidden">
+            <div class="title"> Reply to house member </div>
+            <div class="modal-close-btn app-close">
+                <img src="../../../../public/assets/images/close.svg" alt="close button">
+            </div>
+            <form action="" method="post" id="approve-form" enctype="multipart/form-data">
+                <input type="hidden" name="approveId" id="approveItemId">
+                <div class="inputs">
+                    <textarea name="app_reason" id="appreason" rows="10"></textarea>
+                    <div class="button aBtn cursor-disable">
+                        <input type="submit" value="Continue" name="reject_need_req" id="app" onclick="loader()"
+                            class="primary-button disabled">
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- form to reject need request-->
+        <div class="box modal-box-rej modal-hidden">
+            <div class="title"> Reason for rejection </div>
+            <div class="modal-close-btn rej-close">
+                <img src="../../../../public/assets/images/close.svg" alt="close button">
+            </div>
+            <form action="" method="post" id="reject-form" enctype="multipart/form-data">
+                <input type="hidden" name="approveId" id="approveItemId">
+                <div class="inputs">
+                    <textarea name="rej_reason" id="rejreason" rows="10"></textarea>
+                    <div class="button rBtn cursor-disable">
+                        <input type="submit" value="Continue" name="reject_need_req" id="rejB" onclick="loader()"
+                            class="primary-button disabled">
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <script>
+            let deleteItem = (DataId) => {
+                document.getElementById('hiddenItemId').value = DataId;
+            }
+
+            let approveItem = (DataId) => {
+                document.getElementById('approveItemId').value = DataId;
+            }
+        </script>
 
         <!-- Error Toast -->
         <?php
@@ -147,30 +195,8 @@
                 unset($_SESSION['success']);
         }?>
         
+        <script src="../../../../public/assets/js/wm_need_req.js"></script>
         <script src="../../../../public/assets/js/toast.js"></script>
-        <script>
-            function searchHouse(item){
-                if(item.length!=0){
-                    document.querySelector(".allResult").classList.add("displayNone");
-                    document.querySelector(".datas").classList.remove("displayNone");
-                    const wardno='<?php echo $wardno?>';
-                    $.ajax({
-                        url:"../../../model/ward_member/search_house.php",
-                        method:"POST",
-                        data:{
-                            item:item,
-                            wardno:wardno
-                        },
-                        success:function(data){
-                            $("#search-result").html(data);
-                        }
-                    })
-                }else{
-                    document.querySelector(".allResult").classList.remove("displayNone");
-                    document.querySelector(".datas").classList.add("displayNone");
-                }
-            }
-        </script>
     </body>
     </html>
 <?php
