@@ -58,21 +58,21 @@
                 </div>
                 <div class="datas">
                     <?php
-                        $tblQuery="SELECT `street_light_no`, `locality`, `houseno`, `status` FROM `tbl_street_light` WHERE `ward_no`='$wardno'";
+                        $tblQuery="SELECT `id`, `doc_name`, `file` FROM `tbl_e_doc` WHERE `wardno`='$wardno'";
                         $tblQueryResult=mysqli_query($conn,$tblQuery);
                         $i=1;
-                        while($strlt=mysqli_fetch_array($tblQueryResult)){
+                        while($docData=mysqli_fetch_array($tblQueryResult)){
                     ?>
                     <div class="data">
                         <table>
                             <tr>
                                 <td width=101px><?php echo $i ?>.</td>
-                                <td width=647px><?php echo $strlt['street_light_no']; ?></td>
+                                <td width=647px><?php echo $docData['doc_name']; ?></td>
                                 <td width=277px>
-                                    <a class="view">View document</a>
+                                    <a class="view" href="../../../model/viewPdf.php?pdf=<?php echo $docData['file']; ?>" target="_blank">View document</a>
                                 </td>
                                 <td width=379px>
-                                    <a class="delete">Delete document</a>
+                                    <a class="delete" href="../../../model/ward_member/delete_e_doc.php?id=<?php echo $docData['id'];?>">Delete document</a>
                                 </td>
                             </tr>
                         </table>
@@ -102,22 +102,22 @@
                 <img src="../../../../public/assets/images/close.svg" alt="close button">
             </div>
             <!-- Add task -->
-            <form action="" method="post" id="add-doc" enctype="multipart/form-data">
+            <form action="../../../model/ward_member/upload_doc.php" method="post" id="add-doc" enctype="multipart/form-data">
                 <div class="inputs">
                     <div class="input docName">
                         <div class="label"> Document name </div>
-                        <input type="text" name="strltno" id="doc-name" placeholder="Corporation water request" autocomplete="off">
+                        <input type="text" name="docName" id="doc-name" placeholder="Corporation water request" autocomplete="off">
                         <div class="error error-hidden">
                         </div>
                     </div>
                     <div class="input edoc">
                         <div class="label"> Upload document </div>
-                        <input type="file" name="taxre" id="up-doc" accept="application/pdf">
+                        <input type="file" name="edocFile" id="up-doc" accept="application/pdf">
                         <div class="error error-hidden">
                         </div>
                     </div>
                     <div class="button dBtn cursor-disable">
-                        <input type="submit" value="Add document" name="add-sl" id="add-doc-btn" class="primary-button disabled">
+                        <input type="submit" value="Add document" name="add-doc" id="add-doc-btn" class="primary-button disabled">
                     </div>
                 </div>
             </form>
