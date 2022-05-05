@@ -372,6 +372,17 @@ body {
   color: #8b8b8b;
 }
 
+.main .container .not-added {
+  font-family: Gilroy_M;
+  font-size: 20px;
+  color: #8b8b8b;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
 .alertt {
   background: #fff;
   padding: 18px 18px 18px 24px;

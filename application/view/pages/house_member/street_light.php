@@ -52,6 +52,8 @@ else
                     $data=mysqli_fetch_assoc($streetLightDataResult); 
                     $postNo=$data['post_no'];
                     $status=$data['street_light_status'];
+                    $present=$data['street_light'];
+                    if($present!='0'){
                 ?>
                 <div class="street-light">
                     <div class="img">
@@ -86,7 +88,15 @@ else
                         
                     </div>
                 </div>
-                
+                <?php
+                    }else{
+                ?>
+                <div class="not-added">
+                    No street light added
+                </div>
+                <?php
+                    }
+                ?>
 
             </div>
         </section>

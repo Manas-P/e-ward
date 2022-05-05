@@ -88,6 +88,15 @@ body {
                 }
             }
         }
+        .not-added{
+            font-family: Gilroy_M;
+            font-size: 20px;
+            color:$subText;
+            position: absolute;
+            top:30%;
+            left:50%;
+            transform: translate(-50%,-50%);
+        }
     }
 }
 
