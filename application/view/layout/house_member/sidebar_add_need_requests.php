@@ -58,6 +58,16 @@
                 </svg>                              
                 <div class="text">Street light</div>
             </a>
+            <a href="../../pages/house_member/e_doc.php" class="menu">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="str" d="M12.8332 1.83398H5.49984C5.01361 1.83398 4.54729 2.02714 4.20347 2.37096C3.85966 2.71477 3.6665 3.18109 3.6665 3.66732V18.334C3.6665 18.8202 3.85966 19.2865 4.20347 19.6303C4.54729 19.9742 5.01361 20.1673 5.49984 20.1673H16.4998C16.9861 20.1673 17.4524 19.9742 17.7962 19.6303C18.14 19.2865 18.3332 18.8202 18.3332 18.334V7.33398L12.8332 1.83398Z" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path class="str" d="M12.8333 1.83398V7.33398H18.3333" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path class="str" d="M14.6666 11.917H7.33325" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path class="str" d="M14.6666 15.584H7.33325" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path class="str" d="M9.16659 8.25098H8.24992H7.33325" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>  
+                <div class="text">E-Documents</div>
+            </a>
             <a href="../../pages/house_member/change_password.php" class="menu">
                 <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path class="str" d="M17.4167 10.0835H4.58339C3.57087 10.0835 2.75006 10.9043 2.75006 11.9168V18.3335C2.75006 19.346 3.57087 20.1668 4.58339 20.1668H17.4167C18.4292 20.1668 19.2501 19.346 19.2501 18.3335V11.9168C19.2501 10.9043 18.4292 10.0835 17.4167 10.0835Z" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
