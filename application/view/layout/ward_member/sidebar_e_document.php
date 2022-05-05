@@ -46,24 +46,24 @@
                             </svg>                           
                             <div class="text">Need requests</div>
                         </a>
-                        <a href="../../pages/ward_member/street_light.php" class="menu active">
+                        <a href="../../pages/ward_member/street_light.php" class="menu">
                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path class="str active" d="M7.8009 16.0103H14.3168M5.35742 11.1233C5.35742 9.61121 5.95811 8.16102 7.02734 7.09179C8.09657 6.02256 9.54676 5.42188 11.0589 5.42188C12.571 5.42187 14.0212 6.02256 15.0904 7.09179C16.1596 8.16102 16.7603 9.61121 16.7603 11.1233C16.7609 12.0413 16.5388 12.9458 16.1133 13.7592C15.6877 14.5725 15.0713 15.2706 14.3168 15.7936L13.8754 19.0873C13.8169 19.4725 13.6224 19.824 13.3269 20.0781C13.0315 20.3321 12.6548 20.4718 12.2651 20.4719H9.85261C9.46297 20.4718 9.08626 20.3321 8.79083 20.0781C8.49539 19.824 8.3008 19.4725 8.24236 19.0873L7.8009 15.8026C7.0462 15.2778 6.42976 14.578 6.00425 13.7632C5.57875 12.9483 5.35682 12.0426 5.35742 11.1233Z" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <line class="str active" x1="11.1035" y1="2.41699" x2="11.1035" y2="0.998589" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round"/>
-                                <line class="str active" x1="17.5488" y1="4.33383" x2="18.474" y2="3.40868" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round"/>
-                                <line class="str active" x1="3.52554" y1="3.40918" x2="4.4507" y2="4.33434" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round"/>
+                                <path class="str" d="M7.8009 16.0103H14.3168M5.35742 11.1233C5.35742 9.61121 5.95811 8.16102 7.02734 7.09179C8.09657 6.02256 9.54676 5.42188 11.0589 5.42188C12.571 5.42187 14.0212 6.02256 15.0904 7.09179C16.1596 8.16102 16.7603 9.61121 16.7603 11.1233C16.7609 12.0413 16.5388 12.9458 16.1133 13.7592C15.6877 14.5725 15.0713 15.2706 14.3168 15.7936L13.8754 19.0873C13.8169 19.4725 13.6224 19.824 13.3269 20.0781C13.0315 20.3321 12.6548 20.4718 12.2651 20.4719H9.85261C9.46297 20.4718 9.08626 20.3321 8.79083 20.0781C8.49539 19.824 8.3008 19.4725 8.24236 19.0873L7.8009 15.8026C7.0462 15.2778 6.42976 14.578 6.00425 13.7632C5.57875 12.9483 5.35682 12.0426 5.35742 11.1233Z" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <line class="str" x1="11.1035" y1="2.41699" x2="11.1035" y2="0.998589" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round"/>
+                                <line class="str" x1="17.5488" y1="4.33383" x2="18.474" y2="3.40868" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round"/>
+                                <line class="str" x1="3.52554" y1="3.40918" x2="4.4507" y2="4.33434" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round"/>
                             </svg>
-                            <div class="text active">Street lights</div>
+                            <div class="text">Street lights</div>
                         </a>
-                        <a href="../../pages/ward_member/e_document.php" class="menu">
+                        <a href="../../pages/ward_member/e_document.php" class="menu active">
                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path class="str" d="M12.8332 1.83398H5.49984C5.01361 1.83398 4.54729 2.02714 4.20347 2.37096C3.85966 2.71477 3.6665 3.18109 3.6665 3.66732V18.334C3.6665 18.8202 3.85966 19.2865 4.20347 19.6303C4.54729 19.9742 5.01361 20.1673 5.49984 20.1673H16.4998C16.9861 20.1673 17.4524 19.9742 17.7962 19.6303C18.14 19.2865 18.3332 18.8202 18.3332 18.334V7.33398L12.8332 1.83398Z" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path class="str" d="M12.8333 1.83398V7.33398H18.3333" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path class="str" d="M14.6666 11.917H7.33325" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path class="str" d="M14.6666 15.584H7.33325" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path class="str" d="M9.16659 8.25098H8.24992H7.33325" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path class="str active" d="M12.8332 1.83398H5.49984C5.01361 1.83398 4.54729 2.02714 4.20347 2.37096C3.85966 2.71477 3.6665 3.18109 3.6665 3.66732V18.334C3.6665 18.8202 3.85966 19.2865 4.20347 19.6303C4.54729 19.9742 5.01361 20.1673 5.49984 20.1673H16.4998C16.9861 20.1673 17.4524 19.9742 17.7962 19.6303C18.14 19.2865 18.3332 18.8202 18.3332 18.334V7.33398L12.8332 1.83398Z" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path class="str active" d="M12.8333 1.83398V7.33398H18.3333" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path class="str active" d="M14.6666 11.917H7.33325" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path class="str active" d="M14.6666 15.584H7.33325" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path class="str active" d="M9.16659 8.25098H8.24992H7.33325" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            <div class="text">E-Documents</div>
+                            <div class="text active">E-Documents</div>
                         </a>
                         <a href="../../pages/ward_member/change_password.php" class="menu">
                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
