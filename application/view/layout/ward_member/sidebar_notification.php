@@ -55,22 +55,22 @@
                             </svg>
                             <div class="text">Street lights</div>
                         </a>
-                        <a href="../../pages/ward_member/e_document.php" class="menu active">
+                        <a href="../../pages/ward_member/e_document.php" class="menu">
                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path class="str active" d="M12.8332 1.83398H5.49984C5.01361 1.83398 4.54729 2.02714 4.20347 2.37096C3.85966 2.71477 3.6665 3.18109 3.6665 3.66732V18.334C3.6665 18.8202 3.85966 19.2865 4.20347 19.6303C4.54729 19.9742 5.01361 20.1673 5.49984 20.1673H16.4998C16.9861 20.1673 17.4524 19.9742 17.7962 19.6303C18.14 19.2865 18.3332 18.8202 18.3332 18.334V7.33398L12.8332 1.83398Z" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path class="str active" d="M12.8333 1.83398V7.33398H18.3333" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path class="str active" d="M14.6666 11.917H7.33325" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path class="str active" d="M14.6666 15.584H7.33325" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path class="str active" d="M9.16659 8.25098H8.24992H7.33325" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path class="str" d="M12.8332 1.83398H5.49984C5.01361 1.83398 4.54729 2.02714 4.20347 2.37096C3.85966 2.71477 3.6665 3.18109 3.6665 3.66732V18.334C3.6665 18.8202 3.85966 19.2865 4.20347 19.6303C4.54729 19.9742 5.01361 20.1673 5.49984 20.1673H16.4998C16.9861 20.1673 17.4524 19.9742 17.7962 19.6303C18.14 19.2865 18.3332 18.8202 18.3332 18.334V7.33398L12.8332 1.83398Z" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path class="str" d="M12.8333 1.83398V7.33398H18.3333" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path class="str" d="M14.6666 11.917H7.33325" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path class="str" d="M14.6666 15.584H7.33325" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path class="str" d="M9.16659 8.25098H8.24992H7.33325" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            <div class="text active">E-Documents</div>
+                            <div class="text">E-Documents</div>
                         </a>
-                        <a href="../../pages/ward_member/notification.php" class="menu">
+                        <a href="../../pages/ward_member/notification.php" class="menu active">
                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path class="str" d="M16.5 7.33301C16.5 5.87432 15.9205 4.47537 14.8891 3.44392C13.8576 2.41247 12.4587 1.83301 11 1.83301C9.54131 1.83301 8.14236 2.41247 7.11091 3.44392C6.07946 4.47537 5.5 5.87432 5.5 7.33301C5.5 13.7497 2.75 15.583 2.75 15.583H19.25C19.25 15.583 16.5 13.7497 16.5 7.33301Z" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path class="str" d="M12.5857 19.25C12.4246 19.5278 12.1933 19.7584 11.9149 19.9187C11.6366 20.079 11.3211 20.1634 10.9999 20.1634C10.6787 20.1634 10.3632 20.079 10.0849 19.9187C9.80654 19.7584 9.57522 19.5278 9.41406 19.25" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path class="str active" d="M16.5 7.33301C16.5 5.87432 15.9205 4.47537 14.8891 3.44392C13.8576 2.41247 12.4587 1.83301 11 1.83301C9.54131 1.83301 8.14236 2.41247 7.11091 3.44392C6.07946 4.47537 5.5 5.87432 5.5 7.33301C5.5 13.7497 2.75 15.583 2.75 15.583H19.25C19.25 15.583 16.5 13.7497 16.5 7.33301Z" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path class="str active" d="M12.5857 19.25C12.4246 19.5278 12.1933 19.7584 11.9149 19.9187C11.6366 20.079 11.3211 20.1634 10.9999 20.1634C10.6787 20.1634 10.3632 20.079 10.0849 19.9187C9.80654 19.7584 9.57522 19.5278 9.41406 19.25" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            <div class="text">Notifications</div>
+                            <div class="text active">Notifications</div>
                         </a>
                         <a href="../../pages/ward_member/change_password.php" class="menu">
                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
