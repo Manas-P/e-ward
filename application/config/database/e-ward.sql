@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 04, 2022 at 10:11 PM
+-- Generation Time: May 06, 2022 at 08:25 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.25
 
@@ -128,7 +128,31 @@ INSERT INTO `tbl_edu_bg` (`id`, `userid`, `hs`, `hss`, `diploma`, `ug`, `pg`) VA
 (42, 21220, '0', '0', '0', '0', '0'),
 (43, 21230, '0', '0', '0', '0', '0'),
 (44, 21120, '0', '0', '0', '0', '0'),
-(45, 21460, '0', '0', '0', '0', '0');
+(45, 21460, '0', '0', '0', '0', '0'),
+(46, 310, '0', '0', '0', '0', '0'),
+(47, 312, '0', '0', '0', '0', '0');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_e_doc`
+--
+
+CREATE TABLE `tbl_e_doc` (
+  `id` int(10) NOT NULL,
+  `wardno` int(10) NOT NULL,
+  `doc_name` varchar(100) NOT NULL,
+  `file` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_e_doc`
+--
+
+INSERT INTO `tbl_e_doc` (`id`, `wardno`, `doc_name`, `file`) VALUES
+(1, 2, 'Corporation water request', '../../../public/assets/documents/edocument/1651770052.pdf'),
+(2, 2, 'Income certificate application', '../../../public/assets/documents/edocument/1651770077.pdf'),
+(3, 2, 'Borewell application', '../../../public/assets/documents/edocument/1651770100.pdf');
 
 -- --------------------------------------------------------
 
@@ -168,15 +192,16 @@ CREATE TABLE `tbl_house` (
 
 INSERT INTO `tbl_house` (`hid`, `house_name`, `house_no`, `ward_no`, `locality`, `post_office`, `ration_no`, `category`, `street_light`, `street_light_status`, `post_no`) VALUES
 (1, 'qweew', 121, 2, 'qweqw', 'qwqeweq', 4879856854, 'APL', 0, 0, '0'),
-(2, 'Pachakkil House', 145, 2, 'Kottooli', 'Kuthiravattom P.O.', 9568784568, 'APL', 1, 1, 'B32'),
+(2, 'Pachakkil House', 145, 2, 'Kottooli', 'Kuthiravattom P.O.', 9568784568, 'APL', 1, 1, 'C52'),
 (3, 'Paramthottu', 154, 2, 'Pala', 'Chengalam', 1256325879, 'APL', 0, 0, '0'),
-(4, 'qwer', 124, 2, 'hjhyg', 'ikjjhy', 9865874585, 'APL', 1, 1, 'A54'),
+(4, 'qwer', 124, 2, 'hjhyg', 'ikjjhy', 9865874585, 'APL', 0, 0, '0'),
 (6, 'qwert', 15, 2, 'fcrdrdcrd', 'wsxedxed', 8569857458, 'APL', 0, 0, '0'),
-(7, 'abcd villa', 5, 2, 'abcdefgh', 'abcdefgh', 4565434567, 'APL', 1, 1, 'A54'),
-(17, 'New housee', 34, 2, 'New locality', 'New post office', 5685458745, 'APL', 1, 1, 'B32'),
-(18, 'new reg ho', 18, 2, 'new', 'new', 8459658745, 'APL', 1, 1, 'A54'),
+(7, 'abcd villa', 5, 2, 'abcdefgh', 'abcdefgh', 4565434567, 'APL', 1, 1, 'C12'),
+(17, 'New housee', 34, 2, 'New locality', 'New post office', 5685458745, 'APL', 0, 0, '0'),
+(18, 'new reg ho', 18, 2, 'new', 'new', 8459658745, 'APL', 0, 0, '0'),
 (19, 'Kunni House', 23, 2, 'Miami, Street 23, Near beach', 'Miami PO', 2154785632, 'APL', 0, 0, '0'),
-(23, 'new house', 16, 2, 'Kottooli', 'new house space', 9545874541, 'APL', 1, 1, 'C52');
+(23, 'new house', 16, 2, 'Kottooli', 'new house space', 9545874541, 'APL', 1, 1, 'C12'),
+(24, 'sdfwe', 1, 3, 'ef wer we', 'wewefw', 2354856214, 'APL', 0, 0, '0');
 
 -- --------------------------------------------------------
 
@@ -193,7 +218,7 @@ CREATE TABLE `tbl_house_member` (
   `phno` bigint(13) NOT NULL,
   `blood_grp` varchar(5) NOT NULL DEFAULT 'NA',
   `dob` date NOT NULL,
-  `photo` varchar(100) NOT NULL DEFAULT '../../../../public/assets/images/user-profile-placeholder.png',
+  `photo` varchar(100) NOT NULL DEFAULT '../../../public/assets/images/user-profile-placeholder.png',
   `userid` int(50) NOT NULL DEFAULT 0,
   `password` varchar(50) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -233,10 +258,10 @@ INSERT INTO `tbl_house_member` (`hm_id`, `ward_no`, `house_no`, `fname`, `email`
 (44, 2, 85, 'fgh', 'Not entered', 9856587845, 'NA', '0000-00-00', '../images/user-profile-placeholder.png', 2850, '1jnz1SCN'),
 (53, 2, 53, 'djkfhg', 'jb@gmail.com', 9854589858, 'NA', '0000-00-00', '../images/user-profile-placeholder.png', 2530, 'VubsYXvs'),
 (54, 2, 43, 'tyutut', 'tyutyu@gmail.com', 9565458785, 'NA', '0000-00-00', '../images/user-profile-placeholder.png', 2430, 'PZyugaZF'),
-(55, 2, 16, 'Manas', 'nwwechk@gmail.com', 9854512547, 'B+', '1994-06-15', '../../../public/assets/images/uploads/photos/1648463828.png', 2160, '123'),
+(55, 2, 16, 'Kurien Tom', 'nwwechk@gmail.com', 9854512547, 'B+', '1994-06-15', '../../../public/assets/images/uploads/photos/1651724017.jpeg', 2160, '123'),
 (57, 2, 11, 'Frank', 'frankmathewsthomas@gmail.com', 9875456324, 'NA', '0000-00-00', '../../../../public/assets/images/user-profile-placeholder.png', 2110, 'AuqzvCFx'),
-(58, 2, 16, 'new member', 'newmember@gmail.com', 9854512548, 'O+', '2014-08-14', '../../../public/assets/images/uploads/photos/1650351067.jpg', 2162, '123'),
-(59, 2, 16, 'David Guetta', 'davidguetta@gmail.com', 9856523257, 'A+', '1994-02-02', '../../../public/assets/images/uploads/photos/1651300214.jpg', 2163, 'v7g7KEyl'),
+(58, 2, 16, 'Martin Garrix', 'newmember@gmail.com', 9854512548, 'O+', '2014-08-14', '../../../public/assets/images/uploads/photos/1650351067.jpg', 2162, '123'),
+(59, 2, 16, 'David Guetta', 'davidguetta@gmail.com', 9856523257, 'A+', '1987-07-02', '../../../public/assets/images/uploads/photos/1651300214.jpg', 2163, 'v7g7KEyl'),
 (61, 2, 125, 'hjkkh hjk', 'dsfg@gmai.coj', 4523256587, 'NA', '0000-00-00', '../../../../public/assets/images/user-profile-placeholder.png', 21250, 'WVUgxOJL'),
 (62, 2, 144, 'chknew', 'chknew@gmail.com', 9854587452, 'NA', '0000-00-00', '../../../../public/assets/images/user-profile-placeholder.png', 21440, 'Ws7PGgJZ'),
 (63, 2, 41, 'fghefs', 'fghf@gmail.com', 9856587845, 'NA', '0000-00-00', '../../../../public/assets/images/user-profile-placeholder.png', 2410, 'TYFij8Nh'),
@@ -244,7 +269,9 @@ INSERT INTO `tbl_house_member` (`hm_id`, `ward_no`, `house_no`, `fname`, `email`
 (65, 2, 122, 'chech staff', 'chkstaff@gmail.com', 9854562321, 'NA', '0000-00-00', '../../../../public/assets/images/user-profile-placeholder.png', 21220, 'ekPuSM2T'),
 (66, 2, 123, 'chech ward mem', 'chkmem@gmail.com', 9854563210, 'NA', '0000-00-00', '../../../../public/assets/images/user-profile-placeholder.png', 21230, 'he6pi7F9'),
 (67, 2, 112, 'tset time', 'tefy@gmail.cm', 9854512547, 'NA', '0000-00-00', '../../../../public/assets/images/user-profile-placeholder.png', 21120, 'sViKI0jh'),
-(68, 2, 146, 'new', 'nkajsdf@ah.asd', 9854512547, 'NA', '0000-00-00', '../../../../public/assets/images/user-profile-placeholder.png', 21460, 'SoEBKjhg');
+(68, 2, 146, 'new', 'nkajsdf@ah.asd', 9854512547, 'NA', '0000-00-00', '../../../../public/assets/images/user-profile-placeholder.png', 21460, 'SoEBKjhg'),
+(69, 3, 1, 'qwe', 'qwe@gmail.com', 8545878954, 'NA', '0000-00-00', '../../../public/assets/images/user-profile-placeholder.png', 310, '123'),
+(70, 3, 1, 'new mem', 'mem@gmail.com', 9564589637, 'B+', '1998-07-09', '../../../public/assets/images/uploads/photos/1651783785.png', 312, '8TE06K6v');
 
 -- --------------------------------------------------------
 
@@ -315,7 +342,9 @@ INSERT INTO `tbl_id_proof` (`id`, `userid`, `aadhar_no`, `aadhar_file`, `electio
 (41, 21220, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
 (42, 21230, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
 (43, 21120, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
-(44, 21460, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0');
+(44, 21460, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
+(45, 310, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
+(46, 312, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0');
 
 -- --------------------------------------------------------
 
@@ -348,6 +377,32 @@ INSERT INTO `tbl_need_request` (`id`, `wardno`, `houseno`, `userid`, `descriptio
 (7, 2, 16, 2160, 'sdfsdfsdfih bsiduhfiuh sugydhfiu isughdfiuh isuhdfiuh iushdfiu hishdfiuhi suhdifuh isudhfiuhsiuhdfiushid ishdifhisuhdiufhisuhd ishdfih siudhf ', '0', 'Wade Warren', 3, 'reject'),
 (8, 2, 16, 2160, 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud', '0', '0', 0, '0'),
 (9, 2, 16, 2160, 'Abcd sygfuys', '0', 'Wade Warren', 1, '0');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_notification`
+--
+
+CREATE TABLE `tbl_notification` (
+  `id` int(10) NOT NULL,
+  `wardno` int(10) NOT NULL,
+  `notification_title` varchar(100) NOT NULL,
+  `notification_des` varchar(1000) NOT NULL,
+  `notification_for` varchar(100) NOT NULL,
+  `hm` int(10) NOT NULL DEFAULT 0,
+  `os` int(10) NOT NULL DEFAULT 0,
+  `date_time` datetime(6) NOT NULL DEFAULT current_timestamp(6)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_notification`
+--
+
+INSERT INTO `tbl_notification` (`id`, `wardno`, `notification_title`, `notification_des`, `notification_for`, `hm`, `os`, `date_time`) VALUES
+(1, 2, 'Egg distribution', 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat ', 'House members, ', 1, 0, '2022-05-06 23:53:28.352593'),
+(2, 2, 'Covid awareness class', 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat ', 'House members, Office staffs, ', 1, 1, '2022-05-06 23:54:25.555483'),
+(3, 2, 'Vegetable seed distribution', 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat ', 'House members, ', 1, 0, '2022-05-06 23:54:43.525768');
 
 -- --------------------------------------------------------
 
@@ -441,7 +496,9 @@ INSERT INTO `tbl_pro_bg` (`id`, `userid`, `cur_pro`, `cur_pro_file`, `comp_name`
 (37, 21220, '0', '0', '0', '0', '0000-00-00'),
 (38, 21230, '0', '0', '0', '0', '0000-00-00'),
 (39, 21120, '0', '0', '0', '0', '0000-00-00'),
-(40, 21460, '0', '0', '0', '0', '0000-00-00');
+(40, 21460, '0', '0', '0', '0', '0000-00-00'),
+(41, 310, '0', '0', '0', '0', '0000-00-00'),
+(42, 312, '0', '0', '0', '0', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -502,7 +559,7 @@ INSERT INTO `tbl_registration` (`rid`, `fname`, `email`, `phno`, `wardno`, `hous
 (45, 'Martin Garrix', 'martingrx@gmail.com', 9565878457, 2, 24, '../documents/taxreport/1644593477.pdf', 1),
 (46, 'dont accept', 'sont@gmail.com', 9565878454, 2, 78, '../documents/taxreport/1644595851.pdf', 1),
 (47, 'kunnuz', 'kunnu@gmail.com', 9565874587, 2, 48, '../documents/taxreport/1644849229.pdf', 1),
-(49, 'qwe', 'qwe@gmail.com', 8545878954, 3, 1, '../documents/taxreport/1645463088.pdf', 0),
+(49, 'qwe', 'qwe@gmail.com', 8545878954, 3, 1, '../documents/taxreport/1645463088.pdf', 1),
 (50, 'asd', 'ads@gmail.com', 9565451258, 2, 3, '../documents/taxreport/1645502488.pdf', 1),
 (51, 'qwe', 'qwe@gmail.com', 9856587458, 2, 6, '../documents/taxreport/1645545832.pdf', 1),
 (52, 'ert', 'ert@gmail.com', 9587845236, 2, 7, '../documents/taxreport/1645545858.pdf', 1),
@@ -584,9 +641,8 @@ CREATE TABLE `tbl_street_light` (
 --
 
 INSERT INTO `tbl_street_light` (`id`, `street_light_no`, `locality`, `ward_no`, `houseno`, `status`) VALUES
-(1, 'A54', 'Kottooli, Near Fresco supermarket', 2, '124, 5, 18, ', 1),
-(3, 'B32', 'Mankav', 2, '145, 34, ', 1),
-(4, 'C52', 'Kottooli, Near Skyline', 2, '16, ', 1);
+(5, 'C52', 'Kottooli, Near Fresco supermarket', 2, '145, ', 1),
+(6, 'C12', 'Mankav, Near pond', 2, '5, 16, ', 1);
 
 -- --------------------------------------------------------
 
@@ -650,6 +706,12 @@ ALTER TABLE `tbl_edu_bg`
   ADD KEY `userid` (`userid`);
 
 --
+-- Indexes for table `tbl_e_doc`
+--
+ALTER TABLE `tbl_e_doc`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tbl_forgot_password`
 --
 ALTER TABLE `tbl_forgot_password`
@@ -685,6 +747,13 @@ ALTER TABLE `tbl_need_request`
   ADD KEY `wardno` (`wardno`,`houseno`);
 
 --
+-- Indexes for table `tbl_notification`
+--
+ALTER TABLE `tbl_notification`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `wardno` (`wardno`);
+
+--
 -- Indexes for table `tbl_office_staff`
 --
 ALTER TABLE `tbl_office_staff`
@@ -717,7 +786,8 @@ ALTER TABLE `tbl_staff_activity`
 -- Indexes for table `tbl_street_light`
 --
 ALTER TABLE `tbl_street_light`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `street_light_no` (`street_light_no`,`houseno`);
 
 --
 -- Indexes for table `tbl_ward_member`
@@ -746,7 +816,13 @@ ALTER TABLE `tbl_committee`
 -- AUTO_INCREMENT for table `tbl_edu_bg`
 --
 ALTER TABLE `tbl_edu_bg`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+
+--
+-- AUTO_INCREMENT for table `tbl_e_doc`
+--
+ALTER TABLE `tbl_e_doc`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_forgot_password`
@@ -758,25 +834,31 @@ ALTER TABLE `tbl_forgot_password`
 -- AUTO_INCREMENT for table `tbl_house`
 --
 ALTER TABLE `tbl_house`
-  MODIFY `hid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `hid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `tbl_house_member`
 --
 ALTER TABLE `tbl_house_member`
-  MODIFY `hm_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `hm_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 
 --
 -- AUTO_INCREMENT for table `tbl_id_proof`
 --
 ALTER TABLE `tbl_id_proof`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT for table `tbl_need_request`
 --
 ALTER TABLE `tbl_need_request`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `tbl_notification`
+--
+ALTER TABLE `tbl_notification`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tbl_office_staff`
@@ -788,7 +870,7 @@ ALTER TABLE `tbl_office_staff`
 -- AUTO_INCREMENT for table `tbl_pro_bg`
 --
 ALTER TABLE `tbl_pro_bg`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `tbl_registration`
@@ -806,7 +888,7 @@ ALTER TABLE `tbl_staff_activity`
 -- AUTO_INCREMENT for table `tbl_street_light`
 --
 ALTER TABLE `tbl_street_light`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `tbl_ward_member`
