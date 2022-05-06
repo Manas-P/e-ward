@@ -59,20 +59,20 @@
                 </div>
                 <div class="datas">
                     <?php
-                        $tblQuery="SELECT `id`, `doc_name`, `file` FROM `tbl_e_doc` WHERE `wardno`='$wardno'";
+                        $tblQuery="SELECT `id`, `notification_title`, `notification_des`, `notification_for` FROM `tbl_notification` WHERE `wardno`='$wardno'";
                         $tblQueryResult=mysqli_query($conn,$tblQuery);
                         $i=1;
-                        while($docData=mysqli_fetch_array($tblQueryResult)){
+                        while($notData=mysqli_fetch_array($tblQueryResult)){
                     ?>
                     <div class="data">
                         <table>
                             <tr>
                                 <td width=101px><?php echo $i ?>.</td>
-                                <td width=360px><?php echo $docData['doc_name']; ?></td>
-                                <td width=573px style="padding-right:77px;"> <?php echo $docData['doc_name']; ?> </td>
-                                <td width=257px style="padding-right:90px;">House members, office staffs</td>
+                                <td width=360px><?php echo $notData['notification_title']; ?></td>
+                                <td width=573px style="padding-right:77px;"> <?php echo $notData['notification_des']; ?> </td>
+                                <td width=257px style="padding-right:90px;"><?php echo $notData['notification_for']; ?></td>
                                 <td width=119px>
-                                    <a class="delete" href="../../../model/ward_member/delete_e_doc.php?id=<?php echo $docData['id'];?>">Delete</a>
+                                    <a class="delete" href="../../../model/ward_member/delete_notification.php?id=<?php echo $notData['id']; ?>">Delete</a>
                                 </td>
                             </tr>
                         </table>
@@ -102,10 +102,10 @@
                 <img src="../../../../public/assets/images/close.svg" alt="close button">
             </div>
             <!-- Add notification -->
-            <form action="" method="post" id="add-not" enctype="multipart/form-data">
+            <form action="../../../model/ward_member/notification.php" method="post" id="add-not" enctype="multipart/form-data">
                 <div class="inputs">
                     <div class="input notName">
-                        <div class="label"> Notification name </div>
+                        <div class="label"> Notification title </div>
                         <input type="text" name="notName" id="not-name" placeholder="Common meeting" autocomplete="off">
                         <div class="error error-hidden">
                         </div>
@@ -132,7 +132,7 @@
                         </div>
                     </div>
                     <div class="button dBtn cursor-disable">
-                        <input type="submit" value="Add notification" name="add-doc" id="add-not-btn" class="primary-button disabled">
+                        <input type="submit" value="Add notification" name="add-not" id="add-not-btn" class="primary-button disabled">
                     </div>
                 </div>
             </form>

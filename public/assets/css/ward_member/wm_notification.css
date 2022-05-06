@@ -374,17 +374,12 @@ body {
   font-family: "Gilroy_M";
   font-size: 18px;
   color: #545454;
-  line-height: 24px;
+  line-height: 26px;
 }
 
 .main .container .datas .data td {
   vertical-align: top;
   text-align: left;
-}
-
-.main .container .datas .data .view {
-  font-family: "Gilroy_SB";
-  color: #5744e3;
 }
 
 .main .container .datas .data .delete {
