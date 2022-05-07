@@ -128,7 +128,7 @@
                 </div>
                 <div class="datas">
                     <?php
-                        $query="SELECT `activity`, `date_time` FROM `tbl_staff_activity` WHERE `userid`='$staffId'";
+                        $query="SELECT `id`, `activity`, `date_time` FROM `tbl_staff_activity` WHERE `userid`='$staffId' ORDER BY id DESC";
                         $result=mysqli_query($conn,$query);
                         $i=1;
                         while($row=mysqli_fetch_array($result)){

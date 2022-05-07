@@ -31,14 +31,14 @@
                 </svg>
                 <div class="text">Add house members</div>
             </a>
-            <a href="../../pages/house_member/committees.php" class="menu active">
+            <a href="../../pages/house_member/committees.php" class="menu">
                 <svg width="24" height="22" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path class="str active" d="M16.5834 19.25V17.4167C16.5834 16.4442 16.197 15.5116 15.5094 14.8239C14.8218 14.1363 13.8891 13.75 12.9167 13.75H5.58335C4.61089 13.75 3.67826 14.1363 2.99063 14.8239C2.303 15.5116 1.91669 16.4442 1.91669 17.4167V19.25" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path class="str active" d="M9.24998 10.0833C11.275 10.0833 12.9166 8.44171 12.9166 6.41667C12.9166 4.39162 11.275 2.75 9.24998 2.75C7.22494 2.75 5.58331 4.39162 5.58331 6.41667C5.58331 8.44171 7.22494 10.0833 9.24998 10.0833Z" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path class="str active" d="M22.0833 19.25V17.4166C22.0827 16.6042 21.8123 15.815 21.3146 15.1729C20.8168 14.5308 20.1199 14.0722 19.3333 13.8691" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path class="str active" d="M15.6667 2.86914C16.4554 3.07108 17.1545 3.52978 17.6537 4.17293C18.1529 4.81607 18.4239 5.60707 18.4239 6.42122C18.4239 7.23538 18.1529 8.02638 17.6537 8.66952C17.1545 9.31266 16.4554 9.77136 15.6667 9.97331" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path class="str" d="M16.5834 19.25V17.4167C16.5834 16.4442 16.197 15.5116 15.5094 14.8239C14.8218 14.1363 13.8891 13.75 12.9167 13.75H5.58335C4.61089 13.75 3.67826 14.1363 2.99063 14.8239C2.303 15.5116 1.91669 16.4442 1.91669 17.4167V19.25" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path class="str" d="M9.24998 10.0833C11.275 10.0833 12.9166 8.44171 12.9166 6.41667C12.9166 4.39162 11.275 2.75 9.24998 2.75C7.22494 2.75 5.58331 4.39162 5.58331 6.41667C5.58331 8.44171 7.22494 10.0833 9.24998 10.0833Z" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path class="str" d="M22.0833 19.25V17.4166C22.0827 16.6042 21.8123 15.815 21.3146 15.1729C20.8168 14.5308 20.1199 14.0722 19.3333 13.8691" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path class="str" d="M15.6667 2.86914C16.4554 3.07108 17.1545 3.52978 17.6537 4.17293C18.1529 4.81607 18.4239 5.60707 18.4239 6.42122C18.4239 7.23538 18.1529 8.02638 17.6537 8.66952C17.1545 9.31266 16.4554 9.77136 15.6667 9.97331" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>                                
-                <div class="text active">Committees</div>
+                <div class="text">Committees</div>
             </a>
             <a href="../../pages/house_member/add_need_request.php" class="menu">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -68,12 +68,12 @@
                 </svg>  
                 <div class="text">E-Documents</div>
             </a>
-            <a href="../../pages/house_member/notification.php" class="menu">
+            <a href="../../pages/house_member/notification.php" class="menu active">
                 <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path class="str" d="M16.5 7.33301C16.5 5.87432 15.9205 4.47537 14.8891 3.44392C13.8576 2.41247 12.4587 1.83301 11 1.83301C9.54131 1.83301 8.14236 2.41247 7.11091 3.44392C6.07946 4.47537 5.5 5.87432 5.5 7.33301C5.5 13.7497 2.75 15.583 2.75 15.583H19.25C19.25 15.583 16.5 13.7497 16.5 7.33301Z" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path class="str" d="M12.5857 19.25C12.4246 19.5278 12.1933 19.7584 11.9149 19.9187C11.6366 20.079 11.3211 20.1634 10.9999 20.1634C10.6787 20.1634 10.3632 20.079 10.0849 19.9187C9.80654 19.7584 9.57522 19.5278 9.41406 19.25" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path class="str active" d="M16.5 7.33301C16.5 5.87432 15.9205 4.47537 14.8891 3.44392C13.8576 2.41247 12.4587 1.83301 11 1.83301C9.54131 1.83301 8.14236 2.41247 7.11091 3.44392C6.07946 4.47537 5.5 5.87432 5.5 7.33301C5.5 13.7497 2.75 15.583 2.75 15.583H19.25C19.25 15.583 16.5 13.7497 16.5 7.33301Z" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path class="str active" d="M12.5857 19.25C12.4246 19.5278 12.1933 19.7584 11.9149 19.9187C11.6366 20.079 11.3211 20.1634 10.9999 20.1634C10.6787 20.1634 10.3632 20.079 10.0849 19.9187C9.80654 19.7584 9.57522 19.5278 9.41406 19.25" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                <div class="text">Notifications</div>
+                <div class="text active">Notifications</div>
             </a>
             <a href="../../pages/house_member/change_password.php" class="menu">
                 <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">

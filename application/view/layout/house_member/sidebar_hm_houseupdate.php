@@ -68,6 +68,13 @@
                             </svg>  
                             <div class="text">E-Documents</div>
                         </a>
+                        <a href="../../pages/house_member/notification.php" class="menu">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path class="str" d="M16.5 7.33301C16.5 5.87432 15.9205 4.47537 14.8891 3.44392C13.8576 2.41247 12.4587 1.83301 11 1.83301C9.54131 1.83301 8.14236 2.41247 7.11091 3.44392C6.07946 4.47537 5.5 5.87432 5.5 7.33301C5.5 13.7497 2.75 15.583 2.75 15.583H19.25C19.25 15.583 16.5 13.7497 16.5 7.33301Z" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path class="str" d="M12.5857 19.25C12.4246 19.5278 12.1933 19.7584 11.9149 19.9187C11.6366 20.079 11.3211 20.1634 10.9999 20.1634C10.6787 20.1634 10.3632 20.079 10.0849 19.9187C9.80654 19.7584 9.57522 19.5278 9.41406 19.25" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <div class="text">Notifications</div>
+                        </a>
                         <a href="../../pages/house_member/change_password.php" class="menu">
                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path class="str" d="M17.4167 10.0835H4.58339C3.57087 10.0835 2.75006 10.9043 2.75006 11.9168V18.3335C2.75006 19.346 3.57087 20.1668 4.58339 20.1668H17.4167C18.4292 20.1668 19.2501 19.346 19.2501 18.3335V11.9168C19.2501 10.9043 18.4292 10.0835 17.4167 10.0835Z" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
