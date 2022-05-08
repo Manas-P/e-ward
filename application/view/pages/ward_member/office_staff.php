@@ -268,20 +268,19 @@
                 $minDate=$minData['date_time'];
                 $minDate = date('Y-m-d', strtotime($minDate));
             ?>
-            <form action="" method="post" id="gen-rep-form" enctype="multipart/form-data">
-                <input type="hidden" name="hm_already_photo" value="<?php echo $sPhoto ?>">
+            <form action="../../../model/ward_member/generate_staff_report.php" method="post" id="gen-rep-form" enctype="multipart/form-data">
                 <input type="hidden" name="staff_id" value="<?php echo $staffId ?>">
                 <div class="inputs">
                     <div class="half-input">
                         <div class="input w-date">
                             <div class="label"> From date </div>
-                            <input type="date" name="f-date" id="f-date" min="<?php echo $minDate ?>" autocomplete="off">
+                            <input type="date" name="f-date" id="f-date" min="<?php echo $minDate ?>" max="<?php echo $maxDate ?>" autocomplete="off">
                             <div class="error error-hidden">
                             </div>
                         </div>
                         <div class="input w-date">
                             <div class="label"> To date </div>
-                            <input type="date" name="t-date" id="t-date" max="<?php echo $maxDate ?>" autocomplete="off">
+                            <input type="date" name="t-date" id="t-date" min="<?php echo $minDate ?>" max="<?php echo $maxDate ?>" autocomplete="off">
                             <div class="error error-hidden">
                             </div>
                         </div>
