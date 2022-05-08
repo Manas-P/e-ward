@@ -254,6 +254,20 @@
                 <img src="../../../../public/assets/images/close.svg" alt="close button">
             </div>
             <!-- Generate report -->
+            <!-- Fetch max and min date -->
+            <?php
+                $fetchMax="SELECT `date_time` FROM `tbl_staff_activity` WHERE `date_time`=(SELECT MAX(date_time) FROM tbl_staff_activity) AND `userid`='$staffId'";
+                $fetchMaxResult=mysqli_query($conn,$fetchMax);
+                $maxData=mysqli_fetch_assoc($fetchMaxResult);
+                $maxDate=$maxData['date_time'];
+                $maxDate = date('Y-m-d', strtotime($maxDate));
+
+                $fetchMin="SELECT `date_time` FROM `tbl_staff_activity` WHERE `date_time`=(SELECT MIN(date_time) FROM tbl_staff_activity) AND `userid`='$staffId'";
+                $fetchMinResult=mysqli_query($conn,$fetchMin);
+                $minData=mysqli_fetch_assoc($fetchMinResult);
+                $minDate=$minData['date_time'];
+                $minDate = date('Y-m-d', strtotime($minDate));
+            ?>
             <form action="" method="post" id="gen-rep-form" enctype="multipart/form-data">
                 <input type="hidden" name="hm_already_photo" value="<?php echo $sPhoto ?>">
                 <input type="hidden" name="staff_id" value="<?php echo $staffId ?>">
@@ -261,13 +275,13 @@
                     <div class="half-input">
                         <div class="input w-date">
                             <div class="label"> From date </div>
-                            <input type="date" name="wvalidity" id="f-date" autocomplete="off">
+                            <input type="date" name="wvalidity" id="f-date" min="<?php echo $minDate ?>" autocomplete="off">
                             <div class="error error-hidden">
                             </div>
                         </div>
                         <div class="input w-date">
                             <div class="label"> To date </div>
-                            <input type="date" name="wvalidity" id="t-date" autocomplete="off">
+                            <input type="date" name="wvalidity" id="t-date" max="<?php echo $maxDate ?>" autocomplete="off">
                             <div class="error error-hidden">
                             </div>
                         </div>
