@@ -121,7 +121,15 @@
                 <!-- Activities -->
                 <div class="titleBtn">
                     <div class="titlee">Activities</div>
-                    <div class="reportBtn">Generate report</div>
+                    <?php
+                        $query="SELECT `id` from `tbl_staff_activity` where `userid`='$staffId'";
+                        $queryRes=mysqli_query($conn, $query);
+                        if(mysqli_num_rows($queryRes)>0){
+                    ?>
+                        <div class="reportBtn">Generate report</div>
+                    <?php
+                        }else{}
+                    ?>
                 </div>
                 <div class="headings">
                     <div>Slno.</div>
@@ -136,7 +144,7 @@
                         $i=1;
                         while($row=mysqli_fetch_array($result)){
                             $datetime = $row["date_time"];
-                            $date = date('d-m-y', strtotime($datetime));
+                            $date = date('d-m-Y', strtotime($datetime));
                             $time = date('h:i a', strtotime($datetime));
                     ?>
                     <div class="data">
@@ -260,7 +268,8 @@
                 $fetchMaxResult=mysqli_query($conn,$fetchMax);
                 $maxData=mysqli_fetch_assoc($fetchMaxResult);
                 $maxDate=$maxData['date_time'];
-                $maxDate = date('Y-m-d', strtotime($maxDate));
+                $maxDate = date('Y-m-d', strtotime($maxDate)+ 63200);
+                //$maxDate->modify('+1 day');
 
                 $fetchMin="SELECT `date_time` FROM `tbl_staff_activity` WHERE `date_time`=(SELECT MIN(date_time) FROM tbl_staff_activity) AND `userid`='$staffId'";
                 $fetchMinResult=mysqli_query($conn,$fetchMin);
@@ -274,20 +283,19 @@
                     <div class="half-input">
                         <div class="input w-date">
                             <div class="label"> From date </div>
-                            <input type="date" name="f-date" id="f-date" min="<?php echo $minDate ?>" max="<?php echo $maxDate ?>" autocomplete="off">
+                            <input type="date" name="fDate" id="f-date" min="<?php echo $minDate ?>" max="<?php echo $maxDate ?>" autocomplete="off">
                             <div class="error error-hidden">
                             </div>
                         </div>
                         <div class="input w-date">
                             <div class="label"> To date </div>
-                            <input type="date" name="t-date" id="t-date" min="<?php echo $minDate ?>" max="<?php echo $maxDate ?>" autocomplete="off">
+                            <input type="date" name="tDate" id="t-date" min="<?php echo $minDate ?>" max="<?php echo $maxDate ?>" autocomplete="off">
                             <div class="error error-hidden">
                             </div>
                         </div>
                     </div>
                     <div class="button gBtn cursor-disable">
-                        <input type="submit" value="Download report" name="update-staff" id="gen-btn" onclick="loader()"
-                            class="primary-button disabled">
+                        <input type="submit" value="Download report" name="update-staff" id="gen-btn" class="primary-button disabled">
                     </div>
                 </div>
             </form>
