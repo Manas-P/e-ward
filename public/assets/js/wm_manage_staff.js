@@ -169,3 +169,59 @@ deleteForm.addEventListener("keyup",()=>{
 // ====================================================================
 // ====================== End of Delete Staff =========================
 // ====================================================================
+
+// ====================================================================
+// ======================== Generate report ===========================
+// ====================================================================
+const genRepBtn = document.querySelector(".reportBtn");
+const closeGeneModal=document.querySelector(".close-generate");
+const genRepModal = document.querySelector(".modal-box3");
+
+//delete house
+genRepBtn.addEventListener("click",()=>{
+    overlay.classList.remove("modal-hidden");
+    genRepModal.classList.remove("modal-hidden");
+})
+
+//Close button
+closeGeneModal.addEventListener("click",()=>{
+    overlay.classList.add("modal-hidden");
+    genRepModal.classList.add("modal-hidden");
+})
+
+//===============Validation for report=====================
+const genForm = document.querySelector("#gen-rep-form");
+const genBtn = document.querySelector("#gen-btn");
+
+//checkbox validation
+const fdate = document.querySelector("#f-date");
+const tdate = document.querySelector("#t-date");
+let fdateSubmit = false;
+let tdateSubmit = false;
+
+fdate.addEventListener("change",() => {
+    if(fdate.value == null){
+        fdateSubmit=false;
+    }else{
+        fdateSubmit=true;
+    }
+})
+
+tdate.addEventListener("change",() => {
+    if(tdate.value == null){
+        tdateSubmit=false;
+    }else{
+        tdateSubmit=true;
+    }
+})
+
+const genButtonCursor=document.querySelector(".gBtn");//To avoid poniterevent and cursor problem
+genForm.addEventListener("change",()=>{
+    if(fdateSubmit==true && tdateSubmit==true){
+        genBtn.classList.remove("disabled");
+        genButtonCursor.classList.remove("cursor-disabled");
+    }else{
+        genBtn.classList.add("disabled");
+        genButtonCursor.classList.add("cursor-disabled");
+    }
+});

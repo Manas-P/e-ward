@@ -119,7 +119,10 @@
                 </div>
 
                 <!-- Activities -->
-                <div class="titlee">Activities</div>
+                <div class="titleBtn">
+                    <div class="titlee">Activities</div>
+                    <div class="reportBtn">Generate report</div>
+                </div>
                 <div class="headings">
                     <div>Slno.</div>
                     <div style="margin-left: 80px;">Date</div>
@@ -238,6 +241,39 @@
                     <textarea name="hdel_reason" id="hdelreason" rows="10"></textarea>
                     <div class="button dBtn cursor-disable">
                         <input type="submit" value="Delete staff" name="deleteStaffBtn" id="delhBtn" onclick="loader()"
+                            class="primary-button disabled">
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- form to generate report -->
+        <div class="box modal-box3 modal-hidden">
+            <div class="title"> Generate report </div>
+            <div class="modal-close-btn close-generate">
+                <img src="../../../../public/assets/images/close.svg" alt="close button">
+            </div>
+            <!-- Generate report -->
+            <form action="" method="post" id="gen-rep-form" enctype="multipart/form-data">
+                <input type="hidden" name="hm_already_photo" value="<?php echo $sPhoto ?>">
+                <input type="hidden" name="staff_id" value="<?php echo $staffId ?>">
+                <div class="inputs">
+                    <div class="half-input">
+                        <div class="input w-date">
+                            <div class="label"> From date </div>
+                            <input type="date" name="wvalidity" id="f-date" autocomplete="off">
+                            <div class="error error-hidden">
+                            </div>
+                        </div>
+                        <div class="input w-date">
+                            <div class="label"> To date </div>
+                            <input type="date" name="wvalidity" id="t-date" autocomplete="off">
+                            <div class="error error-hidden">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button gBtn cursor-disable">
+                        <input type="submit" value="Download report" name="update-staff" id="gen-btn" onclick="loader()"
                             class="primary-button disabled">
                     </div>
                 </div>

@@ -139,11 +139,30 @@ body {
             }
         }
         // Activites
-        .titlee{
-            font-family: "Gilroy_SB";
-            font-size: 28px;
-            color: text;
+        .titleBtn{
             margin-top: 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .titlee {
+                    font-family: "Gilroy_SB";
+                    font-size: 28px;
+                    color: $text;
+                }
+            .reportBtn{
+                font-family: "Gilroy_SB";
+                font-size: 18px;
+                color: $white;
+                background: $primary;
+                padding:8px 24px;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: .2s ease-in-out;
+                user-select: none;
+                &:active{
+                    transform: scale(.95);
+                }
+            }
         }
         .headings {
             margin: 48px 16px 0 16px;
@@ -202,6 +221,11 @@ body {
         row-gap: 32px;
         margin-top: 40px;
         @include input_fields(460px);
+        .half-input {
+                display: flex;
+                justify-content: space-between;
+                @include input_fields(216px);
+            }
         .checkboxes {
             display: flex;
             flex-wrap: wrap;
