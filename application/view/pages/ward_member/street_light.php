@@ -247,7 +247,7 @@
                                 while($row=mysqli_fetch_array($result)){
                             ?>
                                 <div class="checkbox">
-                                    <input type="checkbox" name="houseno[]" value="<?php echo $row['house_no']; ?>" id="<?php echo $row['house_no']; ?>">
+                                    <input type="checkbox" class="hm-checkbox" name="houseno[]" value="<?php echo $row['house_no']; ?>" id="<?php echo $row['house_no']; ?>">
                                     <label for="<?php echo $row['house_no']; ?>"><?php echo $row['house_no']; ?></label>
                                 </div>
                             <?php

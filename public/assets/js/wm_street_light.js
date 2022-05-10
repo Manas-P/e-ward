@@ -46,14 +46,16 @@ closeModal.addEventListener("click",()=>{
 const addSlForm=document.querySelector("#add-task");
 const commAddBtn=document.querySelector("#add-comm");
 const commName=document.querySelector("#comm-name");
-const commloca=document.querySelector("#comm-locality");
+const commloca = document.querySelector("#comm-locality");
+// const chkboxes = document.querySelectorAll(".hm-checkbox");
 
 
 //Error Message Class
 const commNameError=document.querySelector(".commName .error");
 const commlocaError=document.querySelector(".commlocality .error");
 var commNameSubmit=false;
-var commlocaSubmit=false;
+var commlocaSubmit = false;
+// var chkboxSubmit = false;
 
 //Check name
 commName.addEventListener("input",()=>{
@@ -83,6 +85,17 @@ commloca.addEventListener("input",()=>{
      }
 })
 
+//Chekbox validation
+// for (eachChkbox of chkboxes) {
+//     eachChkbox.addEventListener("click",() => {
+//         console.log(eachChkbox);
+        // if (eachChkbox.checked == true) {
+        //     chkboxSubmit = true;
+        // } else {
+        //     chkboxSubmit = false;
+        // }
+//     })
+// }
 
 //Submit Button Visibility
 const buttonCursor=document.querySelector(".hBtn");//To avoid poniterevent and cursor problem

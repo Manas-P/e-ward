@@ -13,7 +13,7 @@
                             </svg>
                             <div class="text active">Ward Members</div>
                         </a>
-                        <a href="" class="menu">
+                        <!-- <a href="" class="menu">
                             <svg width="24" height="22" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path class="str" d="M15.6667 2.75H1.91675V14.6667H15.6667V2.75Z" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                 <path class="str" d="M15.6667 7.33334H19.3334L22.0834 10.0833V14.6667H15.6667V7.33334Z" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -21,7 +21,7 @@
                                 <path class="str" d="M17.9584 19.25C19.2241 19.25 20.2501 18.224 20.2501 16.9583C20.2501 15.6927 19.2241 14.6667 17.9584 14.6667C16.6928 14.6667 15.6667 15.6927 15.6667 16.9583C15.6667 18.224 16.6928 19.25 17.9584 19.25Z" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                             <div class="text">Waste Manager</div>
-                        </a>
+                        </a> -->
                         <a href="" class="menu">
                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path class="str" d="M10.0833 3.77783H3.66659C3.18036 3.77783 2.71404 3.97099 2.37022 4.3148C2.02641 4.65862 1.83325 5.12494 1.83325 5.61117V18.4445C1.83325 18.9307 2.02641 19.397 2.37022 19.7409C2.71404 20.0847 3.18036 20.2778 3.66659 20.2778H16.4999C16.9861 20.2778 17.4525 20.0847 17.7963 19.7409C18.1401 19.397 18.3333 18.9307 18.3333 18.4445V12.0278" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
