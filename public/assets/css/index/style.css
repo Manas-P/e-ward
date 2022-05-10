@@ -203,7 +203,8 @@ html {
 .main .sections .form .box .inputs .input input[type="date"],
 .main .sections .form .box .inputs .input input[type="file"],
 .main .sections .form .box .inputs .input input[type="number"],
-.main .sections .form .box .inputs .input input[type="password"] {
+.main .sections .form .box .inputs .input input[type="password"],
+.main .sections .form .box .inputs .input select {
   width: 100%;
   height: 53px;
   font-size: 18px;
@@ -221,8 +222,20 @@ html {
 .main .sections .form .box .inputs .input input[type="date"]:focus,
 .main .sections .form .box .inputs .input input[type="file"]:focus,
 .main .sections .form .box .inputs .input input[type="number"]:focus,
-.main .sections .form .box .inputs .input input[type="password"]:focus {
+.main .sections .form .box .inputs .input input[type="password"]:focus,
+.main .sections .form .box .inputs .input select:focus {
   border: 1px solid #1e1e1e;
+}
+
+.main .sections .form .box .inputs .input .select {
+  padding: 16px;
+  height: 58px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAUCAMAAACtdX32AAAAdVBMVEUAAAD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhMdQaAAAAJ3RSTlMAAAECAwQGBwsOFBwkJTg5RUZ4eYCHkJefpaytrsXGy8zW3+Do8vNn0bsyAAAAYElEQVR42tXROwJDQAAA0Ymw1p9kiT+L5P5HVEi3qJn2lcPjtIuzUIJ/rhIGy762N3XaThqMN1ZPALsZPEzG1x8LrFL77DHBnEMxBewz0fJ6LyFHTPL7xhwzWYrJ9z22AqmQBV757MHfAAAAAElFTkSuQmCC);
+  background-position: 100%;
+  background-repeat: no-repeat;
 }
 
 .main .sections .form .box .inputs .input .error {
@@ -485,7 +498,8 @@ html {
 .box2 .inputs .input input[type="date"],
 .box2 .inputs .input input[type="file"],
 .box2 .inputs .input input[type="number"],
-.box2 .inputs .input input[type="password"] {
+.box2 .inputs .input input[type="password"],
+.box2 .inputs .input select {
   width: 100%;
   height: 53px;
   font-size: 18px;
@@ -503,8 +517,20 @@ html {
 .box2 .inputs .input input[type="date"]:focus,
 .box2 .inputs .input input[type="file"]:focus,
 .box2 .inputs .input input[type="number"]:focus,
-.box2 .inputs .input input[type="password"]:focus {
+.box2 .inputs .input input[type="password"]:focus,
+.box2 .inputs .input select:focus {
   border: 1px solid #1e1e1e;
+}
+
+.box2 .inputs .input .select {
+  padding: 16px;
+  height: 58px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAUCAMAAACtdX32AAAAdVBMVEUAAAD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhMdQaAAAAJ3RSTlMAAAECAwQGBwsOFBwkJTg5RUZ4eYCHkJefpaytrsXGy8zW3+Do8vNn0bsyAAAAYElEQVR42tXROwJDQAAA0Ymw1p9kiT+L5P5HVEi3qJn2lcPjtIuzUIJ/rhIGy762N3XaThqMN1ZPALsZPEzG1x8LrFL77DHBnEMxBewz0fJ6LyFHTPL7xhwzWYrJ9z22AqmQBV757MHfAAAAAElFTkSuQmCC);
+  background-position: 100%;
+  background-repeat: no-repeat;
 }
 
 .box2 .inputs .input .error {
@@ -546,7 +572,8 @@ html {
 .box2 .inputs .half-input .input input[type="date"],
 .box2 .inputs .half-input .input input[type="file"],
 .box2 .inputs .half-input .input input[type="number"],
-.box2 .inputs .half-input .input input[type="password"] {
+.box2 .inputs .half-input .input input[type="password"],
+.box2 .inputs .half-input .input select {
   width: 100%;
   height: 53px;
   font-size: 18px;
@@ -564,8 +591,20 @@ html {
 .box2 .inputs .half-input .input input[type="date"]:focus,
 .box2 .inputs .half-input .input input[type="file"]:focus,
 .box2 .inputs .half-input .input input[type="number"]:focus,
-.box2 .inputs .half-input .input input[type="password"]:focus {
+.box2 .inputs .half-input .input input[type="password"]:focus,
+.box2 .inputs .half-input .input select:focus {
   border: 1px solid #1e1e1e;
+}
+
+.box2 .inputs .half-input .input .select {
+  padding: 16px;
+  height: 58px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAUCAMAAACtdX32AAAAdVBMVEUAAAD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhMdQaAAAAJ3RSTlMAAAECAwQGBwsOFBwkJTg5RUZ4eYCHkJefpaytrsXGy8zW3+Do8vNn0bsyAAAAYElEQVR42tXROwJDQAAA0Ymw1p9kiT+L5P5HVEi3qJn2lcPjtIuzUIJ/rhIGy762N3XaThqMN1ZPALsZPEzG1x8LrFL77DHBnEMxBewz0fJ6LyFHTPL7xhwzWYrJ9z22AqmQBV757MHfAAAAAElFTkSuQmCC);
+  background-position: 100%;
+  background-repeat: no-repeat;
 }
 
 .box2 .inputs .half-input .input .error {

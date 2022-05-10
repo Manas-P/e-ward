@@ -359,7 +359,7 @@ body {
   padding: 16px 0;
   border: 2px solid #5744e3;
   outline: none;
-  width: 100%;
+  width: 382px;
   border-radius: 10px;
   cursor: pointer;
   -webkit-transition: 0.1s ease-in-out;
@@ -447,7 +447,8 @@ body {
 .main .container .right .general .information .inputs .input input[type="date"],
 .main .container .right .general .information .inputs .input input[type="file"],
 .main .container .right .general .information .inputs .input input[type="number"],
-.main .container .right .general .information .inputs .input input[type="password"] {
+.main .container .right .general .information .inputs .input input[type="password"],
+.main .container .right .general .information .inputs .input select {
   width: 100%;
   height: 53px;
   font-size: 18px;
@@ -465,8 +466,20 @@ body {
 .main .container .right .general .information .inputs .input input[type="date"]:focus,
 .main .container .right .general .information .inputs .input input[type="file"]:focus,
 .main .container .right .general .information .inputs .input input[type="number"]:focus,
-.main .container .right .general .information .inputs .input input[type="password"]:focus {
+.main .container .right .general .information .inputs .input input[type="password"]:focus,
+.main .container .right .general .information .inputs .input select:focus {
   border: 1px solid #1e1e1e;
+}
+
+.main .container .right .general .information .inputs .input .select {
+  padding: 16px;
+  height: 58px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAUCAMAAACtdX32AAAAdVBMVEUAAAD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhMdQaAAAAJ3RSTlMAAAECAwQGBwsOFBwkJTg5RUZ4eYCHkJefpaytrsXGy8zW3+Do8vNn0bsyAAAAYElEQVR42tXROwJDQAAA0Ymw1p9kiT+L5P5HVEi3qJn2lcPjtIuzUIJ/rhIGy762N3XaThqMN1ZPALsZPEzG1x8LrFL77DHBnEMxBewz0fJ6LyFHTPL7xhwzWYrJ9z22AqmQBV757MHfAAAAAElFTkSuQmCC);
+  background-position: 100%;
+  background-repeat: no-repeat;
 }
 
 .main .container .right .general .information .inputs .input .error {
@@ -507,7 +520,8 @@ body {
 .main .container .right .general .information .inputs .half-input .input input[type="date"],
 .main .container .right .general .information .inputs .half-input .input input[type="file"],
 .main .container .right .general .information .inputs .half-input .input input[type="number"],
-.main .container .right .general .information .inputs .half-input .input input[type="password"] {
+.main .container .right .general .information .inputs .half-input .input input[type="password"],
+.main .container .right .general .information .inputs .half-input .input select {
   width: 100%;
   height: 53px;
   font-size: 18px;
@@ -525,8 +539,20 @@ body {
 .main .container .right .general .information .inputs .half-input .input input[type="date"]:focus,
 .main .container .right .general .information .inputs .half-input .input input[type="file"]:focus,
 .main .container .right .general .information .inputs .half-input .input input[type="number"]:focus,
-.main .container .right .general .information .inputs .half-input .input input[type="password"]:focus {
+.main .container .right .general .information .inputs .half-input .input input[type="password"]:focus,
+.main .container .right .general .information .inputs .half-input .input select:focus {
   border: 1px solid #1e1e1e;
+}
+
+.main .container .right .general .information .inputs .half-input .input .select {
+  padding: 16px;
+  height: 58px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAUCAMAAACtdX32AAAAdVBMVEUAAAD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhMdQaAAAAJ3RSTlMAAAECAwQGBwsOFBwkJTg5RUZ4eYCHkJefpaytrsXGy8zW3+Do8vNn0bsyAAAAYElEQVR42tXROwJDQAAA0Ymw1p9kiT+L5P5HVEi3qJn2lcPjtIuzUIJ/rhIGy762N3XaThqMN1ZPALsZPEzG1x8LrFL77DHBnEMxBewz0fJ6LyFHTPL7xhwzWYrJ9z22AqmQBV757MHfAAAAAElFTkSuQmCC);
+  background-position: 100%;
+  background-repeat: no-repeat;
 }
 
 .main .container .right .general .information .inputs .half-input .input .error {
@@ -603,7 +629,8 @@ body {
 .main .container .right .proofs .files .inputs .input input[type="date"],
 .main .container .right .proofs .files .inputs .input input[type="file"],
 .main .container .right .proofs .files .inputs .input input[type="number"],
-.main .container .right .proofs .files .inputs .input input[type="password"] {
+.main .container .right .proofs .files .inputs .input input[type="password"],
+.main .container .right .proofs .files .inputs .input select {
   width: 100%;
   height: 53px;
   font-size: 18px;
@@ -621,8 +648,20 @@ body {
 .main .container .right .proofs .files .inputs .input input[type="date"]:focus,
 .main .container .right .proofs .files .inputs .input input[type="file"]:focus,
 .main .container .right .proofs .files .inputs .input input[type="number"]:focus,
-.main .container .right .proofs .files .inputs .input input[type="password"]:focus {
+.main .container .right .proofs .files .inputs .input input[type="password"]:focus,
+.main .container .right .proofs .files .inputs .input select:focus {
   border: 1px solid #1e1e1e;
+}
+
+.main .container .right .proofs .files .inputs .input .select {
+  padding: 16px;
+  height: 58px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAUCAMAAACtdX32AAAAdVBMVEUAAAD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhMdQaAAAAJ3RSTlMAAAECAwQGBwsOFBwkJTg5RUZ4eYCHkJefpaytrsXGy8zW3+Do8vNn0bsyAAAAYElEQVR42tXROwJDQAAA0Ymw1p9kiT+L5P5HVEi3qJn2lcPjtIuzUIJ/rhIGy762N3XaThqMN1ZPALsZPEzG1x8LrFL77DHBnEMxBewz0fJ6LyFHTPL7xhwzWYrJ9z22AqmQBV757MHfAAAAAElFTkSuQmCC);
+  background-position: 100%;
+  background-repeat: no-repeat;
 }
 
 .main .container .right .proofs .files .inputs .input .error {

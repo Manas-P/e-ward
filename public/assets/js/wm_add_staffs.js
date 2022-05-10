@@ -64,10 +64,10 @@ ofEmail.addEventListener("input",()=>{
         ofEmailError.classList.remove("error-visible");
         ofEmailSubmit=true;
     }else if(ofEmail.value==""){
-        //No error shown for blank
-        ofEmailError.classList.add("error-hidden");
-        ofEmailError.classList.remove("error-visible");
-        ofEmailSubmit=true;
+        ofEmailError.classList.add("error-visible");
+        ofEmailError.classList.remove("error-hidden");
+        ofEmailError.innerText="Field cannot be blank";
+        ofEmailSubmit=false;
     }else{
         ofEmailError.classList.add("error-visible");
         ofEmailError.classList.remove("error-hidden");

@@ -64,7 +64,7 @@ html {
 }
 @mixin box_model($width, $height) {
   display: block;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -111,7 +111,8 @@ html {
     input[type="date"],
     input[type="file"],
     input[type="number"],
-    input[type="password"] {
+    input[type="password"],
+    select{
       width: 100%;
       height: 53px;
       font-size: 18px;
@@ -125,6 +126,14 @@ html {
       &:focus {
         border: 1px solid $text;
       }
+    }
+    .select{
+      padding: 16px;
+      height:58px;
+      appearance: none;
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAUCAMAAACtdX32AAAAdVBMVEUAAAD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhMdQaAAAAJ3RSTlMAAAECAwQGBwsOFBwkJTg5RUZ4eYCHkJefpaytrsXGy8zW3+Do8vNn0bsyAAAAYElEQVR42tXROwJDQAAA0Ymw1p9kiT+L5P5HVEi3qJn2lcPjtIuzUIJ/rhIGy762N3XaThqMN1ZPALsZPEzG1x8LrFL77DHBnEMxBewz0fJ6LyFHTPL7xhwzWYrJ9z22AqmQBV757MHfAAAAAElFTkSuQmCC);
+      background-position: 100%;
+      background-repeat: no-repeat;
     }
     .error {
       position: absolute;
@@ -181,7 +190,7 @@ html {
   padding: 16px 0;
   border: 2px solid $primary;
   outline: none;
-  width: 100%;
+  width: $width;
   border-radius: 10px;
   cursor: pointer;
   transition: 0.1s ease-in-out;

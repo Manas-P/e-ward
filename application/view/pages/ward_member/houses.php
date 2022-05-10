@@ -79,7 +79,7 @@
                         $i=1;
                         while($row=mysqli_fetch_array($result)){
                     ?>
-                    <div class="data">
+                    <a href="./view_house.php?houseno=<?php echo $row['house_no'];?>" class="data">
                         <table>
                             <tr>
                                 <td width=104px><?php echo $i; ?></td>
@@ -92,7 +92,7 @@
                                 <td><?php echo $row['category']; ?></td>
                             </tr>
                         </table>
-                    </div>
+                    </a>
                     <?php
                         $i=$i+1;
                         }
@@ -100,6 +100,40 @@
                 </div>
             </div>
         </section>
+
+        <!-- Error Toast -->
+        <?php
+        if (isset($_SESSION['error'])) {
+            $msg=$_SESSION['error'];
+          echo " <div class='alertt alert-visible'> 
+                        <div class='econtent'>
+                            <img src='../../../../public/assets/images/warning.svg' alt='warning'>
+                            <div class='text'>
+                                $msg
+                            </div>
+                        </div>
+                        <img src='../../../../public/assets/images/close.svg' alt='close' class='alert-close'>
+                    </div>";
+          unset($_SESSION['error']);
+        }?>
+
+        <!-- Success toast -->
+        <?php
+            if (isset($_SESSION['success'])) {
+                $msg=$_SESSION['success'];
+                echo " <div class='alertt alert-visible' style='border-left: 10px solid #1BBD2B;'>
+                            <div class='econtent'>
+                                <img src='../../../../public/assets/images/check.svg' alt='success'>
+                                <div class='text'>
+                                    $msg
+                                </div>
+                            </div>
+                            <img src='../../../../public/assets/images/close.svg' alt='close' class='alert-close'>
+                        </div>";
+                unset($_SESSION['success']);
+        }?>
+        
+        <script src="../../../../public/assets/js/toast.js"></script>
         <script>
             function searchHouse(item){
                 if(item.length!=0){

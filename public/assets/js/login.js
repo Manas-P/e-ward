@@ -174,7 +174,7 @@ taxRep.addEventListener("change",()=>{
 
 //Submit Button Visibility
 const buttonCursor=document.querySelector(".button");//To avoid poniterevent and cursor problem
-regForm.addEventListener("keyup",()=>{
+regForm.addEventListener("change",()=>{
     //console.log(fullNameSubmit,emailSubmit,phnoSubmit,wrdnoSubmit,hosnoSubmit,taxrepSubmit);
     if(fullNameSubmit==true && emailSubmit==true && phnoSubmit==true && wrdnoSubmit==true && hosnoSubmit==true && taxrepSubmit){
         regSubBtn.classList.remove("disabled");

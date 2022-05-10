@@ -45,11 +45,6 @@
                     </div>
                 </div>
                 <div class="hyper-link">
-                    <div class="attendance">
-                        <a href="">
-                            Attendance
-                        </a>
-                    </div>
                     <div class="leave-req">
                         <a href="">
                             Leave requests
@@ -76,18 +71,18 @@
 
                         <!-- Fetch office staffs -->
                         <?php
-                            $fetchQuery="SELECT `name`, `phno`, `photo` FROM `tbl_office_staff` WHERE `wardno`='$wardno'";
+                            $fetchQuery="SELECT `name`, `phno`, `photo`, `userid` FROM `tbl_office_staff` WHERE `wardno`='$wardno' AND `status`='1'";
                             $fetchResult=mysqli_query($conn,$fetchQuery);
                             if(mysqli_num_rows($fetchResult)>0){
                                 while($row = mysqli_fetch_assoc($fetchResult)){
                         ?>
-                                <a href="" class="member">
+                                <a href="./office_staff.php?id=<?php echo $row['userid']; ?>" class="member">
                                     <div class="photo">
-                                        <img src="../<?php echo $row["photo"]; ?>" alt="member photo">
+                                        <img src="../<?php echo $row['photo']; ?>" alt="member photo">
                                     </div>
                                     <div class="about">
-                                        <div class="name"><?php echo $row["name"]; ?></div>
-                                        <div class="tag"><?php echo $row["phno"]; ?></div>
+                                        <div class="name"><?php echo $row['name']; ?></div>
+                                        <div class="tag"><?php echo $row['phno']; ?></div>
                                     </div>
                                 </a>
                         <?php
@@ -162,7 +157,7 @@
                             </div>
                             <div class="checkbox">
                                 <input type="checkbox" name="mcomplaint" value="0" id="manage-complaints">
-                                <label for="manage-complaints">Manage complaints</label>
+                                <label for="manage-complaints">Manage requests</label>
                             </div>
                         </div>
                     </div>

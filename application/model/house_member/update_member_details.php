@@ -28,7 +28,7 @@
             if(empty($_FILES["hmuphoto"]['name'])){
                 $filepath=$hm_already_photo;
             }else{
-                $upload_dir = '../../../public/assets/images/';
+                $upload_dir = '../../../public/assets/images/uploads/photos/';
                 $file_tmpname = $_FILES['hmuphoto']['tmp_name'];
                 $file_name = $_FILES['hmuphoto']['name'];
                 $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);

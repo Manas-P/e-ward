@@ -291,6 +291,7 @@ body {
 .main .container .header .title {
   font-family: Gilroy_SB;
   font-size: 38px;
+  margin-top: 0;
 }
 
 .main .container .header .search svg {
@@ -360,7 +361,7 @@ body {
           justify-content: space-between;
 }
 
-.main .container .task-det .card {
+.main .container .task-det .card1 {
   height: 222px;
   width: 704px;
   background: #fff;
@@ -370,7 +371,7 @@ body {
   padding: 20px 24px;
 }
 
-.main .container .task-det .card .content {
+.main .container .task-det .card1 .content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -381,18 +382,165 @@ body {
   row-gap: 8px;
 }
 
-.main .container .task-det .card .content .heading {
+.main .container .task-det .card1 .content .heading {
   font-family: "Gilroy_SB";
   font-size: 24px;
   color: #1e1e1e;
 }
 
-.main .container .task-det .card .content .description {
+.main .container .task-det .card1 .content .description {
   font-family: "Gilroy_M";
   font-size: 18px;
   color: #8b8b8b;
   line-height: 26px;
   max-width: 656px;
+}
+
+.main .container .task-det .card2 {
+  height: 222px;
+  width: 704px;
+  background: #fff;
+  -webkit-box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
+          box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
+  border-radius: 10px;
+  padding: 20px 24px;
+}
+
+.main .container .task-det .card2 .heading {
+  font-family: "Gilroy_SB";
+  font-size: 24px;
+  color: #1e1e1e;
+}
+
+.main .container .task-det .card2 .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin-top: 16px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .container .task-det .card2 .content .right {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 12px;
+}
+
+.main .container .task-det .card2 .content .right .detail {
+  font-family: "Gilroy_M";
+  font-size: 18px;
+  color: #8b8b8b;
+}
+
+.main .container .task-det .card2 .content .right .detail span {
+  font-family: "Gilroy_SB";
+  font-size: 18px;
+  color: #1e1e1e;
+  margin-left: 8px;
+}
+
+.main .container .task-det .card2 .content .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 24px;
+          column-gap: 24px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.main .container .task-det .card2 .content .left .divider {
+  background: #ECECEC;
+  height: 60px;
+  width: 2px;
+  border-radius: 4px;
+}
+
+.main .container .task-det .card2 .content .left .details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 12px;
+}
+
+.main .container .task-det .card2 .content .left .details .detail {
+  font-family: "Gilroy_M";
+  font-size: 18px;
+  color: #8b8b8b;
+}
+
+.main .container .task-det .card2 .content .left .details .detail span {
+  font-family: "Gilroy_SB";
+  font-size: 18px;
+  color: #1e1e1e;
+  margin-left: 8px;
+}
+
+.main .container .task-det .card2 .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 24px;
+          column-gap: 24px;
+  margin-top: 18px;
+}
+
+.main .container .task-det .card2 .buttons .secondary-btn {
+  background: #fff;
+  color: #5744e3;
+  font-family: "Gilroy_B";
+  font-size: 18px;
+  text-align: center;
+  padding: 16px 0;
+  border: 2px solid #5744e3;
+  outline: none;
+  width: 316px;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+}
+
+.main .container .task-det .card2 .buttons .secondary-btn:hover {
+  background: #f4f3ff;
+}
+
+.main .container .task-det .card2 .buttons .secondary-btn:active {
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
+}
+
+.main .container .task-det .card2 .buttons .red-btn {
+  border: 2px solid #ec0000;
+  color: #ec0000;
+}
+
+.main .container .task-det .card2 .buttons .red-btn:hover {
+  background: #fff5f5;
+}
+
+.main .container .task-det .card2 .buttons .red-btn:active {
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
 }
 
 .main .container .title {
