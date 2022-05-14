@@ -13,7 +13,7 @@
              // Return error toast
              echo  '<div class="alertt alert-visible">
                         <div class="econtent">
-                            <img src="../../public/assets/images/warning.svg" alt="warning">
+                            <img src="../../../../public/assets/images/warning.svg" alt="warning">
                             <div class="text">
                                 House already registered
                             </div>

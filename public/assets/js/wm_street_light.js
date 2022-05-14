@@ -99,7 +99,7 @@ commloca.addEventListener("input",()=>{
 
 //Submit Button Visibility
 const buttonCursor=document.querySelector(".hBtn");//To avoid poniterevent and cursor problem
-addSlForm.addEventListener("keyup",()=>{
+addSlForm.addEventListener("change",()=>{
     if(commNameSubmit==true && commlocaSubmit==true){
         commAddBtn.classList.remove("disabled");
         buttonCursor.classList.remove("cursor-disabled");
