@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 06, 2022 at 08:25 PM
+-- Generation Time: May 14, 2022 at 04:11 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.25
 
@@ -48,23 +48,27 @@ INSERT INTO `tbl_admin` (`adid`, `username`, `password`) VALUES
 
 CREATE TABLE `tbl_committee` (
   `id` int(10) NOT NULL,
+  `c_id` int(10) NOT NULL,
   `wardno` int(10) NOT NULL,
   `c_name` varchar(100) NOT NULL,
   `c_description` varchar(300) NOT NULL,
   `c_photo` varchar(100) NOT NULL,
   `m_limit` int(10) NOT NULL,
   `m_joined` int(10) NOT NULL DEFAULT 0,
-  `added_by` varchar(10) NOT NULL
+  `added_by` varchar(10) NOT NULL,
+  `status` int(10) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tbl_committee`
 --
 
-INSERT INTO `tbl_committee` (`id`, `wardno`, `c_name`, `c_description`, `c_photo`, `m_limit`, `m_joined`, `added_by`) VALUES
-(1, 2, 'Committee new', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', '../../../public/assets/images/uploads/photos/1648653556.jpg', 25, 0, '2'),
-(2, 2, 'Committe two', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, se', '../../../public/assets/images/uploads/photos/1648653604.jpg', 20, 0, '2'),
-(3, 2, 'Committee long name submitted', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', '../../../public/assets/images/uploads/photos/1648653685.jpg', 15, 0, '2');
+INSERT INTO `tbl_committee` (`id`, `c_id`, `wardno`, `c_name`, `c_description`, `c_photo`, `m_limit`, `m_joined`, `added_by`, `status`) VALUES
+(1, 2221, 2, 'Committee new', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', '../../../public/assets/images/uploads/photos/1648653556.jpg', 25, 0, '2', 1),
+(2, 2222, 2, 'Committe two', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, se', '../../../public/assets/images/uploads/photos/1648653604.jpg', 20, 0, '2', 1),
+(3, 2223, 2, 'Committee long name submitted', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', '../../../public/assets/images/uploads/photos/1648653685.jpg', 15, 0, '2', 1),
+(4, 2224, 2, 'Flood relief', 'oosdi fosdhf iuhdif uiudhfisuhdf isudhf iushdfishdiufh sduhfishdf isudhfishdhf df.', '../../../public/assets/images/uploads/photos/1652537266.png', 30, 0, '2', 1),
+(5, 3331, 3, 'trst new ward', 'uer iuerh ihuer', '../../../public/assets/images/uploads/photos/1652537311.png', 10, 0, '3', 1);
 
 -- --------------------------------------------------------
 
@@ -579,7 +583,9 @@ INSERT INTO `tbl_registration` (`rid`, `fname`, `email`, `phno`, `wardno`, `hous
 (70, 'Frank', 'frankmathewsthomas@gmail.com', 9875456324, 2, 11, '../../public/assets/documents/taxreport/1648784715.pdf', 1),
 (72, 'chech staff', 'chkstaff@gmail.com', 9854562321, 2, 122, '../../public/assets/documents/taxreport/1651347683.pdf', 1),
 (73, 'chech ward mem', 'chkmem@gmail.com', 9854563210, 2, 123, '../../public/assets/documents/taxreport/1651347757.pdf', 1),
-(74, 'tset time', 'tefy@gmail.cm', 9854512547, 2, 112, '../../public/assets/documents/taxreport/1651349066.pdf', 1);
+(74, 'tset time', 'tefy@gmail.cm', 9854512547, 2, 112, '../../public/assets/documents/taxreport/1651349066.pdf', 1),
+(78, 'Ligin Abraham', 'liginab@gmail.com', 9854541254, 2, 87, '../../public/assets/documents/taxreport/1652153201.pdf', 0),
+(79, 'Telbin Cherian', 'telbincherian@gmail.com', 8545795231, 2, 46, '../../public/assets/documents/taxreport/1652153363.pdf', 0);
 
 -- --------------------------------------------------------
 
@@ -696,7 +702,8 @@ ALTER TABLE `tbl_admin`
 --
 ALTER TABLE `tbl_committee`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `wardno` (`wardno`);
+  ADD KEY `wardno` (`wardno`),
+  ADD KEY `c_id` (`c_id`);
 
 --
 -- Indexes for table `tbl_edu_bg`
@@ -810,7 +817,7 @@ ALTER TABLE `tbl_admin`
 -- AUTO_INCREMENT for table `tbl_committee`
 --
 ALTER TABLE `tbl_committee`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_edu_bg`
@@ -876,7 +883,7 @@ ALTER TABLE `tbl_pro_bg`
 -- AUTO_INCREMENT for table `tbl_registration`
 --
 ALTER TABLE `tbl_registration`
-  MODIFY `rid` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+  MODIFY `rid` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 
 --
 -- AUTO_INCREMENT for table `tbl_staff_activity`
@@ -888,7 +895,7 @@ ALTER TABLE `tbl_staff_activity`
 -- AUTO_INCREMENT for table `tbl_street_light`
 --
 ALTER TABLE `tbl_street_light`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tbl_ward_member`
