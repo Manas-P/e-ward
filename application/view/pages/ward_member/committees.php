@@ -72,7 +72,7 @@
 
                         <!-- Fetch committees -->
                         <?php
-                            $fetchQuery="SELECT `wardno`, `c_name`, `c_photo`, `m_limit`, `m_joined` FROM `tbl_committee` WHERE `wardno`='$wardno'";
+                            $fetchQuery="SELECT `c_id`, `wardno`, `c_name`, `c_photo`, `m_limit`, `m_joined` FROM `tbl_committee` WHERE `wardno`='$wardno' AND `status`='1'";
                             $fetchResult=mysqli_query($conn,$fetchQuery);
                             if(mysqli_num_rows($fetchResult)>0){
                                 while($row = mysqli_fetch_assoc($fetchResult)){
@@ -84,7 +84,7 @@
                                         $name=$name . "...";
                                     }
                         ?>
-                                <a href="./view_committee.php" class="member">
+                                <a href="./view_committee.php?c_id=<?php echo $row["c_id"]; ?>" class="member">
                                     <div class="photo">
                                         <img src="../<?php echo $row["c_photo"]; ?>" alt="member photo">
                                     </div>
