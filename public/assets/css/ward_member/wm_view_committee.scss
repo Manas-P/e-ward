@@ -241,6 +241,13 @@ body {
               font-family: "Gilroy_SB";
               color: $green;
             }
+            .approve-dis {
+              font-family: "Gilroy_SB";
+              cursor: no-drop;
+              user-select: none;
+              color: $subText;
+              text-decoration: line-through;
+            }
             .reject {
               font-family: "Gilroy_SB";
               color: $error;

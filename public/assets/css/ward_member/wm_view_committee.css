@@ -624,6 +624,17 @@ body {
   color: #039b00;
 }
 
+.main .container .tab-content .content-table .datas .data .approve-dis {
+  font-family: "Gilroy_SB";
+  cursor: no-drop;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: #8b8b8b;
+  text-decoration: line-through;
+}
+
 .main .container .tab-content .content-table .datas .data .reject {
   font-family: "Gilroy_SB";
   color: #ec0000;

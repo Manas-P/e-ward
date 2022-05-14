@@ -76,7 +76,6 @@
                             $fetchResult=mysqli_query($conn,$fetchQuery);
                             if(mysqli_num_rows($fetchResult)>0){
                                 while($row = mysqli_fetch_assoc($fetchResult)){
-
                                     //display only 13 character if it exceeds the limit
                                     $name=$row["c_name"];
                                     if(strlen($name)>13){

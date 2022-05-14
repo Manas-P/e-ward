@@ -28,7 +28,8 @@
     $headers="From: ewardmember@gmail.com";
     if(mail($toMail,$subject,$body,$headers)){
         $query="INSERT INTO `tbl_committee_member`(`c_id`, `h_userid`, `c_userid`, `password`) VALUES ('$c_id','$u_id','$c_userid','$generatedPassword') ; 
-                UPDATE `tbl_committee_req` SET `status`='1' WHERE `c_id`='$c_id' AND `userid`='$u_id'";
+                UPDATE `tbl_committee_req` SET `status`='1' WHERE `c_id`='$c_id' AND `userid`='$u_id' ; 
+                UPDATE `tbl_committee` SET `m_joined`=`m_joined` + 1 WHERE `c_id`='$c_id'";
         $queryResult=mysqli_multi_query($conn,$query);
         if($queryResult){
             $_SESSION['success'] = "Member added";

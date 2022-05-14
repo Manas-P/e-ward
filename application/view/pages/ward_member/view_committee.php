@@ -102,7 +102,7 @@
                         <div class="divider"></div>
                         <div class="contents">
                             <div class="content">Members limit:<span><?php echo $m_limit ?></span></div>
-                            <div class="content">Members joined:<span>16</span></div>
+                            <div class="content">Members joined:<span><?php echo $m_joined ?></span></div>
                             <div class="content">Created by:<span><?php echo $addedName ?></span></div>
                         </div>
                     </div>
@@ -249,10 +249,32 @@
                                         <td width=396px><?php echo $row["email"]; ?></td>
                                         <td width=130px><?php echo $age; ?></td>
                                         <td width=95px>
-                                            <a href="../../../model/ward_member/approve_committee_req.php?c_id=<?php echo $c_id; ?>&u_id=<?php echo $userid ?>" class="approve" onclick="loader()" >Approve</a>
+                                            <?php
+                                                if($m_joined!=0){
+                                                    if($m_limit/$m_joined==1){
+                                            ?>
+                                                    <a class="approve-dis" >Approve</a>
+                                            <?php
+                                                }else{
+                                            ?>
+                                                    <a href="../../../model/ward_member/approve_committee_req.php?c_id=<?php echo $c_id; ?>&u_id=<?php echo $userid ?>" class="approve" onclick="loader()" >Approve</a>
+                                            <?php
+                                                }
+                                            }
+                                            ?>
                                         </td>
                                         <td>
-                                            <a class="reject" >Reject</a>
+                                            <?php
+                                                if($m_joined!=0){
+                                                    if($m_limit/$m_joined==1){
+                                                }else{
+                                            ?>
+                                                    <a class="reject">Reject</a>
+                                            <?php
+                                                }
+                                            }
+                                            ?>
+                                            
                                         </td>
                                     </tr>
                                 </table>
