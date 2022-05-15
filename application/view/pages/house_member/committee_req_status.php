@@ -28,7 +28,7 @@ else
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>E Ward</title>
         <link rel="shortcut icon" href="../../../../public/assets/images/fav.svg" type="image/x-icon">
-        <link rel="stylesheet" href="../../../../public/assets/css/house_member/hm_committees.css">
+        <link rel="stylesheet" href="../../../../public/assets/css/house_member/hm_committee_req_sts.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     </head>
@@ -52,57 +52,62 @@ else
                         <input type="text" name="hsearch" placeholder="Search..." id="live-search" autocomplete="off" onkeyup="searchHouse(this.value)">
                     </div>
                 </div>
-                <div class="hyper-link">
-                    <div class="leave-req">
-                        <a href="./committee_req_status.php">
-                            View requests
-                        </a>
-                        <span class="noti-badge">
-                            <!-- Fetch request -->
-                            <?php
-                                $notiCount="SELECT `id` FROM `tbl_committee_req` WHERE `userid`='$user_id'";
-                                $notiCountResult=mysqli_query($conn,$notiCount);
-                                echo $rownotiCount = mysqli_num_rows($notiCountResult);
-                            ?>
-                        </span>
-                    </div>
+                <div class="bread-crumbs">
+                    <a href="./committees.php" class="previous">
+                        Committees
+                    </a>
+                    <svg class="str" width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.2002 8.59999L5.8002 4.99999L2.2002 1.39999" stroke="#1E1E1E" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <a href="" class="now">
+                        Requests
+                    </a>
                 </div>
                 <!-- content -->
                 <div class="headings">
                     <div>Slno.</div>
                     <div style="margin-left: 70px;">Committee name</div>
                     <div style="margin-left: 90px;">Description</div>
-                    <div style="margin-left: 810px;">Action</div>
+                    <div style="margin-left: 810px;">Status</div>
                 </div>
                 <div class="datas">
                     <?php
-                        $query="SELECT `c_id`, `c_name`, `c_description`, `m_limit`, `m_joined` FROM `tbl_committee` WHERE `wardno`='$wardno'";
-                        $result=mysqli_query($conn,$query);
+                        $fetchCommittee="SELECT `c_id`, `userid`, `status` FROM `tbl_committee_req` WHERE `userid`='$user_id'";
+                        $fetchCommitteeResult=mysqli_query($conn,$fetchCommittee);
+                        $rowfetchCommittee = mysqli_num_rows($fetchCommitteeResult);
                         $i=1;
-                        while($row=mysqli_fetch_array($result)){
-
-                            $c_id=$row['c_id'];
-                            $count="SELECT `id` FROM `tbl_committee_req` WHERE `userid`='$user_id' and `c_id`='$c_id'";
-                            $countResult=mysqli_query($conn,$count);
-                            $rowcount = mysqli_num_rows($countResult);
-
-                            if($rowcount!=0){
-                                continue;
-                                if($row["m_joined"]!=0){
-                                    if($row["m_limit"]/$row["m_joined"]==1){
-                                        continue;
-                                    }
-                                }
-                            }
+                        
+                        while($row=mysqli_fetch_array($fetchCommitteeResult)){
+                            $cid=$row["c_id"];
+                            $query="SELECT `c_id`, `c_name`, `c_description`, `m_limit`, `m_joined` FROM `tbl_committee` WHERE `c_id`='$cid'";
+                            $result=mysqli_query($conn,$query);
+                            while($row1=mysqli_fetch_array($result)){
+                            
                     ?>
                     <div class="data">
                         <table>
                             <tr>
                                 <td width=108px><?php echo $i; ?></td>
-                                <td width=248px><?php echo $row["c_name"]; ?></td>
-                                <td width=908px style="padding-right: 40px;"><?php echo $row["c_description"]; ?></td>
+                                <td width=248px><?php echo $row1["c_name"]; ?></td>
+                                <td width=908px style="padding-right: 40px;"><?php echo $row1["c_description"]; ?></td>
                                 <td width=95px>
-                                    <a href="../../../model/house_member/req_committee.php?c_id=<?php echo $row['c_id']; ?>" class="approve" onclick="loader()" >Request</a>
+                                    <?php
+                                        if($row["status"]=='0'){
+                                    ?>
+                                    <div class="pending">Pending</div>
+                                    <?php 
+                                        }
+                                        if($row["status"]=='1'){
+                                    ?>
+                                    <div class="approve">Accepted</div>
+                                    <?php 
+                                        }
+                                        if($row["status"]=='2'){
+                                    ?>
+                                    <div class="reject">Rejected</div>
+                                    <?php 
+                                        }
+                                    ?>
                                 </td>
                             </tr>
                         </table>
@@ -110,6 +115,7 @@ else
                     <?php
                         $i=$i+1;
                         }
+                    }
                     ?>
                 </div>
                 
