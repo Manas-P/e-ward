@@ -134,41 +134,53 @@
                         <div class="headings">
                             <div>Slno.</div>
                             <div style="margin-left: 70px;">Name</div>
-                            <div style="margin-left: 184px;">House no.</div>
-                            <div style="margin-left: 74px;">Phone no.</div>
-                            <div style="margin-left: 89px;">Email id</div>
-                            <div style="margin-left: 282px;">Assigned tasks</div>
-                            <div style="margin-left: 58px;">Completed tasks</div>
+                            <div style="margin-left: 224px;">House no.</div>
+                            <div style="margin-left: 79px;">Phone no.</div>
+                            <div style="margin-left: 120px;">Email id</div>
+                            <div style="margin-left: 384px;">Action</div>
                         </div>
                         <div class="datas">
+                            <?php
+                            //Fetch data id
+                            $viewMemQuery="SELECT `userid`, `wardno` FROM `tbl_committee_req` WHERE `c_id`='$c_id' AND `status`='1'";
+                            $viewMemQueryResult = mysqli_query($conn, $viewMemQuery);
+                            $checkCount = mysqli_num_rows($viewMemQueryResult);
+                            $i=1;
+                            if($checkCount!=0){
+                                while($comRow=mysqli_fetch_array($viewMemQueryResult)){
+                                    $userid = $comRow['userid'];
+                                    
+                                    //Fetch user data
+                                    $query="SELECT `house_no`, `fname`, `email`, `phno`, `dob` FROM `tbl_house_member` WHERE `userid`='$userid'";
+                                    $result=mysqli_query($conn,$query);
+                                    while($row=mysqli_fetch_array($result)){
+                                        //Age
+                                        $age = (date('Y') - date('Y',strtotime($row["dob"])));
+                            ?>
                             <div class="data">
                                 <table>
                                     <tr>
-                                        <td width=108px>1.</td>
-                                        <td width=236px>Brooklyn Simmons</td>
-                                        <td width=160px>124</td>
-                                        <td width=180px>9854587856</td>
-                                        <td width=354px>brooklynsimmo01n@gmail.com</td>
-                                        <td width=194px>3</td>
-                                        <td>1</td>
+                                        <td width=110px><?php echo $i?>.</td>
+                                        <td width=276px><?php echo $row["fname"]; ?></td>
+                                        <td width=166px><?php echo $row["house_no"]; ?></td>
+                                        <td width=208px><?php echo $row["phno"]; ?></td>
+                                        <td width=452px><?php echo $row["email"]; ?></td>
+                                        <td width=170px>
+                                            <a class="reject" href="../../../model/ward_member/remove_from_committee.php?c_id=<?php echo $c_id; ?>&u_id=<?php echo $userid ?>">Remove</a>
+                                        </td>
                                     </tr>
                                 </table>
                             </div>
-                        </div>
-                        <div class="datas">
-                            <div class="data">
-                                <table>
-                                    <tr>
-                                        <td width=108px>2.</td>
-                                        <td width=236px>Wade Warren</td>
-                                        <td width=160px>15</td>
-                                        <td width=180px>9587845126</td>
-                                        <td width=354px>wadewarren@gmail.com</td>
-                                        <td width=194px>5</td>
-                                        <td>3</td>
-                                    </tr>
-                                </table>
-                            </div>
+                            <?php
+                                    $i=$i+1;
+                                    }
+                                }
+                            }else{
+                            ?>
+                            <div class="no-result"> No records </div>
+                            <?php
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
