@@ -247,7 +247,7 @@
                                         <td width=160px><?php echo $row["house_no"]; ?></td>
                                         <td width=180px><?php echo $row["phno"]; ?></td>
                                         <td width=396px><?php echo $row["email"]; ?></td>
-                                        <td width=130px><?php echo $age; ?></td>
+                                        <td width=120px><?php echo $age; ?></td>
                                         <td width=95px>
                                             <?php
                                                 if($m_joined!=0){
@@ -262,6 +262,13 @@
                                                 }
                                             }
                                             ?>
+                                            <?php
+                                                if($m_joined=='0'){
+                                            ?>
+                                                    <a href="../../../model/ward_member/approve_committee_req.php?c_id=<?php echo $c_id; ?>&u_id=<?php echo $userid ?>" class="approve" onclick="loader()" >Approve</a>
+                                            <?php
+                                                }
+                                            ?>
                                         </td>
                                         <td>
                                             <?php
@@ -269,12 +276,18 @@
                                                     if($m_limit/$m_joined==1){
                                                 }else{
                                             ?>
-                                                    <a class="reject">Reject</a>
+                                                    <a href="../../../model/ward_member/reject_committee_req.php?c_id=<?php echo $c_id; ?>&u_id=<?php echo $userid ?>" class="reject">Reject</a>
                                             <?php
                                                 }
                                             }
                                             ?>
-                                            
+                                            <?php
+                                                if($m_joined=='0'){
+                                            ?>
+                                                    <a href="../../../model/ward_member/reject_committee_req.php?c_id=<?php echo $c_id; ?>&u_id=<?php echo $userid ?>" class="reject">Reject</a>
+                                            <?php
+                                                }
+                                            ?>
                                         </td>
                                     </tr>
                                 </table>
