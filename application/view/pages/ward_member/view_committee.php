@@ -199,23 +199,33 @@
                                 <div class="text">Add task</div>
                             </a>
         
-                            <!-- Fetch office staffs -->
-                                
-                            <a href="./view_task.php" class="task">
-                                <div class="about">
-                                    <div class="name">Task name one</div>
-                                    <div class="members-asgn"><span>Members assigned:</span>active</div>
-                                    <div class="sub">Status:<div class="tag" style="color:#EC0000; background:#FCD9D9;">Incomplete</div></div>
-                                </div>
-                            </a>
-
-                            <a href="./view_task.php" class="task">
-                                <div class="about">
-                                    <div class="name">Task name two</div>
-                                    <div class="members-asgn"><span>Members assigned:</span>active</div>
-                                    <div class="sub">Status:<div class="tag" style="color:#1BBD2B; background:#DDF5DF;">Completed</div></div>
-                                </div>
-                            </a>
+                            <!-- Fetch committee tasks -->
+                            <?php
+                                $fetchTask="SELECT `id`, `task_name`, `task_des`, `assignees`, `status` FROM `tbl_task` WHERE `c_id`='$c_id'";
+                                $fetchTaskRes=mysqli_query($conn,$fetchTask);
+                                while($taskRow=mysqli_fetch_array($fetchTaskRes)){
+                            ?>
+                                    <a href="./view_task.php?c_id=<?php echo $c_id ?>&tskId=<?php echo $taskRow['id']?>" class="task">
+                                        <div class="about">
+                                            <div class="name"><?php echo $taskRow['task_name']?></div>
+                                            <div class="members-asgn"><span>Members assigned:</span><?php echo $taskRow['assignees']?></div>
+                                            <?php
+                                                if($taskRow['status']=='1'){
+                                            ?>
+                                                    <div class="sub">Status:<div class="tag" style="color:#1BBD2B; background:#DDF5DF;">Completed</div></div>
+                                            <?php
+                                                }else{
+                                            ?>
+                                                    <div class="sub">Status:<div class="tag" style="color:#EC0000; background:#FCD9D9;">Incomplete</div>
+                                            <?php
+                                                }
+                                            ?>
+                                            </div>
+                                        </div>
+                                    </a>
+                            <?php
+                                }
+                            ?>
 
                         </div>
                     </div>
@@ -334,13 +344,14 @@
                 <img src="../../../../public/assets/images/close.svg" alt="close button">
             </div>
             <!-- Add task -->
-            <form action="" method="post" id="add-task" enctype="multipart/form-data">
+            <form action="../../../model/ward_member/add_task.php" method="post" id="add-task" enctype="multipart/form-data">
+                <input type="hidden" name="comid" value="<?php echo $c_id ?>">
                 <div class="inputs">
                     <div class="input commName">
                         <div class="label">
                             Task name
                         </div>
-                        <input type="text" name="name" id="comm-name" placeholder="John Doe" autocomplete="off">
+                        <input type="text" name="taskname" id="comm-name" placeholder="John Doe" autocomplete="off">
                         <div class="error error-hidden">
                         </div>
                     </div>
@@ -348,7 +359,7 @@
                         <div class="label">
                             Task description
                         </div>
-                        <textarea name="comm_des" id="comm-des" rows="10"></textarea>
+                        <textarea name="task_des" id="comm-des" rows="10"></textarea>
                         <div class="subtext">
                             <div class="error error-hidden">
                             </div>
@@ -358,7 +369,7 @@
                         </div>
                     </div>
                     <div class="button hBtn cursor-disable">
-                        <input type="submit" value="Add task" name="add-comm" id="add-comm" onclick="loader()" class="primary-button disabled">
+                        <input type="submit" value="Add task" name="add-task" id="add-comm" onclick="loader()" class="primary-button disabled">
                     </div>
                 </div>
             </form>
