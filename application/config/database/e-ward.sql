@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 14, 2022 at 04:11 PM
+-- Generation Time: May 16, 2022 at 03:33 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.25
 
@@ -65,10 +65,57 @@ CREATE TABLE `tbl_committee` (
 
 INSERT INTO `tbl_committee` (`id`, `c_id`, `wardno`, `c_name`, `c_description`, `c_photo`, `m_limit`, `m_joined`, `added_by`, `status`) VALUES
 (1, 2221, 2, 'Committee new', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', '../../../public/assets/images/uploads/photos/1648653556.jpg', 25, 0, '2', 1),
-(2, 2222, 2, 'Committe two', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, se', '../../../public/assets/images/uploads/photos/1648653604.jpg', 20, 0, '2', 1),
-(3, 2223, 2, 'Committee long name submitted', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', '../../../public/assets/images/uploads/photos/1648653685.jpg', 15, 0, '2', 1),
+(2, 2222, 2, 'Committe two', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, s7', '../../../public/assets/images/uploads/photos/1652684123.jpg', 25, 1, '2', 1),
+(3, 2223, 2, 'Committee long name submitted', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', '../../../public/assets/images/uploads/photos/1648653685.jpg', 15, 1, '2', 1),
 (4, 2224, 2, 'Flood relief', 'oosdi fosdhf iuhdif uiudhfisuhdf isudhf iushdfishdiufh sduhfishdf isudhfishdhf df.', '../../../public/assets/images/uploads/photos/1652537266.png', 30, 0, '2', 1),
 (5, 3331, 3, 'trst new ward', 'uer iuerh ihuer', '../../../public/assets/images/uploads/photos/1652537311.png', 10, 0, '3', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_committee_member`
+--
+
+CREATE TABLE `tbl_committee_member` (
+  `id` int(10) NOT NULL,
+  `c_id` int(10) NOT NULL,
+  `h_userid` int(10) NOT NULL,
+  `c_userid` int(10) NOT NULL,
+  `password` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_committee_member`
+--
+
+INSERT INTO `tbl_committee_member` (`id`, `c_id`, `h_userid`, `c_userid`, `password`) VALUES
+(1, 2222, 2234, 22221, 'DstjjmDR'),
+(5, 2223, 2160, 22231, 'mjNh6PKx');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_committee_req`
+--
+
+CREATE TABLE `tbl_committee_req` (
+  `id` int(10) NOT NULL,
+  `c_id` int(10) NOT NULL,
+  `userid` int(10) NOT NULL,
+  `wardno` int(10) NOT NULL,
+  `status` int(10) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_committee_req`
+--
+
+INSERT INTO `tbl_committee_req` (`id`, `c_id`, `userid`, `wardno`, `status`) VALUES
+(1, 2224, 2160, 2, 0),
+(2, 2222, 2162, 2, 2),
+(3, 2222, 2234, 2, 1),
+(6, 2222, 2232, 2, 0),
+(7, 2223, 2160, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -653,6 +700,29 @@ INSERT INTO `tbl_street_light` (`id`, `street_light_no`, `locality`, `ward_no`, 
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_task`
+--
+
+CREATE TABLE `tbl_task` (
+  `id` int(10) NOT NULL,
+  `c_id` int(10) NOT NULL,
+  `task_name` varchar(100) NOT NULL,
+  `task_des` varchar(500) NOT NULL,
+  `assignees` int(10) NOT NULL DEFAULT 0,
+  `status` int(10) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_task`
+--
+
+INSERT INTO `tbl_task` (`id`, `c_id`, `task_name`, `task_des`, `assignees`, `status`) VALUES
+(1, 2222, 'Task name one', 'suhdfie uhsdohfoi jps[aoosih fshdfohsid ifuwge8wgf shdiuf siudiuhjq0uw0qw89 wefh usdf isjd ', 0, 0),
+(2, 2222, 'Task name two', 'jsnfds dfjsdjfo isdjf sdjoghhf[jwe oiwoeif oudhibs d osjsgsfg', 0, 0);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_ward_member`
 --
 
@@ -704,6 +774,20 @@ ALTER TABLE `tbl_committee`
   ADD PRIMARY KEY (`id`),
   ADD KEY `wardno` (`wardno`),
   ADD KEY `c_id` (`c_id`);
+
+--
+-- Indexes for table `tbl_committee_member`
+--
+ALTER TABLE `tbl_committee_member`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `c_id` (`c_id`,`c_userid`);
+
+--
+-- Indexes for table `tbl_committee_req`
+--
+ALTER TABLE `tbl_committee_req`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `c_id` (`c_id`,`userid`);
 
 --
 -- Indexes for table `tbl_edu_bg`
@@ -797,6 +881,12 @@ ALTER TABLE `tbl_street_light`
   ADD KEY `street_light_no` (`street_light_no`,`houseno`);
 
 --
+-- Indexes for table `tbl_task`
+--
+ALTER TABLE `tbl_task`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tbl_ward_member`
 --
 ALTER TABLE `tbl_ward_member`
@@ -818,6 +908,18 @@ ALTER TABLE `tbl_admin`
 --
 ALTER TABLE `tbl_committee`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `tbl_committee_member`
+--
+ALTER TABLE `tbl_committee_member`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `tbl_committee_req`
+--
+ALTER TABLE `tbl_committee_req`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `tbl_edu_bg`
@@ -896,6 +998,12 @@ ALTER TABLE `tbl_staff_activity`
 --
 ALTER TABLE `tbl_street_light`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `tbl_task`
+--
+ALTER TABLE `tbl_task`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_ward_member`
