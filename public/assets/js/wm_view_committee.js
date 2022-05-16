@@ -133,3 +133,120 @@ addTaskForm.addEventListener("keyup",()=>{
 });
 
 //===============End of validate task=====================
+
+//==============Update committee details==================
+const upComm=document.querySelector(".update");
+const closeUpModal=document.querySelector(".cls-btn-up");
+const updateModal=document.querySelector(".modal-box2");
+
+//Add task
+upComm.addEventListener("click",()=>{
+    overlay.classList.remove("modal-hidden");
+    updateModal.classList.remove("modal-hidden");
+})
+
+//Close button 
+closeUpModal.addEventListener("click",()=>{
+    overlay.classList.add("modal-hidden");
+    updateModal.classList.add("modal-hidden");
+})
+
+//===============Validate committee====================
+const upCommitteeForm=document.querySelector("#up-committe");
+const commUpBtn=document.querySelector("#up-comm");
+const commUpName=document.querySelector("#up-comm-name");
+const commUpDes=document.querySelector("#up-comm-des");
+const commUpLimit=document.querySelector("#up-comm-limit");
+
+
+//Error Message Class
+const commUpNameError=document.querySelector(".commUpName .error");
+const commUpDesError=document.querySelector(".commUpDes .error");
+const commUpLimitError=document.querySelector(".commUpLimit .error");
+var commUpNameSubmit=true;
+var commUpDesSubmit=true;
+var commUpLimitSubmit=true;
+
+//Check name
+var nameChk=/^[a-z A-Z]+$/;
+commUpName.addEventListener("input",()=>{
+    if(commUpName.value.match(nameChk)){
+        commUpNameError.classList.add("error-hidden");
+        commUpNameError.classList.remove("error-visible");
+        commUpNameSubmit=true;
+    }else if(commUpName.value==""){
+        commUpNameError.classList.add("error-visible");
+        commUpNameError.classList.remove("error-hidden");
+        commUpNameError.innerText="Field cannot be blank";
+        commUpNameSubmit=false;
+    }else{
+        commUpNameError.classList.add("error-visible");
+        commUpNameError.classList.remove("error-hidden");
+        commUpNameError.innerText="Name should not contain numbers";
+        commUpNameSubmit=false;
+    }
+});
+
+//Description validation
+const limitUpText=document.querySelector("#up-count-char");
+const upcounterror=document.querySelector(".up-limit");
+const uptextarea=document.querySelector(".commUpDes textarea");
+commUpDes.addEventListener("input",()=>{
+    limitUpText.innerText=commUpDes.value.length;
+    if(commUpDes.value.length<301 && commUpDes.value.length>0){
+        commUpDesError.classList.add("error-hidden");
+        commUpDesError.classList.remove("error-visible");
+        upcounterror.style.color = "#1e1e1e";
+        uptextarea.style.border = "1px solid #c1c1c1";
+        commUpDesSubmit=true;
+    }else if(commUpDes.value==""){
+        commUpDesError.classList.add("error-visible");
+        commUpDesError.classList.remove("error-hidden");
+        commUpDesError.innerText="Field cannot be blank";
+        upcounterror.style.color = "#1e1e1e";
+        uptextarea.style.border = "1px solid #c1c1c1";
+        commUpDesSubmit=false;
+    }else{
+        commUpDesError.classList.add("error-visible");
+        commUpDesError.classList.remove("error-hidden");
+        commUpDesError.innerText="Character limit exeeded";
+        upcounterror.style.color = "red";
+        uptextarea.style.border = "1px solid red";
+        commUpDesSubmit=false;
+     }
+})
+
+//Limit Validation
+var phnoChk=/^[0-9]+$/;
+commUpLimit.addEventListener("input",()=>{
+    if(commUpLimit.value.match(phnoChk)){
+       commUpLimitError.classList.add("error-hidden");
+       commUpLimitError.classList.remove("error-visible");
+       commUpLimitSubmit=true;
+    }else if(commUpLimit.value==""){
+       commUpLimitError.classList.add("error-visible");
+       commUpLimitError.classList.remove("error-hidden");
+       commUpLimitError.innerText="Field cannot be blank";
+       commUpLimitSubmit=false;
+    }else{
+       commUpLimitError.classList.add("error-visible");
+       commUpLimitError.classList.remove("error-hidden");
+       commUpLimitError.innerText="Invalid limit";
+       commUpLimitSubmit=false;
+    }
+});
+
+
+//Submit Button Visibility
+const buttonCursorUp=document.querySelector(".upBtn");//To avoid poniterevent and cursor problem
+upCommitteeForm.addEventListener("keyup",()=>{
+    if(commUpNameSubmit==true && commUpDesSubmit==true && commUpLimitSubmit==true){
+        commUpBtn.classList.remove("disabled");
+        buttonCursorUp.classList.remove("cursor-disabled");
+    }else{
+        commUpBtn.classList.add("disabled");
+        buttonCursorUp.classList.add("cursor-disabled");
+    }
+});
+
+//===============End of update Committe=====================

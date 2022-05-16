@@ -107,7 +107,7 @@
                         </div>
                     </div>
                     <div class="buttons">
-                        <a href="" class="update">Update</a>
+                        <a class="update">Update</a>
                         <a href="" class="close">Close</a>
                     </div>
                 </div>
@@ -359,6 +359,54 @@
                     </div>
                     <div class="button hBtn cursor-disable">
                         <input type="submit" value="Add task" name="add-comm" id="add-comm" onclick="loader()" class="primary-button disabled">
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- form to update committee-->
+        <div class="box modal-box2 modal-hidden">
+            <div class="title"> Update committee </div>
+            <div class="modal-close-btn cls-btn-up">
+                <img src="../../../../public/assets/images/close.svg" alt="close button">
+            </div>
+            <!-- Update committee -->
+            <form action="../../../model/ward_member/update_committee.php" method="post" id="up-committe" enctype="multipart/form-data">
+                <input type="hidden" name="alreadyphoto" value="<?php echo $c_photo ?>">
+                <input type="hidden" name="comid" value="<?php echo $c_id ?>">
+                <div class="inputs">
+                    <div class="input commUpName">
+                        <div class="label"> Committee name </div>
+                        <input type="text" name="upname" id="up-comm-name" value="<?php echo $c_name ?>" autocomplete="off">
+                        <div class="error error-hidden">
+                        </div>
+                    </div>
+                    <div class="inputt commUpDes">
+                        <div class="label"> Committee description </div>
+                        <textarea name="upcomm_des" id="up-comm-des" rows="10"><?php echo $c_des ?></textarea>
+                        <div class="subtext">
+                            <div class="error error-hidden">
+                            </div>
+                            <div class="count-limit up-limit">
+                                <span id="up-count-char">0</span>/300
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input commPhoto">
+                        <div class="label"> Upload photo </div>
+                        <input type="file" name="up-photo" id="comm-photo" accept="image/png,image/jpeg">
+                        <div class="error error-hidden">
+                        </div>
+                    </div>
+                    <div class="input commUpLimit">
+                        <div class="label"> Members limit </div>
+                        <input type="text" name="upcommLimit" id="up-comm-limit" value="<?php echo $m_limit ?>" autocomplete="off">
+                        <div class="error error-hidden">
+                        </div>
+                    </div>
+                    <div class="button upBtn cursor-disable">
+                        <input type="submit" value="Update committee" name="up-comm" id="up-comm" onclick="loader()"
+                            class="primary-button disabled">
                     </div>
                 </div>
             </form>
