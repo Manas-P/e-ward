@@ -355,6 +355,12 @@
                         <div class="error error-hidden">
                         </div>
                     </div>
+                    <div class="input commDate">
+                        <div class="label"> Deadline </div>
+                        <input type="date" name="taskdate" id="comm-date" autocomplete="off">
+                        <div class="error error-hidden">
+                        </div>
+                    </div>
                     <div class="inputt commDes">
                         <div class="label">
                             Task description

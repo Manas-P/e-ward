@@ -3,8 +3,11 @@
     session_start();
     extract($_POST);
 
+    $curDate = date('Y-m-d');
+    $wardno=$_SESSION['wardno'];
+
     if(isset($_POST['add-task'])){
-        $insertQuery="INSERT INTO `tbl_task`(`c_id`, `task_name`, `task_des`) VALUES ('$comid','$taskname','$task_des')";
+        $insertQuery="INSERT INTO `tbl_task`(`c_id`, `task_name`, `task_des`, `created_by`, `created_date`, `deadline`) VALUES ('$comid','$taskname','$task_des','$wardno','$curDate','$taskdate')";
         $insertQueryRes=mysqli_query($conn,$insertQuery);
         if($insertQueryRes){
             $_SESSION['success'] = "Task added successfully";
