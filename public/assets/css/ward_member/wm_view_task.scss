@@ -260,6 +260,67 @@ body {
   }
 }
 
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.box2 {
+  @include box_model(1300px, 691px);
+  #add-member {
+    margin-top: 38px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 36px;
+    flex-wrap: wrap;
+    row-gap: 36px;
+    .member {
+      @include card(0px 10px 20px rgba(205, 205, 205, 0.25), 12px);
+      .photo {
+        width: 66px;
+        height: 66px;
+        border-radius: 4px;
+        img {
+          width: 66px;
+          height: 66px;
+          border-radius: 4px;
+        }
+      }
+      .about {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+        align-items: flex-start;
+        .name {
+          font-family: "Gilroy_SB";
+          font-size: 18px;
+          color: $text;
+        }
+        .tag {
+          font-family: "Gilroy_SB";
+          font-size: 14px;
+          color: $primary;
+          padding: 3px 12px;
+          background: $primaryFade;
+          border-radius: 10px;
+        }
+      }
+      &:hover {
+        box-shadow: 0px 10px 20px rgba(150, 150, 150, 0.25);
+      }
+    }
+  }
+}
+
+.modal-hidden {
+  display: none;
+  pointer-events: none;
+}
 
 //Alert
 @include error-alert();

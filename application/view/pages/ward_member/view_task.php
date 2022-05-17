@@ -168,6 +168,53 @@
         </section>
 
 
+        <!-- =========== Modal ============ -->
+        <div class="overlay modal-hidden"></div>
+        <!-- Pop to add task members -->
+        <div class="box2 modal-box2 modal-hidden">
+            <div class="title"> Add members </div>
+            <div class="modal-close-btn pre-cls-btn">
+                <img src="../../../../public/assets/images/close.svg" alt="close button">
+            </div>
+            <form action="" method="post" id="add-member">
+                <?php
+                        $fetchQuery="SELECT `h_userid` FROM `tbl_committee_member` WHERE `c_id`='$c_id'";
+                        $fetchResult=mysqli_query($conn,$fetchQuery);
+                        if(mysqli_num_rows($fetchResult)>0){
+                            while($row = mysqli_fetch_assoc($fetchResult)){
+                                $memUserId=$row['h_userid'];
+                                $fetchQuery1="SELECT `userid` FROM `tbl_task_member` WHERE `com_id`='$c_id' AND `tsk_id`='$tsk_id' AND `userid`='$memUserId'";
+                                $fetchResult1=mysqli_query($conn,$fetchQuery1);
+                                if(mysqli_num_rows($fetchResult1)==0){
+                                    $memDataQuery="SELECT `fname`, `dob`, `photo` FROM `tbl_house_member` WHERE `userid`='$memUserId'";
+                                    $memDataQueryResult = mysqli_query($conn, $memDataQuery);
+                                    $memData=mysqli_fetch_assoc($memDataQueryResult);
+                                    $m_name = $memData['fname'];
+                                    $m_photo = $memData['photo'];
+                                    $age = (date('Y') - date('Y',strtotime($memData['dob'])));
+                    ?>
+                <a href="" class="member"> <div
+                        class="photo">
+                        <img src="../<?php echo $m_photo; ?>" alt="member photo">
+                    </div>
+                    <div class="about">
+                        <div class="name">
+                            <?php echo $m_name; ?>
+                        </div>
+                        <div class="tag">Age:
+                            <?php echo $age; ?>
+                        </div>
+                    </div>
+                </a>
+                <?php
+                            }else{}
+                        }        
+                        }else{
+        
+                        }
+                    ?>
+            </form>
+        </div>
         
 
 
@@ -209,6 +256,7 @@
         ?>
         <!-- ==========Loading End============= -->
 
+        <script src="../../../../public/assets/js/wm_view_task.js"></script>
         <script src="../../../../public/assets/js/toast.js"></script>
     </body>
     </html>
