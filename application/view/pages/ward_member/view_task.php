@@ -9,6 +9,7 @@
     else
     {
         $c_id=$_GET['c_id'];
+        $tsk_id=$_GET['tskId'];
         //Fetch User data
         $wardno=$_SESSION['wardno'];
 
@@ -17,12 +18,24 @@
         $commDataQueryResult = mysqli_query($conn, $commDataQuery);
         $commData=mysqli_fetch_assoc($commDataQueryResult);
         $c_name = $commData['c_name'];
-        $c_des = $commData['c_description'];
-        $c_photo = $commData['c_photo'];
-        $m_limit = $commData['m_limit'];
-        $m_joined = $commData['m_joined'];
-        $added_by = $commData['added_by'];
-        $status = $commData['status'];
+
+        //Fetch task data
+        $taskDataQuery="SELECT `task_name`, `task_des`, `created_by`, `created_date`, `deadline` FROM `tbl_task` WHERE `c_id`='$c_id' AND `id`='$tsk_id'";
+        $taskDataQueryResult = mysqli_query($conn, $taskDataQuery);
+        $taskData=mysqli_fetch_assoc($taskDataQueryResult);
+        $t_name = $taskData['task_name'];
+        $t_des = $taskData['task_des'];
+        $crt_by = $taskData['created_by'];
+        $crt_date = $taskData['created_date'];
+        $deadline = $taskData['deadline'];
+
+        //Fetch ward member data
+        $wmDataQuery="SELECT `fullname` FROM `tbl_ward_member` WHERE `wardno`='$crt_by'";
+        $wmDataQueryResult = mysqli_query($conn, $wmDataQuery);
+        $wmData=mysqli_fetch_assoc($wmDataQueryResult);
+        $crt_name = $wmData['fullname'];
+
+       
 ?>
 	<!DOCTYPE html>
     <html lang="en">
@@ -71,7 +84,7 @@
                         <path d="M2.2002 8.59999L5.8002 4.99999L2.2002 1.39999" stroke="#1E1E1E" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                     <a href="" class="now">
-                        Task name 1
+                        <?php echo $t_name ?>
                     </a>
                 </div>
 
@@ -80,15 +93,10 @@
                     <div class="card1">
                         <div class="content">
                             <div class="heading">
-                                Task name 1
+                                <?php echo $t_name ?>
                             </div>
                             <div class="description">
-                                Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
-                                Velit officia consequat duis enim velit mollit. Exercitation veniam 
-                                consequat sunt nostrud amet.Amet minim mollit non deserunt ullamco est 
-                                sit aliqua dolor do amet sint. Duis enim velit mollit. Exercitation 
-                                veniam consequat sunt nostrud amet.Amet minim mollit non deserunt ullamco 
-                                est sit udyfg wyegr.
+                                <?php echo $t_des ?>
                             </div>
                         </div>
                     </div>
@@ -98,14 +106,14 @@
                         </div>
                         <div class="content">
                             <div class="right">
-                                <div class="detail">Created by: <span>Wade Warren</span></div>
-                                <div class="detail">Created on: <span>20-05-2022</span></div>
+                                <div class="detail">Created by: <span><?php echo $crt_name ?></span></div>
+                                <div class="detail">Created on: <span><?php echo $crt_date ?></span></div>
                             </div>
                             <div class="left">
                                 <div class="divider"></div>
                                 <div class="details">
-                                    <div class="detail">Deadline: <span>24-06-2022</span></div>
-                                    <div class="detail">Created on: <span>20-05-2022</span></div>
+                                    <div class="detail">Deadline: <span><?php echo $deadline ?></span></div>
+                                    <div class="detail">Created on: <span><?php echo $crt_date ?></span></div>
                                 </div>
                             </div>
                         </div>
