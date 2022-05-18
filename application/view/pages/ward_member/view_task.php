@@ -141,25 +141,47 @@
                         </a>
 
                         <!-- Fetch members -->
-                        <a href="./task_approval.php" class="member">
-                            <div class="photo">
-                                <img src="../../../../public/assets/images/uploads/photos/1637689638.png" alt="member photo">
-                            </div>
-                            <div class="about">
-                                <div class="name">Wade Warren</div>
-                                <div class="tag" style="color:#1BBD2B; background:#DDF5DF;">Completed</div>
-                            </div>
-                        </a>
+                        <?php
+                            $fetchUserId="SELECT `userid`, `status` FROM `tbl_task_member` WHERE `com_id`='$c_id' AND `tsk_id`='$tsk_id'";
+                            $fetchUserIdRes=mysqli_query($conn, $fetchUserId);
+                            $checkCount = mysqli_num_rows($fetchUserIdRes);
+                            if($checkCount!=0){
+                                while($tskRow=mysqli_fetch_array($fetchUserIdRes)){
+                                    $userid = $tskRow['userid'];
+                                    $tskStatus = $tskRow['status'];
 
-                        <a href="./task_approval.php" class="member">
-                            <div class="photo">
-                                <img src="../../../../public/assets/images/uploads/photos/1645631386.png" alt="member photo">
-                            </div>
-                            <div class="about">
-                                <div class="name">Annette Black</div>
-                                <div class="tag" style="color:#EC0000; background:#FCD9D9;">Incomplete</div>
-                            </div>
-                        </a>
+                                    //Fetch user data
+                                    $query="SELECT `fname`, `photo` FROM `tbl_house_member` WHERE `userid`='$userid'";
+                                    $result=mysqli_query($conn,$query);
+                                    $userData=mysqli_fetch_assoc($result);
+                                    $name = $userData['fname'];
+                                    $photo = $userData['photo'];
+                            
+                        ?>
+                            <a href="./task_approval.php?c_id=<?php echo $c_id;?>&tskId=<?php echo $tsk_id;?>&userid=<?php echo $userid;?>" class="member">
+                                <div class="photo">
+                                    <img src="../<?php echo $photo ?>" alt="member photo">
+                                </div>
+                                <div class="about">
+                                    <div class="name"><?php echo $name ?></div>
+                                    <?php
+                                        if($tskStatus==0){
+                                    ?>
+                                    <div class="tag" style="color:#EC0000; background:#FCD9D9;">Incomplete</div>
+                                    <?php
+                                        }else{
+                                    ?>
+                                    <div class="tag" style="color:#1BBD2B; background:#DDF5DF;">Completed</div>
+                                    <?php
+                                        }
+                                    ?>
+                                    
+                                </div>
+                            </a>
+                        <?php
+                                }
+                            }
+                        ?>
 
                     </div>
                 </div>
@@ -172,7 +194,7 @@
         <div class="overlay modal-hidden"></div>
         <!-- Pop to add task members -->
         <div class="box2 modal-box2 modal-hidden">
-            <div class="title"> Add members </div>
+            <div class="title"> Add members to task </div>
             <div class="modal-close-btn pre-cls-btn">
                 <img src="../../../../public/assets/images/close.svg" alt="close button">
             </div>
@@ -193,8 +215,8 @@
                                     $m_photo = $memData['photo'];
                                     $age = (date('Y') - date('Y',strtotime($memData['dob'])));
                     ?>
-                <a href="" class="member"> <div
-                        class="photo">
+                <a href="../../../model/ward_member/add_task_member.php?c_id=<?php echo $c_id ?>&tskId=<?php echo $tsk_id ?>&memId=<?php echo $memUserId ?>" class="member">
+                    <div class="photo">
                         <img src="../<?php echo $m_photo; ?>" alt="member photo">
                     </div>
                     <div class="about">
@@ -207,12 +229,10 @@
                     </div>
                 </a>
                 <?php
-                            }else{}
-                        }        
-                        }else{
-        
-                        }
-                    ?>
+                        }else{}
+                    }        
+                }else{}
+                ?>
             </form>
         </div>
         

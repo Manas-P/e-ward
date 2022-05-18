@@ -8,8 +8,29 @@
     }
     else
     {
+        $c_id=$_GET['c_id'];
+        $tsk_id=$_GET['tskId'];
+        $userid=$_GET['userid'];
         //Fetch User data
         $wardno=$_SESSION['wardno'];
+
+        //Fetch task details
+        $taskDataQuery="SELECT `task_name` FROM `tbl_task` WHERE `c_id`='$c_id' AND `id`='$tsk_id'";
+        $taskDataQueryResult = mysqli_query($conn, $taskDataQuery);
+        $taskData=mysqli_fetch_assoc($taskDataQueryResult);
+        $t_name = $taskData['task_name'];
+
+        //Fetch committee data
+        $commDataQuery="SELECT `c_name` FROM `tbl_committee` WHERE `c_id`='$c_id'";
+        $commDataQueryResult = mysqli_query($conn, $commDataQuery);
+        $commData=mysqli_fetch_assoc($commDataQueryResult);
+        $c_name = $commData['c_name'];
+
+        //Fetch user data
+        $userDataQuery="SELECT `fname` FROM `tbl_house_member` WHERE `userid`='$userid'";
+        $userDataQueryResult = mysqli_query($conn, $userDataQuery);
+        $userData=mysqli_fetch_assoc($userDataQueryResult);
+        $u_name = $userData['fname'];
 ?>
 	<!DOCTYPE html>
     <html lang="en">
@@ -51,20 +72,20 @@
                     <svg class="str" width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2.2002 8.59999L5.8002 4.99999L2.2002 1.39999" stroke="#1E1E1E" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
-                    <a href="./view_committee.php" class="previous">
-                        Committee new
+                    <a href="./view_committee.php?c_id=<?php echo $c_id ?>" class="previous">
+                        <?php echo $c_name;?>
                     </a>
                     <svg class="str" width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2.2002 8.59999L5.8002 4.99999L2.2002 1.39999" stroke="#1E1E1E" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
-                    <a href="./view_task.php" class="previous">
-                        Task name 1
+                    <a href="./view_task.php?c_id=<?php echo $c_id;?>&tskId=<?php echo $tsk_id;?>" class="previous">
+                        <?php echo $t_name;?>
                     </a>
                     <svg class="str" width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2.2002 8.59999L5.8002 4.99999L2.2002 1.39999" stroke="#1E1E1E" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                     <a href="" class="now">
-                        Member name
+                        <?php echo $u_name;?>
                     </a>
                 </div>
 
