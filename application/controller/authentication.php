@@ -35,6 +35,11 @@
         $officeStaffCheckResult = mysqli_query($conn, $officeStaffCheck);
         $officeStaffCheckCount = mysqli_num_rows($officeStaffCheckResult);
 
+        //Check if the user is committee member
+        $committeeMemberCheck = "SELECT `c_id`, `h_userid`, `c_userid`, `password` FROM `tbl_committee_member` WHERE `c_userid`='$userName' AND `password`='$password'";
+        $committeeMemberCheckResult = mysqli_query($conn, $committeeMemberCheck);
+        $committeeMemberCheckCount = mysqli_num_rows($committeeMemberCheckResult);
+
         //Check login conditions
         if($houseMemberCheckCount==1){
             $userData=mysqli_fetch_assoc($houseMemberCheckResult);
@@ -64,8 +69,15 @@
             $userData=mysqli_fetch_assoc($adminCheckResult);
             $_SESSION['sessionId'] = session_id();
             $_SESSION['adid']=$userData['adid'];
-            echo "admin";
             header("Location: ../view/pages/admin/admin_add_wm.php");
+            die();
+        }elseif($committeeMemberCheckCount==1){
+            $userData=mysqli_fetch_assoc($committeeMemberCheckResult);
+            $_SESSION['sessionId'] = session_id();
+            $_SESSION['c_id']=$userData['c_id'];
+            $_SESSION['h_userid']=$userData['h_userid'];
+            $_SESSION['c_userid']=$userData['c_userid'];
+            header("Location: ../view/pages/committee_member/dashboard.php");
             die();
         }else{
             $_SESSION['error'] = "Invalid Username or Password";
