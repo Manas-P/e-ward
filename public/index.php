@@ -24,7 +24,7 @@
                 <a href="" class="link">Services</a>
                 <a href="" class="link">About</a>
                 <a href="" class="link">contact us</a>
-                <a href="../application/view/pages/login/login.php" class="link login-btn">login</a>
+                <a href="../application/view/pages/login/login.php" name="login" class="link login-btn">login</a>
             </div>
         </div>
         <div class="hero">
