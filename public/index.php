@@ -76,6 +76,83 @@
                 </div>
             </div>
         </div>
+        <div class="users">
+            <div class="content">
+                <div class="tag">
+                    User friendly
+                </div>
+                <div class="description">
+                    Available for almost all users of a ward to make it easier
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <div class="top">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="48" height="48" rx="8" fill="#FFF9C8" />
+                            <path
+                                d="M36.8001 38.4V35.2C36.8001 33.5026 36.1258 31.8748 34.9256 30.6745C33.7253 29.4743 32.0975 28.8 30.4001 28.8H17.6001C15.9027 28.8 14.2748 29.4743 13.0746 30.6745C11.8744 31.8748 11.2001 33.5026 11.2001 35.2V38.4"
+                                stroke="#F9DF00" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M24.0001 22.4C27.5347 22.4 30.4001 19.5346 30.4001 16C30.4001 12.4654 27.5347 9.6 24.0001 9.6C20.4655 9.6 17.6001 12.4654 17.6001 16C17.6001 19.5346 20.4655 22.4 24.0001 22.4Z"
+                                stroke="#F9DF00" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <div class="title">Ward member</div>
+                    </div>
+                    <div class="description">
+                        Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequa.
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="top">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="48" height="48" rx="8" fill="#FFDCFB" />
+                            <path
+                                d="M36.8001 38.4V35.2C36.8001 33.5026 36.1258 31.8748 34.9256 30.6745C33.7253 29.4743 32.0975 28.8 30.4001 28.8H17.6001C15.9027 28.8 14.2748 29.4743 13.0746 30.6745C11.8744 31.8748 11.2001 33.5026 11.2001 35.2V38.4"
+                                stroke="#F900E0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M24.0001 22.4C27.5347 22.4 30.4001 19.5346 30.4001 16C30.4001 12.4654 27.5347 9.6 24.0001 9.6C20.4655 9.6 17.6001 12.4654 17.6001 16C17.6001 19.5346 20.4655 22.4 24.0001 22.4Z"
+                                stroke="#F900E0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <div class="title">House member</div>
+                    </div>
+                    <div class="description"> Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
+                        consequa. </div>
+                </div>
+                <div class="card">
+                    <div class="top">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="48" height="48" rx="8" fill="#FFDFDF" />
+                            <path
+                                d="M36.8001 38.4V35.2C36.8001 33.5026 36.1258 31.8748 34.9256 30.6745C33.7253 29.4743 32.0975 28.8 30.4001 28.8H17.6001C15.9027 28.8 14.2748 29.4743 13.0746 30.6745C11.8744 31.8748 11.2001 33.5026 11.2001 35.2V38.4"
+                                stroke="#F90000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M24.0001 22.4C27.5347 22.4 30.4001 19.5346 30.4001 16C30.4001 12.4654 27.5347 9.6 24.0001 9.6C20.4655 9.6 17.6001 12.4654 17.6001 16C17.6001 19.5346 20.4655 22.4 24.0001 22.4Z"
+                                stroke="#F90000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <div class="title">Committee member</div>
+                    </div>
+                    <div class="description"> Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
+                        consequa. </div>
+                </div>
+                <div class="card">
+                    <div class="top">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="48" height="48" rx="8" fill="#DEFFD6" />
+                            <path
+                                d="M36.8001 38.4V35.2C36.8001 33.5026 36.1258 31.8748 34.9256 30.6745C33.7253 29.4743 32.0975 28.8 30.4001 28.8H17.6001C15.9027 28.8 14.2748 29.4743 13.0746 30.6745C11.8744 31.8748 11.2001 33.5026 11.2001 35.2V38.4"
+                                stroke="#32F900" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M24.0001 22.4C27.5347 22.4 30.4001 19.5346 30.4001 16C30.4001 12.4654 27.5347 9.6 24.0001 9.6C20.4655 9.6 17.6001 12.4654 17.6001 16C17.6001 19.5346 20.4655 22.4 24.0001 22.4Z"
+                                stroke="#32F900" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <div class="title">Office staff</div>
+                    </div>
+                    <div class="description"> Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
+                        consequa. </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 

@@ -323,4 +323,100 @@ body {
   -webkit-transition: 0.7s ease-in-out;
   transition: 0.7s ease-in-out;
 }
+
+.main .users {
+  margin-top: 172px;
+  background: #fff;
+  padding: 100px 226px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main .users .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 16px;
+}
+
+.main .users .content .tag {
+  font-family: "Gilroy_B";
+  font-size: 24px;
+  letter-spacing: 0.21em;
+  text-transform: uppercase;
+  color: #A49AF0;
+}
+
+.main .users .content .description {
+  font-family: "Gilroy_B";
+  color: #1e1e1e;
+  font-size: 42px;
+  line-height: 56px;
+  width: 394px;
+}
+
+.main .users .cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 24px;
+          column-gap: 24px;
+}
+
+.main .users .cards .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 8px;
+  background: #fff;
+  padding: 24px;
+  -webkit-box-shadow: 0px 12px 24px #EFEFEF;
+          box-shadow: 0px 12px 24px #EFEFEF;
+  border-radius: 10px;
+}
+
+.main .users .cards .card .top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 14px;
+}
+
+.main .users .cards .card .top svg {
+  height: 48px;
+  width: 48px;
+}
+
+.main .users .cards .card .top .title {
+  font-family: "Gilroy_B";
+  font-size: 20px;
+  color: #1e1e1e;
+}
+
+.main .users .cards .card .description {
+  font-family: "Gilroy_M";
+  font-size: 16px;
+  color: #8b8b8b;
+  width: 190px;
+  line-height: 24px;
+}
 /*# sourceMappingURL=index.css.map */
