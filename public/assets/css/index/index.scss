@@ -1,8 +1,23 @@
 @import "../components.scss";
 
+@mixin card($shadow) {
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  column-gap: 12px;
+  align-items: center;
+  padding: 12px;
+  width: 260px;
+  background: $white;
+  box-shadow: $shadow;
+  border-radius: 10px;
+  transition: 0.2s ease-in-out;
+}
+
 body {
   background: linear-gradient(110.33deg, #ffffff 0%, #ededed 107.08%);
   overflow-x: hidden;
+  background-attachment: fixed;
   // padding:0 226px;
 }
 
@@ -230,6 +245,7 @@ body {
       text-transform: capitalize;
     }
     .swiper-container{
+      user-select: none;
       padding:0px 460px;
       margin-top:82px;
       .swiper-wrapper{
@@ -243,5 +259,75 @@ body {
           }
       }
     }
+  }
+  .languages{
+    display: flex;
+    justify-content: space-between;
+    padding:0 228px 160px 228px;
+    .language{
+      background: $white;
+      padding:14px 0;
+      width:224px;
+      text-align: center;
+      box-shadow: 0px 20px 30px #E9E9E9;
+      border-radius: 10px;
+      font-family: "Gilroy_SB";
+      font-size: 24px;
+    }
+  }
+  .contactus{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    .heading{
+      font-family: "Gilroy_B";
+      font-size: 52px;
+    }
+        .box {
+          margin-top:48px;
+            width: 556px;
+            height: auto;
+            padding: 54px 48px;
+            background: $white;
+            box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.04), 20px 40px 80px rgba(0, 0, 0, 0.07);
+            border-radius: 16px;
+            transition: 1s ease-in-out;
+            &::-webkit-scrollbar {
+              width: 0px;
+            }
+          .inputs {
+            display: flex;
+            flex-direction: column;
+            row-gap: 32px;
+            @include input_fields(460px);
+            .reqDes {
+              .error {
+                margin-top: 200px;
+              }
+            }
+            textarea {
+              resize: vertical;
+              max-height: 168px;
+              min-height: 116px;
+              font-size: 18px;
+              line-height: 27px;
+              font-family: "Gilroy_M";
+              padding: 16px;
+              border-radius: 10px;
+              border: 1px solid $border;
+              color: $text;
+              outline: none;
+              transition: 0.1s ease-in-out;
+              &:focus {
+                border: 1px solid $text;
+              }
+            }
+          }
+          .button {
+            .primary-button {
+              @include primary_button(100%);
+            }
+          }
+        }
   }
 }

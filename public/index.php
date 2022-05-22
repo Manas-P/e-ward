@@ -170,6 +170,44 @@
                 </div>
             </div>
         </div>
+        <div class="languages">
+            <div class="language">Malayalam</div>
+            <div class="language">Hindi</div>
+            <div class="language">English</div>
+            <div class="language">Tamil</div>
+            <div class="language">Arabic</div>
+            <div class="language">Telungu</div>
+        </div>
+        <div class="contactus">
+            <div class="heading">Contact us</div>
+            <div class="box">
+                <form action="" method="post" id="add-need-req" enctype="multipart/form-data">
+                    <div class="inputs">
+                        <div class="input h-fullname">
+                            <div class="label"> Full name </div>
+                            <input type="text" name="hfname" id="h-full-name" placeholder="John Doe" autocomplete="off">
+                            <div class="error error-hidden">
+                            </div>
+                        </div>
+                        <div class="input h-email">
+                            <div class="label"> Email id </div>
+                            <input type="email" name="hemail" id="h-email" placeholder="example@gmail.com" autocomplete="off">
+                            <div class="error error-hidden">
+                            </div>
+                        </div>
+                        <div class="input reqDes">
+                            <div class="label"> Message for us </div>
+                            <textarea name="req_des" id="req-des" rows="10" placeholder="Enter your message here..."></textarea>
+                            <div class="error error-hidden">
+                            </div>
+                        </div>
+                        <div class="button hBtn cursor-disable">
+                            <input type="submit" value="Send message" name="add-req" id="add-req" class="primary-button disabled">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 
 
