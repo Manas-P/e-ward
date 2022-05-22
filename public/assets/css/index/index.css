@@ -91,7 +91,7 @@ html {
 }
 
 body {
-  background-color: linear-gradient(110.33deg, #ffffff 0%, #ededed 107.08%);
+  background: linear-gradient(110.33deg, #ffffff 0%, #ededed 107.08%);
   overflow-x: hidden;
 }
 
@@ -418,5 +418,28 @@ body {
   color: #8b8b8b;
   width: 190px;
   line-height: 24px;
+}
+
+.main .preview {
+  margin: 162px 0 160px 0;
+}
+
+.main .preview .heading {
+  font-family: "Gilroy_B";
+  font-size: 52px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.main .preview .swiper-container {
+  padding: 0px 460px;
+  margin-top: 82px;
+}
+
+.main .preview .swiper-container .swiper-wrapper .swiper-slide img {
+  width: 100%;
+  -webkit-box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.08);
+          box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
 }
 /*# sourceMappingURL=index.css.map */

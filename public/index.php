@@ -9,6 +9,7 @@
     <link rel="shortcut icon" href="./assets/images/fav.svg" type="image/x-icon">
     <link rel="stylesheet" href="./assets/css/index/index.css">
     <link rel="stylesheet" href="./assets/css/google_translater.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 <body>
@@ -153,6 +154,22 @@
                 </div>
             </div>
         </div>
+        <div class="preview">
+            <div class="heading">
+                User friendly interface with multi-language
+            </div>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="../public/assets/images/preview/preview1.png" alt=""></div>
+                    <div class="swiper-slide"><img src="../public/assets/images/preview/preview2.png" alt=""></div>
+                    <div class="swiper-slide"><img src="../public/assets/images/preview/preview3.png" alt=""></div>
+                    <div class="swiper-slide"><img src="../public/assets/images/preview/preview4.png" alt=""></div>
+                    <div class="swiper-slide"><img src="../public/assets/images/preview/preview5.png" alt=""></div>
+                    <div class="swiper-slide"><img src="../public/assets/images/preview/preview6.png" alt=""></div>
+                    <div class="swiper-slide"><img src="../public/assets/images/preview/preview7.png" alt=""></div>
+                </div>
+            </div>
+        </div>
     </div>
 
 
@@ -161,6 +178,7 @@
     <?php
         include '../application/view/layout/google_translater.php'
     ?>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="./assets/libraries/tilt.jquery.js"></script>
     <script>
         //Tilt Js
@@ -169,6 +187,26 @@
                 maxTilt: 2,
                 scale: 1.01
             });
+        });
+
+        //Swiper js
+        var swiper=new Swiper('.swiper-container',{
+            effect:'coverflow',
+            grabCursor:true,
+            centeredSlides:true,
+            slidesPreView:'auto',
+            coverflowEffect:{
+                rotate:20,
+                stretch:0,
+                depth:200,
+                modifier:1,
+                slideShadows:true,
+            },
+            loop:true,
+            autoplay:{
+                delay:2500,
+                disableOnInteraction:false,
+            },
         });
     </script>
 </body>
