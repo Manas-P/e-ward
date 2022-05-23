@@ -633,6 +633,7 @@ body {
 .box .inputs .input input[type="file"],
 .box .inputs .input input[type="number"],
 .box .inputs .input input[type="password"],
+.box .inputs .input input[type="email"],
 .box .inputs .input select {
   width: 100%;
   height: 53px;
@@ -652,6 +653,7 @@ body {
 .box .inputs .input input[type="file"]:focus,
 .box .inputs .input input[type="number"]:focus,
 .box .inputs .input input[type="password"]:focus,
+.box .inputs .input input[type="email"]:focus,
 .box .inputs .input select:focus {
   border: 1px solid #1e1e1e;
 }
@@ -707,6 +709,7 @@ body {
 .box .inputs .half-input .input input[type="file"],
 .box .inputs .half-input .input input[type="number"],
 .box .inputs .half-input .input input[type="password"],
+.box .inputs .half-input .input input[type="email"],
 .box .inputs .half-input .input select {
   width: 100%;
   height: 53px;
@@ -726,6 +729,7 @@ body {
 .box .inputs .half-input .input input[type="file"]:focus,
 .box .inputs .half-input .input input[type="number"]:focus,
 .box .inputs .half-input .input input[type="password"]:focus,
+.box .inputs .half-input .input input[type="email"]:focus,
 .box .inputs .half-input .input select:focus {
   border: 1px solid #1e1e1e;
 }

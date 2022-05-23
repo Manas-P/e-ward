@@ -52,8 +52,7 @@
                     Time saving
                 </div>
                 <div class="parag">
-                    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
-                    Velit officia consequat duis enim velit mollit. Exercitation veniam.
+                    E-Ward services provide time saving activities as through this people can avoid wastage of time by posting queries in online mode. This makes it easy to access the portal.
                 </div>
             </div>
             <div class="card">
@@ -62,8 +61,7 @@
                     No more queue
                 </div>
                 <div class="parag">
-                    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
-                    Velit officia consequat duis enim velit mollit. Exercitation veniam.
+                   No more standing in queues to serve your purpose of visit and no more travel expenses. E-Ward fullfills your purpose by considering your time and makes easy to access portal.
                 </div>
             </div>
             <div class="card">
@@ -72,8 +70,7 @@
                     Live status check
                 </div>
                 <div class="parag">
-                    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
-                    Velit officia consequat duis enim velit mollit. Exercitation veniam.
+                    Live status check ensures that your querie is managed via online and let you know the updates with no delay. Avoids unnecessary clarifications and knows all updates quickly.
                 </div>
             </div>
         </div>
@@ -181,28 +178,28 @@
         <div class="contactus">
             <div class="heading">Contact us</div>
             <div class="box">
-                <form action="" method="post" id="add-need-req" enctype="multipart/form-data">
+                <form action="" method="post" id="cont-us" enctype="multipart/form-data">
                     <div class="inputs">
-                        <div class="input h-fullname">
+                        <div class="input fullname">
                             <div class="label"> Full name </div>
-                            <input type="text" name="hfname" id="h-full-name" placeholder="John Doe" autocomplete="off">
+                            <input type="text" name="hfname" id="full-name" placeholder="John Doe" autocomplete="off">
                             <div class="error error-hidden">
                             </div>
                         </div>
-                        <div class="input h-email">
+                        <div class="input email">
                             <div class="label"> Email id </div>
-                            <input type="email" name="hemail" id="h-email" placeholder="example@gmail.com" autocomplete="off">
+                            <input type="email" name="hemail" id="email" placeholder="example@gmail.com" autocomplete="off">
                             <div class="error error-hidden">
                             </div>
                         </div>
-                        <div class="input reqDes">
+                        <div class="input msg">
                             <div class="label"> Message for us </div>
-                            <textarea name="req_des" id="req-des" rows="10" placeholder="Enter your message here..."></textarea>
+                            <textarea name="msg" id="msg" rows="10" placeholder="Enter your message here..."></textarea>
                             <div class="error error-hidden">
                             </div>
                         </div>
                         <div class="button hBtn cursor-disable">
-                            <input type="submit" value="Send message" name="add-req" id="add-req" class="primary-button disabled">
+                            <input type="submit" value="Send message" name="sendBtn" id="sendBtn" class="primary-button disabled">
                         </div>
                     </div>
                 </form>
@@ -216,6 +213,7 @@
     <?php
         include '../application/view/layout/google_translater.php'
     ?>
+    <script src="../public/assets/js/index.js"></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="./assets/libraries/tilt.jquery.js"></script>
     <script>
