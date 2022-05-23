@@ -24,7 +24,7 @@
             <div class="links">
                 <a href="" class="link">Services</a>
                 <a href="" class="link">About</a>
-                <a href="" class="link">contact us</a>
+                <a href="#contact-us" class="link">contact us</a>
                 <a href="../application/view/pages/login/login.php" name="login" class="link login-btn">login</a>
             </div>
         </div>
@@ -175,7 +175,7 @@
             <div class="language">Arabic</div>
             <div class="language">Telungu</div>
         </div>
-        <div class="contactus">
+        <div class="contactus" id="contact-us">
             <div class="heading">Contact us</div>
             <div class="box">
                 <form action="" method="post" id="cont-us" enctype="multipart/form-data">
