@@ -293,6 +293,122 @@ body {
   font-size: 38px;
 }
 
+.dashboard .container .committee-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  background: #fff;
+  -webkit-box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
+          box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
+  border-radius: 10px;
+  padding: 24px;
+  margin-top: 50px;
+  -webkit-column-gap: 24px;
+          column-gap: 24px;
+}
+
+.dashboard .container .committee-details .basic-description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 18px;
+          column-gap: 18px;
+}
+
+.dashboard .container .committee-details .basic-description .img {
+  height: 134px;
+  width: 134px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.dashboard .container .committee-details .basic-description .img img {
+  height: 100%;
+}
+
+.dashboard .container .committee-details .basic-description .description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 8px;
+}
+
+.dashboard .container .committee-details .basic-description .description .heading {
+  font-family: "Gilroy_SB";
+  color: #1e1e1e;
+  font-size: 24px;
+}
+
+.dashboard .container .committee-details .basic-description .description .det {
+  width: 640px;
+  font-family: "Gilroy_M";
+  font-size: 18px;
+  color: #8b8b8b;
+  line-height: 24px;
+}
+
+.dashboard .container .committee-details .other-contents {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 100px;
+          column-gap: 100px;
+}
+
+.dashboard .container .committee-details .other-contents .other-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 24px;
+          column-gap: 24px;
+  margin-top: 8px;
+}
+
+.dashboard .container .committee-details .other-contents .other-content .divider {
+  height: 100%;
+  width: 2px;
+  border-radius: 4px;
+  background: #ececec;
+}
+
+.dashboard .container .committee-details .other-contents .other-content .contents {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 26px;
+}
+
+.dashboard .container .committee-details .other-contents .other-content .contents .content {
+  font-family: "Gilroy_M";
+  font-size: 18px;
+  color: #8b8b8b;
+}
+
+.dashboard .container .committee-details .other-contents .other-content .contents .content span {
+  margin-left: 8px;
+  font-family: "Gilroy_SB";
+  color: #1e1e1e;
+}
+
+.dashboard .container .committee-details .other-contents .other-content .contents .content span #act {
+  margin-left: -8px;
+  color: #039b00;
+}
+
+.dashboard .container .committee-details .other-contents .other-content .contents .content span #inact {
+  margin-left: -8px;
+  color: #ec0000;
+}
+
 .alertt {
   background: #fff;
   padding: 18px 18px 18px 24px;

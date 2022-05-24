@@ -20,6 +20,84 @@ body {
                 font-size: 38px;
             }
         }
+        .committee-details {
+            display: flex;
+            width: 100%;
+            background: $white;
+            box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
+            border-radius: 10px;
+            padding:24px;
+            margin-top: 50px;
+            column-gap: 24px;
+            .basic-description {
+                display: flex;
+                column-gap: 18px;
+                .img {
+                    height: 134px;
+                    width: 134px;
+                    border-radius: 4px;
+                    overflow: hidden;
+                    img {
+                        height: 100%;
+                    }
+                }
+                .description {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 8px;
+                    .heading {
+                        font-family: "Gilroy_SB";
+                        color: $text;
+                        font-size: 24px;
+                    }
+                    .det {
+                        width: 640px;
+                        font-family: "Gilroy_M";
+                        font-size: 18px;
+                        color: $subText;
+                        line-height: 24px;
+                    }
+                }
+            }
+            .other-contents{
+                display: flex;
+                column-gap: 100px;
+                .other-content {
+                    display: flex;
+                    column-gap: 24px;
+                    margin-top: 8px;
+                    .divider {
+                        height: 100%;
+                        width: 2px;
+                        border-radius: 4px;
+                        background: #ececec;
+                    }
+                    .contents {
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: 26px;
+                        .content {
+                            font-family: "Gilroy_M";
+                            font-size: 18px;
+                            color: $subText;
+                            span {
+                                margin-left: 8px;
+                                font-family: "Gilroy_SB";
+                                color: $text;
+                                #act{
+                                    margin-left: -8px;
+                                    color:$green;
+                                }
+                                #inact{
+                                    margin-left: -8px;
+                                    color:$error;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 

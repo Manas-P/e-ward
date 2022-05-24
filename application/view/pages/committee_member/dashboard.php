@@ -17,6 +17,32 @@ else
     $userData=mysqli_fetch_assoc($fetchUserRes);
     $fname = $userData['fname'];
     $wardno = $userData['ward_no'];
+
+    //Fetch Committee details
+    $commDataQuery="SELECT `c_name`, `c_description`, `c_photo`, `m_limit`, `m_joined`, `added_by`, `status` FROM `tbl_committee` WHERE `c_id`='$c_id'";
+    $commDataQueryResult = mysqli_query($conn, $commDataQuery);
+    $commData=mysqli_fetch_assoc($commDataQueryResult);
+    $c_name = $commData['c_name'];
+    $c_des = $commData['c_description'];
+    $c_photo = $commData['c_photo'];
+    $m_limit = $commData['m_limit'];
+    $m_joined = $commData['m_joined'];
+    $added_by = $commData['added_by'];
+    $status = $commData['status'];
+
+    //Fetch the user who created the committee
+    if($wardno == $added_by){
+        $wmNameQuery="SELECT `fullname` FROM `tbl_ward_member` WHERE `wardno`='$added_by'";
+        $wmNameQueryResult = mysqli_query($conn, $wmNameQuery);
+        $wmData=mysqli_fetch_assoc($wmNameQueryResult);
+        $addedName = $wmData['fullname'];
+    }else{
+        $osNameQuery="SELECT `name` FROM `tbl_office_staff` WHERE `userid`='$added_by'";
+        $osNameQueryResult = mysqli_query($conn, $osNameQuery);
+        $osData=mysqli_fetch_assoc($osNameQueryResult);
+        $addedName = $osData['name'];
+    }
+
     //slice first name of user
     $slices=explode(" ", $fname);
     $firstName=$slices[0];
@@ -48,6 +74,60 @@ else
                     </div>
                 </div>
                 <!-- content -->
+                <div class="committee-details">
+                    <div class="basic-description">
+                        <div class="img">
+                            <img src="../<?php echo $c_photo ?>" alt="committee photo">
+                        </div>
+                        <div class="description">
+                            <div class="heading">
+                                <?php echo $c_name ?>
+                            </div>
+                            <div class="det">
+                                <?php echo $c_des?>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="other-contents">
+                        <div class="other-content">
+                            <div class="divider"></div>
+                            <div class="contents">
+                                <div class="content">
+                                    Members limit:<span><?php echo $m_limit ?></span>
+                                </div>
+                                <div class="content">
+                                    Members joined:<span><?php echo $m_joined ?></span>
+                                </div>
+                                <div class="content">
+                                    Status:<span>
+                                        <?php
+                                            if($status==1){
+                                        ?>
+                                        <span id="act">Active</span>
+                                        <?php
+                                            }else{
+                                        ?>
+                                        <span id="inact">Inactive</span>
+                                        <?php
+                                            }
+                                        ?>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="other-content">
+                            <div class="divider"></div>
+                            <div class="contents">
+                                <div class="content">
+                                    Created by:<span><?php echo $addedName ?></span>
+                                </div>
+                                <div class="content">
+                                    Created on:<span>22-05-2022</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
