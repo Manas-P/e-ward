@@ -128,6 +128,99 @@ else
                         </div>
                     </div>
                 </div>
+
+                <!-- Tab Menu -->
+                <div class="tab-menu">
+                    <div class="tabs">
+                        <div id="tabBtn1" class="tab tab-active">
+                            Members
+                        </div>
+                        <div id="tabBtn2" class="tab">
+                            Pending task
+                        </div>
+                        <div id="tabBtn3" class="tab">
+                            Completed task
+                        </div>
+                        <div id="tabBtn4" class="tab">
+                            Rejected task
+                        </div>
+                    </div>
+                    <div class="underline"></div>
+                </div>
+
+                <!-- View members -->
+                <div id="tabCon1" class="tab-content tab-con-active">
+                    <div class="content-table">
+                        <div class="headings">
+                            <div>Slno.</div>
+                            <div style="margin-left: 70px;">Name</div>
+                            <div style="margin-left: 232px;">House no.</div>
+                            <div style="margin-left: 106px;">Phone no.</div>
+                            <div style="margin-left: 169px;">Email id</div>
+                        </div>
+                        <div class="datas">
+                            <?php
+                            //Fetch data id
+                            $viewMemQuery="SELECT `userid`, `wardno` FROM `tbl_committee_req` WHERE `c_id`='$c_id' AND `status`='1'";
+                            $viewMemQueryResult = mysqli_query($conn, $viewMemQuery);
+                            $checkCount = mysqli_num_rows($viewMemQueryResult);
+                            $i=1;
+                            if($checkCount!=0){
+                                while($comRow=mysqli_fetch_array($viewMemQueryResult)){
+                                    $userid = $comRow['userid'];
+                                    
+                                    //Fetch user data
+                                    $query="SELECT `house_no`, `fname`, `email`, `phno`, `dob` FROM `tbl_house_member` WHERE `userid`='$userid'";
+                                    $result=mysqli_query($conn,$query);
+                                    while($row=mysqli_fetch_array($result)){
+                                        //Age
+                                        $age = (date('Y') - date('Y',strtotime($row["dob"])));
+                            ?>
+                            <div class="data">
+                                <table>
+                                    <tr>
+                                        <td width=110px><?php echo $i?>.</td>
+                                        <td width=284px><?php echo $row["fname"]; ?></td>
+                                        <td width=194px><?php echo $row["house_no"]; ?></td>
+                                        <td width=258px><?php echo $row["phno"]; ?></td>
+                                        <td width=496px><?php echo $row["email"]; ?></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <?php
+                                    $i=$i+1;
+                                    }
+                                }
+                            }else{
+                            ?>
+                            <div class="no-result"> No records </div>
+                            <?php
+                            }
+                            ?>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of view members -->
+
+                <!-- Pending task -->
+                <div id="tabCon2" class="tab-content">
+                    tab2
+                </div>
+                <!-- End of pending task -->
+
+                <!-- View completed task -->
+                <div id="tabCon3" class="tab-content">
+                    tab3
+                </div>
+                <!-- End of completed task -->
+
+                <!-- View rejected task -->
+                <div id="tabCon4" class="tab-content">
+                    tab4
+                </div>
+                <!-- End of rejected task -->
+
+
             </div>
         </section>
 
@@ -162,6 +255,7 @@ else
                 unset($_SESSION['error']);
         }?>
     </body>
+    <script src="../../../../public/assets/js/cm_dashboard.js"></script>
     <script src="../../../../public/assets/js/toast.js"></script>
 </html>
 	<?php

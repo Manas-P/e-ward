@@ -1,5 +1,19 @@
 @import "../components.scss";
 
+@mixin card($shadow, $padding) {
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
+    column-gap: 12px;
+    align-items: center;
+    padding: $padding;
+    width: 260px;
+    background: $white;
+    box-shadow: $shadow;
+    border-radius: 10px;
+    transition: 0.2s ease-in-out;
+}
+
 body {
     background: $bg;
 }
@@ -98,6 +112,91 @@ body {
                 }
             }
         }
+        .tab-menu{
+      margin-top:42px;
+      display: flex;
+      flex-direction: column;
+      .tabs{
+        display: flex;
+        column-gap: 24px;
+        .tab{
+          font-family: "Gilroy_SB";
+          font-size: 20px;
+          color:$tabText;
+          padding: 8px 24px;
+          border-radius: 10px;
+          cursor: pointer;
+          &:hover{
+            color: $primary;
+          }
+        }
+        .tab-active{
+          color: $primary;
+          background: $primaryFade;
+          width:auto;
+          &::after{
+            content: "";
+            position: relative;
+            display: block;
+            width:calc(100% + 48px);
+            height: 2px;
+            background: $primary;
+            top:22px;
+            left:-24px;
+          }
+        }
+      }
+      .underline{
+        margin-top: 12px;
+        height:2px;
+        width:100%;
+        background:#D9D5F5;
+        border-radius: 4px;
+      }
+    }
+    .tab-content{
+      margin-top: 42px;
+      display: none;
+      .content-table{
+        .headings {
+          margin: 0px 16px 0 16px;
+          font-family: "Gilroy_SB";
+          font-size: 20px;
+          color: $text;
+          display: flex;
+        }
+        .datas {
+          margin-top: 24px;
+          display: flex;
+          flex-direction: column;
+          row-gap: 24px;
+          .data {
+            padding: 20px;
+            background: $white;
+            border-radius: 10px;
+            font-family: "Gilroy_M";
+            font-size: 18px;
+            color: $darkSubText;
+            td {
+              padding-right: 28px;
+              vertical-align: top;
+              text-align: left;
+            }
+          }
+          .no-result {
+            font-family: "Gilroy_M";
+            font-size: 20px;
+            color: $subText;
+            text-align: center;
+            transform: translateX(-60px);
+            margin-top: 100px;
+          }
+        }
+      }
+    }
+    .tab-con-active{
+      display: block;
+    }
     }
 }
 
