@@ -204,7 +204,27 @@ else
 
                 <!-- Pending task -->
                 <div id="tabCon2" class="tab-content">
-                    tab2
+                    <div class="pending-task">
+                        <a class="task">
+                            <div class="detail">
+                                <div class="title">
+                                    Task name 1
+                                </div>
+                                <div class="description">
+                                    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam...
+                                </div>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="dates">
+                                <div class="date">
+                                    Created on:<span>22-05-2022</span>
+                                </div>
+                                <div class="date">
+                                    Deadline:<span>02-07-2022</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
                 <!-- End of pending task -->
 

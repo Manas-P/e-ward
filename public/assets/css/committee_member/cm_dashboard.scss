@@ -193,6 +193,62 @@ body {
           }
         }
       }
+      .pending-task{
+          display: flex;
+          flex-wrap: wrap;
+          gap: 36px;
+          .task{
+              padding:16px 16px 18px 16px;
+              background: $white;
+              box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
+              border-radius: 10px;
+              display: flex;
+              flex-direction: column;
+              row-gap: 16px;
+              width: 408px;
+              transition: .2s ease-in-out;
+              .detail{
+                  display: flex;
+                  flex-direction: column;
+                  row-gap: 12px;
+                  .title{
+                    font-family: "Gilroy_SB";
+                    font-size: 20px;
+                    color: $text;
+                  }
+                  .description{
+                    font-family: "Gilroy_M";
+                    font-size: 16px;
+                    color: $subText;
+                  }
+              }
+              .divider{
+                  width:100%;
+                  height:2px;
+                  border-radius: 2px;
+                  background: #D9D5F5;
+              }
+              .dates{
+                  display: flex;
+                  flex-direction: column;
+                  row-gap: 12px;
+                  .date{
+                    font-family: "Gilroy_M";
+                    font-size: 16px;
+                    color: $subText;
+                    span{
+                        margin-left: 8px;
+                        font-family: "Gilroy_SB";
+                        color: $text;
+                    }
+                  }
+              }
+              &:hover{
+                box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.062);
+                transform: scale(1.015);
+              }
+          }
+      }
     }
     .tab-con-active{
       display: block;
