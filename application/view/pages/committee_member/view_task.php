@@ -179,6 +179,65 @@ else
             </div>
         </section>
 
+         <!-- =========== Modal ============ -->
+        <div class="overlay modal-hidden"></div>
+        <!-- form to add task report-->
+        <div class="box modal-box modal-hidden">
+            <div class="title">
+                Add task report
+            </div>
+            <div class="modal-close-btn">
+                <img src="../../../../public/assets/images/close.svg" alt="close button">
+            </div>
+            <!-- Add task report -->
+            <form action="../../../model/committee_member/add_task_report.php" method="post" id="add-committe" enctype="multipart/form-data">
+                <input type="hidden" name="tskId" value="<?php echo $tskId ?>">
+                <div class="inputs">
+                    <div class="input commName">
+                        <div class="label">
+                            Task title
+                        </div>
+                        <input type="text" name="title" id="comm-name" placeholder="John Doe" autocomplete="off">
+                        <div class="error error-hidden">
+                        </div>
+                    </div>
+                    <div class="inputt commDes">
+                        <div class="label">
+                            Task description
+                        </div>
+                        <textarea name="des" id="comm-des" rows="10"></textarea>
+                        <div class="subtext">
+                            <div class="error error-hidden">
+                            </div>
+                            <div class="count-limit">
+                                <span id="count-char">0</span>/360
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input commPhoto1">
+                        <div class="label"> Upload photo 1 </div>
+                        <input type="file" name="photo1" id="comm-photo1" accept="image/png,image/jpeg">
+                        <div class="error error-hidden">
+                        </div>
+                    </div>
+                    <div class="input commPhoto2">
+                        <div class="label"> Upload photo 2 </div>
+                        <input type="file" name="photo2" id="comm-photo2" accept="image/png,image/jpeg">
+                        <div class="error error-hidden">
+                        </div>
+                    </div>
+                    <div class="input commPhoto3">
+                        <div class="label"> Upload photo 3 </div>
+                        <input type="file" name="photo3" id="comm-photo3" accept="image/png,image/jpeg">
+                        <div class="error error-hidden">
+                        </div>
+                    </div>
+                    <div class="button hBtn cursor-disable">
+                        <input type="submit" value="Add task report" name="add-tsk-rep" id="add-comm" onclick="loader()" class="primary-button disabled">
+                    </div>
+                </div>
+            </form>
+        </div>
 
         <?php
             if (isset($_SESSION['success'])) {
@@ -210,7 +269,7 @@ else
                 unset($_SESSION['error']);
         }?>
     </body>
-    <script src="../../../../public/assets/js/cm_dashboard.js"></script>
+    <script src="../../../../public/assets/js/cm_add_task_rep.js"></script>
     <script src="../../../../public/assets/js/toast.js"></script>
 </html>
 	<?php

@@ -1,4 +1,5 @@
 <?php
+    include '../../../config/dbcon.php';
     session_start();
     if (isset($_SESSION["sessionId"]) != session_id()) {
         header("Location: ../login/login.php");
@@ -46,7 +47,6 @@
                     </div>
 
                     <?php
-                        include '../../../config/dbcon.php';
                         $memberFetch="SELECT `photo`, `wardno`, `fullname` FROM `tbl_ward_member` WHERE `president`=1";
                         $memberResult=mysqli_query($conn,$memberFetch);
                         if(mysqli_num_rows($memberResult)==0){

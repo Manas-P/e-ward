@@ -261,5 +261,78 @@ body {
   }
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.box {
+  @include box_model(556px, auto);
+  .inputs {
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+    margin-top: 40px;
+    @include input_fields(460px);
+    .inputt {
+      margin-bottom: -20px;
+      width: 460px;
+      display: flex;
+      flex-direction: column;
+      row-gap: 8px;
+      .label {
+        font-size: 16px;
+        font-family: "Gilroy_M";
+      }
+      textarea {
+        resize: vertical;
+        max-height: 168px;
+        min-height: 116px;
+        font-size: 18px;
+        line-height: 27px;
+        font-family: "Gilroy_M";
+        padding: 16px;
+        border-radius: 10px;
+        border: 1px solid $border;
+        color: $text;
+        outline: none;
+        transition: 0.1s ease-in-out;
+        &:focus {
+          border: 1px solid $text;
+        }
+      }
+      .subtext {
+        display: flex;
+        justify-content: space-between;
+        font-family: "Gilroy_M";
+        font-size: 14px;
+        .error {
+          color: $error;
+        }
+        .count-limit {
+          color: $text;
+        }
+      }
+    }
+  }
+  .button {
+    .primary-button {
+      @include primary_button(100%);
+    }
+  }
+}
+
+.modal-hidden {
+  display: none;
+  pointer-events: none;
+}
+
 //Alert
 @include error-alert();
+
+@include loading();
