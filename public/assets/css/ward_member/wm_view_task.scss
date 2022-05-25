@@ -4,7 +4,7 @@ body {
   background: $bg;
 }
 
-@mixin card($shadow,$padding) {
+@mixin card($shadow, $padding) {
   text-decoration: none;
   cursor: pointer;
   display: flex;
@@ -18,16 +18,16 @@ body {
   transition: 0.2s ease-in-out;
 }
 
-@mixin desCard(){
-  height:222px;
+@mixin desCard() {
+  height: 222px;
   width: 704px;
   background: $white;
   box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
   border-radius: 10px;
-  padding:20px 24px;
+  padding: 20px 24px;
 }
 
-@mixin content(){
+@mixin content() {
   display: flex;
   flex-direction: column;
   row-gap: 12px;
@@ -88,91 +88,91 @@ body {
       }
     }
     .bread-crumbs {
-        margin-top: 60px;
-        display: flex;
-        column-gap: 4px;
-        align-items: center;
-        .previous {
-          font-family: "Gilroy_M";
-          font-size: 16px;
-          color: $subText;
-        }
-        svg {
-          .str {
-            stroke: $text;
-          }
-        }
-        .now {
-          font-family: "Gilroy_SB";
-          font-size: 16px;
-          color: $text;
+      margin-top: 60px;
+      display: flex;
+      column-gap: 4px;
+      align-items: center;
+      .previous {
+        font-family: "Gilroy_M";
+        font-size: 16px;
+        color: $subText;
+      }
+      svg {
+        .str {
+          stroke: $text;
         }
       }
+      .now {
+        font-family: "Gilroy_SB";
+        font-size: 16px;
+        color: $text;
+      }
+    }
     // content
-    .task-det{
+    .task-det {
       margin-top: 38px;
       display: flex;
       justify-content: space-between;
-      .card1{
+      .card1 {
         @include desCard();
-        .content{
+        .content {
           display: flex;
           flex-direction: column;
           row-gap: 8px;
-          .heading{
+          .heading {
             font-family: "Gilroy_SB";
             font-size: 24px;
             color: $text;
           }
-          .description{
+          .description {
             font-family: "Gilroy_M";
             font-size: 18px;
             color: $subText;
             line-height: 26px;
-            max-width:656px;
+            max-width: 656px;
           }
         }
       }
-      .card2{
+      .card2 {
         @include desCard();
-        .heading{
+        .heading {
           font-family: "Gilroy_SB";
           font-size: 24px;
           color: $text;
         }
-        .content{
+        .content {
           display: flex;
           width: 100%;
           margin-top: 16px;
           align-items: center;
-          .right{
-            flex:1;
+          .right {
+            flex: 1;
             @include content();
           }
-          .left{
+          .left {
             display: flex;
             column-gap: 24px;
             align-items: center;
             flex: 1;
-            .divider{
-              background: #ECECEC;
-              height:60px;
-              width:2px;
+            .divider {
+              background: #ececec;
+              height: 60px;
+              width: 2px;
               border-radius: 4px;
             }
-            .details{
+            .details {
               @include content();
             }
           }
         }
-        .buttons{
+        .buttons {
           display: flex;
           column-gap: 24px;
           margin-top: 18px;
-          .secondary-btn{
+          .secondary-btn {
             @include secondary_button(316px);
           }
-          .red-btn{
+          .red-btn {
             border: 2px solid $error;
             color: $error;
             &:hover {
@@ -185,7 +185,7 @@ body {
         }
       }
     }
-    .title{
+    .title {
       margin-top: 42px;
       font-family: "Gilroy_SB";
       font-size: 28px;
@@ -200,7 +200,7 @@ body {
         flex-wrap: wrap;
         row-gap: 36px;
         .add-member {
-          @include card(0px 10px 20px rgba(237, 237, 237, 0.25),12px);
+          @include card(0px 10px 20px rgba(237, 237, 237, 0.25), 12px);
           .icon {
             padding: 18px;
             background: $primaryFade;
@@ -223,7 +223,7 @@ body {
           }
         }
         .member {
-          @include card(0px 10px 20px rgba(237, 237, 237, 0.25),12px);
+          @include card(0px 10px 20px rgba(237, 237, 237, 0.25), 12px);
           .photo {
             width: 66px;
             height: 66px;

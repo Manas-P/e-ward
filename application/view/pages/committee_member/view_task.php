@@ -27,10 +27,27 @@ else
     $c_name = $commData['c_name'];
 
     //Fetch task detail
-    $fetchTskData="SELECT `task_name`, `task_des`, `created_date`, `deadline` FROM `tbl_task` WHERE `id`='$tskId'";
+    $fetchTskData="SELECT `task_name`, `task_des`, `created_by`, `created_date`, `deadline` FROM `tbl_task` WHERE `id`='$tskId'";
     $fetchTskDataRes=mysqli_query($conn, $fetchTskData);
     $tskData=mysqli_fetch_assoc($fetchTskDataRes);
     $tsk_name = $tskData['task_name'];
+    $tsk_des = $tskData['task_des'];
+    $tsk_crtBy = $tskData['created_by'];
+    $tsk_cre = $tskData['created_date'];
+    $tsk_dead = $tskData['deadline'];
+
+    //Fetch the user who created the committee
+    if($wardno == $tsk_crtBy){
+        $wmNameQuery="SELECT `fullname` FROM `tbl_ward_member` WHERE `wardno`='$tsk_crtBy'";
+        $wmNameQueryResult = mysqli_query($conn, $wmNameQuery);
+        $wmData=mysqli_fetch_assoc($wmNameQueryResult);
+        $addedName = $wmData['fullname'];
+    }else{
+        $osNameQuery="SELECT `name` FROM `tbl_office_staff` WHERE `userid`='$tsk_crtBy'";
+        $osNameQueryResult = mysqli_query($conn, $osNameQuery);
+        $osData=mysqli_fetch_assoc($osNameQueryResult);
+        $addedName = $osData['name'];
+    }
 
     //slice first name of user
     $slices=explode(" ", $fname);
@@ -74,7 +91,61 @@ else
                     </a>
                 </div>
                 <!-- content -->
+                <div class="task-det">
+                    <div class="card1">
+                        <div class="content">
+                            <div class="heading">
+                                <?php echo $tsk_name ?>
+                            </div>
+                            <div class="description">
+                                <?php echo $tsk_des ?>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card2">
+                        <div class="heading">
+                            Other details
+                        </div>
+                        <div class="content">
+                            <div class="right">
+                                <div class="detail">Created by: <span><?php echo $addedName ?></span></div>
+                                <div class="detail">Created on: <span><?php echo $tsk_cre ?></span></div>
+                            </div>
+                            <div class="left">
+                                <div class="divider"></div>
+                                <div class="details">
+                                    <div class="detail">Deadline: <span><?php echo $tsk_dead ?></span></div>
+                                    <div class="detail">Created on: <span><?php echo $tsk_cre ?></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <a href="" class="secondary-btn">Mark as complete</a>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="title">
+                    Task report
+                </div>
+                <div class="add-task-report">
+                    Add task report
+                </div>
+
+                <div class="report-cards">
+                    <div class="report-card">
+                        <div class="header">
+                            <div class="r-title">Title of report</div>
+                            <div class="date">22-05-2022</div>
+                        </div>
+                        <div class="r-description">
+                            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit
+                            mollit. Exercitation veniam consequat sunt nostrud amet.Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+                            amet sint. Duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.Amet minim mollit non deserunt
+                            ullamco est sit aliqua dolor do amet sint.
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </section>
