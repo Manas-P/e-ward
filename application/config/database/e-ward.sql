@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 16, 2022 at 03:33 PM
+-- Generation Time: May 26, 2022 at 12:28 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.25
 
@@ -65,7 +65,7 @@ CREATE TABLE `tbl_committee` (
 
 INSERT INTO `tbl_committee` (`id`, `c_id`, `wardno`, `c_name`, `c_description`, `c_photo`, `m_limit`, `m_joined`, `added_by`, `status`) VALUES
 (1, 2221, 2, 'Committee new', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', '../../../public/assets/images/uploads/photos/1648653556.jpg', 25, 0, '2', 1),
-(2, 2222, 2, 'Committe two', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, s7', '../../../public/assets/images/uploads/photos/1652684123.jpg', 25, 1, '2', 1),
+(2, 2222, 2, 'Flood releaf', 'The state government has constituted a committee to help define the criteria to allocate funds to local bodies for rebuilding post-flood. The government had allocated Rs 250 crore in the 2021-22 budget for rebuilding.\r\n', '../../../public/assets/images/uploads/photos/1653043513.jpg', 25, 2, '2', 1),
 (3, 2223, 2, 'Committee long name submitted', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', '../../../public/assets/images/uploads/photos/1648653685.jpg', 15, 1, '2', 1),
 (4, 2224, 2, 'Flood relief', 'oosdi fosdhf iuhdif uiudhfisuhdf isudhf iushdfishdiufh sduhfishdf isudhfishdhf df.', '../../../public/assets/images/uploads/photos/1652537266.png', 30, 0, '2', 1),
 (5, 3331, 3, 'trst new ward', 'uer iuerh ihuer', '../../../public/assets/images/uploads/photos/1652537311.png', 10, 0, '3', 1);
@@ -89,8 +89,9 @@ CREATE TABLE `tbl_committee_member` (
 --
 
 INSERT INTO `tbl_committee_member` (`id`, `c_id`, `h_userid`, `c_userid`, `password`) VALUES
-(1, 2222, 2234, 22221, 'DstjjmDR'),
-(5, 2223, 2160, 22231, 'mjNh6PKx');
+(1, 2222, 2234, 22221, '123'),
+(5, 2223, 2160, 22231, '123'),
+(6, 2222, 2232, 22222, '123');
 
 -- --------------------------------------------------------
 
@@ -114,7 +115,7 @@ INSERT INTO `tbl_committee_req` (`id`, `c_id`, `userid`, `wardno`, `status`) VAL
 (1, 2224, 2160, 2, 0),
 (2, 2222, 2162, 2, 2),
 (3, 2222, 2234, 2, 1),
-(6, 2222, 2232, 2, 0),
+(6, 2222, 2232, 2, 1),
 (7, 2223, 2160, 2, 1);
 
 -- --------------------------------------------------------
@@ -181,7 +182,8 @@ INSERT INTO `tbl_edu_bg` (`id`, `userid`, `hs`, `hss`, `diploma`, `ug`, `pg`) VA
 (44, 21120, '0', '0', '0', '0', '0'),
 (45, 21460, '0', '0', '0', '0', '0'),
 (46, 310, '0', '0', '0', '0', '0'),
-(47, 312, '0', '0', '0', '0', '0');
+(47, 312, '0', '0', '0', '0', '0'),
+(48, 21690, '0', '0', '0', '0', '0');
 
 -- --------------------------------------------------------
 
@@ -322,7 +324,8 @@ INSERT INTO `tbl_house_member` (`hm_id`, `ward_no`, `house_no`, `fname`, `email`
 (67, 2, 112, 'tset time', 'tefy@gmail.cm', 9854512547, 'NA', '0000-00-00', '../../../../public/assets/images/user-profile-placeholder.png', 21120, 'sViKI0jh'),
 (68, 2, 146, 'new', 'nkajsdf@ah.asd', 9854512547, 'NA', '0000-00-00', '../../../../public/assets/images/user-profile-placeholder.png', 21460, 'SoEBKjhg'),
 (69, 3, 1, 'qwe', 'qwe@gmail.com', 8545878954, 'NA', '0000-00-00', '../../../public/assets/images/user-profile-placeholder.png', 310, '123'),
-(70, 3, 1, 'new mem', 'mem@gmail.com', 9564589637, 'B+', '1998-07-09', '../../../public/assets/images/uploads/photos/1651783785.png', 312, '8TE06K6v');
+(70, 3, 1, 'new mem', 'mem@gmail.com', 9564589637, 'B+', '1998-07-09', '../../../public/assets/images/uploads/photos/1651783785.png', 312, '8TE06K6v'),
+(71, 2, 169, 'Tellbin Cherian', 'telbincherian@mca.ajce.in', 9856545878, 'NA', '0000-00-00', '../../../public/assets/images/user-profile-placeholder.png', 21690, '6QA3ykhA');
 
 -- --------------------------------------------------------
 
@@ -395,7 +398,8 @@ INSERT INTO `tbl_id_proof` (`id`, `userid`, `aadhar_no`, `aadhar_file`, `electio
 (43, 21120, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
 (44, 21460, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
 (45, 310, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
-(46, 312, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0');
+(46, 312, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0'),
+(47, 21690, 0, '0', 0, '0', '0', '0', '0', '0', 0, '0');
 
 -- --------------------------------------------------------
 
@@ -549,7 +553,8 @@ INSERT INTO `tbl_pro_bg` (`id`, `userid`, `cur_pro`, `cur_pro_file`, `comp_name`
 (39, 21120, '0', '0', '0', '0', '0000-00-00'),
 (40, 21460, '0', '0', '0', '0', '0000-00-00'),
 (41, 310, '0', '0', '0', '0', '0000-00-00'),
-(42, 312, '0', '0', '0', '0', '0000-00-00');
+(42, 312, '0', '0', '0', '0', '0000-00-00'),
+(43, 21690, '0', '0', '0', '0', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -632,7 +637,8 @@ INSERT INTO `tbl_registration` (`rid`, `fname`, `email`, `phno`, `wardno`, `hous
 (73, 'chech ward mem', 'chkmem@gmail.com', 9854563210, 2, 123, '../../public/assets/documents/taxreport/1651347757.pdf', 1),
 (74, 'tset time', 'tefy@gmail.cm', 9854512547, 2, 112, '../../public/assets/documents/taxreport/1651349066.pdf', 1),
 (78, 'Ligin Abraham', 'liginab@gmail.com', 9854541254, 2, 87, '../../public/assets/documents/taxreport/1652153201.pdf', 0),
-(79, 'Telbin Cherian', 'telbincherian@gmail.com', 8545795231, 2, 46, '../../public/assets/documents/taxreport/1652153363.pdf', 0);
+(79, 'Telbin Cherian', 'telbincherian@gmail.com', 8545795231, 2, 46, '../../public/assets/documents/taxreport/1652153363.pdf', 0),
+(80, 'Tellbin Cherian', 'telbincherian@mca.ajce.in', 9856545878, 2, 169, '../../public/assets/documents/taxreport/1653461272.pdf', 1);
 
 -- --------------------------------------------------------
 
@@ -709,6 +715,9 @@ CREATE TABLE `tbl_task` (
   `task_name` varchar(100) NOT NULL,
   `task_des` varchar(500) NOT NULL,
   `assignees` int(10) NOT NULL DEFAULT 0,
+  `created_by` int(10) NOT NULL,
+  `created_date` varchar(10) NOT NULL,
+  `deadline` varchar(10) NOT NULL,
   `status` int(10) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -716,9 +725,61 @@ CREATE TABLE `tbl_task` (
 -- Dumping data for table `tbl_task`
 --
 
-INSERT INTO `tbl_task` (`id`, `c_id`, `task_name`, `task_des`, `assignees`, `status`) VALUES
-(1, 2222, 'Task name one', 'suhdfie uhsdohfoi jps[aoosih fshdfohsid ifuwge8wgf shdiuf siudiuhjq0uw0qw89 wefh usdf isjd ', 0, 0),
-(2, 2222, 'Task name two', 'jsnfds dfjsdjfo isdjf sdjoghhf[jwe oiwoeif oudhibs d osjsgsfg', 0, 0);
+INSERT INTO `tbl_task` (`id`, `c_id`, `task_name`, `task_des`, `assignees`, `created_by`, `created_date`, `deadline`, `status`) VALUES
+(1, 2222, 'Medicine Distribution', 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.Amet minim mollit non deserunt ullamco est sit udyfg wyegr.', 2, 2, '2022-05-13', '2022-06-15', 0),
+(2, 2222, 'Task name two', 'jsnfds dfjsdjfo isdjf sdjoghhf[jwe oiwoeif oudhibs d osjsgsfg', 0, 2, '2022-05-15', '2022-06-05', 0),
+(3, 2222, 'Task name three', 'sdfsefis jefosoidjf osjdfo s', 0, 2, '2022-05-17', '2022-05-31', 0),
+(4, 2223, 'gcfgc', 'vjfh', 1, 2, '2022-05-17', '2022-05-27', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_task_member`
+--
+
+CREATE TABLE `tbl_task_member` (
+  `id` int(10) NOT NULL,
+  `com_id` int(10) NOT NULL,
+  `tsk_id` int(10) NOT NULL,
+  `userid` int(10) NOT NULL,
+  `status` int(10) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_task_member`
+--
+
+INSERT INTO `tbl_task_member` (`id`, `com_id`, `tsk_id`, `userid`, `status`) VALUES
+(1, 2222, 1, 2234, 0),
+(2, 2222, 1, 2232, 0),
+(3, 2223, 4, 2160, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_task_report`
+--
+
+CREATE TABLE `tbl_task_report` (
+  `id` int(10) NOT NULL,
+  `tsk_id` int(10) NOT NULL,
+  `com_id` int(10) NOT NULL,
+  `userid` int(10) NOT NULL,
+  `title` varchar(100) NOT NULL,
+  `description` varchar(500) NOT NULL,
+  `date` date NOT NULL,
+  `photo1` varchar(100) NOT NULL DEFAULT '0',
+  `photo2` varchar(100) NOT NULL DEFAULT '0',
+  `photo3` varchar(100) NOT NULL DEFAULT '0',
+  `status` int(10) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_task_report`
+--
+
+INSERT INTO `tbl_task_report` (`id`, `tsk_id`, `com_id`, `userid`, `title`, `description`, `date`, `photo1`, `photo2`, `photo3`, `status`) VALUES
+(2, 1, 2222, 2232, 'Task rep one', 'suidhfisuhf iusghdfi uysidfh sfd', '2022-05-26', '../../../public/assets/images/uploads/photos/16535175970.jpg', '0', '0', 0);
 
 -- --------------------------------------------------------
 
@@ -749,7 +810,7 @@ INSERT INTO `tbl_ward_member` (`mid`, `fullname`, `email`, `phno`, `wardno`, `va
 (3, 'Annette Black', 'annette@gmail.com', 9845587455, 3, '2027-10-13', '../../../public/assets/images/uploads/photos/1637438042.png', 0, 1, '123'),
 (4, 'Marvin McKinney', 'marvin@gmail.com', 9865478524, 4, '2027-10-13', '../../../public/assets/images/uploads/photos/1637438149.png', 0, 1, 'Yl6Xxf2p'),
 (5, 'Savannah Nguyen', 'savannah@gmail.com', 7458965237, 5, '2027-10-13', '../../../public/assets/images/uploads/photos/1637438202.png', 0, 1, 'UNmwfQ4j'),
-(6, 'Kurian Tom', 'kuriantom@mca.ajce.in', 9856547854, 6, '2027-10-13', '../../../public/assets/images/uploads/photos/1637516935.jpeg', 0, 1, 'ILMxnMgV'),
+(6, 'Appy Kurian', 'kuriantom@mca.ajce.in', 9856547854, 6, '2027-10-13', '../../../public/assets/images/uploads/photos/1637516935.jpeg', 0, 1, 'ILMxnMgV'),
 (7, 'Kunni Bhai', 'telbincherian@mca.ajce.in', 9856587745, 7, '2027-10-13', '../../../public/assets/images/uploads/photos/1647929084.jpg', 0, 1, 'laEQbXxJ'),
 (8, 'Vinu Reji John', 'vinurejijohn21@gmail.com', 9856687458, 8, '2027-10-13', '../../../public/assets/images/uploads/photos/1637659458.jpg', 0, 1, 'AyNAxXRD'),
 (9, 'Mrudul A', 'ganjan@gmail.com', 9565874587, 9, '2027-10-13', '../../../public/assets/images/uploads/photos/1637837216.png', 0, 1, 'Bxs3FNtl'),
@@ -887,6 +948,19 @@ ALTER TABLE `tbl_task`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tbl_task_member`
+--
+ALTER TABLE `tbl_task_member`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_task_report`
+--
+ALTER TABLE `tbl_task_report`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `tsk_id` (`tsk_id`,`com_id`);
+
+--
 -- Indexes for table `tbl_ward_member`
 --
 ALTER TABLE `tbl_ward_member`
@@ -913,7 +987,7 @@ ALTER TABLE `tbl_committee`
 -- AUTO_INCREMENT for table `tbl_committee_member`
 --
 ALTER TABLE `tbl_committee_member`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tbl_committee_req`
@@ -925,7 +999,7 @@ ALTER TABLE `tbl_committee_req`
 -- AUTO_INCREMENT for table `tbl_edu_bg`
 --
 ALTER TABLE `tbl_edu_bg`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `tbl_e_doc`
@@ -949,13 +1023,13 @@ ALTER TABLE `tbl_house`
 -- AUTO_INCREMENT for table `tbl_house_member`
 --
 ALTER TABLE `tbl_house_member`
-  MODIFY `hm_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `hm_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT for table `tbl_id_proof`
 --
 ALTER TABLE `tbl_id_proof`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `tbl_need_request`
@@ -979,13 +1053,13 @@ ALTER TABLE `tbl_office_staff`
 -- AUTO_INCREMENT for table `tbl_pro_bg`
 --
 ALTER TABLE `tbl_pro_bg`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `tbl_registration`
 --
 ALTER TABLE `tbl_registration`
-  MODIFY `rid` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
+  MODIFY `rid` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- AUTO_INCREMENT for table `tbl_staff_activity`
@@ -1003,6 +1077,18 @@ ALTER TABLE `tbl_street_light`
 -- AUTO_INCREMENT for table `tbl_task`
 --
 ALTER TABLE `tbl_task`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `tbl_task_member`
+--
+ALTER TABLE `tbl_task_member`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `tbl_task_report`
+--
+ALTER TABLE `tbl_task_report`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
