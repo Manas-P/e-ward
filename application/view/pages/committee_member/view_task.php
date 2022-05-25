@@ -144,6 +144,35 @@ else
                             amet sint. Duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.Amet minim mollit non deserunt
                             ullamco est sit aliqua dolor do amet sint.
                         </div>
+                        <div class="photosec">
+                            <div class="p-title">Photos</div>
+                            <div class="photos">
+                                <div class="photo">
+                                    <img src="../../../../public/assets/images/uploads/photos/1637438149.png" alt="">
+                                </div>
+                                <div class="photo">
+                                    <img src="../../../../public/assets/images/uploads/photos/1637438149.png" alt="">
+                                </div>
+                                <div class="photo">
+                                    <img src="../../../../public/assets/images/uploads/photos/1637438149.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="r-divider"></div>
+                        <div class="bottom-sec">
+                            <div class="status">
+                                Status:<span class="pen">Pending approval</span>
+                            </div>
+                            <div class="delete-btn">
+                                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="1" y="1" width="42" height="42" rx="9" fill="white" stroke="#EC0000" stroke-width="2"/>
+                                    <path d="M13 16H15H31" stroke="#EC0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M17.9998 16.0001V14.0001C17.9998 13.4697 18.2105 12.961 18.5855 12.5859C18.9606 12.2108 19.4693 12.0001 19.9998 12.0001H23.9998C24.5302 12.0001 25.0389 12.2108 25.414 12.5859C25.789 12.961 25.9998 13.4697 25.9998 14.0001V16.0001M28.9998 16.0001V30.0001C28.9998 30.5306 28.789 31.0393 28.414 31.4143C28.0389 31.7894 27.5302 32.0001 26.9998 32.0001H16.9998C16.4693 32.0001 15.9606 31.7894 15.5855 31.4143C15.2105 31.0393 14.9998 30.5306 14.9998 30.0001V16.0001H28.9998Z" stroke="#EC0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M20.0002 21.0001V27.0001" stroke="#EC0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M23.9998 21.0001V27.0001" stroke="#EC0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
                     </div>
                 </div>
 

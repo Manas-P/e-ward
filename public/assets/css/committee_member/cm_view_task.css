@@ -483,7 +483,7 @@ body {
   padding: 16px 0;
   border: 2px solid #5744e3;
   outline: none;
-  width: 316px;
+  width: 100%;
   border-radius: 10px;
   cursor: pointer;
   -webkit-transition: 0.1s ease-in-out;
@@ -581,6 +581,83 @@ body {
   font-size: 18px;
   color: #8b8b8b;
   line-height: 26px;
+}
+
+.dashboard .container .report-cards .report-card .photosec {
+  margin-top: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 12px;
+}
+
+.dashboard .container .report-cards .report-card .photosec .p-title {
+  font-family: "Gilroy_SB";
+  font-size: 18px;
+  color: #1e1e1e;
+}
+
+.dashboard .container .report-cards .report-card .photosec .photos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 12px;
+          column-gap: 12px;
+}
+
+.dashboard .container .report-cards .report-card .photosec .photos .photo {
+  border-radius: 10px;
+  width: 123px;
+  height: 72px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.dashboard .container .report-cards .report-card .photosec .photos .photo img {
+  width: 100%;
+}
+
+.dashboard .container .report-cards .report-card .r-divider {
+  margin-top: 28px;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  background: #ececec;
+}
+
+.dashboard .container .report-cards .report-card .bottom-sec {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 18px;
+}
+
+.dashboard .container .report-cards .report-card .bottom-sec .status {
+  font-family: "Gilroy_M";
+  font-size: 18px;
+  color: #8b8b8b;
+}
+
+.dashboard .container .report-cards .report-card .bottom-sec .status .pen {
+  font-family: "Gilroy_SB";
+  color: #5744e3;
+  margin-left: 8px;
+}
+
+.dashboard .container .report-cards .report-card .bottom-sec .delete-btn {
+  height: 44px;
+  width: 44px;
+  cursor: pointer;
 }
 
 .alertt {
