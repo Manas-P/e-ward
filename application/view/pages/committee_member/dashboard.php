@@ -205,25 +205,48 @@ else
                 <!-- Pending task -->
                 <div id="tabCon2" class="tab-content">
                     <div class="pending-task">
-                        <a class="task">
+                        <?php
+                            //Fetch task id
+                            $fetchTskId="SELECT `tsk_id` FROM `tbl_task_member` WHERE `userid`='$h_userid' AND `com_id`='$c_id' AND `status`='0'";
+                            $fetchTskIdRes=mysqli_query($conn, $fetchTskId);
+                            while($tskRow=mysqli_fetch_array($fetchTskIdRes)){
+                                $tskId = $tskRow['tsk_id'];
+                                //Fetch task data
+                                $fetchTskData="SELECT `task_name`, `task_des`, `created_date`, `deadline` FROM `tbl_task` WHERE `id`='$tskId'";
+                                $fetchTskDataRes=mysqli_query($conn, $fetchTskData);
+                                $tskData=mysqli_fetch_assoc($fetchTskDataRes);
+                                $tsk_name = $tskData['task_name'];
+                                $tsk_des = $tskData['task_des'];
+                                $tsk_cre = $tskData['created_date'];
+                                $tsk_dead = $tskData['deadline'];
+                                //Trim task description if its above 136 char
+                                if(strlen($tsk_des)>136){
+                                    $tsk_des=substr($tsk_des,0,136);
+                                    $tsk_des=$tsk_des . "...";
+                                }
+                        ?>
+                        <a href="./view_task.php?tskId=<?php echo $tskId ?>" class="task">
                             <div class="detail">
                                 <div class="title">
-                                    Task name 1
+                                    <?php echo $tsk_name ?>
                                 </div>
                                 <div class="description">
-                                    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam...
+                                    <?php echo $tsk_des ?>
                                 </div>
                             </div>
                             <div class="divider"></div>
                             <div class="dates">
                                 <div class="date">
-                                    Created on:<span>22-05-2022</span>
+                                    Created on:<span><?php echo $tsk_cre ?></span>
                                 </div>
                                 <div class="date">
-                                    Deadline:<span>02-07-2022</span>
+                                    Deadline:<span><?php echo $tsk_dead ?></span>
                                 </div>
                             </div>
                         </a>
+                        <?php
+                            }
+                        ?>
                     </div>
                 </div>
                 <!-- End of pending task -->
