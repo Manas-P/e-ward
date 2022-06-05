@@ -133,37 +133,62 @@ else
                 </div>
 
                 <div class="report-cards">
+
+                    <?php
+                        $fetchTskRep="SELECT `title`, `description`, `date`, `photo1`, `photo2`, `photo3`, `status` FROM `tbl_task_report` WHERE `tsk_id`='$tskId' AND `com_id`='$c_id' AND `userid`='$h_userid'";
+                        $fetchTskRepResult = mysqli_query($conn, $fetchTskRep);
+                        $checkCount = mysqli_num_rows($fetchTskRepResult);
+                        if($checkCount!=0){
+                            while($row=mysqli_fetch_array($fetchTskRepResult)){
+                                $date=$row["date"];
+                                $date=date_format (new DateTime($date), 'd-m-Y');
+                    ?>
                     <div class="report-card">
                         <div class="header">
-                            <div class="r-title">Title of report</div>
-                            <div class="date">22-05-2022</div>
+                            <div class="r-title"><?php echo $row["title"]; ?></div>
+                            <div class="date"><?php echo $date; ?></div>
                         </div>
                         <div class="r-description">
-                            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit
-                            mollit. Exercitation veniam consequat sunt nostrud amet.Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                            amet sint. Duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.Amet minim mollit non deserunt
-                            ullamco est sit aliqua dolor do amet sint.
+                            <?php echo $row["description"]; ?>
                         </div>
                         <div class="photosec">
                             <div class="p-title">Photos</div>
                             <div class="photos">
                                 <div class="photo">
-                                    <img src="../../../../public/assets/images/uploads/photos/1637438149.png" alt="">
+                                    <img src="../<?php echo $row['photo1']; ?>" alt="">
                                 </div>
                                 <div class="photo">
-                                    <img src="../../../../public/assets/images/uploads/photos/1637438149.png" alt="">
+                                    <img src="../<?php echo $row['photo2']; ?>" alt="">
                                 </div>
                                 <div class="photo">
-                                    <img src="../../../../public/assets/images/uploads/photos/1637438149.png" alt="">
+                                    <img src="../<?php echo $row['photo3']; ?>" alt="">
                                 </div>
                             </div>
                         </div>
                         <div class="r-divider"></div>
                         <div class="bottom-sec">
                             <div class="status">
-                                Status:<span class="pen">Pending approval</span>
+                                Status:
+                                <?php
+                                    if($row["status"]=='0'){
+                                ?>
+                                        <span class="pen">Pending approval</span>
+                                <?php
+                                    }elseif($row["status"]=='1'){
+                                ?>
+                                        <span class="app">Approved</span>
+                                <?php
+                                    }elseif($row["status"]=='2'){
+                                ?>
+                                        <span class="rej">Rejected</span>
+                                <?php
+                                    }
+                                ?>
                             </div>
-                            <div class="delete-btn">
+                            <?php
+                                if($row["status"]=='0'){
+                            ?>
+                            <a href="" class="delete-btn">
                                 <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect x="1" y="1" width="42" height="42" rx="9" fill="white" stroke="#EC0000" stroke-width="2"/>
                                     <path d="M13 16H15H31" stroke="#EC0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -171,9 +196,17 @@ else
                                     <path d="M20.0002 21.0001V27.0001" stroke="#EC0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     <path d="M23.9998 21.0001V27.0001" stroke="#EC0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-                            </div>
+                            </a>
+                            <?php
+                                }
+                            ?>
                         </div>
                     </div>
+                    <?php
+                            }
+                        }
+                    ?>
+
                 </div>
 
             </div>

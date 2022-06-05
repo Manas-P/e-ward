@@ -26,7 +26,7 @@
             $file_tmpname = $_FILES['photo2']['tmp_name'];
             $file_name = $_FILES['photo2']['name'];
             $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
-            $filepath_photo2 = $upload_dir . time()."0".".".$file_ext;
+            $filepath_photo2 = $upload_dir . time()."1".".".$file_ext;
             if(move_uploaded_file($file_tmpname, $filepath_photo2)){}else{
                 $_SESSION['error'] = "Error in uploading photo";
                 header("Location: ../../view/pages/committee_member/view_task.php?tskId=$tskId");
@@ -39,7 +39,7 @@
             $file_tmpname = $_FILES['photo3']['tmp_name'];
             $file_name = $_FILES['photo3']['name'];
             $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
-            $filepath_photo3 = $upload_dir . time()."0".".".$file_ext;
+            $filepath_photo3 = $upload_dir . time()."2".".".$file_ext;
             if(move_uploaded_file($file_tmpname, $filepath_photo3)){}else{
                 $_SESSION['error'] = "Error in uploading photo";
                 header("Location: ../../view/pages/committee_member/view_task.php?tskId=$tskId");

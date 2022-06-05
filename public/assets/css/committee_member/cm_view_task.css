@@ -577,6 +577,7 @@ body {
 .dashboard .container .report-cards .report-card .r-description {
   margin-top: 8px;
   width: 656px;
+  height: 130px;
   font-family: "Gilroy_M";
   font-size: 18px;
   color: #8b8b8b;
@@ -651,6 +652,18 @@ body {
 .dashboard .container .report-cards .report-card .bottom-sec .status .pen {
   font-family: "Gilroy_SB";
   color: #5744e3;
+  margin-left: 8px;
+}
+
+.dashboard .container .report-cards .report-card .bottom-sec .status .app {
+  font-family: "Gilroy_SB";
+  color: #039b00;
+  margin-left: 8px;
+}
+
+.dashboard .container .report-cards .report-card .bottom-sec .status .rej {
+  font-family: "Gilroy_SB";
+  color: #ec0000;
   margin-left: 8px;
 }
 
