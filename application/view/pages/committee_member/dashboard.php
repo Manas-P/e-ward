@@ -141,9 +141,6 @@ else
                         <div id="tabBtn3" class="tab">
                             Completed task
                         </div>
-                        <div id="tabBtn4" class="tab">
-                            Rejected task
-                        </div>
                     </div>
                     <div class="underline"></div>
                 </div>
@@ -209,21 +206,23 @@ else
                             //Fetch task id
                             $fetchTskId="SELECT `tsk_id` FROM `tbl_task_member` WHERE `userid`='$h_userid' AND `com_id`='$c_id' AND `status`='0'";
                             $fetchTskIdRes=mysqli_query($conn, $fetchTskId);
-                            while($tskRow=mysqli_fetch_array($fetchTskIdRes)){
-                                $tskId = $tskRow['tsk_id'];
-                                //Fetch task data
-                                $fetchTskData="SELECT `task_name`, `task_des`, `created_date`, `deadline` FROM `tbl_task` WHERE `id`='$tskId'";
-                                $fetchTskDataRes=mysqli_query($conn, $fetchTskData);
-                                $tskData=mysqli_fetch_assoc($fetchTskDataRes);
-                                $tsk_name = $tskData['task_name'];
-                                $tsk_des = $tskData['task_des'];
-                                $tsk_cre = $tskData['created_date'];
-                                $tsk_dead = $tskData['deadline'];
-                                //Trim task description if its above 136 char
-                                if(strlen($tsk_des)>136){
-                                    $tsk_des=substr($tsk_des,0,136);
-                                    $tsk_des=$tsk_des . "...";
-                                }
+                            $checkCount1 = mysqli_num_rows($fetchTskIdRes);
+                            if($checkCount1!=0){
+                                while($tskRow=mysqli_fetch_array($fetchTskIdRes)){
+                                    $tskId = $tskRow['tsk_id'];
+                                    //Fetch task data
+                                    $fetchTskData="SELECT `task_name`, `task_des`, `created_date`, `deadline` FROM `tbl_task` WHERE `id`='$tskId'";
+                                    $fetchTskDataRes=mysqli_query($conn, $fetchTskData);
+                                    $tskData=mysqli_fetch_assoc($fetchTskDataRes);
+                                    $tsk_name = $tskData['task_name'];
+                                    $tsk_des = $tskData['task_des'];
+                                    $tsk_cre = $tskData['created_date'];
+                                    $tsk_dead = $tskData['deadline'];
+                                    //Trim task description if its above 136 char
+                                    if(strlen($tsk_des)>136){
+                                        $tsk_des=substr($tsk_des,0,136);
+                                        $tsk_des=$tsk_des . "...";
+                                    }
                         ?>
                         <a href="./view_task.php?tskId=<?php echo $tskId ?>" class="task">
                             <div class="detail">
@@ -245,6 +244,11 @@ else
                             </div>
                         </a>
                         <?php
+                                }
+                            }else{
+                        ?>
+                                <div class="no-result"> No records </div>
+                        <?php
                             }
                         ?>
                     </div>
@@ -253,15 +257,59 @@ else
 
                 <!-- View completed task -->
                 <div id="tabCon3" class="tab-content">
-                    tab3
+                    <div class="pending-task">
+                        <?php
+                            //Fetch task id
+                            $fetchTskId="SELECT `tsk_id` FROM `tbl_task_member` WHERE `userid`='$h_userid' AND `com_id`='$c_id' AND `status`='1'";
+                            $fetchTskIdRes=mysqli_query($conn, $fetchTskId);
+                            $checkCount1 = mysqli_num_rows($fetchTskIdRes);
+                            if($checkCount1!=0){
+                                while($tskRow=mysqli_fetch_array($fetchTskIdRes)){
+                                    $tskId = $tskRow['tsk_id'];
+                                    //Fetch task data
+                                    $fetchTskData="SELECT `task_name`, `task_des`, `created_date`, `deadline` FROM `tbl_task` WHERE `id`='$tskId'";
+                                    $fetchTskDataRes=mysqli_query($conn, $fetchTskData);
+                                    $tskData=mysqli_fetch_assoc($fetchTskDataRes);
+                                    $tsk_name = $tskData['task_name'];
+                                    $tsk_des = $tskData['task_des'];
+                                    $tsk_cre = $tskData['created_date'];
+                                    $tsk_dead = $tskData['deadline'];
+                                    //Trim task description if its above 136 char
+                                    if(strlen($tsk_des)>136){
+                                        $tsk_des=substr($tsk_des,0,136);
+                                        $tsk_des=$tsk_des . "...";
+                                    }
+                        ?>
+                        <a href="" class="task">
+                            <div class="detail">
+                                <div class="title">
+                                    <?php echo $tsk_name ?>
+                                </div>
+                                <div class="description">
+                                    <?php echo $tsk_des ?>
+                                </div>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="dates">
+                                <div class="date">
+                                    Created on:<span><?php echo $tsk_cre ?></span>
+                                </div>
+                                <div class="date">
+                                    Deadline:<span><?php echo $tsk_dead ?></span>
+                                </div>
+                            </div>
+                        </a>
+                        <?php
+                                }
+                            }else{
+                        ?>
+                                <div class="no-result"> No records </div>
+                        <?php
+                            }
+                        ?>
+                    </div>
                 </div>
                 <!-- End of completed task -->
-
-                <!-- View rejected task -->
-                <div id="tabCon4" class="tab-content">
-                    tab4
-                </div>
-                <!-- End of rejected task -->
 
 
             </div>
