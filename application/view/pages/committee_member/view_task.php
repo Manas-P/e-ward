@@ -135,7 +135,7 @@ else
                 <div class="report-cards">
 
                     <?php
-                        $fetchTskRep="SELECT `title`, `description`, `date`, `photo1`, `photo2`, `photo3`, `status` FROM `tbl_task_report` WHERE `tsk_id`='$tskId' AND `com_id`='$c_id' AND `userid`='$h_userid'";
+                        $fetchTskRep="SELECT `id`, `title`, `description`, `date`, `photo1`, `photo2`, `photo3`, `status` FROM `tbl_task_report` WHERE `tsk_id`='$tskId' AND `com_id`='$c_id' AND `userid`='$h_userid'";
                         $fetchTskRepResult = mysqli_query($conn, $fetchTskRep);
                         $checkCount = mysqli_num_rows($fetchTskRepResult);
                         if($checkCount!=0){
@@ -188,7 +188,7 @@ else
                             <?php
                                 if($row["status"]=='0'){
                             ?>
-                            <a href="" class="delete-btn">
+                            <a href="../../../model/committee_member/delete_task_report.php?id=<?php echo $row['id']; ?>&tskId=<?php echo $tskId ?>" class="delete-btn">
                                 <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect x="1" y="1" width="42" height="42" rx="9" fill="white" stroke="#EC0000" stroke-width="2"/>
                                     <path d="M13 16H15H31" stroke="#EC0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -204,9 +204,12 @@ else
                     </div>
                     <?php
                             }
+                        }else{
+                    ?>
+                        <div class="no-result"> No records </div>
+                    <?php
                         }
                     ?>
-
                 </div>
 
             </div>

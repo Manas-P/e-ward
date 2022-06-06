@@ -673,6 +673,17 @@ body {
   cursor: pointer;
 }
 
+.dashboard .container .report-cards .no-result {
+  position: absolute;
+  font-family: "Gilroy_M";
+  font-size: 20px;
+  color: #8b8b8b;
+  left: 50%;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+  margin-top: 100px;
+}
+
 .overlay {
   position: fixed;
   top: 0;

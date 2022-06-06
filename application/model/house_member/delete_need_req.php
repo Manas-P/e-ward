@@ -5,7 +5,7 @@
     $id=$_GET['id'];
     $deleteQuery="DELETE FROM `tbl_need_request` WHERE `id`='$id'";
     $deleteQueryResult=mysqli_query($conn,$deleteQuery);
-    if(deleteQueryResult){
+    if($deleteQueryResult){
         $_SESSION['success'] = "Request deleted successfully";
         header("Location: ../../view/pages/house_member/add_need_request.php");
     }else{
