@@ -149,7 +149,7 @@
                             <div class="underline">
                             </div>
                             <div class="buttons">
-                                <a href="" class="approve">Approve</a>
+                                <a href="../../../model/ward_member/approve_tsk_report.php?id=<?php echo $row['id']; ?>&tskId=<?php echo $tsk_id ?>&userId=<?php echo $userid ?>&cId=<?php echo $c_id ?>" class="approve">Approve</a>
                                 <a href="" class="reject">Reject</a>
                             </div>
                         </div>
