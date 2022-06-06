@@ -109,23 +109,26 @@
                 <!-- Pending approval -->
                 <div id="tabCon1" class="tab-content tab-con-active">
                     <div class="cards">
+                        <?php
+                            $fetchTskRep="SELECT `id`, `title`, `description`, `date`, `photo1`, `photo2`, `photo3`, `status` FROM `tbl_task_report` WHERE `tsk_id`='$tsk_id' AND `com_id`='$c_id' AND `userid`='$userid' AND `status`='0'";
+                            $fetchTskRepResult = mysqli_query($conn, $fetchTskRep);
+                            $checkCount = mysqli_num_rows($fetchTskRepResult);
+                            if($checkCount!=0){
+                                while($row=mysqli_fetch_array($fetchTskRepResult)){
+                                    $date=$row["date"];
+                                    $date=date_format (new DateTime($date), 'd-m-Y');
+                        ?>
                         <div class="card">
                             <div class="header">
                                 <div class="title">
-                                    Title
+                                    <?php echo $row["title"]; ?>
                                 </div>
                                 <div class="date">
-                                    20-03-2022
+                                    <?php echo $date; ?>
                                 </div>
                             </div>
                             <div class="description">
-                                Amet minim mollit non deserunt ullamco est sit aliqua dolor 
-                                do amet sint. Velit officia consequat duis enim velit
-                                mollit. Exercitation veniam consequat sunt nostrud amet. 
-                                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                                amet sint. Duis enim velit mollit. Exercitation veniam 
-                                consequat sunt nostrud amet.Amet minim mollit non deserunt
-                                ullamco est sit aliqua dolor do amet sint.
+                                <?php echo $row["description"]; ?>
                             </div>
                             <div class="photos">
                                 <div class="title">
@@ -133,13 +136,13 @@
                                 </div>
                                 <div class="images">
                                     <div class="img">
-                                        <img src="../../../../public/assets/images/uploads/photos/1637689428.png" alt="">
+                                        <img src="../<?php echo $row['photo1']; ?>" alt="">
                                     </div>
                                     <div class="img">
-                                        <img src="../../../../public/assets/images/uploads/photos/1644758474.png" alt="">
+                                        <img src="../<?php echo $row['photo2']; ?>" alt="">
                                     </div>
                                     <div class="img">
-                                        <img src="../../../../public/assets/images/uploads/photos/1643901418.jpg" alt="">
+                                        <img src="../<?php echo $row['photo3']; ?>" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -150,6 +153,14 @@
                                 <a href="" class="reject">Reject</a>
                             </div>
                         </div>
+                        <?php
+                                }
+                            }else{
+                        ?>
+                            <div class="no-result"> No records </div>
+                        <?php
+                            }
+                        ?>
                     </div>
                 </div>
                 <!-- End of Pending approval -->
@@ -157,21 +168,26 @@
                 <!-- Approved work -->
                 <div id="tabCon2" class="tab-content">
                     <div class="cards">
+                        <?php
+                            $fetchTskRep="SELECT `id`, `title`, `description`, `date`, `photo1`, `photo2`, `photo3`, `status` FROM `tbl_task_report` WHERE `tsk_id`='$tsk_id' AND `com_id`='$c_id' AND `userid`='$userid' AND `status`='1'";
+                            $fetchTskRepResult = mysqli_query($conn, $fetchTskRep);
+                            $checkCount = mysqli_num_rows($fetchTskRepResult);
+                            if($checkCount!=0){
+                                while($row=mysqli_fetch_array($fetchTskRepResult)){
+                                    $date=$row["date"];
+                                    $date=date_format (new DateTime($date), 'd-m-Y');
+                        ?>
                         <div class="card">
                             <div class="header">
                                 <div class="title">
-                                    New title
+                                    <?php echo $row["title"]; ?>
                                 </div>
                                 <div class="date">
-                                    18-03-2022
+                                    <?php echo $date; ?>
                                 </div>
                             </div>
                             <div class="description">
-                                Amet minim mollit non deserunt ullamco est sit aliqua dolor
-                                do amet sint. Velit officia consequat duis enim velit
-                                mollit. Exercitation veniam consequat sunt nostrud amet.
-                                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                                amet sint. Duis enim velit mollit.
+                                <?php echo $row["description"]; ?>
                             </div>
                             <div class="photos">
                                 <div class="title">
@@ -179,24 +195,79 @@
                                 </div>
                                 <div class="images">
                                     <div class="img">
-                                        <img src="../../../../public/assets/images/uploads/photos/1637437604.png" alt="">
+                                        <img src="../<?php echo $row['photo1']; ?>" alt="">
                                     </div>
                                     <div class="img">
-                                        <img src="../../../../public/assets/images/uploads/photos/1637438042.png" alt="">
+                                        <img src="../<?php echo $row['photo2']; ?>" alt="">
                                     </div>
                                     <div class="img">
-                                        <img src="../../../../public/assets/images/uploads/photos/1637438149.png" alt="">
+                                        <img src="../<?php echo $row['photo3']; ?>" alt="">
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <?php
+                                }
+                            }else{
+                        ?>
+                            <div class="no-result"> No records </div>
+                        <?php
+                            }
+                        ?>
                     </div>
                 </div>
                 <!-- End of Approved work -->
 
                 <!-- Rejected work -->
                 <div id="tabCon3" class="tab-content">
-                    <h1>Tab 3</h1>
+                    <div class="cards">
+                        <?php
+                            $fetchTskRep="SELECT `id`, `title`, `description`, `date`, `photo1`, `photo2`, `photo3`, `status` FROM `tbl_task_report` WHERE `tsk_id`='$tsk_id' AND `com_id`='$c_id' AND `userid`='$userid' AND `status`='2'";
+                            $fetchTskRepResult = mysqli_query($conn, $fetchTskRep);
+                            $checkCount = mysqli_num_rows($fetchTskRepResult);
+                            if($checkCount!=0){
+                                while($row=mysqli_fetch_array($fetchTskRepResult)){
+                                    $date=$row["date"];
+                                    $date=date_format (new DateTime($date), 'd-m-Y');
+                        ?>
+                        <div class="card">
+                            <div class="header">
+                                <div class="title">
+                                    <?php echo $row["title"]; ?>
+                                </div>
+                                <div class="date">
+                                    <?php echo $date; ?>
+                                </div>
+                            </div>
+                            <div class="description">
+                                <?php echo $row["description"]; ?>
+                            </div>
+                            <div class="photos">
+                                <div class="title">
+                                    Photos
+                                </div>
+                                <div class="images">
+                                    <div class="img">
+                                        <img src="../<?php echo $row['photo1']; ?>" alt="">
+                                    </div>
+                                    <div class="img">
+                                        <img src="../<?php echo $row['photo2']; ?>" alt="">
+                                    </div>
+                                    <div class="img">
+                                        <img src="../<?php echo $row['photo3']; ?>" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <?php
+                                }
+                            }else{
+                        ?>
+                            <div class="no-result"> No records </div>
+                        <?php
+                            }
+                        ?>
+                    </div>
                 </div>
                 <!-- End of Rejected work -->
                 

@@ -403,7 +403,7 @@ body {
   margin-top: 12px;
   height: 2px;
   width: 100%;
-  background: #D9D5F5;
+  background: #d9d5f5;
   border-radius: 4px;
 }
 
@@ -508,7 +508,7 @@ body {
   width: 100%;
   height: 2px;
   border-radius: 2px;
-  background: #ECECEC;
+  background: #ececec;
 }
 
 .main .container .tab-content .cards .card .buttons {
@@ -575,6 +575,17 @@ body {
 
 .main .container .tab-content .cards .card .buttons .reject:hover {
   background: #fde1e1;
+}
+
+.main .container .tab-content .cards .no-result {
+  position: absolute;
+  font-family: "Gilroy_M";
+  font-size: 20px;
+  color: #8b8b8b;
+  left: 50%;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+  margin-top: 100px;
 }
 
 .main .container .tab-con-active {
