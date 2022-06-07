@@ -108,7 +108,7 @@
                     </div>
                     <div class="buttons">
                         <a class="update">Update</a>
-                        <a href="" class="close">Close</a>
+                        <a href="../../../model/ward_member/close_committee.php?c_id=<?php echo $c_id; ?>" class="close">Close</a>
                     </div>
                 </div>
 

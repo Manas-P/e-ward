@@ -280,7 +280,7 @@ else
                                         $tsk_des=$tsk_des . "...";
                                     }
                         ?>
-                        <a href="" class="task">
+                        <a href="./view_task.php?tskId=<?php echo $tskId ?>" class="task">
                             <div class="detail">
                                 <div class="title">
                                     <?php echo $tsk_name ?>

@@ -47,8 +47,9 @@
         }
 
         $date=date("Y-m-d");
-        $insertQuery="INSERT INTO `tbl_task_report`(`tsk_id`, `com_id`, `userid`, `title`, `description`, `date`, `photo1`, `photo2`, `photo3`) VALUES ('$tskId','$c_id','$h_userid','$title','$des','$date','$filepath_photo1','$filepath_photo2','$filepath_photo3')";
-        $insertQueryRes=mysqli_query($conn, $insertQuery);
+        $insertQuery="INSERT INTO `tbl_task_report`(`tsk_id`, `com_id`, `userid`, `title`, `description`, `date`, `photo1`, `photo2`, `photo3`) VALUES ('$tskId','$c_id','$h_userid','$title','$des','$date','$filepath_photo1','$filepath_photo2','$filepath_photo3') ;
+                      UPDATE `tbl_task_member` SET `status`='0' WHERE `tsk_id`='$tskId' AND `userid`='$h_userid' AND `com_id`='$c_id'";
+        $insertQueryRes=mysqli_multi_query($conn, $insertQuery);
         if($insertQueryRes){
             $_SESSION['success'] = "Successfully added task report";
             header("Location: ../../view/pages/committee_member/view_task.php?tskId=$tskId");

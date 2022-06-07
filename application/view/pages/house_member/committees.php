@@ -76,7 +76,7 @@ else
                 </div>
                 <div class="datas">
                     <?php
-                        $query="SELECT `c_id`, `c_name`, `c_description`, `m_limit`, `m_joined` FROM `tbl_committee` WHERE `wardno`='$wardno'";
+                        $query="SELECT `c_id`, `c_name`, `c_description`, `m_limit`, `m_joined` FROM `tbl_committee` WHERE `wardno`='$wardno' AND `status`='1'";
                         $result=mysqli_query($conn,$query);
                         $i=1;
                         while($row=mysqli_fetch_array($result)){

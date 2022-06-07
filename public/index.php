@@ -22,8 +22,8 @@
                 <img src="./assets/images/logo.svg" alt="logo">
             </div>
             <div class="links">
-                <a href="" class="link">Services</a>
-                <a href="" class="link">About</a>
+                <a href="#services" class="link">Services</a>
+                <a href="#about-sec" class="link">About</a>
                 <a href="#contact-us" class="link">contact us</a>
                 <a href="../application/view/pages/login/login.php" name="login" class="link login-btn">login</a>
             </div>
@@ -45,7 +45,7 @@
                 <img src="./assets/images/landing-hero.png" alt="">
             </div>
         </div>
-        <div class="features">
+        <div class="features" id="services">
             <div class="card">
                 <img src="./assets/images/time.svg" alt="Time saving" style="background: #E5E7FF;">
                 <div class="title">
@@ -74,7 +74,7 @@
                 </div>
             </div>
         </div>
-        <div class="users">
+        <div class="users" id="about-sec">
             <div class="content">
                 <div class="tag">
                     User friendly
