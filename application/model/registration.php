@@ -59,14 +59,17 @@
             $ins_res=mysqli_query($conn,$ins);
             if($ins_res){
                 $_SESSION['success'] = "Registration request send";
-                header("Location: ../view/pages/login/login.php");
+                echo "<script>window.location='../view/pages/login/login.php'</script>";
+                // header("Location: ../view/pages/login/login.php");
             }else{
                 $_SESSION['error'] = "Error in registration";
-                header("Location: ../view/pages/login/login.php");
+                echo "<script>window.location='../view/pages/login/login.php'</script>";
+                // header("Location: ../view/pages/login/login.php");
             }
         }else{
             $_SESSION['error'] = "File upload error";
-            header("Location: ../view/pages/login/login.php");
+            echo "<script>window.location='../view/pages/login/login.php'</script>";
+            // header("Location: ../view/pages/login/login.php");
         }
     }
 ?>

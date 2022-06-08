@@ -39,14 +39,17 @@
             $insertQueryRes=mysqli_query($conn,$insertQuery);
             if($insertQueryRes){
                 $_SESSION['success'] = "Committe added successfully";
-                header("Location: ../../view/pages/ward_member/committees.php");
+                echo "<script>window.location='../../view/pages/ward_member/committees.php'</script>";
+                // header("Location: ../../view/pages/ward_member/committees.php");
             }else{
                 $_SESSION['error'] = "Error in adding committee";
-                header("Location: ../../view/pages/ward_member/committees.php");
+                echo "<script>window.location='../../view/pages/ward_member/committees.php'</script>";
+                // header("Location: ../../view/pages/ward_member/committees.php");
             }
         }else{
             $_SESSION['error'] = "Error in file upload";
-            header("Location: ../../view/pages/ward_member/committees.php");
+            echo "<script>window.location='../../view/pages/ward_member/committees.php'</script>";
+            // header("Location: ../../view/pages/ward_member/committees.php");
         }
     }
 ?>

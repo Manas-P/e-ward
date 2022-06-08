@@ -11,10 +11,12 @@
         $insertQueryRes=mysqli_query($conn,$insertQuery);
         if($insertQueryRes){
             $_SESSION['success'] = "Task added successfully";
-            header("Location: ../../view/pages/ward_member/view_committee.php?c_id=$comid");
+            echo "<script>window.location='../../view/pages/ward_member/view_committee.php?c_id=".$comid."'</script>";
+            // header("Location: ../../view/pages/ward_member/view_committee.php?c_id=$comid");
         }else{
             $_SESSION['error'] = "Error in adding task";
-            header("Location: ../../view/pages/ward_member/view_committee.php?c_id=$comid");
+            echo "<script>window.location='../../view/pages/ward_member/view_committee.php?c_id=".$comid."'</script>";
+            // header("Location: ../../view/pages/ward_member/view_committee.php?c_id=$comid");
         }
     }
 ?>

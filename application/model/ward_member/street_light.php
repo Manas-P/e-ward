@@ -7,7 +7,6 @@
     if(isset($_POST['add-sl'])){
 
         $checkboxes=$_POST['houseno'];
-        echo $checkboxes;
         $houses="";
         foreach($checkboxes as $houseno)  
         {  
@@ -19,10 +18,12 @@
         $queryResult=mysqli_query($conn,$insertQuery);
         if($queryResult){
             $_SESSION['success'] = "Street light added successfully";
-            header("Location: ../../view/pages/ward_member/street_light.php");
+            echo "<script>window.location='../../view/pages/ward_member/street_light.php'</script>";
+            // header("Location: ../../view/pages/ward_member/street_light.php");
         }else{
             $_SESSION['error'] = "Error in adding street light";
-            header("Location: ../../view/pages/ward_member/street_light.php");
+            echo "<script>window.location='../../view/pages/ward_member/street_light.php'</script>";
+            // header("Location: ../../view/pages/ward_member/street_light.php");
         }
     }
 ?>

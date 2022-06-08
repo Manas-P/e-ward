@@ -33,18 +33,22 @@
             //Check if the action is done by office staff
             if($officeId!=""){
                 mysqli_multi_query($conn,"DELETE FROM `tbl_registration` WHERE `rid`='$rejId' ; INSERT INTO `tbl_staff_activity`(`userid`, `name`, `activity`, `date_time`) VALUES ('$officeId','$sName','$activity','$date_time')");
-                header("Location: ../../view/pages/office_staff/houses_request.php");
+                echo "<script>window.location='../../view/pages/office_staff/houses_request.php'</script>";
+                // header("Location: ../../view/pages/office_staff/houses_request.php");
             }else{
                 mysqli_multi_query($conn,"DELETE FROM `tbl_registration` WHERE `rid`='$rejId'");
-                header("Location: ../../view/pages/ward_member/houses_request.php");
+                echo "<script>window.location='../../view/pages/ward_member/houses_request.php'</script>";
+                // header("Location: ../../view/pages/ward_member/houses_request.php");
             }
         }else{
             if($officeId!=""){
                 $_SESSION['error'] = "Mail not send";
-                header("Location: ../../view/pages/office_staff/houses_request.php");
+                echo "<script>window.location='../../view/pages/office_staff/houses_request.php'</script>";
+                // header("Location: ../../view/pages/office_staff/houses_request.php");
             }else{
                 $_SESSION['error'] = "Mail not send";
-                header("Location: ../../view/pages/ward_member/houses_request.php");
+                echo "<script>window.location='../../view/pages/ward_member/houses_request.php'</script>";
+                // header("Location: ../../view/pages/ward_member/houses_request.php");
             }
         }
     }

@@ -17,7 +17,8 @@
         $filepath_photo1 = $upload_dir . time()."0".".".$file_ext;
         if(move_uploaded_file($file_tmpname, $filepath_photo1)){}else{
             $_SESSION['error'] = "Error in uploading photo";
-            header("Location: ../../view/pages/committee_member/view_task.php?tskId=$tskId");
+            echo "<script>window.location='../../view/pages/committee_member/view_task.php?tskId=".$tskId."'</script>";
+            // header("Location: ../../view/pages/committee_member/view_task.php?tskId=$tskId");
         }
         //photo2
         if(empty($_FILES["photo2"]['name'])){
@@ -29,7 +30,8 @@
             $filepath_photo2 = $upload_dir . time()."1".".".$file_ext;
             if(move_uploaded_file($file_tmpname, $filepath_photo2)){}else{
                 $_SESSION['error'] = "Error in uploading photo";
-                header("Location: ../../view/pages/committee_member/view_task.php?tskId=$tskId");
+                echo "<script>window.location='../../view/pages/committee_member/view_task.php?tskId=".$tskId."'</script>";
+                // header("Location: ../../view/pages/committee_member/view_task.php?tskId=$tskId");
             }
         }
         //photo3
@@ -42,7 +44,8 @@
             $filepath_photo3 = $upload_dir . time()."2".".".$file_ext;
             if(move_uploaded_file($file_tmpname, $filepath_photo3)){}else{
                 $_SESSION['error'] = "Error in uploading photo";
-                header("Location: ../../view/pages/committee_member/view_task.php?tskId=$tskId");
+                echo "<script>window.location='../../view/pages/committee_member/view_task.php?tskId=".$tskId."'</script>";
+                // header("Location: ../../view/pages/committee_member/view_task.php?tskId=$tskId");
             }
         }
 
@@ -52,10 +55,12 @@
         $insertQueryRes=mysqli_multi_query($conn, $insertQuery);
         if($insertQueryRes){
             $_SESSION['success'] = "Successfully added task report";
-            header("Location: ../../view/pages/committee_member/view_task.php?tskId=$tskId");
+            echo "<script>window.location='../../view/pages/committee_member/view_task.php?tskId=".$tskId."'</script>";
+            // header("Location: ../../view/pages/committee_member/view_task.php?tskId=$tskId");
         }else{
             $_SESSION['error'] = "Error in adding task report";
-            header("Location: ../../view/pages/committee_member/view_task.php?tskId=$tskId");
+            echo "<script>window.location='../../view/pages/committee_member/view_task.php?tskId=".$tskId."'</script>";
+            // header("Location: ../../view/pages/committee_member/view_task.php?tskId=$tskId");
         }
     }
 ?>

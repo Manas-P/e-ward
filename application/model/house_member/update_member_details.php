@@ -35,7 +35,8 @@
                 $filepath = $upload_dir . time().".".$file_ext;
                 if(move_uploaded_file($file_tmpname, $filepath)){}else{
                     $_SESSION['error'] = "Error in file upload";
-                    header("Location: ../../view/pages/house_member/add_house_members.php");
+                    echo "<script>window.location='../../view/pages/house_member/add_house_members.php'</script>";
+                    // header("Location: ../../view/pages/house_member/add_house_members.php");
                 }
             }
 
@@ -51,7 +52,8 @@
                 $filepath_aadhar = $upload_dir_doc . time()."0".".".$file_ext_pdf;
                 if(move_uploaded_file($file_tmpname_aadhar, $filepath_aadhar)){}else{
                     $_SESSION['error'] = "Error in uploading Aadhar";
-                    header("Location: ../../view/pages/house_member/add_house_members.php");
+                    echo "<script>window.location='../../view/pages/house_member/add_house_members.php'</script>";
+                    // header("Location: ../../view/pages/house_member/add_house_members.php");
                 }
             }
             //Election id
@@ -63,7 +65,8 @@
                 $filepath_election = $upload_dir_doc . time()."1".".".$file_ext_pdf;
                 if(move_uploaded_file($file_tmpname_election, $filepath_election)){}else{
                     $_SESSION['error'] = "Error in uploading Election id";
-                    header("Location: ../../view/pages/house_member/add_house_members.php");
+                    echo "<script>window.location='../../view/pages/house_member/add_house_members.php'</script>";
+                    // header("Location: ../../view/pages/house_member/add_house_members.php");
                 }
             }
             //Driving Licence
@@ -75,7 +78,8 @@
                 $filepath_driving = $upload_dir_doc . time()."2".".".$file_ext_pdf;
                 if(move_uploaded_file($file_tmpname_driving, $filepath_driving)){}else{
                     $_SESSION['error'] = "Error in uploading Driving licence";
-                    header("Location: ../../view/pages/house_member/add_house_members.php");
+                    echo "<script>window.location='../../view/pages/house_member/add_house_members.php'</script>";
+                    // header("Location: ../../view/pages/house_member/add_house_members.php");
                 }
             }
             //PAN card
@@ -87,7 +91,8 @@
                 $filepath_pan = $upload_dir_doc . time()."3".".".$file_ext_pdf;
                 if(move_uploaded_file($file_tmpname_pan, $filepath_pan)){}else{
                     $_SESSION['error'] = "Error in uploading PAN card";
-                    header("Location: ../../view/pages/house_member/add_house_members.php");
+                    echo "<script>window.location='../../view/pages/house_member/add_house_members.php'</script>";
+                    // header("Location: ../../view/pages/house_member/add_house_members.php");
                 }
             }
             //Birth certificate
@@ -99,7 +104,8 @@
                 $filepath_birth = $upload_dir_doc . time()."4".".".$file_ext_pdf;
                 if(move_uploaded_file($file_tmpname_birth, $filepath_birth)){}else{
                     $_SESSION['error'] = "Error in uploading Birth certificate";
-                    header("Location: ../../view/pages/house_member/add_house_members.php");
+                    echo "<script>window.location='../../view/pages/house_member/add_house_members.php'</script>";
+                    // header("Location: ../../view/pages/house_member/add_house_members.php");
                 }
             }
 
@@ -113,7 +119,8 @@
                 $filepath_hs = $upload_dir_doc . time()."5".".".$file_ext_pdf;
                 if(move_uploaded_file($file_tmpname_hs, $filepath_hs)){}else{
                     $_SESSION['error'] = "Error in uploading secondary school certificate";
-                    header("Location: ../../view/pages/house_member/add_house_members.php");
+                    echo "<script>window.location='../../view/pages/house_member/add_house_members.php'</script>";
+                    // header("Location: ../../view/pages/house_member/add_house_members.php");
                 }
             }
             //Higher secondary school
@@ -125,7 +132,8 @@
                 $filepath_hss = $upload_dir_doc . time()."6".".".$file_ext_pdf;
                 if(move_uploaded_file($file_tmpname_hss, $filepath_hss)){}else{
                     $_SESSION['error'] = "Error in uploading higher secondary certificate";
-                    header("Location: ../../view/pages/house_member/add_house_members.php");
+                    echo "<script>window.location='../../view/pages/house_member/add_house_members.php'</script>";
+                    // header("Location: ../../view/pages/house_member/add_house_members.php");
                 }
             }
             //Diploma
@@ -137,7 +145,8 @@
                 $filepath_diploma = $upload_dir_doc . time()."7".".".$file_ext_pdf;
                 if(move_uploaded_file($file_tmpname_diploma, $filepath_diploma)){}else{
                     $_SESSION['error'] = "Error in uploading diploma certificate";
-                    header("Location: ../../view/pages/house_member/add_house_members.php");
+                    echo "<script>window.location='../../view/pages/house_member/add_house_members.php'</script>";
+                    // header("Location: ../../view/pages/house_member/add_house_members.php");
                 }
             }
             //Under graduation
@@ -149,7 +158,8 @@
                 $filepath_ug = $upload_dir_doc . time()."8".".".$file_ext_pdf;
                 if(move_uploaded_file($file_tmpname_ug, $filepath_ug)){}else{
                     $_SESSION['error'] = "Error in uploading under graduation certificate";
-                    header("Location: ../../view/pages/house_member/add_house_members.php");
+                    echo "<script>window.location='../../view/pages/house_member/add_house_members.php'</script>";
+                    // header("Location: ../../view/pages/house_member/add_house_members.php");
                 }
             }
             //Post graduation
@@ -161,7 +171,8 @@
                 $filepath_pg = $upload_dir_doc . time()."9".".".$file_ext_pdf;
                 if(move_uploaded_file($file_tmpname_pg, $filepath_pg)){}else{
                     $_SESSION['error'] = "Error in uploading post graduation certificate";
-                    header("Location: ../../view/pages/house_member/add_house_members.php");
+                    echo "<script>window.location='../../view/pages/house_member/add_house_members.php'</script>";
+                    // header("Location: ../../view/pages/house_member/add_house_members.php");
                 }
             }
             //Current profession
@@ -173,7 +184,8 @@
                 $filepath_cur_pro = $upload_dir_doc . time()."10".".".$file_ext_pdf;
                 if(move_uploaded_file($file_tmpname_cur_pro, $filepath_cur_pro)){}else{
                     $_SESSION['error'] = "Error in uploading profession certificate";
-                    header("Location: ../../view/pages/house_member/add_house_members.php");
+                    echo "<script>window.location='../../view/pages/house_member/add_house_members.php'</script>";
+                    // header("Location: ../../view/pages/house_member/add_house_members.php");
                 }
             }
 
@@ -224,10 +236,12 @@
             $updatehmResult=mysqli_multi_query($conn,$updatehmQuery);
             if($updatehmResult){
                 $_SESSION['success'] = "$hmufname's profile updated successfully";
-                header("Location: ../../view/pages/house_member/add_house_members.php");
+                echo "<script>window.location='../../view/pages/house_member/add_house_members.php'</script>";
+                // header("Location: ../../view/pages/house_member/add_house_members.php");
             }else{
                 $_SESSION['error'] = "Error in updatation";
-                header("Location: ../../view/pages/house_member/add_house_members.php");
+                echo "<script>window.location='../../view/pages/house_member/add_house_members.php'</script>";
+                // header("Location: ../../view/pages/house_member/add_house_members.php");
             }
         }
 ?>

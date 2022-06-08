@@ -7,10 +7,12 @@
     $query="DELETE FROM `tbl_notification` WHERE `id`='$id'";
     $queryResult=mysqli_query($conn,$query);
     if($queryResult){
-    $_SESSION['success'] = "Notification deleted successfully";
-        header("Location: ../../view/pages/ward_member/notification.php");
+        $_SESSION['success'] = "Notification deleted successfully";
+        echo "<script>window.location='../../view/pages/ward_member/notification.php'</script>";
+        // header("Location: ../../view/pages/ward_member/notification.php");
     }else{
         $_SESSION['error'] = "Error in deleting notification";
-        header("Location: ../../view/pages/ward_member/notification.php");
+        echo "<script>window.location='../../view/pages/ward_member/notification.php'</script>";
+        // header("Location: ../../view/pages/ward_member/notification.php");
     }
 ?>

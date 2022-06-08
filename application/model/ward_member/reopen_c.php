@@ -7,9 +7,11 @@
     $updateQueryRes=mysqli_multi_query($conn, $updateQuery);
     if($updateQueryRes){
         $_SESSION['success'] = "Successfully reopened the committee";
-        header("Location: ../../view/pages/ward_member/committees.php");
+        echo "<script>window.location='../../view/pages/ward_member/committees.php'</script>";
+        // header("Location: ../../view/pages/ward_member/committees.php");
     }else{
         $_SESSION['error'] = "Error in reopening committee";
-        header("Location: ../../view/pages/ward_member/committees.php");
+        echo "<script>window.location='../../view/pages/ward_member/committees.php'</script>";
+        // header("Location: ../../view/pages/ward_member/committees.php");
     }
 ?>

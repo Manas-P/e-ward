@@ -50,10 +50,12 @@
             $updateResult=mysqli_multi_query($conn,$updateQuery);
             if($updateResult){
                 $_SESSION['success'] = "House approved";
-                header("Location: ../../view/pages/office_staff/houses_request.php");
+                echo "<script>window.location='../../view/pages/office_staff/houses_request.php'</script>";
+                // header("Location: ../../view/pages/office_staff/houses_request.php");
             }else{
                 $_SESSION['error'] = "Error in house approval";
-                header("Location: ../../view/pages/office_staff/houses_request.php");
+                echo "<script>window.location='../../view/pages/office_staff/houses_request.php'</script>";
+                // header("Location: ../../view/pages/office_staff/houses_request.php");
             }
         }else{
             $updateQuery="UPDATE `tbl_registration` SET `status`=1 WHERE `rid`='$id' ; 
@@ -64,19 +66,23 @@
             $updateResult=mysqli_multi_query($conn,$updateQuery);
             if($updateResult){
                 $_SESSION['success'] = "House approved";
-                header("Location: ../../view/pages/ward_member/houses_request.php");
+                echo "<script>window.location='../../view/pages/ward_member/houses_request.php'</script>";
+                // header("Location: ../../view/pages/ward_member/houses_request.php");
             }else{
                 $_SESSION['error'] = "Error in house approval";
-                header("Location: ../../view/pages/ward_member/houses_request.php");
+                echo "<script>window.location='../../view/pages/ward_member/houses_request.php'</script>";
+                // header("Location: ../../view/pages/ward_member/houses_request.php");
             }
         }
     }else{
         if($officeId!=""){
             $_SESSION['error'] = "Mail not send";
-            header("Location: ../../view/pages/office_staff/houses_request.php");
+            echo "<script>window.location='../../view/pages/office_staff/houses_request.php'</script>";
+            // header("Location: ../../view/pages/office_staff/houses_request.php");
         }else{
             $_SESSION['error'] = "Mail not send";
-            header("Location: ../../view/pages/ward_member/houses_request.php");
+            echo "<script>window.location='../../view/pages/ward_member/houses_request.php'</script>";
+            // header("Location: ../../view/pages/ward_member/houses_request.php");
         }
     }
 ?>

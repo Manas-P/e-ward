@@ -27,14 +27,17 @@
             $updateRes=mysqli_query($conn, $update);
             if($updateRes){
                 $_SESSION['success'] = "Task report rejected successfully";
-                header("Location: ../../view/pages/ward_member/task_approval.php?c_id=$cId&tskId=$tskId&userid=$userId");
+                echo "<script>window.location='../../view/pages/ward_member/task_approval.php?c_id=".$cId."&tskId=".$tskId."&userid=".$userId."'</script>";
+                // header("Location: ../../view/pages/ward_member/task_approval.php?c_id=$cId&tskId=$tskId&userid=$userId");
             }else{
                 $_SESSION['error'] = "Task report rejection failed";
-                header("Location: ../../view/pages/ward_member/task_approval.php?c_id=$cId&tskId=$tskId&userid=$userId");
+                echo "<script>window.location='../../view/pages/ward_member/task_approval.php?c_id=".$cId."&tskId=".$tskId."&userid=".$userId."'</script>";
+                // header("Location: ../../view/pages/ward_member/task_approval.php?c_id=$cId&tskId=$tskId&userid=$userId");
             }
         }else{
             $_SESSION['error'] = "Mail not send";
-            header("Location: ../../view/pages/ward_member/task_approval.php?c_id=$cId&tskId=$tskId&userid=$userId");
+            echo "<script>window.location='../../view/pages/ward_member/task_approval.php?c_id=".$cId."&tskId=".$tskId."&userid=".$userId."'</script>";
+            // header("Location: ../../view/pages/ward_member/task_approval.php?c_id=$cId&tskId=$tskId&userid=$userId");
         }
     }
 ?>

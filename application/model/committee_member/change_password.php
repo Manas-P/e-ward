@@ -26,13 +26,15 @@
 
     // Change password
     if(isset($_POST['changePass'])){
-        echo $updatePassQuery="UPDATE `tbl_committee_member` SET `password`='$newPass' WHERE `c_userid`='$c_userid'";
+        $updatePassQuery="UPDATE `tbl_committee_member` SET `password`='$newPass' WHERE `c_userid`='$c_userid'";
         $updatePassRes=mysqli_query($conn,$updatePassQuery);
         if($updatePassRes){
-            header("Location: ../../view/pages/committee_member/change_password.php");
+            echo "<script>window.location='../../view/pages/committee_member/change_password.php'</script>";
+            // header("Location: ../../view/pages/committee_member/change_password.php");
             $_SESSION['success'] = "Password changed successfully";
         }else{
-            header("Location: ../../view/pages/committee_member/change_password.php");
+            echo "<script>window.location='../../view/pages/committee_member/change_password.php'</script>";
+            // header("Location: ../../view/pages/committee_member/change_password.php");
             $_SESSION['error'] = "Error in changing password";
         }
     }

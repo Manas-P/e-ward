@@ -33,13 +33,16 @@
         $queryResult=mysqli_multi_query($conn,$query);
         if($queryResult){
             $_SESSION['success'] = "Member added";
-            header("Location: ../../view/pages/ward_member/view_committee.php?c_id=$c_id");
+            echo "<script>window.location='../../view/pages/ward_member/view_committee.php?c_id=".$c_id."'</script>";
+            // header("Location: ../../view/pages/ward_member/view_committee.php?c_id=$c_id");
         }else{
             $_SESSION['error'] = "Error in approving request";
-            header("Location: ../../view/pages/ward_member/view_committee.php?c_id=$c_id");
+            echo "<script>window.location='../../view/pages/ward_member/view_committee.php?c_id=".$c_id."'</script>";
+            // header("Location: ../../view/pages/ward_member/view_committee.php?c_id=$c_id");
         }
     }else{
         $_SESSION['error'] = "Error in sending mail";
-        header("Location: ../../view/pages/ward_member/view_committee.php?c_id=$c_id");
+        echo "<script>window.location='../../view/pages/ward_member/view_committee.php?c_id=".$c_id."'</script>";
+        // header("Location: ../../view/pages/ward_member/view_committee.php?c_id=$c_id");
     }
 ?>

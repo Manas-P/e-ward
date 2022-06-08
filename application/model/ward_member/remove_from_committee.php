@@ -11,9 +11,11 @@
     $updateQueryResult=mysqli_multi_query($conn,$updateQuery);
     if($updateQueryResult){
         $_SESSION['success'] = "Committee member removed";
-        header("Location: ../../view/pages/ward_member/view_committee.php?c_id=$c_id");
+        echo "<script>window.location='../../view/pages/ward_member/view_committee.php?c_id=".$c_id."'</script>";
+        // header("Location: ../../view/pages/ward_member/view_committee.php?c_id=$c_id");
     }else{
         $_SESSION['error'] = "Error in removing member";
-        header("Location: ../../view/pages/ward_member/view_committee.php?c_id=$c_id");
+        echo "<script>window.location='../../view/pages/ward_member/view_committee.php?c_id=".$c_id."'</script>";
+        // header("Location: ../../view/pages/ward_member/view_committee.php?c_id=$c_id");
     }
 ?>

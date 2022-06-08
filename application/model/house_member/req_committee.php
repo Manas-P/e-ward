@@ -10,9 +10,11 @@
     $insertQueryResult=mysqli_query($conn,$insertQuery);
     if(insertQueryResult){
         $_SESSION['success'] = "Membership requested successfully";
-        header("Location: ../../view/pages/house_member/committees.php");
+        echo "<script>window.location='../../view/pages/house_member/committees.php'</script>";
+        // header("Location: ../../view/pages/house_member/committees.php");
     }else{
         $_SESSION['error'] = "Error in requesting membership";
-        header("Location: ../../view/pages/house_member/committees.php");
+        echo "<script>window.location='../../view/pages/house_member/committees.php'</script>";
+        // header("Location: ../../view/pages/house_member/committees.php");
     }
 ?>

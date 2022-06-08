@@ -24,10 +24,12 @@
         $queryResult=mysqli_query($conn,$insertQuery);
         if($queryResult){
             $_SESSION['success'] = "Notification added successfully";
-            header("Location: ../../view/pages/ward_member/notification.php");
+            echo "<script>window.location='../../view/pages/ward_member/notification.php'</script>";
+            // header("Location: ../../view/pages/ward_member/notification.php");
         }else{
             $_SESSION['error'] = "Error in adding notification";
-            header("Location: ../../view/pages/ward_member/notification.php");
+            echo "<script>window.location='../../view/pages/ward_member/notification.php'</script>";
+            // header("Location: ../../view/pages/ward_member/notification.php");
         }
     }
 ?>

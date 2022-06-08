@@ -59,29 +59,35 @@
                     $updateHouseResult=mysqli_multi_query($conn,$updateQuery);
                     if($updateHouseResult){
                         $_SESSION['success'] = "House details updated successfully";
-                        header("Location: ../../view/pages/office_staff/view_house.php?houseno=$houseno");
+                        echo "<script>window.location='../../view/pages/office_staff/view_house.php?houseno=".$houseno."'</script>";
+                        // header("Location: ../../view/pages/office_staff/view_house.php?houseno=$houseno");
                     }else{
                         $_SESSION['error'] = "Error in updating house details";
-                        header("Location: ../../view/pages/office_staff/view_house.php?houseno=$houseno");
+                        echo "<script>window.location='../../view/pages/office_staff/view_house.php?houseno=".$houseno."'</script>";
+                        // header("Location: ../../view/pages/office_staff/view_house.php?houseno=$houseno");
                     }
                 }else{
                     $updateQuery="UPDATE `tbl_house` SET `house_name`='$hname',`locality`='$hlocality',`post_office`='$hpost',`ration_no`='$hration' WHERE `house_no`='$houseno'";
                     $updateHouseResult=mysqli_query($conn,$updateQuery);
                     if($updateHouseResult){
                         $_SESSION['success'] = "House details updated successfully";
-                        header("Location: ../../view/pages/ward_member/view_house.php?houseno=$houseno");
+                        echo "<script>window.location='../../view/pages/ward_member/view_house.php?houseno=".$houseno."'</script>";
+                        // header("Location: ../../view/pages/ward_member/view_house.php?houseno=$houseno");
                     }else{
                         $_SESSION['error'] = "Error in updating house details";
-                        header("Location: ../../view/pages/ward_member/view_house.php?houseno=$houseno");
+                        echo "<script>window.location='../../view/pages/ward_member/view_house.php?houseno=".$houseno."'</script>";
+                        // header("Location: ../../view/pages/ward_member/view_house.php?houseno=$houseno");
                     }
                 }
             }else{
                 if($officeId!=""){
                     $_SESSION['error'] = "Error in sending mail";
-                    header("Location: ../../view/pages/office_staff/view_house.php?houseno=$houseno");
+                    echo "<script>window.location='../../view/pages/office_staff/view_house.php?houseno=".$houseno."'</script>";
+                    // header("Location: ../../view/pages/office_staff/view_house.php?houseno=$houseno");
                 }else{
                     $_SESSION['error'] = "Error in sending mail";
-                    header("Location: ../../view/pages/ward_member/view_house.php?houseno=$houseno");
+                    echo "<script>window.location='../../view/pages/ward_member/view_house.php?houseno=".$houseno."'</script>";
+                    // header("Location: ../../view/pages/ward_member/view_house.php?houseno=$houseno");
                 }
             }
         }else{
@@ -115,10 +121,12 @@
                     $multipleQueryResult=mysqli_multi_query($conn,$multipleQuery);
                     if($multipleQueryResult){
                         $_SESSION['success'] = "House details updated successfully";
-                        header("Location: ../../view/pages/office_staff/view_house.php?houseno=$houseno");
+                        echo "<script>window.location='../../view/pages/office_staff/view_house.php?houseno=".$houseno."'</script>";
+                        // header("Location: ../../view/pages/office_staff/view_house.php?houseno=$houseno");
                     }else{
                         $_SESSION['error'] = "Error in updating house details";
-                        header("Location: ../../view/pages/office_staff/view_house.php?houseno=$houseno");
+                        echo "<script>window.location='../../view/pages/office_staff/view_house.php?houseno=".$houseno."'</script>";
+                        // header("Location: ../../view/pages/office_staff/view_house.php?houseno=$houseno");
                     }
                 }else{
                     $multipleQuery="UPDATE `tbl_house` SET `house_name`='$hname',`locality`='$hlocality',`post_office`='$hpost',`ration_no`='$hration' WHERE `house_no`='$houseno' ;
@@ -127,19 +135,23 @@
                     $multipleQueryResult=mysqli_multi_query($conn,$multipleQuery);
                     if($multipleQueryResult){
                         $_SESSION['success'] = "House details updated successfully";
-                        header("Location: ../../view/pages/ward_member/view_house.php?houseno=$houseno");
+                        echo "<script>window.location='../../view/pages/ward_member/view_house.php?houseno=".$houseno."'</script>";
+                        // header("Location: ../../view/pages/ward_member/view_house.php?houseno=$houseno");
                     }else{
                         $_SESSION['error'] = "Error in updating house details";
-                        header("Location: ../../view/pages/ward_member/view_house.php?houseno=$houseno");
+                        echo "<script>window.location='../../view/pages/ward_member/view_house.php?houseno=".$houseno."'</script>";
+                        // header("Location: ../../view/pages/ward_member/view_house.php?houseno=$houseno");
                     }
                 }
             }else{
                 if($officeId!=""){
                     $_SESSION['error'] = "Error in sending mail";
-                    header("Location: ../../view/pages/office_staff/view_house.php?houseno=$houseno");
+                    echo "<script>window.location='../../view/pages/office_staff/view_house.php?houseno=".$houseno."'</script>";
+                    // header("Location: ../../view/pages/office_staff/view_house.php?houseno=$houseno");
                 }else{
                     $_SESSION['error'] = "Error in sending mail";
-                    header("Location: ../../view/pages/ward_member/view_house.php?houseno=$houseno");
+                    echo "<script>window.location='../../view/pages/ward_member/view_house.php?houseno=".$houseno."'</script>";
+                    // header("Location: ../../view/pages/ward_member/view_house.php?houseno=$houseno");
                 }
             }
         }
@@ -185,10 +197,12 @@
                 $deleteQueryResult=mysqli_multi_query($conn,$deleteQuery);
                 if($deleteQueryResult){
                     $_SESSION['success'] = "House deleted successfully";
-                    header("Location: ../../view/pages/office_staff/houses.php");
+                    echo "<script>window.location='../../view/pages/office_staff/houses.php'</script>";
+                    // header("Location: ../../view/pages/office_staff/houses.php");
                 }else{
                     $_SESSION['error'] = "Error in deleting house";
-                    header("Location: ../../view/pages/office_staff/view_house.php?houseno=$housenodel");
+                    echo "<script>window.location='../../view/pages/office_staff/view_house.php?houseno=".$housenodel."'</script>";
+                    // header("Location: ../../view/pages/office_staff/view_house.php?houseno=$housenodel");
                 }
             }else{
                 $deleteQuery="DELETE FROM `tbl_house` WHERE `ward_no`='$wardno' and `house_no`='$housenodel' ;
@@ -196,19 +210,23 @@
                 $deleteQueryResult=mysqli_multi_query($conn,$deleteQuery);
                 if($deleteQueryResult){
                     $_SESSION['success'] = "House deleted successfully";
-                    header("Location: ../../view/pages/ward_member/houses.php");
+                    echo "<script>window.location='../../view/pages/ward_member/houses.php'</script>";
+                    // header("Location: ../../view/pages/ward_member/houses.php");
                 }else{
                     $_SESSION['error'] = "Error in deleting house";
-                    header("Location: ../../view/pages/ward_member/view_house.php?houseno=$housenodel");
+                    echo "<script>window.location='../../view/pages/ward_member/view_house.php?houseno=".$housenodel."'</script>";
+                    // header("Location: ../../view/pages/ward_member/view_house.php?houseno=$housenodel");
                 }
             }
         }else{
             if($officeId!=""){
                 $_SESSION['error'] = "Error in sending mail";
-                header("Location: ../../view/pages/office_staff/view_house.php?houseno=$housenodel");
+                echo "<script>window.location='../../view/pages/office_staff/view_house.php?houseno=".$housenodel."'</script>";
+                // header("Location: ../../view/pages/office_staff/view_house.php?houseno=$housenodel");
             }else{
                 $_SESSION['error'] = "Error in sending mail";
-                header("Location: ../../view/pages/ward_member/view_house.php?houseno=$housenodel");
+                echo "<script>window.location='../../view/pages/ward_member/view_house.php?houseno=".$housenodel."'</script>";
+                // header("Location: ../../view/pages/ward_member/view_house.php?houseno=$housenodel");
             }
         }
     }
@@ -247,29 +265,35 @@
                 $deleteQueryResult=mysqli_multi_query($conn,$deleteQuery);
                 if($deleteQueryResult){
                     $_SESSION['success'] = "Member deleted successfully";
-                    header("Location: ../../view/pages/office_staff/view_house.php?houseno=$housenodel");
+                    echo "<script>window.location='../../view/pages/office_staff/view_house.php?houseno=".$housenodel."'</script>";
+                    // header("Location: ../../view/pages/office_staff/view_house.php?houseno=$housenodel");
                 }else{
                     $_SESSION['error'] = "Error in deleting member";
-                    header("Location: ../../view/pages/office_staff/view_house.php?houseno=$housenodel");
+                    echo "<script>window.location='../../view/pages/office_staff/view_house.php?houseno=".$housenodel."'</script>";
+                    // header("Location: ../../view/pages/office_staff/view_house.php?houseno=$housenodel");
                 }
             }else{
                 $deleteQuery="DELETE FROM `tbl_house_member` WHERE `userid`='$memberId'";
                 $deleteQueryResult=mysqli_query($conn,$deleteQuery);
                 if($deleteQueryResult){
                     $_SESSION['success'] = "Member deleted successfully";
-                    header("Location: ../../view/pages/ward_member/view_house.php?houseno=$housenodel");
+                    echo "<script>window.location='../../view/pages/ward_member/view_house.php?houseno=".$housenodel."'</script>";
+                    // header("Location: ../../view/pages/ward_member/view_house.php?houseno=$housenodel");
                 }else{
                     $_SESSION['error'] = "Error in deleting member";
-                    header("Location: ../../view/pages/ward_member/view_house.php?houseno=$housenodel");
+                    echo "<script>window.location='../../view/pages/ward_member/view_house.php?houseno=".$housenodel."'</script>";
+                    // header("Location: ../../view/pages/ward_member/view_house.php?houseno=$housenodel");
                 }
             }
         }else{
             if($officeId!=""){
                 $_SESSION['error'] = "Error in sending mail";
-                header("Location: ../../view/pages/office_staff/view_house.php?houseno=$housenodel");
+                echo "<script>window.location='../../view/pages/office_staff/view_house.php?houseno=".$housenodel."'</script>";
+                // header("Location: ../../view/pages/office_staff/view_house.php?houseno=$housenodel");
             }else{
                 $_SESSION['error'] = "Error in sending mail";
-                header("Location: ../../view/pages/ward_member/view_house.php?houseno=$housenodel");
+                echo "<script>window.location='../../view/pages/ward_member/view_house.php?houseno=".$housenodel."'</script>";
+                // header("Location: ../../view/pages/ward_member/view_house.php?houseno=$housenodel");
             }
         }
     }

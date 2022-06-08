@@ -23,14 +23,17 @@
             $queryResult=mysqli_query($conn, $query);
             if($queryResult){
                 $_SESSION['success'] = "File uploaded successfully";
-                header("Location: ../../view/pages/ward_member/e_document.php");
+                echo "<script>window.location='../../view/pages/ward_member/e_document.php'</script>";
+                // header("Location: ../../view/pages/ward_member/e_document.php");
             }else{
                 $_SESSION['error'] = "An error occured";
-                header("Location: ../../view/pages/ward_member/e_document.php");
+                echo "<script>window.location='../../view/pages/ward_member/e_document.php'</script>";
+                // header("Location: ../../view/pages/ward_member/e_document.php");
             }
         }else{
             $_SESSION['error'] = "File upload error";
-            header("Location: ../../view/pages/ward_member/e_document.php");
+            echo "<script>window.location='../../view/pages/ward_member/e_document.php'</script>";
+            // header("Location: ../../view/pages/ward_member/e_document.php");
         }
     }
 ?>

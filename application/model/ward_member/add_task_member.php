@@ -11,9 +11,11 @@
     $insertQueryRes=mysqli_multi_query($conn, $insertQuery);
     if($insertQueryRes){
         $_SESSION['success'] = "Member added successfully";
-        header("Location: ../../view/pages/ward_member/view_task.php?c_id=$c_id&tskId=$tsk_id");
+        echo "<script>window.location='../../view/pages/ward_member/view_task.php?c_id=".$c_id."&tskId=".$tsk_id."'</script>";
+        // header("Location: ../../view/pages/ward_member/view_task.php?c_id=$c_id&tskId=$tsk_id");
     }else{
         $_SESSION['error'] = "Error in adding member";
-        header("Location: ../../view/pages/ward_member/view_task.php?c_id=$c_id&tskId=$tsk_id");
+        echo "<script>window.location='../../view/pages/ward_member/view_task.php?c_id=".$c_id."&tskId=".$tsk_id."'</script>";
+        // header("Location: ../../view/pages/ward_member/view_task.php?c_id=$c_id&tskId=$tsk_id");
     }
 ?>

@@ -17,7 +17,8 @@
             $filepath = $upload_dir . time().".".$file_ext;
             if(move_uploaded_file($file_tmpname, $filepath)){}else{
                 $_SESSION['error'] = "Error in file upload";
-                header("Location: ../../view/pages/house_member/add_need_request.php");
+                echo "<script>window.location='../../view/pages/house_member/add_need_request.php'</script>";
+                // header("Location: ../../view/pages/house_member/add_need_request.php");
             }
         }
 
@@ -29,10 +30,12 @@
         $insQueryResult=mysqli_query($conn,$insQuery);
         if(insQueryResult){
             $_SESSION['success'] = "Request submitted successfully";
-            header("Location: ../../view/pages/house_member/add_need_request.php");
+            echo "<script>window.location='../../view/pages/house_member/add_need_request.php'</script>";
+            // header("Location: ../../view/pages/house_member/add_need_request.php");
         }else{
             $_SESSION['error'] = "Error in submitting request";
-            header("Location: ../../view/pages/house_member/add_need_request.php");
+            echo "<script>window.location='../../view/pages/house_member/add_need_request.php'</script>";
+            // header("Location: ../../view/pages/house_member/add_need_request.php");
         }
     }
 

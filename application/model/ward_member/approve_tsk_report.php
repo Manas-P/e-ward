@@ -26,9 +26,11 @@
 
     if($updateQueryResult){
         $_SESSION['success'] = "Task approved successfully";
-        header("Location: ../../view/pages/ward_member/task_approval.php?c_id=$cId&tskId=$tskId&userid=$userId");
+        echo "<script>window.location='../../view/pages/ward_member/task_approval.php?c_id=".$cId."&tskId=".$tskId."&userid=".$userId."'</script>";
+        // header("Location: ../../view/pages/ward_member/task_approval.php?c_id=$cId&tskId=$tskId&userid=$userId");
     }else{
         $_SESSION['error'] = "Error in approving task";
-        header("Location: ../../view/pages/ward_member/task_approval.php?c_id=$cId&tskId=$tskId&userid=$userId");
+        echo "<script>window.location='../../view/pages/ward_member/task_approval.php?c_id=".$cId."&tskId=".$tskId."&userid=".$userId."'</script>";
+        // header("Location: ../../view/pages/ward_member/task_approval.php?c_id=$cId&tskId=$tskId&userid=$userId");
     }
 ?>
