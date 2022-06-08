@@ -61,7 +61,7 @@
             <div class="container">
                 <div class="header">
                     <div class="title">
-                        Committees
+                        Closed committees
                     </div>
                     <div class="search">
                         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -72,8 +72,8 @@
                     </div>
                 </div>
                 <div class="bread-crumbs">
-                    <a href="./committees.php" class="previous">
-                        Committees
+                    <a href="./closed_committees.php" class="previous">
+                        Closed committees
                     </a>
                     <svg class="str" width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2.2002 8.59999L5.8002 4.99999L2.2002 1.39999" stroke="#1E1E1E" stroke-linecap="round" stroke-linejoin="round" />
@@ -188,7 +188,7 @@
                                 $fetchTaskRes=mysqli_query($conn,$fetchTask);
                                 while($taskRow=mysqli_fetch_array($fetchTaskRes)){
                             ?>
-                                    <a href="./view_task.php?c_id=<?php echo $c_id ?>&tskId=<?php echo $taskRow['id']?>" class="task">
+                                    <a href="./view_c_task.php?c_id=<?php echo $c_id ?>&tskId=<?php echo $taskRow['id']?>" class="task">
                                         <div class="about">
                                             <div class="name"><?php echo $taskRow['task_name']?></div>
                                             <div class="members-asgn"><span>Members assigned:</span><?php echo $taskRow['assignees']?></div>
