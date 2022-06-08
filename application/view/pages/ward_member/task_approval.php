@@ -150,7 +150,7 @@
                             </div>
                             <div class="buttons">
                                 <a href="../../../model/ward_member/approve_tsk_report.php?id=<?php echo $row['id']; ?>&tskId=<?php echo $tsk_id ?>&userId=<?php echo $userid ?>&cId=<?php echo $c_id ?>" class="approve">Approve</a>
-                                <a href="" class="reject">Reject</a>
+                                <a class="reject" onclick="deleteItem(<?php $rejId=$row['id']; echo $rejId; ?>)">Reject</a>
                             </div>
                         </div>
                         <?php
@@ -275,6 +275,36 @@
         </section>
 
 
+        <!--=========== Modal ============-->
+        <div class="overlay modal-hidden"></div>
+        <!-- form to reject houuse request-->
+        <div class="box modal-box modal-hidden">
+            <div class="title">
+                Reason for rejection
+            </div>
+            <div class="modal-close-btn">
+                <img src="../../../../public/assets/images/close.svg" alt="close button">
+            </div>
+            <form action="../../../model/ward_member/reject_task.php" method="post" id="reject-form" enctype="multipart/form-data">
+            <input type="hidden" name="rejIdd" id="hiddenItemId">
+            <input type="hidden" name="cId" value="<?php echo $c_id ?>">
+            <input type="hidden" name="userId"  value="<?php echo $userid ?>">
+            <input type="hidden" name="tskId" value="<?php echo $tsk_id ?>">
+                <div class="inputs">
+                    <textarea name="rej_reason" id="rejreason" rows="10"></textarea>
+                   
+                    <div class="button wBtn cursor-disable">
+                        <input type="submit" value="Continue" name="reject_task_req" id="rej" onclick="loader()" class="primary-button disabled">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <script>
+            let deleteItem=(DataId)=>{
+                document.getElementById('hiddenItemId').value=DataId;
+
+            }
+        </script>
         
 
 
@@ -316,6 +346,7 @@
         ?>
         <!-- ==========Loading End============= -->
 
+        <script src="../../../../public/assets/js/reject_task.js"></script>
         <script src="../../../../public/assets/js/wm_task_approval.js"></script>
         <script src="../../../../public/assets/js/toast.js"></script>
     </body>
