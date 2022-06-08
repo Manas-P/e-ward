@@ -34,7 +34,7 @@
             <div class="container">
                 <div class="header">
                     <div class="title">
-                        Active committees
+                        Closed committees
                     </div>
                     <div class="search">
                         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -46,8 +46,8 @@
                 </div>
                 <div class="hyper-link">
                     <div class="leave-req">
-                        <a href="./closed_committees.php">
-                            Closed committees
+                        <a href="./committees.php">
+                            Active committees
                         </a>
                     </div>
                 </div>
@@ -55,19 +55,9 @@
                 <!-- content -->
                 <div class="members-list">
                     <div class="members">
-                        <a class="add-member">
-                            <div class="icon">
-                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path class="str" d="M15 6.25V23.75" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path class="str" d="M6.25 15H23.75" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                            <div class="text">Add committee</div>
-                        </a>
-
                         <!-- Fetch committees -->
                         <?php
-                            $fetchQuery="SELECT `c_id`, `wardno`, `c_name`, `c_photo`, `m_limit`, `m_joined` FROM `tbl_committee` WHERE `wardno`='$wardno' AND `status`='1'";
+                            $fetchQuery="SELECT `c_id`, `wardno`, `c_name`, `c_photo`, `m_limit`, `m_joined` FROM `tbl_committee` WHERE `wardno`='$wardno' AND `status`='0'";
                             $fetchResult=mysqli_query($conn,$fetchQuery);
                             if(mysqli_num_rows($fetchResult)>0){
                                 while($row = mysqli_fetch_assoc($fetchResult)){
@@ -78,7 +68,7 @@
                                         $name=$name . "...";
                                     }
                         ?>
-                                <a href="./view_committee.php?c_id=<?php echo $row["c_id"]; ?>" class="member">
+                                <a href="./view_c_committee.php?c_id=<?php echo $row["c_id"]; ?>" class="member">
                                     <div class="photo">
                                         <img src="../<?php echo $row["c_photo"]; ?>" alt="member photo">
                                     </div>
@@ -98,62 +88,7 @@
             </div>
         </section>
 
-        <!-- =========== Modal ============ -->
-        <div class="overlay modal-hidden"></div>
-        <!-- form to add committee-->
-        <div class="box modal-box modal-hidden">
-            <div class="title">
-                Add committee
-            </div>
-            <div class="modal-close-btn">
-                <img src="../../../../public/assets/images/close.svg" alt="close button">
-            </div>
-            <!-- Add committee -->
-            <form action="../../../model/ward_member/add_committee.php" method="post" id="add-committe" enctype="multipart/form-data">
-                <div class="inputs">
-                    <div class="input commName">
-                        <div class="label">
-                            Committee name
-                        </div>
-                        <input type="text" name="name" id="comm-name" placeholder="John Doe" autocomplete="off">
-                        <div class="error error-hidden">
-                        </div>
-                    </div>
-                    <div class="inputt commDes">
-                        <div class="label">
-                            Committee description
-                        </div>
-                        <textarea name="comm_des" id="comm-des" rows="10"></textarea>
-                        <div class="subtext">
-                            <div class="error error-hidden">
-                            </div>
-                            <div class="count-limit">
-                                <span id="count-char">0</span>/300
-                            </div>
-                        </div>
-                    </div>
-                    <div class="input commPhoto">
-                        <div class="label">
-                            Upload photo
-                        </div>
-                        <input type="file" name="photo" id="comm-photo" accept="image/png,image/jpeg">
-                        <div class="error error-hidden">
-                        </div>
-                    </div>
-                    <div class="input commLimit">
-                        <div class="label">
-                            Members limit
-                        </div>
-                        <input type="text" name="commLimit" id="comm-limit" placeholder="20" autocomplete="off">
-                        <div class="error error-hidden">
-                        </div>
-                    </div>
-                    <div class="button hBtn cursor-disable">
-                        <input type="submit" value="Add committee" name="add-comm" id="add-comm" onclick="loader()" class="primary-button disabled">
-                    </div>
-                </div>
-            </form>
-        </div>
+        
 
         <!-- Error Toast -->
         <?php
@@ -193,7 +128,6 @@
         ?>
         <!-- ==========Loading End============= -->
 
-        <script src="../../../../public/assets/js/wm_add_committe.js"></script>
         <script src="../../../../public/assets/js/toast.js"></script>
     </body>
     </html>
