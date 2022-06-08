@@ -87,9 +87,9 @@ else
                     <div class="no-cert">
                         Congratulations, you earned your certificate.
                     </div>
-                    <div class="download-cert">
+                    <a href="../../../model/committee_member/download_certificate.php?name=<?php echo $fname?>" class="download-cert">
                         Download certificate
-                    </div>
+                    </a>
                     <?php
                         }
                     ?>
