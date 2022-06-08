@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 08, 2022 at 04:51 AM
+-- Generation Time: Jun 08, 2022 at 10:38 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.25
 
@@ -283,20 +283,20 @@ CREATE TABLE `tbl_house_member` (
 --
 
 INSERT INTO `tbl_house_member` (`hm_id`, `ward_no`, `house_no`, `fname`, `email`, `phno`, `blood_grp`, `dob`, `photo`, `userid`, `password`) VALUES
-(1, 2, 145, 'Annette Black', 'Not entered', 9658784526, 'O+', '1998-06-23', '../images/uploads/photos/1638009888.png', 0, 'Qwerty@1'),
-(2, 2, 145, 'James Black', 'jamesblack@gmail.com', 9856587452, 'O+', '1995-03-15', '../images/uploads/photos/1638009946.png', 0, 'Qwerty@1'),
-(3, 2, 154, 'Frank', 'fank@gmail.com', 9854569844, 'B-', '1998-09-17', '../images/uploads/photos/1638860482.jpg', 0, 'Qwerty@1'),
-(4, 2, 154, 'Celia', 'celia@gmail.com', 9856587459, 'B-', '2001-10-01', '../images/uploads/photos/1638860567.png', 0, 'Qwerty@1'),
+(1, 2, 145, 'Annette Black', 'Not entered', 9658784526, 'O+', '1998-06-23', '../images/uploads/photos/1638009888.png', 0, 'Qwerty@123'),
+(2, 2, 145, 'James Black', 'jamesblack@gmail.com', 9856587452, 'O+', '1995-03-15', '../images/uploads/photos/1638009946.png', 0, 'Qwerty@123'),
+(3, 2, 154, 'Frank', 'fank@gmail.com', 9854569844, 'B-', '1998-09-17', '../images/uploads/photos/1638860482.jpg', 0, 'Qwerty@123'),
+(4, 2, 154, 'Celia', 'celia@gmail.com', 9856587459, 'B-', '2001-10-01', '../images/uploads/photos/1638860567.png', 0, 'Qwerty@123'),
 (5, 2, 145, 'Manas P', 'manas4518pachakkil@gmail.com', 9856587855, 'O+', '1998-10-28', '../images/uploads/photos/1639161827.png', 21450, 'Qwerty@1'),
 (15, 2, 34, 'new test', 'Not entered', 9858356478, 'NA', '0000-00-00', '../images/user-profile-placeholder.png', 2340, '123'),
 (16, 2, 18, 'new reg', 'Not entered', 5458965879, 'NA', '0000-00-00', '../images/user-profile-placeholder.png', 2180, '123'),
-(17, 2, 18, 'new regg', 'new@gmail.com', 9856587459, 'O+', '2019-07-10', '../images/uploads/photos/1643969508.png', 0, 'Qwerty@1'),
+(17, 2, 18, 'new regg', 'new@gmail.com', 9856587459, 'O+', '2019-07-10', '../images/uploads/photos/1643969508.png', 0, 'Qwerty@123'),
 (23, 2, 34, 'New new test', 'newnewtest@gmail.com', 9565878456, 'A+', '2000-01-05', '../images/uploads/photos/1644173899.png', 2342, '123'),
 (24, 2, 34, 'new newe', 'new@gmail.com', 8965236589, 'A+', '2016-02-10', '../images/uploads/photos/1644286381.png', 2343, '123'),
 (25, 2, 34, 'new nneww', 'new@gmail.com', 9565215487, 'A+', '2014-02-18', '../images/uploads/photos/1644592133.png', 2344, 'NdyprVQa'),
 (26, 2, 23, 'Rubin Siby', 'rubinsibyy@gmail.com', 9565878452, 'B+', '1988-06-15', '../../../public/assets/images/1650291688.png', 2230, 'Qerty@123'),
 (27, 2, 24, 'Martin Garrix', 'Not entered', 9565878457, 'NA', '0000-00-00', '../images/user-profile-placeholder.png', 2240, 'eer5XjwS'),
-(28, 2, 23, 'Kunni', 'martingrrx@gmail.com', 9856547854, 'B+', '2002-05-15', '../../../public/assets/images/1650291702.jpg', 2232, '123'),
+(28, 2, 23, 'Kunni Bhai', 'martingrrx@gmail.com', 9856547854, 'B+', '2002-05-15', '../../../public/assets/images/1650291702.jpg', 2232, '123'),
 (29, 2, 23, 'Jacob Kurien', 'jacob@gmail.com', 9856587457, 'O+', '1999-11-03', '../../../public/assets/images/1650291719.jpg', 2233, 'Qwerty@123'),
 (30, 2, 23, 'Appy Kurian', 'kuriappy@gmail.com', 9565874521, 'A+', '1999-06-15', '../../../public/assets/images/1650291735.jpeg', 2234, '123'),
 (31, 2, 23, 'Martin Garrix', 'martingar@gmail.com', 9856548758, 'O+', '1998-09-29', '../../../public/assets/images/1650291747.jpg', 2235, 'T4bAKtE3'),
@@ -759,7 +759,7 @@ CREATE TABLE `tbl_task_member` (
 
 INSERT INTO `tbl_task_member` (`id`, `com_id`, `tsk_id`, `userid`, `status`) VALUES
 (1, 2222, 1, 2234, 0),
-(2, 2222, 1, 2232, 1),
+(2, 2222, 1, 2232, 0),
 (3, 2223, 4, 2160, 0),
 (4, 2222, 2, 2232, 1);
 
@@ -793,7 +793,11 @@ INSERT INTO `tbl_task_report` (`id`, `tsk_id`, `com_id`, `userid`, `title`, `des
 (10, 2, 2222, 2232, 'ewrwd', 'sdfsdfsf', '2022-06-07', '../../../public/assets/images/uploads/photos/16546281620.jpg', '../../../public/assets/images/uploads/photos/16546281621.png', '0', 1),
 (13, 2, 2222, 2232, 'ert', 'ert', '2022-06-07', '../../../public/assets/images/uploads/photos/16546283730.jpg', '0', '0', 1),
 (15, 1, 2222, 2232, 'qwe', 'qwe', '2022-06-07', '../../../public/assets/images/uploads/photos/16546287760.jpg', '0', '0', 1),
-(16, 1, 2222, 2232, 'dfe', 'sdf', '2022-06-07', '../../../public/assets/images/uploads/photos/16546288170.jpg', '../../../public/assets/images/uploads/photos/16546288171.jpg', '0', 1);
+(16, 1, 2222, 2232, 'dfe', 'sdf', '2022-06-07', '../../../public/assets/images/uploads/photos/16546288170.jpg', '../../../public/assets/images/uploads/photos/16546288171.jpg', '0', 1),
+(17, 2, 2222, 2232, 'fhxt', 'trd', '2022-06-08', '../../../public/assets/images/uploads/photos/16546715650.png', '../../../public/assets/images/uploads/photos/16546715651.jpg', '../../../public/assets/images/uploads/photos/16546715652.png', 1),
+(18, 1, 2222, 2232, 'werwer', 'werwerwer', '2022-06-08', '../../../public/assets/images/uploads/photos/16547093410.jpg', '../../../public/assets/images/uploads/photos/16547093411.png', '../../../public/assets/images/uploads/photos/16547093412.png', 2),
+(19, 1, 2222, 2232, 'ewrer', 'werwer', '2022-06-08', '../../../public/assets/images/uploads/photos/16547093580.png', '0', '../../../public/assets/images/uploads/photos/16547093582.jpg', 0),
+(20, 1, 2222, 2232, 'sdf', 'sdf', '2022-06-08', '../../../public/assets/images/uploads/photos/16547153120.JPG', '0', '0', 1);
 
 -- --------------------------------------------------------
 
@@ -1103,7 +1107,7 @@ ALTER TABLE `tbl_task_member`
 -- AUTO_INCREMENT for table `tbl_task_report`
 --
 ALTER TABLE `tbl_task_report`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `tbl_ward_member`
