@@ -107,7 +107,7 @@ else
                                         <?php
                                             }else{
                                         ?>
-                                        <span id="inact">Inactive</span>
+                                        <span id="inact">Closed</span>
                                         <?php
                                             }
                                         ?>

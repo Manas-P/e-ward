@@ -1,0 +1,66 @@
+@import "../components.scss";
+
+@mixin card($shadow, $padding) {
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  column-gap: 12px;
+  align-items: center;
+  padding: $padding;
+  width: 260px;
+  background: $white;
+  box-shadow: $shadow;
+  border-radius: 10px;
+  transition: 0.2s ease-in-out;
+}
+
+body {
+  background: $bg;
+}
+
+.dashboard {
+  display: flex;
+  .sidebar {
+    @include sidebar();
+  }
+  .container {
+    margin: 46px 63px 0 calc(476px - 63px);
+    width: calc(100% - 476px);
+    .header {
+      display: flex;
+      justify-content: space-between;
+      .title {
+        font-family: Gilroy_SB;
+        font-size: 38px;
+      }
+    }
+    // content
+    .content {
+      margin-top: 60px;
+      .no-cert {
+        font-family: "Gilroy_M";
+        font-size: 20px;
+        color: $text;
+      }
+      .download-cert {
+        margin-top: 24px;
+        padding: 8px 24px;
+        color: $white;
+        background: $primary;
+        font-family: "Gilroy_SB";
+        font-size: 20px;
+        border-radius: 10px;
+        user-select: none;
+        width: 242px;
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+        &:active {
+          transform: scale(0.97);
+        }
+      }
+    }
+  }
+}
+
+//Alert
+@include error-alert();
