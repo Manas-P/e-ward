@@ -39,14 +39,14 @@ html {
 ::-webkit-calendar-picker-indicator {
   cursor: pointer;
   color: #b1b1b1;
-  padding-right: 16px;
+  padding-right: 0.8333333333333334vw;
 }
 
 ::-webkit-file-upload-button {
   background: #eeecfc;
-  border-radius: 6px;
+  border-radius: 0.3125vw;
   border: none;
-  margin-right: 20px;
+  margin-right: 1.0416666666666667vw;
   outline: none;
 }
 
