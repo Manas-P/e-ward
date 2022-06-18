@@ -54,12 +54,16 @@ else
                 </div>
                 <div class="hyper-link">
                     <div class="leave-req">
-                        <a href="">
+                        <a href="./committee_req_status.php">
                             View requests
                         </a>
                         <span class="noti-badge">
                             <!-- Fetch request -->
-                            4
+                            <?php
+                                $notiCount="SELECT `id` FROM `tbl_committee_req` WHERE `userid`='$user_id'";
+                                $notiCountResult=mysqli_query($conn,$notiCount);
+                                echo $rownotiCount = mysqli_num_rows($notiCountResult);
+                            ?>
                         </span>
                     </div>
                 </div>
@@ -72,13 +76,22 @@ else
                 </div>
                 <div class="datas">
                     <?php
-                        $query="SELECT `c_name`, `c_description`, `m_limit`, `m_joined` FROM `tbl_committee` WHERE `wardno`='$wardno'";
+                        $query="SELECT `c_id`, `c_name`, `c_description`, `m_limit`, `m_joined` FROM `tbl_committee` WHERE `wardno`='$wardno' AND `status`='1'";
                         $result=mysqli_query($conn,$query);
                         $i=1;
                         while($row=mysqli_fetch_array($result)){
-                            if($row["m_joined"]!=0){
-                                if($row["m_limit"]/$row["m_joined"]==1){
-                                    continue;
+
+                            $c_id=$row['c_id'];
+                            $count="SELECT `id` FROM `tbl_committee_req` WHERE `userid`='$user_id' and `c_id`='$c_id'";
+                            $countResult=mysqli_query($conn,$count);
+                            $rowcount = mysqli_num_rows($countResult);
+
+                            if($rowcount!=0){
+                                continue;
+                                if($row["m_joined"]!=0){
+                                    if($row["m_limit"]/$row["m_joined"]==1){
+                                        continue;
+                                    }
                                 }
                             }
                     ?>
@@ -89,7 +102,7 @@ else
                                 <td width=248px><?php echo $row["c_name"]; ?></td>
                                 <td width=908px style="padding-right: 40px;"><?php echo $row["c_description"]; ?></td>
                                 <td width=95px>
-                                    <a href="" class="approve" onclick="loader()" >Request</a>
+                                    <a href="../../../model/house_member/req_committee.php?c_id=<?php echo $row['c_id']; ?>" class="approve" onclick="loader()" >Request</a>
                                 </td>
                             </tr>
                         </table>

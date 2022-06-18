@@ -31,7 +31,8 @@
             $filepath = $upload_dir . time().".".$file_ext;
             if(move_uploaded_file($file_tmpname, $filepath)){}else{
                 $_SESSION['error'] = "Error in file upload";
-                header("Location: ../../view/pages/ward_member/office_staff.php?id=$staff_id");
+                echo "<script>window.location='../../view/pages/ward_member/office_staff.php?id=".$staff_id."'</script>";
+                // header("Location: ../../view/pages/ward_member/office_staff.php?id=$staff_id");
             }
         }
 
@@ -51,10 +52,12 @@
         $updateResult=mysqli_query($conn,$updateQuery);
         if($updateResult){
             $_SESSION['success'] = "Profile updated successfully";
-            header("Location: ../../view/pages/ward_member/office_staff.php?id=$staff_id");
+            echo "<script>window.location='../../view/pages/ward_member/office_staff.php?id=".$staff_id."'</script>";
+            // header("Location: ../../view/pages/ward_member/office_staff.php?id=$staff_id");
         }else{
             $_SESSION['error'] = "Error in updation";
-            header("Location: ../../view/pages/ward_member/office_staff.php?id=$staff_id");
+            echo "<script>window.location='../../view/pages/ward_member/office_staff.php?id=".$staff_id."'</script>";
+            // header("Location: ../../view/pages/ward_member/office_staff.php?id=$staff_id");
         }
     }
 
@@ -81,14 +84,17 @@
             $deleteQueryResult=mysqli_query($conn,$deleteQuery);
             if($deleteQueryResult){
                 $_SESSION['success'] = "Staff removed successfully";
-                header("Location: ../../view/pages/ward_member/add_office_staff.php");
+                echo "<script>window.location='../../view/pages/ward_member/add_office_staff.php'</script>";
+                // header("Location: ../../view/pages/ward_member/add_office_staff.php");
             }else{
                 $_SESSION['error'] = "Error in removing staff";
-                header("Location: ../../view/pages/ward_member/office_staff.php?id=$staff_id");
+                echo "<script>window.location='../../view/pages/ward_member/office_staff.php?id=".$staff_id."'</script>";
+                // header("Location: ../../view/pages/ward_member/office_staff.php?id=$staff_id");
             }
         }else{
             $_SESSION['error'] = "Error in sending mail";
-            header("Location: ../../view/pages/ward_member/office_staff.php?id=$staff_id");
+            echo "<script>window.location='../../view/pages/ward_member/office_staff.php?id=".$staff_id."'</script>";
+            // header("Location: ../../view/pages/ward_member/office_staff.php?id=$staff_id");
         }
     }
 ?>

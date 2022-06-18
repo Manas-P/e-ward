@@ -8,8 +8,29 @@
     }
     else
     {
+        $c_id=$_GET['c_id'];
+        $tsk_id=$_GET['tskId'];
+        $userid=$_GET['userid'];
         //Fetch User data
         $wardno=$_SESSION['wardno'];
+
+        //Fetch task details
+        $taskDataQuery="SELECT `task_name` FROM `tbl_task` WHERE `c_id`='$c_id' AND `id`='$tsk_id'";
+        $taskDataQueryResult = mysqli_query($conn, $taskDataQuery);
+        $taskData=mysqli_fetch_assoc($taskDataQueryResult);
+        $t_name = $taskData['task_name'];
+
+        //Fetch committee data
+        $commDataQuery="SELECT `c_name` FROM `tbl_committee` WHERE `c_id`='$c_id'";
+        $commDataQueryResult = mysqli_query($conn, $commDataQuery);
+        $commData=mysqli_fetch_assoc($commDataQueryResult);
+        $c_name = $commData['c_name'];
+
+        //Fetch user data
+        $userDataQuery="SELECT `fname` FROM `tbl_house_member` WHERE `userid`='$userid'";
+        $userDataQueryResult = mysqli_query($conn, $userDataQuery);
+        $userData=mysqli_fetch_assoc($userDataQueryResult);
+        $u_name = $userData['fname'];
 ?>
 	<!DOCTYPE html>
     <html lang="en">
@@ -51,20 +72,20 @@
                     <svg class="str" width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2.2002 8.59999L5.8002 4.99999L2.2002 1.39999" stroke="#1E1E1E" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
-                    <a href="./view_committee.php" class="previous">
-                        Committee new
+                    <a href="./view_committee.php?c_id=<?php echo $c_id ?>" class="previous">
+                        <?php echo $c_name;?>
                     </a>
                     <svg class="str" width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2.2002 8.59999L5.8002 4.99999L2.2002 1.39999" stroke="#1E1E1E" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
-                    <a href="./view_task.php" class="previous">
-                        Task name 1
+                    <a href="./view_task.php?c_id=<?php echo $c_id;?>&tskId=<?php echo $tsk_id;?>" class="previous">
+                        <?php echo $t_name;?>
                     </a>
                     <svg class="str" width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2.2002 8.59999L5.8002 4.99999L2.2002 1.39999" stroke="#1E1E1E" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                     <a href="" class="now">
-                        Member name
+                        <?php echo $u_name;?>
                     </a>
                 </div>
 
@@ -88,23 +109,26 @@
                 <!-- Pending approval -->
                 <div id="tabCon1" class="tab-content tab-con-active">
                     <div class="cards">
+                        <?php
+                            $fetchTskRep="SELECT `id`, `title`, `description`, `date`, `photo1`, `photo2`, `photo3`, `status` FROM `tbl_task_report` WHERE `tsk_id`='$tsk_id' AND `com_id`='$c_id' AND `userid`='$userid' AND `status`='0'";
+                            $fetchTskRepResult = mysqli_query($conn, $fetchTskRep);
+                            $checkCount = mysqli_num_rows($fetchTskRepResult);
+                            if($checkCount!=0){
+                                while($row=mysqli_fetch_array($fetchTskRepResult)){
+                                    $date=$row["date"];
+                                    $date=date_format (new DateTime($date), 'd-m-Y');
+                        ?>
                         <div class="card">
                             <div class="header">
                                 <div class="title">
-                                    Title
+                                    <?php echo $row["title"]; ?>
                                 </div>
                                 <div class="date">
-                                    20-03-2022
+                                    <?php echo $date; ?>
                                 </div>
                             </div>
                             <div class="description">
-                                Amet minim mollit non deserunt ullamco est sit aliqua dolor 
-                                do amet sint. Velit officia consequat duis enim velit
-                                mollit. Exercitation veniam consequat sunt nostrud amet. 
-                                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                                amet sint. Duis enim velit mollit. Exercitation veniam 
-                                consequat sunt nostrud amet.Amet minim mollit non deserunt
-                                ullamco est sit aliqua dolor do amet sint.
+                                <?php echo $row["description"]; ?>
                             </div>
                             <div class="photos">
                                 <div class="title">
@@ -112,23 +136,31 @@
                                 </div>
                                 <div class="images">
                                     <div class="img">
-                                        <img src="../../../../public/assets/images/uploads/photos/1637689428.png" alt="">
+                                        <img src="../<?php echo $row['photo1']; ?>" alt="">
                                     </div>
                                     <div class="img">
-                                        <img src="../../../../public/assets/images/uploads/photos/1644758474.png" alt="">
+                                        <img src="../<?php echo $row['photo2']; ?>" alt="">
                                     </div>
                                     <div class="img">
-                                        <img src="../../../../public/assets/images/uploads/photos/1643901418.jpg" alt="">
+                                        <img src="../<?php echo $row['photo3']; ?>" alt="">
                                     </div>
                                 </div>
                             </div>
                             <div class="underline">
                             </div>
                             <div class="buttons">
-                                <a href="" class="approve">Approve</a>
-                                <a href="" class="reject">Reject</a>
+                                <a href="../../../model/ward_member/approve_tsk_report.php?id=<?php echo $row['id']; ?>&tskId=<?php echo $tsk_id ?>&userId=<?php echo $userid ?>&cId=<?php echo $c_id ?>" class="approve">Approve</a>
+                                <a class="reject" onclick="deleteItem(<?php $rejId=$row['id']; echo $rejId; ?>)">Reject</a>
                             </div>
                         </div>
+                        <?php
+                                }
+                            }else{
+                        ?>
+                            <div class="no-result"> No records </div>
+                        <?php
+                            }
+                        ?>
                     </div>
                 </div>
                 <!-- End of Pending approval -->
@@ -136,21 +168,26 @@
                 <!-- Approved work -->
                 <div id="tabCon2" class="tab-content">
                     <div class="cards">
+                        <?php
+                            $fetchTskRep="SELECT `id`, `title`, `description`, `date`, `photo1`, `photo2`, `photo3`, `status` FROM `tbl_task_report` WHERE `tsk_id`='$tsk_id' AND `com_id`='$c_id' AND `userid`='$userid' AND `status`='1'";
+                            $fetchTskRepResult = mysqli_query($conn, $fetchTskRep);
+                            $checkCount = mysqli_num_rows($fetchTskRepResult);
+                            if($checkCount!=0){
+                                while($row=mysqli_fetch_array($fetchTskRepResult)){
+                                    $date=$row["date"];
+                                    $date=date_format (new DateTime($date), 'd-m-Y');
+                        ?>
                         <div class="card">
                             <div class="header">
                                 <div class="title">
-                                    New title
+                                    <?php echo $row["title"]; ?>
                                 </div>
                                 <div class="date">
-                                    18-03-2022
+                                    <?php echo $date; ?>
                                 </div>
                             </div>
                             <div class="description">
-                                Amet minim mollit non deserunt ullamco est sit aliqua dolor
-                                do amet sint. Velit officia consequat duis enim velit
-                                mollit. Exercitation veniam consequat sunt nostrud amet.
-                                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                                amet sint. Duis enim velit mollit.
+                                <?php echo $row["description"]; ?>
                             </div>
                             <div class="photos">
                                 <div class="title">
@@ -158,24 +195,79 @@
                                 </div>
                                 <div class="images">
                                     <div class="img">
-                                        <img src="../../../../public/assets/images/uploads/photos/1637437604.png" alt="">
+                                        <img src="../<?php echo $row['photo1']; ?>" alt="">
                                     </div>
                                     <div class="img">
-                                        <img src="../../../../public/assets/images/uploads/photos/1637438042.png" alt="">
+                                        <img src="../<?php echo $row['photo2']; ?>" alt="">
                                     </div>
                                     <div class="img">
-                                        <img src="../../../../public/assets/images/uploads/photos/1637438149.png" alt="">
+                                        <img src="../<?php echo $row['photo3']; ?>" alt="">
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <?php
+                                }
+                            }else{
+                        ?>
+                            <div class="no-result"> No records </div>
+                        <?php
+                            }
+                        ?>
                     </div>
                 </div>
                 <!-- End of Approved work -->
 
                 <!-- Rejected work -->
                 <div id="tabCon3" class="tab-content">
-                    <h1>Tab 3</h1>
+                    <div class="cards">
+                        <?php
+                            $fetchTskRep="SELECT `id`, `title`, `description`, `date`, `photo1`, `photo2`, `photo3`, `status` FROM `tbl_task_report` WHERE `tsk_id`='$tsk_id' AND `com_id`='$c_id' AND `userid`='$userid' AND `status`='2'";
+                            $fetchTskRepResult = mysqli_query($conn, $fetchTskRep);
+                            $checkCount = mysqli_num_rows($fetchTskRepResult);
+                            if($checkCount!=0){
+                                while($row=mysqli_fetch_array($fetchTskRepResult)){
+                                    $date=$row["date"];
+                                    $date=date_format (new DateTime($date), 'd-m-Y');
+                        ?>
+                        <div class="card">
+                            <div class="header">
+                                <div class="title">
+                                    <?php echo $row["title"]; ?>
+                                </div>
+                                <div class="date">
+                                    <?php echo $date; ?>
+                                </div>
+                            </div>
+                            <div class="description">
+                                <?php echo $row["description"]; ?>
+                            </div>
+                            <div class="photos">
+                                <div class="title">
+                                    Photos
+                                </div>
+                                <div class="images">
+                                    <div class="img">
+                                        <img src="../<?php echo $row['photo1']; ?>" alt="">
+                                    </div>
+                                    <div class="img">
+                                        <img src="../<?php echo $row['photo2']; ?>" alt="">
+                                    </div>
+                                    <div class="img">
+                                        <img src="../<?php echo $row['photo3']; ?>" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <?php
+                                }
+                            }else{
+                        ?>
+                            <div class="no-result"> No records </div>
+                        <?php
+                            }
+                        ?>
+                    </div>
                 </div>
                 <!-- End of Rejected work -->
                 
@@ -183,6 +275,36 @@
         </section>
 
 
+        <!--=========== Modal ============-->
+        <div class="overlay modal-hidden"></div>
+        <!-- form to reject houuse request-->
+        <div class="box modal-box modal-hidden">
+            <div class="title">
+                Reason for rejection
+            </div>
+            <div class="modal-close-btn">
+                <img src="../../../../public/assets/images/close.svg" alt="close button">
+            </div>
+            <form action="../../../model/ward_member/reject_task.php" method="post" id="reject-form" enctype="multipart/form-data">
+            <input type="hidden" name="rejIdd" id="hiddenItemId">
+            <input type="hidden" name="cId" value="<?php echo $c_id ?>">
+            <input type="hidden" name="userId"  value="<?php echo $userid ?>">
+            <input type="hidden" name="tskId" value="<?php echo $tsk_id ?>">
+                <div class="inputs">
+                    <textarea name="rej_reason" id="rejreason" rows="10"></textarea>
+                   
+                    <div class="button wBtn cursor-disable">
+                        <input type="submit" value="Continue" name="reject_task_req" id="rej" onclick="loader()" class="primary-button disabled">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <script>
+            let deleteItem=(DataId)=>{
+                document.getElementById('hiddenItemId').value=DataId;
+
+            }
+        </script>
         
 
 
@@ -224,6 +346,7 @@
         ?>
         <!-- ==========Loading End============= -->
 
+        <script src="../../../../public/assets/js/reject_task.js"></script>
         <script src="../../../../public/assets/js/wm_task_approval.js"></script>
         <script src="../../../../public/assets/js/toast.js"></script>
     </body>

@@ -34,7 +34,7 @@
             <div class="container">
                 <div class="header">
                     <div class="title">
-                        Committees
+                        Active committees
                     </div>
                     <div class="search">
                         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -45,13 +45,8 @@
                     </div>
                 </div>
                 <div class="hyper-link">
-                    <div class="attendance">
-                        <a href="">
-                            All committees
-                        </a>
-                    </div>
                     <div class="leave-req">
-                        <a href="">
+                        <a href="./closed_committees.php">
                             Closed committees
                         </a>
                     </div>
@@ -72,11 +67,10 @@
 
                         <!-- Fetch committees -->
                         <?php
-                            $fetchQuery="SELECT `wardno`, `c_name`, `c_photo`, `m_limit`, `m_joined` FROM `tbl_committee` WHERE `wardno`='$wardno'";
+                            $fetchQuery="SELECT `c_id`, `wardno`, `c_name`, `c_photo`, `m_limit`, `m_joined` FROM `tbl_committee` WHERE `wardno`='$wardno' AND `status`='1'";
                             $fetchResult=mysqli_query($conn,$fetchQuery);
                             if(mysqli_num_rows($fetchResult)>0){
                                 while($row = mysqli_fetch_assoc($fetchResult)){
-
                                     //display only 13 character if it exceeds the limit
                                     $name=$row["c_name"];
                                     if(strlen($name)>13){
@@ -84,7 +78,7 @@
                                         $name=$name . "...";
                                     }
                         ?>
-                                <a href="./view_committee.php" class="member">
+                                <a href="./view_committee.php?c_id=<?php echo $row["c_id"]; ?>" class="member">
                                     <div class="photo">
                                         <img src="../<?php echo $row["c_photo"]; ?>" alt="member photo">
                                     </div>

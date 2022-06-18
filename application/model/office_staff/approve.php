@@ -21,9 +21,11 @@
     $upQueryResult=mysqli_multi_query($conn,$upQuery);
     if($upQueryResult){
         $_SESSION['success'] = "Need request forwarded to ward member";
-        header("Location: ../../view/pages/office_staff/need_request.php");
+        echo "<script>window.location='../../view/pages/office_staff/need_request.php'</script>";
+        // header("Location: ../../view/pages/office_staff/need_request.php");
     }else{
         $_SESSION['error'] = "Error";
-        header("Location: ../../view/pages/office_staff/need_request.php");
+        echo "<script>window.location='../../view/pages/office_staff/need_request.php'</script>";
+        // header("Location: ../../view/pages/office_staff/need_request.php");
     }
 ?>

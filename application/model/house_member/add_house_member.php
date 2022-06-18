@@ -32,10 +32,12 @@
            if(move_uploaded_file($file_tmpname, $filepath)){
                 $insHouseMember="INSERT INTO `tbl_house_member`(`ward_no`, `house_no`, `fname`, `phno`, `blood_grp`, `dob`, `photo`) VALUES ('$wardno','$houseno','$hfname','$hphno','$hblood','$hdob','$filepath')";
                 $insResult=mysqli_query($conn,$insHouseMember);
-                header("Location: ../../view/pages/house_member/add_house_members.php");
+                echo "<script>window.location='../../view/pages/house_member/add_house_members.php'</script>";
+                // header("Location: ../../view/pages/house_member/add_house_members.php");
             }else{
                 $_SESSION['loginMessage'] = "File upload error";
-                header("Location: ../../view/pages/house_member/add_house_members.php");
+                echo "<script>window.location='../../view/pages/house_member/add_house_members.php'</script>";
+                // header("Location: ../../view/pages/house_member/add_house_members.php");
             }
         }else{
             if(move_uploaded_file($file_tmpname, $filepath)){
@@ -64,19 +66,23 @@
                     INSERT INTO `tbl_pro_bg`(`userid`) VALUES ('$userid')";
                     $insResult=mysqli_multi_query($conn,$insHouseMember);
                     if($insResult){
-                        header("Location: ../../view/pages/house_member/add_house_members.php");
+                        // header("Location: ../../view/pages/house_member/add_house_members.php");
+                        echo "<script>window.location='../../view/pages/house_member/add_house_members.php'</script>";
                         $_SESSION['success'] = "House member added";
                     }else{
                         $_SESSION['error'] = "Error in adding member";
-                        header("Location: ../../view/pages/house_member/add_house_members.php");
+                        echo "<script>window.location='../../view/pages/house_member/add_house_members.php'</script>";
+                        // header("Location: ../../view/pages/house_member/add_house_members.php");
                     }
                 }else{
                     $_SESSION['error'] = "Error in sending E-mail";
-                    header("Location: ../../view/pages/house_member/add_house_members.php");
+                    echo "<script>window.location='../../view/pages/house_member/add_house_members.php'</script>";
+                    // header("Location: ../../view/pages/house_member/add_house_members.php");
                 }
             }else{
                 $_SESSION['error'] = "File upload error";
-                header("Location: ../../view/pages/house_member/add_house_members.php");
+                echo "<script>window.location='../../view/pages/house_member/add_house_members.php'</script>";
+                // header("Location: ../../view/pages/house_member/add_house_members.php");
             }
         }
     }

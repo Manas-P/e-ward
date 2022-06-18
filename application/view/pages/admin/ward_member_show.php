@@ -39,6 +39,21 @@ if (isset($_SESSION["sessionId"]) != session_id()) {
                     $photo=$userData['photo'];
                     $validity=$userData['validupto'];
                     $president=$userData['president'];
+
+                    //Fetch house count
+                    $houseCount="SELECT `hid` FROM `tbl_house` WHERE `ward_no`='$wardno'";
+                    $houseCountResult=mysqli_query($conn,$houseCount);
+                    $houseRowCount = mysqli_num_rows($houseCountResult);
+
+                    //Fetch committee count
+                    $committeeCount="SELECT `id` FROM `tbl_committee` WHERE `wardno`='$wardno'";
+                    $committeeCountResult=mysqli_query($conn,$committeeCount);
+                    $committeeRowCount = mysqli_num_rows($committeeCountResult);
+                    
+                    //Fetch office staff count
+                    $officeStaffCount="SELECT `id` FROM `tbl_office_staff` WHERE `wardno`='$wardno'";
+                    $officeStaffCountResult=mysqli_query($conn,$officeStaffCount);
+                    $officeStaffRowCount = mysqli_num_rows($officeStaffCountResult);
                 ?>
                 
             <div class="container">
@@ -87,9 +102,9 @@ if (isset($_SESSION["sessionId"]) != session_id()) {
                     <div class="other-content">
                         <div class="divider"></div>
                         <div class="contents">
-                            <div class="content">No. of houses registered:<span>132</span></div>
-                            <div class="content">No. of committees:<span>6</span></div>
-                            <div class="content">No. of office staffs:<span>9</span></div>
+                            <div class="content">No. of houses registered:<span><?php echo $houseRowCount ?></span></div>
+                            <div class="content">No. of committees:<span><?php echo $committeeRowCount ?></span></div>
+                            <div class="content">No. of office staffs:<span><?php echo $officeStaffRowCount ?></span></div>
                         </div>
                     </div>
                     <div class="other-content">

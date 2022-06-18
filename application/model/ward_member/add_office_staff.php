@@ -61,18 +61,22 @@
                 $insOfficeStaffRes=mysqli_query($conn,$insOfficeStaff);
                 if($insOfficeStaffRes){
                     $_SESSION['success'] = "Office staff added successfully";
-                    header("Location: ../../view/pages/ward_member/add_office_staff.php");
+                    echo "<script>window.location='../../view/pages/ward_member/add_office_staff.php'</script>";
+                    // header("Location: ../../view/pages/ward_member/add_office_staff.php");
                 }else{
                     $_SESSION['error'] = "Error in adding office staff";
-                    header("Location: ../../view/pages/ward_member/add_office_staff.php");
+                    echo "<script>window.location='../../view/pages/ward_member/add_office_staff.php'</script>";
+                    // header("Location: ../../view/pages/ward_member/add_office_staff.php");
                 }
             }else{
                 $_SESSION['error'] = "Error in sending email";
-                header("Location: ../../view/pages/ward_member/add_office_staff.php");
+                echo "<script>window.location='../../view/pages/ward_member/add_office_staff.php'</script>";
+                // header("Location: ../../view/pages/ward_member/add_office_staff.php");
             }
         }else{
             $_SESSION['error'] = "Error in uploading photo";
-            header("Location: ../../view/pages/ward_member/add_office_staff.php");
+            echo "<script>window.location='../../view/pages/ward_member/add_office_staff.php'</script>";
+            // header("Location: ../../view/pages/ward_member/add_office_staff.php");
         }
     }
 ?>

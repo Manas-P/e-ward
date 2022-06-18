@@ -8,8 +8,34 @@
     }
     else
     {
+        $c_id=$_GET['c_id'];
+        $tsk_id=$_GET['tskId'];
         //Fetch User data
         $wardno=$_SESSION['wardno'];
+
+        //Fetch committee data
+        $commDataQuery="SELECT `c_name`, `c_description`, `c_photo`, `m_limit`, `m_joined`, `added_by`, `status` FROM `tbl_committee` WHERE `c_id`='$c_id'";
+        $commDataQueryResult = mysqli_query($conn, $commDataQuery);
+        $commData=mysqli_fetch_assoc($commDataQueryResult);
+        $c_name = $commData['c_name'];
+
+        //Fetch task data
+        $taskDataQuery="SELECT `task_name`, `task_des`, `created_by`, `created_date`, `deadline` FROM `tbl_task` WHERE `c_id`='$c_id' AND `id`='$tsk_id'";
+        $taskDataQueryResult = mysqli_query($conn, $taskDataQuery);
+        $taskData=mysqli_fetch_assoc($taskDataQueryResult);
+        $t_name = $taskData['task_name'];
+        $t_des = $taskData['task_des'];
+        $crt_by = $taskData['created_by'];
+        $crt_date = $taskData['created_date'];
+        $deadline = $taskData['deadline'];
+
+        //Fetch ward member data
+        $wmDataQuery="SELECT `fullname` FROM `tbl_ward_member` WHERE `wardno`='$crt_by'";
+        $wmDataQueryResult = mysqli_query($conn, $wmDataQuery);
+        $wmData=mysqli_fetch_assoc($wmDataQueryResult);
+        $crt_name = $wmData['fullname'];
+
+       
 ?>
 	<!DOCTYPE html>
     <html lang="en">
@@ -51,14 +77,14 @@
                     <svg class="str" width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2.2002 8.59999L5.8002 4.99999L2.2002 1.39999" stroke="#1E1E1E" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
-                    <a href="./view_committee.php" class="previous">
-                        Committee new
+                    <a href="./view_committee.php?c_id=<?php echo $c_id ?>" class="previous">
+                        <?php echo $c_name ?>
                     </a>
                     <svg class="str" width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2.2002 8.59999L5.8002 4.99999L2.2002 1.39999" stroke="#1E1E1E" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                     <a href="" class="now">
-                        Task name 1
+                        <?php echo $t_name ?>
                     </a>
                 </div>
 
@@ -67,15 +93,10 @@
                     <div class="card1">
                         <div class="content">
                             <div class="heading">
-                                Task name 1
+                                <?php echo $t_name ?>
                             </div>
                             <div class="description">
-                                Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
-                                Velit officia consequat duis enim velit mollit. Exercitation veniam 
-                                consequat sunt nostrud amet.Amet minim mollit non deserunt ullamco est 
-                                sit aliqua dolor do amet sint. Duis enim velit mollit. Exercitation 
-                                veniam consequat sunt nostrud amet.Amet minim mollit non deserunt ullamco 
-                                est sit udyfg wyegr.
+                                <?php echo $t_des ?>
                             </div>
                         </div>
                     </div>
@@ -85,14 +106,14 @@
                         </div>
                         <div class="content">
                             <div class="right">
-                                <div class="detail">Created by: <span>Wade Warren</span></div>
-                                <div class="detail">Created on: <span>20-05-2022</span></div>
+                                <div class="detail">Created by: <span><?php echo $crt_name ?></span></div>
+                                <div class="detail">Created on: <span><?php echo $crt_date ?></span></div>
                             </div>
                             <div class="left">
                                 <div class="divider"></div>
                                 <div class="details">
-                                    <div class="detail">Deadline: <span>24-06-2022</span></div>
-                                    <div class="detail">Created on: <span>20-05-2022</span></div>
+                                    <div class="detail">Deadline: <span><?php echo $deadline ?></span></div>
+                                    <div class="detail">Created on: <span><?php echo $crt_date ?></span></div>
                                 </div>
                             </div>
                         </div>
@@ -120,25 +141,47 @@
                         </a>
 
                         <!-- Fetch members -->
-                        <a href="./task_approval.php" class="member">
-                            <div class="photo">
-                                <img src="../../../../public/assets/images/uploads/photos/1637689638.png" alt="member photo">
-                            </div>
-                            <div class="about">
-                                <div class="name">Wade Warren</div>
-                                <div class="tag" style="color:#1BBD2B; background:#DDF5DF;">Completed</div>
-                            </div>
-                        </a>
+                        <?php
+                            $fetchUserId="SELECT `userid`, `status` FROM `tbl_task_member` WHERE `com_id`='$c_id' AND `tsk_id`='$tsk_id'";
+                            $fetchUserIdRes=mysqli_query($conn, $fetchUserId);
+                            $checkCount = mysqli_num_rows($fetchUserIdRes);
+                            if($checkCount!=0){
+                                while($tskRow=mysqli_fetch_array($fetchUserIdRes)){
+                                    $userid = $tskRow['userid'];
+                                    $tskStatus = $tskRow['status'];
 
-                        <a href="./task_approval.php" class="member">
-                            <div class="photo">
-                                <img src="../../../../public/assets/images/uploads/photos/1645631386.png" alt="member photo">
-                            </div>
-                            <div class="about">
-                                <div class="name">Annette Black</div>
-                                <div class="tag" style="color:#EC0000; background:#FCD9D9;">Incomplete</div>
-                            </div>
-                        </a>
+                                    //Fetch user data
+                                    $query="SELECT `fname`, `photo` FROM `tbl_house_member` WHERE `userid`='$userid'";
+                                    $result=mysqli_query($conn,$query);
+                                    $userData=mysqli_fetch_assoc($result);
+                                    $name = $userData['fname'];
+                                    $photo = $userData['photo'];
+                            
+                        ?>
+                            <a href="./task_approval.php?c_id=<?php echo $c_id;?>&tskId=<?php echo $tsk_id;?>&userid=<?php echo $userid;?>" class="member">
+                                <div class="photo">
+                                    <img src="../<?php echo $photo ?>" alt="member photo">
+                                </div>
+                                <div class="about">
+                                    <div class="name"><?php echo $name ?></div>
+                                    <?php
+                                        if($tskStatus==0){
+                                    ?>
+                                    <div class="tag" style="color:#EC0000; background:#FCD9D9;">Incomplete</div>
+                                    <?php
+                                        }else{
+                                    ?>
+                                    <div class="tag" style="color:#1BBD2B; background:#DDF5DF;">Completed</div>
+                                    <?php
+                                        }
+                                    ?>
+                                    
+                                </div>
+                            </a>
+                        <?php
+                                }
+                            }
+                        ?>
 
                     </div>
                 </div>
@@ -147,6 +190,51 @@
         </section>
 
 
+        <!-- =========== Modal ============ -->
+        <div class="overlay modal-hidden"></div>
+        <!-- Pop to add task members -->
+        <div class="box2 modal-box2 modal-hidden">
+            <div class="title"> Add members to task </div>
+            <div class="modal-close-btn pre-cls-btn">
+                <img src="../../../../public/assets/images/close.svg" alt="close button">
+            </div>
+            <form action="" method="post" id="add-member">
+                <?php
+                        $fetchQuery="SELECT `h_userid` FROM `tbl_committee_member` WHERE `c_id`='$c_id'";
+                        $fetchResult=mysqli_query($conn,$fetchQuery);
+                        if(mysqli_num_rows($fetchResult)>0){
+                            while($row = mysqli_fetch_assoc($fetchResult)){
+                                $memUserId=$row['h_userid'];
+                                $fetchQuery1="SELECT `userid` FROM `tbl_task_member` WHERE `com_id`='$c_id' AND `tsk_id`='$tsk_id' AND `userid`='$memUserId'";
+                                $fetchResult1=mysqli_query($conn,$fetchQuery1);
+                                if(mysqli_num_rows($fetchResult1)==0){
+                                    $memDataQuery="SELECT `fname`, `dob`, `photo` FROM `tbl_house_member` WHERE `userid`='$memUserId'";
+                                    $memDataQueryResult = mysqli_query($conn, $memDataQuery);
+                                    $memData=mysqli_fetch_assoc($memDataQueryResult);
+                                    $m_name = $memData['fname'];
+                                    $m_photo = $memData['photo'];
+                                    $age = (date('Y') - date('Y',strtotime($memData['dob'])));
+                    ?>
+                <a href="../../../model/ward_member/add_task_member.php?c_id=<?php echo $c_id ?>&tskId=<?php echo $tsk_id ?>&memId=<?php echo $memUserId ?>" class="member">
+                    <div class="photo">
+                        <img src="../<?php echo $m_photo; ?>" alt="member photo">
+                    </div>
+                    <div class="about">
+                        <div class="name">
+                            <?php echo $m_name; ?>
+                        </div>
+                        <div class="tag">Age:
+                            <?php echo $age; ?>
+                        </div>
+                    </div>
+                </a>
+                <?php
+                        }else{}
+                    }        
+                }else{}
+                ?>
+            </form>
+        </div>
         
 
 
@@ -188,6 +276,7 @@
         ?>
         <!-- ==========Loading End============= -->
 
+        <script src="../../../../public/assets/js/wm_view_task.js"></script>
         <script src="../../../../public/assets/js/toast.js"></script>
     </body>
     </html>

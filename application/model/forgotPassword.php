@@ -4,7 +4,8 @@
     extract($_POST);
 
     if(isset($_POST['toLoginPage'])){
-        header("Location: ../view/pages/login/login.php");
+        echo "<script>window.location='../view/pages/login/login.php'</script>";
+        // header("Location: ../view/pages/login/login.php");
     }
         
     // Check user id exist or not
@@ -36,8 +37,6 @@
         $userData=mysqli_fetch_assoc($fetchMailQueryResult);
         $email=$userData['email'];
         $fname=$userData['fname'];
-        echo $email;
-        echo $fname;
 
         //Session
         $_SESSION['fp-email']=$email;
@@ -58,10 +57,12 @@
         if(mail($email,$subject,$body,$headers)){
             $otpQuery="INSERT INTO `tbl_forgot_password`(`userid`, `otp`) VALUES ('$ftpUserId','$generatedOtp')";
             mysqli_query($conn, $otpQuery);
-            header("Location: ../view/pages/login/verify_otp.php");
+            echo "<script>window.location='../view/pages/login/verify_otp.php'</script>";
+            // header("Location: ../view/pages/login/verify_otp.php");
         }else{
             $_SESSION['errorMessage'] = "Error in sending E-mail";
-            header("Location: ../view/pages/login/forgot_password.php");
+            echo "<script>window.location='../view/pages/login/forgot_password.php'</script>";
+            // header("Location: ../view/pages/login/forgot_password.php");
         }
     }
 
@@ -72,7 +73,8 @@
         mysqli_query($conn, $deleteQuery);
         unset($_SESSION['fp-email']);
         unset($_SESSION['fp-uid']);
-        header("Location: ../view/pages/login/forgot_password.php");
+        echo "<script>window.location='../view/pages/login/forgot_password.php'</script>";
+        // header("Location: ../view/pages/login/forgot_password.php");
     }
 
     //Check OTP
@@ -81,10 +83,12 @@
         $fetchOtp="SELECT `otp` FROM `tbl_forgot_password` WHERE `userid`='$ftpUserId' AND `otp`='$fpotp'";
         $fetchOtpRes=mysqli_query($conn, $fetchOtp);
         if(mysqli_num_rows($fetchOtpRes)>=1){
-            header("Location: ../view/pages/login/new_password.php");
+            echo "<script>window.location='../view/pages/login/new_password.php'</script>";
+            // header("Location: ../view/pages/login/new_password.php");
         }else{
             $_SESSION['errorMessage'] = "Invalid OTP";
-            header("Location: ../view/pages/login/verify_otp.php");
+            echo "<script>window.location='../view/pages/login/verify_otp.php'</script>";
+            // header("Location: ../view/pages/login/verify_otp.php");
         }
     }
 
@@ -98,14 +102,16 @@
             unset($_SESSION['fp-email']);
             unset($_SESSION['fp-uid']);
             $_SESSION['success'] = "Password changed successfully";
-            header("Location: ../view/pages/login/login.php");
+            echo "<script>window.location='../view/pages/login/login.php'</script>";
+            // header("Location: ../view/pages/login/login.php");
         }else{
             $deleteQuery="DELETE FROM `tbl_forgot_password` WHERE `userid`='$ftpUserId'";
             mysqli_query($conn, $deleteQuery);
             unset($_SESSION['fp-email']);
             unset($_SESSION['fp-uid']);
             $_SESSION['loginMessage'] = "Please try again";
-            header("Location: ../view/pages/login/login.php");
+            echo "<script>window.location='../view/pages/login/login.php'</script>";
+            // header("Location: ../view/pages/login/login.php");
         }
     }
 ?>

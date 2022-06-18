@@ -10,10 +10,12 @@
         $appQueryResult=mysqli_query($conn,$appQuery);
         if($appQueryResult){
             $_SESSION['success'] = "Need request rejected successfully";
-            header("Location: ../../view/pages/ward_member/need_request.php");
+            echo "<script>window.location='../../view/pages/ward_member/need_request.php'</script>";
+            // header("Location: ../../view/pages/ward_member/need_request.php");
         }else{
             $_SESSION['error'] = "Error";
-            header("Location: ../../view/pages/ward_member/need_request.php");
+            echo "<script>window.location='../../view/pages/ward_member/need_request.php'</script>";
+            // header("Location: ../../view/pages/ward_member/need_request.php");
         }
     }
 ?>

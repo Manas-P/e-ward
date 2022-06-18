@@ -9,9 +9,11 @@
     $queryResult=mysqli_multi_query($conn,$query);
     if($queryResult){
         $_SESSION['success'] = "Street light deleted successfully";
-        header("Location: ../../view/pages/ward_member/street_light.php");
+        echo "<script>window.location='../../view/pages/ward_member/street_light.php'</script>";
+        // header("Location: ../../view/pages/ward_member/street_light.php");
     }else{
         $_SESSION['error'] = "Error in deleting street light";
-        header("Location: ../../view/pages/ward_member/street_light.php");
+        echo "<script>window.location='../../view/pages/ward_member/street_light.php'</script>";
+        // header("Location: ../../view/pages/ward_member/street_light.php");
     }
 ?>

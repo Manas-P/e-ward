@@ -8,8 +8,35 @@
     }
     else
     {
+        $c_id=$_GET['c_id'];
         //Fetch User data
         $wardno=$_SESSION['wardno'];
+
+        //Fetch committee data
+        $commDataQuery="SELECT `c_name`, `c_description`, `c_photo`, `m_limit`, `m_joined`, `added_by`, `status` FROM `tbl_committee` WHERE `c_id`='$c_id'";
+        $commDataQueryResult = mysqli_query($conn, $commDataQuery);
+        $commData=mysqli_fetch_assoc($commDataQueryResult);
+        $c_name = $commData['c_name'];
+        $c_des = $commData['c_description'];
+        $c_photo = $commData['c_photo'];
+        $m_limit = $commData['m_limit'];
+        $m_joined = $commData['m_joined'];
+        $added_by = $commData['added_by'];
+        $status = $commData['status'];
+
+        //Fetch the user who created the committee
+        if($wardno == $added_by){
+            $wmNameQuery="SELECT `fullname` FROM `tbl_ward_member` WHERE `wardno`='$added_by'";
+            $wmNameQueryResult = mysqli_query($conn, $wmNameQuery);
+            $wmData=mysqli_fetch_assoc($wmNameQueryResult);
+            $addedName = $wmData['fullname'];
+        }else{
+            $osNameQuery="SELECT `name` FROM `tbl_office_staff` WHERE `userid`='$added_by'";
+            $osNameQueryResult = mysqli_query($conn, $osNameQuery);
+            $osData=mysqli_fetch_assoc($osNameQueryResult);
+            $addedName = $osData['name'];
+        }
+
 ?>
 	<!DOCTYPE html>
     <html lang="en">
@@ -52,7 +79,7 @@
                         <path d="M2.2002 8.59999L5.8002 4.99999L2.2002 1.39999" stroke="#1E1E1E" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                     <a href="" class="now">
-                        Committee new
+                        <?php echo $c_name ?>
                     </a>
                 </div>
 
@@ -60,31 +87,28 @@
                 <div class="committee-details">
                     <div class="basic-description">
                         <div class="img">
-                            <img src="../../../../public/assets/images/uploads/photos/1637689886.png" alt="">
+                            <img src="../<?php echo $c_photo ?>" alt="committee photo">
                         </div>
                         <div class="description">
                             <div class="heading">
-                                Committee new
+                                <?php echo $c_name ?>
                             </div>
                             <div class="det">
-                                Amet minim mollit non deserunt ullamco est sit aliqua dolor do 
-                                amet sint. Velit officia consequat duis enim velit mollit. 
-                                Exercitation veniam consequat sunt nostrud amet.Amet minim 
-                                mollit non deserunt ullamco est sit aliqua dolor do amet sint.
+                                <?php echo $c_des?>
                             </div>
                         </div>
                     </div>
                     <div class="other-content">
                         <div class="divider"></div>
                         <div class="contents">
-                            <div class="content">Members limit:<span>25</span></div>
-                            <div class="content">Members joined:<span>16</span></div>
-                            <div class="content">Created by:<span>Wade Warren</span></div>
+                            <div class="content">Members limit:<span><?php echo $m_limit ?></span></div>
+                            <div class="content">Members joined:<span><?php echo $m_joined ?></span></div>
+                            <div class="content">Created by:<span><?php echo $addedName ?></span></div>
                         </div>
                     </div>
                     <div class="buttons">
-                        <a href="" class="update">Update</a>
-                        <a href="" class="close">Close</a>
+                        <a class="update">Update</a>
+                        <a href="../../../model/ward_member/close_committee.php?c_id=<?php echo $c_id; ?>" class="close">Close</a>
                     </div>
                 </div>
 
@@ -110,41 +134,53 @@
                         <div class="headings">
                             <div>Slno.</div>
                             <div style="margin-left: 70px;">Name</div>
-                            <div style="margin-left: 184px;">House no.</div>
-                            <div style="margin-left: 74px;">Phone no.</div>
-                            <div style="margin-left: 89px;">Email id</div>
-                            <div style="margin-left: 282px;">Assigned tasks</div>
-                            <div style="margin-left: 58px;">Completed tasks</div>
+                            <div style="margin-left: 224px;">House no.</div>
+                            <div style="margin-left: 79px;">Phone no.</div>
+                            <div style="margin-left: 120px;">Email id</div>
+                            <div style="margin-left: 384px;">Action</div>
                         </div>
                         <div class="datas">
+                            <?php
+                            //Fetch data id
+                            $viewMemQuery="SELECT `userid`, `wardno` FROM `tbl_committee_req` WHERE `c_id`='$c_id' AND `status`='1'";
+                            $viewMemQueryResult = mysqli_query($conn, $viewMemQuery);
+                            $checkCount = mysqli_num_rows($viewMemQueryResult);
+                            $i=1;
+                            if($checkCount!=0){
+                                while($comRow=mysqli_fetch_array($viewMemQueryResult)){
+                                    $userid = $comRow['userid'];
+                                    
+                                    //Fetch user data
+                                    $query="SELECT `house_no`, `fname`, `email`, `phno`, `dob` FROM `tbl_house_member` WHERE `userid`='$userid'";
+                                    $result=mysqli_query($conn,$query);
+                                    while($row=mysqli_fetch_array($result)){
+                                        //Age
+                                        $age = (date('Y') - date('Y',strtotime($row["dob"])));
+                            ?>
                             <div class="data">
                                 <table>
                                     <tr>
-                                        <td width=108px>1.</td>
-                                        <td width=236px>Brooklyn Simmons</td>
-                                        <td width=160px>124</td>
-                                        <td width=180px>9854587856</td>
-                                        <td width=354px>brooklynsimmo01n@gmail.com</td>
-                                        <td width=194px>3</td>
-                                        <td>1</td>
+                                        <td width=110px><?php echo $i?>.</td>
+                                        <td width=276px><?php echo $row["fname"]; ?></td>
+                                        <td width=166px><?php echo $row["house_no"]; ?></td>
+                                        <td width=208px><?php echo $row["phno"]; ?></td>
+                                        <td width=452px><?php echo $row["email"]; ?></td>
+                                        <td width=170px>
+                                            <a class="reject" href="../../../model/ward_member/remove_from_committee.php?c_id=<?php echo $c_id; ?>&u_id=<?php echo $userid ?>">Remove</a>
+                                        </td>
                                     </tr>
                                 </table>
                             </div>
-                        </div>
-                        <div class="datas">
-                            <div class="data">
-                                <table>
-                                    <tr>
-                                        <td width=108px>2.</td>
-                                        <td width=236px>Wade Warren</td>
-                                        <td width=160px>15</td>
-                                        <td width=180px>9587845126</td>
-                                        <td width=354px>wadewarren@gmail.com</td>
-                                        <td width=194px>5</td>
-                                        <td>3</td>
-                                    </tr>
-                                </table>
-                            </div>
+                            <?php
+                                    $i=$i+1;
+                                    }
+                                }
+                            }else{
+                            ?>
+                            <div class="no-result"> No records </div>
+                            <?php
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -163,23 +199,33 @@
                                 <div class="text">Add task</div>
                             </a>
         
-                            <!-- Fetch office staffs -->
-                                
-                            <a href="./view_task.php" class="task">
-                                <div class="about">
-                                    <div class="name">Task name one</div>
-                                    <div class="members-asgn"><span>Members assigned:</span>active</div>
-                                    <div class="sub">Status:<div class="tag" style="color:#EC0000; background:#FCD9D9;">Incomplete</div></div>
-                                </div>
-                            </a>
-
-                            <a href="./view_task.php" class="task">
-                                <div class="about">
-                                    <div class="name">Task name two</div>
-                                    <div class="members-asgn"><span>Members assigned:</span>active</div>
-                                    <div class="sub">Status:<div class="tag" style="color:#1BBD2B; background:#DDF5DF;">Completed</div></div>
-                                </div>
-                            </a>
+                            <!-- Fetch committee tasks -->
+                            <?php
+                                $fetchTask="SELECT `id`, `task_name`, `task_des`, `assignees`, `status` FROM `tbl_task` WHERE `c_id`='$c_id'";
+                                $fetchTaskRes=mysqli_query($conn,$fetchTask);
+                                while($taskRow=mysqli_fetch_array($fetchTaskRes)){
+                            ?>
+                                    <a href="./view_task.php?c_id=<?php echo $c_id ?>&tskId=<?php echo $taskRow['id']?>" class="task">
+                                        <div class="about">
+                                            <div class="name"><?php echo $taskRow['task_name']?></div>
+                                            <div class="members-asgn"><span>Members assigned:</span><?php echo $taskRow['assignees']?></div>
+                                            <?php
+                                                if($taskRow['status']=='1'){
+                                            ?>
+                                                    <div class="sub">Status:<div class="tag" style="color:#1BBD2B; background:#DDF5DF;">Completed</div></div>
+                                            <?php
+                                                }else{
+                                            ?>
+                                                    <div class="sub">Status:<div class="tag" style="color:#EC0000; background:#FCD9D9;">Incomplete</div>
+                                            <?php
+                                                }
+                                            ?>
+                                            </div>
+                                        </div>
+                                    </a>
+                            <?php
+                                }
+                            ?>
 
                         </div>
                     </div>
@@ -198,24 +244,86 @@
                             <div style="margin-left: 90px;">Action</div>
                         </div>
                         <div class="datas">
+                            <?php
+                            //Fetch data id
+                            $commQuery="SELECT `userid`, `wardno` FROM `tbl_committee_req` WHERE `c_id`='$c_id' AND `status`='0'";
+                            $commQueryResult = mysqli_query($conn, $commQuery);
+                            $checkCount = mysqli_num_rows($commQueryResult);
+                            $i=1;
+                            if($checkCount!=0){
+                                while($comRow=mysqli_fetch_array($commQueryResult)){
+                                    $userid = $comRow['userid'];
+                                    
+                                    //Fetch user data
+                                    $query="SELECT `house_no`, `fname`, `email`, `phno`, `dob` FROM `tbl_house_member` WHERE `userid`='$userid'";
+                                    $result=mysqli_query($conn,$query);
+                                    while($row=mysqli_fetch_array($result)){
+                                        //Age
+                                        $age = (date('Y') - date('Y',strtotime($row["dob"])));
+                            ?>
                             <div class="data">
                                 <table>
                                     <tr>
-                                        <td width=108px>1.</td>
-                                        <td width=236px>Annette Black</td>
-                                        <td width=160px>46</td>
-                                        <td width=180px>9854587856</td>
-                                        <td width=396px>annetteblack@gmail.com</td>
-                                        <td width=130px>23</td>
+                                        <td width=108px><?php echo $i?>.</td>
+                                        <td width=236px><?php echo $row["fname"]; ?></td>
+                                        <td width=160px><?php echo $row["house_no"]; ?></td>
+                                        <td width=180px><?php echo $row["phno"]; ?></td>
+                                        <td width=396px><?php echo $row["email"]; ?></td>
+                                        <td width=120px><?php echo $age; ?></td>
                                         <td width=95px>
-                                            <a  class="approve" onclick="loader()" >Approve</a>
+                                            <?php
+                                                if($m_joined!=0){
+                                                    if($m_limit/$m_joined==1){
+                                            ?>
+                                                    <a class="approve-dis" >Approve</a>
+                                            <?php
+                                                }else{
+                                            ?>
+                                                    <a href="../../../model/ward_member/approve_committee_req.php?c_id=<?php echo $c_id; ?>&u_id=<?php echo $userid ?>" class="approve" onclick="loader()" >Approve</a>
+                                            <?php
+                                                }
+                                            }
+                                            ?>
+                                            <?php
+                                                if($m_joined=='0'){
+                                            ?>
+                                                    <a href="../../../model/ward_member/approve_committee_req.php?c_id=<?php echo $c_id; ?>&u_id=<?php echo $userid ?>" class="approve" onclick="loader()" >Approve</a>
+                                            <?php
+                                                }
+                                            ?>
                                         </td>
                                         <td>
-                                            <a class="reject" >Reject</a>
+                                            <?php
+                                                if($m_joined!=0){
+                                                    if($m_limit/$m_joined==1){
+                                                }else{
+                                            ?>
+                                                    <a href="../../../model/ward_member/reject_committee_req.php?c_id=<?php echo $c_id; ?>&u_id=<?php echo $userid ?>" class="reject">Reject</a>
+                                            <?php
+                                                }
+                                            }
+                                            ?>
+                                            <?php
+                                                if($m_joined=='0'){
+                                            ?>
+                                                    <a href="../../../model/ward_member/reject_committee_req.php?c_id=<?php echo $c_id; ?>&u_id=<?php echo $userid ?>" class="reject">Reject</a>
+                                            <?php
+                                                }
+                                            ?>
                                         </td>
                                     </tr>
                                 </table>
                             </div>
+                            <?php
+                                    $i=$i+1;
+                                    }
+                                }
+                            }else{
+                            ?>
+                            <div class="no-result"> No records </div>
+                            <?php
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -236,13 +344,20 @@
                 <img src="../../../../public/assets/images/close.svg" alt="close button">
             </div>
             <!-- Add task -->
-            <form action="" method="post" id="add-task" enctype="multipart/form-data">
+            <form action="../../../model/ward_member/add_task.php" method="post" id="add-task" enctype="multipart/form-data">
+                <input type="hidden" name="comid" value="<?php echo $c_id ?>">
                 <div class="inputs">
                     <div class="input commName">
                         <div class="label">
                             Task name
                         </div>
-                        <input type="text" name="name" id="comm-name" placeholder="John Doe" autocomplete="off">
+                        <input type="text" name="taskname" id="comm-name" placeholder="John Doe" autocomplete="off">
+                        <div class="error error-hidden">
+                        </div>
+                    </div>
+                    <div class="input commDate">
+                        <div class="label"> Deadline </div>
+                        <input type="date" name="taskdate" id="comm-date" autocomplete="off">
                         <div class="error error-hidden">
                         </div>
                     </div>
@@ -250,7 +365,7 @@
                         <div class="label">
                             Task description
                         </div>
-                        <textarea name="comm_des" id="comm-des" rows="10"></textarea>
+                        <textarea name="task_des" id="comm-des" rows="10"></textarea>
                         <div class="subtext">
                             <div class="error error-hidden">
                             </div>
@@ -260,7 +375,55 @@
                         </div>
                     </div>
                     <div class="button hBtn cursor-disable">
-                        <input type="submit" value="Add task" name="add-comm" id="add-comm" onclick="loader()" class="primary-button disabled">
+                        <input type="submit" value="Add task" name="add-task" id="add-comm" onclick="loader()" class="primary-button disabled">
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- form to update committee-->
+        <div class="box modal-box2 modal-hidden">
+            <div class="title"> Update committee </div>
+            <div class="modal-close-btn cls-btn-up">
+                <img src="../../../../public/assets/images/close.svg" alt="close button">
+            </div>
+            <!-- Update committee -->
+            <form action="../../../model/ward_member/update_committee.php" method="post" id="up-committe" enctype="multipart/form-data">
+                <input type="hidden" name="alreadyphoto" value="<?php echo $c_photo ?>">
+                <input type="hidden" name="comid" value="<?php echo $c_id ?>">
+                <div class="inputs">
+                    <div class="input commUpName">
+                        <div class="label"> Committee name </div>
+                        <input type="text" name="upname" id="up-comm-name" value="<?php echo $c_name ?>" autocomplete="off">
+                        <div class="error error-hidden">
+                        </div>
+                    </div>
+                    <div class="inputt commUpDes">
+                        <div class="label"> Committee description </div>
+                        <textarea name="upcomm_des" id="up-comm-des" rows="10"><?php echo $c_des ?></textarea>
+                        <div class="subtext">
+                            <div class="error error-hidden">
+                            </div>
+                            <div class="count-limit up-limit">
+                                <span id="up-count-char">0</span>/300
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input commPhoto">
+                        <div class="label"> Upload photo </div>
+                        <input type="file" name="up-photo" id="comm-photo" accept="image/png,image/jpeg">
+                        <div class="error error-hidden">
+                        </div>
+                    </div>
+                    <div class="input commUpLimit">
+                        <div class="label"> Members limit </div>
+                        <input type="text" name="upcommLimit" id="up-comm-limit" value="<?php echo $m_limit ?>" autocomplete="off">
+                        <div class="error error-hidden">
+                        </div>
+                    </div>
+                    <div class="button upBtn cursor-disable">
+                        <input type="submit" value="Update committee" name="up-comm" id="up-comm" onclick="loader()"
+                            class="primary-button disabled">
                     </div>
                 </div>
             </form>

@@ -45,15 +45,14 @@
                     </div>
                 </div>
                 <div class="hyper-link">
-                    <div class="leave-req">
+                    <!-- <div class="leave-req">
                         <a href="">
                             Leave requests
                         </a>
                         <span class="noti-badge">
-                            <!-- Fetch request -->
                             4
                         </span>
-                    </div>
+                    </div> -->
                 </div>
 
                 <!-- content -->

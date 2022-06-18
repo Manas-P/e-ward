@@ -124,7 +124,7 @@ else
                 <input type="hidden" name="fname" value="<?php echo $fname ?>">
                 <div class="inputs">
                     <div class="input reqDes">
-                        <div class="label"> Committee description </div>
+                        <div class="label"> Request description </div>
                         <textarea name="req_des" id="req-des" rows="10"></textarea>
                         <div class="error error-hidden">
                         </div>

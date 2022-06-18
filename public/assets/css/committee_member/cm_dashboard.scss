@@ -1,0 +1,271 @@
+@import "../components.scss";
+
+@mixin card($shadow, $padding) {
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  column-gap: 12px;
+  align-items: center;
+  padding: $padding;
+  width: 260px;
+  background: $white;
+  box-shadow: $shadow;
+  border-radius: 10px;
+  transition: 0.2s ease-in-out;
+}
+
+body {
+  background: $bg;
+}
+
+.dashboard {
+  display: flex;
+  .sidebar {
+    @include sidebar();
+  }
+  .container {
+    margin: 46px 63px 0 calc(476px - 63px);
+    width: calc(100% - 476px);
+    .header {
+      display: flex;
+      justify-content: space-between;
+      .title {
+        font-family: Gilroy_SB;
+        font-size: 38px;
+      }
+    }
+    .committee-details {
+      display: flex;
+      width: 100%;
+      background: $white;
+      box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
+      border-radius: 10px;
+      padding: 24px;
+      margin-top: 50px;
+      column-gap: 24px;
+      .basic-description {
+        display: flex;
+        column-gap: 18px;
+        .img {
+          height: 134px;
+          width: 134px;
+          border-radius: 4px;
+          overflow: hidden;
+          img {
+            height: 100%;
+          }
+        }
+        .description {
+          display: flex;
+          flex-direction: column;
+          row-gap: 8px;
+          .heading {
+            font-family: "Gilroy_SB";
+            color: $text;
+            font-size: 24px;
+          }
+          .det {
+            width: 640px;
+            font-family: "Gilroy_M";
+            font-size: 18px;
+            color: $subText;
+            line-height: 24px;
+          }
+        }
+      }
+      .other-contents {
+        display: flex;
+        column-gap: 100px;
+        .other-content {
+          display: flex;
+          column-gap: 24px;
+          margin-top: 8px;
+          .divider {
+            height: 100%;
+            width: 2px;
+            border-radius: 4px;
+            background: #ececec;
+          }
+          .contents {
+            display: flex;
+            flex-direction: column;
+            row-gap: 26px;
+            .content {
+              font-family: "Gilroy_M";
+              font-size: 18px;
+              color: $subText;
+              span {
+                margin-left: 8px;
+                font-family: "Gilroy_SB";
+                color: $text;
+                #act {
+                  margin-left: -8px;
+                  color: $green;
+                }
+                #inact {
+                  margin-left: -8px;
+                  color: $error;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .tab-menu {
+      margin-top: 42px;
+      display: flex;
+      flex-direction: column;
+      .tabs {
+        display: flex;
+        column-gap: 24px;
+        .tab {
+          font-family: "Gilroy_SB";
+          font-size: 20px;
+          color: $tabText;
+          padding: 8px 24px;
+          border-radius: 10px;
+          cursor: pointer;
+          &:hover {
+            color: $primary;
+          }
+        }
+        .tab-active {
+          color: $primary;
+          background: $primaryFade;
+          width: auto;
+          &::after {
+            content: "";
+            position: relative;
+            display: block;
+            width: calc(100% + 48px);
+            height: 2px;
+            background: $primary;
+            top: 22px;
+            left: -24px;
+          }
+        }
+      }
+      .underline {
+        margin-top: 12px;
+        height: 2px;
+        width: 100%;
+        background: #d9d5f5;
+        border-radius: 4px;
+      }
+    }
+    .tab-content {
+      margin-top: 42px;
+      display: none;
+      .content-table {
+        .headings {
+          margin: 0px 16px 0 16px;
+          font-family: "Gilroy_SB";
+          font-size: 20px;
+          color: $text;
+          display: flex;
+        }
+        .datas {
+          margin-top: 24px;
+          display: flex;
+          flex-direction: column;
+          row-gap: 24px;
+          .data {
+            padding: 20px;
+            background: $white;
+            border-radius: 10px;
+            font-family: "Gilroy_M";
+            font-size: 18px;
+            color: $darkSubText;
+            td {
+              padding-right: 28px;
+              vertical-align: top;
+              text-align: left;
+            }
+          }
+          .no-result {
+            font-family: "Gilroy_M";
+            font-size: 20px;
+            color: $subText;
+            text-align: center;
+            transform: translateX(-60px);
+            margin-top: 100px;
+          }
+        }
+      }
+      .pending-task {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 36px;
+        .task {
+          padding: 16px 16px 18px 16px;
+          background: $white;
+          box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
+          border-radius: 10px;
+          display: flex;
+          flex-direction: column;
+          row-gap: 16px;
+          width: 408px;
+          transition: 0.2s ease-in-out;
+          .detail {
+            display: flex;
+            flex-direction: column;
+            row-gap: 12px;
+            .title {
+              font-family: "Gilroy_SB";
+              font-size: 20px;
+              color: $text;
+            }
+            .description {
+              font-family: "Gilroy_M";
+              font-size: 16px;
+              color: $subText;
+              line-height: 24px;
+              height: 63px;
+            }
+          }
+          .divider {
+            width: 100%;
+            height: 2px;
+            border-radius: 2px;
+            background: #d9d5f5;
+          }
+          .dates {
+            display: flex;
+            flex-direction: column;
+            row-gap: 12px;
+            .date {
+              font-family: "Gilroy_M";
+              font-size: 16px;
+              color: $subText;
+              span {
+                margin-left: 8px;
+                font-family: "Gilroy_SB";
+                color: $text;
+              }
+            }
+          }
+          &:hover {
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.062);
+            transform: scale(1.015);
+          }
+        }
+        .no-result {
+          position: absolute;
+          font-family: "Gilroy_M";
+          font-size: 20px;
+          color: $subText;
+          left: 50%;
+          transform: translateX(50%);
+          margin-top: 100px;
+        }
+      }
+    }
+    .tab-con-active {
+      display: block;
+    }
+  }
+}
+
+//Alert
+@include error-alert();

@@ -66,7 +66,8 @@
         $mpdf->output($file,'I');
     }else{
         $_SESSION['error'] = "Data not found";
-        header("Location: ../../view/pages/ward_member/office_staff.php?id=$staff_id");
+        echo "<script>window.location='../../view/pages/ward_member/office_staff.php?id=".$staff_id."'</script>";
+        // header("Location: ../../view/pages/ward_member/office_staff.php?id=$staff_id");
     }
 
 ?>

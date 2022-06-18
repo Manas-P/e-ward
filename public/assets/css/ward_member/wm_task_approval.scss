@@ -4,7 +4,7 @@ body {
   background: $bg;
 }
 
-@mixin card($shadow,$padding) {
+@mixin card($shadow, $padding) {
   text-decoration: none;
   cursor: pointer;
   display: flex;
@@ -61,166 +61,220 @@ body {
       }
     }
     .bread-crumbs {
-        margin-top: 60px;
-        display: flex;
-        column-gap: 4px;
-        align-items: center;
-        .previous {
-          font-family: "Gilroy_M";
-          font-size: 16px;
-          color: $subText;
-        }
-        svg {
-          .str {
-            stroke: $text;
-          }
-        }
-        .now {
-          font-family: "Gilroy_SB";
-          font-size: 16px;
-          color: $text;
+      margin-top: 60px;
+      display: flex;
+      column-gap: 4px;
+      align-items: center;
+      .previous {
+        font-family: "Gilroy_M";
+        font-size: 16px;
+        color: $subText;
+      }
+      svg {
+        .str {
+          stroke: $text;
         }
       }
+      .now {
+        font-family: "Gilroy_SB";
+        font-size: 16px;
+        color: $text;
+      }
+    }
     // content
-    .tab-menu{
-        margin-top:42px;
+    .tab-menu {
+      margin-top: 42px;
+      display: flex;
+      flex-direction: column;
+      .tabs {
         display: flex;
-        flex-direction: column;
-        .tabs{
-          display: flex;
-          column-gap: 24px;
-          .tab{
-            font-family: "Gilroy_SB";
-            font-size: 20px;
-            color:$tabText;
-            padding: 8px 24px;
-            border-radius: 10px;
-            cursor: pointer;
-            &:hover{
-              color: $primary;
-            }
-          }
-          .tab-active{
+        column-gap: 24px;
+        .tab {
+          font-family: "Gilroy_SB";
+          font-size: 20px;
+          color: $tabText;
+          padding: 8px 24px;
+          border-radius: 10px;
+          cursor: pointer;
+          &:hover {
             color: $primary;
-            background: $primaryFade;
-            width:auto;
-            &::after{
-              content: "";
-              position: relative;
-              display: block;
-              width:calc(100% + 48px);
-              height: 2px;
-              background: $primary;
-              top:22px;
-              left:-24px;
+          }
+        }
+        .tab-active {
+          color: $primary;
+          background: $primaryFade;
+          width: auto;
+          &::after {
+            content: "";
+            position: relative;
+            display: block;
+            width: calc(100% + 48px);
+            height: 2px;
+            background: $primary;
+            top: 22px;
+            left: -24px;
+          }
+        }
+      }
+      .underline {
+        margin-top: 12px;
+        height: 2px;
+        width: 100%;
+        background: #d9d5f5;
+        border-radius: 4px;
+      }
+    }
+    //Tab content
+    .tab-content {
+      margin-top: 42px;
+      display: none;
+      .cards {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        row-gap: 36px;
+        .card {
+          background: $white;
+          box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
+          border-radius: 10px;
+          padding: 24px;
+          .header {
+            display: fles;
+            justify-content: space-between;
+            align-items: center;
+            .title {
+              font-family: "Gilroy_SB";
+              font-size: 24px;
+              color: $text;
+            }
+            .date {
+              font-family: "Gilroy_M";
+              font-size: 18px;
+              color: $text;
+            }
+          }
+          .description {
+            margin-top: 8px;
+            width: 656px;
+            height: 130px;
+            line-height: 26px;
+            font-family: "Gilroy_M";
+            font-size: 18px;
+            color: $subText;
+          }
+          .photos {
+            margin-top: 18px;
+            display: flex;
+            flex-direction: column;
+            row-gap: 12px;
+            .title {
+              font-family: "Gilroy_SB";
+              font-size: 18px;
+              color: $text;
+            }
+            .images {
+              display: flex;
+              column-gap: 12px;
+              .img {
+                width: 124px;
+                height: 72px;
+                border-radius: 10px;
+                overflow: hidden;
+                cursor: pointer;
+                border: 1px solid $border;
+                img {
+                  width: 100%;
+                }
+              }
+            }
+          }
+          .underline {
+            margin-top: 28px;
+            width: 100%;
+            height: 2px;
+            border-radius: 2px;
+            background: #ececec;
+          }
+          .buttons {
+            display: flex;
+            column-gap: 32px;
+            margin-top: 28px;
+            margin-bottom: 4px;
+            .approve {
+              @include secondary_button(310px);
+            }
+            .reject {
+              @include secondary_button(310px);
+              color: $error;
+              border: 2px solid $error;
+              &:hover {
+                background: #fde1e1;
+              }
             }
           }
         }
-        .underline{
-          margin-top: 12px;
-          height:2px;
-          width:100%;
-          background:#D9D5F5;
-          border-radius: 4px;
+        .no-result {
+          position: absolute;
+          font-family: "Gilroy_M";
+          font-size: 20px;
+          color: $subText;
+          left: 50%;
+          transform: translateX(50%);
+          margin-top: 100px;
         }
       }
-      //Tab content
-      .tab-content{
-        margin-top: 42px;
-        display: none;
-        .cards{
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            row-gap: 36px;
-            .card{
-                background: $white;
-                box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
-                border-radius: 10px;
-                padding:24px;
-                .header{
-                  display: fles;
-                  justify-content: space-between;
-                  align-items: center;
-                  .title{
-                    font-family: "Gilroy_SB";
-                    font-size: 24px;
-                    color:$text;
-                  }
-                  .date{
-                    font-family: "Gilroy_M";
-                    font-size: 18px;
-                    color:$text;
-                  }
-                }
-                .description{
-                  margin-top: 8px;
-                  width: 656px;
-                  height: 130px;
-                  line-height: 26px;
-                  font-family: "Gilroy_M";
-                  font-size: 18px;
-                  color:$subText;
-                }
-                .photos{
-                  margin-top: 18px;
-                  display: flex;
-                  flex-direction: column;
-                  row-gap: 12px;
-                  .title{
-                    font-family: "Gilroy_SB";
-                    font-size: 18px;
-                    color:$text;
-                  }
-                  .images{
-                    display: flex;
-                    column-gap: 12px;
-                    .img{
-                      width: 124px;
-                      height: 72px;
-                      border-radius: 10px;
-                      overflow: hidden;
-                      cursor: pointer;
-                      border: 1px solid $border;
-                      img{
-                        width:100%;
-                      }
-                    }
-                  }
-                }
-                .underline{
-                  margin-top: 28px;
-                  width:100%;
-                  height:2px;
-                  border-radius: 2px;
-                  background: #ECECEC;
-                }
-                .buttons{
-                  display: flex;
-                  column-gap: 32px;
-                  margin-top: 28px;
-                  margin-bottom: 4px;
-                  .approve{
-                    @include secondary_button(310px);
-                  }
-                  .reject {
-                    @include secondary_button(310px);
-                    color: $error;
-                    border:2px solid $error;
-                    &:hover{
-                      background: #fde1e1;
-                    }
-                  }
-                }
-            }
-        }
-      }
-      .tab-con-active{
-        display: block;
-      }
+    }
+    .tab-con-active {
+      display: block;
+    }
   }
 }
 
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.box {
+  @include box_model(640px, auto);
+  .inputs {
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+    margin-top: 40px;
+    textarea {
+      resize: vertical;
+      max-height: 50vh;
+      min-height: 24vh;
+      font-size: 18px;
+      font-family: "Gilroy_M";
+      padding: 16px;
+      border-radius: 10px;
+      border: 1px solid $border;
+      color: $text;
+      outline: none;
+      transition: 0.1s ease-in-out;
+      &:focus {
+        border: 1px solid $text;
+      }
+    }
+  }
+  .button {
+    .primary-button {
+      @include primary_button(100%);
+    }
+  }
+}
+
+.modal-hidden {
+  display: none;
+  pointer-events: none;
+}
 
 //Alert
 @include error-alert();
