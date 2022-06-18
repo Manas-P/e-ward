@@ -283,13 +283,13 @@
                     <div class="half-input">
                         <div class="input w-date">
                             <div class="label"> From date </div>
-                            <input type="date" name="fDate" id="f-date" min="<?php echo $minDate ?>" max="<?php echo $maxDate ?>" autocomplete="off">
+                            <input type="date" name="fDate" id="f-date" min="<?php echo $minDate ?>" autocomplete="off">
                             <div class="error error-hidden">
                             </div>
                         </div>
                         <div class="input w-date">
                             <div class="label"> To date </div>
-                            <input type="date" name="tDate" id="t-date" min="<?php echo $minDate ?>" max="<?php echo $maxDate ?>" autocomplete="off">
+                            <input type="date" name="tDate" id="t-date" min="<?php echo $minDate ?>" autocomplete="off">
                             <div class="error error-hidden">
                             </div>
                         </div>

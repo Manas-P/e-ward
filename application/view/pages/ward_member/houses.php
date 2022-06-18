@@ -78,6 +78,11 @@
                         $result=mysqli_query($conn,$query);
                         $i=1;
                         while($row=mysqli_fetch_array($result)){
+                            //fetch house members count
+                            $houseno=$row['house_no'];
+                            $houseCount="SELECT `hm_id` FROM `tbl_house_member` WHERE `ward_no`='$wardno' AND `house_no`='$houseno'";
+                            $houseCountResult=mysqli_query($conn,$houseCount);
+                            $houseRowCount = mysqli_num_rows($houseCountResult);
                     ?>
                     <a href="./view_house.php?houseno=<?php echo $row['house_no'];?>" class="data">
                         <table>
@@ -85,7 +90,7 @@
                                 <td width=104px><?php echo $i; ?></td>
                                 <td width=238px><?php echo $row['house_name']; ?></td>
                                 <td width=140px><?php echo $row['house_no']; ?></td>
-                                <td width=132px>4</td>
+                                <td width=132px><?php echo $houseRowCount; ?></td>
                                 <td width=226px><?php echo $row['locality']; ?></td>
                                 <td width=228px><?php echo $row['post_office']; ?></td>
                                 <td width=220px><?php echo $row['ration_no']; ?></td>

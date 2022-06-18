@@ -22,7 +22,7 @@
                             </svg>
                             <div class="text">Houses</div>
                         </a>
-                        <a href="../../pages/office_staff/committees.php" class="menu">
+                        <a class="menu">
                             <svg width="24" height="22" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path class="str" d="M16.5834 19.25V17.4167C16.5834 16.4442 16.197 15.5116 15.5094 14.8239C14.8218 14.1363 13.8891 13.75 12.9167 13.75H5.58335C4.61089 13.75 3.67826 14.1363 2.99063 14.8239C2.303 15.5116 1.91669 16.4442 1.91669 17.4167V19.25" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path class="str" d="M9.24998 10.0833C11.275 10.0833 12.9166 8.44171 12.9166 6.41667C12.9166 4.39162 11.275 2.75 9.24998 2.75C7.22494 2.75 5.58331 4.39162 5.58331 6.41667C5.58331 8.44171 7.22494 10.0833 9.24998 10.0833Z" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
