@@ -275,8 +275,8 @@ body {
 }
 
 .dashboard .container {
-  margin: 46px 63px 0 calc(476px - 63px);
-  width: calc(100% - 476px);
+  margin: 2.39583vw 3.28125vw 0 calc(24.791666666666668vw - 3.28125vw);
+  width: calc(100% - 24.791666666666668vw);
 }
 
 .dashboard .container .header {
@@ -290,7 +290,7 @@ body {
 
 .dashboard .container .header .title {
   font-family: Gilroy_SB;
-  font-size: 38px;
+  font-size: 1.9791666666666667vw;
 }
 
 .dashboard .container .committee-details {
@@ -299,27 +299,27 @@ body {
   display: flex;
   width: 100%;
   background: #fff;
-  -webkit-box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
-          box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
-  border-radius: 10px;
-  padding: 24px;
-  margin-top: 50px;
-  -webkit-column-gap: 24px;
-          column-gap: 24px;
+  -webkit-box-shadow: 0px 0.52083vw 1.04167vw rgba(237, 237, 237, 0.25);
+          box-shadow: 0px 0.52083vw 1.04167vw rgba(237, 237, 237, 0.25);
+  border-radius: 0.5208333333333334vw;
+  padding: 1.25vw;
+  margin-top: 2.6041666666666665vw;
+  -webkit-column-gap: 1.25vw;
+          column-gap: 1.25vw;
 }
 
 .dashboard .container .committee-details .basic-description {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-column-gap: 18px;
-          column-gap: 18px;
+  -webkit-column-gap: 0.9375vw;
+          column-gap: 0.9375vw;
 }
 
 .dashboard .container .committee-details .basic-description .img {
-  height: 134px;
-  width: 134px;
-  border-radius: 4px;
+  height: 6.979166666666667vw;
+  width: 6.979166666666667vw;
+  border-radius: 0.20833333333333334vw;
   overflow: hidden;
 }
 
@@ -335,44 +335,44 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  row-gap: 8px;
+  row-gap: 0.4166666666666667vw;
 }
 
 .dashboard .container .committee-details .basic-description .description .heading {
   font-family: "Gilroy_SB";
   color: #1e1e1e;
-  font-size: 24px;
+  font-size: 1.25vw;
 }
 
 .dashboard .container .committee-details .basic-description .description .det {
-  width: 640px;
+  width: 33.333333333333336vw;
   font-family: "Gilroy_M";
-  font-size: 18px;
+  font-size: 0.9375vw;
   color: #8b8b8b;
-  line-height: 24px;
+  line-height: 1.25vw;
 }
 
 .dashboard .container .committee-details .other-contents {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-column-gap: 100px;
-          column-gap: 100px;
+  -webkit-column-gap: 5.208333333333333vw;
+          column-gap: 5.208333333333333vw;
 }
 
 .dashboard .container .committee-details .other-contents .other-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-column-gap: 24px;
-          column-gap: 24px;
-  margin-top: 8px;
+  -webkit-column-gap: 1.25vw;
+          column-gap: 1.25vw;
+  margin-top: 0.4166666666666667vw;
 }
 
 .dashboard .container .committee-details .other-contents .other-content .divider {
   height: 100%;
-  width: 2px;
-  border-radius: 4px;
+  width: 0.10416666666666667vw;
+  border-radius: 0.20833333333333334vw;
   background: #ececec;
 }
 
@@ -384,33 +384,33 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  row-gap: 26px;
+  row-gap: 1.3541666666666667vw;
 }
 
 .dashboard .container .committee-details .other-contents .other-content .contents .content {
   font-family: "Gilroy_M";
-  font-size: 18px;
+  font-size: 0.9375vw;
   color: #8b8b8b;
 }
 
 .dashboard .container .committee-details .other-contents .other-content .contents .content span {
-  margin-left: 8px;
+  margin-left: 0.4166666666666667vw;
   font-family: "Gilroy_SB";
   color: #1e1e1e;
 }
 
 .dashboard .container .committee-details .other-contents .other-content .contents .content span #act {
-  margin-left: -8px;
+  margin-left: -0.4166666666666667vw;
   color: #039b00;
 }
 
 .dashboard .container .committee-details .other-contents .other-content .contents .content span #inact {
-  margin-left: -8px;
+  margin-left: -0.4166666666666667vw;
   color: #ec0000;
 }
 
 .dashboard .container .tab-menu {
-  margin-top: 42px;
+  margin-top: 2.1875vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -424,16 +424,16 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-column-gap: 24px;
-          column-gap: 24px;
+  -webkit-column-gap: 1.25vw;
+          column-gap: 1.25vw;
 }
 
 .dashboard .container .tab-menu .tabs .tab {
   font-family: "Gilroy_SB";
-  font-size: 20px;
+  font-size: 1.0416666666666667vw;
   color: #868686;
-  padding: 8px 24px;
-  border-radius: 10px;
+  padding: 0.4166666666666667vw 1.25vw;
+  border-radius: 0.5208333333333334vw;
   cursor: pointer;
 }
 
@@ -451,30 +451,30 @@ body {
   content: "";
   position: relative;
   display: block;
-  width: calc(100% + 48px);
-  height: 2px;
+  width: calc(100% + 2.5vw);
+  height: 0.10416666666666667vw;
   background: #5744e3;
-  top: 22px;
-  left: -24px;
+  top: 1.1458333333333333vw;
+  left: -1.25vw;
 }
 
 .dashboard .container .tab-menu .underline {
-  margin-top: 12px;
-  height: 2px;
+  margin-top: 0.625vw;
+  height: 0.10416666666666667vw;
   width: 100%;
   background: #d9d5f5;
-  border-radius: 4px;
+  border-radius: 0.20833333333333334vw;
 }
 
 .dashboard .container .tab-content {
-  margin-top: 42px;
+  margin-top: 2.1875vw;
   display: none;
 }
 
 .dashboard .container .tab-content .content-table .headings {
-  margin: 0px 16px 0 16px;
+  margin: 0px 0.8333333333333334vw 0 0.8333333333333334vw;
   font-family: "Gilroy_SB";
-  font-size: 20px;
+  font-size: 1.0416666666666667vw;
   color: #1e1e1e;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -482,7 +482,7 @@ body {
 }
 
 .dashboard .container .tab-content .content-table .datas {
-  margin-top: 24px;
+  margin-top: 1.25vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -490,32 +490,32 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  row-gap: 24px;
+  row-gap: 1.25vw;
 }
 
 .dashboard .container .tab-content .content-table .datas .data {
-  padding: 20px;
+  padding: 1.0416666666666667vw;
   background: #fff;
-  border-radius: 10px;
+  border-radius: 0.5208333333333334vw;
   font-family: "Gilroy_M";
-  font-size: 18px;
+  font-size: 0.9375vw;
   color: #545454;
 }
 
 .dashboard .container .tab-content .content-table .datas .data td {
-  padding-right: 28px;
+  padding-right: 1.4583333333333333vw;
   vertical-align: top;
   text-align: left;
 }
 
 .dashboard .container .tab-content .content-table .datas .no-result {
   font-family: "Gilroy_M";
-  font-size: 20px;
+  font-size: 1.0416666666666667vw;
   color: #8b8b8b;
   text-align: center;
-  -webkit-transform: translateX(-60px);
-          transform: translateX(-60px);
-  margin-top: 100px;
+  -webkit-transform: translateX(-3.125vw);
+          transform: translateX(-3.125vw);
+  margin-top: 5.208333333333333vw;
 }
 
 .dashboard .container .tab-content .pending-task {
@@ -524,15 +524,15 @@ body {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  gap: 36px;
+  gap: 1.875vw;
 }
 
 .dashboard .container .tab-content .pending-task .task {
-  padding: 16px 16px 18px 16px;
+  padding: 0.8333333333333334vw 0.8333333333333334vw 0.9375vw 0.8333333333333334vw;
   background: #fff;
-  -webkit-box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
-          box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
-  border-radius: 10px;
+  -webkit-box-shadow: 0px 0.52083vw 1.04167vw rgba(237, 237, 237, 0.25);
+          box-shadow: 0px 0.52083vw 1.04167vw rgba(237, 237, 237, 0.25);
+  border-radius: 0.5208333333333334vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -540,8 +540,8 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  row-gap: 16px;
-  width: 408px;
+  row-gap: 0.8333333333333334vw;
+  width: 21.25vw;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
 }
@@ -554,27 +554,27 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  row-gap: 12px;
+  row-gap: 0.625vw;
 }
 
 .dashboard .container .tab-content .pending-task .task .detail .title {
   font-family: "Gilroy_SB";
-  font-size: 20px;
+  font-size: 1.0416666666666667vw;
   color: #1e1e1e;
 }
 
 .dashboard .container .tab-content .pending-task .task .detail .description {
   font-family: "Gilroy_M";
-  font-size: 16px;
+  font-size: 0.8333333333333334vw;
   color: #8b8b8b;
-  line-height: 24px;
-  height: 63px;
+  line-height: 1.25vw;
+  height: 3.28125vw;
 }
 
 .dashboard .container .tab-content .pending-task .task .divider {
   width: 100%;
-  height: 2px;
-  border-radius: 2px;
+  height: 0.10416666666666667vw;
+  border-radius: 0.10416666666666667vw;
   background: #d9d5f5;
 }
 
@@ -586,24 +586,24 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  row-gap: 12px;
+  row-gap: 0.625vw;
 }
 
 .dashboard .container .tab-content .pending-task .task .dates .date {
   font-family: "Gilroy_M";
-  font-size: 16px;
+  font-size: 0.8333333333333334vw;
   color: #8b8b8b;
 }
 
 .dashboard .container .tab-content .pending-task .task .dates .date span {
-  margin-left: 8px;
+  margin-left: 0.4166666666666667vw;
   font-family: "Gilroy_SB";
   color: #1e1e1e;
 }
 
 .dashboard .container .tab-content .pending-task .task:hover {
-  -webkit-box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.062);
-          box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.062);
+  -webkit-box-shadow: 0px 0.52083vw 1.04167vw rgba(0, 0, 0, 0.062);
+          box-shadow: 0px 0.52083vw 1.04167vw rgba(0, 0, 0, 0.062);
   -webkit-transform: scale(1.015);
           transform: scale(1.015);
 }
@@ -611,12 +611,12 @@ body {
 .dashboard .container .tab-content .pending-task .no-result {
   position: absolute;
   font-family: "Gilroy_M";
-  font-size: 20px;
+  font-size: 1.0416666666666667vw;
   color: #8b8b8b;
   left: 50%;
   -webkit-transform: translateX(50%);
           transform: translateX(50%);
-  margin-top: 100px;
+  margin-top: 5.208333333333333vw;
 }
 
 .dashboard .container .tab-con-active {

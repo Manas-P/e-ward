@@ -4,13 +4,13 @@
   text-decoration: none;
   cursor: pointer;
   display: flex;
-  column-gap: 12px;
+  column-gap: 0.625vw;
   align-items: center;
   padding: $padding;
-  width: 260px;
+  width: 13.541666666666666vw;
   background: $white;
   box-shadow: $shadow;
-  border-radius: 10px;
+  border-radius: 0.5208333333333334vw;
   transition: 0.2s ease-in-out;
 }
 
@@ -24,32 +24,34 @@ body {
     @include sidebar();
   }
   .container {
-    margin: 46px 63px 0 calc(476px - 63px);
-    width: calc(100% - 476px);
+    margin: 2.3958333333333335vw 3.28125vw 0
+      calc(24.791666666666668vw - 3.28125vw);
+    width: calc(100% - 24.791666666666668vw);
     .header {
       display: flex;
       justify-content: space-between;
       .title {
         font-family: Gilroy_SB;
-        font-size: 38px;
+        font-size: 1.9791666666666667vw;
       }
     }
     .committee-details {
       display: flex;
       width: 100%;
       background: $white;
-      box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
-      border-radius: 10px;
-      padding: 24px;
-      margin-top: 50px;
-      column-gap: 24px;
+      box-shadow: 0px 0.5208333333333334vw 1.0416666666666667vw
+        rgba(237, 237, 237, 0.25);
+      border-radius: 0.5208333333333334vw;
+      padding: 1.25vw;
+      margin-top: 2.6041666666666665vw;
+      column-gap: 1.25vw;
       .basic-description {
         display: flex;
-        column-gap: 18px;
+        column-gap: 0.9375vw;
         .img {
-          height: 134px;
-          width: 134px;
-          border-radius: 4px;
+          height: 6.979166666666667vw;
+          width: 6.979166666666667vw;
+          border-radius: 0.20833333333333334vw;
           overflow: hidden;
           img {
             height: 100%;
@@ -58,52 +60,52 @@ body {
         .description {
           display: flex;
           flex-direction: column;
-          row-gap: 8px;
+          row-gap: 0.4166666666666667vw;
           .heading {
             font-family: "Gilroy_SB";
             color: $text;
-            font-size: 24px;
+            font-size: 1.25vw;
           }
           .det {
-            width: 640px;
+            width: 33.333333333333336vw;
             font-family: "Gilroy_M";
-            font-size: 18px;
+            font-size: 0.9375vw;
             color: $subText;
-            line-height: 24px;
+            line-height: 1.25vw;
           }
         }
       }
       .other-contents {
         display: flex;
-        column-gap: 100px;
+        column-gap: 5.208333333333333vw;
         .other-content {
           display: flex;
-          column-gap: 24px;
-          margin-top: 8px;
+          column-gap: 1.25vw;
+          margin-top: 0.4166666666666667vw;
           .divider {
             height: 100%;
-            width: 2px;
-            border-radius: 4px;
+            width: 0.10416666666666667vw;
+            border-radius: 0.20833333333333334vw;
             background: #ececec;
           }
           .contents {
             display: flex;
             flex-direction: column;
-            row-gap: 26px;
+            row-gap: 1.3541666666666667vw;
             .content {
               font-family: "Gilroy_M";
-              font-size: 18px;
+              font-size: 0.9375vw;
               color: $subText;
               span {
-                margin-left: 8px;
+                margin-left: 0.4166666666666667vw;
                 font-family: "Gilroy_SB";
                 color: $text;
                 #act {
-                  margin-left: -8px;
+                  margin-left: -0.4166666666666667vw;
                   color: $green;
                 }
                 #inact {
-                  margin-left: -8px;
+                  margin-left: -0.4166666666666667vw;
                   color: $error;
                 }
               }
@@ -113,18 +115,18 @@ body {
       }
     }
     .tab-menu {
-      margin-top: 42px;
+      margin-top: 2.1875vw;
       display: flex;
       flex-direction: column;
       .tabs {
         display: flex;
-        column-gap: 24px;
+        column-gap: 1.25vw;
         .tab {
           font-family: "Gilroy_SB";
-          font-size: 20px;
+          font-size: 1.0416666666666667vw;
           color: $tabText;
-          padding: 8px 24px;
-          border-radius: 10px;
+          padding: 0.4166666666666667vw 1.25vw;
+          border-radius: 0.5208333333333334vw;
           cursor: pointer;
           &:hover {
             color: $primary;
@@ -138,126 +140,129 @@ body {
             content: "";
             position: relative;
             display: block;
-            width: calc(100% + 48px);
-            height: 2px;
+            width: calc(100% + 2.5vw);
+            height: 0.10416666666666667vw;
             background: $primary;
-            top: 22px;
-            left: -24px;
+            top: 1.1458333333333333vw;
+            left: -1.25vw;
           }
         }
       }
       .underline {
-        margin-top: 12px;
-        height: 2px;
+        margin-top: 0.625vw;
+        height: 0.10416666666666667vw;
         width: 100%;
         background: #d9d5f5;
-        border-radius: 4px;
+        border-radius: 0.20833333333333334vw;
       }
     }
     .tab-content {
-      margin-top: 42px;
+      margin-top: 2.1875vw;
       display: none;
       .content-table {
         .headings {
-          margin: 0px 16px 0 16px;
+          margin: 0px 0.8333333333333334vw 0 0.8333333333333334vw;
           font-family: "Gilroy_SB";
-          font-size: 20px;
+          font-size: 1.0416666666666667vw;
           color: $text;
           display: flex;
         }
         .datas {
-          margin-top: 24px;
+          margin-top: 1.25vw;
           display: flex;
           flex-direction: column;
-          row-gap: 24px;
+          row-gap: 1.25vw;
           .data {
-            padding: 20px;
+            padding: 1.0416666666666667vw;
             background: $white;
-            border-radius: 10px;
+            border-radius: 0.5208333333333334vw;
             font-family: "Gilroy_M";
-            font-size: 18px;
+            font-size: 0.9375vw;
             color: $darkSubText;
             td {
-              padding-right: 28px;
+              padding-right: 1.4583333333333333vw;
               vertical-align: top;
               text-align: left;
             }
           }
           .no-result {
             font-family: "Gilroy_M";
-            font-size: 20px;
+            font-size: 1.0416666666666667vw;
             color: $subText;
             text-align: center;
-            transform: translateX(-60px);
-            margin-top: 100px;
+            transform: translateX(-3.125vw);
+            margin-top: 5.208333333333333vw;
           }
         }
       }
       .pending-task {
         display: flex;
         flex-wrap: wrap;
-        gap: 36px;
+        gap: 1.875vw;
         .task {
-          padding: 16px 16px 18px 16px;
+          padding: 0.8333333333333334vw 0.8333333333333334vw 0.9375vw
+            0.8333333333333334vw;
           background: $white;
-          box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
-          border-radius: 10px;
+          box-shadow: 0px 0.5208333333333334vw 1.0416666666666667vw
+            rgba(237, 237, 237, 0.25);
+          border-radius: 0.5208333333333334vw;
           display: flex;
           flex-direction: column;
-          row-gap: 16px;
-          width: 408px;
+          row-gap: 0.8333333333333334vw;
+          width: 21.25vw;
           transition: 0.2s ease-in-out;
           .detail {
             display: flex;
             flex-direction: column;
-            row-gap: 12px;
+            row-gap: 0.625vw;
             .title {
               font-family: "Gilroy_SB";
-              font-size: 20px;
+              font-size: 1.0416666666666667vw;
               color: $text;
             }
             .description {
               font-family: "Gilroy_M";
-              font-size: 16px;
+              font-size: 0.8333333333333334vw;
               color: $subText;
-              line-height: 24px;
-              height: 63px;
+              line-height: 1.25vw;
+              height: 3.28125vw;
             }
           }
           .divider {
             width: 100%;
-            height: 2px;
-            border-radius: 2px;
+            height: 0.10416666666666667vw;
+            border-radius: 0.10416666666666667vw;
             background: #d9d5f5;
           }
           .dates {
             display: flex;
             flex-direction: column;
-            row-gap: 12px;
+            row-gap: 0.625vw;
             .date {
               font-family: "Gilroy_M";
-              font-size: 16px;
+              font-size: 0.8333333333333334vw;
               color: $subText;
               span {
-                margin-left: 8px;
+                margin-left: 0.4166666666666667vw;
                 font-family: "Gilroy_SB";
                 color: $text;
               }
             }
           }
           &:hover {
-            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.062);
+            box-shadow: 0px 0.5208333333333334vw 1.0416666666666667vw
+              rgba(0, 0, 0, 0.062);
             transform: scale(1.015);
           }
         }
         .no-result {
           position: absolute;
           font-family: "Gilroy_M";
-          font-size: 20px;
+          font-size: 1.0416666666666667vw;
           color: $subText;
           left: 50%;
           transform: translateX(50%);
-          margin-top: 100px;
+          margin-top: 5.208333333333333vw;
         }
       }
     }
