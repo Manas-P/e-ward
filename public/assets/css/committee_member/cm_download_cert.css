@@ -275,8 +275,8 @@ body {
 }
 
 .dashboard .container {
-  margin: 46px 63px 0 calc(476px - 63px);
-  width: calc(100% - 476px);
+  margin: 2.39583vw 3.28125vw 0 calc(24.791666666666668vw - 3.28125vw);
+  width: calc(100% - 24.791666666666668vw);
 }
 
 .dashboard .container .header {
@@ -290,11 +290,11 @@ body {
 
 .dashboard .container .header .title {
   font-family: Gilroy_SB;
-  font-size: 38px;
+  font-size: 1.9791666666666667vw;
 }
 
 .dashboard .container .content {
-  margin-top: 60px;
+  margin-top: 3.125vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -306,23 +306,23 @@ body {
 
 .dashboard .container .content .no-cert {
   font-family: "Gilroy_M";
-  font-size: 20px;
+  font-size: 1.0416666666666667vw;
   color: #1e1e1e;
 }
 
 .dashboard .container .content .download-cert {
-  margin-top: 24px;
-  padding: 8px 24px;
+  margin-top: 1.25vw;
+  padding: 0.4166666666666667vw 1.25vw;
   color: #fff;
   background: #5744e3;
   font-family: "Gilroy_SB";
-  font-size: 20px;
-  border-radius: 10px;
+  font-size: 1.0416666666666667vw;
+  border-radius: 0.5208333333333334vw;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  width: 242px;
+  width: 12.604166666666666vw;
   cursor: pointer;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
