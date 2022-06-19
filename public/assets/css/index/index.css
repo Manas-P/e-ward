@@ -39,14 +39,14 @@ html {
 ::-webkit-calendar-picker-indicator {
   cursor: pointer;
   color: #b1b1b1;
-  padding-right: 16px;
+  padding-right: 0.8333333333333334vw;
 }
 
 ::-webkit-file-upload-button {
   background: #eeecfc;
-  border-radius: 6px;
+  border-radius: 0.3125vw;
   border: none;
-  margin-right: 20px;
+  margin-right: 1.0416666666666667vw;
   outline: none;
 }
 
@@ -526,11 +526,11 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  row-gap: 8px;
+  row-gap: 0.4166666666666667vw;
 }
 
 .main .contactus .box .inputs .input .label {
-  font-size: 16px;
+  font-size: 0.8333333333333334vw;
   font-family: "Gilroy_M";
 }
 
@@ -542,11 +542,11 @@ body {
 .main .contactus .box .inputs .input input[type="email"],
 .main .contactus .box .inputs .input select {
   width: 100%;
-  height: 53px;
-  font-size: 18px;
+  height: 2.7604166666666665vw;
+  font-size: 0.9375vw;
   font-family: "Gilroy_M";
-  padding: 16px 0px 16px 16px;
-  border-radius: 10px;
+  padding: 0.8333333333333334vw 0px 0.8333333333333334vw 0.8333333333333334vw;
+  border-radius: 0.5208333333333334vw;
   border: 1px solid #c1c1c1;
   color: #1e1e1e;
   outline: none;
@@ -565,8 +565,8 @@ body {
 }
 
 .main .contactus .box .inputs .input .select {
-  padding: 16px;
-  height: 58px;
+  padding: 0.8333333333333334vw;
+  height: 3.0208333333333335vw;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -577,11 +577,11 @@ body {
 
 .main .contactus .box .inputs .input .error {
   position: absolute;
-  margin-top: 84px;
+  margin-top: 4.375vw;
   color: #ec0000;
   font-family: "Gilroy_M";
-  font-size: 14px;
-  width: 460px;
+  font-size: 0.7291666666666666vw;
+  width: 23.958333333333332vw;
 }
 
 .main .contactus .box .inputs .reqDes .error {
@@ -612,13 +612,13 @@ body {
   background: #5744e3;
   color: #fff;
   font-family: "Gilroy_B";
-  font-size: 18px;
+  font-size: 0.9375vw;
   text-align: center;
-  padding: 16px 0;
+  padding: 0.8333333333333334vw 0;
   border: none;
   outline: none;
   width: 100%;
-  border-radius: 10px;
+  border-radius: 0.5208333333333334vw;
   cursor: pointer;
   -webkit-transition: 0.1s ease-in-out;
   transition: 0.1s ease-in-out;

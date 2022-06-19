@@ -39,14 +39,14 @@ html {
 ::-webkit-calendar-picker-indicator {
   cursor: pointer;
   color: #b1b1b1;
-  padding-right: 16px;
+  padding-right: 0.8333333333333334vw;
 }
 
 ::-webkit-file-upload-button {
   background: #eeecfc;
-  border-radius: 6px;
+  border-radius: 0.3125vw;
   border: none;
-  margin-right: 20px;
+  margin-right: 1.0416666666666667vw;
   outline: none;
 }
 
@@ -101,14 +101,14 @@ body {
 }
 
 .main .sidebar {
-  width: 350px;
+  width: 18.229166666666668vw;
   height: 100vh;
   overflow-y: hidden;
   background: #fff;
   -webkit-box-shadow: 5px 0px 20px rgba(0, 0, 0, 0.01);
           box-shadow: 5px 0px 20px rgba(0, 0, 0, 0.01);
-  border-radius: 0px 30px 30px 0px;
-  padding: 0px 36px 42px 36px;
+  border-radius: 0px 1.5625vw 1.5625vw 0px;
+  padding: 0px 1.875vw 2.1875vw 1.875vw;
 }
 
 .main .sidebar .brand {
@@ -121,27 +121,27 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 32px 0px;
+  padding: 1.6666666666666667vw 0px;
 }
 
 .main .sidebar .brand img {
-  width: 151px;
+  width: 7.864583333333333vw;
   height: auto;
 }
 
 .main .sidebar .brand .user {
   font-family: "Gilroy_SB";
-  font-size: 16px;
+  font-size: 0.8333333333333334vw;
   color: #5744e3;
-  padding: 3px 14px 3px 14px;
+  padding: 0.15625vw 0.7291666666666666vw 0.15625vw 0.7291666666666666vw;
   background: #eeecfc;
-  border-radius: 14px;
+  border-radius: 0.7291666666666666vw;
 }
 
 .main .sidebar .division {
-  height: 2px;
+  height: 0.10416666666666667vw;
   width: 100%;
-  border-radius: 2px;
+  border-radius: 0.10416666666666667vw;
   background: #eeecfc;
 }
 
@@ -157,7 +157,7 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   height: 82%;
-  margin: 48px 0 42px 0;
+  margin: 2.5vw 0 2.1875vw 0;
 }
 
 .main .sidebar .links .menus {
@@ -168,20 +168,20 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  row-gap: 20px;
+  row-gap: 1.0416666666666667vw;
 }
 
 .main .sidebar .links .menus .menu {
   text-decoration: none;
   cursor: pointer;
-  padding: 12px 0 12px 12px;
+  padding: 0.625vw 0 0.625vw 0.625vw;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-column-gap: 10px;
-          column-gap: 10px;
-  border-radius: 10px;
+  -webkit-column-gap: 0.5208333333333334vw;
+          column-gap: 0.5208333333333334vw;
+  border-radius: 0.5208333333333334vw;
 }
 
 .main .sidebar .links .menus .menu.active {
@@ -207,8 +207,8 @@ body {
 }
 
 .main .sidebar .links .menus .menu svg {
-  height: 24px;
-  width: 24px;
+  height: 1.25vw;
+  width: 1.25vw;
 }
 
 .main .sidebar .links .menus .menu svg .active {
@@ -217,7 +217,7 @@ body {
 
 .main .sidebar .links .menus .menu .text {
   font-family: "Gilroy_SB";
-  font-size: 20px;
+  font-size: 1.0416666666666667vw;
   color: #1e1e1e;
 }
 
@@ -228,14 +228,14 @@ body {
 .main .sidebar .logout a {
   text-decoration: none;
   cursor: pointer;
-  padding: 14px 0;
+  padding: 0.7291666666666666vw 0;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-column-gap: 10px;
-          column-gap: 10px;
-  border-radius: 10px;
+  -webkit-column-gap: 0.5208333333333334vw;
+          column-gap: 0.5208333333333334vw;
+  border-radius: 0.5208333333333334vw;
   background: #eeecfc;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -264,13 +264,13 @@ body {
 }
 
 .main .sidebar .logout a svg {
-  height: 24px;
-  width: 24px;
+  height: 1.25vw;
+  width: 1.25vw;
 }
 
 .main .sidebar .logout a .text {
   font-family: "Gilroy_SB";
-  font-size: 20px;
+  font-size: 1.0416666666666667vw;
   color: #1e1e1e;
 }
 
@@ -453,19 +453,19 @@ body {
 
 .alertt {
   background: #fff;
-  padding: 18px 18px 18px 24px;
-  -webkit-box-shadow: 0px 7px 16px rgba(0, 0, 0, 0.16);
-          box-shadow: 0px 7px 16px rgba(0, 0, 0, 0.16);
+  padding: 0.9375vw 0.9375vw 0.9375vw 1.25vw;
+  -webkit-box-shadow: 0px 7px 0.83333vw rgba(0, 0, 0, 0.16);
+          box-shadow: 0px 7px 0.83333vw rgba(0, 0, 0, 0.16);
   border-radius: 6px;
-  border-left: 10px solid #ec0000;
+  border-left: 0.52083vw solid #ec0000;
   position: fixed;
   bottom: 5%;
   right: 4%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-column-gap: 32px;
-          column-gap: 32px;
+  -webkit-column-gap: 1.6666666666666667vw;
+          column-gap: 1.6666666666666667vw;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -476,25 +476,25 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-column-gap: 10px;
-          column-gap: 10px;
+  -webkit-column-gap: 0.5208333333333334vw;
+          column-gap: 0.5208333333333334vw;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
 .alertt .econtent img {
-  width: 22px;
+  width: 1.1458333333333333vw;
   height: auto;
 }
 
 .alertt .econtent .text {
   font-family: "Gilroy_M";
-  font-size: 18px;
+  font-size: 0.9375vw;
 }
 
 .alertt .alert-close {
-  width: 16px;
+  width: 0.8333333333333334vw;
   height: auto;
   cursor: pointer;
 }

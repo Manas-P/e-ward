@@ -39,14 +39,14 @@ html {
 ::-webkit-calendar-picker-indicator {
   cursor: pointer;
   color: #b1b1b1;
-  padding-right: 16px;
+  padding-right: 0.8333333333333334vw;
 }
 
 ::-webkit-file-upload-button {
   background: #eeecfc;
-  border-radius: 6px;
+  border-radius: 0.3125vw;
   border: none;
-  margin-right: 20px;
+  margin-right: 1.0416666666666667vw;
   outline: none;
 }
 
@@ -101,14 +101,14 @@ body {
 }
 
 .main .sidebar {
-  width: 350px;
+  width: 18.229166666666668vw;
   height: 100vh;
   overflow-y: hidden;
   background: #fff;
   -webkit-box-shadow: 5px 0px 20px rgba(0, 0, 0, 0.01);
           box-shadow: 5px 0px 20px rgba(0, 0, 0, 0.01);
-  border-radius: 0px 30px 30px 0px;
-  padding: 0px 36px 42px 36px;
+  border-radius: 0px 1.5625vw 1.5625vw 0px;
+  padding: 0px 1.875vw 2.1875vw 1.875vw;
 }
 
 .main .sidebar .brand {
@@ -121,27 +121,27 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 32px 0px;
+  padding: 1.6666666666666667vw 0px;
 }
 
 .main .sidebar .brand img {
-  width: 151px;
+  width: 7.864583333333333vw;
   height: auto;
 }
 
 .main .sidebar .brand .user {
   font-family: "Gilroy_SB";
-  font-size: 16px;
+  font-size: 0.8333333333333334vw;
   color: #5744e3;
-  padding: 3px 14px 3px 14px;
+  padding: 0.15625vw 0.7291666666666666vw 0.15625vw 0.7291666666666666vw;
   background: #eeecfc;
-  border-radius: 14px;
+  border-radius: 0.7291666666666666vw;
 }
 
 .main .sidebar .division {
-  height: 2px;
+  height: 0.10416666666666667vw;
   width: 100%;
-  border-radius: 2px;
+  border-radius: 0.10416666666666667vw;
   background: #eeecfc;
 }
 
@@ -157,7 +157,7 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   height: 82%;
-  margin: 48px 0 42px 0;
+  margin: 2.5vw 0 2.1875vw 0;
 }
 
 .main .sidebar .links .menus {
@@ -168,20 +168,20 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  row-gap: 20px;
+  row-gap: 1.0416666666666667vw;
 }
 
 .main .sidebar .links .menus .menu {
   text-decoration: none;
   cursor: pointer;
-  padding: 12px 0 12px 12px;
+  padding: 0.625vw 0 0.625vw 0.625vw;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-column-gap: 10px;
-          column-gap: 10px;
-  border-radius: 10px;
+  -webkit-column-gap: 0.5208333333333334vw;
+          column-gap: 0.5208333333333334vw;
+  border-radius: 0.5208333333333334vw;
 }
 
 .main .sidebar .links .menus .menu.active {
@@ -207,8 +207,8 @@ body {
 }
 
 .main .sidebar .links .menus .menu svg {
-  height: 24px;
-  width: 24px;
+  height: 1.25vw;
+  width: 1.25vw;
 }
 
 .main .sidebar .links .menus .menu svg .active {
@@ -217,7 +217,7 @@ body {
 
 .main .sidebar .links .menus .menu .text {
   font-family: "Gilroy_SB";
-  font-size: 20px;
+  font-size: 1.0416666666666667vw;
   color: #1e1e1e;
 }
 
@@ -228,14 +228,14 @@ body {
 .main .sidebar .logout a {
   text-decoration: none;
   cursor: pointer;
-  padding: 14px 0;
+  padding: 0.7291666666666666vw 0;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-column-gap: 10px;
-          column-gap: 10px;
-  border-radius: 10px;
+  -webkit-column-gap: 0.5208333333333334vw;
+          column-gap: 0.5208333333333334vw;
+  border-radius: 0.5208333333333334vw;
   background: #eeecfc;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -264,13 +264,13 @@ body {
 }
 
 .main .sidebar .logout a svg {
-  height: 24px;
-  width: 24px;
+  height: 1.25vw;
+  width: 1.25vw;
 }
 
 .main .sidebar .logout a .text {
   font-family: "Gilroy_SB";
-  font-size: 20px;
+  font-size: 1.0416666666666667vw;
   color: #1e1e1e;
 }
 
@@ -354,13 +354,13 @@ body {
   background: #fff;
   color: #5744e3;
   font-family: "Gilroy_B";
-  font-size: 18px;
+  font-size: 0.9375vw;
   text-align: center;
-  padding: 16px 0;
+  padding: 0.8333333333333334vw 0;
   border: 2px solid #5744e3;
   outline: none;
   width: 382px;
-  border-radius: 10px;
+  border-radius: 0.5208333333333334vw;
   cursor: pointer;
   -webkit-transition: 0.1s ease-in-out;
   transition: 0.1s ease-in-out;
@@ -435,11 +435,11 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  row-gap: 8px;
+  row-gap: 0.4166666666666667vw;
 }
 
 .main .container .right .general .information .inputs .input .label {
-  font-size: 16px;
+  font-size: 0.8333333333333334vw;
   font-family: "Gilroy_M";
 }
 
@@ -451,11 +451,11 @@ body {
 .main .container .right .general .information .inputs .input input[type="email"],
 .main .container .right .general .information .inputs .input select {
   width: 100%;
-  height: 53px;
-  font-size: 18px;
+  height: 2.7604166666666665vw;
+  font-size: 0.9375vw;
   font-family: "Gilroy_M";
-  padding: 16px 0px 16px 16px;
-  border-radius: 10px;
+  padding: 0.8333333333333334vw 0px 0.8333333333333334vw 0.8333333333333334vw;
+  border-radius: 0.5208333333333334vw;
   border: 1px solid #c1c1c1;
   color: #1e1e1e;
   outline: none;
@@ -474,8 +474,8 @@ body {
 }
 
 .main .container .right .general .information .inputs .input .select {
-  padding: 16px;
-  height: 58px;
+  padding: 0.8333333333333334vw;
+  height: 3.0208333333333335vw;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -486,11 +486,11 @@ body {
 
 .main .container .right .general .information .inputs .input .error {
   position: absolute;
-  margin-top: 84px;
+  margin-top: 4.375vw;
   color: #ec0000;
   font-family: "Gilroy_M";
-  font-size: 14px;
-  width: 460px;
+  font-size: 0.7291666666666666vw;
+  width: 23.958333333333332vw;
 }
 
 .main .container .right .general .information .inputs .half-input {
@@ -510,11 +510,11 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  row-gap: 8px;
+  row-gap: 0.4166666666666667vw;
 }
 
 .main .container .right .general .information .inputs .half-input .input .label {
-  font-size: 16px;
+  font-size: 0.8333333333333334vw;
   font-family: "Gilroy_M";
 }
 
@@ -526,11 +526,11 @@ body {
 .main .container .right .general .information .inputs .half-input .input input[type="email"],
 .main .container .right .general .information .inputs .half-input .input select {
   width: 100%;
-  height: 53px;
-  font-size: 18px;
+  height: 2.7604166666666665vw;
+  font-size: 0.9375vw;
   font-family: "Gilroy_M";
-  padding: 16px 0px 16px 16px;
-  border-radius: 10px;
+  padding: 0.8333333333333334vw 0px 0.8333333333333334vw 0.8333333333333334vw;
+  border-radius: 0.5208333333333334vw;
   border: 1px solid #c1c1c1;
   color: #1e1e1e;
   outline: none;
@@ -549,8 +549,8 @@ body {
 }
 
 .main .container .right .general .information .inputs .half-input .input .select {
-  padding: 16px;
-  height: 58px;
+  padding: 0.8333333333333334vw;
+  height: 3.0208333333333335vw;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -561,11 +561,11 @@ body {
 
 .main .container .right .general .information .inputs .half-input .input .error {
   position: absolute;
-  margin-top: 84px;
+  margin-top: 4.375vw;
   color: #ec0000;
   font-family: "Gilroy_M";
-  font-size: 14px;
-  width: 460px;
+  font-size: 0.7291666666666666vw;
+  width: 23.958333333333332vw;
 }
 
 .main .container .right .proofs {
@@ -621,11 +621,11 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  row-gap: 8px;
+  row-gap: 0.4166666666666667vw;
 }
 
 .main .container .right .proofs .files .inputs .input .label {
-  font-size: 16px;
+  font-size: 0.8333333333333334vw;
   font-family: "Gilroy_M";
 }
 
@@ -637,11 +637,11 @@ body {
 .main .container .right .proofs .files .inputs .input input[type="email"],
 .main .container .right .proofs .files .inputs .input select {
   width: 100%;
-  height: 53px;
-  font-size: 18px;
+  height: 2.7604166666666665vw;
+  font-size: 0.9375vw;
   font-family: "Gilroy_M";
-  padding: 16px 0px 16px 16px;
-  border-radius: 10px;
+  padding: 0.8333333333333334vw 0px 0.8333333333333334vw 0.8333333333333334vw;
+  border-radius: 0.5208333333333334vw;
   border: 1px solid #c1c1c1;
   color: #1e1e1e;
   outline: none;
@@ -660,8 +660,8 @@ body {
 }
 
 .main .container .right .proofs .files .inputs .input .select {
-  padding: 16px;
-  height: 58px;
+  padding: 0.8333333333333334vw;
+  height: 3.0208333333333335vw;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -672,10 +672,10 @@ body {
 
 .main .container .right .proofs .files .inputs .input .error {
   position: absolute;
-  margin-top: 84px;
+  margin-top: 4.375vw;
   color: #ec0000;
   font-family: "Gilroy_M";
-  font-size: 14px;
-  width: 460px;
+  font-size: 0.7291666666666666vw;
+  width: 23.958333333333332vw;
 }
 /*# sourceMappingURL=hm_profile_update.css.map */

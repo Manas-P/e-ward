@@ -10,29 +10,29 @@ body {
     @include sidebar();
   }
   .container {
-    margin: 46px 63px;
-    width: calc(100% - 476px);
+    margin: 2.3958333333333335vw 3.28125vw;
+    width: calc(100% - 24.791666666666668vw);
     .header {
       display: flex;
       justify-content: space-between;
       .title {
         font-family: Gilroy_SB;
-        font-size: 38px;
+        font-size: 1.9791666666666667vw;
       }
       .search {
         svg {
           position: relative;
-          left: 38px;
-          height: 20px;
-          width: 20px;
-          top: 3px;
+          left: 1.9791666666666667vw;
+          height: 1.0416666666666667vw;
+          width: 1.0416666666666667vw;
+          top: 0.15625vw;
         }
         input {
-          width: 408px;
-          font-size: 18px;
+          width: 21.25vw;
+          font-size: 0.9375vw;
           font-family: "Gilroy_M";
-          padding: 16px 0px 16px 42px;
-          border-radius: 10px;
+          padding: 0.8333333333333334vw 0px 0.8333333333333334vw 42px;
+          border-radius: 0.5208333333333334vw;
           border: 1px solid $border;
           color: $text;
           outline: none;
@@ -47,13 +47,13 @@ body {
       }
     }
     .bread-crumbs {
-      margin-top: 60px;
+      margin-top: 3.125vw;
       display: flex;
-      column-gap: 4px;
+      column-gap: 0.20833333333333334vw;
       align-items: center;
       .previous {
         font-family: "Gilroy_M";
-        font-size: 16px;
+        font-size: 0.8333333333333334vw;
         color: $subText;
       }
       svg {
@@ -63,7 +63,7 @@ body {
       }
       .now {
         font-family: "Gilroy_SB";
-        font-size: 16px;
+        font-size: 0.8333333333333334vw;
         color: $text;
       }
     }
@@ -71,43 +71,44 @@ body {
       display: flex;
       width: 100%;
       background: $white;
-      box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
-      border-radius: 10px;
-      padding: 24px;
-      margin-top: 38px;
+      box-shadow: 0px 0.5208333333333334vw 1.0416666666666667vw
+        rgba(237, 237, 237, 0.25);
+      border-radius: 0.5208333333333334vw;
+      padding: 1.25vw;
+      margin-top: 1.9791666666666667vw;
       justify-content: space-between;
       .basic-details {
         display: flex;
         align-items: center;
-        column-gap: 18px;
+        column-gap: 0.9375vw;
         img {
-          height: 131px;
-          width: 131px;
-          border-radius: 4px;
+          height: 6.822916666666667vw;
+          width: 6.822916666666667vw;
+          border-radius: 0.20833333333333334vw;
         }
         .details {
           display: flex;
           flex-direction: column;
-          row-gap: 12px;
+          row-gap: 0.625vw;
           .name {
             font-family: "Gilroy_SB";
-            font-size: 24px;
+            font-size: 1.25vw;
             color: $text;
           }
           .info {
             font-family: "Gilroy_M";
-            font-size: 18px;
+            font-size: 0.9375vw;
             color: $subText;
           }
           .tag {
             display: flex;
             font-family: "Gilroy_SB";
-            font-size: 14px;
+            font-size: 0.7291666666666666vw;
             color: $primary;
-            padding: 3px 12px;
+            padding: 0.15625vw 0.625vw;
             background: $primaryFade;
-            border-radius: 10px;
-            width: 82px;
+            border-radius: 0.5208333333333334vw;
+            width: 4.270833333333333vw;
           }
         }
       }
@@ -115,23 +116,23 @@ body {
     .other-content {
       display: flex;
       align-items: center;
-      column-gap: 24px;
+      column-gap: 1.25vw;
       .divider {
         height: 100%;
-        width: 2px;
-        border-radius: 4px;
+        width: 0.10416666666666667vw;
+        border-radius: 0.20833333333333334vw;
         background: #ececec;
       }
       .contents {
         display: flex;
         flex-direction: column;
-        row-gap: 26px;
+        row-gap: 1.3541666666666667vw;
         .content {
           font-family: "Gilroy_M";
-          font-size: 18px;
+          font-size: 0.9375vw;
           color: $subText;
           span {
-            margin-left: 8px;
+            margin-left: 0.4166666666666667vw;
             font-family: "Gilroy_SB";
             color: $text;
           }
@@ -144,13 +145,13 @@ body {
       justify-content: space-between;
       .update {
         @include secondary_button(100%);
-        padding: 16px 82px;
+        padding: 0.8333333333333334vw 4.270833333333333vw;
       }
       .remove {
         @include secondary_button(100%);
         border: 2px solid $error;
         color: $error;
-        padding: 16px 82px;
+        padding: 0.8333333333333334vw 4.270833333333333vw;
         &:hover {
           background: #fff9f9;
         }
@@ -158,15 +159,16 @@ body {
     }
     .analytics {
       width: 100%;
-      height: 500px;
+      height: 26.041666666666668vw;
       background: $white;
-      box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
-      border-radius: 10px;
-      padding: 24px;
-      margin-top: 38px;
+      box-shadow: 0px 0.5208333333333334vw 1.0416666666666667vw
+        rgba(237, 237, 237, 0.25);
+      border-radius: 0.5208333333333334vw;
+      padding: 1.25vw;
+      margin-top: 1.9791666666666667vw;
       .title {
         font-family: "Gilroy_SB";
-        font-size: 28px;
+        font-size: 1.4583333333333333vw;
         color: $text;
       }
     }
@@ -180,21 +182,21 @@ body {
   height: 100vh;
   width: 100vw;
   background: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(0.5208333333333334vw);
 }
 
 .box {
-  @include box_model(556px, auto);
+  @include box_model(28.958333333333332vw, auto);
   .inputs {
     display: flex;
     flex-direction: column;
-    row-gap: 32px;
-    margin-top: 40px;
-    @include input_fields(460px);
+    row-gap: 1.6666666666666667vw;
+    margin-top: 2.0833333333333335vw;
+    @include input_fields(23.958333333333332vw);
     .half-input {
       display: flex;
       justify-content: space-between;
-      @include input_fields(216px);
+      @include input_fields(11.25vw);
     }
   }
   .button {
