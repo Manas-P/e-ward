@@ -4,13 +4,13 @@
   text-decoration: none;
   cursor: pointer;
   display: flex;
-  column-gap: 12px;
+  column-gap: 0.625vw;
   align-items: center;
   padding: $padding;
-  width: 260px;
+  width: 13.541666666666666vw;
   background: $white;
   box-shadow: $shadow;
-  border-radius: 10px;
+  border-radius: 0.5208333333333334vw;
   transition: 0.2s ease-in-out;
 }
 
@@ -18,24 +18,25 @@
   height: 222px;
   width: 704px;
   background: $white;
-  box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
-  border-radius: 10px;
-  padding: 20px 24px;
+  box-shadow: 0px 0.5208333333333334vw 1.0416666666666667vw
+    rgba(237, 237, 237, 0.25);
+  border-radius: 0.5208333333333334vw;
+  padding: 1.0416666666666667vw 1.25vw;
 }
 
 @mixin content() {
   display: flex;
   flex-direction: column;
-  row-gap: 12px;
+  row-gap: 0.625vw;
   .detail {
     font-family: "Gilroy_M";
-    font-size: 18px;
+    font-size: 0.9375vw;
     color: $subText;
     span {
       font-family: "Gilroy_SB";
-      font-size: 18px;
+      font-size: 0.9375vw;
       color: $text;
-      margin-left: 8px;
+      margin-left: 0.4166666666666667vw;
     }
   }
 }
@@ -50,24 +51,24 @@ body {
     @include sidebar();
   }
   .container {
-    margin: 0px 63px 0 calc(476px - 63px);
-    width: calc(100% - 476px);
+    margin: 0px 3.28125vw 0 calc(24.791666666666668vw - 3.28125vw);
+    width: calc(100% - 24.791666666666668vw);
     .header {
       display: flex;
       justify-content: space-between;
       .title {
         font-family: Gilroy_SB;
-        font-size: 38px;
+        font-size: 1.9791666666666667vw;
       }
     }
     .bread-crumbs {
-      margin-top: 48px;
+      margin-top: 2.5vw;
       display: flex;
-      column-gap: 4px;
+      column-gap: 0.20833333333333334vw;
       align-items: center;
       .previous {
         font-family: "Gilroy_M";
-        font-size: 16px;
+        font-size: 0.8333333333333334vw;
         color: $subText;
       }
       svg {
@@ -77,12 +78,12 @@ body {
       }
       .now {
         font-family: "Gilroy_SB";
-        font-size: 16px;
+        font-size: 0.8333333333333334vw;
         color: $text;
       }
     }
     .task-det {
-      margin-top: 38px;
+      margin-top: 1.9791666666666667vw;
       display: flex;
       justify-content: space-between;
       .card1 {
@@ -90,18 +91,18 @@ body {
         .content {
           display: flex;
           flex-direction: column;
-          row-gap: 8px;
+          row-gap: 0.4166666666666667vw;
           .heading {
             font-family: "Gilroy_SB";
-            font-size: 24px;
+            font-size: 1.25vw;
             color: $text;
           }
           .description {
             font-family: "Gilroy_M";
-            font-size: 18px;
+            font-size: 0.9375vw;
             color: $subText;
-            line-height: 26px;
-            max-width: 656px;
+            line-height: 1.3541666666666667vw;
+            max-width: 34.166666666666664vw;
           }
         }
       }
@@ -109,13 +110,13 @@ body {
         @include desCard();
         .heading {
           font-family: "Gilroy_SB";
-          font-size: 24px;
+          font-size: 1.25vw;
           color: $text;
         }
         .content {
           display: flex;
           width: 100%;
-          margin-top: 16px;
+          margin-top: 0.8333333333333334vw;
           align-items: center;
           .right {
             flex: 1;
@@ -123,14 +124,14 @@ body {
           }
           .left {
             display: flex;
-            column-gap: 24px;
+            column-gap: 1.25vw;
             align-items: center;
             flex: 1;
             .divider {
               background: #ececec;
-              height: 60px;
-              width: 2px;
-              border-radius: 4px;
+              height: 3.125vw;
+              width: 0.10416666666666667vw;
+              border-radius: 0.20833333333333334vw;
             }
             .details {
               @include content();
@@ -139,8 +140,8 @@ body {
         }
         .buttons {
           display: flex;
-          column-gap: 24px;
-          margin-top: 18px;
+          column-gap: 1.25vw;
+          margin-top: 0.9375vw;
           .secondary-btn {
             @include secondary_button(100%);
           }
@@ -148,19 +149,19 @@ body {
       }
     }
     .title {
-      margin-top: 48px;
+      margin-top: 2.5vw;
       font-family: "Gilroy_SB";
-      font-size: 28px;
+      font-size: 1.4583333333333333vw;
     }
     .add-task-report {
-      margin-top: 24px;
-      padding: 8px 24px;
+      margin-top: 1.25vw;
+      padding: 0.4166666666666667vw 1.25vw;
       color: $white;
       background: $primary;
-      border-radius: 10px;
+      border-radius: 0.5208333333333334vw;
       font-family: "Gilroy_SB";
-      font-size: 20px;
-      width: 193px;
+      font-size: 1.0416666666666667vw;
+      width: 10.052083333333334vw;
       cursor: pointer;
       transition: 0.2s ease-in-out;
       &:active {
@@ -168,17 +169,18 @@ body {
       }
     }
     .report-cards {
-      margin: 32px 0 60px 0;
+      margin: 1.6666666666666667vw 0 3.125vw 0;
       display: flex;
-      gap: 36px;
+      gap: 1.875vw;
       flex-wrap: wrap;
       .report-card {
         background: $white;
-        padding: 24px;
-        width: 704px;
-        height: 432px;
-        box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
-        border-radius: 10px;
+        padding: 1.25vw;
+        width: 36.666666666666664vw;
+        height: 22.5vw;
+        box-shadow: 0px 0.5208333333333334vw 1.0416666666666667vw
+          rgba(237, 237, 237, 0.25);
+        border-radius: 0.5208333333333334vw;
         display: flex;
         flex-direction: column;
         .header {
@@ -188,39 +190,39 @@ body {
           color: $text;
           .r-title {
             font-family: "Gilroy_SB";
-            font-size: 24px;
+            font-size: 1.25vw;
           }
           .date {
             font-family: "Gilroy_M";
-            font-size: 18px;
+            font-size: 0.9375vw;
           }
         }
         .r-description {
-          margin-top: 8px;
-          width: 656px;
-          height: 130px;
+          margin-top: 0.4166666666666667vw;
+          width: 34.166666666666664vw;
+          height: 6.770833333333333vw;
           font-family: "Gilroy_M";
-          font-size: 18px;
+          font-size: 0.9375vw;
           color: $subText;
-          line-height: 26px;
+          line-height: 1.3541666666666667vw;
         }
         .photosec {
-          margin-top: 18px;
+          margin-top: 0.9375vw;
           display: flex;
           flex-direction: column;
-          row-gap: 12px;
+          row-gap: 0.625vw;
           .p-title {
             font-family: "Gilroy_SB";
-            font-size: 18px;
+            font-size: 0.9375vw;
             color: $text;
           }
           .photos {
             display: flex;
-            column-gap: 12px;
+            column-gap: 0.625vw;
             .photo {
-              border-radius: 10px;
-              width: 123px;
-              height: 72px;
+              border-radius: 0.5208333333333334vw;
+              width: 6.40625vw;
+              height: 3.75vw;
               overflow: hidden;
               cursor: pointer;
               img {
@@ -230,40 +232,40 @@ body {
           }
         }
         .r-divider {
-          margin-top: 28px;
+          margin-top: 1.4583333333333333vw;
           width: 100%;
-          height: 2px;
-          border-radius: 2px;
+          height: 0.10416666666666667vw;
+          border-radius: 0.10416666666666667vw;
           background: #ececec;
         }
         .bottom-sec {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          margin-top: 18px;
+          margin-top: 0.9375vw;
           .status {
             font-family: "Gilroy_M";
-            font-size: 18px;
+            font-size: 0.9375vw;
             color: $subText;
             .pen {
               font-family: "Gilroy_SB";
               color: $primary;
-              margin-left: 8px;
+              margin-left: 0.4166666666666667vw;
             }
             .app {
               font-family: "Gilroy_SB";
               color: $green;
-              margin-left: 8px;
+              margin-left: 0.4166666666666667vw;
             }
             .rej {
               font-family: "Gilroy_SB";
               color: $error;
-              margin-left: 8px;
+              margin-left: 0.4166666666666667vw;
             }
           }
           .delete-btn {
-            height: 44px;
-            width: 44px;
+            height: 2.2916666666666665vw;
+            width: 2.2916666666666665vw;
             cursor: pointer;
           }
         }
@@ -271,11 +273,11 @@ body {
       .no-result {
         position: absolute;
         font-family: "Gilroy_M";
-        font-size: 20px;
+        font-size: 1.0416666666666667vw;
         color: $subText;
         left: 50%;
         transform: translateX(50%);
-        margin-top: 100px;
+        margin-top: 5.208333333333333vw;
       }
     }
   }
@@ -288,36 +290,36 @@ body {
   height: 100vh;
   width: 100vw;
   background: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(0.5208333333333334vw);
 }
 
 .box {
-  @include box_model(556px, auto);
+  @include box_model(28.958333333333332vw, auto);
   .inputs {
     display: flex;
     flex-direction: column;
-    row-gap: 32px;
-    margin-top: 40px;
-    @include input_fields(460px);
+    row-gap: 1.6666666666666667vw;
+    margin-top: 2.0833333333333335vw;
+    @include input_fields(23.958333333333332vw);
     .inputt {
-      margin-bottom: -20px;
-      width: 460px;
+      margin-bottom: -1.0416666666666667vw;
+      width: 23.958333333333332vw;
       display: flex;
       flex-direction: column;
-      row-gap: 8px;
+      row-gap: 0.4166666666666667vw;
       .label {
-        font-size: 16px;
+        font-size: 0.8333333333333334vw;
         font-family: "Gilroy_M";
       }
       textarea {
         resize: vertical;
-        max-height: 168px;
-        min-height: 116px;
-        font-size: 18px;
-        line-height: 27px;
+        max-height: 8.75vw;
+        min-height: 6.041666666666667vw;
+        font-size: 0.9375vw;
+        line-height: 1.40625vw;
         font-family: "Gilroy_M";
-        padding: 16px;
-        border-radius: 10px;
+        padding: 0.8333333333333334vw;
+        border-radius: 0.5208333333333334vw;
         border: 1px solid $border;
         color: $text;
         outline: none;
@@ -330,7 +332,7 @@ body {
         display: flex;
         justify-content: space-between;
         font-family: "Gilroy_M";
-        font-size: 14px;
+        font-size: 0.7291666666666666vw;
         .error {
           color: $error;
         }
