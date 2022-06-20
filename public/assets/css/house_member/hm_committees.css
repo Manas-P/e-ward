@@ -275,8 +275,8 @@ body {
 }
 
 .main .container {
-  margin: 46px 63px 0 calc(476px - 63px);
-  width: calc(100% - 476px);
+  margin: 2.39583vw 3.28125vw 0 calc(24.791666666666668vw - 3.28125vw);
+  width: calc(100% - 24.791666666666668vw);
 }
 
 .main .container .header {
@@ -290,23 +290,23 @@ body {
 
 .main .container .header .title {
   font-family: Gilroy_SB;
-  font-size: 38px;
+  font-size: 1.9791666666666667vw;
 }
 
 .main .container .header .search svg {
   position: relative;
-  left: 38px;
-  height: 20px;
-  width: 20px;
-  top: 3px;
+  left: 1.9791666666666667vw;
+  height: 1.0416666666666667vw;
+  width: 1.0416666666666667vw;
+  top: 0.15625vw;
 }
 
 .main .container .header .search input {
-  width: 408px;
-  font-size: 18px;
+  width: 21.25vw;
+  font-size: 0.9375vw;
   font-family: "Gilroy_M";
-  padding: 16px 0px 16px 42px;
-  border-radius: 10px;
+  padding: 0.8333333333333334vw 0px 0.8333333333333334vw 2.1875vw;
+  border-radius: 0.5208333333333334vw;
   border: 1px solid #c1c1c1;
   color: #1e1e1e;
   outline: none;
@@ -323,7 +323,7 @@ body {
 }
 
 .main .container .hyper-link {
-  margin-top: 36px;
+  margin-top: 1.875vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -331,9 +331,9 @@ body {
       -ms-flex-pack: end;
           justify-content: flex-end;
   font-family: "Gilroy_SB";
-  font-size: 20px;
-  -webkit-column-gap: 48px;
-          column-gap: 48px;
+  font-size: 1.0416666666666667vw;
+  -webkit-column-gap: 2.5vw;
+          column-gap: 2.5vw;
 }
 
 .main .container .hyper-link a {
@@ -349,19 +349,19 @@ body {
 
 .main .container .hyper-link .leave-req .noti-badge {
   text-decoration: none;
-  padding: 5px 8px 4px 8px;
+  padding: 0.2604166666666667vw 0.4166666666666667vw 0.20833333333333334vw 0.4166666666666667vw;
   color: #fff;
   background: #5744e3;
   font-family: "Gilroy_B";
-  font-size: 12px;
-  border-radius: 6px;
-  margin-left: 8px;
+  font-size: 0.625vw;
+  border-radius: 0.3125vw;
+  margin-left: 0.4166666666666667vw;
 }
 
 .main .container .headings {
-  margin: 48px 16px 0 16px;
+  margin: 2.5vw 0.8333333333333334vw 0 0.8333333333333334vw;
   font-family: "Gilroy_SB";
-  font-size: 20px;
+  font-size: 1.0416666666666667vw;
   color: #1e1e1e;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -369,7 +369,7 @@ body {
 }
 
 .main .container .datas {
-  margin-top: 24px;
+  margin-top: 1.25vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -377,20 +377,20 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  row-gap: 24px;
+  row-gap: 1.25vw;
 }
 
 .main .container .datas .data {
-  padding: 20px;
+  padding: 1.0416666666666667vw;
   background: #fff;
-  border-radius: 10px;
+  border-radius: 0.5208333333333334vw;
   font-family: "Gilroy_M";
-  font-size: 18px;
+  font-size: 0.9375vw;
   color: #545454;
 }
 
 .main .container .datas .data td {
-  padding-right: 28px;
+  padding-right: 1.4583333333333333vw;
   vertical-align: top;
   text-align: left;
 }
