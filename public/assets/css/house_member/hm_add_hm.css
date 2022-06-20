@@ -275,8 +275,8 @@ body {
 }
 
 .main .container {
-  margin: 46px 63px 0 calc(476px - 63px);
-  width: calc(100% - 476px);
+  margin: 2.39583vw 3.28125vw 0 calc(24.791666666666668vw - 3.28125vw);
+  width: calc(100% - 24.791666666666668vw);
 }
 
 .main .container .header {
@@ -290,15 +290,15 @@ body {
 
 .main .container .header .title {
   font-family: Gilroy_SB;
-  font-size: 38px;
+  font-size: 1.9791666666666667vw;
 }
 
 .main .container .members-list {
-  margin-top: 60px;
+  margin-top: 3.125vw;
 }
 
 .main .container .members-list .members {
-  margin-top: 24px;
+  margin-top: 1.25vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -306,11 +306,11 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-column-gap: 36px;
-          column-gap: 36px;
+  -webkit-column-gap: 1.875vw;
+          column-gap: 1.875vw;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  row-gap: 36px;
+  row-gap: 1.875vw;
 }
 
 .main .container .members-list .members .add-member {
@@ -319,30 +319,30 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-column-gap: 12px;
-          column-gap: 12px;
+  -webkit-column-gap: 0.625vw;
+          column-gap: 0.625vw;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 12px;
-  width: 260px;
+  padding: 0.625vw;
+  width: 13.541666666666666vw;
   background: #fff;
   -webkit-box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
           box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
-  border-radius: 10px;
+  border-radius: 0.5208333333333334vw;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
 }
 
 .main .container .members-list .members .add-member .icon {
-  padding: 18px;
+  padding: 0.9375vw;
   background: #eeecfc;
-  border-radius: 4px;
+  border-radius: 0.20833333333333334vw;
 }
 
 .main .container .members-list .members .add-member .icon svg {
-  height: 30px;
-  width: 30px;
+  height: 1.5625vw;
+  width: 1.5625vw;
 }
 
 .main .container .members-list .members .add-member .icon .str {
@@ -351,7 +351,7 @@ body {
 
 .main .container .members-list .members .add-member .text {
   font-family: "Gilroy_SB";
-  font-size: 18px;
+  font-size: 0.9375vw;
   color: #8b8b8b;
 }
 
@@ -366,31 +366,31 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-column-gap: 12px;
-          column-gap: 12px;
+  -webkit-column-gap: 0.625vw;
+          column-gap: 0.625vw;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 12px;
-  width: 260px;
+  padding: 0.625vw;
+  width: 13.541666666666666vw;
   background: #fff;
   -webkit-box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
           box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
-  border-radius: 10px;
+  border-radius: 0.5208333333333334vw;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
 }
 
 .main .container .members-list .members .member .photo {
-  width: 66px;
-  height: 66px;
-  border-radius: 4px;
+  width: 3.4375vw;
+  height: 3.4375vw;
+  border-radius: 0.20833333333333334vw;
 }
 
 .main .container .members-list .members .member .photo img {
-  width: 66px;
-  height: 66px;
-  border-radius: 4px;
+  width: 3.4375vw;
+  height: 3.4375vw;
+  border-radius: 0.20833333333333334vw;
 }
 
 .main .container .members-list .members .member .about {
@@ -401,7 +401,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  row-gap: 10px;
+  row-gap: 0.5208333333333334vw;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -409,17 +409,17 @@ body {
 
 .main .container .members-list .members .member .about .name {
   font-family: "Gilroy_SB";
-  font-size: 18px;
+  font-size: 0.9375vw;
   color: #1e1e1e;
 }
 
 .main .container .members-list .members .member .about .tag {
   font-family: "Gilroy_SB";
-  font-size: 14px;
+  font-size: 0.7291666666666666vw;
   color: #5744e3;
-  padding: 3px 12px;
+  padding: 0.15625vw 0.625vw;
   background: #eeecfc;
-  border-radius: 10px;
+  border-radius: 0.5208333333333334vw;
 }
 
 .main .container .members-list .members .member:hover {
@@ -445,7 +445,7 @@ body {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  width: 556px;
+  width: 28.95833vw;
   height: auto;
   overflow: none;
   overflow-y: scroll;
@@ -486,12 +486,12 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  row-gap: 32px;
-  margin-top: 40px;
+  row-gap: 1.6666666666666667vw;
+  margin-top: 2.0833333333333335vw;
 }
 
 .box .inputs .input {
-  width: 460px;
+  width: 23.95833vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -567,7 +567,7 @@ body {
 }
 
 .box .inputs .half-input .input {
-  width: 216px;
+  width: 11.25vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
