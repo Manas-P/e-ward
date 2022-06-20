@@ -275,8 +275,8 @@ body {
 }
 
 .main .container {
-  margin: 46px 63px 0 calc(476px - 63px);
-  width: calc(100% - 476px);
+  margin: 2.39583vw 3.28125vw 0 calc(24.791666666666668vw - 3.28125vw);
+  width: calc(100% - 24.791666666666668vw);
 }
 
 .main .container .header {
@@ -290,23 +290,23 @@ body {
 
 .main .container .header .title {
   font-family: Gilroy_SB;
-  font-size: 38px;
+  font-size: 1.9791666666666667vw;
 }
 
 .main .container .header .search svg {
   position: relative;
-  left: 38px;
-  height: 20px;
-  width: 20px;
-  top: 3px;
+  left: 1.9791666666666667vw;
+  height: 1.0416666666666667vw;
+  width: 1.0416666666666667vw;
+  top: 0.15625vw;
 }
 
 .main .container .header .search input {
-  width: 408px;
-  font-size: 18px;
+  width: 21.25vw;
+  font-size: 0.9375vw;
   font-family: "Gilroy_M";
-  padding: 16px 0px 16px 42px;
-  border-radius: 10px;
+  padding: 0.8333333333333334vw 0px 0.8333333333333334vw 2.1875vw;
+  border-radius: 0.5208333333333334vw;
   border: 1px solid #c1c1c1;
   color: #1e1e1e;
   outline: none;
@@ -323,7 +323,7 @@ body {
 }
 
 .main .container .hyper-link {
-  margin-top: 36px;
+  margin-top: 1.875vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -334,21 +334,21 @@ body {
       -ms-flex-align: center;
           align-items: center;
   font-family: "Gilroy_SB";
-  font-size: 20px;
-  -webkit-column-gap: 48px;
-          column-gap: 48px;
+  font-size: 1.0416666666666667vw;
+  -webkit-column-gap: 2.5vw;
+          column-gap: 2.5vw;
 }
 
 .main .container .hyper-link .add-req {
   cursor: pointer;
-  padding: 8px 24px;
+  padding: 0.4166666666666667vw 1.25vw;
   color: #fff;
   background: #5744e3;
   font-family: "Gilroy_SB";
-  font-size: 20px;
-  border-radius: 10px;
-  -webkit-transition: .1s ease-in-out;
-  transition: .1s ease-in-out;
+  font-size: 1.0416666666666667vw;
+  border-radius: 0.5208333333333334vw;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -366,19 +366,19 @@ body {
 }
 
 .main .container .hyper-link .replies .noti-badge {
-  padding: 5px 8px 4px 8px;
+  padding: 0.2604166666666667vw 0.4166666666666667vw 0.20833333333333334vw 0.4166666666666667vw;
   color: #fff;
   background: #5744e3;
   font-family: "Gilroy_B";
-  font-size: 12px;
-  border-radius: 6px;
-  margin-left: 8px;
+  font-size: 0.625vw;
+  border-radius: 0.3125vw;
+  margin-left: 0.4166666666666667vw;
 }
 
 .main .container .headings {
-  margin: 32px 16px 0 16px;
+  margin: 1.6666666666666667vw 0.8333333333333334vw 0 0.8333333333333334vw;
   font-family: "Gilroy_SB";
-  font-size: 20px;
+  font-size: 1.0416666666666667vw;
   color: #1e1e1e;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -386,7 +386,7 @@ body {
 }
 
 .main .container .datas {
-  margin-top: 24px;
+  margin-top: 1.25vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -394,22 +394,22 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  row-gap: 24px;
+  row-gap: 1.25vw;
 }
 
 .main .container .datas .data {
-  padding: 20px;
+  padding: 1.0416666666666667vw;
   background: #fff;
-  border-radius: 10px;
+  border-radius: 0.5208333333333334vw;
   font-family: "Gilroy_M";
-  font-size: 18px;
+  font-size: 0.9375vw;
   color: #545454;
 }
 
 .main .container .datas .data td {
   vertical-align: top;
   text-align: left;
-  line-height: 24px;
+  line-height: 1.25vw;
 }
 
 .main .container .datas .data .approve {
@@ -419,12 +419,12 @@ body {
 
 .main .container .datas .no-result {
   font-family: "Gilroy_M";
-  font-size: 20px;
+  font-size: 1.0416666666666667vw;
   color: #8b8b8b;
   text-align: center;
-  -webkit-transform: translateX(-60px);
-          transform: translateX(-60px);
-  margin-top: 160px;
+  -webkit-transform: translateX(-3.125vw);
+          transform: translateX(-3.125vw);
+  margin-top: 8.333333333333334vw;
 }
 
 .overlay {
@@ -445,7 +445,7 @@ body {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  width: 556px;
+  width: 28.95833vw;
   height: auto;
   overflow: none;
   overflow-y: scroll;
@@ -486,12 +486,12 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  row-gap: 32px;
-  margin-top: 40px;
+  row-gap: 1.6666666666666667vw;
+  margin-top: 2.0833333333333335vw;
 }
 
 .box .inputs .input {
-  width: 460px;
+  width: 23.95833vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -558,18 +558,18 @@ body {
 }
 
 .box .inputs .reqDes .error {
-  margin-top: 200px;
+  margin-top: 10.416666666666666vw;
 }
 
 .box .inputs textarea {
   resize: vertical;
-  max-height: 168px;
-  min-height: 116px;
-  font-size: 18px;
-  line-height: 27px;
+  max-height: 8.75vw;
+  min-height: 6.041666666666667vw;
+  font-size: 0.9375vw;
+  line-height: 1.40625vw;
   font-family: "Gilroy_M";
-  padding: 16px;
-  border-radius: 10px;
+  padding: 0.8333333333333334vw;
+  border-radius: 0.5208333333333334vw;
   border: 1px solid #c1c1c1;
   color: #1e1e1e;
   outline: none;
