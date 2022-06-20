@@ -275,8 +275,8 @@ body {
 }
 
 .main .container {
-  margin: 46px 63px 0 calc(476px - 63px);
-  width: calc(100% - 476px);
+  margin: 2.39583vw 3.28125vw 0 calc(24.791666666666668vw - 3.28125vw);
+  width: calc(100% - 24.791666666666668vw);
 }
 
 .main .container .header {
@@ -290,11 +290,11 @@ body {
 
 .main .container .header .title {
   font-family: Gilroy_SB;
-  font-size: 38px;
+  font-size: 1.9791666666666667vw;
 }
 
 .main .container .update-form {
-  margin: 60px 0;
+  margin: 3.125vw 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -302,12 +302,12 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 48px;
+  padding: 2.5vw;
   background: #fff;
-  width: 556px;
+  width: 28.958333333333332vw;
   -webkit-box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.02);
           box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.02);
-  border-radius: 16px;
+  border-radius: 0.8333333333333334vw;
 }
 
 .main .container .update-form .register-text {
@@ -318,12 +318,12 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  row-gap: 12px;
+  row-gap: 0.625vw;
 }
 
 .main .container .update-form .register-text .title {
   font-family: "Gilroy_SB";
-  font-size: 28px;
+  font-size: 1.4583333333333333vw;
 }
 
 .main .container .update-form .inputs {
@@ -334,12 +334,12 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  row-gap: 32px;
-  margin-top: 40px;
+  row-gap: 1.6666666666666667vw;
+  margin-top: 2.0833333333333335vw;
 }
 
 .main .container .update-form .inputs .input {
-  width: 460px;
+  width: 23.95833vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -409,10 +409,10 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-column-gap: 32px;
-          column-gap: 32px;
+  -webkit-column-gap: 1.6666666666666667vw;
+          column-gap: 1.6666666666666667vw;
   font-family: "Gilroy_M";
-  font-size: 18px;
+  font-size: 0.9375vw;
   color: #1e1e1e;
 }
 
@@ -429,7 +429,7 @@ body {
   padding: 0.8333333333333334vw 0;
   border: none;
   outline: none;
-  width: 460px;
+  width: 23.95833vw;
   border-radius: 0.5208333333333334vw;
   cursor: pointer;
   -webkit-transition: 0.1s ease-in-out;
@@ -623,8 +623,8 @@ body {
 }
 
 .dashboard .container {
-  margin: 46px 63px 0 calc(476px - 63px);
-  width: calc(100% - 476px);
+  margin: 2.39583vw 3.28125vw 0 calc(24.791666666666668vw - 3.28125vw);
+  width: calc(100% - 24.791666666666668vw);
 }
 
 .dashboard .container .header {
@@ -638,7 +638,7 @@ body {
 
 .dashboard .container .header .title {
   font-family: Gilroy_SB;
-  font-size: 38px;
+  font-size: 1.9791666666666667vw;
 }
 
 .alertt {
