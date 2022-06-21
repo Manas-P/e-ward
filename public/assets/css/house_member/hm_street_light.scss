@@ -1,103 +1,105 @@
 @import "../components.scss";
 
 @mixin card($shadow) {
-    text-decoration: none;
-    cursor: pointer;
-    display: flex;
-    column-gap: 12px;
-    align-items: center;
-    padding: 12px;
-    width: 260px;
-    background: $white;
-    box-shadow: $shadow;
-    border-radius: 10px;
-    transition: 0.2s ease-in-out;
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  column-gap: 0.625vw;
+  align-items: center;
+  padding: 0.625vw;
+  width: 13.541666666666666vw;
+  background: $white;
+  box-shadow: $shadow;
+  border-radius: 0.5208333333333334vw;
+  transition: 0.2s ease-in-out;
 }
 
 body {
-    background: $bg;
+  background: $bg;
 }
 
 .main {
-    display: flex;
-    .sidebar {
-        @include sidebar();
+  display: flex;
+  .sidebar {
+    @include sidebar();
+  }
+  .container {
+    margin: 2.3958333333333335vw 3.28125vw 0
+      calc(24.791666666666668vw - 3.28125vw);
+    width: calc(100% - 24.791666666666668vw);
+    .header {
+      display: flex;
+      justify-content: space-between;
+      .title {
+        font-family: Gilroy_SB;
+        font-size: 1.9791666666666667vw;
+      }
     }
-    .container {
-        margin: 46px 63px 0 calc(476px - 63px);
-        width: calc(100% - 476px);
-        .header {
-            display: flex;
-            justify-content: space-between;
-            .title {
-                font-family: Gilroy_SB;
-                font-size: 38px;
-            }
+    // content
+    .street-light {
+      margin-top: 2.1875vw;
+      padding: 0.7291666666666666vw 1.6666666666666667vw 0.7291666666666666vw
+        0.5208333333333334vw;
+      width: 17.291666666666668vw;
+      background: $white;
+      box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
+      border-radius: 0.5208333333333334vw;
+      display: flex;
+      column-gap: 0.9375vw;
+      align-items: center;
+      .img {
+        height: 4.947916666666667vw;
+        width: 4.947916666666667vw;
+      }
+      .data {
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.625vw;
+        .detail {
+          display: flex;
+          column-gap: 0.4166666666666667vw;
+          font-family: Gilroy_M;
+          .post {
+            font-size: 0.9375vw;
+            color: $subText;
+          }
+          .numb {
+            font-size: 0.9375vw;
+            color: $darkSubText;
+          }
         }
-        // content
-        .street-light{
-            margin-top: 42px;
-            padding: 14px 32px 14px 10px;
-            width:332px;
-            background: $white;
-            box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
-            border-radius: 10px;
-            display: flex;
-            column-gap: 18px;
-            align-items: center;
-            .img{
-                height:95px;
-                width:95px;
-            }
-            .data{
-                display: flex;
-                flex-direction: column;
-                row-gap: 12px;
-                .detail{
-                    display: flex;
-                    column-gap: 8px;
-                    font-family: Gilroy_M;
-                    .post{
-                        font-size: 18px;
-                        color: $subText;
-                    }
-                    .numb{
-                        font-size: 18px;
-                        color: $darkSubText;
-                    }
-                }
-                .req-btn{
-                    padding:10px 24px;
-                    color:$primary;
-                    border:2px solid $primary;
-                    border-radius: 10px;
-                    font-family: Gilroy_B;
-                    font-size: 18px;
-                    transition: 0.1s ease-in-out;
-                    &:hover{
-                        background: #f0f0f5;
-                    }
-                    &:active {
-                        transform: scale(0.99);
-                    }
-                }
-                .req-btn2{
-                    font-family: Gilroy_B;
-                    font-size: 18px;
-                    color:$subText;
-                }
-            }
+        .req-btn {
+          padding: 0.5208333333333334vw 1.25vw;
+          color: $primary;
+          border: 2px solid $primary;
+          border-radius: 0.5208333333333334vw;
+          font-family: Gilroy_B;
+          font-size: 0.9375vw;
+          transition: 0.1s ease-in-out;
+          &:hover {
+            background: #f0f0f5;
+          }
+          &:active {
+            transform: scale(0.99);
+          }
         }
-        .not-added{
-            font-family: Gilroy_M;
-            font-size: 20px;
-            color:$subText;
-            position: absolute;
-            top:30%;
-            left:50%;
-            transform: translate(-50%,-50%);
+        .req-btn2 {
+          font-family: Gilroy_B;
+          font-size: 0.9375vw;
+          color: $subText;
         }
+      }
     }
+    .not-added {
+      font-family: Gilroy_M;
+      font-size: 1.0416666666666667vw;
+      color: $subText;
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
 }
 
 //Alert

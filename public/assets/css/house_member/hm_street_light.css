@@ -275,8 +275,8 @@ body {
 }
 
 .main .container {
-  margin: 46px 63px 0 calc(476px - 63px);
-  width: calc(100% - 476px);
+  margin: 2.39583vw 3.28125vw 0 calc(24.791666666666668vw - 3.28125vw);
+  width: calc(100% - 24.791666666666668vw);
 }
 
 .main .container .header {
@@ -290,30 +290,30 @@ body {
 
 .main .container .header .title {
   font-family: Gilroy_SB;
-  font-size: 38px;
+  font-size: 1.9791666666666667vw;
 }
 
 .main .container .street-light {
-  margin-top: 42px;
-  padding: 14px 32px 14px 10px;
-  width: 332px;
+  margin-top: 2.1875vw;
+  padding: 0.7291666666666666vw 1.6666666666666667vw 0.7291666666666666vw 0.5208333333333334vw;
+  width: 17.291666666666668vw;
   background: #fff;
   -webkit-box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
           box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
-  border-radius: 10px;
+  border-radius: 0.5208333333333334vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-column-gap: 18px;
-          column-gap: 18px;
+  -webkit-column-gap: 0.9375vw;
+          column-gap: 0.9375vw;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
 .main .container .street-light .img {
-  height: 95px;
-  width: 95px;
+  height: 4.947916666666667vw;
+  width: 4.947916666666667vw;
 }
 
 .main .container .street-light .data {
@@ -324,35 +324,35 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  row-gap: 12px;
+  row-gap: 0.625vw;
 }
 
 .main .container .street-light .data .detail {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-column-gap: 8px;
-          column-gap: 8px;
+  -webkit-column-gap: 0.4166666666666667vw;
+          column-gap: 0.4166666666666667vw;
   font-family: Gilroy_M;
 }
 
 .main .container .street-light .data .detail .post {
-  font-size: 18px;
+  font-size: 0.9375vw;
   color: #8b8b8b;
 }
 
 .main .container .street-light .data .detail .numb {
-  font-size: 18px;
+  font-size: 0.9375vw;
   color: #545454;
 }
 
 .main .container .street-light .data .req-btn {
-  padding: 10px 24px;
+  padding: 0.5208333333333334vw 1.25vw;
   color: #5744e3;
   border: 2px solid #5744e3;
-  border-radius: 10px;
+  border-radius: 0.5208333333333334vw;
   font-family: Gilroy_B;
-  font-size: 18px;
+  font-size: 0.9375vw;
   -webkit-transition: 0.1s ease-in-out;
   transition: 0.1s ease-in-out;
 }
@@ -368,13 +368,13 @@ body {
 
 .main .container .street-light .data .req-btn2 {
   font-family: Gilroy_B;
-  font-size: 18px;
+  font-size: 0.9375vw;
   color: #8b8b8b;
 }
 
 .main .container .not-added {
   font-family: Gilroy_M;
-  font-size: 20px;
+  font-size: 1.0416666666666667vw;
   color: #8b8b8b;
   position: absolute;
   top: 30%;
