@@ -4,10 +4,10 @@
 @mixin contentbox() {
   background: $white;
   box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
-  border-radius: 10px;
-  padding: 48px 56px;
-  width: 704px;
-  margin-bottom: 64px;
+  border-radius: 0.5208333333333334vw;
+  padding: 2.5vw 2.9166666666666665vw;
+  width: 36.666666666666664vw;
+  margin-bottom: 3.3333333333333335vw;
 }
 
 @mixin contentboxheader() {
@@ -17,7 +17,7 @@
     align-items: center;
     .heading {
       font-family: "Gilroy_SB";
-      font-size: 32px;
+      font-size: 1.6666666666666667vw;
       color: $text;
     }
   }
@@ -33,19 +33,20 @@ body {
     @include sidebar();
   }
   .container {
-    margin: 64px 63px 0 calc(476px - 63px);
-    width: calc(100% - 476px);
+    margin: 3.3333333333333335vw 3.28125vw 0
+      calc(24.791666666666668vw - 3.28125vw);
+    width: calc(100% - 24.791666666666668vw);
     display: flex;
     .left {
-      width: 567px;
+      width: 29.53125vw;
       .bread-crumbs {
         position: fixed;
         display: flex;
-        column-gap: 4px;
+        column-gap: 0.20833333333333334vw;
         align-items: center;
         .previous {
           font-family: "Gilroy_M";
-          font-size: 16px;
+          font-size: 0.8333333333333334vw;
           color: $subText;
         }
         svg {
@@ -55,24 +56,24 @@ body {
         }
         .now {
           font-family: "Gilroy_SB";
-          font-size: 16px;
+          font-size: 0.8333333333333334vw;
           color: $text;
         }
       }
       .menu {
         position: fixed;
-        margin-top: 68px;
-        padding: 24px 100px 24px 54px;
+        margin-top: 3.5416666666666665vw;
+        padding: 1.25vw 5.208333333333333vw 1.25vw 2.8125vw;
         background: $white;
         box-shadow: 0px 10px 20px rgba(237, 237, 237, 0.25);
-        border-radius: 10px;
+        border-radius: 0.5208333333333334vw;
         .links {
           display: flex;
           flex-direction: column;
           a {
-            padding: 18px 0;
+            padding: 0.9375vw 0;
             font-family: "Gilroy_SB";
-            font-size: 20px;
+            font-size: 1.0416666666666667vw;
             color: $placeholder;
           }
           .active {
@@ -82,32 +83,32 @@ body {
       }
       .buttn {
         position: fixed;
-        margin-top: 389px;
+        margin-top: 20.260416666666668vw;
         .button {
-          @include secondary_button(382px);
-          width: 382px;
+          @include secondary_button(19.895833333333332vw);
+          width: 19.895833333333332vw;
           background: none;
         }
       }
     }
     .right {
-      margin-top: 68px;
-      padding-bottom: 100px;
+      margin-top: 3.5416666666666665vw;
+      padding-bottom: 5.208333333333333vw;
       .general {
         @include contentbox();
         @include contentboxheader();
         .information {
-          margin-top: 48px;
+          margin-top: 2.5vw;
           .inputs {
             display: flex;
             flex-direction: column;
-            row-gap: 32px;
-            margin-top: 40px;
-            @include input_fields(460px);
+            row-gap: 1.6666666666666667vw;
+            margin-top: 2.0833333333333335vw;
+            @include input_fields(23.958333333333332vw);
             .half-input {
               display: flex;
-              column-gap: 24px;
-              @include input_fields(216px);
+              column-gap: 1.25vw;
+              @include input_fields(11.25vw);
             }
           }
         }
@@ -116,13 +117,13 @@ body {
         @include contentbox();
         @include contentboxheader();
         .files {
-          margin-top: 48px;
+          margin-top: 2.5vw;
           .inputs {
             display: flex;
             flex-direction: column;
-            row-gap: 32px;
-            margin-top: 40px;
-            @include input_fields(460px);
+            row-gap: 1.6666666666666667vw;
+            margin-top: 2.0833333333333335vw;
+            @include input_fields(23.958333333333332vw);
           }
         }
       }
